@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "label_cases": 5912,
+  "causal_suffix_max_error": 0.0,
+  "save_load_max_error": 0.0,
+  "optimizer_reset": true,
+  "multitask_and_adaptation_completed": true,
+  "example_prompt_evaluation": {
+    "accuracy": 0.0,
+    "ce": 3.56645131111145,
+    "eos_accuracy": 1.0,
+    "count": 64
+  },
+  "device": "cuda",
+  "torch": "2.11.0+cu128",
+  "cuda": "12.8"
+}

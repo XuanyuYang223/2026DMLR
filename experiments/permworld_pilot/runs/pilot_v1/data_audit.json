@@ -1,0 +1,82 @@
+{
+  "pools": {
+    "development_train": {
+      "count": 8192,
+      "sha256": "00d26b0976ee79f86ebb7962dd662f53c967e4e19bec454e94ab28f5bbc8f21b",
+      "unique_inputs": 8192,
+      "unique_orbits": 8192
+    },
+    "development_dev": {
+      "count": 1024,
+      "sha256": "f6297f430f10ed7e8ea1da39b255d121282cc4246058a2f25d0e41177a354e7d",
+      "unique_inputs": 1024,
+      "unique_orbits": 1024
+    },
+    "s17_pretrain": {
+      "count": 8192,
+      "sha256": "dba32002d08c750aeac1b5c6d2d79b0d708dfdfb7d002b04f54fb86d1b43f659",
+      "unique_inputs": 8192,
+      "unique_orbits": 8192
+    },
+    "s17_source_dev": {
+      "count": 1024,
+      "sha256": "d3d1a5a32a161fe8676224f37c9efecad31f0bb300e56e6805c0d01387b73d5c",
+      "unique_inputs": 1024,
+      "unique_orbits": 1024
+    },
+    "s17_target_train": {
+      "count": 1024,
+      "sha256": "7f913073327328337ba81200c9c615e8b36d49a8604c43c96ef4a3985a39f4f4",
+      "unique_inputs": 1024,
+      "unique_orbits": 1024
+    },
+    "s17_target_dev": {
+      "count": 1024,
+      "sha256": "315d2853df684f1ecb49f6434b6241533898f7d9cf5fb8f8f0bdd8648b1079bd",
+      "unique_inputs": 1024,
+      "unique_orbits": 1024
+    },
+    "s17_test": {
+      "count": 2048,
+      "sha256": "8f10e3c9d0654f15e4346a9e226e5aa23399d63ca920dc5bd879d9daf975daae",
+      "unique_inputs": 2048,
+      "unique_orbits": 2048
+    },
+    "s42_pretrain": {
+      "count": 8192,
+      "sha256": "330d17799b2057116006e8d509b65156c25f8085f20181fdefb12ccba71f65fd",
+      "unique_inputs": 8192,
+      "unique_orbits": 8192
+    },
+    "s42_source_dev": {
+      "count": 1024,
+      "sha256": "2285e916e7e9a6fa5f4dac541ee531856aaed5b138bd50184a2d61858e132564",
+      "unique_inputs": 1024,
+      "unique_orbits": 1024
+    },
+    "s42_target_train": {
+      "count": 1024,
+      "sha256": "b89f4980fc5e535112e8dcfba602709ef19fd11faab363f6026ad25447be06f9",
+      "unique_inputs": 1024,
+      "unique_orbits": 1024
+    },
+    "s42_target_dev": {
+      "count": 1024,
+      "sha256": "b67e639c55c436eae5a7459d79c598eca8ecb4f03dbeb9f0ee3fe231a3e2a492",
+      "unique_inputs": 1024,
+      "unique_orbits": 1024
+    },
+    "s42_test": {
+      "count": 2048,
+      "sha256": "5db8f9ea4f3f8cfcd335a3689ce188078b4aef4cb580d243c4253698e7e150e6",
+      "unique_inputs": 2048,
+      "unique_orbits": 2048
+    }
+  },
+  "overlapping_orbits": 0,
+  "duplicate_inputs": 0,
+  "global_across_seeds": true,
+  "nested_target_subsets": true,
+  "historical_exclusion": false,
+  "historical_note": "Fresh pilot data, old alignment weights/data never trained or loaded; no exhaustive old artifact exclusion claimed."
+}

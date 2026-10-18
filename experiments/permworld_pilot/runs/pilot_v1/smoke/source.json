@@ -1,0 +1,63 @@
+{
+  "config": {
+    "n": 10,
+    "seeds": [
+      17,
+      42
+    ],
+    "sizes": [
+      64,
+      256,
+      1024
+    ],
+    "batch": 64,
+    "model": {
+      "d_model": 256,
+      "layers": 4,
+      "n_heads": 8,
+      "mlp_ratio": 4,
+      "dropout": 0.1,
+      "tie_embeddings": true,
+      "max_seq_len": 128
+    },
+    "lr": 0.0003,
+    "weight_decay": 0.01,
+    "pre_steps": 2400,
+    "adapt_steps": 800,
+    "dev_steps": 2400,
+    "train_count": 8192,
+    "dev_count": 1024,
+    "test_count": 2048,
+    "split_rule": "Reject overlap of complete inverse/reverse/complement orbits across all pools and seeds.",
+    "endpoint": "fixed final update, no best checkpoint selection"
+  },
+  "tasks": [
+    1,
+    3,
+    4,
+    5
+  ],
+  "step": 8,
+  "seed": 903,
+  "numpy_rng": {
+    "bit_generator": "PCG64",
+    "state": {
+      "state": 80900301118481290194793492006402862668,
+      "inc": 152547165251974950621040335624460326511
+    },
+    "has_uint32": 0,
+    "uinteger": 539747609
+  },
+  "curve": [
+    {
+      "step": 8,
+      "loss": 3.451171875,
+      "elapsed_seconds": 0.17198879999341443
+    }
+  ],
+  "seconds": 0.17207590001635253,
+  "input_tokens": 14336,
+  "supervised_tokens": 1024,
+  "sample_exposures": 512,
+  "peak_memory": 188143104
+}

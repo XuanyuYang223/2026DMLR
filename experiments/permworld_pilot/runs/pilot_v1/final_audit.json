@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "source_code_and_data_hashes_verified": true,
+  "formal_runs": 22,
+  "formal_seconds": 499.90610040008323,
+  "formal_input_tokens": 43008000,
+  "formal_supervised_tokens": 3072000,
+  "paired_pretrain_budgets_equal": true,
+  "paired_adaptation_budgets_equal": true,
+  "target_task_tied_row_reset_verified": true,
+  "test_forwards_in_this_audit": 0
+}

@@ -1,0 +1,109 @@
+{
+  "config": {
+    "n": 10,
+    "seeds": [
+      17,
+      42
+    ],
+    "sizes": [
+      64,
+      256,
+      1024
+    ],
+    "batch": 64,
+    "model": {
+      "d_model": 256,
+      "layers": 4,
+      "n_heads": 8,
+      "mlp_ratio": 4,
+      "dropout": 0.1,
+      "tie_embeddings": true,
+      "max_seq_len": 128
+    },
+    "lr": 0.0003,
+    "weight_decay": 0.01,
+    "pre_steps": 2400,
+    "adapt_steps": 800,
+    "dev_steps": 2400,
+    "train_count": 8192,
+    "dev_count": 1024,
+    "test_count": 2048,
+    "split_rule": "Reject overlap of complete inverse/reverse/complement orbits across all pools and seeds.",
+    "endpoint": "fixed final update, no best checkpoint selection"
+  },
+  "tasks": [
+    0
+  ],
+  "step": 2400,
+  "seed": 911,
+  "numpy_rng": {
+    "bit_generator": "PCG64",
+    "state": {
+      "state": 36902385260568819878258926352630816952,
+      "inc": 27494222438246939243530610901005887455
+    },
+    "has_uint32": 0,
+    "uinteger": 2601286056
+  },
+  "curve": [
+    {
+      "step": 400,
+      "loss": 0.09451162815093994,
+      "elapsed_seconds": 8.608522099966649,
+      "accuracy": 0.9423828125,
+      "ce": 0.15369989071041346,
+      "eos_accuracy": 1.0,
+      "count": 1024
+    },
+    {
+      "step": 800,
+      "loss": 0.051037728786468506,
+      "elapsed_seconds": 17.665022299974225,
+      "accuracy": 0.998046875,
+      "ce": 0.012658647872740403,
+      "eos_accuracy": 1.0,
+      "count": 1024
+    },
+    {
+      "step": 1200,
+      "loss": 0.0693940669298172,
+      "elapsed_seconds": 29.195093199959956,
+      "accuracy": 0.9970703125,
+      "ce": 0.012383775858324952,
+      "eos_accuracy": 1.0,
+      "count": 1024
+    },
+    {
+      "step": 1600,
+      "loss": 0.0012475550174713135,
+      "elapsed_seconds": 39.755420800007414,
+      "accuracy": 0.9990234375,
+      "ce": 0.004412926267832518,
+      "eos_accuracy": 1.0,
+      "count": 1024
+    },
+    {
+      "step": 2000,
+      "loss": 0.005298912525177002,
+      "elapsed_seconds": 48.38143730000593,
+      "accuracy": 1.0,
+      "ce": 0.0013950213615316898,
+      "eos_accuracy": 1.0,
+      "count": 1024
+    },
+    {
+      "step": 2400,
+      "loss": 0.0003763735294342041,
+      "elapsed_seconds": 58.5541377000045,
+      "accuracy": 1.0,
+      "ce": 0.0011567955443751998,
+      "eos_accuracy": 1.0,
+      "count": 1024
+    }
+  ],
+  "seconds": 58.70189729996491,
+  "input_tokens": 4300800,
+  "supervised_tokens": 307200,
+  "sample_exposures": 153600,
+  "peak_memory": 173560832
+}

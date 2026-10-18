@@ -1,0 +1,13 @@
+{
+  "task": "fixed_points",
+  "result": {
+    "accuracy": 1.0,
+    "ce": 0.0011567955443751998,
+    "eos_accuracy": 1.0,
+    "count": 1024
+  },
+  "train_majority_label": 1,
+  "majority_accuracy": 0.3466796875,
+  "pass_gate": true,
+  "choice": "Single candidate: fixed points, known complement relation, historical learnability; accept only development accuracy >=0.90. No transfer or test results consulted."
+}

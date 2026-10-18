@@ -1,0 +1,88 @@
+{
+  "config": {
+    "n": 10,
+    "seeds": [
+      17,
+      42
+    ],
+    "sizes": [
+      64,
+      256,
+      1024
+    ],
+    "batch": 64,
+    "model": {
+      "d_model": 256,
+      "layers": 4,
+      "n_heads": 8,
+      "mlp_ratio": 4,
+      "dropout": 0.1,
+      "tie_embeddings": true,
+      "max_seq_len": 128
+    },
+    "lr": 0.0003,
+    "weight_decay": 0.01,
+    "pre_steps": 2400,
+    "adapt_steps": 800,
+    "dev_steps": 2400,
+    "train_count": 8192,
+    "dev_count": 1024,
+    "test_count": 2048,
+    "split_rule": "Reject overlap of complete inverse/reverse/complement orbits across all pools and seeds.",
+    "endpoint": "fixed final update, no best checkpoint selection"
+  },
+  "tasks": [
+    1,
+    3,
+    4,
+    5
+  ],
+  "step": 2400,
+  "seed": 1017,
+  "numpy_rng": {
+    "bit_generator": "PCG64",
+    "state": {
+      "state": 84994837330350491377716022940526452758,
+      "inc": 19614488437661986123140039600044052395
+    },
+    "has_uint32": 0,
+    "uinteger": 3333818818
+  },
+  "curve": [
+    {
+      "step": 400,
+      "loss": 0.586621105670929,
+      "elapsed_seconds": 7.56702660000883
+    },
+    {
+      "step": 800,
+      "loss": 0.49332427978515625,
+      "elapsed_seconds": 16.50914759997977
+    },
+    {
+      "step": 1200,
+      "loss": 0.45595332980155945,
+      "elapsed_seconds": 24.192872699990403
+    },
+    {
+      "step": 1600,
+      "loss": 0.3298651874065399,
+      "elapsed_seconds": 32.75750639999751
+    },
+    {
+      "step": 2000,
+      "loss": 0.3285302519798279,
+      "elapsed_seconds": 41.12388019997161
+    },
+    {
+      "step": 2400,
+      "loss": 0.33179113268852234,
+      "elapsed_seconds": 48.573192699986976
+    }
+  ],
+  "seconds": 48.57329420000315,
+  "input_tokens": 4300800,
+  "supervised_tokens": 307200,
+  "sample_exposures": 153600,
+  "peak_memory": 190798848
+}

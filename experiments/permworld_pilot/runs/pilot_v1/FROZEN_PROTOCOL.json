@@ -1,0 +1,64 @@
+{
+  "config": {
+    "n": 10,
+    "seeds": [
+      17,
+      42
+    ],
+    "sizes": [
+      64,
+      256,
+      1024
+    ],
+    "batch": 64,
+    "model": {
+      "d_model": 256,
+      "layers": 4,
+      "n_heads": 8,
+      "mlp_ratio": 4,
+      "dropout": 0.1,
+      "tie_embeddings": true,
+      "max_seq_len": 128
+    },
+    "lr": 0.0003,
+    "weight_decay": 0.01,
+    "pre_steps": 2400,
+    "adapt_steps": 800,
+    "dev_steps": 2400,
+    "train_count": 8192,
+    "dev_count": 1024,
+    "test_count": 2048,
+    "split_rule": "Reject overlap of complete inverse/reverse/complement orbits across all pools and seeds.",
+    "endpoint": "fixed final update, no best checkpoint selection"
+  },
+  "code_hashes": {
+    "pilot.py": "ac1a270c3157a0e4720c1646ef90237374b29af869b028defb1d60a1810df4c8",
+    "vendor\\neurips_permutations\\__init__.py": "cded340b85f88422b18cde5b894e6543f089d254d94faa3d3b2b2b1c08e9d91e",
+    "vendor\\neurips_permutations\\math_ops.py": "3f6832b4798a20cc6b813a0b64ec01cf10360fbf3d6256cb59d1d793d4ad345f",
+    "vendor\\neurips_permutations\\models.py": "ed3ac73b6edaa6ed5c0c2528ba2c37fb903b55259840dfb17f8851562c2599a0",
+    "vendor\\neurips_permutations\\passage.py": "6c103494507358b8b4d2ee6a5c69a31fc391ae4cd35d7f1126bdac891fe07e09",
+    "vendor\\sdpa.py": "5035f58453ddee5c5d5b05878491dfcc81764e172f2ebada437dc9e325048918"
+  },
+  "config_sha256": "adcc344de734ffc8ba94625a604472bd796aefcde76a2dec5bcae0cc6d2d1e47",
+  "development_sha256": "1a9cf87339694d3c1c3550dfcdc91b3593457e36afb6c22a16efc93758839013",
+  "data_audit_sha256": "97674d07c37d5f2ac3522783f4343f39da35a8970d6233a9e21d43d583511e4f",
+  "target": "fixed_points",
+  "sources": {
+    "B": [
+      "anti_fixed_points",
+      "descents",
+      "peaks",
+      "left_to_right_maxima"
+    ],
+    "C": [
+      "successions",
+      "descents",
+      "peaks",
+      "left_to_right_maxima"
+    ]
+  },
+  "related_identity": "fixed_points(p)=anti_fixed_points(complement(p))",
+  "replacement": "successions is not in the registered direct pair with fixed_points; not claimed mathematically unrelated",
+  "analysis": "Report every seed, B-A, C-A, B-C and descriptive average only; no significance claim with two seeds.",
+  "frozen_unix": 1792336044.9934568
+}

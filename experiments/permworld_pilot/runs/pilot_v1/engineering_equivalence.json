@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "sdpa_vs_original_fp32_max_error": 1.71661376953125e-05,
+  "two_token_vs_shifted_loss_error": 7.450580596923828e-09,
+  "preexisting_optimizer_entries": 52,
+  "fresh_optimizer_entries": 0,
+  "used_split": "s17_target_dev",
+  "test_inputs_read": false
+}

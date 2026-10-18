@@ -1,0 +1,18 @@
+{
+  "sources": {
+    "neurips": {
+      "url": "https://github.com/XuanyuYang223/neurips",
+      "commit": "74f0de2017115f06f11b7285366b66e7e8431d30"
+    },
+    "2026TMLR": {
+      "url": "https://github.com/XuanyuYang223/2026TMLR",
+      "commit": "d9a113d20d34db3c21cf69cf546cff4a0ab4904a"
+    }
+  },
+  "vendor_matches_reference_worktree": true,
+  "python": "3.13.14 (main, Jun 23 2026, 15:19:27) [MSC v.1944 64 bit (AMD64)]",
+  "torch": "2.11.0+cu128",
+  "numpy": "2.5.4",
+  "cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 5070"
+}
