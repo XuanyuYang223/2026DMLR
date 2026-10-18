@@ -1,0 +1,11 @@
+{
+  "python": "3.13.14 (main, Jun 23 2026, 15:19:27) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "torch": "2.11.0+cu128",
+  "numpy": "2.5.4",
+  "cuda_build": "12.8",
+  "cpu_audit_threads": 2,
+  "training_precision": "FP32 weights/evaluation; BF16 training; TF32 disabled",
+  "historical_training_device": "NVIDIA GeForce RTX 5070",
+  "device_metadata_source": "pilot_v3_multitarget/artifacts/environment.json; no GPU query or execution by this audit"
+}

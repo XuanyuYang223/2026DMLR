@@ -23,3 +23,11 @@
 - [第三轮配置与复现命令](experiments/pilot_v3_multitarget/README.md)
 
 第三轮分支：`pilot/permworld-v3-multitarget`。前两轮文件与结果逐字节保留；跨目标结果只解释固定256样本下的迁移，不构成样本效率曲线或scaling law。
+
+第四轮背景组合研究位于 `experiments/pilot_v4_backgrounds/`，分支为 `pilot/permworld-v4-backgrounds`：
+
+- [第四轮中文报告](experiments/pilot_v4_backgrounds/PILOT_V4_REPORT.md)
+- [配置、严格配对与复现命令](experiments/pilot_v4_backgrounds/README.md)
+- [可复用数据平台文档](experiments/pilot_v4_backgrounds/DATA_PLATFORM.md)、[任务目录](experiments/pilot_v4_backgrounds/TASK_CATALOG.csv)与[联合数学关系补充](experiments/pilot_v4_backgrounds/catalog_addenda/README.md)
+
+第四轮固定两个探索性目标、三个背景、三个配对种子和256个目标样本，复用兼容权重，在独立新测试上比较同一源任务替换的背景依赖性。

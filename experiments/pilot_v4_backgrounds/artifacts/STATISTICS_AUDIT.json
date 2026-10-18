@@ -1,0 +1,98 @@
+{
+  "status": "passed",
+  "created_utc": "2026-10-18T21:14:22.952660+00:00",
+  "audit_kind": "independent CSV-only numerical recomputation; no model import, forward pass, or training",
+  "raw": {
+    "rows": 42,
+    "unique_target_background_seed_condition_keys": 42,
+    "A_unique_rows": 6,
+    "A_background": "shared",
+    "BC_unique_rows": 36,
+    "all_selected_primary": true,
+    "paired_blocks": [
+      17,
+      42,
+      73
+    ],
+    "targets": [
+      "fixed_points",
+      "longest_decreasing_run"
+    ]
+  },
+  "display": {
+    "rows": 54,
+    "A_display_rows": 18,
+    "BC_display_rows": 36,
+    "each_unique_A_display_multiplicity": 3,
+    "each_unique_BC_display_multiplicity": 1,
+    "all_original_raw_fields_identical": true,
+    "display_rows_not_used_for_statistics": true
+  },
+  "checked_counts": {
+    "summary_rows_total": 42,
+    "accuracy_summary_rows": 18,
+    "paired_delta_summary_rows": 18,
+    "background_interaction_summary_rows": 6,
+    "per_seed_paired_delta_rows": 54,
+    "per_seed_background_interaction_rows": 18,
+    "per_seed_contrast_rows_total": 72,
+    "per_seed_test_and_dev_delta_values": 144,
+    "numerical_scalar_checks": 810
+  },
+  "statistics": {
+    "n_per_summary": 3,
+    "ddof": 1,
+    "absolute_tolerance": 1e-14,
+    "relative_tolerance": 0,
+    "largest_observed_absolute_error": 0.0,
+    "units": "CSV accuracy fractions; multiply deltas and SD by 100 for percentage points",
+    "SD_is_not_confidence_interval": true
+  },
+  "method": [
+    "Read only the seven CSV files listed under inputs into byte snapshots; verify unchanged bytes before writing this new audit record.",
+    "Index the 42 unique selected rows by target/background/paired-block/condition. Verify the exact two-target, three-block, shared-A plus three-background B/C design and selected_primary flags.",
+    "For each target/background/condition, obtain exactly three distinct paired-block values from unique selected rows; use shared A by key. Recompute mean, sample standard deviation, minimum and maximum for six metrics: test accuracy, test answer CE, dev accuracy, dev CE, train accuracy, and majority accuracy.",
+    "Recompute all 54 per-block B-A, C-A, B-C test/dev differences directly from unique raw rows; then verify 18 summaries including n, mean, sample SD, extrema and negative/zero/positive block counts.",
+    "Recompute all 18 per-block background differences of B-C for g1-g0, g2-g0 and g2-g1 using paired blocks; verify test/dev deltas, component test contrasts and sign reversals. Verify all six interaction summaries and reversal counts.",
+    "Verify the 54-row display table preserves every raw field, repeats each shared A exactly three times, and each B/C once; display rows are never the source of pooled SD or sample count.",
+    "Use only Python standard-library csv, math, statistics, hashlib, datetime and pathlib; no summarize.py or experiment engine is imported. All numerical comparisons use absolute tolerance 1e-14 and zero relative tolerance."
+  ],
+  "inputs": {
+    "results_selected.csv": {
+      "relative_path": "results_selected.csv",
+      "bytes": 12102,
+      "sha256": "850847ff9721e4dbf4446d1b339e09f8890c69400de5b8e9fecf6e90e31575ac"
+    },
+    "results_display_ABC.csv": {
+      "relative_path": "results_display_ABC.csv",
+      "bytes": 16381,
+      "sha256": "b3d29d7719750af8a05929cdc1adae2bf0307a902dbd4f6a6b23d0e7c25df91f"
+    },
+    "results_summary.csv": {
+      "relative_path": "results_summary.csv",
+      "bytes": 8207,
+      "sha256": "c9dae734f8c218949422b98c60dbbc0be0bd375e283d73f7d74e99c829074aea"
+    },
+    "paired_deltas.csv": {
+      "relative_path": "paired_deltas.csv",
+      "bytes": 3462,
+      "sha256": "7a6f5c93f12b50b331cda7882010859f22127f8767b781d192d65265162edfd0"
+    },
+    "paired_deltas_summary.csv": {
+      "relative_path": "paired_deltas_summary.csv",
+      "bytes": 2081,
+      "sha256": "830cc48f0d32d66913a2b9e53c5da9d90e2e82ee9bcf52a9e530774fe9318b8f"
+    },
+    "background_interactions.csv": {
+      "relative_path": "background_interactions.csv",
+      "bytes": 2412,
+      "sha256": "d8b6a44f9b881280aff00761e624549c2b4ec601c0b27a8137505ca0d0fab4f6"
+    },
+    "background_interactions_summary.csv": {
+      "relative_path": "background_interactions_summary.csv",
+      "bytes": 1038,
+      "sha256": "40c592353e2fe4fc25b3162b42158d6c5b52bce50558ad84f628c51197a4c9bb"
+    }
+  },
+  "scope_note": "This numerical audit is independent of checkpoint/data/chronology checks in FINAL_AUDIT.json. Three paired blocks jointly vary inputs, initialization and optimization randomness; shared backgrounds and targets are not independent replications."
+}

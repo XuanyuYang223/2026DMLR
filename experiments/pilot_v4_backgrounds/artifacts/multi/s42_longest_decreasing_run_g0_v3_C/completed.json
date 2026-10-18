@@ -1,0 +1,39 @@
+{
+  "seed": 42,
+  "tasks": [
+    "left_to_right_maxima",
+    "descents",
+    "peaks",
+    "successions"
+  ],
+  "kind": "multi",
+  "updates": 4800,
+  "input_tokens": 8601600,
+  "supervised_tokens": 614400,
+  "sample_exposures": 307200,
+  "task_exposures": 76800,
+  "actual_unique_per_task": {
+    "left_to_right_maxima": 8190,
+    "descents": 8191,
+    "peaks": 8192,
+    "successions": 8191
+  },
+  "task_fraction": 0.25,
+  "schedule_sha256": "c7f82ffb4f3a91b42c48e911acdaf0266b5206b666c4a30942cceb9482e4d53a",
+  "model_state_hash": "659279e9ccc784466de209c701c5cda97ccc6b99d6956f077e4637cfa8d31a44",
+  "seconds": 72.17836259998148,
+  "new_compute": false,
+  "checkpoint": "../../pilot_v3_multitarget/artifacts/multi/s42_longest_decreasing_run_C/step4800.pt",
+  "checkpoint_sha256": "a79c256a6337b1d6d864ec24ec0d13a680fc105c6cb15dbd7baa3c83e38494ff",
+  "initial_state_hash": "a54723b0ef71de032c782f77a0f386feec588449a6d050fab3b781c60c5ef80c",
+  "train_sha256": "f9c9f839f04e8ab0c45b24650ec0add72145f6dd5a1cc55fc8973f9276e28da3",
+  "dev_sha256": "2f1dc78524681a9a7510ae0afcac4657037d75ff5d0e7b7937bfe8622ba77265",
+  "model_initialization_seed": 42,
+  "data_generation_seed": 20261018,
+  "data_pool_id": "s42",
+  "target": "longest_decreasing_run",
+  "background": "g0_v3",
+  "condition": "C",
+  "reused_from": "../../pilot_v3_multitarget/artifacts/multi/s42_longest_decreasing_run_C",
+  "reuse_reason": "exact ordered task tuple, initial state, input pools, schedule and budget"
+}

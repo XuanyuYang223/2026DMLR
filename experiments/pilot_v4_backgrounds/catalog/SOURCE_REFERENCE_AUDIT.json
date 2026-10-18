@@ -1,0 +1,43 @@
+{
+  "source_tasks": [
+    "anti_fixed_points",
+    "deficiencies",
+    "descents",
+    "left_to_right_maxima",
+    "longest_increasing_run",
+    "peaks",
+    "recoils",
+    "successions"
+  ],
+  "curve_rows": 288,
+  "source_hashes": {
+    "experiments/pilot_v3_multitarget/artifacts/data/s17_source_train.npz": "e8c6e438520452579b95f883ecbf235edb74b5fa7cf8d7caf5f482acfc6d3f52",
+    "experiments/pilot_v3_multitarget/artifacts/single/s17_anti_fixed_points/curve.csv": "7789ce3f104cf5b80c2e0e5febee78fd7e1c70757582a614176ddeadf798a803",
+    "experiments/pilot_v3_multitarget/artifacts/single/s17_deficiencies/curve.csv": "4cf0215ee6d4cb6303506bd5bbae48f7f2a834ed84723b4dd9fe99a0d5f3b84b",
+    "experiments/pilot_v3_multitarget/artifacts/single/s17_descents/curve.csv": "e6d38b27093bfda6d9ea0b839576c80da55e9312b850273e3fc3296b49aa4ce4",
+    "experiments/pilot_v3_multitarget/artifacts/single/s17_left_to_right_maxima/curve.csv": "97f45ca0f958a13d0365f8ab2cc7170cecedf939581823ecf4b9557d2bf22458",
+    "experiments/pilot_v3_multitarget/artifacts/single/s17_longest_increasing_run/curve.csv": "9798e3eaefef1f4d7aae9c82970ad152a9822193407bd80491e001129f4b5563",
+    "experiments/pilot_v3_multitarget/artifacts/single/s17_peaks/curve.csv": "8d8f1aa7cd84862741fd9ef496e2f9415f2cd762c6694d9298f0ecb8f506d046",
+    "experiments/pilot_v3_multitarget/artifacts/single/s17_recoils/curve.csv": "44adc0feb3aaf32822d54c0e1bbb6be4bc3f2f72d61f38846f6a9157f704666a",
+    "experiments/pilot_v3_multitarget/artifacts/single/s17_successions/curve.csv": "7b3664504a24cd760b002f3405eced9bc00c44cc521247013ddf1814707a1bff",
+    "experiments/pilot_v3_multitarget/artifacts/data/s42_source_train.npz": "f9c9f839f04e8ab0c45b24650ec0add72145f6dd5a1cc55fc8973f9276e28da3",
+    "experiments/pilot_v3_multitarget/artifacts/single/s42_anti_fixed_points/curve.csv": "fb5d45d821de4478c5f1ddb6b0e804f30994014b62919379c432a5530240dd59",
+    "experiments/pilot_v3_multitarget/artifacts/single/s42_deficiencies/curve.csv": "b89490e2f4a28d51d22baace5bd0f5f37ccd0842cd0cfaf99b0c28c0cbe1a9d8",
+    "experiments/pilot_v3_multitarget/artifacts/single/s42_descents/curve.csv": "cc56b3e8395d42601ee153aaf43882848045f0eaf2c94eebaf6b580662156a92",
+    "experiments/pilot_v3_multitarget/artifacts/single/s42_left_to_right_maxima/curve.csv": "ab1aba2c4b50b19b05c885232986da753de043db85ef38b87c12514bc0126a28",
+    "experiments/pilot_v3_multitarget/artifacts/single/s42_longest_increasing_run/curve.csv": "266516589665e797f00ce687cd476d9841c3e90f2e32cb07fd752537ba89eb7a",
+    "experiments/pilot_v3_multitarget/artifacts/single/s42_peaks/curve.csv": "58e1e7da6f95ea01af07b39fe906ddca4003f78aaeb12bce8dfd39eed53f2f15",
+    "experiments/pilot_v3_multitarget/artifacts/single/s42_recoils/curve.csv": "cbd6f1b8ed39a27b682ee85a58b155d3961597f33d4455eac468e74bd586ce4d",
+    "experiments/pilot_v3_multitarget/artifacts/single/s42_successions/curve.csv": "9f28b3f4d51f32a9395e2b7429dc56899be5be1a84891e216c06a22c05b65853",
+    "experiments/pilot_v3_multitarget/artifacts/data/s73_source_train.npz": "c5a155c65844f772549df14538df0de75b4bd776eaa91fcae67f6cdab080bf1f",
+    "experiments/pilot_v3_multitarget/artifacts/single/s73_anti_fixed_points/curve.csv": "4ed2b5828be867fead4eea78da17159a5f52bfd6fa607bd934c5da97407cab21",
+    "experiments/pilot_v3_multitarget/artifacts/single/s73_deficiencies/curve.csv": "1378d8c00b4426034b393ddf60aef54be7519ca0e47771fa5ed4c8d6317c877b",
+    "experiments/pilot_v3_multitarget/artifacts/single/s73_descents/curve.csv": "3c4b8e9355f1011da259895077312467ff0a0f88dc89cf5148b35eab2a07c483",
+    "experiments/pilot_v3_multitarget/artifacts/single/s73_left_to_right_maxima/curve.csv": "d1bb6a247f155563c921e8b20b114f30897217a5da7c5476566a592547e9fc8e",
+    "experiments/pilot_v3_multitarget/artifacts/single/s73_longest_increasing_run/curve.csv": "57dabc87003717b3ead224e3b0a3cfb7b620a0657aef42a4253e217aa3de1b58",
+    "experiments/pilot_v3_multitarget/artifacts/single/s73_peaks/curve.csv": "056d8e3b783beb67c08201e2965af08f17bfa22fa407c05d7d6cb870feb64e0e",
+    "experiments/pilot_v3_multitarget/artifacts/single/s73_recoils/curve.csv": "9b8bd0a81e3415828044c81620be0b755b43945a3e51694cb2bc2e07ab36a29d",
+    "experiments/pilot_v3_multitarget/artifacts/single/s73_successions/curve.csv": "96ecfb9264a73cc5312cf62af0dc468bc851f6e432a805171295ec334809b63d"
+  },
+  "transfer_outcomes_read": false
+}

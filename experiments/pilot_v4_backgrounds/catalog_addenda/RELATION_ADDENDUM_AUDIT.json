@@ -1,0 +1,142 @@
+{
+  "status": "passed",
+  "audit_type": "post-freeze definition-only scientific addendum",
+  "generated_utc": "2026-10-18T20:40:31.285190+00:00",
+  "elapsed_seconds": 0.23730480001540855,
+  "protocol_and_compositions_changed": false,
+  "transfer_results_or_checkpoints_read": false,
+  "proof_scope": "All n>=1 by the partition, inverse bijection and local comparison proofs in README.md; finite checks validate implementation.",
+  "transform_convention": "bits I,R,C applied in that order; 110=R o I=I o C; 111=C o R o I",
+  "exhaustive_n": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "exhaustive_inputs": 5913,
+  "random_n": 10,
+  "random_seed": 2026101806,
+  "random_inputs": 2048,
+  "checked_inputs_per_relation": 7961,
+  "total_identity_or_bound_checks": 71649,
+  "checks": {
+    "fixed_two_def_queries": 7961,
+    "anti_fixed_two_def_queries": 7961,
+    "peaks_reverse": 7961,
+    "successions_reverse_complement": 7961,
+    "deficiencies_RCI": 7961,
+    "decreasing_run_bounds": 7961,
+    "increasing_run_bounds": 7961,
+    "succession_descents_bound": 7961,
+    "succession_recoils_bound": 7961
+  },
+  "supplement_self_edges": [
+    {
+      "task": "peaks",
+      "action": "010",
+      "already_in_frozen_graph": false,
+      "answer_mapping": "identity"
+    },
+    {
+      "task": "successions",
+      "action": "011",
+      "already_in_frozen_graph": false,
+      "answer_mapping": "identity"
+    },
+    {
+      "task": "deficiencies",
+      "action": "111",
+      "already_in_frozen_graph": false,
+      "answer_mapping": "identity"
+    }
+  ],
+  "same_input_single_deficiency_counterexample": {
+    "p": [
+      1,
+      3,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "q": [
+      2,
+      3,
+      1,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "deficiencies_p": 1,
+    "deficiencies_q": 1,
+    "fixed_points_p": 8,
+    "fixed_points_q": 7
+  },
+  "protected_file_hashes_before": {
+    "experiments\\pilot_v4_backgrounds\\catalog\\__pycache__\\data_platform.cpython-313.pyc": "a000957d5bf8a43f966215eea615fa01d7094af735ac833059ffbd35c84ee018",
+    "experiments\\pilot_v4_backgrounds\\catalog\\AGGREGATE_RELATIONS.csv": "2b53b4c58043e67718ad6c6c328781f0c219cd7d69519e7afa056193def7d49a",
+    "experiments\\pilot_v4_backgrounds\\catalog\\BACKGROUND_AGGREGATE_RELATIONS.csv": "255b8fef17329ea68c2fa95c0c4c8821d151996efdc76d998d17212d8201ee0e",
+    "experiments\\pilot_v4_backgrounds\\catalog\\BACKGROUND_DESIGN.json": "b8448bcd03c432ccee5e61cddbbda928c957dc43e8045f5e1b02971524178a19",
+    "experiments\\pilot_v4_backgrounds\\catalog\\BACKGROUND_MATCHING.csv": "9f7af7d70381149e860dcedc13243728106a6d3d1cd624a507ba8ddd4f8e756a",
+    "experiments\\pilot_v4_backgrounds\\catalog\\BACKGROUND_RELATION_GRAPH.csv": "2ee0739cda9faa902c10b29a9d88cc0e57f822b137d2566c18ca6f5c639392b2",
+    "experiments\\pilot_v4_backgrounds\\catalog\\build_catalog.py": "177b0e1a4478554a3b3c2afbd2051663806c4d43632faf3a92fad2fcfecfca9c",
+    "experiments\\pilot_v4_backgrounds\\catalog\\CATALOG_AUDIT.json": "12f2539425938a85b63ae81a805273d748cc38ff585a73de027412c9bfdaab78",
+    "experiments\\pilot_v4_backgrounds\\catalog\\data_platform.py": "0b43ff59d496433a98d670f069745210271df376c2a41b84762d1df6d61f971f",
+    "experiments\\pilot_v4_backgrounds\\catalog\\DIRECT_RELATION_DEFINITIONS.csv": "04740c5e7adfbb2409f5053979afa7ebcd718791805acad0b320f453f659d996",
+    "experiments\\pilot_v4_backgrounds\\catalog\\README.md": "f57be21b86c105c372677d4dda17791daf443bf2f536d93b385f97ff7a7cc0e4",
+    "experiments\\pilot_v4_backgrounds\\catalog\\RELATION_AUDIT.csv": "dcd3004d712092b649d761c9575780e0a55fc58c8e8da0deac898bc56b62be35",
+    "experiments\\pilot_v4_backgrounds\\catalog\\RELATION_AUDIT.json": "68a0415f3be34c054bb8fc952526a4a59ef158fed71d92caa6815c8e0bd128ae",
+    "experiments\\pilot_v4_backgrounds\\catalog\\RELATION_GRAPH.csv": "959440e000a9b382cc7d14792f61f4cb7c8f99461cbfdcdedf2e498dfdae8da4",
+    "experiments\\pilot_v4_backgrounds\\catalog\\REPLACEMENT_RELATION_COUNTEREXAMPLES.csv": "b64e4a6f57d9bd241ea215424cb1092344fa2980a374d4b60ced3e9b7dab3460",
+    "experiments\\pilot_v4_backgrounds\\catalog\\SOURCE_ANSWER_DISTRIBUTIONS.csv": "5958ae4cc3e73cc2cc6304dd2d8e0ec03e17702f9ee00665e419c4402b6fb00d",
+    "experiments\\pilot_v4_backgrounds\\catalog\\SOURCE_REFERENCE_AUDIT.json": "50885249e51c29fee8d851ad94c95a7eae0c29323b6e7709e5c46b45e6a2d11a",
+    "experiments\\pilot_v4_backgrounds\\catalog\\SOURCE_REFERENCE_CURVES.csv": "fb18ecad03bfbe55648d0e4c15e906cc0a8883b58f83b69080376395bdcdf1aa",
+    "experiments\\pilot_v4_backgrounds\\TASK_CATALOG.csv": "1df4d2bea5a8070d68696f6d121febe4c6facb6a5946ba065161bd9b2dba8992",
+    "experiments\\pilot_v4_backgrounds\\DATA_PLATFORM.md": "ee752e45aeee1dc15284d2b258a63e2e5c62fa2e62b39b176990ef3088259c3a",
+    "experiments\\pilot_v4_backgrounds\\design.py": "a537252a83fa15b983755178491a2f4a053e67dd37f37408ea3b6cbb94315a4d",
+    "experiments\\pilot_v4_backgrounds\\artifacts\\FROZEN_PROTOCOL.json": "14403b1f92b18d1798c10d7768448e8223dea043e9f5c0a1d07abbf4283244bf"
+  },
+  "protected_file_hashes_after": {
+    "experiments\\pilot_v4_backgrounds\\catalog\\__pycache__\\data_platform.cpython-313.pyc": "a000957d5bf8a43f966215eea615fa01d7094af735ac833059ffbd35c84ee018",
+    "experiments\\pilot_v4_backgrounds\\catalog\\AGGREGATE_RELATIONS.csv": "2b53b4c58043e67718ad6c6c328781f0c219cd7d69519e7afa056193def7d49a",
+    "experiments\\pilot_v4_backgrounds\\catalog\\BACKGROUND_AGGREGATE_RELATIONS.csv": "255b8fef17329ea68c2fa95c0c4c8821d151996efdc76d998d17212d8201ee0e",
+    "experiments\\pilot_v4_backgrounds\\catalog\\BACKGROUND_DESIGN.json": "b8448bcd03c432ccee5e61cddbbda928c957dc43e8045f5e1b02971524178a19",
+    "experiments\\pilot_v4_backgrounds\\catalog\\BACKGROUND_MATCHING.csv": "9f7af7d70381149e860dcedc13243728106a6d3d1cd624a507ba8ddd4f8e756a",
+    "experiments\\pilot_v4_backgrounds\\catalog\\BACKGROUND_RELATION_GRAPH.csv": "2ee0739cda9faa902c10b29a9d88cc0e57f822b137d2566c18ca6f5c639392b2",
+    "experiments\\pilot_v4_backgrounds\\catalog\\build_catalog.py": "177b0e1a4478554a3b3c2afbd2051663806c4d43632faf3a92fad2fcfecfca9c",
+    "experiments\\pilot_v4_backgrounds\\catalog\\CATALOG_AUDIT.json": "12f2539425938a85b63ae81a805273d748cc38ff585a73de027412c9bfdaab78",
+    "experiments\\pilot_v4_backgrounds\\catalog\\data_platform.py": "0b43ff59d496433a98d670f069745210271df376c2a41b84762d1df6d61f971f",
+    "experiments\\pilot_v4_backgrounds\\catalog\\DIRECT_RELATION_DEFINITIONS.csv": "04740c5e7adfbb2409f5053979afa7ebcd718791805acad0b320f453f659d996",
+    "experiments\\pilot_v4_backgrounds\\catalog\\README.md": "f57be21b86c105c372677d4dda17791daf443bf2f536d93b385f97ff7a7cc0e4",
+    "experiments\\pilot_v4_backgrounds\\catalog\\RELATION_AUDIT.csv": "dcd3004d712092b649d761c9575780e0a55fc58c8e8da0deac898bc56b62be35",
+    "experiments\\pilot_v4_backgrounds\\catalog\\RELATION_AUDIT.json": "68a0415f3be34c054bb8fc952526a4a59ef158fed71d92caa6815c8e0bd128ae",
+    "experiments\\pilot_v4_backgrounds\\catalog\\RELATION_GRAPH.csv": "959440e000a9b382cc7d14792f61f4cb7c8f99461cbfdcdedf2e498dfdae8da4",
+    "experiments\\pilot_v4_backgrounds\\catalog\\REPLACEMENT_RELATION_COUNTEREXAMPLES.csv": "b64e4a6f57d9bd241ea215424cb1092344fa2980a374d4b60ced3e9b7dab3460",
+    "experiments\\pilot_v4_backgrounds\\catalog\\SOURCE_ANSWER_DISTRIBUTIONS.csv": "5958ae4cc3e73cc2cc6304dd2d8e0ec03e17702f9ee00665e419c4402b6fb00d",
+    "experiments\\pilot_v4_backgrounds\\catalog\\SOURCE_REFERENCE_AUDIT.json": "50885249e51c29fee8d851ad94c95a7eae0c29323b6e7709e5c46b45e6a2d11a",
+    "experiments\\pilot_v4_backgrounds\\catalog\\SOURCE_REFERENCE_CURVES.csv": "fb18ecad03bfbe55648d0e4c15e906cc0a8883b58f83b69080376395bdcdf1aa",
+    "experiments\\pilot_v4_backgrounds\\TASK_CATALOG.csv": "1df4d2bea5a8070d68696f6d121febe4c6facb6a5946ba065161bd9b2dba8992",
+    "experiments\\pilot_v4_backgrounds\\DATA_PLATFORM.md": "ee752e45aeee1dc15284d2b258a63e2e5c62fa2e62b39b176990ef3088259c3a",
+    "experiments\\pilot_v4_backgrounds\\design.py": "a537252a83fa15b983755178491a2f4a053e67dd37f37408ea3b6cbb94315a4d",
+    "experiments\\pilot_v4_backgrounds\\artifacts\\FROZEN_PROTOCOL.json": "14403b1f92b18d1798c10d7768448e8223dea043e9f5c0a1d07abbf4283244bf"
+  },
+  "protected_files_unchanged": true,
+  "supplemental_source_hashes": {
+    "audit_postfreeze_relations.py": "d66529b2a5fab3dfae82defb00b3f7f1d036e58727dd892e6aaa34ec46826941",
+    "README.md": "f76176389f00b3608655aca742332bff4e2f506cfb7a91b355388d7825fbfb67"
+  },
+  "vendor_math_sha256": "3f6832b4798a20cc6b813a0b64ec01cf10360fbf3d6256cb59d1d793d4ad345f",
+  "no_formal_test_inputs_generated": true,
+  "finite_checks_are_not_a_standalone_general_proof": true
+}

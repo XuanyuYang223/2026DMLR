@@ -1,0 +1,84 @@
+{
+  "status": "passed",
+  "seconds": 10.230204000021331,
+  "cpu_only": true,
+  "model_forward_calls": 0,
+  "test_inputs_read": 0,
+  "test_metrics_read": 0,
+  "new_test_inputs_read": 0,
+  "v3_protocol_sha256": "69eb53c0f16dc9ae76aba018394f8d0db448f3b3611c3e3a78e7b007cea591e2",
+  "v3_selection_sha256": "040ff3d6891ea883bfd263de0489939844e7824c8f0274aa170a0c3d2b73b7ec",
+  "v4_targets": [
+    "fixed_points",
+    "longest_decreasing_run"
+  ],
+  "v4_backgrounds": [
+    "g0_v3",
+    "g1_recoils",
+    "g2_deficiencies"
+  ],
+  "paired_model_seeds": [
+    17,
+    42,
+    73
+  ],
+  "v3_source_records": 24,
+  "v3_unique_ordered_composition_seed_units": 21,
+  "v3_unique_unordered_composition_seed_units": 18,
+  "v3_adaptation_candidates": 108,
+  "v4_reuse_A_candidates": 18,
+  "v4_reuse_A_selection_groups": 6,
+  "v4_g0_reuse_source_runs": 12,
+  "v4_g0_reuse_BC_candidates": 36,
+  "v4_g1_g2_new_source_runs": 24,
+  "v4_g1_g2_new_adaptation_candidates": 72,
+  "v4_unique_adaptation_candidates": 126,
+  "v4_unique_selection_groups": 42,
+  "v4_logical_ABC_display_rows": 54,
+  "v4_reusable_single_task_references": 24,
+  "v4_required_source_tasks": [
+    "anti_fixed_points",
+    "deficiencies",
+    "descents",
+    "left_to_right_maxima",
+    "longest_increasing_run",
+    "peaks",
+    "recoils",
+    "successions"
+  ],
+  "cpu_checkpoints_loaded": 291,
+  "exact_new_background_source_matches": 0,
+  "task_order_matters": true,
+  "compatibility": {
+    "model": {
+      "d_model": 256,
+      "layers": 4,
+      "n_heads": 8,
+      "mlp_ratio": 4,
+      "dropout": 0.1,
+      "tie_embeddings": true,
+      "max_seq_len": 128
+    },
+    "vocab_size": 188,
+    "encoding": "one_line",
+    "length": 10,
+    "source_updates": 4800,
+    "batch": 64,
+    "task_fraction": 0.25,
+    "source_lr": "3e-4; warmup100 and cosine to3e-5 at2400, then constant3e-5 through4800",
+    "adaptation_updates": 800,
+    "learning_rates": [
+      0.0003,
+      0.0001,
+      3e-05
+    ],
+    "adaptation_eval_every": 100,
+    "selection": "max dev answer accuracy; min dev answer CE; earliest update; declared LR order; step0 excluded",
+    "target_samples": 256,
+    "optimizer": "fresh AdamW per target/LR",
+    "task_row_reset": "restore only target query token's existing tied embedding/output row from same saved seed initializer",
+    "loss": "0.5 * (answer cross entropy + teacher-conditioned EOS cross entropy); all188 classes",
+    "masking": "strict causal attention combined with valid-token mask; no task-specific output-class restriction"
+  },
+  "path_rule": "CSV paths are relative to repository root. Original v3 completion paths are relative to v3 artifacts; nested initialization.source_path has legacy exception for reused v2 records."
+}

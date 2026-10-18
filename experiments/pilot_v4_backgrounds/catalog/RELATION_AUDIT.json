@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "exhaustive_n": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "exhaustive_inputs": 5913,
+  "random_n": 10,
+  "random_inputs": 2048,
+  "random_seed": 2026101803,
+  "cross_task_relations": 17,
+  "self_invariances": 13,
+  "aggregate_identity_checks": {
+    "four_triples": 7961,
+    "cycle_sum": 7961,
+    "positional_sum": 7961,
+    "succession_adjacency": 7961,
+    "descents_complement": 7961,
+    "inversion_encodings": 7961,
+    "cycle_parity": 7961
+  },
+  "seconds": 2.035359299974516,
+  "proof_limit": "Finite checks validate implementations; exact identities follow from definitions, not statistical fits",
+  "neural_results_read": false,
+  "neural_calls": 0,
+  "derived_graph": {
+    "status": "passed",
+    "exhaustive_inputs": 5913,
+    "random_inputs": 2048,
+    "random_n": 10,
+    "random_seed": 2026102204,
+    "derived_edges": 132,
+    "total_edge_checks": 1050852
+  },
+  "unit_checks": {
+    "status": "passed",
+    "exhaustive_roundtrip_and_group_inputs": 873,
+    "action_composition_pairs": 64,
+    "split_fixture": {
+      "status": "passed",
+      "overlap": 0,
+      "roles": {
+        "source": {
+          "inputs": 16,
+          "unique_orbits": 16,
+          "expanded_members": 110
+        },
+        "adapt": {
+          "inputs": 16,
+          "unique_orbits": 16,
+          "expanded_members": 116
+        },
+        "test_fixture": {
+          "inputs": 16,
+          "unique_orbits": 16,
+          "expanded_members": 118
+        }
+      }
+    },
+    "malformed_input_rejected": true,
+    "orbit_leakage_rejected": true,
+    "model_imported": false,
+    "actual_study_test_inputs_generated": false
+  },
+  "replacement_relation_audit": {
+    "candidate_pairs": 6,
+    "actions": 8,
+    "length": 7,
+    "counterexamples": 48,
+    "no_neural_or_test_results_used": true
+  }
+}

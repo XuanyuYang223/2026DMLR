@@ -1,0 +1,37 @@
+{
+  "seed": 17,
+  "tasks": [
+    "anti_fixed_points",
+    "descents",
+    "deficiencies",
+    "left_to_right_maxima"
+  ],
+  "kind": "multi",
+  "updates": 4800,
+  "input_tokens": 8601600,
+  "supervised_tokens": 614400,
+  "sample_exposures": 307200,
+  "task_exposures": 76800,
+  "actual_unique_per_task": {
+    "anti_fixed_points": 8192,
+    "descents": 8192,
+    "deficiencies": 8191,
+    "left_to_right_maxima": 8192
+  },
+  "task_fraction": 0.25,
+  "schedule_sha256": "cf20c28a6b66cc4a06cbaca39f2139e64528b41be8713d155c8fb826f4b2da96",
+  "model_state_hash": "73731bcf7e54893033810144be4b63190489c3555b073d02d7f95905b80e9479",
+  "seconds": 52.03832350001903,
+  "new_compute": true,
+  "checkpoint": "multi/s17_fixed_points_g2_deficiencies_B/step4800.pt",
+  "checkpoint_sha256": "49191525f6e50cea8e2a483e89a1307461913974a11e9861f554e3c149885cb8",
+  "initial_state_hash": "ca479168a68e9c34ac0a4f53f2f508f52dee061dcbdf15b569d94529ee3f8f1f",
+  "train_sha256": "e8c6e438520452579b95f883ecbf235edb74b5fa7cf8d7caf5f482acfc6d3f52",
+  "dev_sha256": "6e432d1708188024e78de5732ce630d95e0c9971240c849888261c7d5d7e5d8d",
+  "model_initialization_seed": 17,
+  "data_generation_seed": 20261018,
+  "data_pool_id": "s17",
+  "target": "fixed_points",
+  "background": "g2_deficiencies",
+  "condition": "B"
+}

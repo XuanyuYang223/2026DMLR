@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "catalog_rows": 57,
+  "permworld_registered_endpoints": 48,
+  "permworld_scalar_property32": 32,
+  "graph_edges": 132,
+  "direct_definition_edges": 35,
+  "group_count": 6,
+  "source_tasks": [
+    "anti_fixed_points",
+    "deficiencies",
+    "descents",
+    "left_to_right_maxima",
+    "longest_increasing_run",
+    "peaks",
+    "recoils",
+    "successions"
+  ],
+  "historical_transfer_results_read": false,
+  "v4_transfer_results_read": false,
+  "neural_calls": 0,
+  "catalog_sha256": "1df4d2bea5a8070d68696f6d121febe4c6facb6a5946ba065161bd9b2dba8992",
+  "source_sha256": {
+    "experiments/pilot_v4_backgrounds/catalog/build_catalog.py": "177b0e1a4478554a3b3c2afbd2051663806c4d43632faf3a92fad2fcfecfca9c",
+    "experiments/pilot_v4_backgrounds/catalog/data_platform.py": "0b43ff59d496433a98d670f069745210271df376c2a41b84762d1df6d61f971f",
+    "experiments/pilot_v3_multitarget/catalog/build_catalog.py": "98085d3db0b46ffe85096be86f8d08c9ab2c4645e8eb81dcaf94228ca8f1ce5d",
+    "experiments/permworld_pilot/vendor/neurips_permutations/math_ops.py": "3f6832b4798a20cc6b813a0b64ec01cf10360fbf3d6256cb59d1d793d4ad345f",
+    "experiments/permworld_pilot/vendor/neurips_permutations/passage.py": "6c103494507358b8b4d2ee6a5c69a31fc391ae4cd35d7f1126bdac891fe07e09"
+  },
+  "output_sha256": {
+    "TASK_CATALOG.csv": "1df4d2bea5a8070d68696f6d121febe4c6facb6a5946ba065161bd9b2dba8992",
+    "catalog/AGGREGATE_RELATIONS.csv": "2b53b4c58043e67718ad6c6c328781f0c219cd7d69519e7afa056193def7d49a",
+    "catalog/BACKGROUND_AGGREGATE_RELATIONS.csv": "255b8fef17329ea68c2fa95c0c4c8821d151996efdc76d998d17212d8201ee0e",
+    "catalog/BACKGROUND_MATCHING.csv": "9f7af7d70381149e860dcedc13243728106a6d3d1cd624a507ba8ddd4f8e756a",
+    "catalog/BACKGROUND_RELATION_GRAPH.csv": "2ee0739cda9faa902c10b29a9d88cc0e57f822b137d2566c18ca6f5c639392b2",
+    "catalog/DIRECT_RELATION_DEFINITIONS.csv": "04740c5e7adfbb2409f5053979afa7ebcd718791805acad0b320f453f659d996",
+    "catalog/RELATION_AUDIT.csv": "dcd3004d712092b649d761c9575780e0a55fc58c8e8da0deac898bc56b62be35",
+    "catalog/RELATION_GRAPH.csv": "959440e000a9b382cc7d14792f61f4cb7c8f99461cbfdcdedf2e498dfdae8da4",
+    "catalog/REPLACEMENT_RELATION_COUNTEREXAMPLES.csv": "b64e4a6f57d9bd241ea215424cb1092344fa2980a374d4b60ced3e9b7dab3460",
+    "catalog/SOURCE_ANSWER_DISTRIBUTIONS.csv": "5958ae4cc3e73cc2cc6304dd2d8e0ec03e17702f9ee00665e419c4402b6fb00d",
+    "catalog/SOURCE_REFERENCE_CURVES.csv": "fb18ecad03bfbe55648d0e4c15e906cc0a8883b58f83b69080376395bdcdf1aa",
+    "catalog/BACKGROUND_DESIGN.json": "b8448bcd03c432ccee5e61cddbbda928c957dc43e8045f5e1b02971524178a19",
+    "catalog/RELATION_AUDIT.json": "68a0415f3be34c054bb8fc952526a4a59ef158fed71d92caa6815c8e0bd128ae",
+    "catalog/SOURCE_REFERENCE_AUDIT.json": "50885249e51c29fee8d851ad94c95a7eae0c29323b6e7709e5c46b45e6a2d11a"
+  },
+  "seconds": 6.866319900029339,
+  "proof_caveat": "Declared identities are definition-derived; finite audits check implementation. D8 closure is not all mathematics and does not imply transferable representations."
+}

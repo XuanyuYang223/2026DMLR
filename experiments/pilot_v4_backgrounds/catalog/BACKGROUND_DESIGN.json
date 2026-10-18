@@ -1,0 +1,187 @@
+{
+  "status": "mathematics_and_source_reference_reviewed",
+  "targets": [
+    "fixed_points",
+    "longest_decreasing_run"
+  ],
+  "groups": [
+    {
+      "target": "fixed_points",
+      "background": "g0_v3",
+      "related": "anti_fixed_points",
+      "replacement": "successions",
+      "sources": {
+        "B": [
+          "anti_fixed_points",
+          "descents",
+          "peaks",
+          "left_to_right_maxima"
+        ],
+        "C": [
+          "successions",
+          "descents",
+          "peaks",
+          "left_to_right_maxima"
+        ]
+      },
+      "candidate_slot": 0,
+      "changed_slot": null,
+      "old_background_task": null,
+      "new_background_task": null,
+      "selection_basis": "predeclared systematic one-common-task change; exact mathematics and existing source-only single-task train/dev curves",
+      "difficulty_or_answer_distribution_matched": false,
+      "transformed_training_pairs": false
+    },
+    {
+      "target": "fixed_points",
+      "background": "g1_recoils",
+      "related": "anti_fixed_points",
+      "replacement": "successions",
+      "sources": {
+        "B": [
+          "anti_fixed_points",
+          "recoils",
+          "peaks",
+          "left_to_right_maxima"
+        ],
+        "C": [
+          "successions",
+          "recoils",
+          "peaks",
+          "left_to_right_maxima"
+        ]
+      },
+      "candidate_slot": 0,
+      "changed_slot": 1,
+      "old_background_task": "descents",
+      "new_background_task": "recoils",
+      "selection_basis": "predeclared systematic one-common-task change; exact mathematics and existing source-only single-task train/dev curves",
+      "difficulty_or_answer_distribution_matched": false,
+      "transformed_training_pairs": false
+    },
+    {
+      "target": "fixed_points",
+      "background": "g2_deficiencies",
+      "related": "anti_fixed_points",
+      "replacement": "successions",
+      "sources": {
+        "B": [
+          "anti_fixed_points",
+          "descents",
+          "deficiencies",
+          "left_to_right_maxima"
+        ],
+        "C": [
+          "successions",
+          "descents",
+          "deficiencies",
+          "left_to_right_maxima"
+        ]
+      },
+      "candidate_slot": 0,
+      "changed_slot": 2,
+      "old_background_task": "peaks",
+      "new_background_task": "deficiencies",
+      "selection_basis": "predeclared systematic one-common-task change; exact mathematics and existing source-only single-task train/dev curves",
+      "difficulty_or_answer_distribution_matched": false,
+      "transformed_training_pairs": false
+    },
+    {
+      "target": "longest_decreasing_run",
+      "background": "g0_v3",
+      "related": "longest_increasing_run",
+      "replacement": "left_to_right_maxima",
+      "sources": {
+        "B": [
+          "longest_increasing_run",
+          "descents",
+          "peaks",
+          "successions"
+        ],
+        "C": [
+          "left_to_right_maxima",
+          "descents",
+          "peaks",
+          "successions"
+        ]
+      },
+      "candidate_slot": 0,
+      "changed_slot": null,
+      "old_background_task": null,
+      "new_background_task": null,
+      "selection_basis": "predeclared systematic one-common-task change; exact mathematics and existing source-only single-task train/dev curves",
+      "difficulty_or_answer_distribution_matched": false,
+      "transformed_training_pairs": false
+    },
+    {
+      "target": "longest_decreasing_run",
+      "background": "g1_recoils",
+      "related": "longest_increasing_run",
+      "replacement": "left_to_right_maxima",
+      "sources": {
+        "B": [
+          "longest_increasing_run",
+          "recoils",
+          "peaks",
+          "successions"
+        ],
+        "C": [
+          "left_to_right_maxima",
+          "recoils",
+          "peaks",
+          "successions"
+        ]
+      },
+      "candidate_slot": 0,
+      "changed_slot": 1,
+      "old_background_task": "descents",
+      "new_background_task": "recoils",
+      "selection_basis": "predeclared systematic one-common-task change; exact mathematics and existing source-only single-task train/dev curves",
+      "difficulty_or_answer_distribution_matched": false,
+      "transformed_training_pairs": false
+    },
+    {
+      "target": "longest_decreasing_run",
+      "background": "g2_deficiencies",
+      "related": "longest_increasing_run",
+      "replacement": "left_to_right_maxima",
+      "sources": {
+        "B": [
+          "longest_increasing_run",
+          "descents",
+          "deficiencies",
+          "successions"
+        ],
+        "C": [
+          "left_to_right_maxima",
+          "descents",
+          "deficiencies",
+          "successions"
+        ]
+      },
+      "candidate_slot": 0,
+      "changed_slot": 2,
+      "old_background_task": "peaks",
+      "new_background_task": "deficiencies",
+      "selection_basis": "predeclared systematic one-common-task change; exact mathematics and existing source-only single-task train/dev curves",
+      "difficulty_or_answer_distribution_matched": false,
+      "transformed_training_pairs": false
+    }
+  ],
+  "rationale": {
+    "g0_v3": "Historical anchor with exact original ordered source slots.",
+    "g1_recoils": "Replace descents by its inverse counterpart; preserve population Eulerian marginal, change one-line computational structure and observed learning trajectory. Descents is removed, so this does not add a co-present descents/recoils pair.",
+    "g2_deficiencies": "Replace local three-position peak count by positional inequality count; comparable late single-task mastery, different early dynamics, output range and distribution."
+  },
+  "global_target_exclusion": true,
+  "slot0_candidate_fixed": true,
+  "only_one_background_slot_changed": true,
+  "claims_not_made": [
+    "difficulty matched",
+    "answer distributions matched for g2",
+    "all other mathematical relations equal",
+    "mathematical unrelatedness of C",
+    "transformed input pairs used in pretraining"
+  ],
+  "no_v4_transfer_outcomes_used": true
+}

@@ -1,0 +1,143 @@
+{
+  "unix": 1792355404.9512236,
+  "pools": [
+    {
+      "seed": 17,
+      "role": "source_train",
+      "length": 10,
+      "count": 8192,
+      "sha256": "e8c6e438520452579b95f883ecbf235edb74b5fa7cf8d7caf5f482acfc6d3f52",
+      "input_sha256": "4142fe5f56787bd559178e424940f34cdcfed8ed561e0e691f1008551270fedb",
+      "provenance": "reused v1 inputs; all32 labels independently regenerated",
+      "data_generation_seed": 20261018,
+      "source_file": "../../pilot_v3_multitarget/artifacts/data/s17_source_train.npz"
+    },
+    {
+      "seed": 17,
+      "role": "source_dev",
+      "length": 10,
+      "count": 1024,
+      "sha256": "6e432d1708188024e78de5732ce630d95e0c9971240c849888261c7d5d7e5d8d",
+      "input_sha256": "efb80c9dfdbacbf13af1b4f422a4315a6ae73fa7de9327058a8058da56c1c9c5",
+      "provenance": "reused v1 inputs; all32 labels independently regenerated",
+      "data_generation_seed": 20261018,
+      "source_file": "../../pilot_v3_multitarget/artifacts/data/s17_source_dev.npz"
+    },
+    {
+      "seed": 17,
+      "role": "target_train",
+      "length": 10,
+      "count": 256,
+      "sha256": "4c081b2666692a4c3baf456ec57d138189937e2e060106c938ecf9e1c64d94e8",
+      "input_sha256": "7b29579fd333652b5f3d7032ab518b68cea1d0efb8c1d8b04b77ca544d694b22",
+      "provenance": "reused v1 inputs; all32 labels independently regenerated",
+      "data_generation_seed": 20261018,
+      "source_file": "../../pilot_v3_multitarget/artifacts/data/s17_target_train.npz"
+    },
+    {
+      "seed": 17,
+      "role": "target_dev",
+      "length": 10,
+      "count": 1024,
+      "sha256": "e7a458556e81a99b2405074a33ed90758a407f43da79af5dbe7fbbbb2a40bfee",
+      "input_sha256": "eb5bdb9e379531563be10931e19b9e62330e85baeb13013a9fbbf4e06cfb34e9",
+      "provenance": "reused v1 inputs; all32 labels independently regenerated",
+      "data_generation_seed": 20261018,
+      "source_file": "../../pilot_v3_multitarget/artifacts/data/s17_target_dev.npz"
+    },
+    {
+      "seed": 42,
+      "role": "source_train",
+      "length": 10,
+      "count": 8192,
+      "sha256": "f9c9f839f04e8ab0c45b24650ec0add72145f6dd5a1cc55fc8973f9276e28da3",
+      "input_sha256": "8f008b8d9c96f97344973fd25389523d1cccfece332bd1534a342507f5288b68",
+      "provenance": "reused v1 inputs; all32 labels independently regenerated",
+      "data_generation_seed": 20261018,
+      "source_file": "../../pilot_v3_multitarget/artifacts/data/s42_source_train.npz"
+    },
+    {
+      "seed": 42,
+      "role": "source_dev",
+      "length": 10,
+      "count": 1024,
+      "sha256": "2f1dc78524681a9a7510ae0afcac4657037d75ff5d0e7b7937bfe8622ba77265",
+      "input_sha256": "cb33db223fe1524c69f10560966c86d05a69bf6009a5e1985c08562551404582",
+      "provenance": "reused v1 inputs; all32 labels independently regenerated",
+      "data_generation_seed": 20261018,
+      "source_file": "../../pilot_v3_multitarget/artifacts/data/s42_source_dev.npz"
+    },
+    {
+      "seed": 42,
+      "role": "target_train",
+      "length": 10,
+      "count": 256,
+      "sha256": "048485eb85fdb2489a70fc97d32295d576836e1d8a6cac6999d68841ee03badf",
+      "input_sha256": "4a790cfeb7f4895a7922dc100eec08aa0ec6bed3954bab384d3328b4898cd197",
+      "provenance": "reused v1 inputs; all32 labels independently regenerated",
+      "data_generation_seed": 20261018,
+      "source_file": "../../pilot_v3_multitarget/artifacts/data/s42_target_train.npz"
+    },
+    {
+      "seed": 42,
+      "role": "target_dev",
+      "length": 10,
+      "count": 1024,
+      "sha256": "8c0cd0c6efa33871c646e2a7d9370d729f17a2c4f105cd9124cba84208f6628e",
+      "input_sha256": "b9101346ada4091d026fb5cba63facce58728b7e1a84eeb1914a45b4708615f5",
+      "provenance": "reused v1 inputs; all32 labels independently regenerated",
+      "data_generation_seed": 20261018,
+      "source_file": "../../pilot_v3_multitarget/artifacts/data/s42_target_dev.npz"
+    },
+    {
+      "seed": 73,
+      "role": "source_train",
+      "length": 10,
+      "count": 8192,
+      "sha256": "c5a155c65844f772549df14538df0de75b4bd776eaa91fcae67f6cdab080bf1f",
+      "input_sha256": "bcd6f4de044edeac63a8940cf99436e85c21dd211f36cba671d6efc0295d23fb",
+      "provenance": "new; excludes all v1/v2 full orbits",
+      "data_generation_seed": 2026101803,
+      "source_file": "../../pilot_v3_multitarget/artifacts/data/s73_source_train.npz"
+    },
+    {
+      "seed": 73,
+      "role": "source_dev",
+      "length": 10,
+      "count": 1024,
+      "sha256": "d6cac6650571d893d0981d782717b3b4e7962fcca1b3f8fa3afd8ca78c75b654",
+      "input_sha256": "597b748cb837ed6fdb62876736850b88abcf8c203253c6437d6331ea5628f183",
+      "provenance": "new; excludes all v1/v2 full orbits",
+      "data_generation_seed": 2026101803,
+      "source_file": "../../pilot_v3_multitarget/artifacts/data/s73_source_dev.npz"
+    },
+    {
+      "seed": 73,
+      "role": "target_train",
+      "length": 10,
+      "count": 256,
+      "sha256": "5f06999f3cb46757aa027e2816b30a1a408fb8f8198ff1523f6071851fa1e6b5",
+      "input_sha256": "b72d767469b6988c6d7252f22f8f58e960dd1754898ff622dfea27b36e504e20",
+      "provenance": "new; excludes all v1/v2 full orbits",
+      "data_generation_seed": 2026101803,
+      "source_file": "../../pilot_v3_multitarget/artifacts/data/s73_target_train.npz"
+    },
+    {
+      "seed": 73,
+      "role": "target_dev",
+      "length": 10,
+      "count": 1024,
+      "sha256": "ac270296efe15d2fdff0916ecd8bfdfe8983fda1598230090871d348cbebfedc",
+      "input_sha256": "2a1f95b2b87caf031f12f8b3dcb0005d54df1d210bb53e19d5e7d9cc404874b3",
+      "provenance": "new; excludes all v1/v2 full orbits",
+      "data_generation_seed": 2026101803,
+      "source_file": "../../pilot_v3_multitarget/artifacts/data/s73_target_dev.npz"
+    }
+  ],
+  "initials": {
+    "17": "ef7d1b603d0498724f2e17d2d7ffa31037990a192eb3be9308edfcd262d02542",
+    "42": "633ca52600558e0d776acf43fd0dc31a96dce32c1c761f9a5454d66d0a049381",
+    "73": "093710832cf4888954bb376c8544a78bc8ce950acdcea7684ecad940af4adef9"
+  },
+  "exact_v3_reuse": true
+}

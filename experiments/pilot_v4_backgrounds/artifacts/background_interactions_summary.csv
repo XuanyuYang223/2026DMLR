@@ -1,0 +1,7 @@
+target,interaction,earlier_background,later_background,n_seeds,interaction_mean,interaction_sample_sd,interaction_min,interaction_max,negative_seeds,zero_seeds,positive_seeds,BC_sign_reversal_seeds
+fixed_points,g1_recoils-g0_v3,g0_v3,g1_recoils,3,0.024088541666666668,0.07677255477597074,-0.0576171875,0.0947265625,1,0,2,2
+fixed_points,g2_deficiencies-g0_v3,g0_v3,g2_deficiencies,3,0.043619791666666664,0.06056721663504392,0.00341796875,0.11328125,0,0,3,1
+fixed_points,g2_deficiencies-g1_recoils,g1_recoils,g2_deficiencies,3,0.01953125,0.051764721679175105,-0.03173828125,0.07177734375,1,0,2,1
+longest_decreasing_run,g1_recoils-g0_v3,g0_v3,g1_recoils,3,-0.11995442708333333,0.12169604081855522,-0.20068359375,0.02001953125,2,0,1,2
+longest_decreasing_run,g2_deficiencies-g0_v3,g0_v3,g2_deficiencies,3,-0.056803385416666664,0.06419614172697771,-0.11083984375,0.01416015625,2,0,1,1
+longest_decreasing_run,g2_deficiencies-g1_recoils,g1_recoils,g2_deficiencies,3,0.06315104166666667,0.06655925999547947,-0.005859375,0.126953125,1,0,2,1

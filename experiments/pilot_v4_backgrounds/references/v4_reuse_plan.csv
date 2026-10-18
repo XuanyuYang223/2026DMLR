@@ -1,0 +1,37 @@
+seed,target,background,condition,ordered_tasks_json,exact_v3_source_match,matching_v3_records_json,preferred_checkpoint,adaptation_reusable,adaptation_reuse_candidates
+17,fixed_points,g0_v3,B,"[""anti_fixed_points"", ""descents"", ""peaks"", ""left_to_right_maxima""]",True,"[""experiments/pilot_v3_multitarget/artifacts/multi/s17_fixed_points_B/completed.json""]",experiments/pilot_v2_diagnostics/artifacts/extended/seed17_B_4800.pt,True,3
+17,fixed_points,g0_v3,C,"[""successions"", ""descents"", ""peaks"", ""left_to_right_maxima""]",True,"[""experiments/pilot_v3_multitarget/artifacts/multi/s17_fixed_points_C/completed.json""]",experiments/pilot_v2_diagnostics/artifacts/extended/seed17_C_4800.pt,True,3
+17,fixed_points,g1_recoils,B,"[""anti_fixed_points"", ""recoils"", ""peaks"", ""left_to_right_maxima""]",False,[],,False,0
+17,fixed_points,g1_recoils,C,"[""successions"", ""recoils"", ""peaks"", ""left_to_right_maxima""]",False,[],,False,0
+17,fixed_points,g2_deficiencies,B,"[""anti_fixed_points"", ""descents"", ""deficiencies"", ""left_to_right_maxima""]",False,[],,False,0
+17,fixed_points,g2_deficiencies,C,"[""successions"", ""descents"", ""deficiencies"", ""left_to_right_maxima""]",False,[],,False,0
+17,longest_decreasing_run,g0_v3,B,"[""longest_increasing_run"", ""descents"", ""peaks"", ""successions""]",True,"[""experiments/pilot_v3_multitarget/artifacts/multi/s17_left_to_right_minima_C/completed.json"", ""experiments/pilot_v3_multitarget/artifacts/multi/s17_longest_decreasing_run_B/completed.json""]",experiments/pilot_v3_multitarget/artifacts/multi/s17_longest_decreasing_run_B/step4800.pt,True,3
+17,longest_decreasing_run,g0_v3,C,"[""left_to_right_maxima"", ""descents"", ""peaks"", ""successions""]",True,"[""experiments/pilot_v3_multitarget/artifacts/multi/s17_longest_decreasing_run_C/completed.json""]",experiments/pilot_v3_multitarget/artifacts/multi/s17_longest_decreasing_run_C/step4800.pt,True,3
+17,longest_decreasing_run,g1_recoils,B,"[""longest_increasing_run"", ""recoils"", ""peaks"", ""successions""]",False,[],,False,0
+17,longest_decreasing_run,g1_recoils,C,"[""left_to_right_maxima"", ""recoils"", ""peaks"", ""successions""]",False,[],,False,0
+17,longest_decreasing_run,g2_deficiencies,B,"[""longest_increasing_run"", ""descents"", ""deficiencies"", ""successions""]",False,[],,False,0
+17,longest_decreasing_run,g2_deficiencies,C,"[""left_to_right_maxima"", ""descents"", ""deficiencies"", ""successions""]",False,[],,False,0
+42,fixed_points,g0_v3,B,"[""anti_fixed_points"", ""descents"", ""peaks"", ""left_to_right_maxima""]",True,"[""experiments/pilot_v3_multitarget/artifacts/multi/s42_fixed_points_B/completed.json""]",experiments/pilot_v2_diagnostics/artifacts/extended/seed42_B_4800.pt,True,3
+42,fixed_points,g0_v3,C,"[""successions"", ""descents"", ""peaks"", ""left_to_right_maxima""]",True,"[""experiments/pilot_v3_multitarget/artifacts/multi/s42_fixed_points_C/completed.json""]",experiments/pilot_v2_diagnostics/artifacts/extended/seed42_C_4800.pt,True,3
+42,fixed_points,g1_recoils,B,"[""anti_fixed_points"", ""recoils"", ""peaks"", ""left_to_right_maxima""]",False,[],,False,0
+42,fixed_points,g1_recoils,C,"[""successions"", ""recoils"", ""peaks"", ""left_to_right_maxima""]",False,[],,False,0
+42,fixed_points,g2_deficiencies,B,"[""anti_fixed_points"", ""descents"", ""deficiencies"", ""left_to_right_maxima""]",False,[],,False,0
+42,fixed_points,g2_deficiencies,C,"[""successions"", ""descents"", ""deficiencies"", ""left_to_right_maxima""]",False,[],,False,0
+42,longest_decreasing_run,g0_v3,B,"[""longest_increasing_run"", ""descents"", ""peaks"", ""successions""]",True,"[""experiments/pilot_v3_multitarget/artifacts/multi/s42_left_to_right_minima_C/completed.json"", ""experiments/pilot_v3_multitarget/artifacts/multi/s42_longest_decreasing_run_B/completed.json""]",experiments/pilot_v3_multitarget/artifacts/multi/s42_longest_decreasing_run_B/step4800.pt,True,3
+42,longest_decreasing_run,g0_v3,C,"[""left_to_right_maxima"", ""descents"", ""peaks"", ""successions""]",True,"[""experiments/pilot_v3_multitarget/artifacts/multi/s42_longest_decreasing_run_C/completed.json""]",experiments/pilot_v3_multitarget/artifacts/multi/s42_longest_decreasing_run_C/step4800.pt,True,3
+42,longest_decreasing_run,g1_recoils,B,"[""longest_increasing_run"", ""recoils"", ""peaks"", ""successions""]",False,[],,False,0
+42,longest_decreasing_run,g1_recoils,C,"[""left_to_right_maxima"", ""recoils"", ""peaks"", ""successions""]",False,[],,False,0
+42,longest_decreasing_run,g2_deficiencies,B,"[""longest_increasing_run"", ""descents"", ""deficiencies"", ""successions""]",False,[],,False,0
+42,longest_decreasing_run,g2_deficiencies,C,"[""left_to_right_maxima"", ""descents"", ""deficiencies"", ""successions""]",False,[],,False,0
+73,fixed_points,g0_v3,B,"[""anti_fixed_points"", ""descents"", ""peaks"", ""left_to_right_maxima""]",True,"[""experiments/pilot_v3_multitarget/artifacts/multi/s73_fixed_points_B/completed.json""]",experiments/pilot_v3_multitarget/artifacts/multi/s73_fixed_points_B/step4800.pt,True,3
+73,fixed_points,g0_v3,C,"[""successions"", ""descents"", ""peaks"", ""left_to_right_maxima""]",True,"[""experiments/pilot_v3_multitarget/artifacts/multi/s73_fixed_points_C/completed.json""]",experiments/pilot_v3_multitarget/artifacts/multi/s73_fixed_points_C/step4800.pt,True,3
+73,fixed_points,g1_recoils,B,"[""anti_fixed_points"", ""recoils"", ""peaks"", ""left_to_right_maxima""]",False,[],,False,0
+73,fixed_points,g1_recoils,C,"[""successions"", ""recoils"", ""peaks"", ""left_to_right_maxima""]",False,[],,False,0
+73,fixed_points,g2_deficiencies,B,"[""anti_fixed_points"", ""descents"", ""deficiencies"", ""left_to_right_maxima""]",False,[],,False,0
+73,fixed_points,g2_deficiencies,C,"[""successions"", ""descents"", ""deficiencies"", ""left_to_right_maxima""]",False,[],,False,0
+73,longest_decreasing_run,g0_v3,B,"[""longest_increasing_run"", ""descents"", ""peaks"", ""successions""]",True,"[""experiments/pilot_v3_multitarget/artifacts/multi/s73_left_to_right_minima_C/completed.json"", ""experiments/pilot_v3_multitarget/artifacts/multi/s73_longest_decreasing_run_B/completed.json""]",experiments/pilot_v3_multitarget/artifacts/multi/s73_longest_decreasing_run_B/step4800.pt,True,3
+73,longest_decreasing_run,g0_v3,C,"[""left_to_right_maxima"", ""descents"", ""peaks"", ""successions""]",True,"[""experiments/pilot_v3_multitarget/artifacts/multi/s73_longest_decreasing_run_C/completed.json""]",experiments/pilot_v3_multitarget/artifacts/multi/s73_longest_decreasing_run_C/step4800.pt,True,3
+73,longest_decreasing_run,g1_recoils,B,"[""longest_increasing_run"", ""recoils"", ""peaks"", ""successions""]",False,[],,False,0
+73,longest_decreasing_run,g1_recoils,C,"[""left_to_right_maxima"", ""recoils"", ""peaks"", ""successions""]",False,[],,False,0
+73,longest_decreasing_run,g2_deficiencies,B,"[""longest_increasing_run"", ""descents"", ""deficiencies"", ""successions""]",False,[],,False,0
+73,longest_decreasing_run,g2_deficiencies,C,"[""left_to_right_maxima"", ""descents"", ""deficiencies"", ""successions""]",False,[],,False,0

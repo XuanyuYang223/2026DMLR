@@ -1,0 +1,39 @@
+{
+  "seed": 73,
+  "tasks": [
+    "anti_fixed_points",
+    "descents",
+    "peaks",
+    "left_to_right_maxima"
+  ],
+  "kind": "multi",
+  "updates": 4800,
+  "input_tokens": 8601600,
+  "supervised_tokens": 614400,
+  "sample_exposures": 307200,
+  "task_exposures": 76800,
+  "actual_unique_per_task": {
+    "anti_fixed_points": 8191,
+    "descents": 8192,
+    "peaks": 8192,
+    "left_to_right_maxima": 8191
+  },
+  "task_fraction": 0.25,
+  "schedule_sha256": "7e6dd403fc9e87efd113c8e16ceeeb9278e83f7c1a282f87240f22258c5a04ea",
+  "model_state_hash": "743cf2d4ea8863be966519049e19f6ee27d4c68e9fc41837f6ecc7d26e4e29fa",
+  "seconds": 71.01994400005788,
+  "new_compute": false,
+  "checkpoint": "../../pilot_v3_multitarget/artifacts/multi/s73_fixed_points_B/step4800.pt",
+  "checkpoint_sha256": "5763fe395c74e7e23f86d0e9a7c2539231c1ccd9661cf51d956d7fa02ecbcee3",
+  "initial_state_hash": "4582dc00fddbe0322fe920e5eaead5a9fc1da04f3a4ecaa200556427c863b52c",
+  "train_sha256": "c5a155c65844f772549df14538df0de75b4bd776eaa91fcae67f6cdab080bf1f",
+  "dev_sha256": "d6cac6650571d893d0981d782717b3b4e7962fcca1b3f8fa3afd8ca78c75b654",
+  "model_initialization_seed": 73,
+  "data_generation_seed": 2026101803,
+  "data_pool_id": "s73",
+  "target": "fixed_points",
+  "background": "g0_v3",
+  "condition": "B",
+  "reused_from": "../../pilot_v3_multitarget/artifacts/multi/s73_fixed_points_B",
+  "reuse_reason": "exact ordered task tuple, initial state, input pools, schedule and budget"
+}

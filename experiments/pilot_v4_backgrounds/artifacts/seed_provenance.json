@@ -1,0 +1,30 @@
+{
+  "data_generation": {
+    "17": 20261018,
+    "42": 20261018,
+    "73": 2026101803
+  },
+  "model_initialization": {
+    "17": 17,
+    "42": 42,
+    "73": 73
+  },
+  "source_sampling_and_dropout": {
+    "17": 1017,
+    "42": 1042,
+    "73": 1073
+  },
+  "adapt_sampling_and_dropout": {
+    "17": 2017,
+    "42": 2042,
+    "73": 2073
+  },
+  "source_note": "v1 generated s17/s42 pools sequentially from RNG20261018; v3 generated s73 roles sequentially from RNG2026101803 after excluding all v1/v2 inputs.",
+  "new_test_generation": 2026101805,
+  "new_test_pool_order": [
+    17,
+    42,
+    73
+  ],
+  "seed_interpretation": "A paired seed block jointly indexes data and initialization; their effects are not independently varied."
+}

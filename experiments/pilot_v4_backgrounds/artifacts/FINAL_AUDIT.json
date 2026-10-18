@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "audit_unix": 1792358248.8173633,
+  "audit_seconds": 29.50728350004647,
+  "cpu_only_checkpoint_loads": true,
+  "model_forward_calls": 0,
+  "tests_forwarded_by_this_audit": 0,
+  "historical_files_byte_preserved": 1134,
+  "frozen_code_and_evidence_verified": true,
+  "chronological_freeze_before_new_training_and_test": true,
+  "exact_v3_train_dev_initial_reuse_verified": true,
+  "full_orbit_test_isolation_verified": true,
+  "mathematical_labels_recomputed": 376320,
+  "targets": [
+    "fixed_points",
+    "longest_decreasing_run"
+  ],
+  "backgrounds": [
+    "g0_v3",
+    "g1_recoils",
+    "g2_deficiencies"
+  ],
+  "paired_seed_blocks": [
+    17,
+    42,
+    73
+  ],
+  "source_runs": 36,
+  "source_runs_new": 24,
+  "source_runs_reused": 12,
+  "source_per_slot_input_and_label_streams_verified": 144,
+  "adaptation_candidates": 126,
+  "adaptation_candidates_new": 72,
+  "adaptation_candidates_reused": 54,
+  "shared_A_candidates": 18,
+  "independently_recomputed_selections": 42,
+  "selected_test_rows": 42,
+  "candidate_test_rows": 252,
+  "logical_ABC_display_rows": 54,
+  "shared_A_not_independent_background_observations": true,
+  "compatible_single_task_references": 24,
+  "checkpoints_cpu_loaded": 387,
+  "source_loaded_parameter_and_target_row_reset_hashes_verified": true,
+  "fresh_adaptation_optimizer_records_and_saved_counters_verified": true,
+  "new_pretrain_updates": 115200,
+  "new_adaptation_updates": 57600,
+  "new_pretrain_input_tokens": 206438400,
+  "new_adaptation_input_tokens": 103219200,
+  "new_pretrain_seconds": 1256.3492833000491,
+  "new_adaptation_seconds": 811.1606333999662,
+  "limitations": [
+    "Two targets were selected after v3 outcomes; this is an exploratory conditional comparison.",
+    "Paired block IDs jointly index old data pools and model initialization; their effects are not independently varied.",
+    "A is shared across backgrounds. Display duplication does not add samples, training, selections or independent observations.",
+    "Single-task4800 has four times the per-task exposure of multitask4800; single1200 matches exposure but not optimizer/LR history.",
+    "This CPU audit checks saved evidence and weights; it does not independently rerun neural inference."
+  ]
+}

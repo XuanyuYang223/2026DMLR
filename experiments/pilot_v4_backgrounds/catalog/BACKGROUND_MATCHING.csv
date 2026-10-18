@@ -1,0 +1,7 @@
+seed,background,removed,added,length,answer_tv,removed_dev_1200,added_dev_1200,removed_dev_4800,added_dev_4800,mean_absolute_curve_gap,basis
+17,g1_recoils,descents,recoils,10,0.0142822265625,0.9990234375,0.6279296875,1.0,0.998046875,0.165625,"diagnostic description only; backgrounds predetermined, no score-based selection"
+17,g2_deficiencies,peaks,deficiencies,10,0.7601318359375,0.9482421875,0.9990234375,1.0,0.9990234375,0.0392578125,"diagnostic description only; backgrounds predetermined, no score-based selection"
+42,g1_recoils,descents,recoils,10,0.0098876953125,0.9970703125,0.740234375,0.9990234375,1.0,0.1248046875,"diagnostic description only; backgrounds predetermined, no score-based selection"
+42,g2_deficiencies,peaks,deficiencies,10,0.7613525390625,0.9609375,0.9921875,0.9970703125,1.0,0.046875,"diagnostic description only; backgrounds predetermined, no score-based selection"
+73,g1_recoils,descents,recoils,10,0.012939453125,0.998046875,0.9306640625,1.0,0.9990234375,0.087890625,"diagnostic description only; backgrounds predetermined, no score-based selection"
+73,g2_deficiencies,peaks,deficiencies,10,0.7652587890625,0.9677734375,0.9912109375,1.0,0.9970703125,0.0474609375,"diagnostic description only; backgrounds predetermined, no score-based selection"
