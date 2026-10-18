@@ -1,0 +1,23 @@
+{
+  "inventory_rows": 107,
+  "reference_local_checkpoints": [],
+  "upstream_vendor_identity": {
+    "math_ops.py": {
+      "bytes_identical": true,
+      "sha256": "3f6832b4798a20cc6b813a0b64ec01cf10360fbf3d6256cb59d1d793d4ad345f"
+    },
+    "models.py": {
+      "bytes_identical": true,
+      "sha256": "ed3ac73b6edaa6ed5c0c2528ba2c37fb903b55259840dfb17f8851562c2599a0"
+    },
+    "passage.py": {
+      "bytes_identical": true,
+      "sha256": "6c103494507358b8b4d2ee6a5c69a31fc391ae4cd35d7f1126bdac891fe07e09"
+    }
+  },
+  "test_metrics_read": false,
+  "matching_budget_source_single_task_checkpoints_available": false,
+  "note": "Only validation/development fields are extracted. Existing source bytes and results are not modified.",
+  "reusable_local_checkpoint_rows": 42,
+  "all_reuse_checkpoints_loaded_on_cpu": true
+}

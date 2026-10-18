@@ -15,3 +15,11 @@
 - [第二轮配置、隔离规则与复现命令](experiments/pilot_v2_diagnostics/README.md)
 
 第二轮分支：`pilot/permworld-v2-diagnostics`。原 `pilot_v1` 全部结果与checkpoint保留，并以文件哈希核验。
+
+第三轮固定256样本、四目标、三个配对种子实验位于 `experiments/pilot_v3_multitarget/`：
+
+- [第三轮任务目录](experiments/pilot_v3_multitarget/TASK_CATALOG.csv)
+- [第三轮中文报告](experiments/pilot_v3_multitarget/PILOT_V3_REPORT.md)
+- [第三轮配置与复现命令](experiments/pilot_v3_multitarget/README.md)
+
+第三轮分支：`pilot/permworld-v3-multitarget`。前两轮文件与结果逐字节保留；跨目标结果只解释固定256样本下的迁移，不构成样本效率曲线或scaling law。

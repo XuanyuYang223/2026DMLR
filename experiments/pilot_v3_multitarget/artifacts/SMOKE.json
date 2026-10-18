@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "resume_bitwise_equal": true,
+  "evaluation_preserves_rng": true,
+  "causal_no_answer_leak": true,
+  "fresh_optimizer": true
+}

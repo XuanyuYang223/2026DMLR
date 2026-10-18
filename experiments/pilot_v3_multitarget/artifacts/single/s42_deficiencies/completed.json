@@ -1,0 +1,25 @@
+{
+  "seed": 42,
+  "tasks": [
+    "deficiencies"
+  ],
+  "kind": "single",
+  "updates": 4800,
+  "input_tokens": 8601600,
+  "supervised_tokens": 614400,
+  "sample_exposures": 307200,
+  "task_exposures": 307200,
+  "actual_unique_per_task": {
+    "deficiencies": 8192
+  },
+  "task_fraction": 1.0,
+  "schedule_sha256": "e857e543efc8d6f43f4d4e0114945d962b3aa5660f8e240e0337945f07f63bfb",
+  "model_state_hash": "9cfa42c391717de8e8ef2998f0b3dce15421dd1a4d3f861c4a0b68ec1a2f0a55",
+  "seconds": 63.11449420003919,
+  "new_compute": true,
+  "checkpoint": "single/s42_deficiencies/step4800.pt",
+  "checkpoint_sha256": "558173f0d27c245ae489b908aab578c211d0e042a25f0a380009a688d0b824a1",
+  "initial_state_hash": "a54723b0ef71de032c782f77a0f386feec588449a6d050fab3b781c60c5ef80c",
+  "train_sha256": "f9c9f839f04e8ab0c45b24650ec0add72145f6dd5a1cc55fc8973f9276e28da3",
+  "dev_sha256": "2f1dc78524681a9a7510ae0afcac4657037d75ff5d0e7b7937bfe8622ba77265"
+}

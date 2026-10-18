@@ -1,0 +1,25 @@
+{
+  "seed": 42,
+  "tasks": [
+    "descents"
+  ],
+  "kind": "single",
+  "updates": 4800,
+  "input_tokens": 8601600,
+  "supervised_tokens": 614400,
+  "sample_exposures": 307200,
+  "task_exposures": 307200,
+  "actual_unique_per_task": {
+    "descents": 8192
+  },
+  "task_fraction": 1.0,
+  "schedule_sha256": "e857e543efc8d6f43f4d4e0114945d962b3aa5660f8e240e0337945f07f63bfb",
+  "model_state_hash": "f5f23aaa1d2000a3a4ab9c3e394fb7a6d9c507495ec3ee1987d515b8b3e6972d",
+  "seconds": 65.83115460001864,
+  "new_compute": true,
+  "checkpoint": "single/s42_descents/step4800.pt",
+  "checkpoint_sha256": "9064880f86c1956a77f5c832f489d355700aba805ecf4a6e3a848e93f769f90e",
+  "initial_state_hash": "a54723b0ef71de032c782f77a0f386feec588449a6d050fab3b781c60c5ef80c",
+  "train_sha256": "f9c9f839f04e8ab0c45b24650ec0add72145f6dd5a1cc55fc8973f9276e28da3",
+  "dev_sha256": "2f1dc78524681a9a7510ae0afcac4657037d75ff5d0e7b7937bfe8622ba77265"
+}

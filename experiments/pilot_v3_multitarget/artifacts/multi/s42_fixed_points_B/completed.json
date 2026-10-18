@@ -1,0 +1,32 @@
+{
+  "seed": 42,
+  "tasks": [
+    "anti_fixed_points",
+    "descents",
+    "peaks",
+    "left_to_right_maxima"
+  ],
+  "kind": "multi",
+  "updates": 4800,
+  "input_tokens": 8601600,
+  "supervised_tokens": 614400,
+  "sample_exposures": 307200,
+  "task_exposures": 76800,
+  "task_fraction": 0.25,
+  "actual_unique_per_task": {
+    "anti_fixed_points": 8190,
+    "descents": 8191,
+    "peaks": 8192,
+    "left_to_right_maxima": 8191
+  },
+  "schedule_sha256": "c7f82ffb4f3a91b42c48e911acdaf0266b5206b666c4a30942cceb9482e4d53a",
+  "model_state_hash": "10c2eb37e0a896149429a6879036837dbe02f29e5b6caec2cad417e63f9e416c",
+  "seconds": 112.64503590000095,
+  "new_compute": false,
+  "checkpoint": "../../pilot_v2_diagnostics/artifacts/extended/seed42_B_4800.pt",
+  "checkpoint_sha256": "5e3493798360adcac7be9d73b689a4ad8dd021b7d310ac2e359b23ad2890fe21",
+  "initial_state_hash": "a54723b0ef71de032c782f77a0f386feec588449a6d050fab3b781c60c5ef80c",
+  "train_sha256": "f9c9f839f04e8ab0c45b24650ec0add72145f6dd5a1cc55fc8973f9276e28da3",
+  "dev_sha256": "2f1dc78524681a9a7510ae0afcac4657037d75ff5d0e7b7937bfe8622ba77265",
+  "missing_historical_curves": "before2400 full source metrics unavailable; original checkpoints retained"
+}

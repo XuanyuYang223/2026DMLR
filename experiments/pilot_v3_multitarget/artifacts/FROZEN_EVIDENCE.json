@@ -1,0 +1,1480 @@
+{
+  "version": "pilot_v3_design_evidence/v1",
+  "status": "passed",
+  "design_unix": 1792346935.4322908,
+  "protocol_unix": 1792347749.0164964,
+  "frozen_protocol_sha256": "69eb53c0f16dc9ae76aba018394f8d0db448f3b3611c3e3a78e7b007cea591e2",
+  "files": {
+    "../TASK_CATALOG.csv": {
+      "sha256": "cbf3550091e40145540361b4e30eb41c2265844fe416539ef8225225a52152fc",
+      "bytes": 49323
+    },
+    "../catalog/CATALOG_AUDIT.json": {
+      "sha256": "f9b083f6894da2c6139a1fd9d9d7bf9c53de55ba02bb12f73429bd601dcfc541",
+      "bytes": 2910
+    },
+    "../catalog/RELATION_AUDIT.csv": {
+      "sha256": "dcd3004d712092b649d761c9575780e0a55fc58c8e8da0deac898bc56b62be35",
+      "bytes": 5108
+    },
+    "../catalog/REPLACEMENT_RELATION_COUNTEREXAMPLES.csv": {
+      "sha256": "b64e4a6f57d9bd241ea215424cb1092344fa2980a374d4b60ced3e9b7dab3460",
+      "bytes": 13074
+    },
+    "../catalog/build_catalog.py": {
+      "sha256": "98085d3db0b46ffe85096be86f8d08c9ab2c4645e8eb81dcaf94228ca8f1ce5d",
+      "bytes": 21763
+    },
+    "../freeze_evidence.py": {
+      "sha256": "0b9d0cd8f855c0eabef3debd21c89bc9377c01c0959793aa25b682436fcfd6f1",
+      "bytes": 14262
+    },
+    "DATA_READY.json": {
+      "sha256": "3e1224826aed904b6f0d40e44e982d46389f42f6e144c3acaf2c247258fc7e45",
+      "bytes": 4671
+    },
+    "DESIGN_FROZEN.json": {
+      "sha256": "db39647803b4fc4499bd5dfaec5f623e35c1a1265f89d0ba5daccd1308cdb832",
+      "bytes": 5852
+    },
+    "DESIGN_REFERENCES_COMPLETE.json": {
+      "sha256": "6ac203785b6bc71d5b3f19e300bf9390dc8c26df734292c60be60c1c3c6fee6b",
+      "bytes": 379
+    },
+    "FROZEN_PROTOCOL.json": {
+      "sha256": "69eb53c0f16dc9ae76aba018394f8d0db448f3b3611c3e3a78e7b007cea591e2",
+      "bytes": 8710
+    },
+    "data/s17_source_dev.npz": {
+      "sha256": "6e432d1708188024e78de5732ce630d95e0c9971240c849888261c7d5d7e5d8d",
+      "bytes": 19163
+    },
+    "data/s17_source_train.npz": {
+      "sha256": "e8c6e438520452579b95f883ecbf235edb74b5fa7cf8d7caf5f482acfc6d3f52",
+      "bytes": 142409
+    },
+    "replacement_matching.csv": {
+      "sha256": "2c3d0707eac2d9348ceb090c7a15f1c54461ba09fa082078438e61e69556c679",
+      "bytes": 808
+    },
+    "single/s17_anti_fixed_points/completed.json": {
+      "sha256": "ac92bae634b4ccaef00104dd4ec5b9df807f56f48e76fe58862e1d2cf70268a6",
+      "bytes": 975
+    },
+    "single/s17_anti_fixed_points/curve.csv": {
+      "sha256": "7789ce3f104cf5b80c2e0e5febee78fd7e1c70757582a614176ddeadf798a803",
+      "bytes": 2093
+    },
+    "single/s17_anti_fixed_points/step1200.pt": {
+      "sha256": "be935554dbad3657f09c76ae6897de717975704190e980ccf4262b306ea6b34d",
+      "bytes": 38959603
+    },
+    "single/s17_anti_fixed_points/step2400.pt": {
+      "sha256": "65607fd698b3a459a2d408a6a884eee47a0b9dcb370fbd95be0d65aa53eb96c7",
+      "bytes": 38959603
+    },
+    "single/s17_anti_fixed_points/step4800.pt": {
+      "sha256": "5eed1bf553b81d32bfe0f9b1b750726e940ae4d438d8dab5b629536014197b3a",
+      "bytes": 38959603
+    },
+    "single/s17_cycle_count/completed.json": {
+      "sha256": "c30ae41fc0acbcccdb400dc04e31f56b83771fa5a9ed3a4252e0c72feec778a3",
+      "bytes": 957
+    },
+    "single/s17_cycle_count/curve.csv": {
+      "sha256": "bbe790cd785800176e02847c98ed566377e3ff1a2264ad37c2a80dd4faf7dc63",
+      "bytes": 1900
+    },
+    "single/s17_cycle_count/step1200.pt": {
+      "sha256": "5eb724d0f0d15ba455855893497ba3d449ab367c10bc8392ad1616d3eb1bdbdc",
+      "bytes": 38959603
+    },
+    "single/s17_cycle_count/step2400.pt": {
+      "sha256": "02d2818c9278a7196b7aa5ec3d71260620eb469eab6bad104f3de379efdae744",
+      "bytes": 38959603
+    },
+    "single/s17_cycle_count/step4800.pt": {
+      "sha256": "b5bdde2b9f60bde2a06088b13fa0cb14d25cfc019391aa8f7af8caaff6d4125d",
+      "bytes": 38959603
+    },
+    "single/s17_deficiencies/completed.json": {
+      "sha256": "8e9107d50227e65a5940da1bb8517c28295e11631cec4f24d2ad9c59117bd9ae",
+      "bytes": 960
+    },
+    "single/s17_deficiencies/curve.csv": {
+      "sha256": "4cf0215ee6d4cb6303506bd5bbae48f7f2a834ed84723b4dd9fe99a0d5f3b84b",
+      "bytes": 1958
+    },
+    "single/s17_deficiencies/step1200.pt": {
+      "sha256": "3cbe0756a8990cf3c6aa3ee916de02293ba8ac1594b6a358667ed6cac50ff964",
+      "bytes": 38959603
+    },
+    "single/s17_deficiencies/step2400.pt": {
+      "sha256": "fda2c3f7777e9a871091c9d5c42035956ccb5fa00a09b8b0f7e26c18dcc4074c",
+      "bytes": 38959603
+    },
+    "single/s17_deficiencies/step4800.pt": {
+      "sha256": "7fe3a8ff4ddfe69a8a5ba6685fdbaffd58a3306e43a11857200ce22a8b753c5c",
+      "bytes": 38959603
+    },
+    "single/s17_descents/completed.json": {
+      "sha256": "87059c9bb890e04b701fac8907a148a477dde5ea00f862a05c7b282caf6d26c3",
+      "bytes": 948
+    },
+    "single/s17_descents/curve.csv": {
+      "sha256": "e6d38b27093bfda6d9ea0b839576c80da55e9312b850273e3fc3296b49aa4ce4",
+      "bytes": 1826
+    },
+    "single/s17_descents/step1200.pt": {
+      "sha256": "e8ac76d0e25273a203013dd4a621e46996dc52787f716f4520827370a48ae196",
+      "bytes": 38959603
+    },
+    "single/s17_descents/step2400.pt": {
+      "sha256": "43073858e3dedf8b6e2a9100e58a135ffaca21a8d495617e935c39543c1fc399",
+      "bytes": 38959603
+    },
+    "single/s17_descents/step4800.pt": {
+      "sha256": "4d27028f9d4963596c6e66c1cefe1cfcfc32e8620effcc96f2911971702780f3",
+      "bytes": 38959603
+    },
+    "single/s17_exceedances/completed.json": {
+      "sha256": "483f715b3e918dd95fa90a5b08a5e0a0f88e6e66ffafc1c005b21959534139a1",
+      "bytes": 958
+    },
+    "single/s17_exceedances/curve.csv": {
+      "sha256": "67cbd503ba77eb3ee735b14a429545f680ba3cdb27088e7728902c1ca6b785b0",
+      "bytes": 1884
+    },
+    "single/s17_exceedances/step1200.pt": {
+      "sha256": "722bc899beee4740c5527242d20e4cc5d057c1ffad0326dff17035d86cc05c8e",
+      "bytes": 38959603
+    },
+    "single/s17_exceedances/step2400.pt": {
+      "sha256": "8be96a59cc4bbcd515d4500b70f0d460fb2f305161abbc5678daba217a7d9d1f",
+      "bytes": 38959603
+    },
+    "single/s17_exceedances/step4800.pt": {
+      "sha256": "d66276fb325d605ebf1642e3f6f85314ac6f23924430704b94295f0629ea7234",
+      "bytes": 38959603
+    },
+    "single/s17_fixed_points/completed.json": {
+      "sha256": "e8713dc7e22188c540e809983e22de5891b36199250add28384932e4aa6f06dd",
+      "bytes": 960
+    },
+    "single/s17_fixed_points/curve.csv": {
+      "sha256": "8a1681488159f9a217bf21c82130b246f26a40243c8ba5dd248dd1002fc378c0",
+      "bytes": 1971
+    },
+    "single/s17_fixed_points/step1200.pt": {
+      "sha256": "0db5aaa93d0275ea34f0324aa3566f24d5515eaec701d63cb85819b00aa4463c",
+      "bytes": 38959603
+    },
+    "single/s17_fixed_points/step2400.pt": {
+      "sha256": "f36248cc76a59db33360ada810c10f02c329aebcd8179000a6d04cc69ed7adb4",
+      "bytes": 38959603
+    },
+    "single/s17_fixed_points/step4800.pt": {
+      "sha256": "bbe35fd3ec518c8e06240dc38d351784868c19c891badf285cd92fcb50a2a64e",
+      "bytes": 38959603
+    },
+    "single/s17_left_to_right_maxima/completed.json": {
+      "sha256": "688e18e287f86768e1e987a481aa528039bbd0f8286b6c43987be21bcef6ab7b",
+      "bytes": 984
+    },
+    "single/s17_left_to_right_maxima/curve.csv": {
+      "sha256": "97f45ca0f958a13d0365f8ab2cc7170cecedf939581823ecf4b9557d2bf22458",
+      "bytes": 2152
+    },
+    "single/s17_left_to_right_maxima/step1200.pt": {
+      "sha256": "77c255bbd506b1f5e780c30fb6e3c19cca74f48aa1ffd30bba00c66e4eaad47e",
+      "bytes": 38959603
+    },
+    "single/s17_left_to_right_maxima/step2400.pt": {
+      "sha256": "2300837f215f62048d247f474f0800b611fe6438aab13369caedd927806947ae",
+      "bytes": 38959603
+    },
+    "single/s17_left_to_right_maxima/step4800.pt": {
+      "sha256": "858da0b1c2e115bf06d66e5599f6445aef8514b9ab3ac61b3260c712db186e1d",
+      "bytes": 38959603
+    },
+    "single/s17_left_to_right_minima/completed.json": {
+      "sha256": "ad966fc70f402f6a16a5f605d213cb598bfc90cb70f850ccef3a31c370eceaac",
+      "bytes": 984
+    },
+    "single/s17_left_to_right_minima/curve.csv": {
+      "sha256": "339f655473d053d0cf1b05a938b10005cc955f8aee63e923aa43272fbfdfb77b",
+      "bytes": 2157
+    },
+    "single/s17_left_to_right_minima/step1200.pt": {
+      "sha256": "1263483d14935cd7730c8ce4e3a25ef52055e38d28ffccf735a6bb2bd1c84f37",
+      "bytes": 38959603
+    },
+    "single/s17_left_to_right_minima/step2400.pt": {
+      "sha256": "8ebddbbf6225b49034189b2fb4f51a3820cc85957484c6380ffea3f25aab75af",
+      "bytes": 38959603
+    },
+    "single/s17_left_to_right_minima/step4800.pt": {
+      "sha256": "ddd535479e0eac0342ebe472e35aabc46e8c8403f6f5597219a219176669ae43",
+      "bytes": 38959603
+    },
+    "single/s17_longest_decreasing_run/completed.json": {
+      "sha256": "c57a01890f83cc372d2363f8174a0fecf590a8b32dda3cd5bc8dfa4b0d162209",
+      "bytes": 988
+    },
+    "single/s17_longest_decreasing_run/curve.csv": {
+      "sha256": "a26f93b33f5fc39f7bbc48d90ed8a785979ef27d1bfab0e2a9604be58bb3ee69",
+      "bytes": 2199
+    },
+    "single/s17_longest_decreasing_run/step1200.pt": {
+      "sha256": "7ced8d026044ff66378fb6ed902f7f2b55797e342415175b35b6294948aa5524",
+      "bytes": 38959603
+    },
+    "single/s17_longest_decreasing_run/step2400.pt": {
+      "sha256": "92711d7dc1a8b9c182e92fac04d5b40c92d7a6dbbeb39c15dd2b1776c4653c82",
+      "bytes": 38959603
+    },
+    "single/s17_longest_decreasing_run/step4800.pt": {
+      "sha256": "eddc0bfd893bcc0e847c2ffcc714ddcdd8a08292a025e110b832e8ce96f807bb",
+      "bytes": 38959603
+    },
+    "single/s17_longest_increasing_run/completed.json": {
+      "sha256": "94424b12e9ddec194533a2b3c41a6fbb33d81157563e929e199a907de6366e7e",
+      "bytes": 990
+    },
+    "single/s17_longest_increasing_run/curve.csv": {
+      "sha256": "9798e3eaefef1f4d7aae9c82970ad152a9822193407bd80491e001129f4b5563",
+      "bytes": 2169
+    },
+    "single/s17_longest_increasing_run/step1200.pt": {
+      "sha256": "2e1780ba16125548a2c0d1d8e587741724655fe7f02d391b2a9f5181eb7749b6",
+      "bytes": 38959603
+    },
+    "single/s17_longest_increasing_run/step2400.pt": {
+      "sha256": "a21a07c4d5ddca0cf33da989ebe9e6b1782fb91d5745e5d30f7c19c4569cdceb",
+      "bytes": 38959603
+    },
+    "single/s17_longest_increasing_run/step4800.pt": {
+      "sha256": "07741cfcfaf1757bee341d9eea87e69ddbae17279c9432dc20e9630cba653cb6",
+      "bytes": 38959603
+    },
+    "single/s17_peaks/completed.json": {
+      "sha256": "e31966a581e0cdfe5da67ecd31e2cb72038ecac9a278669af46729d5ce3fa4a3",
+      "bytes": 939
+    },
+    "single/s17_peaks/curve.csv": {
+      "sha256": "8d8f1aa7cd84862741fd9ef496e2f9415f2cd762c6694d9298f0ecb8f506d046",
+      "bytes": 1724
+    },
+    "single/s17_peaks/step1200.pt": {
+      "sha256": "f8f026220b9226a8d5ef16dd63c81fee847dc1cc7057d24f080e1dcc0d453464",
+      "bytes": 38959603
+    },
+    "single/s17_peaks/step2400.pt": {
+      "sha256": "b8f49e6232be0325b05b1674ea3cfbaba960b9826803d006bcb13a29abd44649",
+      "bytes": 38959603
+    },
+    "single/s17_peaks/step4800.pt": {
+      "sha256": "108f1bc0a7828fe07b0b7cadd0b3626bc0a7fb4d18df1a4f7c896b4da0900cf3",
+      "bytes": 38959603
+    },
+    "single/s17_recoils/completed.json": {
+      "sha256": "6d9001bf51e796dbb3996f4768d431a782c480f9b4671905e42ed0f9c1bc6cc0",
+      "bytes": 946
+    },
+    "single/s17_recoils/curve.csv": {
+      "sha256": "44adc0feb3aaf32822d54c0e1bbb6be4bc3f2f72d61f38846f6a9157f704666a",
+      "bytes": 1811
+    },
+    "single/s17_recoils/step1200.pt": {
+      "sha256": "dab03fd22094378bdfbb8dcd9a848039c35ddfc688c8950656bbcddd4c8dde68",
+      "bytes": 38959603
+    },
+    "single/s17_recoils/step2400.pt": {
+      "sha256": "e669f0de6776425e1d6199160618a393ba22a5a45887ad3996a80d552bd52c00",
+      "bytes": 38959603
+    },
+    "single/s17_recoils/step4800.pt": {
+      "sha256": "9a773d89cb738211f9d068e7b125f171e0e00cf61a4b8089e7521a5393152c90",
+      "bytes": 38959603
+    },
+    "single/s17_right_to_left_minima/completed.json": {
+      "sha256": "4c3a89947bfef4672b3ed01da3d4e68e15a1a312a5ee858cbfb3126c25a14820",
+      "bytes": 985
+    },
+    "single/s17_right_to_left_minima/curve.csv": {
+      "sha256": "ea0c222ce9d1f0a47d5c8f2cd8096076180da4335cd990b17c0069acebe65ba3",
+      "bytes": 2146
+    },
+    "single/s17_right_to_left_minima/step1200.pt": {
+      "sha256": "ec3f9a81f9dbe72995a0251e75c26689913e2d20895f13cfa1e5924f8f09338d",
+      "bytes": 38959603
+    },
+    "single/s17_right_to_left_minima/step2400.pt": {
+      "sha256": "5185a752d6cf935e3ac10a656a8f00dada759a557fa6093a5d1ddbc356a65648",
+      "bytes": 38959603
+    },
+    "single/s17_right_to_left_minima/step4800.pt": {
+      "sha256": "e6e1c9b0b812a9de9d52300cda9d69faaf2b9ad81960d31c450ffc71f3e0b993",
+      "bytes": 38959603
+    },
+    "single/s17_successions/completed.json": {
+      "sha256": "3ed478fdaa1385f7a6508aec800e9af508bd1d08dcf0c0137a1444fe2ea83bbc",
+      "bytes": 957
+    },
+    "single/s17_successions/curve.csv": {
+      "sha256": "7b3664504a24cd760b002f3405eced9bc00c44cc521247013ddf1814707a1bff",
+      "bytes": 1898
+    },
+    "single/s17_successions/step1200.pt": {
+      "sha256": "4d1f9c742380e486046c5f08afa89fda30c95330e6dd89b6141058c805e1bda1",
+      "bytes": 38959603
+    },
+    "single/s17_successions/step2400.pt": {
+      "sha256": "506c4cdfdef9303f794fc3db800f405acd78c4ae419a672518078cca84325efd",
+      "bytes": 38959603
+    },
+    "single/s17_successions/step4800.pt": {
+      "sha256": "a3033143906c9095fc13655393e32fa7320e422df49015524c413646d51e2310",
+      "bytes": 38959603
+    },
+    "target_development_gates.csv": {
+      "sha256": "9dc35a8c91688b2a5b28872ea212f125e3f167266c972a63f76f31e9473c4ba4",
+      "bytes": 230
+    }
+  },
+  "source_distributions": {
+    "train": {
+      "anti_fixed_points": {
+        "counts": [
+          2995,
+          3043,
+          1507,
+          506,
+          112,
+          22,
+          6,
+          0,
+          1,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.3656005859375,
+          0.3714599609375,
+          0.1839599609375,
+          0.061767578125,
+          0.013671875,
+          0.002685546875,
+          0.000732421875,
+          0.0,
+          0.0001220703125,
+          0.0,
+          0.0
+        ],
+        "mean": 0.9981689453125,
+        "entropy_bits": 1.8757063517189918
+      },
+      "cycle_count": {
+        "counts": [
+          0,
+          803,
+          2368,
+          2625,
+          1593,
+          641,
+          146,
+          14,
+          2,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.0,
+          0.0980224609375,
+          0.2890625,
+          0.3204345703125,
+          0.1944580078125,
+          0.0782470703125,
+          0.017822265625,
+          0.001708984375,
+          0.000244140625,
+          0.0,
+          0.0
+        ],
+        "mean": 2.9273681640625,
+        "entropy_bits": 2.2413624858574583
+      },
+      "deficiencies": {
+        "counts": [
+          0,
+          1,
+          83,
+          1056,
+          2964,
+          2921,
+          1045,
+          121,
+          1,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.0,
+          0.0001220703125,
+          0.0101318359375,
+          0.12890625,
+          0.36181640625,
+          0.3565673828125,
+          0.1275634765625,
+          0.0147705078125,
+          0.0001220703125,
+          0.0,
+          0.0
+        ],
+        "mean": 4.5069580078125,
+        "entropy_bits": 1.98121852575746
+      },
+      "descents": {
+        "counts": [
+          0,
+          1,
+          98,
+          1017,
+          3016,
+          2912,
+          1031,
+          110,
+          7,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.0,
+          0.0001220703125,
+          0.011962890625,
+          0.1241455078125,
+          0.3681640625,
+          0.35546875,
+          0.1258544921875,
+          0.013427734375,
+          0.0008544921875,
+          0.0,
+          0.0
+        ],
+        "mean": 4.50244140625,
+        "entropy_bits": 1.9813468607309694
+      },
+      "exceedances": {
+        "counts": [
+          0,
+          0,
+          92,
+          1057,
+          3023,
+          2892,
+          1016,
+          112,
+          0,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.0,
+          0.0,
+          0.01123046875,
+          0.1290283203125,
+          0.3690185546875,
+          0.35302734375,
+          0.1240234375,
+          0.013671875,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 4.4906005859375,
+        "entropy_bits": 1.9730875293604853
+      },
+      "fixed_points": {
+        "counts": [
+          2986,
+          3055,
+          1473,
+          531,
+          121,
+          23,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.364501953125,
+          0.3729248046875,
+          0.1798095703125,
+          0.0648193359375,
+          0.0147705078125,
+          0.0028076171875,
+          0.000244140625,
+          0.0001220703125,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 1.00244140625,
+        "entropy_bits": 1.880521247472754
+      },
+      "left_to_right_maxima": {
+        "counts": [
+          0,
+          809,
+          2292,
+          2769,
+          1599,
+          567,
+          143,
+          12,
+          1,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.0,
+          0.0987548828125,
+          0.27978515625,
+          0.3380126953125,
+          0.1951904296875,
+          0.0692138671875,
+          0.0174560546875,
+          0.00146484375,
+          0.0001220703125,
+          0.0,
+          0.0
+        ],
+        "mean": 2.9151611328125,
+        "entropy_bits": 2.216980436110844
+      },
+      "left_to_right_minima": {
+        "counts": [
+          0,
+          807,
+          2375,
+          2662,
+          1640,
+          545,
+          139,
+          21,
+          2,
+          1,
+          0
+        ],
+        "probabilities": [
+          0.0,
+          0.0985107421875,
+          0.2899169921875,
+          0.324951171875,
+          0.2001953125,
+          0.0665283203125,
+          0.0169677734375,
+          0.0025634765625,
+          0.000244140625,
+          0.0001220703125,
+          0.0
+        ],
+        "mean": 2.909423828125,
+        "entropy_bits": 2.2252744874882215
+      },
+      "longest_decreasing_run": {
+        "counts": [
+          0,
+          0,
+          1855,
+          4425,
+          1568,
+          286,
+          51,
+          6,
+          1,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.0,
+          0.0,
+          0.2264404296875,
+          0.5401611328125,
+          0.19140625,
+          0.034912109375,
+          0.0062255859375,
+          0.000732421875,
+          0.0001220703125,
+          0.0,
+          0.0
+        ],
+        "mean": 3.0570068359375,
+        "entropy_bits": 1.6455417060724844
+      },
+      "longest_increasing_run": {
+        "counts": [
+          0,
+          0,
+          1878,
+          4412,
+          1572,
+          282,
+          42,
+          6,
+          0,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.0,
+          0.0,
+          0.229248046875,
+          0.53857421875,
+          0.19189453125,
+          0.034423828125,
+          0.005126953125,
+          0.000732421875,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 3.0498046875,
+        "entropy_bits": 1.638952721424439
+      },
+      "peaks": {
+        "counts": [
+          2,
+          300,
+          2881,
+          4184,
+          825,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.000244140625,
+          0.03662109375,
+          0.3516845703125,
+          0.5107421875,
+          0.1007080078125,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 2.675048828125,
+        "entropy_bits": 1.536470321503122
+      },
+      "recoils": {
+        "counts": [
+          0,
+          7,
+          115,
+          1051,
+          2922,
+          2972,
+          1017,
+          107,
+          1,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.0,
+          0.0008544921875,
+          0.0140380859375,
+          0.1282958984375,
+          0.356689453125,
+          0.36279296875,
+          0.1241455078125,
+          0.0130615234375,
+          0.0001220703125,
+          0.0,
+          0.0
+        ],
+        "mean": 4.4918212890625,
+        "entropy_bits": 1.9933522819302016
+      },
+      "right_to_left_minima": {
+        "counts": [
+          0,
+          826,
+          2197,
+          2676,
+          1712,
+          618,
+          145,
+          17,
+          1,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.0,
+          0.100830078125,
+          0.2681884765625,
+          0.32666015625,
+          0.208984375,
+          0.075439453125,
+          0.0177001953125,
+          0.0020751953125,
+          0.0001220703125,
+          0.0,
+          0.0
+        ],
+        "mean": 2.9520263671875,
+        "entropy_bits": 2.2466023426398882
+      },
+      "successions": {
+        "counts": [
+          3327,
+          3074,
+          1284,
+          399,
+          88,
+          16,
+          4,
+          0,
+          0,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.4061279296875,
+          0.375244140625,
+          0.15673828125,
+          0.0487060546875,
+          0.0107421875,
+          0.001953125,
+          0.00048828125,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.8905029296875,
+        "entropy_bits": 1.783202552027031
+      }
+    },
+    "dev": {
+      "anti_fixed_points": {
+        "counts": [
+          374,
+          377,
+          199,
+          55,
+          17,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.365234375,
+          0.3681640625,
+          0.1943359375,
+          0.0537109375,
+          0.0166015625,
+          0.0009765625,
+          0.0009765625,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.9951171875,
+        "entropy_bits": 1.8650262803383195
+      },
+      "cycle_count": {
+        "counts": [
+          0,
+          103,
+          285,
+          343,
+          187,
+          83,
+          22,
+          1,
+          0,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.0,
+          0.1005859375,
+          0.2783203125,
+          0.3349609375,
+          0.1826171875,
+          0.0810546875,
+          0.021484375,
+          0.0009765625,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 2.93359375,
+        "entropy_bits": 2.2459902709103523
+      },
+      "deficiencies": {
+        "counts": [
+          0,
+          1,
+          16,
+          135,
+          354,
+          364,
+          140,
+          14,
+          0,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.0,
+          0.0009765625,
+          0.015625,
+          0.1318359375,
+          0.345703125,
+          0.35546875,
+          0.13671875,
+          0.013671875,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 4.50390625,
+        "entropy_bits": 2.026228212261064
+      },
+      "descents": {
+        "counts": [
+          0,
+          0,
+          15,
+          128,
+          377,
+          354,
+          137,
+          13,
+          0,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.0,
+          0.0,
+          0.0146484375,
+          0.125,
+          0.3681640625,
+          0.345703125,
+          0.1337890625,
+          0.0126953125,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 4.4970703125,
+        "entropy_bits": 1.9929722223952915
+      },
+      "exceedances": {
+        "counts": [
+          0,
+          0,
+          16,
+          129,
+          340,
+          397,
+          131,
+          11,
+          0,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.0,
+          0.0,
+          0.015625,
+          0.1259765625,
+          0.33203125,
+          0.3876953125,
+          0.1279296875,
+          0.0107421875,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 4.5185546875,
+        "entropy_bits": 1.9781518666908313
+      },
+      "fixed_points": {
+        "counts": [
+          387,
+          373,
+          188,
+          55,
+          19,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.3779296875,
+          0.3642578125,
+          0.18359375,
+          0.0537109375,
+          0.0185546875,
+          0.0009765625,
+          0.0009765625,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.9775390625,
+        "entropy_bits": 1.8630620940451459
+      },
+      "left_to_right_maxima": {
+        "counts": [
+          0,
+          118,
+          295,
+          319,
+          194,
+          79,
+          18,
+          1,
+          0,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.0,
+          0.115234375,
+          0.2880859375,
+          0.3115234375,
+          0.189453125,
+          0.0771484375,
+          0.017578125,
+          0.0009765625,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 2.8818359375,
+        "entropy_bits": 2.2527388557759167
+      },
+      "left_to_right_minima": {
+        "counts": [
+          0,
+          97,
+          281,
+          322,
+          222,
+          83,
+          18,
+          1,
+          0,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.0,
+          0.0947265625,
+          0.2744140625,
+          0.314453125,
+          0.216796875,
+          0.0810546875,
+          0.017578125,
+          0.0009765625,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 2.9716796875,
+        "entropy_bits": 2.243097830483771
+      },
+      "longest_decreasing_run": {
+        "counts": [
+          0,
+          0,
+          211,
+          571,
+          195,
+          43,
+          4,
+          0,
+          0,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.0,
+          0.0,
+          0.2060546875,
+          0.5576171875,
+          0.1904296875,
+          0.0419921875,
+          0.00390625,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 3.080078125,
+        "entropy_bits": 1.6184025150949573
+      },
+      "longest_increasing_run": {
+        "counts": [
+          0,
+          0,
+          232,
+          548,
+          199,
+          41,
+          4,
+          0,
+          0,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.0,
+          0.0,
+          0.2265625,
+          0.53515625,
+          0.1943359375,
+          0.0400390625,
+          0.00390625,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 3.0595703125,
+        "entropy_bits": 1.6444129843657296
+      },
+      "peaks": {
+        "counts": [
+          0,
+          30,
+          391,
+          512,
+          91,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.0,
+          0.029296875,
+          0.3818359375,
+          0.5,
+          0.0888671875,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 2.6484375,
+        "entropy_bits": 1.4899153067641486
+      },
+      "recoils": {
+        "counts": [
+          0,
+          0,
+          12,
+          134,
+          354,
+          370,
+          137,
+          17,
+          0,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.0,
+          0.0,
+          0.01171875,
+          0.130859375,
+          0.345703125,
+          0.361328125,
+          0.1337890625,
+          0.0166015625,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 4.5244140625,
+        "entropy_bits": 2.0059216110183007
+      },
+      "right_to_left_minima": {
+        "counts": [
+          0,
+          102,
+          319,
+          319,
+          187,
+          77,
+          16,
+          3,
+          1,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.0,
+          0.099609375,
+          0.3115234375,
+          0.3115234375,
+          0.1826171875,
+          0.0751953125,
+          0.015625,
+          0.0029296875,
+          0.0009765625,
+          0.0,
+          0.0
+        ],
+        "mean": 2.8857421875,
+        "entropy_bits": 2.2366568871115837
+      },
+      "successions": {
+        "counts": [
+          424,
+          367,
+          171,
+          48,
+          10,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "probabilities": [
+          0.4140625,
+          0.3583984375,
+          0.1669921875,
+          0.046875,
+          0.009765625,
+          0.00390625,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.8916015625,
+        "entropy_bits": 1.791899376408952
+      }
+    }
+  },
+  "source_label_checks": 129024,
+  "design_seed": 17,
+  "single_tasks": [
+    "anti_fixed_points",
+    "cycle_count",
+    "deficiencies",
+    "descents",
+    "exceedances",
+    "fixed_points",
+    "left_to_right_maxima",
+    "left_to_right_minima",
+    "longest_decreasing_run",
+    "longest_increasing_run",
+    "peaks",
+    "recoils",
+    "right_to_left_minima",
+    "successions"
+  ],
+  "checkpoints": {
+    "anti_fixed_points": {
+      "1200": "be935554dbad3657f09c76ae6897de717975704190e980ccf4262b306ea6b34d",
+      "2400": "65607fd698b3a459a2d408a6a884eee47a0b9dcb370fbd95be0d65aa53eb96c7",
+      "4800": "5eed1bf553b81d32bfe0f9b1b750726e940ae4d438d8dab5b629536014197b3a"
+    },
+    "cycle_count": {
+      "1200": "5eb724d0f0d15ba455855893497ba3d449ab367c10bc8392ad1616d3eb1bdbdc",
+      "2400": "02d2818c9278a7196b7aa5ec3d71260620eb469eab6bad104f3de379efdae744",
+      "4800": "b5bdde2b9f60bde2a06088b13fa0cb14d25cfc019391aa8f7af8caaff6d4125d"
+    },
+    "deficiencies": {
+      "1200": "3cbe0756a8990cf3c6aa3ee916de02293ba8ac1594b6a358667ed6cac50ff964",
+      "2400": "fda2c3f7777e9a871091c9d5c42035956ccb5fa00a09b8b0f7e26c18dcc4074c",
+      "4800": "7fe3a8ff4ddfe69a8a5ba6685fdbaffd58a3306e43a11857200ce22a8b753c5c"
+    },
+    "descents": {
+      "1200": "e8ac76d0e25273a203013dd4a621e46996dc52787f716f4520827370a48ae196",
+      "2400": "43073858e3dedf8b6e2a9100e58a135ffaca21a8d495617e935c39543c1fc399",
+      "4800": "4d27028f9d4963596c6e66c1cefe1cfcfc32e8620effcc96f2911971702780f3"
+    },
+    "exceedances": {
+      "1200": "722bc899beee4740c5527242d20e4cc5d057c1ffad0326dff17035d86cc05c8e",
+      "2400": "8be96a59cc4bbcd515d4500b70f0d460fb2f305161abbc5678daba217a7d9d1f",
+      "4800": "d66276fb325d605ebf1642e3f6f85314ac6f23924430704b94295f0629ea7234"
+    },
+    "fixed_points": {
+      "1200": "0db5aaa93d0275ea34f0324aa3566f24d5515eaec701d63cb85819b00aa4463c",
+      "2400": "f36248cc76a59db33360ada810c10f02c329aebcd8179000a6d04cc69ed7adb4",
+      "4800": "bbe35fd3ec518c8e06240dc38d351784868c19c891badf285cd92fcb50a2a64e"
+    },
+    "left_to_right_maxima": {
+      "1200": "77c255bbd506b1f5e780c30fb6e3c19cca74f48aa1ffd30bba00c66e4eaad47e",
+      "2400": "2300837f215f62048d247f474f0800b611fe6438aab13369caedd927806947ae",
+      "4800": "858da0b1c2e115bf06d66e5599f6445aef8514b9ab3ac61b3260c712db186e1d"
+    },
+    "left_to_right_minima": {
+      "1200": "1263483d14935cd7730c8ce4e3a25ef52055e38d28ffccf735a6bb2bd1c84f37",
+      "2400": "8ebddbbf6225b49034189b2fb4f51a3820cc85957484c6380ffea3f25aab75af",
+      "4800": "ddd535479e0eac0342ebe472e35aabc46e8c8403f6f5597219a219176669ae43"
+    },
+    "longest_decreasing_run": {
+      "1200": "7ced8d026044ff66378fb6ed902f7f2b55797e342415175b35b6294948aa5524",
+      "2400": "92711d7dc1a8b9c182e92fac04d5b40c92d7a6dbbeb39c15dd2b1776c4653c82",
+      "4800": "eddc0bfd893bcc0e847c2ffcc714ddcdd8a08292a025e110b832e8ce96f807bb"
+    },
+    "longest_increasing_run": {
+      "1200": "2e1780ba16125548a2c0d1d8e587741724655fe7f02d391b2a9f5181eb7749b6",
+      "2400": "a21a07c4d5ddca0cf33da989ebe9e6b1782fb91d5745e5d30f7c19c4569cdceb",
+      "4800": "07741cfcfaf1757bee341d9eea87e69ddbae17279c9432dc20e9630cba653cb6"
+    },
+    "peaks": {
+      "1200": "f8f026220b9226a8d5ef16dd63c81fee847dc1cc7057d24f080e1dcc0d453464",
+      "2400": "b8f49e6232be0325b05b1674ea3cfbaba960b9826803d006bcb13a29abd44649",
+      "4800": "108f1bc0a7828fe07b0b7cadd0b3626bc0a7fb4d18df1a4f7c896b4da0900cf3"
+    },
+    "recoils": {
+      "1200": "dab03fd22094378bdfbb8dcd9a848039c35ddfc688c8950656bbcddd4c8dde68",
+      "2400": "e669f0de6776425e1d6199160618a393ba22a5a45887ad3996a80d552bd52c00",
+      "4800": "9a773d89cb738211f9d068e7b125f171e0e00cf61a4b8089e7521a5393152c90"
+    },
+    "right_to_left_minima": {
+      "1200": "ec3f9a81f9dbe72995a0251e75c26689913e2d20895f13cfa1e5924f8f09338d",
+      "2400": "5185a752d6cf935e3ac10a656a8f00dada759a557fa6093a5d1ddbc356a65648",
+      "4800": "e6e1c9b0b812a9de9d52300cda9d69faaf2b9ad81960d31c450ffc71f3e0b993"
+    },
+    "successions": {
+      "1200": "4d1f9c742380e486046c5f08afa89fda30c95330e6dd89b6141058c805e1bda1",
+      "2400": "506c4cdfdef9303f794fc3db800f405acd78c4ae419a672518078cca84325efd",
+      "4800": "a3033143906c9095fc13655393e32fa7320e422df49015524c413646d51e2310"
+    }
+  },
+  "recomputed_target_gates": [
+    {
+      "target": "fixed_points",
+      "accuracy": 0.9970703125,
+      "majority_accuracy": 0.3642578125,
+      "pass_gate": true
+    },
+    {
+      "target": "exceedances",
+      "accuracy": 1.0,
+      "majority_accuracy": 0.33203125,
+      "pass_gate": true
+    },
+    {
+      "target": "left_to_right_minima",
+      "accuracy": 0.9990234375,
+      "majority_accuracy": 0.314453125,
+      "pass_gate": true
+    },
+    {
+      "target": "longest_decreasing_run",
+      "accuracy": 0.9990234375,
+      "majority_accuracy": 0.5576171875,
+      "pass_gate": true
+    }
+  ],
+  "recomputed_matching": [
+    {
+      "target": "fixed_points",
+      "related": "anti_fixed_points",
+      "replacement": "successions",
+      "tv": 0.0443115234375,
+      "endpoint_dev_accuracy_gap": 0.3125,
+      "mean_curve_accuracy_gap": 0.4580078125,
+      "score": 0.8148193359375,
+      "candidate_order": 0,
+      "selected": true
+    },
+    {
+      "target": "exceedances",
+      "related": "deficiencies",
+      "replacement": "recoils",
+      "tv": 0.0108642578125,
+      "endpoint_dev_accuracy_gap": 0.0009765625,
+      "mean_curve_accuracy_gap": 0.17265625,
+      "score": 0.1844970703125,
+      "candidate_order": 0,
+      "selected": true
+    },
+    {
+      "target": "left_to_right_minima",
+      "related": "right_to_left_minima",
+      "replacement": "cycle_count",
+      "tv": 0.02392578125,
+      "endpoint_dev_accuracy_gap": 0.525390625,
+      "mean_curve_accuracy_gap": 0.5111328125,
+      "score": 1.06044921875,
+      "candidate_order": 0,
+      "selected": false
+    },
+    {
+      "target": "left_to_right_minima",
+      "related": "right_to_left_minima",
+      "replacement": "longest_increasing_run",
+      "tv": 0.2119140625,
+      "endpoint_dev_accuracy_gap": 0.0009765625,
+      "mean_curve_accuracy_gap": 0.0822265625,
+      "score": 0.2951171875,
+      "candidate_order": 1,
+      "selected": true
+    },
+    {
+      "target": "longest_decreasing_run",
+      "related": "longest_increasing_run",
+      "replacement": "left_to_right_maxima",
+      "tv": 0.2005615234375,
+      "endpoint_dev_accuracy_gap": 0.001953125,
+      "mean_curve_accuracy_gap": 0.090234375,
+      "score": 0.2927490234375,
+      "candidate_order": 0,
+      "selected": true
+    },
+    {
+      "target": "longest_decreasing_run",
+      "related": "longest_increasing_run",
+      "replacement": "cycle_count",
+      "tv": 0.2181396484375,
+      "endpoint_dev_accuracy_gap": 0.5263671875,
+      "mean_curve_accuracy_gap": 0.429296875,
+      "score": 1.1738037109375,
+      "candidate_order": 1,
+      "selected": false
+    }
+  ],
+  "recomputed_groups": [
+    {
+      "target": "fixed_points",
+      "sources": {
+        "B": [
+          "anti_fixed_points",
+          "descents",
+          "peaks",
+          "left_to_right_maxima"
+        ],
+        "C": [
+          "successions",
+          "descents",
+          "peaks",
+          "left_to_right_maxima"
+        ]
+      },
+      "related": "anti_fixed_points",
+      "replacement": "successions",
+      "transform": "complement",
+      "answer_map": "identity",
+      "selection_reason": "retain v1/v2 composition as historical anchor"
+    },
+    {
+      "target": "exceedances",
+      "sources": {
+        "B": [
+          "deficiencies",
+          "descents",
+          "peaks",
+          "successions"
+        ],
+        "C": [
+          "recoils",
+          "descents",
+          "peaks",
+          "successions"
+        ]
+      },
+      "related": "deficiencies",
+      "replacement": "recoils",
+      "transform": "inverse",
+      "answer_map": "identity",
+      "selection_reason": "Eulerian answer distribution; no claim of mathematical unrelatedness"
+    },
+    {
+      "target": "left_to_right_minima",
+      "sources": {
+        "B": [
+          "right_to_left_minima",
+          "descents",
+          "peaks",
+          "successions"
+        ],
+        "C": [
+          "longest_increasing_run",
+          "descents",
+          "peaks",
+          "successions"
+        ]
+      },
+      "related": "right_to_left_minima",
+      "replacement": "longest_increasing_run",
+      "transform": "reverse",
+      "answer_map": "identity",
+      "selection_reason": "record/cycle distributions and run-count alternative, selected on development only"
+    },
+    {
+      "target": "longest_decreasing_run",
+      "sources": {
+        "B": [
+          "longest_increasing_run",
+          "descents",
+          "peaks",
+          "successions"
+        ],
+        "C": [
+          "left_to_right_maxima",
+          "descents",
+          "peaks",
+          "successions"
+        ]
+      },
+      "related": "longest_increasing_run",
+      "replacement": "left_to_right_maxima",
+      "transform": "complement",
+      "answer_map": "identity",
+      "selection_reason": "count distribution and development learning-curve matching"
+    }
+  ],
+  "catalog_status": "passed",
+  "selected_relations_verified": true,
+  "old_and_new_test_contents_read": false,
+  "neural_calls": 0,
+  "torch_imported": false,
+  "limitations": [
+    "Hashes and saved-metric arithmetic do not independently repeat model forwards.",
+    "This evidence lock is created after development and before the new test; it does not replace the earlier design freeze.",
+    "Single4800 matches total updates; single1200 matches per-task exposure, with different LR history."
+  ],
+  "created_unix": 1792347750.1148732,
+  "created_utc": "2026-10-18T18:22:30.114873+00:00",
+  "seconds": 0.9893243000260554,
+  "created_before_new_test_generation": true,
+  "created_before_adapt_complete": true
+}

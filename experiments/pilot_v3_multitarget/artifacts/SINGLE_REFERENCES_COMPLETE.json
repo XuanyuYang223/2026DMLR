@@ -1,0 +1,15 @@
+{
+  "unix": 1792348864.5981035,
+  "source_tasks": [
+    "anti_fixed_points",
+    "deficiencies",
+    "descents",
+    "left_to_right_maxima",
+    "longest_increasing_run",
+    "peaks",
+    "recoils",
+    "right_to_left_minima",
+    "successions"
+  ],
+  "design_seed_target_references_only": true
+}

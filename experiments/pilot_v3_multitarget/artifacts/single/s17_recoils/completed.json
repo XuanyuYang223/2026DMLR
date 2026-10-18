@@ -1,0 +1,25 @@
+{
+  "seed": 17,
+  "tasks": [
+    "recoils"
+  ],
+  "kind": "single",
+  "updates": 4800,
+  "input_tokens": 8601600,
+  "supervised_tokens": 614400,
+  "sample_exposures": 307200,
+  "task_exposures": 307200,
+  "actual_unique_per_task": {
+    "recoils": 8192
+  },
+  "task_fraction": 1.0,
+  "schedule_sha256": "1f42bbfdcd798a74ebcb0ed1a93fa77b68b1cc147f7ce383328a1212b41c2864",
+  "model_state_hash": "029f0db85216e9c305aa628c2b8f9d5085592b7ecfa24f5cd559fefe6256f4dd",
+  "seconds": 59.595497699978296,
+  "new_compute": true,
+  "checkpoint": "single/s17_recoils/step4800.pt",
+  "checkpoint_sha256": "9a773d89cb738211f9d068e7b125f171e0e00cf61a4b8089e7521a5393152c90",
+  "initial_state_hash": "ca479168a68e9c34ac0a4f53f2f508f52dee061dcbdf15b569d94529ee3f8f1f",
+  "train_sha256": "e8c6e438520452579b95f883ecbf235edb74b5fa7cf8d7caf5f482acfc6d3f52",
+  "dev_sha256": "6e432d1708188024e78de5732ce630d95e0c9971240c849888261c7d5d7e5d8d"
+}

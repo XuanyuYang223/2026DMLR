@@ -1,0 +1,27 @@
+{
+  "unix": 1792351319.3444736,
+  "selection_sha256": "040ff3d6891ea883bfd263de0489939844e7824c8f0274aa170a0c3d2b73b7ec",
+  "excluded_orbits": 50432,
+  "overlap": 0,
+  "pools": [
+    {
+      "seed": 17,
+      "count": 2048,
+      "sha256": "438e26a61a5925d9ed6fd14ba9e5c41341158ab0610558d28344d0f84197a95d",
+      "unique_orbits": 2048
+    },
+    {
+      "seed": 42,
+      "count": 2048,
+      "sha256": "79664ca53bdcfe5cd3c98aca968e2be20bdc6257171ef6b7c830ba29c76eb21f",
+      "unique_orbits": 2048
+    },
+    {
+      "seed": 73,
+      "count": 2048,
+      "sha256": "4849d7a17cc284c917f518eb5de584db2e1d1db1adef017989bf0d6a33815334",
+      "unique_orbits": 2048
+    }
+  ],
+  "shared_across_targets": true
+}

@@ -1,0 +1,68 @@
+{
+  "status": "passed",
+  "exhaustive_n": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "exhaustive_inputs": 5913,
+  "random_n": 10,
+  "random_inputs": 2048,
+  "random_seed": 2026101803,
+  "cross_task_relations": 17,
+  "self_invariances": 13,
+  "aggregate_identity_checks": {
+    "four_triples": 7961,
+    "cycle_sum": 7961,
+    "positional_sum": 7961,
+    "succession_adjacency": 7961,
+    "descents_complement": 7961,
+    "inversion_encodings": 7961,
+    "cycle_parity": 7961
+  },
+  "seconds": 2.0591853000223637,
+  "proof_limit": "Finite checks validate implementations; exact identities follow from definitions, not statistical fits",
+  "neural_results_read": false,
+  "neural_calls": 0,
+  "replacement_relation_audit": {
+    "candidate_pairs": 6,
+    "actions": 8,
+    "length": 7,
+    "counterexamples": 48,
+    "no_neural_or_test_results_used": true
+  },
+  "catalog_rows": 57,
+  "permworld_registered_endpoints": 48,
+  "permworld_scalar_property32": 32,
+  "permworld_encoding_conversion_endpoints": 4,
+  "permworld_input_representations": [
+    "one_line",
+    "cycle",
+    "lehmer",
+    "inversion_vector"
+  ],
+  "world_rows": {
+    "FiniteFieldLegacy": 1,
+    "GraphWorld": 4,
+    "MatrixGroupWorld": 4,
+    "PermWorld": 48
+  },
+  "catalog_sha256": "cbf3550091e40145540361b4e30eb41c2265844fe416539ef8225225a52152fc",
+  "source_sha256": {
+    "experiments/permworld_pilot/vendor/neurips_permutations/math_ops.py": "3f6832b4798a20cc6b813a0b64ec01cf10360fbf3d6256cb59d1d793d4ad345f",
+    "experiments/permworld_pilot/vendor/neurips_permutations/passage.py": "6c103494507358b8b4d2ee6a5c69a31fc391ae4cd35d7f1126bdac891fe07e09",
+    "reference/neurips/src/neurips_permutations/math_ops.py": "3f6832b4798a20cc6b813a0b64ec01cf10360fbf3d6256cb59d1d793d4ad345f",
+    "reference/2026TMLR/external/neurips/src/neurips_permutations/math_ops.py": "968e7580c01289e5ffeab9f07c52beb334be40d95c0e61d7a7f9e2cab694c62c",
+    "reference/neurips/configs/property_task_geometry.toml": "efbaa709b20b787398147ed43c4c1b7ba913c566dceb981a5f4d512c557dc218",
+    "reference/2026TMLR/experiments/permworld_encoding/core.py": "4e0995581693572616283eda78e0646d364ebe8f57ec8e6217c2d5cc105e4c8f",
+    "reference/2026TMLR/experiments/graphworld_pilot_20261010/core.py": "db8889408b7586749a7fe57637b4aed2c8a270bb821842ee9db311ffed45daaf",
+    "reference/2026TMLR/experiments/matrixgroupworld_20261011/core.py": "a3fd4e1cdeecf76c954f0f8ee47e59b760d14c619bfb49028bcc2858fdae2ee3",
+    "reference/2026TMLR/experiments/algebra.py": "758fa9839a31dc27b1d09d25d140821395b86f6eddbe4663a9a002d4f7fee6e3",
+    "reference/2026TMLR/experiments/field_symmetry.py": "492ffbba4815a10bdc5e046431f815663772983f51f6c2c4a0c40fe8eccc6aed",
+    "experiments/pilot_v3_multitarget/catalog/build_catalog.py": "98085d3db0b46ffe85096be86f8d08c9ab2c4645e8eb81dcaf94228ca8f1ce5d"
+  }
+}

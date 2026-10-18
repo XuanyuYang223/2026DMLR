@@ -1,0 +1,276 @@
+{
+  "config": {
+    "version": "pilot_v3_multitarget/v1",
+    "seeds": [
+      17,
+      42,
+      73
+    ],
+    "n": 10,
+    "targets": [
+      "fixed_points",
+      "exceedances",
+      "left_to_right_minima",
+      "longest_decreasing_run"
+    ],
+    "plans": {
+      "fixed_points": {
+        "related": "anti_fixed_points",
+        "candidates": [
+          "successions"
+        ],
+        "common": [
+          "descents",
+          "peaks",
+          "left_to_right_maxima"
+        ],
+        "transform": "complement",
+        "reason": "retain v1/v2 composition as historical anchor"
+      },
+      "exceedances": {
+        "related": "deficiencies",
+        "candidates": [
+          "recoils"
+        ],
+        "common": [
+          "descents",
+          "peaks",
+          "successions"
+        ],
+        "transform": "inverse",
+        "reason": "Eulerian answer distribution; no claim of mathematical unrelatedness"
+      },
+      "left_to_right_minima": {
+        "related": "right_to_left_minima",
+        "candidates": [
+          "cycle_count",
+          "longest_increasing_run"
+        ],
+        "common": [
+          "descents",
+          "peaks",
+          "successions"
+        ],
+        "transform": "reverse",
+        "reason": "record/cycle distributions and run-count alternative, selected on development only"
+      },
+      "longest_decreasing_run": {
+        "related": "longest_increasing_run",
+        "candidates": [
+          "left_to_right_maxima",
+          "cycle_count"
+        ],
+        "common": [
+          "descents",
+          "peaks",
+          "successions"
+        ],
+        "transform": "complement",
+        "reason": "count distribution and development learning-curve matching"
+      }
+    },
+    "design_tasks": [
+      "anti_fixed_points",
+      "cycle_count",
+      "deficiencies",
+      "descents",
+      "exceedances",
+      "fixed_points",
+      "left_to_right_maxima",
+      "left_to_right_minima",
+      "longest_decreasing_run",
+      "longest_increasing_run",
+      "peaks",
+      "recoils",
+      "right_to_left_minima",
+      "successions"
+    ],
+    "model": {
+      "d_model": 256,
+      "layers": 4,
+      "n_heads": 8,
+      "mlp_ratio": 4,
+      "dropout": 0.1,
+      "tie_embeddings": true,
+      "max_seq_len": 128
+    },
+    "vocab_size": 188,
+    "encoding": "one_line",
+    "source_pool": 8192,
+    "source_dev": 1024,
+    "target_samples": 256,
+    "target_dev": 1024,
+    "test_count": 2048,
+    "batch": 64,
+    "pretrain_updates": 4800,
+    "source_lr": "3e-4; warmup100 and cosine to3e-5 at2400, then constant3e-5 through4800",
+    "adaptation_updates": 800,
+    "learning_rates": [
+      0.0003,
+      0.0001,
+      3e-05
+    ],
+    "adapt_eval_every": 100,
+    "source_eval_steps": [
+      0,
+      600,
+      1200,
+      2400,
+      3600,
+      4800
+    ],
+    "weight_decay": 0.01,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "clip": 1.0,
+    "precision": "FP32 weights/evaluation; BF16 training; TF32 disabled",
+    "target_gate": "seed17 single-task source-dev endpoint accuracy>=.90 and >=training-majority dev accuracy+.15; no transfer outcomes",
+    "replacement_rule": "min TV + abs(endpoint dev accuracy gap) + mean absolute dev accuracy gap at600,1200,2400,3600,4800; candidate order breaks ties",
+    "matching_design_seed": 17,
+    "single_task_reference": "same per-seed initial model and source train/dev;4800 updates;also retain1200 equal-task-exposure checkpoint",
+    "selection": "max dev answer accuracy; min dev answer CE; earliest update; declared LR order; step0 excluded",
+    "split_rule": "full inverse/reverse/complement orbit exclusion across old and new roles/seeds; within-seed pools intentionally shared across targets and conditions",
+    "reuse": "fixed_points seeds17/42 reuse exact v2 B/C4800 and A/B/C adaptation candidates with hashes and compatibility checks",
+    "new_data_seed": 2026101803,
+    "new_test_seed": 2026101804,
+    "scope": "four targets,256 samples,three seeds; no sample-efficiency curve or scaling law; stop after report"
+  },
+  "unix": 1792347749.0164964,
+  "groups": [
+    {
+      "target": "fixed_points",
+      "sources": {
+        "B": [
+          "anti_fixed_points",
+          "descents",
+          "peaks",
+          "left_to_right_maxima"
+        ],
+        "C": [
+          "successions",
+          "descents",
+          "peaks",
+          "left_to_right_maxima"
+        ]
+      },
+      "related": "anti_fixed_points",
+      "replacement": "successions",
+      "transform": "complement",
+      "answer_map": "identity",
+      "selection_reason": "retain v1/v2 composition as historical anchor"
+    },
+    {
+      "target": "exceedances",
+      "sources": {
+        "B": [
+          "deficiencies",
+          "descents",
+          "peaks",
+          "successions"
+        ],
+        "C": [
+          "recoils",
+          "descents",
+          "peaks",
+          "successions"
+        ]
+      },
+      "related": "deficiencies",
+      "replacement": "recoils",
+      "transform": "inverse",
+      "answer_map": "identity",
+      "selection_reason": "Eulerian answer distribution; no claim of mathematical unrelatedness"
+    },
+    {
+      "target": "left_to_right_minima",
+      "sources": {
+        "B": [
+          "right_to_left_minima",
+          "descents",
+          "peaks",
+          "successions"
+        ],
+        "C": [
+          "longest_increasing_run",
+          "descents",
+          "peaks",
+          "successions"
+        ]
+      },
+      "related": "right_to_left_minima",
+      "replacement": "longest_increasing_run",
+      "transform": "reverse",
+      "answer_map": "identity",
+      "selection_reason": "record/cycle distributions and run-count alternative, selected on development only"
+    },
+    {
+      "target": "longest_decreasing_run",
+      "sources": {
+        "B": [
+          "longest_increasing_run",
+          "descents",
+          "peaks",
+          "successions"
+        ],
+        "C": [
+          "left_to_right_maxima",
+          "descents",
+          "peaks",
+          "successions"
+        ]
+      },
+      "related": "longest_increasing_run",
+      "replacement": "left_to_right_maxima",
+      "transform": "complement",
+      "answer_map": "identity",
+      "selection_reason": "count distribution and development learning-curve matching"
+    }
+  ],
+  "target_gates": [
+    {
+      "target": "fixed_points",
+      "accuracy": 0.9970703125,
+      "majority_accuracy": 0.3642578125,
+      "pass_gate": true
+    },
+    {
+      "target": "exceedances",
+      "accuracy": 1.0,
+      "majority_accuracy": 0.33203125,
+      "pass_gate": true
+    },
+    {
+      "target": "left_to_right_minima",
+      "accuracy": 0.9990234375,
+      "majority_accuracy": 0.314453125,
+      "pass_gate": true
+    },
+    {
+      "target": "longest_decreasing_run",
+      "accuracy": 0.9990234375,
+      "majority_accuracy": 0.5576171875,
+      "pass_gate": true
+    }
+  ],
+  "design_sha256": "db39647803b4fc4499bd5dfaec5f623e35c1a1265f89d0ba5daccd1308cdb832",
+  "matching_sha256": "2c3d0707eac2d9348ceb090c7a15f1c54461ba09fa082078438e61e69556c679",
+  "single_refs": {
+    "anti_fixed_points": "ac92bae634b4ccaef00104dd4ec5b9df807f56f48e76fe58862e1d2cf70268a6",
+    "cycle_count": "c30ae41fc0acbcccdb400dc04e31f56b83771fa5a9ed3a4252e0c72feec778a3",
+    "deficiencies": "8e9107d50227e65a5940da1bb8517c28295e11631cec4f24d2ad9c59117bd9ae",
+    "descents": "87059c9bb890e04b701fac8907a148a477dde5ea00f862a05c7b282caf6d26c3",
+    "exceedances": "483f715b3e918dd95fa90a5b08a5e0a0f88e6e66ffafc1c005b21959534139a1",
+    "fixed_points": "e8713dc7e22188c540e809983e22de5891b36199250add28384932e4aa6f06dd",
+    "left_to_right_maxima": "688e18e287f86768e1e987a481aa528039bbd0f8286b6c43987be21bcef6ab7b",
+    "left_to_right_minima": "ad966fc70f402f6a16a5f605d213cb598bfc90cb70f850ccef3a31c370eceaac",
+    "longest_decreasing_run": "c57a01890f83cc372d2363f8174a0fecf590a8b32dda3cd5bc8dfa4b0d162209",
+    "longest_increasing_run": "94424b12e9ddec194533a2b3c41a6fbb33d81157563e929e199a907de6366e7e",
+    "peaks": "e31966a581e0cdfe5da67ecd31e2cb72038ecac9a278669af46729d5ce3fa4a3",
+    "recoils": "6d9001bf51e796dbb3996f4768d431a782c480f9b4671905e42ed0f9c1bc6cc0",
+    "right_to_left_minima": "4c3a89947bfef4672b3ed01da3d4e68e15a1a312a5ee858cbfb3126c25a14820",
+    "successions": "3ed478fdaa1385f7a6508aec800e9af508bd1d08dcf0c0137a1444fe2ea83bbc"
+  }
+}

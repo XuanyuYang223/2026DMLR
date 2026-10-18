@@ -1,0 +1,25 @@
+{
+  "seed": 42,
+  "tasks": [
+    "anti_fixed_points"
+  ],
+  "kind": "single",
+  "updates": 4800,
+  "input_tokens": 8601600,
+  "supervised_tokens": 614400,
+  "sample_exposures": 307200,
+  "task_exposures": 307200,
+  "actual_unique_per_task": {
+    "anti_fixed_points": 8192
+  },
+  "task_fraction": 1.0,
+  "schedule_sha256": "e857e543efc8d6f43f4d4e0114945d962b3aa5660f8e240e0337945f07f63bfb",
+  "model_state_hash": "c96427e205e3b64e11ba56830f4d6ea2783015afce04b6b3e0e8505c51370569",
+  "seconds": 63.26150039996719,
+  "new_compute": true,
+  "checkpoint": "single/s42_anti_fixed_points/step4800.pt",
+  "checkpoint_sha256": "81a13fd6f51db70bc42b2c783ad618efff7709e16bc8508c14bb43416a006fde",
+  "initial_state_hash": "a54723b0ef71de032c782f77a0f386feec588449a6d050fab3b781c60c5ef80c",
+  "train_sha256": "f9c9f839f04e8ab0c45b24650ec0add72145f6dd5a1cc55fc8973f9276e28da3",
+  "dev_sha256": "2f1dc78524681a9a7510ae0afcac4657037d75ff5d0e7b7937bfe8622ba77265"
+}

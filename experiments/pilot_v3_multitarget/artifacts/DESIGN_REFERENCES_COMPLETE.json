@@ -1,0 +1,19 @@
+{
+  "unix": 1792347739.3901644,
+  "tasks": [
+    "anti_fixed_points",
+    "cycle_count",
+    "deficiencies",
+    "descents",
+    "exceedances",
+    "fixed_points",
+    "left_to_right_maxima",
+    "left_to_right_minima",
+    "longest_decreasing_run",
+    "longest_increasing_run",
+    "peaks",
+    "recoils",
+    "right_to_left_minima",
+    "successions"
+  ]
+}

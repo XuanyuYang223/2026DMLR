@@ -1,0 +1,31 @@
+{
+  "seed": 42,
+  "tasks": [
+    "right_to_left_minima",
+    "descents",
+    "peaks",
+    "successions"
+  ],
+  "kind": "multi",
+  "updates": 4800,
+  "input_tokens": 8601600,
+  "supervised_tokens": 614400,
+  "sample_exposures": 307200,
+  "task_exposures": 76800,
+  "actual_unique_per_task": {
+    "right_to_left_minima": 8190,
+    "descents": 8191,
+    "peaks": 8192,
+    "successions": 8191
+  },
+  "task_fraction": 0.25,
+  "schedule_sha256": "c7f82ffb4f3a91b42c48e911acdaf0266b5206b666c4a30942cceb9482e4d53a",
+  "model_state_hash": "d2bf0ac055c0c73a5ff0e418ddaee470b143d38659432be1195dfbf85e8b7a02",
+  "seconds": 70.00374950002879,
+  "new_compute": true,
+  "checkpoint": "multi/s42_left_to_right_minima_B/step4800.pt",
+  "checkpoint_sha256": "a3f6cef56bc1589c1ae0eabdb89e5f6e4fcb44acee093cacfd5103e19cafc57f",
+  "initial_state_hash": "a54723b0ef71de032c782f77a0f386feec588449a6d050fab3b781c60c5ef80c",
+  "train_sha256": "f9c9f839f04e8ab0c45b24650ec0add72145f6dd5a1cc55fc8973f9276e28da3",
+  "dev_sha256": "2f1dc78524681a9a7510ae0afcac4657037d75ff5d0e7b7937bfe8622ba77265"
+}

@@ -1,0 +1,64 @@
+{
+  "selected_rows": 36,
+  "all_candidate_rows": 216,
+  "n_seeds": 3,
+  "target_samples": 256,
+  "targets": [
+    "fixed_points",
+    "exceedances",
+    "left_to_right_minima",
+    "longest_decreasing_run"
+  ],
+  "negative_mean_targets": {
+    "B-A": 2,
+    "C-A": 3,
+    "B-C": 2
+  },
+  "all_negative_seed_targets": {
+    "B-A": 1,
+    "C-A": 1,
+    "B-C": 0
+  },
+  "composition_sign_switch_targets": 4,
+  "source_classification_counts": {
+    "multi_degradation": 65,
+    "insufficient_degradation_evidence": 17,
+    "single_not_mastered": 14
+  },
+  "source_composition_reuse": {
+    "logical_runs": 24,
+    "unique_ordered_compositions": 7,
+    "unique_unordered_compositions": 6,
+    "unique_model_states": 21,
+    "duplicate_state_groups": 3,
+    "duplicate_state_extra_runs": 3
+  },
+  "source_learning_effect_counts": [
+    {
+      "scope": "logical_task_occurrences",
+      "n_records": 96,
+      "improved_at_least_5pp": 7,
+      "decreased_at_least_5pp": 70,
+      "within_5pp": 19,
+      "multi_minus_single4800_dev_accuracy_mean": -0.20542399088541666,
+      "multi_minus_single4800_dev_accuracy_sample_sd": 0.19390969185457615,
+      "multi_minus_single4800_dev_accuracy_min": -0.5244140625,
+      "multi_minus_single4800_dev_accuracy_max": 0.435546875
+    },
+    {
+      "scope": "unique_seed_task_source_state",
+      "n_records": 84,
+      "improved_at_least_5pp": 6,
+      "decreased_at_least_5pp": 60,
+      "within_5pp": 18,
+      "multi_minus_single4800_dev_accuracy_mean": -0.20941452752976192,
+      "multi_minus_single4800_dev_accuracy_sample_sd": 0.18973440727861862,
+      "multi_minus_single4800_dev_accuracy_min": -0.5244140625,
+      "multi_minus_single4800_dev_accuracy_max": 0.435546875
+    }
+  ],
+  "new_training_timer_seconds": 4340.676703499979,
+  "recorded_engine_stage_seconds": 4424.837166299869,
+  "report": "F:\\2026DMLR\\experiments\\pilot_v3_multitarget\\PILOT_V3_REPORT.md",
+  "no_test_based_selection": true
+}

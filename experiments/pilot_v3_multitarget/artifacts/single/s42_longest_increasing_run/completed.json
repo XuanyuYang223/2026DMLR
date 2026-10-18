@@ -1,0 +1,25 @@
+{
+  "seed": 42,
+  "tasks": [
+    "longest_increasing_run"
+  ],
+  "kind": "single",
+  "updates": 4800,
+  "input_tokens": 8601600,
+  "supervised_tokens": 614400,
+  "sample_exposures": 307200,
+  "task_exposures": 307200,
+  "actual_unique_per_task": {
+    "longest_increasing_run": 8192
+  },
+  "task_fraction": 1.0,
+  "schedule_sha256": "e857e543efc8d6f43f4d4e0114945d962b3aa5660f8e240e0337945f07f63bfb",
+  "model_state_hash": "4cf8b74b9f1eee1b3e63b70d409764a401e86d0db7b21860ef8e0f8985a607e6",
+  "seconds": 59.30173589999322,
+  "new_compute": true,
+  "checkpoint": "single/s42_longest_increasing_run/step4800.pt",
+  "checkpoint_sha256": "94d380344373e8b4dcac935358834e284f1c05f564e6ec80a4c8955b107a8dc6",
+  "initial_state_hash": "a54723b0ef71de032c782f77a0f386feec588449a6d050fab3b781c60c5ef80c",
+  "train_sha256": "f9c9f839f04e8ab0c45b24650ec0add72145f6dd5a1cc55fc8973f9276e28da3",
+  "dev_sha256": "2f1dc78524681a9a7510ae0afcac4657037d75ff5d0e7b7937bfe8622ba77265"
+}

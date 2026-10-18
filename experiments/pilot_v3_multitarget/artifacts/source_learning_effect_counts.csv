@@ -1,0 +1,3 @@
+scope,n_records,improved_at_least_5pp,decreased_at_least_5pp,within_5pp,multi_minus_single4800_dev_accuracy_mean,multi_minus_single4800_dev_accuracy_sample_sd,multi_minus_single4800_dev_accuracy_min,multi_minus_single4800_dev_accuracy_max
+logical_task_occurrences,96,7,70,19,-0.20542399088541666,0.19390969185457615,-0.5244140625,0.435546875
+unique_seed_task_source_state,84,6,60,18,-0.20941452752976192,0.18973440727861862,-0.5244140625,0.435546875
