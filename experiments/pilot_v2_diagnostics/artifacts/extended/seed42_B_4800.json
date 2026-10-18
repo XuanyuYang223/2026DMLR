@@ -1,0 +1,25 @@
+{
+  "seed": 42,
+  "condition": "B",
+  "step": 4800,
+  "additional_updates": 2400,
+  "additional_input_tokens": 4300800,
+  "additional_supervised_tokens": 307200,
+  "seconds": 77.68478429998504,
+  "source_checkpoint_sha256": "b7b9ea2a8bb28a54541739050b151cdcae98c6af52da102d2ab62b2e2ae66027",
+  "lr": 3e-05,
+  "optimizer_continued": true,
+  "rng_continued": true,
+  "final_rng_numpy": {
+    "bit_generator": "PCG64",
+    "state": {
+      "state": 241581233230860287005327450228211421059,
+      "inc": 77514017122071962451196847872092078785
+    },
+    "has_uint32": 1,
+    "uinteger": 3477354746
+  },
+  "model_state_hash": "10c2eb37e0a896149429a6879036837dbe02f29e5b6caec2cad417e63f9e416c",
+  "sampler_replay_4800_verified": true,
+  "protocol_sha256": "a9b8839738362034f8123454167f33c7e9e53da836193e523060359880b395ca"
+}

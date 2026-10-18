@@ -1,0 +1,80 @@
+{
+  "config": {
+    "version": "pilot_v2_diagnostics/v1",
+    "seeds": [
+      17,
+      42
+    ],
+    "target": "fixed_points",
+    "target_n": 256,
+    "permutation_length": 10,
+    "model": {
+      "d_model": 256,
+      "layers": 4,
+      "n_heads": 8,
+      "mlp_ratio": 4,
+      "dropout": 0.1,
+      "tie_embeddings": true,
+      "max_seq_len": 128
+    },
+    "vocab_size": 188,
+    "encoding": "one_line",
+    "sources": {
+      "B": [
+        "anti_fixed_points",
+        "descents",
+        "peaks",
+        "left_to_right_maxima"
+      ],
+      "C": [
+        "successions",
+        "descents",
+        "peaks",
+        "left_to_right_maxima"
+      ]
+    },
+    "learning_rates": [
+      0.0003,
+      0.0001,
+      3e-05
+    ],
+    "adapt_updates": 800,
+    "batch": 64,
+    "evaluate_every": 100,
+    "warmup": 100,
+    "minimum_lr_ratio": 0.1,
+    "weight_decay": 0.01,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "clip": 1.0,
+    "optimizer": "AdamW, fresh per adaptation",
+    "precision": "FP32 weights, CUDA BF16 training, TF32 disabled",
+    "selection": "max dev answer accuracy, min dev answer CE, earliest update, declared LR order; step0 excluded",
+    "source_budgets": [
+      2400,
+      4800
+    ],
+    "extension_lr": 3e-05,
+    "extension_updates": 2400,
+    "extension": "Continue original checkpoint including optimizer and RNG, hold original terminal LR; same 8192 inputs",
+    "new_test_count": 2048,
+    "new_test_seed": 2026101802,
+    "test_rule": "Generate only after selections freeze; reject all v1 and cross-seed full inverse/reverse/complement orbits",
+    "development_reuse": "Reuse v1 target train[:256] and dev; known historical dev results make this exploratory",
+    "scope": "No task replacement, no target/task-count expansion, stop after diagnostics"
+  },
+  "created_unix": 1792340239.4619625,
+  "code": {
+    "pilot_v2_diagnostics/diagnose.py": "2fd2ad813d86b546ae9a96e30bb80be3a958779198a998d9379def51dcc6ee3b",
+    "permworld_pilot/pilot.py": "ac1a270c3157a0e4720c1646ef90237374b29af869b028defb1d60a1810df4c8",
+    "permworld_pilot/vendor/neurips_permutations/__init__.py": "cded340b85f88422b18cde5b894e6543f089d254d94faa3d3b2b2b1c08e9d91e",
+    "permworld_pilot/vendor/neurips_permutations/math_ops.py": "3f6832b4798a20cc6b813a0b64ec01cf10360fbf3d6256cb59d1d793d4ad345f",
+    "permworld_pilot/vendor/neurips_permutations/models.py": "ed3ac73b6edaa6ed5c0c2528ba2c37fb903b55259840dfb17f8851562c2599a0",
+    "permworld_pilot/vendor/neurips_permutations/passage.py": "6c103494507358b8b4d2ee6a5c69a31fc391ae4cd35d7f1126bdac891fe07e09",
+    "permworld_pilot/vendor/sdpa.py": "5035f58453ddee5c5d5b05878491dfcc81764e172f2ebada437dc9e325048918"
+  },
+  "inventory_sha256": "e37dcf03622e9efe63af453cecc1bf521dc881d2d31a22099f46f3a2dd9c0faa"
+}

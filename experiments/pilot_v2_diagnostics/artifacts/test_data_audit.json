@@ -1,0 +1,22 @@
+{
+  "created_unix": 1792341472.9520345,
+  "selection_sha256": "9bf425b1f7bae724c3524453aedb0e647965a0d2b0d70ce945533fadd840a3e5",
+  "excluded_original_orbits": 35840,
+  "overlap": 0,
+  "pools": [
+    {
+      "seed": 17,
+      "count": 2048,
+      "sha256": "ad1d72096ec670e08d0feb566cc1c5475600657b322ec8cb2b03720e87addd10",
+      "unique_inputs": 2048,
+      "unique_orbits": 2048
+    },
+    {
+      "seed": 42,
+      "count": 2048,
+      "sha256": "a00aef2452cb82bc665671cd1f7ae7e07f8e81fa4e57fdaae8a850299dfc95e6",
+      "unique_inputs": 2048,
+      "unique_orbits": 2048
+    }
+  ]
+}

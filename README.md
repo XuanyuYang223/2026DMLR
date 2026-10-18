@@ -8,3 +8,10 @@
 - [全部原始结果](experiments/permworld_pilot/runs/pilot_v1/results_all.csv)
 
 实验分支：`pilot/permworld-composition`。参考项目克隆在本地 `reference/`，不修改原 alignment 实验。模型 checkpoint 保留在本地实验目录，因体积未纳入 Git；数据、配置、源码、CSV、图和审计信息保留在仓库中。
+
+第二轮固定256样本诊断位于 `experiments/pilot_v2_diagnostics/`：
+
+- [第二轮中文报告](experiments/pilot_v2_diagnostics/DIAGNOSTIC_REPORT.md)
+- [第二轮配置、隔离规则与复现命令](experiments/pilot_v2_diagnostics/README.md)
+
+第二轮分支：`pilot/permworld-v2-diagnostics`。原 `pilot_v1` 全部结果与checkpoint保留，并以文件哈希核验。

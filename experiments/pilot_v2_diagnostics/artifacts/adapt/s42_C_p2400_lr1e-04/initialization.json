@@ -1,0 +1,25 @@
+{
+  "source_path": "permworld_pilot/runs/pilot_v1/seed42/pretrain_C.pt",
+  "source_sha256": "b49945685eb99caadc880a8427acca68919e28fab93984ca77eb82e3be943e01",
+  "loaded_state_hash": "f4e5c755a2c5bd127b81ca2ca253da7a8235b7318ef928fe5ea12e06cf95cba3",
+  "source_state_hash": "f4e5c755a2c5bd127b81ca2ca253da7a8235b7318ef928fe5ea12e06cf95cba3",
+  "adapt_initial_state_hash": "186f0e02f616efd28ff3d70b36351e018932fe57ed73567eef97ab0cf79a1625",
+  "target_row_hash": "d2ecdfeaf3449c554b671bc802228b40042fa7f75c5571c68695d738621763a9",
+  "tied_output_row": true,
+  "reset_row_ids": [
+    119
+  ],
+  "new_output_head": false,
+  "seed": 42,
+  "condition": "C",
+  "budget": 2400,
+  "lr": 0.0001,
+  "optimizer_entries": 0,
+  "optimizer_state_reset": true,
+  "train_sha256": "b89f4980fc5e535112e8dcfba602709ef19fd11faab363f6026ad25447be06f9",
+  "train_slice": [
+    0,
+    256
+  ],
+  "dev_sha256": "b67e639c55c436eae5a7459d79c598eca8ecb4f03dbeb9f0ee3fe231a3e2a492"
+}

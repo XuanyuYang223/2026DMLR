@@ -1,0 +1,25 @@
+{
+  "source_path": "pilot_v2_diagnostics/artifacts/extended/seed42_C_4800.pt",
+  "source_sha256": "36b01c2fe8afd1a34dfa9f6f1dfca16df11886ccfe74b219b06e53513930c243",
+  "loaded_state_hash": "e9f0dfc1932933caac70dc56db56643bc4baa90704220a9acbc3d02f6c6cf09c",
+  "source_state_hash": "e9f0dfc1932933caac70dc56db56643bc4baa90704220a9acbc3d02f6c6cf09c",
+  "adapt_initial_state_hash": "31734dc6884403898af7c93d0b078ee4fcfe3fa56d245e6432684b2150c71739",
+  "target_row_hash": "d2ecdfeaf3449c554b671bc802228b40042fa7f75c5571c68695d738621763a9",
+  "tied_output_row": true,
+  "reset_row_ids": [
+    119
+  ],
+  "new_output_head": false,
+  "seed": 42,
+  "condition": "C",
+  "budget": 4800,
+  "lr": 3e-05,
+  "optimizer_entries": 0,
+  "optimizer_state_reset": true,
+  "train_sha256": "b89f4980fc5e535112e8dcfba602709ef19fd11faab363f6026ad25447be06f9",
+  "train_slice": [
+    0,
+    256
+  ],
+  "dev_sha256": "b67e639c55c436eae5a7459d79c598eca8ecb4f03dbeb9f0ee3fe231a3e2a492"
+}

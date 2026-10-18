@@ -1,0 +1,15 @@
+{
+  "completed": true,
+  "extension_justified": true,
+  "missing": [
+    "historical per-task source train CE and historical per-task source trajectories",
+    "historical full target train trajectories",
+    "historical intermediate model checkpoints"
+  ],
+  "supplemented": [
+    "source endpoint full train/dev answer CE, two-token CE, accuracy and length-10 majority baselines",
+    "exact sampling replay and checkpoint loading audit"
+  ],
+  "not_recoverable": "Historical intermediate checkpoints/metrics cannot be recovered from final checkpoints; new replay curves will be labelled separately",
+  "inference": "Under-learning and increasing dev CE are supported; LR mismatch and transfer mechanism remain hypotheses"
+}

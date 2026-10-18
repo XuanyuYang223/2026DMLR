@@ -1,0 +1,25 @@
+{
+  "source_path": "permworld_pilot/runs/pilot_v1/seed42/step0.pt",
+  "source_sha256": "82b71ee679bc001831f8fc065b32e23822b39b88c4be88c168f45e65a6d4f13d",
+  "loaded_state_hash": "a54723b0ef71de032c782f77a0f386feec588449a6d050fab3b781c60c5ef80c",
+  "source_state_hash": "a54723b0ef71de032c782f77a0f386feec588449a6d050fab3b781c60c5ef80c",
+  "adapt_initial_state_hash": "a54723b0ef71de032c782f77a0f386feec588449a6d050fab3b781c60c5ef80c",
+  "target_row_hash": "d2ecdfeaf3449c554b671bc802228b40042fa7f75c5571c68695d738621763a9",
+  "tied_output_row": true,
+  "reset_row_ids": [
+    119
+  ],
+  "new_output_head": false,
+  "seed": 42,
+  "condition": "A",
+  "budget": 0,
+  "lr": 0.0001,
+  "optimizer_entries": 0,
+  "optimizer_state_reset": true,
+  "train_sha256": "b89f4980fc5e535112e8dcfba602709ef19fd11faab363f6026ad25447be06f9",
+  "train_slice": [
+    0,
+    256
+  ],
+  "dev_sha256": "b67e639c55c436eae5a7459d79c598eca8ecb4f03dbeb9f0ee3fe231a3e2a492"
+}

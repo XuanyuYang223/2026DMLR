@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "resume_state_bitwise_equal": true,
+  "evaluation_preserves_rng": true,
+  "initializations": [
+    {
+      "source_path": "permworld_pilot/runs/pilot_v1/seed17/step0.pt",
+      "source_sha256": "01af960f67a9a1e50973a048c4f38cae700855d82be5968611fb9b8236fe40d4",
+      "loaded_state_hash": "ca479168a68e9c34ac0a4f53f2f508f52dee061dcbdf15b569d94529ee3f8f1f",
+      "source_state_hash": "ca479168a68e9c34ac0a4f53f2f508f52dee061dcbdf15b569d94529ee3f8f1f",
+      "adapt_initial_state_hash": "ca479168a68e9c34ac0a4f53f2f508f52dee061dcbdf15b569d94529ee3f8f1f",
+      "target_row_hash": "250533d1313ec33c530f622cd8e45f3d7b52e642683757c90ff14ea2b37a9282",
+      "tied_output_row": true,
+      "reset_row_ids": [
+        119
+      ],
+      "new_output_head": false,
+      "condition": "A"
+    },
+    {
+      "source_path": "permworld_pilot/runs/pilot_v1/seed17/pretrain_B.pt",
+      "source_sha256": "adf3959977c054607220b889653a575cf80387456e3f813273e6ad0219756387",
+      "loaded_state_hash": "86c2a4a3fbddd7daa82d268d6dcc3400dcabef51feab9f05777444564926f33a",
+      "source_state_hash": "86c2a4a3fbddd7daa82d268d6dcc3400dcabef51feab9f05777444564926f33a",
+      "adapt_initial_state_hash": "ce02c1488dde80bccee248e90b0f621ca736615ed72239dc3dd098108143ccfe",
+      "target_row_hash": "250533d1313ec33c530f622cd8e45f3d7b52e642683757c90ff14ea2b37a9282",
+      "tied_output_row": true,
+      "reset_row_ids": [
+        119
+      ],
+      "new_output_head": false,
+      "condition": "B"
+    },
+    {
+      "source_path": "permworld_pilot/runs/pilot_v1/seed17/pretrain_C.pt",
+      "source_sha256": "da440d02ec7d4f9a4f8b704670fc508b66f1643a57f92ea481981f7289fb8cc3",
+      "loaded_state_hash": "73adbedf59a674d0bb87d454f98f6fe5caa90533cad04f415c7b3b412fce3334",
+      "source_state_hash": "73adbedf59a674d0bb87d454f98f6fe5caa90533cad04f415c7b3b412fce3334",
+      "adapt_initial_state_hash": "28736a3747fe7d399a71e25acc78382502464081ba277b76980919f24bb0c7e8",
+      "target_row_hash": "250533d1313ec33c530f622cd8e45f3d7b52e642683757c90ff14ea2b37a9282",
+      "tied_output_row": true,
+      "reset_row_ids": [
+        119
+      ],
+      "new_output_head": false,
+      "condition": "C"
+    }
+  ]
+}

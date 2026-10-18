@@ -1,0 +1,6 @@
+condition,pretrain_updates,candidate_count,start_step,end_step,train_ce_decreased,dev_ce_increased,dev_accuracy_decreased,train_ce_down_and_dev_ce_up,train_ce_down_dev_ce_up_dev_accuracy_down
+A,0,6,400,800,6,2,0,2,0
+B,2400,6,400,800,6,6,1,6,1
+C,2400,6,400,800,6,5,0,5,0
+B,4800,6,400,800,6,5,0,5,0
+C,4800,6,400,800,6,5,0,5,0

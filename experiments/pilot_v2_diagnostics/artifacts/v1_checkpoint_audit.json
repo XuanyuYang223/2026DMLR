@@ -1,0 +1,42 @@
+[
+  {
+    "seed": 17,
+    "condition": "B",
+    "loaded_exactly": true,
+    "changed_state_tensors": 53,
+    "saved_optimizer_steps": [
+      2400
+    ],
+    "fresh_optimizer_entries": 0
+  },
+  {
+    "seed": 17,
+    "condition": "C",
+    "loaded_exactly": true,
+    "changed_state_tensors": 53,
+    "saved_optimizer_steps": [
+      2400
+    ],
+    "fresh_optimizer_entries": 0
+  },
+  {
+    "seed": 42,
+    "condition": "B",
+    "loaded_exactly": true,
+    "changed_state_tensors": 53,
+    "saved_optimizer_steps": [
+      2400
+    ],
+    "fresh_optimizer_entries": 0
+  },
+  {
+    "seed": 42,
+    "condition": "C",
+    "loaded_exactly": true,
+    "changed_state_tensors": 53,
+    "saved_optimizer_steps": [
+      2400
+    ],
+    "fresh_optimizer_entries": 0
+  }
+]

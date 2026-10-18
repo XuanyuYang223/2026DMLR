@@ -1,0 +1,4 @@
+lr,selected_groups,total_groups,note
+0.0003,9,10,10 actual condition/seed/budget groups; A0 counted once per seed
+0.0001,1,10,10 actual condition/seed/budget groups; A0 counted once per seed
+3e-05,0,10,10 actual condition/seed/budget groups; A0 counted once per seed

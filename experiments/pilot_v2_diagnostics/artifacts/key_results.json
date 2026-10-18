@@ -1,0 +1,70 @@
+{
+  "seeds": [
+    17,
+    42
+  ],
+  "target_n": 256,
+  "complete": true,
+  "selected_negative_mean_conditions": [
+    {
+      "budget": 2400,
+      "condition": "B"
+    },
+    {
+      "budget": 2400,
+      "condition": "C"
+    },
+    {
+      "budget": 4800,
+      "condition": "B"
+    },
+    {
+      "budget": 4800,
+      "condition": "C"
+    }
+  ],
+  "source_dev_below_90_at_4800": 11,
+  "total_source_seed_condition_units": 16,
+  "source_dev_accuracy_increased_with_extension": 16,
+  "source_dev_ce_decreased_with_extension": 16,
+  "replay_bitwise_equal": 6,
+  "replay_total": 6,
+  "selected_learning_rate_counts": {
+    "0.0003": 9,
+    "0.0001": 1,
+    "3e-05": 0
+  },
+  "selected_checkpoints_before_endpoint": 7,
+  "early_selected_test_better_than_same_lr_endpoint": 2,
+  "early_selected_test_worse_than_same_lr_endpoint": 5,
+  "selection_conditioned_best_to_endpoint_deterioration_count": 6,
+  "fixed_400_to_800_train_ce_down_dev_ce_up": 23,
+  "fixed_400_to_800_train_ce_down_dev_ce_up_dev_acc_down": 1,
+  "fixed_window_candidate_count": 30,
+  "protocol_improvement_pp": {
+    "A": 0.29296875,
+    "B": -2.294921875,
+    "C": -1.1474609375
+  },
+  "extension_improvement_pp": {
+    "B": 6.7138671875,
+    "C": -4.1259765625
+  },
+  "extension_effect_by_seed_pp": {
+    "seed17_B": -8.154296875,
+    "seed17_C": -7.8125,
+    "seed42_B": 21.58203125,
+    "seed42_C": -0.439453125
+  },
+  "new_training_and_associated_evaluation_seconds": 1215.3318842998124,
+  "recorded_stage_wall_seconds": 1275.725972199929,
+  "recorded_stages": [
+    "freeze",
+    "select",
+    "smoke",
+    "test",
+    "train"
+  ],
+  "recommendation": "replacement-task matching including common-source learning first; do not expand now",
+  "report": "DIAGNOSTIC_REPORT.md"
+}
