@@ -1,0 +1,18 @@
+{
+  "run_id": "chain_alpha_k8_components_s2207",
+  "initialization_seed": 2207,
+  "data_seed": 2026102102,
+  "pretrain_sampling_seed": 2026102182,
+  "adaptation_sampling_seed": 2026102192,
+  "pretrain_dropout_seed": 2026102282,
+  "adaptation_dropout_seed": 2026102292,
+  "seed": 2207,
+  "chain": "chain_alpha",
+  "k": 8,
+  "condition": "pretrained",
+  "target": "components",
+  "task_id": "components",
+  "params": "{}",
+  "started_utc": "2026-10-19T17:48:38.345947+00:00",
+  "frozen_protocol_sha256": "8df8d320f08847d098a768b0fa95f49bcacc297ce616b105668d7c27ef74244f"
+}

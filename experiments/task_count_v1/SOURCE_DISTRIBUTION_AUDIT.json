@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "completed_utc": "2026-10-19T16:53:07.984640+00:00",
+  "seconds": 21.037630400038324,
+  "source_instances": 24,
+  "rows": 288,
+  "labels_summarized": 626688,
+  "source_train_objects_per_length": 4096,
+  "source_dev_objects_per_length": 256,
+  "frozen_protocol_sha256": "8df8d320f08847d098a768b0fa95f49bcacc297ce616b105668d7c27ef74244f",
+  "primary_data_manifest_sha256": "3d5bcb9b852d001ee9e9a74c3ebdb678a00e36be237345b7286066dac387b00d",
+  "csv_sha256": "6e022fae8980ca9eac02c1b29ac655e7ab73b616f70b13734d9c5487ca01aa72",
+  "test_inputs_opened": false
+}

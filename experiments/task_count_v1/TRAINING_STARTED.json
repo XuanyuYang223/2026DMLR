@@ -1,0 +1,20 @@
+{
+  "started_utc": "2026-10-19T16:50:30.799961+00:00",
+  "frozen_protocol_sha256": "8df8d320f08847d098a768b0fa95f49bcacc297ce616b105668d7c27ef74244f",
+  "environment": {
+    "python": "3.13.14 (main, Jun 23 2026, 15:19:27) [MSC v.1944 64 bit (AMD64)]",
+    "torch": "2.11.0+cu128",
+    "numpy": "2.5.4",
+    "cuda": "12.8",
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "parameter_count": 3244288,
+    "encoding_version": "permworld_sequence_v1"
+  },
+  "scope": {
+    "pretraining_models": 24,
+    "adaptations_from_pretraining": 96,
+    "shared_random_initialization_baselines": 12,
+    "total_target_training_runs": 108
+  }
+}

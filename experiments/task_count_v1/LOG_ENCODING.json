@@ -1,0 +1,9 @@
+{
+  "file": "execution.log",
+  "original_encoding": "UTF-16LE with BOM (PowerShell Tee-Object)",
+  "released_encoding": "UTF-8",
+  "text_exactly_preserved": true,
+  "original_bytes_sha256": "9f93a54447cd019c2db3445022799d17163c5bfae1c4b39fb16be769c5e74cf9",
+  "released_bytes_sha256": "1c2a6e36112b2b0ffc1c50302220f118d3e58cd7e7a6ffa45054d38f41ef2b5d",
+  "purpose": "Make the completed console log readable on GitHub; no numerical or training artifact changed."
+}

@@ -1,0 +1,12 @@
+{
+  "completed_utc": "2026-10-19T18:15:31.036885+00:00",
+  "stage_seconds": 5100.232842699974,
+  "scope": {
+    "pretraining_models": 24,
+    "adaptations_from_pretraining": 96,
+    "shared_random_initialization_baselines": 12,
+    "total_target_training_runs": 108
+  },
+  "frozen_protocol_sha256": "8df8d320f08847d098a768b0fa95f49bcacc297ce616b105668d7c27ef74244f",
+  "test_evaluated": false
+}

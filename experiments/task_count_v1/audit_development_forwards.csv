@@ -1,0 +1,7 @@
+checkpoint,task,split,length,correct,eos_generated,majority_correct,count,accuracy,answer_ce,eos_ce,sequence_ce,eos_accuracy,majority_accuracy,majority_answer,status
+pretraining/chain_alpha_k16_s1103/endpoint.pt,increasing_subsequence_count_k3,source_dev,10,23,256,8,256,0.08984375,3.058279871940613,0.0002308368348167278,1.5292553901672363,1.0,0.03125,10,pass
+pretraining/chain_alpha_k16_s1103/endpoint.pt,increasing_subsequence_count_k3,source_dev,12,14,256,5,256,0.0546875,3.590641975402832,0.00028035759169142693,1.8088309168815613,1.0,0.01953125,19,pass
+pretraining/chain_alpha_k16_s1103/endpoint.pt,increasing_subsequence_count_k3,source_dev,all,37,512,13,512,0.072265625,3.3244609236717224,0.00025559721325407736,1.6690431535243988,1.0,0.025390625,training-derived per-length values,pass
+adaptation/chain_alpha_k16_cycle_count_s1103/best.pt,cycle_count,target_dev,10,79,256,89,256,0.30859375,2.98084032535553,4.536020242085215e-05,1.4904428124427795,1.0,0.34765625,3,pass
+adaptation/chain_alpha_k16_cycle_count_s1103/best.pt,cycle_count,target_dev,12,71,256,80,256,0.27734375,2.9957621097564697,3.643257150542922e-05,1.4978991746902466,1.0,0.3125,3,pass
+adaptation/chain_alpha_k16_cycle_count_s1103/best.pt,cycle_count,target_dev,all,150,512,169,512,0.29296875,2.9883012175559998,4.0896386963140685e-05,1.494170993566513,1.0,0.330078125,training-derived per-length values,pass

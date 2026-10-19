@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "completed_utc": "2026-10-19T18:17:50.289905+00:00",
+  "seconds": 62.70460279996041,
+  "adaptation_runs": 108,
+  "checkpoint_evaluations": 216,
+  "result_rows": 648,
+  "frozen_selection_sha256": "a1aa33c26ada6135eba6dc89429f93e2a10adca333be996381411cb51b8f8ba0",
+  "raw_results_sha256": "49bdc14e2fb2c7139708a294585400fdcbbcaec15b3c0dc73a50299e1177484c",
+  "no_test_based_selection": true
+}

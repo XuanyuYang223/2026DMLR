@@ -1,0 +1,15 @@
+{
+  "run_id": "chain_alpha_k16_s1103",
+  "initialization_seed": 1103,
+  "data_seed": 2026102101,
+  "pretrain_sampling_seed": 2026102181,
+  "adaptation_sampling_seed": 2026102191,
+  "pretrain_dropout_seed": 2026102281,
+  "adaptation_dropout_seed": 2026102291,
+  "seed": 1103,
+  "chain": "chain_alpha",
+  "k": 16,
+  "condition": "pretrained",
+  "started_utc": "2026-10-19T16:55:55.627422+00:00",
+  "frozen_protocol_sha256": "8df8d320f08847d098a768b0fa95f49bcacc297ce616b105668d7c27ef74244f"
+}

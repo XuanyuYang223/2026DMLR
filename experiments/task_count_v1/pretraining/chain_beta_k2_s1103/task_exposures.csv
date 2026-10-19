@@ -1,0 +1,5 @@
+run_id,initialization_seed,data_seed,pretrain_sampling_seed,adaptation_sampling_seed,pretrain_dropout_seed,adaptation_dropout_seed,seed,chain,k,condition,source_task,length,input_tokens,padded_input_tokens,supervised_tokens,answer_tokens,sample_exposures,sample_fraction,unique_inputs_exposed,pool_size
+chain_beta_k2_s1103,1103,2026102101,2026102181,2026102191,2026102281,2026102291,1103,chain_beta,2,pretrained,longest_cycle,10,874496,999424,62464,31232,31232,0.24992597927419677,4094,4096
+chain_beta_k2_s1103,1103,2026102101,2026102181,2026102191,2026102281,2026102291,1103,chain_beta,2,pretrained,longest_cycle,12,1000032,1153356,62502,31251,31251,0.25007802184611694,4094,4096
+chain_beta_k2_s1103,1103,2026102101,2026102181,2026102191,2026102281,2026102291,1103,chain_beta,2,pretrained,decreasing_subsequence_count_k3,10,999424,999424,62464,31232,31232,0.24992597927419677,4094,4096
+chain_beta_k2_s1103,1103,2026102101,2026102181,2026102191,2026102281,2026102291,1103,chain_beta,2,pretrained,decreasing_subsequence_count_k3,12,1126023,1153320,63523,32273,31250,0.2500700196054895,4094,4096

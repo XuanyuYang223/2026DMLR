@@ -1,0 +1,798 @@
+{"run": "chain_alpha_k2_s1103", "update": 200, "tokens": 384000, "loss": 0.695721, "seconds": 8.14}
+{"run": "chain_alpha_k2_s1103", "update": 400, "tokens": 768000, "loss": 0.635536, "seconds": 14.3}
+{"run": "chain_alpha_k2_s1103", "update": 600, "tokens": 1152000, "loss": 0.535988, "seconds": 20.36}
+{"run": "chain_alpha_k2_s1103", "update": 800, "tokens": 1536000, "loss": 0.476478, "seconds": 26.61}
+{"run": "chain_alpha_k2_s1103", "update": 1000, "tokens": 1920000, "loss": 0.489724, "seconds": 33.68}
+{"run": "chain_alpha_k2_s1103", "update": 1200, "tokens": 2304000, "loss": 0.428008, "seconds": 40.72}
+{"run": "chain_alpha_k2_s1103", "update": 1400, "tokens": 2688000, "loss": 0.3601, "seconds": 50.08}
+{"run": "chain_alpha_k2_s1103", "update": 1600, "tokens": 3072000, "loss": 0.445967, "seconds": 59.4}
+{"run": "chain_alpha_k2_s1103", "update": 1800, "tokens": 3456000, "loss": 0.352774, "seconds": 69.61}
+{"run": "chain_alpha_k2_s1103", "update": 2000, "tokens": 3840000, "loss": 0.439743, "seconds": 76.31}
+Completed pretraining chain_alpha_k2_s1103: 3999992 tokens, tail 8
+{"run": "chain_alpha_k4_s1103", "update": 200, "tokens": 384000, "loss": 0.578652, "seconds": 8.55}
+{"run": "chain_alpha_k4_s1103", "update": 400, "tokens": 768000, "loss": 0.581438, "seconds": 16.85}
+{"run": "chain_alpha_k4_s1103", "update": 600, "tokens": 1152000, "loss": 0.533889, "seconds": 27.84}
+{"run": "chain_alpha_k4_s1103", "update": 800, "tokens": 1536000, "loss": 0.40519, "seconds": 38.06}
+{"run": "chain_alpha_k4_s1103", "update": 1000, "tokens": 1920000, "loss": 0.405218, "seconds": 47.98}
+{"run": "chain_alpha_k4_s1103", "update": 1200, "tokens": 2304000, "loss": 0.423104, "seconds": 61.55}
+{"run": "chain_alpha_k4_s1103", "update": 1400, "tokens": 2688000, "loss": 0.327938, "seconds": 72.08}
+{"run": "chain_alpha_k4_s1103", "update": 1600, "tokens": 3072000, "loss": 0.344193, "seconds": 79.43}
+{"run": "chain_alpha_k4_s1103", "update": 1800, "tokens": 3456000, "loss": 0.299188, "seconds": 86.93}
+{"run": "chain_alpha_k4_s1103", "update": 2000, "tokens": 3840000, "loss": 0.345702, "seconds": 94.36}
+Completed pretraining chain_alpha_k4_s1103: 3999992 tokens, tail 8
+{"run": "chain_alpha_k8_s1103", "update": 200, "tokens": 390412, "loss": 0.753353, "seconds": 33.08}
+{"run": "chain_alpha_k8_s1103", "update": 400, "tokens": 780839, "loss": 0.736772, "seconds": 49.91}
+{"run": "chain_alpha_k8_s1103", "update": 600, "tokens": 1171266, "loss": 0.671648, "seconds": 60.83}
+{"run": "chain_alpha_k8_s1103", "update": 800, "tokens": 1561690, "loss": 0.599601, "seconds": 70.72}
+{"run": "chain_alpha_k8_s1103", "update": 1000, "tokens": 1952126, "loss": 0.53505, "seconds": 80.2}
+{"run": "chain_alpha_k8_s1103", "update": 1200, "tokens": 2342547, "loss": 0.672544, "seconds": 94.69}
+{"run": "chain_alpha_k8_s1103", "update": 1400, "tokens": 2732959, "loss": 0.594057, "seconds": 102.49}
+{"run": "chain_alpha_k8_s1103", "update": 1600, "tokens": 3123380, "loss": 0.650947, "seconds": 113.51}
+{"run": "chain_alpha_k8_s1103", "update": 1800, "tokens": 3513801, "loss": 0.581554, "seconds": 121.62}
+{"run": "chain_alpha_k8_s1103", "update": 2000, "tokens": 3904207, "loss": 0.586023, "seconds": 131.52}
+Completed pretraining chain_alpha_k8_s1103: 3999983 tokens, tail 17
+{"run": "chain_alpha_k16_s1103", "update": 200, "tokens": 396824, "loss": 0.905367, "seconds": 34.19}
+{"run": "chain_alpha_k16_s1103", "update": 400, "tokens": 793633, "loss": 0.855821, "seconds": 50.81}
+{"run": "chain_alpha_k16_s1103", "update": 600, "tokens": 1190463, "loss": 0.758076, "seconds": 67.37}
+{"run": "chain_alpha_k16_s1103", "update": 800, "tokens": 1587284, "loss": 0.710086, "seconds": 84.11}
+{"run": "chain_alpha_k16_s1103", "update": 1000, "tokens": 1984108, "loss": 0.625661, "seconds": 100.97}
+{"run": "chain_alpha_k16_s1103", "update": 1200, "tokens": 2380938, "loss": 0.647982, "seconds": 136.45}
+{"run": "chain_alpha_k16_s1103", "update": 1400, "tokens": 2777753, "loss": 0.627552, "seconds": 153.27}
+{"run": "chain_alpha_k16_s1103", "update": 1600, "tokens": 3174571, "loss": 0.628588, "seconds": 169.86}
+{"run": "chain_alpha_k16_s1103", "update": 1800, "tokens": 3571401, "loss": 0.630848, "seconds": 186.75}
+{"run": "chain_alpha_k16_s1103", "update": 2000, "tokens": 3968225, "loss": 0.663792, "seconds": 203.64}
+Completed pretraining chain_alpha_k16_s1103: 3999981 tokens, tail 19
+{"run": "chain_beta_k2_s1103", "update": 200, "tokens": 409711, "loss": 1.600945, "seconds": 20.95}
+{"run": "chain_beta_k2_s1103", "update": 400, "tokens": 819440, "loss": 1.448052, "seconds": 38.43}
+{"run": "chain_beta_k2_s1103", "update": 600, "tokens": 1229115, "loss": 1.411064, "seconds": 55.09}
+{"run": "chain_beta_k2_s1103", "update": 800, "tokens": 1638808, "loss": 1.177295, "seconds": 71.36}
+{"run": "chain_beta_k2_s1103", "update": 1000, "tokens": 2048519, "loss": 1.215527, "seconds": 90.4}
+{"run": "chain_beta_k2_s1103", "update": 1200, "tokens": 2458209, "loss": 1.138938, "seconds": 107.5}
+{"run": "chain_beta_k2_s1103", "update": 1400, "tokens": 2867938, "loss": 1.135812, "seconds": 124.06}
+{"run": "chain_beta_k2_s1103", "update": 1600, "tokens": 3277634, "loss": 1.30725, "seconds": 140.88}
+{"run": "chain_beta_k2_s1103", "update": 1800, "tokens": 3687342, "loss": 1.067347, "seconds": 157.66}
+Completed pretraining chain_beta_k2_s1103: 3999975 tokens, tail 25
+{"run": "chain_beta_k4_s1103", "update": 200, "tokens": 396851, "loss": 1.057009, "seconds": 24.37}
+{"run": "chain_beta_k4_s1103", "update": 400, "tokens": 793702, "loss": 0.949378, "seconds": 40.36}
+{"run": "chain_beta_k4_s1103", "update": 600, "tokens": 1190544, "loss": 0.801035, "seconds": 56.83}
+{"run": "chain_beta_k4_s1103", "update": 800, "tokens": 1587386, "loss": 0.764866, "seconds": 72.95}
+{"run": "chain_beta_k4_s1103", "update": 1000, "tokens": 1984255, "loss": 0.711643, "seconds": 88.16}
+{"run": "chain_beta_k4_s1103", "update": 1200, "tokens": 2381094, "loss": 0.772777, "seconds": 109.93}
+{"run": "chain_beta_k4_s1103", "update": 1400, "tokens": 2777951, "loss": 0.753099, "seconds": 126.87}
+{"run": "chain_beta_k4_s1103", "update": 1600, "tokens": 3174799, "loss": 0.833392, "seconds": 143.91}
+{"run": "chain_beta_k4_s1103", "update": 1800, "tokens": 3571680, "loss": 0.69687, "seconds": 160.52}
+{"run": "chain_beta_k4_s1103", "update": 2000, "tokens": 3968561, "loss": 0.802419, "seconds": 175.58}
+Completed pretraining chain_beta_k4_s1103: 3999986 tokens, tail 14
+{"run": "chain_beta_k8_s1103", "update": 200, "tokens": 403227, "loss": 0.794141, "seconds": 28.65}
+{"run": "chain_beta_k8_s1103", "update": 400, "tokens": 806454, "loss": 0.731774, "seconds": 43.76}
+{"run": "chain_beta_k8_s1103", "update": 600, "tokens": 1209675, "loss": 0.724757, "seconds": 59.18}
+{"run": "chain_beta_k8_s1103", "update": 800, "tokens": 1612887, "loss": 0.581439, "seconds": 74.31}
+{"run": "chain_beta_k8_s1103", "update": 1000, "tokens": 2016111, "loss": 0.634578, "seconds": 100.0}
+{"run": "chain_beta_k8_s1103", "update": 1200, "tokens": 2419329, "loss": 0.544, "seconds": 117.0}
+{"run": "chain_beta_k8_s1103", "update": 1400, "tokens": 2822562, "loss": 0.548425, "seconds": 133.0}
+{"run": "chain_beta_k8_s1103", "update": 1600, "tokens": 3225792, "loss": 0.571672, "seconds": 148.25}
+{"run": "chain_beta_k8_s1103", "update": 1800, "tokens": 3629016, "loss": 0.521974, "seconds": 164.93}
+Completed pretraining chain_beta_k8_s1103: 3999990 tokens, tail 10
+{"run": "chain_beta_k16_s1103", "update": 200, "tokens": 396824, "loss": 0.847405, "seconds": 43.18}
+{"run": "chain_beta_k16_s1103", "update": 400, "tokens": 793660, "loss": 0.846125, "seconds": 59.47}
+{"run": "chain_beta_k16_s1103", "update": 600, "tokens": 1190472, "loss": 0.706403, "seconds": 76.13}
+{"run": "chain_beta_k16_s1103", "update": 800, "tokens": 1587284, "loss": 0.707283, "seconds": 92.58}
+{"run": "chain_beta_k16_s1103", "update": 1000, "tokens": 1984108, "loss": 0.644646, "seconds": 108.94}
+{"run": "chain_beta_k16_s1103", "update": 1200, "tokens": 2380920, "loss": 0.691807, "seconds": 140.26}
+{"run": "chain_beta_k16_s1103", "update": 1400, "tokens": 2777738, "loss": 0.641936, "seconds": 156.23}
+{"run": "chain_beta_k16_s1103", "update": 1600, "tokens": 3174553, "loss": 0.680683, "seconds": 172.67}
+{"run": "chain_beta_k16_s1103", "update": 1800, "tokens": 3571365, "loss": 0.701367, "seconds": 189.68}
+{"run": "chain_beta_k16_s1103", "update": 2000, "tokens": 3968183, "loss": 0.595127, "seconds": 206.48}
+Completed pretraining chain_beta_k16_s1103: 3999991 tokens, tail 9
+{"run": "baseline_k0_cycle_count_s1103", "update": 200, "tokens": 384000, "loss": 0.252123, "dev_accuracy": 0.30078125, "seconds": 19.75}
+{"run": "baseline_k0_cycle_count_s1103", "update": 400, "tokens": 768000, "loss": 0.074222, "dev_accuracy": 0.2734375, "seconds": 35.13}
+{"run": "baseline_k0_cycle_count_s1103", "update": 600, "tokens": 1152000, "loss": 0.023723, "dev_accuracy": 0.2890625, "seconds": 51.26}
+{"run": "baseline_k0_cycle_count_s1103", "update": 800, "tokens": 1536000, "loss": 0.00613, "dev_accuracy": 0.27734375, "seconds": 69.38}
+{"run": "baseline_k0_cycle_count_s1103", "completed": true, "best_update": 100, "dev_best_accuracy": 0.33203125, "dev_endpoint_accuracy": 0.27734375, "seconds": 69.74}
+{"run": "baseline_k0_lis_length_s1103", "update": 200, "tokens": 384000, "loss": 0.308446, "dev_accuracy": 0.416015625, "seconds": 19.95}
+{"run": "baseline_k0_lis_length_s1103", "update": 400, "tokens": 768000, "loss": 0.02813, "dev_accuracy": 0.44921875, "seconds": 38.19}
+{"run": "baseline_k0_lis_length_s1103", "update": 600, "tokens": 1152000, "loss": 0.007773, "dev_accuracy": 0.478515625, "seconds": 56.01}
+{"run": "baseline_k0_lis_length_s1103", "update": 800, "tokens": 1536000, "loss": 0.004548, "dev_accuracy": 0.4453125, "seconds": 74.03}
+{"run": "baseline_k0_lis_length_s1103", "completed": true, "best_update": 600, "dev_best_accuracy": 0.478515625, "dev_endpoint_accuracy": 0.4453125, "seconds": 74.38}
+{"run": "baseline_k0_components_s1103", "update": 200, "tokens": 384000, "loss": 0.032198, "dev_accuracy": 0.939453125, "seconds": 20.13}
+{"run": "baseline_k0_components_s1103", "update": 400, "tokens": 768000, "loss": 0.00193, "dev_accuracy": 0.939453125, "seconds": 38.64}
+{"run": "baseline_k0_components_s1103", "update": 600, "tokens": 1152000, "loss": 0.001946, "dev_accuracy": 0.939453125, "seconds": 56.17}
+{"run": "baseline_k0_components_s1103", "update": 800, "tokens": 1536000, "loss": 0.002099, "dev_accuracy": 0.94140625, "seconds": 73.67}
+{"run": "baseline_k0_components_s1103", "completed": true, "best_update": 700, "dev_best_accuracy": 0.94140625, "dev_endpoint_accuracy": 0.94140625, "seconds": 74.02}
+{"run": "baseline_k0_fixed_points_s1103", "update": 200, "tokens": 384000, "loss": 0.167278, "dev_accuracy": 0.544921875, "seconds": 18.55}
+{"run": "baseline_k0_fixed_points_s1103", "update": 400, "tokens": 768000, "loss": 0.015078, "dev_accuracy": 0.625, "seconds": 34.92}
+{"run": "baseline_k0_fixed_points_s1103", "update": 600, "tokens": 1152000, "loss": 0.008163, "dev_accuracy": 0.609375, "seconds": 52.66}
+{"run": "baseline_k0_fixed_points_s1103", "update": 800, "tokens": 1536000, "loss": 0.005865, "dev_accuracy": 0.599609375, "seconds": 70.72}
+{"run": "baseline_k0_fixed_points_s1103", "completed": true, "best_update": 400, "dev_best_accuracy": 0.625, "dev_endpoint_accuracy": 0.599609375, "seconds": 71.07}
+{"run": "chain_alpha_k2_cycle_count_s1103", "update": 200, "tokens": 384000, "loss": 0.40944, "dev_accuracy": 0.294921875, "seconds": 19.14}
+{"run": "chain_alpha_k2_cycle_count_s1103", "update": 400, "tokens": 768000, "loss": 0.101654, "dev_accuracy": 0.306640625, "seconds": 37.31}
+{"run": "chain_alpha_k2_cycle_count_s1103", "update": 600, "tokens": 1152000, "loss": 0.00859, "dev_accuracy": 0.3203125, "seconds": 55.4}
+{"run": "chain_alpha_k2_cycle_count_s1103", "update": 800, "tokens": 1536000, "loss": 0.004595, "dev_accuracy": 0.31640625, "seconds": 72.09}
+{"run": "chain_alpha_k2_cycle_count_s1103", "completed": true, "best_update": 700, "dev_best_accuracy": 0.330078125, "dev_endpoint_accuracy": 0.31640625, "seconds": 72.48}
+{"run": "chain_alpha_k2_lis_length_s1103", "update": 200, "tokens": 384000, "loss": 0.133433, "dev_accuracy": 0.580078125, "seconds": 19.36}
+{"run": "chain_alpha_k2_lis_length_s1103", "update": 400, "tokens": 768000, "loss": 0.008521, "dev_accuracy": 0.595703125, "seconds": 35.47}
+{"run": "chain_alpha_k2_lis_length_s1103", "update": 600, "tokens": 1152000, "loss": 0.005116, "dev_accuracy": 0.572265625, "seconds": 52.8}
+{"run": "chain_alpha_k2_lis_length_s1103", "update": 800, "tokens": 1536000, "loss": 0.011074, "dev_accuracy": 0.591796875, "seconds": 70.85}
+{"run": "chain_alpha_k2_lis_length_s1103", "completed": true, "best_update": 100, "dev_best_accuracy": 0.607421875, "dev_endpoint_accuracy": 0.591796875, "seconds": 71.26}
+{"run": "chain_alpha_k2_components_s1103", "update": 200, "tokens": 384000, "loss": 0.006082, "dev_accuracy": 0.9375, "seconds": 19.21}
+{"run": "chain_alpha_k2_components_s1103", "update": 400, "tokens": 768000, "loss": 0.00072, "dev_accuracy": 0.951171875, "seconds": 38.27}
+{"run": "chain_alpha_k2_components_s1103", "update": 600, "tokens": 1152000, "loss": 0.00073, "dev_accuracy": 0.93359375, "seconds": 56.46}
+{"run": "chain_alpha_k2_components_s1103", "update": 800, "tokens": 1536000, "loss": 0.001035, "dev_accuracy": 0.9375, "seconds": 74.79}
+{"run": "chain_alpha_k2_components_s1103", "completed": true, "best_update": 400, "dev_best_accuracy": 0.951171875, "dev_endpoint_accuracy": 0.9375, "seconds": 75.18}
+{"run": "chain_alpha_k2_fixed_points_s1103", "update": 200, "tokens": 384000, "loss": 0.125137, "dev_accuracy": 0.51953125, "seconds": 19.88}
+{"run": "chain_alpha_k2_fixed_points_s1103", "update": 400, "tokens": 768000, "loss": 0.051705, "dev_accuracy": 0.560546875, "seconds": 38.71}
+{"run": "chain_alpha_k2_fixed_points_s1103", "update": 600, "tokens": 1152000, "loss": 0.030126, "dev_accuracy": 0.5390625, "seconds": 57.1}
+{"run": "chain_alpha_k2_fixed_points_s1103", "update": 800, "tokens": 1536000, "loss": 0.005692, "dev_accuracy": 0.578125, "seconds": 74.64}
+{"run": "chain_alpha_k2_fixed_points_s1103", "completed": true, "best_update": 800, "dev_best_accuracy": 0.578125, "dev_endpoint_accuracy": 0.578125, "seconds": 75.41}
+{"run": "chain_alpha_k4_cycle_count_s1103", "update": 200, "tokens": 384000, "loss": 0.192031, "dev_accuracy": 0.30859375, "seconds": 18.81}
+{"run": "chain_alpha_k4_cycle_count_s1103", "update": 400, "tokens": 768000, "loss": 0.029624, "dev_accuracy": 0.31640625, "seconds": 37.14}
+{"run": "chain_alpha_k4_cycle_count_s1103", "update": 600, "tokens": 1152000, "loss": 0.006492, "dev_accuracy": 0.2890625, "seconds": 55.78}
+{"run": "chain_alpha_k4_cycle_count_s1103", "update": 800, "tokens": 1536000, "loss": 0.003187, "dev_accuracy": 0.296875, "seconds": 73.45}
+{"run": "chain_alpha_k4_cycle_count_s1103", "completed": true, "best_update": 400, "dev_best_accuracy": 0.31640625, "dev_endpoint_accuracy": 0.296875, "seconds": 73.84}
+{"run": "chain_alpha_k4_lis_length_s1103", "update": 200, "tokens": 384000, "loss": 0.157055, "dev_accuracy": 0.59375, "seconds": 19.04}
+{"run": "chain_alpha_k4_lis_length_s1103", "update": 400, "tokens": 768000, "loss": 0.011345, "dev_accuracy": 0.603515625, "seconds": 36.09}
+{"run": "chain_alpha_k4_lis_length_s1103", "update": 600, "tokens": 1152000, "loss": 0.005054, "dev_accuracy": 0.603515625, "seconds": 52.29}
+{"run": "chain_alpha_k4_lis_length_s1103", "update": 800, "tokens": 1536000, "loss": 0.004495, "dev_accuracy": 0.61328125, "seconds": 62.13}
+{"run": "chain_alpha_k4_lis_length_s1103", "completed": true, "best_update": 800, "dev_best_accuracy": 0.61328125, "dev_endpoint_accuracy": 0.61328125, "seconds": 62.92}
+{"run": "chain_alpha_k4_components_s1103", "update": 200, "tokens": 384000, "loss": 0.041199, "dev_accuracy": 0.921875, "seconds": 9.67}
+{"run": "chain_alpha_k4_components_s1103", "update": 400, "tokens": 768000, "loss": 0.000548, "dev_accuracy": 0.947265625, "seconds": 14.82}
+{"run": "chain_alpha_k4_components_s1103", "update": 600, "tokens": 1152000, "loss": 0.000879, "dev_accuracy": 0.9375, "seconds": 19.82}
+{"run": "chain_alpha_k4_components_s1103", "update": 800, "tokens": 1536000, "loss": 0.00076, "dev_accuracy": 0.939453125, "seconds": 28.4}
+{"run": "chain_alpha_k4_components_s1103", "completed": true, "best_update": 100, "dev_best_accuracy": 0.947265625, "dev_endpoint_accuracy": 0.939453125, "seconds": 28.78}
+{"run": "chain_alpha_k4_fixed_points_s1103", "update": 200, "tokens": 384000, "loss": 0.066526, "dev_accuracy": 0.611328125, "seconds": 11.52}
+{"run": "chain_alpha_k4_fixed_points_s1103", "update": 400, "tokens": 768000, "loss": 0.084376, "dev_accuracy": 0.6015625, "seconds": 22.94}
+{"run": "chain_alpha_k4_fixed_points_s1103", "update": 600, "tokens": 1152000, "loss": 0.004415, "dev_accuracy": 0.603515625, "seconds": 34.0}
+{"run": "chain_alpha_k4_fixed_points_s1103", "update": 800, "tokens": 1536000, "loss": 0.003484, "dev_accuracy": 0.63671875, "seconds": 45.09}
+{"run": "chain_alpha_k4_fixed_points_s1103", "completed": true, "best_update": 500, "dev_best_accuracy": 0.638671875, "dev_endpoint_accuracy": 0.63671875, "seconds": 45.47}
+{"run": "chain_alpha_k8_cycle_count_s1103", "update": 200, "tokens": 384000, "loss": 0.364771, "dev_accuracy": 0.314453125, "seconds": 7.89}
+{"run": "chain_alpha_k8_cycle_count_s1103", "update": 400, "tokens": 768000, "loss": 0.031518, "dev_accuracy": 0.298828125, "seconds": 18.05}
+{"run": "chain_alpha_k8_cycle_count_s1103", "update": 600, "tokens": 1152000, "loss": 0.010716, "dev_accuracy": 0.314453125, "seconds": 28.26}
+{"run": "chain_alpha_k8_cycle_count_s1103", "update": 800, "tokens": 1536000, "loss": 0.004505, "dev_accuracy": 0.30078125, "seconds": 38.73}
+{"run": "chain_alpha_k8_cycle_count_s1103", "completed": true, "best_update": 500, "dev_best_accuracy": 0.318359375, "dev_endpoint_accuracy": 0.30078125, "seconds": 39.2}
+{"run": "chain_alpha_k8_lis_length_s1103", "update": 200, "tokens": 384000, "loss": 0.420765, "dev_accuracy": 0.5625, "seconds": 11.59}
+{"run": "chain_alpha_k8_lis_length_s1103", "update": 400, "tokens": 768000, "loss": 0.04388, "dev_accuracy": 0.546875, "seconds": 22.14}
+{"run": "chain_alpha_k8_lis_length_s1103", "update": 600, "tokens": 1152000, "loss": 0.007073, "dev_accuracy": 0.556640625, "seconds": 30.29}
+{"run": "chain_alpha_k8_lis_length_s1103", "update": 800, "tokens": 1536000, "loss": 0.015961, "dev_accuracy": 0.552734375, "seconds": 37.97}
+{"run": "chain_alpha_k8_lis_length_s1103", "completed": true, "best_update": 100, "dev_best_accuracy": 0.58203125, "dev_endpoint_accuracy": 0.552734375, "seconds": 38.35}
+{"run": "chain_alpha_k8_components_s1103", "update": 200, "tokens": 384000, "loss": 0.005531, "dev_accuracy": 0.939453125, "seconds": 7.07}
+{"run": "chain_alpha_k8_components_s1103", "update": 400, "tokens": 768000, "loss": 0.000543, "dev_accuracy": 0.951171875, "seconds": 15.74}
+{"run": "chain_alpha_k8_components_s1103", "update": 600, "tokens": 1152000, "loss": 0.000867, "dev_accuracy": 0.94140625, "seconds": 24.59}
+{"run": "chain_alpha_k8_components_s1103", "update": 800, "tokens": 1536000, "loss": 0.000735, "dev_accuracy": 0.943359375, "seconds": 33.42}
+{"run": "chain_alpha_k8_components_s1103", "completed": true, "best_update": 100, "dev_best_accuracy": 0.953125, "dev_endpoint_accuracy": 0.943359375, "seconds": 33.89}
+{"run": "chain_alpha_k8_fixed_points_s1103", "update": 200, "tokens": 384000, "loss": 0.167938, "dev_accuracy": 0.740234375, "seconds": 9.79}
+{"run": "chain_alpha_k8_fixed_points_s1103", "update": 400, "tokens": 768000, "loss": 0.007327, "dev_accuracy": 0.80078125, "seconds": 19.11}
+{"run": "chain_alpha_k8_fixed_points_s1103", "update": 600, "tokens": 1152000, "loss": 0.001924, "dev_accuracy": 0.83203125, "seconds": 29.38}
+{"run": "chain_alpha_k8_fixed_points_s1103", "update": 800, "tokens": 1536000, "loss": 0.004324, "dev_accuracy": 0.806640625, "seconds": 38.63}
+{"run": "chain_alpha_k8_fixed_points_s1103", "completed": true, "best_update": 500, "dev_best_accuracy": 0.833984375, "dev_endpoint_accuracy": 0.806640625, "seconds": 39.01}
+{"run": "chain_alpha_k16_cycle_count_s1103", "update": 200, "tokens": 384000, "loss": 0.398759, "dev_accuracy": 0.259765625, "seconds": 10.7}
+{"run": "chain_alpha_k16_cycle_count_s1103", "update": 400, "tokens": 768000, "loss": 0.050095, "dev_accuracy": 0.25390625, "seconds": 20.56}
+{"run": "chain_alpha_k16_cycle_count_s1103", "update": 600, "tokens": 1152000, "loss": 0.01701, "dev_accuracy": 0.2734375, "seconds": 30.17}
+{"run": "chain_alpha_k16_cycle_count_s1103", "update": 800, "tokens": 1536000, "loss": 0.009818, "dev_accuracy": 0.275390625, "seconds": 39.83}
+{"run": "chain_alpha_k16_cycle_count_s1103", "completed": true, "best_update": 300, "dev_best_accuracy": 0.29296875, "dev_endpoint_accuracy": 0.275390625, "seconds": 40.22}
+{"run": "chain_alpha_k16_lis_length_s1103", "update": 200, "tokens": 384000, "loss": 0.210721, "dev_accuracy": 0.4921875, "seconds": 10.45}
+{"run": "chain_alpha_k16_lis_length_s1103", "update": 400, "tokens": 768000, "loss": 0.038521, "dev_accuracy": 0.521484375, "seconds": 20.65}
+{"run": "chain_alpha_k16_lis_length_s1103", "update": 600, "tokens": 1152000, "loss": 0.027721, "dev_accuracy": 0.537109375, "seconds": 29.54}
+{"run": "chain_alpha_k16_lis_length_s1103", "update": 800, "tokens": 1536000, "loss": 0.005544, "dev_accuracy": 0.53125, "seconds": 36.74}
+{"run": "chain_alpha_k16_lis_length_s1103", "completed": true, "best_update": 300, "dev_best_accuracy": 0.546875, "dev_endpoint_accuracy": 0.53125, "seconds": 37.12}
+{"run": "chain_alpha_k16_components_s1103", "update": 200, "tokens": 384000, "loss": 0.004219, "dev_accuracy": 0.93359375, "seconds": 10.37}
+{"run": "chain_alpha_k16_components_s1103", "update": 400, "tokens": 768000, "loss": 0.000448, "dev_accuracy": 0.9375, "seconds": 17.82}
+{"run": "chain_alpha_k16_components_s1103", "update": 600, "tokens": 1152000, "loss": 0.000635, "dev_accuracy": 0.9375, "seconds": 25.12}
+{"run": "chain_alpha_k16_components_s1103", "update": 800, "tokens": 1536000, "loss": 0.000737, "dev_accuracy": 0.939453125, "seconds": 29.95}
+{"run": "chain_alpha_k16_components_s1103", "completed": true, "best_update": 100, "dev_best_accuracy": 0.951171875, "dev_endpoint_accuracy": 0.939453125, "seconds": 30.48}
+{"run": "chain_alpha_k16_fixed_points_s1103", "update": 200, "tokens": 384000, "loss": 0.101416, "dev_accuracy": 0.484375, "seconds": 5.65}
+{"run": "chain_alpha_k16_fixed_points_s1103", "update": 400, "tokens": 768000, "loss": 0.031698, "dev_accuracy": 0.45703125, "seconds": 10.73}
+{"run": "chain_alpha_k16_fixed_points_s1103", "update": 600, "tokens": 1152000, "loss": 0.002267, "dev_accuracy": 0.517578125, "seconds": 15.81}
+{"run": "chain_alpha_k16_fixed_points_s1103", "update": 800, "tokens": 1536000, "loss": 0.004104, "dev_accuracy": 0.5, "seconds": 20.83}
+{"run": "chain_alpha_k16_fixed_points_s1103", "completed": true, "best_update": 600, "dev_best_accuracy": 0.517578125, "dev_endpoint_accuracy": 0.5, "seconds": 21.32}
+{"run": "chain_beta_k2_cycle_count_s1103", "update": 200, "tokens": 384000, "loss": 0.333348, "dev_accuracy": 0.265625, "seconds": 5.23}
+{"run": "chain_beta_k2_cycle_count_s1103", "update": 400, "tokens": 768000, "loss": 0.051216, "dev_accuracy": 0.3046875, "seconds": 10.38}
+{"run": "chain_beta_k2_cycle_count_s1103", "update": 600, "tokens": 1152000, "loss": 0.007883, "dev_accuracy": 0.310546875, "seconds": 15.44}
+{"run": "chain_beta_k2_cycle_count_s1103", "update": 800, "tokens": 1536000, "loss": 0.009714, "dev_accuracy": 0.30078125, "seconds": 20.16}
+{"run": "chain_beta_k2_cycle_count_s1103", "completed": true, "best_update": 600, "dev_best_accuracy": 0.310546875, "dev_endpoint_accuracy": 0.30078125, "seconds": 20.55}
+{"run": "chain_beta_k2_lis_length_s1103", "update": 200, "tokens": 384000, "loss": 0.142215, "dev_accuracy": 0.60546875, "seconds": 5.64}
+{"run": "chain_beta_k2_lis_length_s1103", "update": 400, "tokens": 768000, "loss": 0.062036, "dev_accuracy": 0.576171875, "seconds": 10.76}
+{"run": "chain_beta_k2_lis_length_s1103", "update": 600, "tokens": 1152000, "loss": 0.022891, "dev_accuracy": 0.580078125, "seconds": 15.49}
+{"run": "chain_beta_k2_lis_length_s1103", "update": 800, "tokens": 1536000, "loss": 0.006302, "dev_accuracy": 0.603515625, "seconds": 20.27}
+{"run": "chain_beta_k2_lis_length_s1103", "completed": true, "best_update": 300, "dev_best_accuracy": 0.61328125, "dev_endpoint_accuracy": 0.603515625, "seconds": 20.68}
+{"run": "chain_beta_k2_components_s1103", "update": 200, "tokens": 384000, "loss": 0.008087, "dev_accuracy": 0.939453125, "seconds": 5.62}
+{"run": "chain_beta_k2_components_s1103", "update": 400, "tokens": 768000, "loss": 0.001127, "dev_accuracy": 0.953125, "seconds": 10.94}
+{"run": "chain_beta_k2_components_s1103", "update": 600, "tokens": 1152000, "loss": 0.001605, "dev_accuracy": 0.955078125, "seconds": 16.28}
+{"run": "chain_beta_k2_components_s1103", "update": 800, "tokens": 1536000, "loss": 0.001691, "dev_accuracy": 0.955078125, "seconds": 21.04}
+{"run": "chain_beta_k2_components_s1103", "completed": true, "best_update": 600, "dev_best_accuracy": 0.955078125, "dev_endpoint_accuracy": 0.955078125, "seconds": 21.42}
+{"run": "chain_beta_k2_fixed_points_s1103", "update": 200, "tokens": 384000, "loss": 0.22396, "dev_accuracy": 0.41796875, "seconds": 5.6}
+{"run": "chain_beta_k2_fixed_points_s1103", "update": 400, "tokens": 768000, "loss": 0.080271, "dev_accuracy": 0.455078125, "seconds": 11.06}
+{"run": "chain_beta_k2_fixed_points_s1103", "update": 600, "tokens": 1152000, "loss": 0.010947, "dev_accuracy": 0.4609375, "seconds": 16.41}
+{"run": "chain_beta_k2_fixed_points_s1103", "update": 800, "tokens": 1536000, "loss": 0.005879, "dev_accuracy": 0.482421875, "seconds": 21.63}
+{"run": "chain_beta_k2_fixed_points_s1103", "completed": true, "best_update": 800, "dev_best_accuracy": 0.482421875, "dev_endpoint_accuracy": 0.482421875, "seconds": 22.52}
+{"run": "chain_beta_k4_cycle_count_s1103", "update": 200, "tokens": 384000, "loss": 0.394799, "dev_accuracy": 0.283203125, "seconds": 5.28}
+{"run": "chain_beta_k4_cycle_count_s1103", "update": 400, "tokens": 768000, "loss": 0.093057, "dev_accuracy": 0.298828125, "seconds": 10.21}
+{"run": "chain_beta_k4_cycle_count_s1103", "update": 600, "tokens": 1152000, "loss": 0.013627, "dev_accuracy": 0.306640625, "seconds": 15.2}
+{"run": "chain_beta_k4_cycle_count_s1103", "update": 800, "tokens": 1536000, "loss": 0.01085, "dev_accuracy": 0.30859375, "seconds": 19.99}
+{"run": "chain_beta_k4_cycle_count_s1103", "completed": true, "best_update": 500, "dev_best_accuracy": 0.310546875, "dev_endpoint_accuracy": 0.30859375, "seconds": 20.37}
+{"run": "chain_beta_k4_lis_length_s1103", "update": 200, "tokens": 384000, "loss": 0.224119, "dev_accuracy": 0.5390625, "seconds": 5.42}
+{"run": "chain_beta_k4_lis_length_s1103", "update": 400, "tokens": 768000, "loss": 0.034654, "dev_accuracy": 0.5546875, "seconds": 10.87}
+{"run": "chain_beta_k4_lis_length_s1103", "update": 600, "tokens": 1152000, "loss": 0.004558, "dev_accuracy": 0.548828125, "seconds": 15.82}
+{"run": "chain_beta_k4_lis_length_s1103", "update": 800, "tokens": 1536000, "loss": 0.00783, "dev_accuracy": 0.548828125, "seconds": 20.73}
+{"run": "chain_beta_k4_lis_length_s1103", "completed": true, "best_update": 700, "dev_best_accuracy": 0.5703125, "dev_endpoint_accuracy": 0.548828125, "seconds": 21.12}
+{"run": "chain_beta_k4_components_s1103", "update": 200, "tokens": 384000, "loss": 0.011713, "dev_accuracy": 0.939453125, "seconds": 5.68}
+{"run": "chain_beta_k4_components_s1103", "update": 400, "tokens": 768000, "loss": 0.000448, "dev_accuracy": 0.947265625, "seconds": 10.56}
+{"run": "chain_beta_k4_components_s1103", "update": 600, "tokens": 1152000, "loss": 0.000899, "dev_accuracy": 0.94921875, "seconds": 15.64}
+{"run": "chain_beta_k4_components_s1103", "update": 800, "tokens": 1536000, "loss": 0.000916, "dev_accuracy": 0.951171875, "seconds": 20.61}
+{"run": "chain_beta_k4_components_s1103", "completed": true, "best_update": 800, "dev_best_accuracy": 0.951171875, "dev_endpoint_accuracy": 0.951171875, "seconds": 21.53}
+{"run": "chain_beta_k4_fixed_points_s1103", "update": 200, "tokens": 384000, "loss": 0.14461, "dev_accuracy": 0.462890625, "seconds": 5.69}
+{"run": "chain_beta_k4_fixed_points_s1103", "update": 400, "tokens": 768000, "loss": 0.010729, "dev_accuracy": 0.48828125, "seconds": 11.22}
+{"run": "chain_beta_k4_fixed_points_s1103", "update": 600, "tokens": 1152000, "loss": 0.033087, "dev_accuracy": 0.515625, "seconds": 16.4}
+{"run": "chain_beta_k4_fixed_points_s1103", "update": 800, "tokens": 1536000, "loss": 0.012008, "dev_accuracy": 0.5234375, "seconds": 21.27}
+{"run": "chain_beta_k4_fixed_points_s1103", "completed": true, "best_update": 500, "dev_best_accuracy": 0.52734375, "dev_endpoint_accuracy": 0.5234375, "seconds": 21.67}
+{"run": "chain_beta_k8_cycle_count_s1103", "update": 200, "tokens": 384000, "loss": 0.332583, "dev_accuracy": 0.27734375, "seconds": 5.47}
+{"run": "chain_beta_k8_cycle_count_s1103", "update": 400, "tokens": 768000, "loss": 0.085484, "dev_accuracy": 0.267578125, "seconds": 10.56}
+{"run": "chain_beta_k8_cycle_count_s1103", "update": 600, "tokens": 1152000, "loss": 0.010943, "dev_accuracy": 0.2578125, "seconds": 15.56}
+{"run": "chain_beta_k8_cycle_count_s1103", "update": 800, "tokens": 1536000, "loss": 0.013302, "dev_accuracy": 0.28125, "seconds": 20.82}
+{"run": "chain_beta_k8_cycle_count_s1103", "completed": true, "best_update": 800, "dev_best_accuracy": 0.28125, "dev_endpoint_accuracy": 0.28125, "seconds": 21.69}
+{"run": "chain_beta_k8_lis_length_s1103", "update": 200, "tokens": 384000, "loss": 0.209091, "dev_accuracy": 0.513671875, "seconds": 5.65}
+{"run": "chain_beta_k8_lis_length_s1103", "update": 400, "tokens": 768000, "loss": 0.039453, "dev_accuracy": 0.494140625, "seconds": 10.18}
+{"run": "chain_beta_k8_lis_length_s1103", "update": 600, "tokens": 1152000, "loss": 0.038934, "dev_accuracy": 0.5, "seconds": 14.7}
+{"run": "chain_beta_k8_lis_length_s1103", "update": 800, "tokens": 1536000, "loss": 0.006956, "dev_accuracy": 0.515625, "seconds": 19.61}
+{"run": "chain_beta_k8_lis_length_s1103", "completed": true, "best_update": 700, "dev_best_accuracy": 0.517578125, "dev_endpoint_accuracy": 0.515625, "seconds": 20.0}
+{"run": "chain_beta_k8_components_s1103", "update": 200, "tokens": 384000, "loss": 0.006797, "dev_accuracy": 0.94921875, "seconds": 5.43}
+{"run": "chain_beta_k8_components_s1103", "update": 400, "tokens": 768000, "loss": 0.000662, "dev_accuracy": 0.94140625, "seconds": 10.08}
+{"run": "chain_beta_k8_components_s1103", "update": 600, "tokens": 1152000, "loss": 0.000786, "dev_accuracy": 0.94921875, "seconds": 14.67}
+{"run": "chain_beta_k8_components_s1103", "update": 800, "tokens": 1536000, "loss": 0.000822, "dev_accuracy": 0.951171875, "seconds": 19.61}
+{"run": "chain_beta_k8_components_s1103", "completed": true, "best_update": 800, "dev_best_accuracy": 0.951171875, "dev_endpoint_accuracy": 0.951171875, "seconds": 20.49}
+{"run": "chain_beta_k8_fixed_points_s1103", "update": 200, "tokens": 384000, "loss": 0.129641, "dev_accuracy": 0.44140625, "seconds": 5.5}
+{"run": "chain_beta_k8_fixed_points_s1103", "update": 400, "tokens": 768000, "loss": 0.066919, "dev_accuracy": 0.458984375, "seconds": 10.46}
+{"run": "chain_beta_k8_fixed_points_s1103", "update": 600, "tokens": 1152000, "loss": 0.022914, "dev_accuracy": 0.4609375, "seconds": 15.35}
+{"run": "chain_beta_k8_fixed_points_s1103", "update": 800, "tokens": 1536000, "loss": 0.018497, "dev_accuracy": 0.45703125, "seconds": 20.1}
+{"run": "chain_beta_k8_fixed_points_s1103", "completed": true, "best_update": 600, "dev_best_accuracy": 0.4609375, "dev_endpoint_accuracy": 0.45703125, "seconds": 20.48}
+{"run": "chain_beta_k16_cycle_count_s1103", "update": 200, "tokens": 384000, "loss": 0.288139, "dev_accuracy": 0.296875, "seconds": 5.5}
+{"run": "chain_beta_k16_cycle_count_s1103", "update": 400, "tokens": 768000, "loss": 0.117474, "dev_accuracy": 0.26953125, "seconds": 10.45}
+{"run": "chain_beta_k16_cycle_count_s1103", "update": 600, "tokens": 1152000, "loss": 0.014266, "dev_accuracy": 0.2890625, "seconds": 15.02}
+{"run": "chain_beta_k16_cycle_count_s1103", "update": 800, "tokens": 1536000, "loss": 0.011326, "dev_accuracy": 0.298828125, "seconds": 19.62}
+{"run": "chain_beta_k16_cycle_count_s1103", "completed": true, "best_update": 300, "dev_best_accuracy": 0.302734375, "dev_endpoint_accuracy": 0.298828125, "seconds": 20.01}
+{"run": "chain_beta_k16_lis_length_s1103", "update": 200, "tokens": 384000, "loss": 0.242031, "dev_accuracy": 0.443359375, "seconds": 5.15}
+{"run": "chain_beta_k16_lis_length_s1103", "update": 400, "tokens": 768000, "loss": 0.045639, "dev_accuracy": 0.46875, "seconds": 9.77}
+{"run": "chain_beta_k16_lis_length_s1103", "update": 600, "tokens": 1152000, "loss": 0.045824, "dev_accuracy": 0.494140625, "seconds": 14.34}
+{"run": "chain_beta_k16_lis_length_s1103", "update": 800, "tokens": 1536000, "loss": 0.053882, "dev_accuracy": 0.494140625, "seconds": 18.91}
+{"run": "chain_beta_k16_lis_length_s1103", "completed": true, "best_update": 100, "dev_best_accuracy": 0.50390625, "dev_endpoint_accuracy": 0.494140625, "seconds": 19.31}
+{"run": "chain_beta_k16_components_s1103", "update": 200, "tokens": 384000, "loss": 0.007035, "dev_accuracy": 0.951171875, "seconds": 5.29}
+{"run": "chain_beta_k16_components_s1103", "update": 400, "tokens": 768000, "loss": 0.000518, "dev_accuracy": 0.951171875, "seconds": 10.47}
+{"run": "chain_beta_k16_components_s1103", "update": 600, "tokens": 1152000, "loss": 0.000728, "dev_accuracy": 0.953125, "seconds": 15.0}
+{"run": "chain_beta_k16_components_s1103", "update": 800, "tokens": 1536000, "loss": 0.000933, "dev_accuracy": 0.953125, "seconds": 19.63}
+{"run": "chain_beta_k16_components_s1103", "completed": true, "best_update": 300, "dev_best_accuracy": 0.955078125, "dev_endpoint_accuracy": 0.953125, "seconds": 20.0}
+{"run": "chain_beta_k16_fixed_points_s1103", "update": 200, "tokens": 384000, "loss": 0.144736, "dev_accuracy": 0.42578125, "seconds": 5.2}
+{"run": "chain_beta_k16_fixed_points_s1103", "update": 400, "tokens": 768000, "loss": 0.01803, "dev_accuracy": 0.423828125, "seconds": 10.1}
+{"run": "chain_beta_k16_fixed_points_s1103", "update": 600, "tokens": 1152000, "loss": 0.003435, "dev_accuracy": 0.421875, "seconds": 14.74}
+{"run": "chain_beta_k16_fixed_points_s1103", "update": 800, "tokens": 1536000, "loss": 0.007083, "dev_accuracy": 0.42578125, "seconds": 19.57}
+{"run": "chain_beta_k16_fixed_points_s1103", "completed": true, "best_update": 700, "dev_best_accuracy": 0.451171875, "dev_endpoint_accuracy": 0.42578125, "seconds": 19.95}
+{"run": "chain_alpha_k2_s2207", "update": 200, "tokens": 384000, "loss": 0.666207, "seconds": 5.09}
+{"run": "chain_alpha_k2_s2207", "update": 400, "tokens": 768000, "loss": 0.578274, "seconds": 9.25}
+{"run": "chain_alpha_k2_s2207", "update": 600, "tokens": 1152000, "loss": 0.528773, "seconds": 13.49}
+{"run": "chain_alpha_k2_s2207", "update": 800, "tokens": 1536000, "loss": 0.407164, "seconds": 17.83}
+{"run": "chain_alpha_k2_s2207", "update": 1000, "tokens": 1920000, "loss": 0.52246, "seconds": 22.52}
+{"run": "chain_alpha_k2_s2207", "update": 1200, "tokens": 2304000, "loss": 0.42109, "seconds": 27.39}
+{"run": "chain_alpha_k2_s2207", "update": 1400, "tokens": 2688000, "loss": 0.356783, "seconds": 31.81}
+{"run": "chain_alpha_k2_s2207", "update": 1600, "tokens": 3072000, "loss": 0.483454, "seconds": 36.3}
+{"run": "chain_alpha_k2_s2207", "update": 1800, "tokens": 3456000, "loss": 0.337029, "seconds": 40.84}
+{"run": "chain_alpha_k2_s2207", "update": 2000, "tokens": 3840000, "loss": 0.367408, "seconds": 45.42}
+Completed pretraining chain_alpha_k2_s2207: 3999992 tokens, tail 8
+{"run": "chain_alpha_k4_s2207", "update": 200, "tokens": 384000, "loss": 0.533413, "seconds": 6.11}
+{"run": "chain_alpha_k4_s2207", "update": 400, "tokens": 768000, "loss": 0.595867, "seconds": 10.54}
+{"run": "chain_alpha_k4_s2207", "update": 600, "tokens": 1152000, "loss": 0.447233, "seconds": 14.96}
+{"run": "chain_alpha_k4_s2207", "update": 800, "tokens": 1536000, "loss": 0.36746, "seconds": 19.34}
+{"run": "chain_alpha_k4_s2207", "update": 1000, "tokens": 1920000, "loss": 0.476886, "seconds": 23.74}
+{"run": "chain_alpha_k4_s2207", "update": 1200, "tokens": 2304000, "loss": 0.448757, "seconds": 28.93}
+{"run": "chain_alpha_k4_s2207", "update": 1400, "tokens": 2688000, "loss": 0.444394, "seconds": 33.47}
+{"run": "chain_alpha_k4_s2207", "update": 1600, "tokens": 3072000, "loss": 0.441179, "seconds": 38.0}
+{"run": "chain_alpha_k4_s2207", "update": 1800, "tokens": 3456000, "loss": 0.389586, "seconds": 42.59}
+{"run": "chain_alpha_k4_s2207", "update": 2000, "tokens": 3840000, "loss": 0.335973, "seconds": 47.26}
+Completed pretraining chain_alpha_k4_s2207: 3999992 tokens, tail 8
+{"run": "chain_alpha_k8_s2207", "update": 200, "tokens": 390424, "loss": 0.917313, "seconds": 7.55}
+{"run": "chain_alpha_k8_s2207", "update": 400, "tokens": 780848, "loss": 0.753898, "seconds": 11.87}
+{"run": "chain_alpha_k8_s2207", "update": 600, "tokens": 1171266, "loss": 0.794091, "seconds": 16.13}
+{"run": "chain_alpha_k8_s2207", "update": 800, "tokens": 1561693, "loss": 0.637481, "seconds": 20.47}
+{"run": "chain_alpha_k8_s2207", "update": 1000, "tokens": 1952114, "loss": 0.79022, "seconds": 24.75}
+{"run": "chain_alpha_k8_s2207", "update": 1200, "tokens": 2342529, "loss": 0.545704, "seconds": 30.62}
+{"run": "chain_alpha_k8_s2207", "update": 1400, "tokens": 2732944, "loss": 0.532881, "seconds": 35.01}
+{"run": "chain_alpha_k8_s2207", "update": 1600, "tokens": 3123362, "loss": 0.582738, "seconds": 39.42}
+{"run": "chain_alpha_k8_s2207", "update": 1800, "tokens": 3513795, "loss": 0.503448, "seconds": 43.8}
+{"run": "chain_alpha_k8_s2207", "update": 2000, "tokens": 3904231, "loss": 0.584983, "seconds": 48.14}
+Completed pretraining chain_alpha_k8_s2207: 3999996 tokens, tail 4
+{"run": "chain_alpha_k16_s2207", "update": 200, "tokens": 396815, "loss": 0.844169, "seconds": 10.39}
+{"run": "chain_alpha_k16_s2207", "update": 400, "tokens": 793633, "loss": 0.778972, "seconds": 14.83}
+{"run": "chain_alpha_k16_s2207", "update": 600, "tokens": 1190451, "loss": 0.711986, "seconds": 19.35}
+{"run": "chain_alpha_k16_s2207", "update": 800, "tokens": 1587269, "loss": 0.637439, "seconds": 23.84}
+{"run": "chain_alpha_k16_s2207", "update": 1000, "tokens": 1984090, "loss": 0.74859, "seconds": 28.39}
+{"run": "chain_alpha_k16_s2207", "update": 1200, "tokens": 2380911, "loss": 0.617446, "seconds": 36.22}
+{"run": "chain_alpha_k16_s2207", "update": 1400, "tokens": 2777732, "loss": 0.658237, "seconds": 40.75}
+{"run": "chain_alpha_k16_s2207", "update": 1600, "tokens": 3174544, "loss": 0.630316, "seconds": 45.38}
+{"run": "chain_alpha_k16_s2207", "update": 1800, "tokens": 3571359, "loss": 0.684019, "seconds": 49.95}
+{"run": "chain_alpha_k16_s2207", "update": 2000, "tokens": 3968168, "loss": 0.579265, "seconds": 54.61}
+Completed pretraining chain_alpha_k16_s2207: 3999999 tokens, tail 1
+{"run": "chain_beta_k2_s2207", "update": 200, "tokens": 409681, "loss": 1.569674, "seconds": 5.18}
+{"run": "chain_beta_k2_s2207", "update": 400, "tokens": 819359, "loss": 1.524361, "seconds": 9.77}
+{"run": "chain_beta_k2_s2207", "update": 600, "tokens": 1229013, "loss": 1.419063, "seconds": 14.19}
+{"run": "chain_beta_k2_s2207", "update": 800, "tokens": 1638706, "loss": 1.279185, "seconds": 18.58}
+{"run": "chain_beta_k2_s2207", "update": 1000, "tokens": 2048384, "loss": 1.369066, "seconds": 23.59}
+{"run": "chain_beta_k2_s2207", "update": 1200, "tokens": 2458044, "loss": 1.1649, "seconds": 27.97}
+{"run": "chain_beta_k2_s2207", "update": 1400, "tokens": 2867686, "loss": 1.125489, "seconds": 32.38}
+{"run": "chain_beta_k2_s2207", "update": 1600, "tokens": 3277355, "loss": 1.277562, "seconds": 36.7}
+{"run": "chain_beta_k2_s2207", "update": 1800, "tokens": 3687015, "loss": 1.11626, "seconds": 41.14}
+Completed pretraining chain_beta_k2_s2207: 3999979 tokens, tail 21
+{"run": "chain_beta_k4_s2207", "update": 200, "tokens": 396839, "loss": 1.092653, "seconds": 5.93}
+{"run": "chain_beta_k4_s2207", "update": 400, "tokens": 793666, "loss": 1.036598, "seconds": 10.32}
+{"run": "chain_beta_k4_s2207", "update": 600, "tokens": 1190493, "loss": 0.855264, "seconds": 14.72}
+{"run": "chain_beta_k4_s2207", "update": 800, "tokens": 1587320, "loss": 0.780017, "seconds": 19.16}
+{"run": "chain_beta_k4_s2207", "update": 1000, "tokens": 1984156, "loss": 0.847901, "seconds": 23.79}
+{"run": "chain_beta_k4_s2207", "update": 1200, "tokens": 2380977, "loss": 0.757327, "seconds": 29.08}
+{"run": "chain_beta_k4_s2207", "update": 1400, "tokens": 2777798, "loss": 0.77576, "seconds": 33.63}
+{"run": "chain_beta_k4_s2207", "update": 1600, "tokens": 3174634, "loss": 0.835386, "seconds": 38.11}
+{"run": "chain_beta_k4_s2207", "update": 1800, "tokens": 3571449, "loss": 0.699155, "seconds": 42.73}
+{"run": "chain_beta_k4_s2207", "update": 2000, "tokens": 3968285, "loss": 0.664174, "seconds": 47.37}
+Completed pretraining chain_beta_k4_s2207: 4000000 tokens, tail 0
+{"run": "chain_beta_k8_s2207", "update": 200, "tokens": 403215, "loss": 0.778227, "seconds": 7.9}
+{"run": "chain_beta_k8_s2207", "update": 400, "tokens": 806424, "loss": 0.818704, "seconds": 12.87}
+{"run": "chain_beta_k8_s2207", "update": 600, "tokens": 1209633, "loss": 0.725642, "seconds": 17.55}
+{"run": "chain_beta_k8_s2207", "update": 800, "tokens": 1612848, "loss": 0.645715, "seconds": 22.29}
+{"run": "chain_beta_k8_s2207", "update": 1000, "tokens": 2016069, "loss": 0.597319, "seconds": 29.24}
+{"run": "chain_beta_k8_s2207", "update": 1200, "tokens": 2419284, "loss": 0.68084, "seconds": 33.92}
+{"run": "chain_beta_k8_s2207", "update": 1400, "tokens": 2822496, "loss": 0.57615, "seconds": 38.25}
+{"run": "chain_beta_k8_s2207", "update": 1600, "tokens": 3225711, "loss": 0.595953, "seconds": 42.55}
+{"run": "chain_beta_k8_s2207", "update": 1800, "tokens": 3628923, "loss": 0.543566, "seconds": 47.11}
+Completed pretraining chain_beta_k8_s2207: 3999988 tokens, tail 12
+{"run": "chain_beta_k16_s2207", "update": 200, "tokens": 396821, "loss": 0.766916, "seconds": 11.22}
+{"run": "chain_beta_k16_s2207", "update": 400, "tokens": 793642, "loss": 0.745879, "seconds": 16.01}
+{"run": "chain_beta_k16_s2207", "update": 600, "tokens": 1190457, "loss": 0.876979, "seconds": 20.96}
+{"run": "chain_beta_k16_s2207", "update": 800, "tokens": 1587269, "loss": 0.705813, "seconds": 25.6}
+{"run": "chain_beta_k16_s2207", "update": 1000, "tokens": 1984084, "loss": 0.71889, "seconds": 30.43}
+{"run": "chain_beta_k16_s2207", "update": 1200, "tokens": 2380908, "loss": 0.716535, "seconds": 38.57}
+{"run": "chain_beta_k16_s2207", "update": 1400, "tokens": 2777720, "loss": 0.677437, "seconds": 43.2}
+{"run": "chain_beta_k16_s2207", "update": 1600, "tokens": 3174526, "loss": 0.702888, "seconds": 47.91}
+{"run": "chain_beta_k16_s2207", "update": 1800, "tokens": 3571338, "loss": 0.567485, "seconds": 52.65}
+{"run": "chain_beta_k16_s2207", "update": 2000, "tokens": 3968162, "loss": 0.59912, "seconds": 57.66}
+Completed pretraining chain_beta_k16_s2207: 3999994 tokens, tail 6
+{"run": "baseline_k0_cycle_count_s2207", "update": 200, "tokens": 384000, "loss": 0.256052, "dev_accuracy": 0.322265625, "seconds": 6.03}
+{"run": "baseline_k0_cycle_count_s2207", "update": 400, "tokens": 768000, "loss": 0.079783, "dev_accuracy": 0.3125, "seconds": 13.31}
+{"run": "baseline_k0_cycle_count_s2207", "update": 600, "tokens": 1152000, "loss": 0.019853, "dev_accuracy": 0.31640625, "seconds": 18.29}
+{"run": "baseline_k0_cycle_count_s2207", "update": 800, "tokens": 1536000, "loss": 0.00774, "dev_accuracy": 0.32421875, "seconds": 23.04}
+{"run": "baseline_k0_cycle_count_s2207", "completed": true, "best_update": 300, "dev_best_accuracy": 0.3359375, "dev_endpoint_accuracy": 0.32421875, "seconds": 24.49}
+{"run": "baseline_k0_lis_length_s2207", "update": 200, "tokens": 384000, "loss": 0.218478, "dev_accuracy": 0.4765625, "seconds": 9.91}
+{"run": "baseline_k0_lis_length_s2207", "update": 400, "tokens": 768000, "loss": 0.119648, "dev_accuracy": 0.451171875, "seconds": 14.6}
+{"run": "baseline_k0_lis_length_s2207", "update": 600, "tokens": 1152000, "loss": 0.051058, "dev_accuracy": 0.45703125, "seconds": 19.4}
+{"run": "baseline_k0_lis_length_s2207", "update": 800, "tokens": 1536000, "loss": 0.006173, "dev_accuracy": 0.431640625, "seconds": 24.08}
+{"run": "baseline_k0_lis_length_s2207", "completed": true, "best_update": 200, "dev_best_accuracy": 0.4765625, "dev_endpoint_accuracy": 0.431640625, "seconds": 25.14}
+{"run": "baseline_k0_components_s2207", "update": 200, "tokens": 384000, "loss": 0.042457, "dev_accuracy": 0.943359375, "seconds": 9.7}
+{"run": "baseline_k0_components_s2207", "update": 400, "tokens": 768000, "loss": 0.008153, "dev_accuracy": 0.9453125, "seconds": 16.86}
+{"run": "baseline_k0_components_s2207", "update": 600, "tokens": 1152000, "loss": 0.001627, "dev_accuracy": 0.939453125, "seconds": 23.97}
+{"run": "baseline_k0_components_s2207", "update": 800, "tokens": 1536000, "loss": 0.002654, "dev_accuracy": 0.953125, "seconds": 28.65}
+{"run": "baseline_k0_components_s2207", "completed": true, "best_update": 500, "dev_best_accuracy": 0.955078125, "dev_endpoint_accuracy": 0.953125, "seconds": 31.06}
+{"run": "baseline_k0_fixed_points_s2207", "update": 200, "tokens": 384000, "loss": 0.135201, "dev_accuracy": 0.560546875, "seconds": 12.14}
+{"run": "baseline_k0_fixed_points_s2207", "update": 400, "tokens": 768000, "loss": 0.01621, "dev_accuracy": 0.572265625, "seconds": 17.82}
+{"run": "baseline_k0_fixed_points_s2207", "update": 600, "tokens": 1152000, "loss": 0.003294, "dev_accuracy": 0.59375, "seconds": 26.14}
+{"run": "baseline_k0_fixed_points_s2207", "update": 800, "tokens": 1536000, "loss": 0.003528, "dev_accuracy": 0.587890625, "seconds": 31.25}
+{"run": "baseline_k0_fixed_points_s2207", "completed": true, "best_update": 600, "dev_best_accuracy": 0.59375, "dev_endpoint_accuracy": 0.587890625, "seconds": 31.62}
+{"run": "chain_alpha_k2_cycle_count_s2207", "update": 200, "tokens": 384000, "loss": 0.268433, "dev_accuracy": 0.322265625, "seconds": 5.55}
+{"run": "chain_alpha_k2_cycle_count_s2207", "update": 400, "tokens": 768000, "loss": 0.06337, "dev_accuracy": 0.275390625, "seconds": 10.16}
+{"run": "chain_alpha_k2_cycle_count_s2207", "update": 600, "tokens": 1152000, "loss": 0.023179, "dev_accuracy": 0.30078125, "seconds": 14.93}
+{"run": "chain_alpha_k2_cycle_count_s2207", "update": 800, "tokens": 1536000, "loss": 0.004867, "dev_accuracy": 0.294921875, "seconds": 19.8}
+{"run": "chain_alpha_k2_cycle_count_s2207", "completed": true, "best_update": 200, "dev_best_accuracy": 0.322265625, "dev_endpoint_accuracy": 0.294921875, "seconds": 20.3}
+{"run": "chain_alpha_k2_lis_length_s2207", "update": 200, "tokens": 384000, "loss": 0.148266, "dev_accuracy": 0.587890625, "seconds": 5.44}
+{"run": "chain_alpha_k2_lis_length_s2207", "update": 400, "tokens": 768000, "loss": 0.043908, "dev_accuracy": 0.529296875, "seconds": 10.06}
+{"run": "chain_alpha_k2_lis_length_s2207", "update": 600, "tokens": 1152000, "loss": 0.005347, "dev_accuracy": 0.53125, "seconds": 14.58}
+{"run": "chain_alpha_k2_lis_length_s2207", "update": 800, "tokens": 1536000, "loss": 0.009197, "dev_accuracy": 0.54296875, "seconds": 19.18}
+{"run": "chain_alpha_k2_lis_length_s2207", "completed": true, "best_update": 200, "dev_best_accuracy": 0.587890625, "dev_endpoint_accuracy": 0.54296875, "seconds": 19.66}
+{"run": "chain_alpha_k2_components_s2207", "update": 200, "tokens": 384000, "loss": 0.090576, "dev_accuracy": 0.9296875, "seconds": 5.32}
+{"run": "chain_alpha_k2_components_s2207", "update": 400, "tokens": 768000, "loss": 0.006287, "dev_accuracy": 0.951171875, "seconds": 10.47}
+{"run": "chain_alpha_k2_components_s2207", "update": 600, "tokens": 1152000, "loss": 0.0009, "dev_accuracy": 0.953125, "seconds": 15.39}
+{"run": "chain_alpha_k2_components_s2207", "update": 800, "tokens": 1536000, "loss": 0.0021, "dev_accuracy": 0.955078125, "seconds": 20.66}
+{"run": "chain_alpha_k2_components_s2207", "completed": true, "best_update": 800, "dev_best_accuracy": 0.955078125, "dev_endpoint_accuracy": 0.955078125, "seconds": 21.47}
+{"run": "chain_alpha_k2_fixed_points_s2207", "update": 200, "tokens": 384000, "loss": 0.244693, "dev_accuracy": 0.486328125, "seconds": 5.32}
+{"run": "chain_alpha_k2_fixed_points_s2207", "update": 400, "tokens": 768000, "loss": 0.041545, "dev_accuracy": 0.51171875, "seconds": 10.56}
+{"run": "chain_alpha_k2_fixed_points_s2207", "update": 600, "tokens": 1152000, "loss": 0.004122, "dev_accuracy": 0.490234375, "seconds": 15.14}
+{"run": "chain_alpha_k2_fixed_points_s2207", "update": 800, "tokens": 1536000, "loss": 0.007362, "dev_accuracy": 0.48828125, "seconds": 19.74}
+{"run": "chain_alpha_k2_fixed_points_s2207", "completed": true, "best_update": 400, "dev_best_accuracy": 0.51171875, "dev_endpoint_accuracy": 0.48828125, "seconds": 20.15}
+{"run": "chain_alpha_k4_cycle_count_s2207", "update": 200, "tokens": 384000, "loss": 0.271301, "dev_accuracy": 0.365234375, "seconds": 5.33}
+{"run": "chain_alpha_k4_cycle_count_s2207", "update": 400, "tokens": 768000, "loss": 0.090136, "dev_accuracy": 0.353515625, "seconds": 10.0}
+{"run": "chain_alpha_k4_cycle_count_s2207", "update": 600, "tokens": 1152000, "loss": 0.007842, "dev_accuracy": 0.328125, "seconds": 14.75}
+{"run": "chain_alpha_k4_cycle_count_s2207", "update": 800, "tokens": 1536000, "loss": 0.008022, "dev_accuracy": 0.322265625, "seconds": 19.35}
+{"run": "chain_alpha_k4_cycle_count_s2207", "completed": true, "best_update": 200, "dev_best_accuracy": 0.365234375, "dev_endpoint_accuracy": 0.322265625, "seconds": 19.77}
+{"run": "chain_alpha_k4_lis_length_s2207", "update": 200, "tokens": 384000, "loss": 0.15766, "dev_accuracy": 0.5234375, "seconds": 5.52}
+{"run": "chain_alpha_k4_lis_length_s2207", "update": 400, "tokens": 768000, "loss": 0.032631, "dev_accuracy": 0.51953125, "seconds": 10.49}
+{"run": "chain_alpha_k4_lis_length_s2207", "update": 600, "tokens": 1152000, "loss": 0.009138, "dev_accuracy": 0.537109375, "seconds": 15.38}
+{"run": "chain_alpha_k4_lis_length_s2207", "update": 800, "tokens": 1536000, "loss": 0.004797, "dev_accuracy": 0.55078125, "seconds": 20.21}
+{"run": "chain_alpha_k4_lis_length_s2207", "completed": true, "best_update": 800, "dev_best_accuracy": 0.55078125, "dev_endpoint_accuracy": 0.55078125, "seconds": 20.98}
+{"run": "chain_alpha_k4_components_s2207", "update": 200, "tokens": 384000, "loss": 0.004519, "dev_accuracy": 0.9765625, "seconds": 5.37}
+{"run": "chain_alpha_k4_components_s2207", "update": 400, "tokens": 768000, "loss": 0.004293, "dev_accuracy": 0.962890625, "seconds": 9.97}
+{"run": "chain_alpha_k4_components_s2207", "update": 600, "tokens": 1152000, "loss": 0.000775, "dev_accuracy": 0.96875, "seconds": 14.6}
+{"run": "chain_alpha_k4_components_s2207", "update": 800, "tokens": 1536000, "loss": 0.001208, "dev_accuracy": 0.97265625, "seconds": 19.22}
+{"run": "chain_alpha_k4_components_s2207", "completed": true, "best_update": 200, "dev_best_accuracy": 0.9765625, "dev_endpoint_accuracy": 0.97265625, "seconds": 19.63}
+{"run": "chain_alpha_k4_fixed_points_s2207", "update": 200, "tokens": 384000, "loss": 0.242184, "dev_accuracy": 0.48828125, "seconds": 5.54}
+{"run": "chain_alpha_k4_fixed_points_s2207", "update": 400, "tokens": 768000, "loss": 0.045642, "dev_accuracy": 0.4921875, "seconds": 10.61}
+{"run": "chain_alpha_k4_fixed_points_s2207", "update": 600, "tokens": 1152000, "loss": 0.003812, "dev_accuracy": 0.5, "seconds": 15.93}
+{"run": "chain_alpha_k4_fixed_points_s2207", "update": 800, "tokens": 1536000, "loss": 0.005305, "dev_accuracy": 0.513671875, "seconds": 20.91}
+{"run": "chain_alpha_k4_fixed_points_s2207", "completed": true, "best_update": 800, "dev_best_accuracy": 0.513671875, "dev_endpoint_accuracy": 0.513671875, "seconds": 21.72}
+{"run": "chain_alpha_k8_cycle_count_s2207", "update": 200, "tokens": 384000, "loss": 0.215665, "dev_accuracy": 0.296875, "seconds": 5.15}
+{"run": "chain_alpha_k8_cycle_count_s2207", "update": 400, "tokens": 768000, "loss": 0.101297, "dev_accuracy": 0.337890625, "seconds": 10.06}
+{"run": "chain_alpha_k8_cycle_count_s2207", "update": 600, "tokens": 1152000, "loss": 0.007939, "dev_accuracy": 0.333984375, "seconds": 14.58}
+{"run": "chain_alpha_k8_cycle_count_s2207", "update": 800, "tokens": 1536000, "loss": 0.004086, "dev_accuracy": 0.34765625, "seconds": 19.41}
+{"run": "chain_alpha_k8_cycle_count_s2207", "completed": true, "best_update": 700, "dev_best_accuracy": 0.357421875, "dev_endpoint_accuracy": 0.34765625, "seconds": 19.81}
+{"run": "chain_alpha_k8_lis_length_s2207", "update": 200, "tokens": 384000, "loss": 0.239254, "dev_accuracy": 0.52734375, "seconds": 5.26}
+{"run": "chain_alpha_k8_lis_length_s2207", "update": 400, "tokens": 768000, "loss": 0.076279, "dev_accuracy": 0.4921875, "seconds": 9.95}
+{"run": "chain_alpha_k8_lis_length_s2207", "update": 600, "tokens": 1152000, "loss": 0.005537, "dev_accuracy": 0.482421875, "seconds": 14.75}
+{"run": "chain_alpha_k8_lis_length_s2207", "update": 800, "tokens": 1536000, "loss": 0.004541, "dev_accuracy": 0.48828125, "seconds": 19.4}
+{"run": "chain_alpha_k8_lis_length_s2207", "completed": true, "best_update": 100, "dev_best_accuracy": 0.529296875, "dev_endpoint_accuracy": 0.48828125, "seconds": 19.81}
+{"run": "chain_alpha_k8_components_s2207", "update": 200, "tokens": 384000, "loss": 0.003802, "dev_accuracy": 0.94140625, "seconds": 5.2}
+{"run": "chain_alpha_k8_components_s2207", "update": 400, "tokens": 768000, "loss": 0.043903, "dev_accuracy": 0.955078125, "seconds": 9.88}
+{"run": "chain_alpha_k8_components_s2207", "update": 600, "tokens": 1152000, "loss": 0.000557, "dev_accuracy": 0.9609375, "seconds": 14.63}
+{"run": "chain_alpha_k8_components_s2207", "update": 800, "tokens": 1536000, "loss": 0.00085, "dev_accuracy": 0.958984375, "seconds": 19.17}
+{"run": "chain_alpha_k8_components_s2207", "completed": true, "best_update": 100, "dev_best_accuracy": 0.96875, "dev_endpoint_accuracy": 0.958984375, "seconds": 19.58}
+{"run": "chain_alpha_k8_fixed_points_s2207", "update": 200, "tokens": 384000, "loss": 0.115738, "dev_accuracy": 0.669921875, "seconds": 5.28}
+{"run": "chain_alpha_k8_fixed_points_s2207", "update": 400, "tokens": 768000, "loss": 0.042719, "dev_accuracy": 0.70703125, "seconds": 10.21}
+{"run": "chain_alpha_k8_fixed_points_s2207", "update": 600, "tokens": 1152000, "loss": 0.002385, "dev_accuracy": 0.716796875, "seconds": 15.14}
+{"run": "chain_alpha_k8_fixed_points_s2207", "update": 800, "tokens": 1536000, "loss": 0.023838, "dev_accuracy": 0.76171875, "seconds": 20.55}
+{"run": "chain_alpha_k8_fixed_points_s2207", "completed": true, "best_update": 800, "dev_best_accuracy": 0.76171875, "dev_endpoint_accuracy": 0.76171875, "seconds": 21.47}
+{"run": "chain_alpha_k16_cycle_count_s2207", "update": 200, "tokens": 384000, "loss": 0.262353, "dev_accuracy": 0.3359375, "seconds": 5.09}
+{"run": "chain_alpha_k16_cycle_count_s2207", "update": 400, "tokens": 768000, "loss": 0.034325, "dev_accuracy": 0.31640625, "seconds": 10.1}
+{"run": "chain_alpha_k16_cycle_count_s2207", "update": 600, "tokens": 1152000, "loss": 0.006986, "dev_accuracy": 0.337890625, "seconds": 14.87}
+{"run": "chain_alpha_k16_cycle_count_s2207", "update": 800, "tokens": 1536000, "loss": 0.010541, "dev_accuracy": 0.33203125, "seconds": 19.52}
+{"run": "chain_alpha_k16_cycle_count_s2207", "completed": true, "best_update": 300, "dev_best_accuracy": 0.3515625, "dev_endpoint_accuracy": 0.33203125, "seconds": 19.96}
+{"run": "chain_alpha_k16_lis_length_s2207", "update": 200, "tokens": 384000, "loss": 0.189394, "dev_accuracy": 0.501953125, "seconds": 5.18}
+{"run": "chain_alpha_k16_lis_length_s2207", "update": 400, "tokens": 768000, "loss": 0.051795, "dev_accuracy": 0.5234375, "seconds": 10.18}
+{"run": "chain_alpha_k16_lis_length_s2207", "update": 600, "tokens": 1152000, "loss": 0.009591, "dev_accuracy": 0.52734375, "seconds": 15.35}
+{"run": "chain_alpha_k16_lis_length_s2207", "update": 800, "tokens": 1536000, "loss": 0.003863, "dev_accuracy": 0.521484375, "seconds": 20.12}
+{"run": "chain_alpha_k16_lis_length_s2207", "completed": true, "best_update": 500, "dev_best_accuracy": 0.52734375, "dev_endpoint_accuracy": 0.521484375, "seconds": 20.52}
+{"run": "chain_alpha_k16_components_s2207", "update": 200, "tokens": 384000, "loss": 0.008374, "dev_accuracy": 0.93359375, "seconds": 5.29}
+{"run": "chain_alpha_k16_components_s2207", "update": 400, "tokens": 768000, "loss": 0.00219, "dev_accuracy": 0.9609375, "seconds": 10.46}
+{"run": "chain_alpha_k16_components_s2207", "update": 600, "tokens": 1152000, "loss": 0.000522, "dev_accuracy": 0.96875, "seconds": 15.3}
+{"run": "chain_alpha_k16_components_s2207", "update": 800, "tokens": 1536000, "loss": 0.000817, "dev_accuracy": 0.96484375, "seconds": 20.2}
+{"run": "chain_alpha_k16_components_s2207", "completed": true, "best_update": 300, "dev_best_accuracy": 0.96875, "dev_endpoint_accuracy": 0.96484375, "seconds": 20.59}
+{"run": "chain_alpha_k16_fixed_points_s2207", "update": 200, "tokens": 384000, "loss": 0.13701, "dev_accuracy": 0.466796875, "seconds": 5.61}
+{"run": "chain_alpha_k16_fixed_points_s2207", "update": 400, "tokens": 768000, "loss": 0.055092, "dev_accuracy": 0.51171875, "seconds": 10.94}
+{"run": "chain_alpha_k16_fixed_points_s2207", "update": 600, "tokens": 1152000, "loss": 0.058721, "dev_accuracy": 0.529296875, "seconds": 15.92}
+{"run": "chain_alpha_k16_fixed_points_s2207", "update": 800, "tokens": 1536000, "loss": 0.003834, "dev_accuracy": 0.509765625, "seconds": 20.78}
+{"run": "chain_alpha_k16_fixed_points_s2207", "completed": true, "best_update": 600, "dev_best_accuracy": 0.529296875, "dev_endpoint_accuracy": 0.509765625, "seconds": 21.19}
+{"run": "chain_beta_k2_cycle_count_s2207", "update": 200, "tokens": 384000, "loss": 0.465942, "dev_accuracy": 0.322265625, "seconds": 5.32}
+{"run": "chain_beta_k2_cycle_count_s2207", "update": 400, "tokens": 768000, "loss": 0.097693, "dev_accuracy": 0.294921875, "seconds": 10.12}
+{"run": "chain_beta_k2_cycle_count_s2207", "update": 600, "tokens": 1152000, "loss": 0.020084, "dev_accuracy": 0.33984375, "seconds": 15.4}
+{"run": "chain_beta_k2_cycle_count_s2207", "update": 800, "tokens": 1536000, "loss": 0.01634, "dev_accuracy": 0.341796875, "seconds": 20.47}
+{"run": "chain_beta_k2_cycle_count_s2207", "completed": true, "best_update": 700, "dev_best_accuracy": 0.341796875, "dev_endpoint_accuracy": 0.341796875, "seconds": 20.88}
+{"run": "chain_beta_k2_lis_length_s2207", "update": 200, "tokens": 384000, "loss": 0.203936, "dev_accuracy": 0.54296875, "seconds": 5.56}
+{"run": "chain_beta_k2_lis_length_s2207", "update": 400, "tokens": 768000, "loss": 0.048123, "dev_accuracy": 0.51953125, "seconds": 10.35}
+{"run": "chain_beta_k2_lis_length_s2207", "update": 600, "tokens": 1152000, "loss": 0.019963, "dev_accuracy": 0.52734375, "seconds": 15.15}
+{"run": "chain_beta_k2_lis_length_s2207", "update": 800, "tokens": 1536000, "loss": 0.00461, "dev_accuracy": 0.53125, "seconds": 19.87}
+{"run": "chain_beta_k2_lis_length_s2207", "completed": true, "best_update": 200, "dev_best_accuracy": 0.54296875, "dev_endpoint_accuracy": 0.53125, "seconds": 20.28}
+{"run": "chain_beta_k2_components_s2207", "update": 200, "tokens": 384000, "loss": 0.012307, "dev_accuracy": 0.900390625, "seconds": 5.33}
+{"run": "chain_beta_k2_components_s2207", "update": 400, "tokens": 768000, "loss": 0.099513, "dev_accuracy": 0.92578125, "seconds": 10.66}
+{"run": "chain_beta_k2_components_s2207", "update": 600, "tokens": 1152000, "loss": 0.001131, "dev_accuracy": 0.94140625, "seconds": 16.06}
+{"run": "chain_beta_k2_components_s2207", "update": 800, "tokens": 1536000, "loss": 0.001881, "dev_accuracy": 0.947265625, "seconds": 21.21}
+{"run": "chain_beta_k2_components_s2207", "completed": true, "best_update": 800, "dev_best_accuracy": 0.947265625, "dev_endpoint_accuracy": 0.947265625, "seconds": 22.0}
+{"run": "chain_beta_k2_fixed_points_s2207", "update": 200, "tokens": 384000, "loss": 0.168402, "dev_accuracy": 0.4296875, "seconds": 5.49}
+{"run": "chain_beta_k2_fixed_points_s2207", "update": 400, "tokens": 768000, "loss": 0.060195, "dev_accuracy": 0.470703125, "seconds": 10.78}
+{"run": "chain_beta_k2_fixed_points_s2207", "update": 600, "tokens": 1152000, "loss": 0.005502, "dev_accuracy": 0.501953125, "seconds": 15.93}
+{"run": "chain_beta_k2_fixed_points_s2207", "update": 800, "tokens": 1536000, "loss": 0.006847, "dev_accuracy": 0.466796875, "seconds": 20.48}
+{"run": "chain_beta_k2_fixed_points_s2207", "completed": true, "best_update": 600, "dev_best_accuracy": 0.501953125, "dev_endpoint_accuracy": 0.466796875, "seconds": 20.87}
+{"run": "chain_beta_k4_cycle_count_s2207", "update": 200, "tokens": 384000, "loss": 0.308442, "dev_accuracy": 0.271484375, "seconds": 5.01}
+{"run": "chain_beta_k4_cycle_count_s2207", "update": 400, "tokens": 768000, "loss": 0.105189, "dev_accuracy": 0.28125, "seconds": 9.43}
+{"run": "chain_beta_k4_cycle_count_s2207", "update": 600, "tokens": 1152000, "loss": 0.016953, "dev_accuracy": 0.314453125, "seconds": 13.91}
+{"run": "chain_beta_k4_cycle_count_s2207", "update": 800, "tokens": 1536000, "loss": 0.007405, "dev_accuracy": 0.302734375, "seconds": 18.37}
+{"run": "chain_beta_k4_cycle_count_s2207", "completed": true, "best_update": 100, "dev_best_accuracy": 0.330078125, "dev_endpoint_accuracy": 0.302734375, "seconds": 18.76}
+{"run": "chain_beta_k4_lis_length_s2207", "update": 200, "tokens": 384000, "loss": 0.110115, "dev_accuracy": 0.5234375, "seconds": 5.2}
+{"run": "chain_beta_k4_lis_length_s2207", "update": 400, "tokens": 768000, "loss": 0.035014, "dev_accuracy": 0.529296875, "seconds": 10.09}
+{"run": "chain_beta_k4_lis_length_s2207", "update": 600, "tokens": 1152000, "loss": 0.01221, "dev_accuracy": 0.5390625, "seconds": 14.93}
+{"run": "chain_beta_k4_lis_length_s2207", "update": 800, "tokens": 1536000, "loss": 0.00382, "dev_accuracy": 0.548828125, "seconds": 19.87}
+{"run": "chain_beta_k4_lis_length_s2207", "completed": true, "best_update": 700, "dev_best_accuracy": 0.552734375, "dev_endpoint_accuracy": 0.548828125, "seconds": 20.27}
+{"run": "chain_beta_k4_components_s2207", "update": 200, "tokens": 384000, "loss": 0.004269, "dev_accuracy": 0.95703125, "seconds": 5.15}
+{"run": "chain_beta_k4_components_s2207", "update": 400, "tokens": 768000, "loss": 0.023115, "dev_accuracy": 0.943359375, "seconds": 10.03}
+{"run": "chain_beta_k4_components_s2207", "update": 600, "tokens": 1152000, "loss": 0.000572, "dev_accuracy": 0.955078125, "seconds": 14.73}
+{"run": "chain_beta_k4_components_s2207", "update": 800, "tokens": 1536000, "loss": 0.00125, "dev_accuracy": 0.955078125, "seconds": 19.29}
+{"run": "chain_beta_k4_components_s2207", "completed": true, "best_update": 300, "dev_best_accuracy": 0.958984375, "dev_endpoint_accuracy": 0.955078125, "seconds": 19.69}
+{"run": "chain_beta_k4_fixed_points_s2207", "update": 200, "tokens": 384000, "loss": 0.163823, "dev_accuracy": 0.5234375, "seconds": 5.3}
+{"run": "chain_beta_k4_fixed_points_s2207", "update": 400, "tokens": 768000, "loss": 0.054716, "dev_accuracy": 0.587890625, "seconds": 10.18}
+{"run": "chain_beta_k4_fixed_points_s2207", "update": 600, "tokens": 1152000, "loss": 0.004347, "dev_accuracy": 0.59765625, "seconds": 15.0}
+{"run": "chain_beta_k4_fixed_points_s2207", "update": 800, "tokens": 1536000, "loss": 0.011984, "dev_accuracy": 0.634765625, "seconds": 19.81}
+{"run": "chain_beta_k4_fixed_points_s2207", "completed": true, "best_update": 800, "dev_best_accuracy": 0.634765625, "dev_endpoint_accuracy": 0.634765625, "seconds": 20.63}
+{"run": "chain_beta_k8_cycle_count_s2207", "update": 200, "tokens": 384000, "loss": 0.279934, "dev_accuracy": 0.326171875, "seconds": 5.33}
+{"run": "chain_beta_k8_cycle_count_s2207", "update": 400, "tokens": 768000, "loss": 0.135541, "dev_accuracy": 0.337890625, "seconds": 10.38}
+{"run": "chain_beta_k8_cycle_count_s2207", "update": 600, "tokens": 1152000, "loss": 0.034842, "dev_accuracy": 0.326171875, "seconds": 15.0}
+{"run": "chain_beta_k8_cycle_count_s2207", "update": 800, "tokens": 1536000, "loss": 0.017085, "dev_accuracy": 0.328125, "seconds": 19.49}
+{"run": "chain_beta_k8_cycle_count_s2207", "completed": true, "best_update": 400, "dev_best_accuracy": 0.337890625, "dev_endpoint_accuracy": 0.328125, "seconds": 19.89}
+{"run": "chain_beta_k8_lis_length_s2207", "update": 200, "tokens": 384000, "loss": 0.196451, "dev_accuracy": 0.560546875, "seconds": 5.21}
+{"run": "chain_beta_k8_lis_length_s2207", "update": 400, "tokens": 768000, "loss": 0.04271, "dev_accuracy": 0.509765625, "seconds": 9.73}
+{"run": "chain_beta_k8_lis_length_s2207", "update": 600, "tokens": 1152000, "loss": 0.026018, "dev_accuracy": 0.525390625, "seconds": 14.27}
+{"run": "chain_beta_k8_lis_length_s2207", "update": 800, "tokens": 1536000, "loss": 0.004026, "dev_accuracy": 0.5, "seconds": 18.81}
+{"run": "chain_beta_k8_lis_length_s2207", "completed": true, "best_update": 200, "dev_best_accuracy": 0.560546875, "dev_endpoint_accuracy": 0.5, "seconds": 19.22}
+{"run": "chain_beta_k8_components_s2207", "update": 200, "tokens": 384000, "loss": 0.004522, "dev_accuracy": 0.9296875, "seconds": 5.0}
+{"run": "chain_beta_k8_components_s2207", "update": 400, "tokens": 768000, "loss": 0.019847, "dev_accuracy": 0.9609375, "seconds": 9.43}
+{"run": "chain_beta_k8_components_s2207", "update": 600, "tokens": 1152000, "loss": 0.000635, "dev_accuracy": 0.96875, "seconds": 14.23}
+{"run": "chain_beta_k8_components_s2207", "update": 800, "tokens": 1536000, "loss": 0.001266, "dev_accuracy": 0.962890625, "seconds": 18.86}
+{"run": "chain_beta_k8_components_s2207", "completed": true, "best_update": 600, "dev_best_accuracy": 0.96875, "dev_endpoint_accuracy": 0.962890625, "seconds": 19.27}
+{"run": "chain_beta_k8_fixed_points_s2207", "update": 200, "tokens": 384000, "loss": 0.128889, "dev_accuracy": 0.515625, "seconds": 5.41}
+{"run": "chain_beta_k8_fixed_points_s2207", "update": 400, "tokens": 768000, "loss": 0.032354, "dev_accuracy": 0.51953125, "seconds": 10.32}
+{"run": "chain_beta_k8_fixed_points_s2207", "update": 600, "tokens": 1152000, "loss": 0.012712, "dev_accuracy": 0.525390625, "seconds": 14.88}
+{"run": "chain_beta_k8_fixed_points_s2207", "update": 800, "tokens": 1536000, "loss": 0.002076, "dev_accuracy": 0.529296875, "seconds": 19.41}
+{"run": "chain_beta_k8_fixed_points_s2207", "completed": true, "best_update": 300, "dev_best_accuracy": 0.53515625, "dev_endpoint_accuracy": 0.529296875, "seconds": 19.79}
+{"run": "chain_beta_k16_cycle_count_s2207", "update": 200, "tokens": 384000, "loss": 0.30451, "dev_accuracy": 0.306640625, "seconds": 5.07}
+{"run": "chain_beta_k16_cycle_count_s2207", "update": 400, "tokens": 768000, "loss": 0.106191, "dev_accuracy": 0.296875, "seconds": 9.66}
+{"run": "chain_beta_k16_cycle_count_s2207", "update": 600, "tokens": 1152000, "loss": 0.019534, "dev_accuracy": 0.2890625, "seconds": 14.24}
+{"run": "chain_beta_k16_cycle_count_s2207", "update": 800, "tokens": 1536000, "loss": 0.021266, "dev_accuracy": 0.28125, "seconds": 18.74}
+{"run": "chain_beta_k16_cycle_count_s2207", "completed": true, "best_update": 100, "dev_best_accuracy": 0.326171875, "dev_endpoint_accuracy": 0.28125, "seconds": 19.14}
+{"run": "chain_beta_k16_lis_length_s2207", "update": 200, "tokens": 384000, "loss": 0.401048, "dev_accuracy": 0.482421875, "seconds": 4.93}
+{"run": "chain_beta_k16_lis_length_s2207", "update": 400, "tokens": 768000, "loss": 0.089391, "dev_accuracy": 0.501953125, "seconds": 9.95}
+{"run": "chain_beta_k16_lis_length_s2207", "update": 600, "tokens": 1152000, "loss": 0.044701, "dev_accuracy": 0.5078125, "seconds": 15.18}
+{"run": "chain_beta_k16_lis_length_s2207", "update": 800, "tokens": 1536000, "loss": 0.004206, "dev_accuracy": 0.513671875, "seconds": 19.99}
+{"run": "chain_beta_k16_lis_length_s2207", "completed": true, "best_update": 700, "dev_best_accuracy": 0.513671875, "dev_endpoint_accuracy": 0.513671875, "seconds": 20.39}
+{"run": "chain_beta_k16_components_s2207", "update": 200, "tokens": 384000, "loss": 0.008345, "dev_accuracy": 0.947265625, "seconds": 4.99}
+{"run": "chain_beta_k16_components_s2207", "update": 400, "tokens": 768000, "loss": 0.005852, "dev_accuracy": 0.953125, "seconds": 9.55}
+{"run": "chain_beta_k16_components_s2207", "update": 600, "tokens": 1152000, "loss": 0.000514, "dev_accuracy": 0.9609375, "seconds": 14.28}
+{"run": "chain_beta_k16_components_s2207", "update": 800, "tokens": 1536000, "loss": 0.000954, "dev_accuracy": 0.955078125, "seconds": 19.08}
+{"run": "chain_beta_k16_components_s2207", "completed": true, "best_update": 100, "dev_best_accuracy": 0.962890625, "dev_endpoint_accuracy": 0.955078125, "seconds": 19.5}
+{"run": "chain_beta_k16_fixed_points_s2207", "update": 200, "tokens": 384000, "loss": 0.218237, "dev_accuracy": 0.48828125, "seconds": 5.4}
+{"run": "chain_beta_k16_fixed_points_s2207", "update": 400, "tokens": 768000, "loss": 0.073895, "dev_accuracy": 0.49609375, "seconds": 10.6}
+{"run": "chain_beta_k16_fixed_points_s2207", "update": 600, "tokens": 1152000, "loss": 0.003933, "dev_accuracy": 0.474609375, "seconds": 15.41}
+{"run": "chain_beta_k16_fixed_points_s2207", "update": 800, "tokens": 1536000, "loss": 0.005005, "dev_accuracy": 0.47265625, "seconds": 20.15}
+{"run": "chain_beta_k16_fixed_points_s2207", "completed": true, "best_update": 400, "dev_best_accuracy": 0.49609375, "dev_endpoint_accuracy": 0.47265625, "seconds": 20.54}
+{"run": "chain_alpha_k2_s3301", "update": 200, "tokens": 384000, "loss": 0.588909, "seconds": 5.22}
+{"run": "chain_alpha_k2_s3301", "update": 400, "tokens": 768000, "loss": 0.585041, "seconds": 9.54}
+{"run": "chain_alpha_k2_s3301", "update": 600, "tokens": 1152000, "loss": 0.58977, "seconds": 13.93}
+{"run": "chain_alpha_k2_s3301", "update": 800, "tokens": 1536000, "loss": 0.544085, "seconds": 18.41}
+{"run": "chain_alpha_k2_s3301", "update": 1000, "tokens": 1920000, "loss": 0.523403, "seconds": 22.78}
+{"run": "chain_alpha_k2_s3301", "update": 1200, "tokens": 2304000, "loss": 0.481925, "seconds": 27.65}
+{"run": "chain_alpha_k2_s3301", "update": 1400, "tokens": 2688000, "loss": 0.426647, "seconds": 32.11}
+{"run": "chain_alpha_k2_s3301", "update": 1600, "tokens": 3072000, "loss": 0.55123, "seconds": 36.44}
+{"run": "chain_alpha_k2_s3301", "update": 1800, "tokens": 3456000, "loss": 0.427081, "seconds": 40.89}
+{"run": "chain_alpha_k2_s3301", "update": 2000, "tokens": 3840000, "loss": 0.322852, "seconds": 45.38}
+Completed pretraining chain_alpha_k2_s3301: 3999992 tokens, tail 8
+{"run": "chain_alpha_k4_s3301", "update": 200, "tokens": 384000, "loss": 0.661566, "seconds": 6.02}
+{"run": "chain_alpha_k4_s3301", "update": 400, "tokens": 768000, "loss": 0.453286, "seconds": 10.51}
+{"run": "chain_alpha_k4_s3301", "update": 600, "tokens": 1152000, "loss": 0.467149, "seconds": 15.03}
+{"run": "chain_alpha_k4_s3301", "update": 800, "tokens": 1536000, "loss": 0.479065, "seconds": 19.48}
+{"run": "chain_alpha_k4_s3301", "update": 1000, "tokens": 1920000, "loss": 0.439545, "seconds": 23.93}
+{"run": "chain_alpha_k4_s3301", "update": 1200, "tokens": 2304000, "loss": 0.384486, "seconds": 29.23}
+{"run": "chain_alpha_k4_s3301", "update": 1400, "tokens": 2688000, "loss": 0.371155, "seconds": 33.86}
+{"run": "chain_alpha_k4_s3301", "update": 1600, "tokens": 3072000, "loss": 0.40715, "seconds": 38.4}
+{"run": "chain_alpha_k4_s3301", "update": 1800, "tokens": 3456000, "loss": 0.353927, "seconds": 42.91}
+{"run": "chain_alpha_k4_s3301", "update": 2000, "tokens": 3840000, "loss": 0.299514, "seconds": 47.38}
+Completed pretraining chain_alpha_k4_s3301: 3999992 tokens, tail 8
+{"run": "chain_alpha_k8_s3301", "update": 200, "tokens": 390406, "loss": 0.76611, "seconds": 7.8}
+{"run": "chain_alpha_k8_s3301", "update": 400, "tokens": 780815, "loss": 0.717226, "seconds": 12.21}
+{"run": "chain_alpha_k8_s3301", "update": 600, "tokens": 1171230, "loss": 0.764317, "seconds": 16.77}
+{"run": "chain_alpha_k8_s3301", "update": 800, "tokens": 1561648, "loss": 0.752368, "seconds": 21.44}
+{"run": "chain_alpha_k8_s3301", "update": 1000, "tokens": 1952066, "loss": 0.6397, "seconds": 25.98}
+{"run": "chain_alpha_k8_s3301", "update": 1200, "tokens": 2342484, "loss": 0.670962, "seconds": 32.01}
+{"run": "chain_alpha_k8_s3301", "update": 1400, "tokens": 2732899, "loss": 0.595519, "seconds": 36.57}
+{"run": "chain_alpha_k8_s3301", "update": 1600, "tokens": 3123314, "loss": 0.623877, "seconds": 41.03}
+{"run": "chain_alpha_k8_s3301", "update": 1800, "tokens": 3513729, "loss": 0.580946, "seconds": 45.7}
+{"run": "chain_alpha_k8_s3301", "update": 2000, "tokens": 3904135, "loss": 0.520848, "seconds": 50.27}
+Completed pretraining chain_alpha_k8_s3301: 3999999 tokens, tail 1
+{"run": "chain_alpha_k16_s3301", "update": 200, "tokens": 396821, "loss": 0.848429, "seconds": 10.74}
+{"run": "chain_alpha_k16_s3301", "update": 400, "tokens": 793645, "loss": 0.877569, "seconds": 15.54}
+{"run": "chain_alpha_k16_s3301", "update": 600, "tokens": 1190466, "loss": 0.777048, "seconds": 20.32}
+{"run": "chain_alpha_k16_s3301", "update": 800, "tokens": 1587287, "loss": 0.775081, "seconds": 25.11}
+{"run": "chain_alpha_k16_s3301", "update": 1000, "tokens": 1984111, "loss": 0.701817, "seconds": 29.9}
+{"run": "chain_alpha_k16_s3301", "update": 1200, "tokens": 2380917, "loss": 0.70699, "seconds": 37.95}
+{"run": "chain_alpha_k16_s3301", "update": 1400, "tokens": 2777753, "loss": 0.670119, "seconds": 42.78}
+{"run": "chain_alpha_k16_s3301", "update": 1600, "tokens": 3174565, "loss": 0.709403, "seconds": 47.48}
+{"run": "chain_alpha_k16_s3301", "update": 1800, "tokens": 3571395, "loss": 0.660596, "seconds": 52.15}
+{"run": "chain_alpha_k16_s3301", "update": 2000, "tokens": 3968204, "loss": 0.557515, "seconds": 56.88}
+Completed pretraining chain_alpha_k16_s3301: 3999980 tokens, tail 20
+{"run": "chain_beta_k2_s3301", "update": 200, "tokens": 409687, "loss": 1.393986, "seconds": 5.26}
+{"run": "chain_beta_k2_s3301", "update": 400, "tokens": 819356, "loss": 1.521297, "seconds": 9.75}
+{"run": "chain_beta_k2_s3301", "update": 600, "tokens": 1229037, "loss": 1.393583, "seconds": 14.12}
+{"run": "chain_beta_k2_s3301", "update": 800, "tokens": 1638712, "loss": 1.326941, "seconds": 18.7}
+{"run": "chain_beta_k2_s3301", "update": 1000, "tokens": 2048399, "loss": 1.328052, "seconds": 23.66}
+{"run": "chain_beta_k2_s3301", "update": 1200, "tokens": 2458062, "loss": 1.264147, "seconds": 27.97}
+{"run": "chain_beta_k2_s3301", "update": 1400, "tokens": 2867728, "loss": 1.323306, "seconds": 32.37}
+{"run": "chain_beta_k2_s3301", "update": 1600, "tokens": 3277388, "loss": 1.280239, "seconds": 36.79}
+{"run": "chain_beta_k2_s3301", "update": 1800, "tokens": 3687060, "loss": 1.228552, "seconds": 41.1}
+Completed pretraining chain_beta_k2_s3301: 3999982 tokens, tail 18
+{"run": "chain_beta_k4_s3301", "update": 200, "tokens": 396827, "loss": 0.989709, "seconds": 6.04}
+{"run": "chain_beta_k4_s3301", "update": 400, "tokens": 793663, "loss": 0.913303, "seconds": 10.71}
+{"run": "chain_beta_k4_s3301", "update": 600, "tokens": 1190508, "loss": 0.869925, "seconds": 15.2}
+{"run": "chain_beta_k4_s3301", "update": 800, "tokens": 1587344, "loss": 0.876031, "seconds": 19.69}
+{"run": "chain_beta_k4_s3301", "update": 1000, "tokens": 1984192, "loss": 0.809943, "seconds": 24.18}
+{"run": "chain_beta_k4_s3301", "update": 1200, "tokens": 2381025, "loss": 0.828205, "seconds": 29.5}
+{"run": "chain_beta_k4_s3301", "update": 1400, "tokens": 2777849, "loss": 0.821787, "seconds": 34.06}
+{"run": "chain_beta_k4_s3301", "update": 1600, "tokens": 3174697, "loss": 0.793979, "seconds": 38.8}
+{"run": "chain_beta_k4_s3301", "update": 1800, "tokens": 3571539, "loss": 0.808353, "seconds": 43.41}
+{"run": "chain_beta_k4_s3301", "update": 2000, "tokens": 3968363, "loss": 0.683707, "seconds": 48.06}
+Completed pretraining chain_beta_k4_s3301: 3999991 tokens, tail 9
+{"run": "chain_beta_k8_s3301", "update": 200, "tokens": 403209, "loss": 0.697556, "seconds": 7.64}
+{"run": "chain_beta_k8_s3301", "update": 400, "tokens": 806421, "loss": 0.758253, "seconds": 12.44}
+{"run": "chain_beta_k8_s3301", "update": 600, "tokens": 1209645, "loss": 0.67445, "seconds": 17.27}
+{"run": "chain_beta_k8_s3301", "update": 800, "tokens": 1612863, "loss": 0.687302, "seconds": 21.83}
+{"run": "chain_beta_k8_s3301", "update": 1000, "tokens": 2016078, "loss": 0.593497, "seconds": 28.13}
+{"run": "chain_beta_k8_s3301", "update": 1200, "tokens": 2419311, "loss": 0.591621, "seconds": 32.59}
+{"run": "chain_beta_k8_s3301", "update": 1400, "tokens": 2822526, "loss": 0.572025, "seconds": 36.98}
+{"run": "chain_beta_k8_s3301", "update": 1600, "tokens": 3225750, "loss": 0.601106, "seconds": 41.55}
+{"run": "chain_beta_k8_s3301", "update": 1800, "tokens": 3628977, "loss": 0.614714, "seconds": 45.88}
+Completed pretraining chain_beta_k8_s3301: 3999996 tokens, tail 4
+{"run": "chain_beta_k16_s3301", "update": 200, "tokens": 396803, "loss": 0.727126, "seconds": 10.49}
+{"run": "chain_beta_k16_s3301", "update": 400, "tokens": 793618, "loss": 0.732817, "seconds": 15.22}
+{"run": "chain_beta_k16_s3301", "update": 600, "tokens": 1190439, "loss": 0.680359, "seconds": 19.83}
+{"run": "chain_beta_k16_s3301", "update": 800, "tokens": 1587254, "loss": 0.726108, "seconds": 24.55}
+{"run": "chain_beta_k16_s3301", "update": 1000, "tokens": 1984072, "loss": 0.654089, "seconds": 29.25}
+{"run": "chain_beta_k16_s3301", "update": 1200, "tokens": 2380872, "loss": 0.750523, "seconds": 37.07}
+{"run": "chain_beta_k16_s3301", "update": 1400, "tokens": 2777687, "loss": 0.749133, "seconds": 41.69}
+{"run": "chain_beta_k16_s3301", "update": 1600, "tokens": 3174508, "loss": 0.645964, "seconds": 46.32}
+{"run": "chain_beta_k16_s3301", "update": 1800, "tokens": 3571320, "loss": 0.651011, "seconds": 50.99}
+{"run": "chain_beta_k16_s3301", "update": 2000, "tokens": 3968138, "loss": 0.603619, "seconds": 55.68}
+Completed pretraining chain_beta_k16_s3301: 3999982 tokens, tail 18
+{"run": "baseline_k0_cycle_count_s3301", "update": 200, "tokens": 384000, "loss": 0.30213, "dev_accuracy": 0.2578125, "seconds": 5.28}
+{"run": "baseline_k0_cycle_count_s3301", "update": 400, "tokens": 768000, "loss": 0.077998, "dev_accuracy": 0.26171875, "seconds": 10.03}
+{"run": "baseline_k0_cycle_count_s3301", "update": 600, "tokens": 1152000, "loss": 0.049482, "dev_accuracy": 0.283203125, "seconds": 14.79}
+{"run": "baseline_k0_cycle_count_s3301", "update": 800, "tokens": 1536000, "loss": 0.006591, "dev_accuracy": 0.279296875, "seconds": 19.74}
+{"run": "baseline_k0_cycle_count_s3301", "completed": true, "best_update": 100, "dev_best_accuracy": 0.318359375, "dev_endpoint_accuracy": 0.279296875, "seconds": 20.12}
+{"run": "baseline_k0_lis_length_s3301", "update": 200, "tokens": 384000, "loss": 0.269479, "dev_accuracy": 0.443359375, "seconds": 5.27}
+{"run": "baseline_k0_lis_length_s3301", "update": 400, "tokens": 768000, "loss": 0.02445, "dev_accuracy": 0.466796875, "seconds": 10.28}
+{"run": "baseline_k0_lis_length_s3301", "update": 600, "tokens": 1152000, "loss": 0.004662, "dev_accuracy": 0.4453125, "seconds": 15.01}
+{"run": "baseline_k0_lis_length_s3301", "update": 800, "tokens": 1536000, "loss": 0.0048, "dev_accuracy": 0.443359375, "seconds": 19.73}
+{"run": "baseline_k0_lis_length_s3301", "completed": true, "best_update": 400, "dev_best_accuracy": 0.466796875, "dev_endpoint_accuracy": 0.443359375, "seconds": 20.09}
+{"run": "baseline_k0_components_s3301", "update": 200, "tokens": 384000, "loss": 0.083652, "dev_accuracy": 0.9375, "seconds": 5.49}
+{"run": "baseline_k0_components_s3301", "update": 400, "tokens": 768000, "loss": 0.004569, "dev_accuracy": 0.9140625, "seconds": 10.13}
+{"run": "baseline_k0_components_s3301", "update": 600, "tokens": 1152000, "loss": 0.002158, "dev_accuracy": 0.93359375, "seconds": 15.17}
+{"run": "baseline_k0_components_s3301", "update": 800, "tokens": 1536000, "loss": 0.001818, "dev_accuracy": 0.939453125, "seconds": 19.81}
+{"run": "baseline_k0_components_s3301", "completed": true, "best_update": 500, "dev_best_accuracy": 0.939453125, "dev_endpoint_accuracy": 0.939453125, "seconds": 20.17}
+{"run": "baseline_k0_fixed_points_s3301", "update": 200, "tokens": 384000, "loss": 0.196975, "dev_accuracy": 0.63671875, "seconds": 5.55}
+{"run": "baseline_k0_fixed_points_s3301", "update": 400, "tokens": 768000, "loss": 0.044113, "dev_accuracy": 0.634765625, "seconds": 10.53}
+{"run": "baseline_k0_fixed_points_s3301", "update": 600, "tokens": 1152000, "loss": 0.055288, "dev_accuracy": 0.642578125, "seconds": 15.19}
+{"run": "baseline_k0_fixed_points_s3301", "update": 800, "tokens": 1536000, "loss": 0.007924, "dev_accuracy": 0.62109375, "seconds": 19.91}
+{"run": "baseline_k0_fixed_points_s3301", "completed": true, "best_update": 300, "dev_best_accuracy": 0.6640625, "dev_endpoint_accuracy": 0.62109375, "seconds": 20.28}
+{"run": "chain_alpha_k2_cycle_count_s3301", "update": 200, "tokens": 384000, "loss": 0.41121, "dev_accuracy": 0.29296875, "seconds": 5.29}
+{"run": "chain_alpha_k2_cycle_count_s3301", "update": 400, "tokens": 768000, "loss": 0.125999, "dev_accuracy": 0.294921875, "seconds": 10.16}
+{"run": "chain_alpha_k2_cycle_count_s3301", "update": 600, "tokens": 1152000, "loss": 0.011083, "dev_accuracy": 0.271484375, "seconds": 15.13}
+{"run": "chain_alpha_k2_cycle_count_s3301", "update": 800, "tokens": 1536000, "loss": 0.016996, "dev_accuracy": 0.283203125, "seconds": 19.76}
+{"run": "chain_alpha_k2_cycle_count_s3301", "completed": true, "best_update": 500, "dev_best_accuracy": 0.298828125, "dev_endpoint_accuracy": 0.283203125, "seconds": 20.16}
+{"run": "chain_alpha_k2_lis_length_s3301", "update": 200, "tokens": 384000, "loss": 0.142722, "dev_accuracy": 0.5625, "seconds": 5.44}
+{"run": "chain_alpha_k2_lis_length_s3301", "update": 400, "tokens": 768000, "loss": 0.027415, "dev_accuracy": 0.5234375, "seconds": 10.06}
+{"run": "chain_alpha_k2_lis_length_s3301", "update": 600, "tokens": 1152000, "loss": 0.005624, "dev_accuracy": 0.521484375, "seconds": 14.59}
+{"run": "chain_alpha_k2_lis_length_s3301", "update": 800, "tokens": 1536000, "loss": 0.009937, "dev_accuracy": 0.517578125, "seconds": 19.26}
+{"run": "chain_alpha_k2_lis_length_s3301", "completed": true, "best_update": 200, "dev_best_accuracy": 0.5625, "dev_endpoint_accuracy": 0.517578125, "seconds": 19.65}
+{"run": "chain_alpha_k2_components_s3301", "update": 200, "tokens": 384000, "loss": 0.016224, "dev_accuracy": 0.91796875, "seconds": 5.05}
+{"run": "chain_alpha_k2_components_s3301", "update": 400, "tokens": 768000, "loss": 0.010872, "dev_accuracy": 0.919921875, "seconds": 9.7}
+{"run": "chain_alpha_k2_components_s3301", "update": 600, "tokens": 1152000, "loss": 0.001572, "dev_accuracy": 0.91796875, "seconds": 14.22}
+{"run": "chain_alpha_k2_components_s3301", "update": 800, "tokens": 1536000, "loss": 0.001286, "dev_accuracy": 0.92578125, "seconds": 18.86}
+{"run": "chain_alpha_k2_components_s3301", "completed": true, "best_update": 100, "dev_best_accuracy": 0.92578125, "dev_endpoint_accuracy": 0.92578125, "seconds": 19.29}
+{"run": "chain_alpha_k2_fixed_points_s3301", "update": 200, "tokens": 384000, "loss": 0.304778, "dev_accuracy": 0.478515625, "seconds": 5.48}
+{"run": "chain_alpha_k2_fixed_points_s3301", "update": 400, "tokens": 768000, "loss": 0.120419, "dev_accuracy": 0.548828125, "seconds": 10.78}
+{"run": "chain_alpha_k2_fixed_points_s3301", "update": 600, "tokens": 1152000, "loss": 0.071288, "dev_accuracy": 0.546875, "seconds": 15.58}
+{"run": "chain_alpha_k2_fixed_points_s3301", "update": 800, "tokens": 1536000, "loss": 0.016672, "dev_accuracy": 0.578125, "seconds": 20.8}
+{"run": "chain_alpha_k2_fixed_points_s3301", "completed": true, "best_update": 800, "dev_best_accuracy": 0.578125, "dev_endpoint_accuracy": 0.578125, "seconds": 21.7}
+{"run": "chain_alpha_k4_cycle_count_s3301", "update": 200, "tokens": 384000, "loss": 0.304571, "dev_accuracy": 0.298828125, "seconds": 5.34}
+{"run": "chain_alpha_k4_cycle_count_s3301", "update": 400, "tokens": 768000, "loss": 0.069519, "dev_accuracy": 0.28515625, "seconds": 9.94}
+{"run": "chain_alpha_k4_cycle_count_s3301", "update": 600, "tokens": 1152000, "loss": 0.022793, "dev_accuracy": 0.267578125, "seconds": 14.51}
+{"run": "chain_alpha_k4_cycle_count_s3301", "update": 800, "tokens": 1536000, "loss": 0.06376, "dev_accuracy": 0.306640625, "seconds": 19.55}
+{"run": "chain_alpha_k4_cycle_count_s3301", "completed": true, "best_update": 800, "dev_best_accuracy": 0.306640625, "dev_endpoint_accuracy": 0.306640625, "seconds": 20.31}
+{"run": "chain_alpha_k4_lis_length_s3301", "update": 200, "tokens": 384000, "loss": 0.128486, "dev_accuracy": 0.53515625, "seconds": 5.33}
+{"run": "chain_alpha_k4_lis_length_s3301", "update": 400, "tokens": 768000, "loss": 0.035765, "dev_accuracy": 0.509765625, "seconds": 9.94}
+{"run": "chain_alpha_k4_lis_length_s3301", "update": 600, "tokens": 1152000, "loss": 0.003866, "dev_accuracy": 0.5390625, "seconds": 15.19}
+{"run": "chain_alpha_k4_lis_length_s3301", "update": 800, "tokens": 1536000, "loss": 0.006433, "dev_accuracy": 0.537109375, "seconds": 19.75}
+{"run": "chain_alpha_k4_lis_length_s3301", "completed": true, "best_update": 600, "dev_best_accuracy": 0.5390625, "dev_endpoint_accuracy": 0.537109375, "seconds": 20.15}
+{"run": "chain_alpha_k4_components_s3301", "update": 200, "tokens": 384000, "loss": 0.007638, "dev_accuracy": 0.943359375, "seconds": 5.16}
+{"run": "chain_alpha_k4_components_s3301", "update": 400, "tokens": 768000, "loss": 0.001453, "dev_accuracy": 0.962890625, "seconds": 10.26}
+{"run": "chain_alpha_k4_components_s3301", "update": 600, "tokens": 1152000, "loss": 0.00101, "dev_accuracy": 0.953125, "seconds": 14.85}
+{"run": "chain_alpha_k4_components_s3301", "update": 800, "tokens": 1536000, "loss": 0.000821, "dev_accuracy": 0.962890625, "seconds": 19.75}
+{"run": "chain_alpha_k4_components_s3301", "completed": true, "best_update": 700, "dev_best_accuracy": 0.96484375, "dev_endpoint_accuracy": 0.962890625, "seconds": 20.16}
+{"run": "chain_alpha_k4_fixed_points_s3301", "update": 200, "tokens": 384000, "loss": 0.26406, "dev_accuracy": 0.53125, "seconds": 5.31}
+{"run": "chain_alpha_k4_fixed_points_s3301", "update": 400, "tokens": 768000, "loss": 0.071551, "dev_accuracy": 0.60546875, "seconds": 10.46}
+{"run": "chain_alpha_k4_fixed_points_s3301", "update": 600, "tokens": 1152000, "loss": 0.01559, "dev_accuracy": 0.630859375, "seconds": 15.72}
+{"run": "chain_alpha_k4_fixed_points_s3301", "update": 800, "tokens": 1536000, "loss": 0.004338, "dev_accuracy": 0.615234375, "seconds": 20.73}
+{"run": "chain_alpha_k4_fixed_points_s3301", "completed": true, "best_update": 700, "dev_best_accuracy": 0.638671875, "dev_endpoint_accuracy": 0.615234375, "seconds": 21.16}
+{"run": "chain_alpha_k8_cycle_count_s3301", "update": 200, "tokens": 384000, "loss": 0.281036, "dev_accuracy": 0.275390625, "seconds": 5.02}
+{"run": "chain_alpha_k8_cycle_count_s3301", "update": 400, "tokens": 768000, "loss": 0.052137, "dev_accuracy": 0.26953125, "seconds": 10.06}
+{"run": "chain_alpha_k8_cycle_count_s3301", "update": 600, "tokens": 1152000, "loss": 0.01491, "dev_accuracy": 0.30078125, "seconds": 15.26}
+{"run": "chain_alpha_k8_cycle_count_s3301", "update": 800, "tokens": 1536000, "loss": 0.003238, "dev_accuracy": 0.294921875, "seconds": 19.77}
+{"run": "chain_alpha_k8_cycle_count_s3301", "completed": true, "best_update": 600, "dev_best_accuracy": 0.30078125, "dev_endpoint_accuracy": 0.294921875, "seconds": 20.18}
+{"run": "chain_alpha_k8_lis_length_s3301", "update": 200, "tokens": 384000, "loss": 0.102814, "dev_accuracy": 0.57421875, "seconds": 5.37}
+{"run": "chain_alpha_k8_lis_length_s3301", "update": 400, "tokens": 768000, "loss": 0.030514, "dev_accuracy": 0.509765625, "seconds": 9.92}
+{"run": "chain_alpha_k8_lis_length_s3301", "update": 600, "tokens": 1152000, "loss": 0.013362, "dev_accuracy": 0.5234375, "seconds": 14.63}
+{"run": "chain_alpha_k8_lis_length_s3301", "update": 800, "tokens": 1536000, "loss": 0.001838, "dev_accuracy": 0.517578125, "seconds": 19.25}
+{"run": "chain_alpha_k8_lis_length_s3301", "completed": true, "best_update": 200, "dev_best_accuracy": 0.57421875, "dev_endpoint_accuracy": 0.517578125, "seconds": 19.66}
+{"run": "chain_alpha_k8_components_s3301", "update": 200, "tokens": 384000, "loss": 0.015965, "dev_accuracy": 0.9375, "seconds": 5.34}
+{"run": "chain_alpha_k8_components_s3301", "update": 400, "tokens": 768000, "loss": 0.001422, "dev_accuracy": 0.9375, "seconds": 10.46}
+{"run": "chain_alpha_k8_components_s3301", "update": 600, "tokens": 1152000, "loss": 0.000929, "dev_accuracy": 0.939453125, "seconds": 15.27}
+{"run": "chain_alpha_k8_components_s3301", "update": 800, "tokens": 1536000, "loss": 0.000814, "dev_accuracy": 0.9453125, "seconds": 20.18}
+{"run": "chain_alpha_k8_components_s3301", "completed": true, "best_update": 800, "dev_best_accuracy": 0.9453125, "dev_endpoint_accuracy": 0.9453125, "seconds": 20.97}
+{"run": "chain_alpha_k8_fixed_points_s3301", "update": 200, "tokens": 384000, "loss": 0.165761, "dev_accuracy": 0.521484375, "seconds": 5.05}
+{"run": "chain_alpha_k8_fixed_points_s3301", "update": 400, "tokens": 768000, "loss": 0.016382, "dev_accuracy": 0.56640625, "seconds": 10.04}
+{"run": "chain_alpha_k8_fixed_points_s3301", "update": 600, "tokens": 1152000, "loss": 0.005238, "dev_accuracy": 0.5390625, "seconds": 14.66}
+{"run": "chain_alpha_k8_fixed_points_s3301", "update": 800, "tokens": 1536000, "loss": 0.004624, "dev_accuracy": 0.5078125, "seconds": 19.35}
+{"run": "chain_alpha_k8_fixed_points_s3301", "completed": true, "best_update": 400, "dev_best_accuracy": 0.56640625, "dev_endpoint_accuracy": 0.5078125, "seconds": 19.73}
+{"run": "chain_alpha_k16_cycle_count_s3301", "update": 200, "tokens": 384000, "loss": 0.363642, "dev_accuracy": 0.244140625, "seconds": 5.26}
+{"run": "chain_alpha_k16_cycle_count_s3301", "update": 400, "tokens": 768000, "loss": 0.082009, "dev_accuracy": 0.244140625, "seconds": 9.95}
+{"run": "chain_alpha_k16_cycle_count_s3301", "update": 600, "tokens": 1152000, "loss": 0.035697, "dev_accuracy": 0.255859375, "seconds": 14.94}
+{"run": "chain_alpha_k16_cycle_count_s3301", "update": 800, "tokens": 1536000, "loss": 0.023557, "dev_accuracy": 0.271484375, "seconds": 19.64}
+{"run": "chain_alpha_k16_cycle_count_s3301", "completed": true, "best_update": 500, "dev_best_accuracy": 0.283203125, "dev_endpoint_accuracy": 0.271484375, "seconds": 20.07}
+{"run": "chain_alpha_k16_lis_length_s3301", "update": 200, "tokens": 384000, "loss": 0.117262, "dev_accuracy": 0.505859375, "seconds": 5.16}
+{"run": "chain_alpha_k16_lis_length_s3301", "update": 400, "tokens": 768000, "loss": 0.116206, "dev_accuracy": 0.478515625, "seconds": 9.81}
+{"run": "chain_alpha_k16_lis_length_s3301", "update": 600, "tokens": 1152000, "loss": 0.019695, "dev_accuracy": 0.48828125, "seconds": 14.5}
+{"run": "chain_alpha_k16_lis_length_s3301", "update": 800, "tokens": 1536000, "loss": 0.01217, "dev_accuracy": 0.484375, "seconds": 19.06}
+{"run": "chain_alpha_k16_lis_length_s3301", "completed": true, "best_update": 100, "dev_best_accuracy": 0.517578125, "dev_endpoint_accuracy": 0.484375, "seconds": 19.45}
+{"run": "chain_alpha_k16_components_s3301", "update": 200, "tokens": 384000, "loss": 0.010679, "dev_accuracy": 0.9296875, "seconds": 5.18}
+{"run": "chain_alpha_k16_components_s3301", "update": 400, "tokens": 768000, "loss": 0.003554, "dev_accuracy": 0.947265625, "seconds": 10.19}
+{"run": "chain_alpha_k16_components_s3301", "update": 600, "tokens": 1152000, "loss": 0.002497, "dev_accuracy": 0.94140625, "seconds": 15.25}
+{"run": "chain_alpha_k16_components_s3301", "update": 800, "tokens": 1536000, "loss": 0.000882, "dev_accuracy": 0.951171875, "seconds": 20.35}
+{"run": "chain_alpha_k16_components_s3301", "completed": true, "best_update": 800, "dev_best_accuracy": 0.951171875, "dev_endpoint_accuracy": 0.951171875, "seconds": 21.13}
+{"run": "chain_alpha_k16_fixed_points_s3301", "update": 200, "tokens": 384000, "loss": 0.249163, "dev_accuracy": 0.544921875, "seconds": 5.47}
+{"run": "chain_alpha_k16_fixed_points_s3301", "update": 400, "tokens": 768000, "loss": 0.052191, "dev_accuracy": 0.658203125, "seconds": 10.82}
+{"run": "chain_alpha_k16_fixed_points_s3301", "update": 600, "tokens": 1152000, "loss": 0.005071, "dev_accuracy": 0.634765625, "seconds": 15.75}
+{"run": "chain_alpha_k16_fixed_points_s3301", "update": 800, "tokens": 1536000, "loss": 0.002003, "dev_accuracy": 0.64453125, "seconds": 20.51}
+{"run": "chain_alpha_k16_fixed_points_s3301", "completed": true, "best_update": 400, "dev_best_accuracy": 0.658203125, "dev_endpoint_accuracy": 0.64453125, "seconds": 20.89}
+{"run": "chain_beta_k2_cycle_count_s3301", "update": 200, "tokens": 384000, "loss": 0.504278, "dev_accuracy": 0.283203125, "seconds": 5.06}
+{"run": "chain_beta_k2_cycle_count_s3301", "update": 400, "tokens": 768000, "loss": 0.080677, "dev_accuracy": 0.25, "seconds": 9.97}
+{"run": "chain_beta_k2_cycle_count_s3301", "update": 600, "tokens": 1152000, "loss": 0.089627, "dev_accuracy": 0.294921875, "seconds": 15.3}
+{"run": "chain_beta_k2_cycle_count_s3301", "update": 800, "tokens": 1536000, "loss": 0.04344, "dev_accuracy": 0.279296875, "seconds": 20.21}
+{"run": "chain_beta_k2_cycle_count_s3301", "completed": true, "best_update": 600, "dev_best_accuracy": 0.294921875, "dev_endpoint_accuracy": 0.279296875, "seconds": 20.64}
+{"run": "chain_beta_k2_lis_length_s3301", "update": 200, "tokens": 384000, "loss": 0.224937, "dev_accuracy": 0.505859375, "seconds": 5.33}
+{"run": "chain_beta_k2_lis_length_s3301", "update": 400, "tokens": 768000, "loss": 0.046489, "dev_accuracy": 0.53515625, "seconds": 10.51}
+{"run": "chain_beta_k2_lis_length_s3301", "update": 600, "tokens": 1152000, "loss": 0.007139, "dev_accuracy": 0.521484375, "seconds": 15.4}
+{"run": "chain_beta_k2_lis_length_s3301", "update": 800, "tokens": 1536000, "loss": 0.006174, "dev_accuracy": 0.533203125, "seconds": 20.25}
+{"run": "chain_beta_k2_lis_length_s3301", "completed": true, "best_update": 300, "dev_best_accuracy": 0.5546875, "dev_endpoint_accuracy": 0.533203125, "seconds": 20.66}
+{"run": "chain_beta_k2_components_s3301", "update": 200, "tokens": 384000, "loss": 0.085082, "dev_accuracy": 0.943359375, "seconds": 5.63}
+{"run": "chain_beta_k2_components_s3301", "update": 400, "tokens": 768000, "loss": 0.007989, "dev_accuracy": 0.92578125, "seconds": 10.55}
+{"run": "chain_beta_k2_components_s3301", "update": 600, "tokens": 1152000, "loss": 0.00114, "dev_accuracy": 0.921875, "seconds": 15.36}
+{"run": "chain_beta_k2_components_s3301", "update": 800, "tokens": 1536000, "loss": 0.001332, "dev_accuracy": 0.92578125, "seconds": 20.04}
+{"run": "chain_beta_k2_components_s3301", "completed": true, "best_update": 200, "dev_best_accuracy": 0.943359375, "dev_endpoint_accuracy": 0.92578125, "seconds": 20.46}
+{"run": "chain_beta_k2_fixed_points_s3301", "update": 200, "tokens": 384000, "loss": 0.329181, "dev_accuracy": 0.509765625, "seconds": 5.64}
+{"run": "chain_beta_k2_fixed_points_s3301", "update": 400, "tokens": 768000, "loss": 0.028665, "dev_accuracy": 0.556640625, "seconds": 11.02}
+{"run": "chain_beta_k2_fixed_points_s3301", "update": 600, "tokens": 1152000, "loss": 0.051395, "dev_accuracy": 0.59375, "seconds": 16.52}
+{"run": "chain_beta_k2_fixed_points_s3301", "update": 800, "tokens": 1536000, "loss": 0.022276, "dev_accuracy": 0.595703125, "seconds": 21.71}
+{"run": "chain_beta_k2_fixed_points_s3301", "completed": true, "best_update": 800, "dev_best_accuracy": 0.595703125, "dev_endpoint_accuracy": 0.595703125, "seconds": 22.51}
+{"run": "chain_beta_k4_cycle_count_s3301", "update": 200, "tokens": 384000, "loss": 0.238921, "dev_accuracy": 0.294921875, "seconds": 5.75}
+{"run": "chain_beta_k4_cycle_count_s3301", "update": 400, "tokens": 768000, "loss": 0.028927, "dev_accuracy": 0.26171875, "seconds": 10.79}
+{"run": "chain_beta_k4_cycle_count_s3301", "update": 600, "tokens": 1152000, "loss": 0.007371, "dev_accuracy": 0.28515625, "seconds": 15.57}
+{"run": "chain_beta_k4_cycle_count_s3301", "update": 800, "tokens": 1536000, "loss": 0.003766, "dev_accuracy": 0.28515625, "seconds": 20.38}
+{"run": "chain_beta_k4_cycle_count_s3301", "completed": true, "best_update": 200, "dev_best_accuracy": 0.294921875, "dev_endpoint_accuracy": 0.28515625, "seconds": 20.78}
+{"run": "chain_beta_k4_lis_length_s3301", "update": 200, "tokens": 384000, "loss": 0.255782, "dev_accuracy": 0.494140625, "seconds": 5.02}
+{"run": "chain_beta_k4_lis_length_s3301", "update": 400, "tokens": 768000, "loss": 0.115823, "dev_accuracy": 0.478515625, "seconds": 9.76}
+{"run": "chain_beta_k4_lis_length_s3301", "update": 600, "tokens": 1152000, "loss": 0.00285, "dev_accuracy": 0.48828125, "seconds": 14.42}
+{"run": "chain_beta_k4_lis_length_s3301", "update": 800, "tokens": 1536000, "loss": 0.002597, "dev_accuracy": 0.498046875, "seconds": 19.18}
+{"run": "chain_beta_k4_lis_length_s3301", "completed": true, "best_update": 100, "dev_best_accuracy": 0.515625, "dev_endpoint_accuracy": 0.498046875, "seconds": 19.58}
+{"run": "chain_beta_k4_components_s3301", "update": 200, "tokens": 384000, "loss": 0.061172, "dev_accuracy": 0.935546875, "seconds": 5.09}
+{"run": "chain_beta_k4_components_s3301", "update": 400, "tokens": 768000, "loss": 0.00078, "dev_accuracy": 0.9453125, "seconds": 9.79}
+{"run": "chain_beta_k4_components_s3301", "update": 600, "tokens": 1152000, "loss": 0.000666, "dev_accuracy": 0.9453125, "seconds": 14.42}
+{"run": "chain_beta_k4_components_s3301", "update": 800, "tokens": 1536000, "loss": 0.000549, "dev_accuracy": 0.951171875, "seconds": 19.1}
+{"run": "chain_beta_k4_components_s3301", "completed": true, "best_update": 100, "dev_best_accuracy": 0.955078125, "dev_endpoint_accuracy": 0.951171875, "seconds": 19.52}
+{"run": "chain_beta_k4_fixed_points_s3301", "update": 200, "tokens": 384000, "loss": 0.22554, "dev_accuracy": 0.42578125, "seconds": 5.12}
+{"run": "chain_beta_k4_fixed_points_s3301", "update": 400, "tokens": 768000, "loss": 0.103164, "dev_accuracy": 0.470703125, "seconds": 10.24}
+{"run": "chain_beta_k4_fixed_points_s3301", "update": 600, "tokens": 1152000, "loss": 0.006202, "dev_accuracy": 0.498046875, "seconds": 15.23}
+{"run": "chain_beta_k4_fixed_points_s3301", "update": 800, "tokens": 1536000, "loss": 0.002969, "dev_accuracy": 0.498046875, "seconds": 19.93}
+{"run": "chain_beta_k4_fixed_points_s3301", "completed": true, "best_update": 500, "dev_best_accuracy": 0.5078125, "dev_endpoint_accuracy": 0.498046875, "seconds": 20.33}
+{"run": "chain_beta_k8_cycle_count_s3301", "update": 200, "tokens": 384000, "loss": 0.32331, "dev_accuracy": 0.271484375, "seconds": 5.14}
+{"run": "chain_beta_k8_cycle_count_s3301", "update": 400, "tokens": 768000, "loss": 0.075726, "dev_accuracy": 0.279296875, "seconds": 9.67}
+{"run": "chain_beta_k8_cycle_count_s3301", "update": 600, "tokens": 1152000, "loss": 0.013805, "dev_accuracy": 0.259765625, "seconds": 14.41}
+{"run": "chain_beta_k8_cycle_count_s3301", "update": 800, "tokens": 1536000, "loss": 0.007376, "dev_accuracy": 0.26171875, "seconds": 18.96}
+{"run": "chain_beta_k8_cycle_count_s3301", "completed": true, "best_update": 100, "dev_best_accuracy": 0.28515625, "dev_endpoint_accuracy": 0.26171875, "seconds": 19.37}
+{"run": "chain_beta_k8_lis_length_s3301", "update": 200, "tokens": 384000, "loss": 0.162012, "dev_accuracy": 0.490234375, "seconds": 5.22}
+{"run": "chain_beta_k8_lis_length_s3301", "update": 400, "tokens": 768000, "loss": 0.010292, "dev_accuracy": 0.505859375, "seconds": 9.82}
+{"run": "chain_beta_k8_lis_length_s3301", "update": 600, "tokens": 1152000, "loss": 0.005981, "dev_accuracy": 0.458984375, "seconds": 14.37}
+{"run": "chain_beta_k8_lis_length_s3301", "update": 800, "tokens": 1536000, "loss": 0.003043, "dev_accuracy": 0.4921875, "seconds": 18.99}
+{"run": "chain_beta_k8_lis_length_s3301", "completed": true, "best_update": 100, "dev_best_accuracy": 0.53515625, "dev_endpoint_accuracy": 0.4921875, "seconds": 19.38}
+{"run": "chain_beta_k8_components_s3301", "update": 200, "tokens": 384000, "loss": 0.028745, "dev_accuracy": 0.943359375, "seconds": 5.07}
+{"run": "chain_beta_k8_components_s3301", "update": 400, "tokens": 768000, "loss": 0.003025, "dev_accuracy": 0.955078125, "seconds": 10.14}
+{"run": "chain_beta_k8_components_s3301", "update": 600, "tokens": 1152000, "loss": 0.003624, "dev_accuracy": 0.943359375, "seconds": 14.8}
+{"run": "chain_beta_k8_components_s3301", "update": 800, "tokens": 1536000, "loss": 0.000586, "dev_accuracy": 0.951171875, "seconds": 19.49}
+{"run": "chain_beta_k8_components_s3301", "completed": true, "best_update": 300, "dev_best_accuracy": 0.95703125, "dev_endpoint_accuracy": 0.951171875, "seconds": 19.88}
+{"run": "chain_beta_k8_fixed_points_s3301", "update": 200, "tokens": 384000, "loss": 0.197019, "dev_accuracy": 0.447265625, "seconds": 4.91}
+{"run": "chain_beta_k8_fixed_points_s3301", "update": 400, "tokens": 768000, "loss": 0.01997, "dev_accuracy": 0.470703125, "seconds": 9.85}
+{"run": "chain_beta_k8_fixed_points_s3301", "update": 600, "tokens": 1152000, "loss": 0.00734, "dev_accuracy": 0.498046875, "seconds": 14.81}
+{"run": "chain_beta_k8_fixed_points_s3301", "update": 800, "tokens": 1536000, "loss": 0.002329, "dev_accuracy": 0.509765625, "seconds": 19.58}
+{"run": "chain_beta_k8_fixed_points_s3301", "completed": true, "best_update": 800, "dev_best_accuracy": 0.509765625, "dev_endpoint_accuracy": 0.509765625, "seconds": 20.42}
+{"run": "chain_beta_k16_cycle_count_s3301", "update": 200, "tokens": 384000, "loss": 0.413949, "dev_accuracy": 0.283203125, "seconds": 5.42}
+{"run": "chain_beta_k16_cycle_count_s3301", "update": 400, "tokens": 768000, "loss": 0.107297, "dev_accuracy": 0.228515625, "seconds": 9.94}
+{"run": "chain_beta_k16_cycle_count_s3301", "update": 600, "tokens": 1152000, "loss": 0.024455, "dev_accuracy": 0.244140625, "seconds": 14.54}
+{"run": "chain_beta_k16_cycle_count_s3301", "update": 800, "tokens": 1536000, "loss": 0.038145, "dev_accuracy": 0.2578125, "seconds": 19.23}
+{"run": "chain_beta_k16_cycle_count_s3301", "completed": true, "best_update": 200, "dev_best_accuracy": 0.283203125, "dev_endpoint_accuracy": 0.2578125, "seconds": 19.64}
+{"run": "chain_beta_k16_lis_length_s3301", "update": 200, "tokens": 384000, "loss": 0.183456, "dev_accuracy": 0.447265625, "seconds": 4.98}
+{"run": "chain_beta_k16_lis_length_s3301", "update": 400, "tokens": 768000, "loss": 0.050298, "dev_accuracy": 0.439453125, "seconds": 9.8}
+{"run": "chain_beta_k16_lis_length_s3301", "update": 600, "tokens": 1152000, "loss": 0.004888, "dev_accuracy": 0.466796875, "seconds": 14.83}
+{"run": "chain_beta_k16_lis_length_s3301", "update": 800, "tokens": 1536000, "loss": 0.004385, "dev_accuracy": 0.455078125, "seconds": 19.48}
+{"run": "chain_beta_k16_lis_length_s3301", "completed": true, "best_update": 500, "dev_best_accuracy": 0.470703125, "dev_endpoint_accuracy": 0.455078125, "seconds": 19.91}
+{"run": "chain_beta_k16_components_s3301", "update": 200, "tokens": 384000, "loss": 0.023393, "dev_accuracy": 0.9453125, "seconds": 5.32}
+{"run": "chain_beta_k16_components_s3301", "update": 400, "tokens": 768000, "loss": 0.022879, "dev_accuracy": 0.9296875, "seconds": 10.04}
+{"run": "chain_beta_k16_components_s3301", "update": 600, "tokens": 1152000, "loss": 0.000913, "dev_accuracy": 0.9375, "seconds": 15.01}
+{"run": "chain_beta_k16_components_s3301", "update": 800, "tokens": 1536000, "loss": 0.031705, "dev_accuracy": 0.943359375, "seconds": 19.6}
+{"run": "chain_beta_k16_components_s3301", "completed": true, "best_update": 500, "dev_best_accuracy": 0.947265625, "dev_endpoint_accuracy": 0.943359375, "seconds": 20.0}
+{"run": "chain_beta_k16_fixed_points_s3301", "update": 200, "tokens": 384000, "loss": 0.334433, "dev_accuracy": 0.455078125, "seconds": 5.08}
+{"run": "chain_beta_k16_fixed_points_s3301", "update": 400, "tokens": 768000, "loss": 0.018604, "dev_accuracy": 0.505859375, "seconds": 9.99}
+{"run": "chain_beta_k16_fixed_points_s3301", "update": 600, "tokens": 1152000, "loss": 0.01685, "dev_accuracy": 0.515625, "seconds": 14.83}
+{"run": "chain_beta_k16_fixed_points_s3301", "update": 800, "tokens": 1536000, "loss": 0.002704, "dev_accuracy": 0.515625, "seconds": 19.52}
+{"run": "chain_beta_k16_fixed_points_s3301", "completed": true, "best_update": 500, "dev_best_accuracy": 0.517578125, "dev_endpoint_accuracy": 0.515625, "seconds": 19.9}

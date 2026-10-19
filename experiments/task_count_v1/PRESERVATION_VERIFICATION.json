@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "base_revision": "c4aeb499a0c7f2dc59b70e438f66c5b6dad4244a",
+  "translated_files": 34,
+  "python_files_with_same_executable_ast_except_translated_strings": 7,
+  "csv_text_cells_translated_all_other_cells_preserved": 120,
+  "repository_text_files_scanned": 1957,
+  "remaining_han_files": 0,
+  "unique_untranslated_archived_files_hash_verified": 2919,
+  "historical_references_resolved_through_translation_ledger": 40,
+  "archived_byte_checks_skipped": false,
+  "historical_manifests_rewritten": false,
+  "training_or_model_evaluation_run": false
+}

@@ -1,0 +1,50 @@
+{
+  "status": "complete",
+  "independent_paired_repeat_units": 3,
+  "pretraining_models": 24,
+  "target_training_runs": 108,
+  "raw_test_rows": 648,
+  "paired_delta_rows": 576,
+  "source_learning_rows": 3240,
+  "cost_by_category": {
+    "pretraining": {
+      "runs": 24,
+      "seconds": 2166.3781532000285,
+      "updates": 48614.0,
+      "input_tokens": 95999744.0,
+      "padded_input_tokens": 102903520.0,
+      "supervised_tokens": 6226830.0,
+      "sample_exposures": 3110463.0
+    },
+    "baseline_adaptation": {
+      "runs": 12,
+      "seconds": 481.2667985999724,
+      "updates": 9600.0,
+      "input_tokens": 18432000.0,
+      "padded_input_tokens": 18432000.0,
+      "supervised_tokens": 1228800.0,
+      "sample_exposures": 614400.0
+    },
+    "pretrained_adaptation": {
+      "runs": 96,
+      "seconds": 2403.569087800337,
+      "updates": 76800.0,
+      "input_tokens": 147456000.0,
+      "padded_input_tokens": 147456000.0,
+      "supervised_tokens": 9830400.0,
+      "sample_exposures": 4915200.0
+    }
+  },
+  "pretraining_budget_tail_tokens_min": 0,
+  "pretraining_budget_tail_tokens_max": 25,
+  "pretraining_update_min": 1953,
+  "pretraining_update_max": 2084,
+  "test_seconds": 62.70460279996041,
+  "training_stage_wall_seconds": 5100.232842699974,
+  "raw_test_results_sha256": "49bdc14e2fb2c7139708a294585400fdcbbcaec15b3c0dc73a50299e1177484c",
+  "frozen_protocol_sha256": "8df8d320f08847d098a768b0fa95f49bcacc297ce616b105668d7c27ef74244f",
+  "frozen_selections_sha256": "a1aa33c26ada6135eba6dc89429f93e2a10adca333be996381411cb51b8f8ba0",
+  "test_based_selection": false,
+  "additional_training_requested": false,
+  "uncertainty_note": "Sample SD of three paired repetitions is descriptive; shared models, targets and scratch baselines do not increase independent sample size."
+}
