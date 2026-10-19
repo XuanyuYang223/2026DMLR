@@ -1,70 +1,70 @@
-本轮只使用 `fixed_points` 和 `longest_decreasing_run`，三个配对模型种子17、42、73；只读盘点 v3 的训练/开发记录与 checkpoint。脚本不导入训练引擎，不运行模型，不读取任何新旧测试输入、预测或准确率。所有 checkpoint 以 `map_location='cpu'` 加载。
+This round uses only `fixed_points` and `longest_decreasing_run`, with paired model seeds 17,42,73. The inventory reads v3 training/development records and checkpoints only. The script imports no training engine, runs no model, and reads no old/new test inputs, predictions, or accuracies. All checkpoints load with `map_location='cpu'`.
 
 ```powershell
 .venv/Scripts/python.exe experiments/pilot_v4_backgrounds/references/reuse_inventory.py
 ```
 
-精确复用方案
+Exact-reuse plan
 
-| 内容 | 可复用数量 | 条件 |
+| Content | Reusable count | Conditions |
 |---|---:|---|
-| A 的三学习率候选 | 18，形成6个选择组 | 相同模型初始化、目标、256例训练、开发集、采样及选择规则；各背景共享同一个A |
-| g0 的 B/C 预训练 | 12 | 逐项保持源任务有序tuple、源训练池、模型初始状态、采样及4800步学习率轨迹 |
-| g0 的 B/C 适配候选 | 36 | 相同目标及源状态、目标行重置、数据、800步预算和三学习率候选 |
-| g1/g2 预训练 | 无现成精确匹配；新训24 | g1只将公共slot1的descents改为recoils；g2只将公共slot2的peaks改为deficiencies |
-| g1/g2 适配候选 | 新训72 | 每个新源状态下重新适配，优化器状态重置 |
-| 已有单任务参照 | 24 | 八种实际使用的源任务×三个种子；可引用1200和4800步记录，注明曝光/优化步数差异 |
+| A candidates at three LRs | 18, forming 6 selection groups | Identical initialization, target,256 training examples, development set, sampling, and selection rule; backgrounds share one A. |
+| g0 B/C pretraining | 12 | Identical ordered source tuples, source-training pool, initial model state, sampling, and 4800-step LR trajectory. |
+| g0 B/C adaptation candidates | 36 | Identical target/source state, target-row reset, data,800-step budget, and three LRs. |
+| g1/g2 pretraining | No existing exact match;24 new runs | g1 replaces only common slot1 descents with recoils; g2 replaces only common slot2 peaks with deficiencies. |
+| g1/g2 adaptation candidates | 72 new runs | Fresh adaptation from each new source state, with reset optimizer state. |
+| Existing single-task references | 24 | Eight actual source tasks×three seeds; step1200/4800 records are usable with exposure/optimization-step differences disclosed. |
 
-总共126个唯一适配候选、42个唯一开发集选择组。按三个背景展示A/B/C时有54个逻辑结果行，其中A重复展示不是新增运行或独立观察。
+There are 126 unique adaptation candidates and 42 unique development-selection groups. Displaying A/B/C for three backgrounds produces 54 logical rows; repeated A displays are not new runs or independent observations.
 
-g0 有序组合如下；两个干预只改变指定公共slot，slot0的相关/替换任务不动。
+Ordered g0 compositions follow. Both interventions change only the specified common slot; related/replacement candidates in slot0 remain fixed.
 
-| 目标 | B | C |
+| Target | B | C |
 |---|---|---|
 | fixed_points | anti_fixed_points, descents, peaks, left_to_right_maxima | successions, descents, peaks, left_to_right_maxima |
 | longest_decreasing_run | longest_increasing_run, descents, peaks, successions | left_to_right_maxima, descents, peaks, successions |
 
-完整 v3 有24个源训练记录、21个不同的有序组成×种子单位、18个无序组成×种子单位。v3 的 `left_to_right_minima/C` 与 `longest_decreasing_run/B` 源任务有序列表相同，同种子实际参数哈希相同，二者可作为源 checkpoint 的别名。不能跨目标复用已经适配的权重。`fixed_points/C` 与 `longest_decreasing_run/C` 仅无序集合相同，slot0和slot3交换会改变每个输入上的任务标签分配，因此不是精确复用。
+Full v3 has 24 source-training records,21 distinct ordered-composition×seed units, and 18 unordered-composition×seed units. v3 `left_to_right_minima/C` and `longest_decreasing_run/B` have identical ordered source lists and actual parameter hashes for each seed, and can alias the same source checkpoint. Already adapted weights cannot be reused across targets. `fixed_points/C` and `longest_decreasing_run/C` share only an unordered set; swapping slots 0/3 changes task-label assignment to inputs, so this is not exact reuse.
 
-种子与数据溯源
+Seeds and data provenance
 
-| 随机量 | seed17 | seed42 | seed73 |
+| Random quantity | seed17 | seed42 | seed73 |
 |---|---:|---:|---:|
-| 模型参数初始化 | 17 | 42 | 73 |
-| 训练/开发输入生成流 | 20261018 | 20261018 | 2026101803 |
-| 源任务采样及Torch/CUDA dropout | 1017 | 1042 | 1073 |
-| 目标适配采样及Torch/CUDA dropout | 2017 | 2042 | 2073 |
+| Model parameter initialization | 17 | 42 | 73 |
+| Train/dev input-generation stream | 20261018 | 20261018 | 2026101803 |
+| Source sampling and Torch/CUDA dropout | 1017 | 1042 | 1073 |
+| Target-adaptation sampling and Torch/CUDA dropout | 2017 | 2042 | 2073 |
 
-模型种子不是数据生成种子。v1用一个连续的NumPy生成器20261018，依次生成development_train、development_dev，然后seed17的pretrain/source_dev/target_train/target_dev/test，再生成seed42的对应池。v3复用seed17/42相应输入并重算32列标签；目标训练取原1024池的前256例。seed73由v3的2026101803流依次生成source_train8192、source_dev1024、target_train256、target_dev1024，排除已有完整inverse/reverse/complement轨道。所有目标及条件共享同一种子的输入池。
+Model seeds are not data-generation seeds. v1 uses one continuous NumPy generator 20261018 to generate development_train, development_dev, then seed17 pretrain/source_dev/target_train/target_dev/test, and then corresponding seed42 pools. v3 reuses seed17/42 inputs and recomputes 32 label columns; target training uses the first 256 examples from the original 1024 pool. seed73 uses the v3 stream 2026101803 to generate source_train8192, source_dev1024, target_train256, target_dev1024 in order, excluding existing full inverse/reverse/complement orbits. All targets/conditions share each seed's pools.
 
-`seed(s)`同时设定Python random、NumPy全局、Torch CPU及所有CUDA随机种子；训练再创建独立的NumPy `default_rng(s+1000)` 或 `default_rng(s+2000)` 用于批采样。所有条件和学习率候选使用相同采样/dropout种子。每步64个不重复索引，源任务slot按四项各16个打乱。更换任务有序列表会改变slot与任务标签的绑定；不要只按集合匹配。
+`seed(s)` sets Python random, global NumPy, Torch CPU, and all CUDA seeds. Training separately creates NumPy `default_rng(s+1000)` or `default_rng(s+2000)` for batch sampling. All conditions/LR candidates use identical sampling/dropout seeds. Each step uses 64 distinct indices; source-task slots are shuffled with 16 examples per task. Changing the ordered task list changes the slot-to-label binding; do not match only sets.
 
-配置与重置
+Configuration and resetting
 
-- 模型为原256宽度、4层、8头、FFN倍率4、dropout0.1、上下文128、188词表、tied embedding/output的Transformer；one-line，固定n10。
-- 源训练4800更新：前100步warmup至3e-4，余下至2400步cosine降到3e-5，再保持3e-5到4800。不是4800步重新拉长的cosine调度。
-- 适配每候选800更新，学习率3e-4、1e-4、3e-5；warmup100后cosine至原学习率的0.1。每100步评估完整训练256和开发1024，排除step0后按开发准确率最高、开发answer CE最低、较早checkpoint、预声明LR顺序选择。
-- 适配只恢复目标query token对应的既有embedding行；output与embedding共享参数，因此该output行同步恢复。没有新head；数字答案行和其他源权重转移。AdamW重新建立，状态项为0，终点所有优化器step为800。
-- 注意mask语义：attention为严格因果与valid-token mask；loss只在answer和EOS两处计算各0.5权重，分类始终覆盖188词表，没有仅数字类别mask。测试回答只读prompt，EOS单独用gold answer条件化评估。
+- Model: original Transformer with width256,4 layers,8 heads, FFN multiplier 4, dropout0.1, context128, vocabulary188, and tied embedding/output; one-line, fixed n10.
+- Source training has 4800 updates:100-step warmup to 3e-4, cosine decay through 2400 to 3e-5, then constant 3e-5 through 4800. The cosine schedule is not stretched anew over 4800 steps.
+- Each adaptation candidate has 800 updates at LR3e-4,1e-4, or 3e-5;100-step warmup and cosine decay to 0.1 of initial LR. Full training 256/development1024 evaluation occurs every 100 steps. Excluding step0, select highest development accuracy, lowest development answer CE, earlier checkpoint, then prespecified LR order.
+- Adaptation restores only the existing embedding row for the target query token. Because output and embedding share parameters, the output row restores simultaneously. No new head is added; number-answer rows and other source weights transfer. AdamW is recreated with 0 state entries; all endpoint optimizer steps are 800.
+- Mask semantics: attention uses strict causal and valid-token masks; loss applies only to answer/EOS with weight 0.5 each. Classification always spans vocabulary188, without a numbers-only class mask. Test answers use only the prompt; EOS is separately evaluated conditioned on the gold answer.
 
-`reuse_inventory.py` 会从实际源参数和初始目标行重新计算适配初始模型hash，验证优化器计数、采样随机流终态、tied行数值、模型形状和参数有限性，并从开发曲线重算选择。任何改变输入、seed、目标、任务slot顺序、三学习率网格或选择规则都会破坏相应层次的精确复用前提。
+`reuse_inventory.py` recomputes adaptation-initial-state hashes from actual source parameters and initial target rows, checks optimizer counters, sampling-RNG terminal states, tied-row values, model shapes, and parameter finiteness, and recomputes selections from development curves. Any change to inputs, seeds, targets, task-slot order, the three-LR grid, or selection rule breaks exact-reuse prerequisites at the corresponding level.
 
-可供引擎依赖的原v3元数据schema
+Original v3 metadata schema for the engine
 
-`multi/s{seed}_{target}_{B|C}/completed.json`：
+`multi/s{seed}_{target}_{B|C}/completed.json`:
 
-- `seed`, `tasks`（有序list）, `kind='multi'`, `updates=4800`, `input_tokens=8601600`, `supervised_tokens=614400`, `sample_exposures=307200`, `task_exposures=76800`, `task_fraction=.25`。
-- `checkpoint`、`checkpoint_sha256`、`model_state_hash`、`initial_state_hash`、`schedule_sha256`、`train_sha256`、`dev_sha256`，以及`actual_unique_per_task`。
-- `checkpoint`相对 **v3 artifacts** 解析，不相对该completion目录。fixed17/42真实文件指向v2；`new_compute`描述当时v3是否新算，不是v4计算成本。
-- `curve.csv`在completion相邻目录。新v3源有0/600/1200/2400/3600/4800全训练/开发测量；历史fixed17/42源的早期曲线缺失，只有2400和续训点，不能补造。
+- `seed`,`tasks`(ordered list),`kind='multi'`,`updates=4800`,`input_tokens=8601600`,`supervised_tokens=614400`,`sample_exposures=307200`,`task_exposures=76800`,`task_fraction=.25`.
+- `checkpoint`,`checkpoint_sha256`,`model_state_hash`,`initial_state_hash`,`schedule_sha256`,`train_sha256`,`dev_sha256`, and`actual_unique_per_task`.
+- Resolve `checkpoint` relative to **v3 artifacts**, not its completion directory. fixed17/42 actually point to v2; `new_compute` describes new compute in v3 at that time, not v4 costs.
+- `curve.csv` sits beside completion metadata. New v3 sources have full train/dev measurements at 0/600/1200/2400/3600/4800; historical fixed17/42 sources lack early curves, with only 2400 and continuation points. Missing points must not be fabricated.
 
-`adapt/s{seed}_{target}_{A|B|C}_lr{lr:.0e}/completed.json`：
+`adapt/s{seed}_{target}_{A|B|C}_lr{lr:.0e}/completed.json`:
 
-- `seed`, `target`, `condition`, `lr`, `best`、`endpoint`（含step、完整train/dev accuracy/CE/count），`updates=800`及预算。
-- `best_path`, `endpoint_path`, `best_sha256`, `endpoint_sha256`, `final_model_state_hash`, `schedule_sha256`。路径同样相对 **v3 artifacts**，必须跟随，不能假定权重位于completion目录。
-- `v3_train_sha256`、`v3_dev_sha256`统一绑定当前32列标签的v3数据；建议v4使用这两个顶层字段，不直接比较嵌套legacy字段。
-- `initialization`中`source_state_hash`、`loaded_state_hash`、`adapt_initial_state_hash`、`target_row_hash`、`reset_row_ids`、`optimizer_entries=0`、`optimizer_state_reset=true`、`new_output_head=false`可核对实际加载与重置。
-- **legacy例外**：fixed_points seed17/42复用记录的`initialization.source_path`相对旧的`experiments/`目录，其他新v3记录则相对v3 artifacts；其嵌套train/dev哈希绑定旧6列标签npz，且`train_slice=[0,256]`。使用实际原来源路径验证，再以顶层v3数据hash判断新实验输入一致性。
-- best.pt仅含model、config、seed、step、lr、condition和metrics，通常没有optimizer；endpoint.pt另有optimizer、NumPy/Torch/CUDA RNG。继承自v2的checkpoint内部可能缺少`target`，目标应由已核对的v3completion及任务token绑定。
+- `seed`,`target`,`condition`,`lr`,`best`,`endpoint`(including step, full train/dev accuracy/CE/count),`updates=800`, and budget.
+- `best_path`,`endpoint_path`,`best_sha256`,`endpoint_sha256`,`final_model_state_hash`,`schedule_sha256`. Paths are likewise relative to **v3 artifacts**; follow them rather than assuming weights reside beside completion metadata.
+- `v3_train_sha256`/`v3_dev_sha256` uniformly bind current v3 data with 32 label columns. v4 should use these top-level fields rather than directly comparing nested legacy fields.
+- `initialization` fields `source_state_hash`,`loaded_state_hash`,`adapt_initial_state_hash`,`target_row_hash`,`reset_row_ids`,`optimizer_entries=0`,`optimizer_state_reset=true`,`new_output_head=false` verify actual loading/resetting.
+- **Legacy exception:** reused fixed_points seed17/42 records have `initialization.source_path` relative to the old `experiments/` directory; newer v3 records resolve relative to v3 artifacts. Their nested train/dev hashes bind old six-column-label npz files, and `train_slice=[0,256]`. Validate actual original paths, then use top-level v3 data hashes to establish input consistency for the new experiment.
+- best.pt usually contains model, config, seed, step, lr, condition, and metrics but no optimizer. endpoint.pt additionally contains optimizer and NumPy/Torch/CUDA RNG states. Checkpoints inherited from v2 may lack `target`; bind it through verified v3 completion metadata and task tokens.
 
-v4应建立自己的逻辑run记录并指向旧文件，保留`reused_from`、来源completion SHA、权重SHA、曲线SHA和新逻辑background，而非改写旧checkpoint或旧记录。新测试需在v4配置冻结后独立生成，排除v1/v2/v3所有旧输入轨道；本审计没有读取这些测试内容。
+v4 should create its own logical-run records pointing to old files, retaining `reused_from`, source-completion SHA, weight SHA, curve SHA, and new logical background, instead of rewriting old checkpoints or records. Generate new tests independently after v4 configuration freezes, excluding all v1/v2/v3 input orbits. This inventory did not read those test contents.

@@ -405,21 +405,21 @@ def case_observations(out, cfg, selected, deltas, interactions, learning, common
     def dv(target, bg, contrast):
         return [next(r["test_accuracy_delta"] for r in deltas if r["target"]==target and r["background"]==bg and r["seed"]==seed and r["contrast"]==contrast) for seed in seeds]
     target_text = (
-        f"以下数列均按配对块{'/'.join(map(str,seeds))}排序。fixed_points在g0/g1的B−A和C−A均为3/3负，"
-        f"g2的B−A变为{vector(dv('fixed_points','g2_deficiencies','B-A'))}pp，C−A为{vector(dv('fixed_points','g2_deficiencies','C-A'))}pp。"
-        "原固定点负迁移依赖背景，不能泛化成这两个候选组成的固有属性；g2中块42的B收益仅约0.24pp，三个同号不能当作已确立的普遍收益。"
-        "g2同时提高B和C，且两者都含deficiencies的多输入联合目标关系，不能把绝对迁移改善全归于B的直接相关候选。\n\n"
-        f"longest_decreasing_run的g0 B−A为{vector(dv('longest_decreasing_run','g0_v3','B-A'))}pp，"
-        f"g1缩至{vector(dv('longest_decreasing_run','g1_recoils','B-A'))}pp，g2为{vector(dv('longest_decreasing_run','g2_deficiencies','B-A'))}pp。"
-        "g1的B/C均在训练众数对应的测试基线附近，原g0的块17/73收益消失；g2保留部分收益，块42从原无收益变为小幅正收益。"
+        f"The following sequences are ordered by paired block {'/'.join (map (str, seeds))}. For fixed_points, B−A and C−A are negative in all 3/3 blocks in g0/g1; "
+        f"in g2, B−A becomes {vector (dv('fixed_points','g2_deficiencies','B-A'))}pp and C−A is {vector (dv('fixed_points','g2_deficiencies','C-A'))}pp. "
+        "The original fixed_points negative transfer depends on the background and cannot be generalized as an intrinsic property of the two candidate compositions. The g2 B gain in block42 is only about 0.24pp; three matching signs do not establish a universal benefit. "
+        "g2 improves both B and C, and both contain the multi-input joint target relation involving deficiencies. The absolute transfer improvement cannot be attributed entirely to the directly related candidate in B.\n\n"
+        f"For longest_decreasing_run, g0 B−A is {vector (dv('longest_decreasing_run','g0_v3','B-A'))}pp; "
+        f"it contracts to {vector (dv('longest_decreasing_run','g1_recoils','B-A'))}pp in g1 and is {vector (dv('longest_decreasing_run','g2_deficiencies','B-A'))}pp in g2. "
+        "Both B/C in g1 are near the test baseline corresponding to the training mode, and the original g0 gains in blocks 17/73 disappear. g2 retains some benefit, while block42 changes from no benefit to a small positive gain."
     )
     fits = [r for r in rows(out/'selected_vs_endpoint.csv') if r['target']=='longest_decreasing_run' and r['background']=='g1_recoils']
     fit_text = (
-        "g1的LDR适配不是整个训练过程都无法拟合。六项开发选择均退回LR=3e−5、step100的早期checkpoint；"
-        f"所选train为{pct(min(num(r,'selected_train_accuracy') for r in fits))}–{pct(max(num(r,'selected_train_accuracy') for r in fits))}，"
-        f"同LR800步终点train已升至{pct(min(num(r,'endpoint_train_accuracy') for r in fits))}–{pct(max(num(r,'endpoint_train_accuracy') for r in fits))}，"
-        f"终点test却降至{pct(min(num(r,'endpoint_test_accuracy') for r in fits))}–{pct(max(num(r,'endpoint_test_accuracy') for r in fits))}。"
-        "这支持后期拟合提高而泛化恶化、开发规则退回早期基线附近模型，不能把所选train接近众数误写成全程没有学到训练数据。"
+        "LDR adaptation in g1 is not unable to fit throughout training. All six development selections return to early checkpoints at LR=3e−5, step100; "
+        f"selected training accuracy is {pct (min (num (r,'selected_train_accuracy') for r in fits))}–{pct (max (num (r,'selected_train_accuracy') for r in fits))}, "
+        f"whereas at the same LR the step800 endpoint training accuracy rises to {pct (min (num (r,'endpoint_train_accuracy') for r in fits))}–{pct (max (num (r,'endpoint_train_accuracy') for r in fits))}, "
+        f"but endpoint test accuracy falls to {pct (min (num (r,'endpoint_test_accuracy') for r in fits))}–{pct (max (num (r,'endpoint_test_accuracy') for r in fits))}. "
+        "This supports improved late training fit with worse generalization and selection returning to an early model near baseline. Selected training accuracy near the mode must not be described as failure to learn the training data throughout the run."
     )
     fit_table = [[r['seed'],r['condition'],r['lr'],r['selected_step'],pct(r['selected_train_accuracy']),pct(r['endpoint_train_accuracy']),pct(r['selected_dev_accuracy']),pct(r['endpoint_dev_accuracy']),pct(r['selected_test_accuracy']),pct(r['endpoint_test_accuracy'])] for r in fits]
     source_table=[]
@@ -431,23 +431,23 @@ def case_observations(out, cfg, selected, deltas, interactions, learning, common
     examples=[]
     for seed,bg in [(17,'g1_recoils'),(42,'g2_deficiencies')]:
         old,new=li['fixed_points','g0_v3',seed,'B','anti_fixed_points'],li['fixed_points',bg,seed,'B','anti_fixed_points']
-        examples.append(f"fixed_points块{seed}从g0到{bg}，anti_fixed_points源dev {pct(old['multi4800_dev_accuracy'])}→{pct(new['multi4800_dev_accuracy'])}，目标B测试{pct(si['fixed_points','g0_v3',seed,'B']['test_accuracy'])}→{pct(si['fixed_points',bg,seed,'B']['test_accuracy'])}")
+        examples.append (f"fixed_points block{seed}, g0 to {bg}: anti_fixed_points source dev {pct (old['multi4800_dev_accuracy'])}→{pct (new['multi4800_dev_accuracy'])}, target B test {pct (si['fixed_points','g0_v3', seed,'B']['test_accuracy'])}→{pct (si['fixed_points', bg, seed,'B']['test_accuracy'])}")
     success_source=[num(li['fixed_points','g2_deficiencies',seed,'C','successions'],'multi4800_dev_accuracy')-num(li['fixed_points','g0_v3',seed,'C','successions'],'multi4800_dev_accuracy') for seed in seeds]
     success_target=[num(si['fixed_points','g2_deficiencies',seed,'C'],'test_accuracy')-num(si['fixed_points','g0_v3',seed,'C'],'test_accuracy') for seed in seeds]
     common_examples=[]
     for task in ('descents','successions','deficiencies'):
         values=[next(r['B_minus_C_dev_accuracy'] for r in common if r['target']=='longest_decreasing_run' and r['background']=='g2_deficiencies' and r['seed']==seed and r['task']==task) for seed in seeds]
-        common_examples.append(f"{task}为{vector(values)}pp")
+        common_examples.append (f"{task}: {vector (values)}pp")
     improvements=[r for r in learning if r['target']=='longest_decreasing_run' and r['condition']=='B' and r['task']=='successions' and r['multi_minus_single4800_dev_accuracy']>=.05]
     source_text=(
-        f"peaks在g1−g0的两目标×B/C×三块中有{sum(v<0 for v in peak_changes)}/{len(peak_changes)}项开发准确率下降。"
-        "LDR的相关源LIR在g1的train/dev均较低，且低于其单任务1200步参照；这与块17/73目标收益消失并列出现，但块42原本没有收益，不能称所有块目标同向下降。\n\n"
-        "候选源终点准确率不足以解释迁移："+'；'.join(examples)+'。'
-        f"此外fixed_points的g2相对g0，C候选successions源dev变化为{vector(success_source)}pp，而C目标测试变化为{vector(success_target)}pp，三个块均是源候选下降、目标提高。\n\n"
-        "LDR的g2内公共源B−C开发差异："+'；'.join(common_examples)+'。'
-        "因此目标B/C差异同时伴随公共descents/successions学习变化，deficiencies则接近相同，不能分解为独立机制。组合也非只损害源任务：LDR-B的successions相对单任务4800的改善包括"+
-        '；'.join(f"{r['background']}块{r['seed']} {pp(r['multi_minus_single4800_dev_accuracy'])}pp" for r in improvements)+
-        "。不等每任务暴露、任务交替与三个块的优化差异仍限制干扰/协同归因。"
+        f"For peaks, g1−g0 lowers development accuracy in {sum (v<0 for v in peak_changes)}/{len (peak_changes)} entries across two targets × B/C × three blocks. "
+        "The LDR-related source LIR has low train/dev accuracy in g1, below its single-task step1200 reference. This accompanies loss of target benefit in blocks 17/73, but block42 had no original benefit, so target performance does not decline in every block.\n\n"
+        "Candidate-source endpoint accuracy alone cannot explain transfer: "+'; '.join (examples)+'. '
+        f"For fixed_points g2 versus g0, C candidate successions source dev changes by {vector (success_source)}pp while C target test changes by {vector (success_target)}pp; in all three blocks, the candidate source worsens while the target improves.\n\n"
+        "LDR g2 common-source B−C development differences: "+'; '.join (common_examples)+'. '
+        "Target B/C differences thus accompany changes in common descents/successions learning, while deficiencies is almost unchanged; these cannot be decomposed into independent mechanisms. Compositions do not only harm sources: improvements in LDR-B successions over single-task step4800 include "+
+        '; '.join (f"{r['background']} block{r['seed']} {pp (r['multi_minus_single4800_dev_accuracy'])}pp" for r in improvements)+
+        ". Unequal per-task exposure, task alternation, and optimization differences across three blocks still limit interference/synergy attribution."
     )
     return dict(target_text=target_text,fit_text=fit_text,fit_table=fit_table,source_table=source_table,source_text=source_text)
 
@@ -474,7 +474,7 @@ def report(out, cfg, selected, summary, deltas, delta_summary, interactions, int
     audit = js(out / "FINAL_AUDIT.json") if (out / "FINAL_AUDIT.json").exists() else {}
     preserved_count = audit.get("historical_files_byte_preserved", audit.get("old_files_byte_preserved", 0))
     preserved = audit.get("status") == "passed" and preserved_count > 0
-    audit_text = f"最终审计passed；{preserved_count}个历史文件字节hash已核对" if preserved else "最终审计及历史字节保留结论待确认，见FINAL_AUDIT.json"
+    audit_text = f"Final audit passed; byte hashes checked for {preserved_count} historical files" if preserved else "Final audit and historical byte-preservation conclusion remain pending; see FINAL_AUDIT.json"
     main_table = []
     for target in cfg["targets"]:
         for bg in cfg["backgrounds"]:
@@ -484,7 +484,7 @@ def report(out, cfg, selected, summary, deltas, delta_summary, interactions, int
                                *[f"{pp(d[c]['delta_mean'])} ± {100*d[c]['delta_sample_sd']:.2f}" for c in ("B-A", "C-A", "B-C")]])
     interaction_table = [[r["target"], r["interaction"], *[pp(next(x['interaction_test_accuracy'] for x in interactions if x['target']==r['target'] and x['interaction']==r['interaction'] and x['seed']==seed)) for seed in cfg['seeds']], f"{pp(r['interaction_mean'])} ± {100*r['interaction_sample_sd']:.2f}",
                           f"{r['negative_seeds']}/{r['zero_seeds']}/{r['positive_seeds']}", r["BC_sign_reversal_seeds"]] for r in interaction_summary]
-    raw_table = [[r["target"], r["background"], r["seed"], r["condition"], pct(r["test_accuracy"]), pct(r["majority_accuracy"]), r["lr"], r["adapt_step"], "复用" if not truth(r["new_compute"]) else "新增"] for r in selected]
+    raw_table = [[r["target"], r["background"], r["seed"], r["condition"], pct (r["test_accuracy"]), pct (r["majority_accuracy"]), r["lr"], r["adapt_step"], "Reused" if not truth (r["new_compute"]) else "New"] for r in selected]
     bg_table = [[g["target"], g["background"], g["related"], g["replacement"], *g["common"]] for g in cfg["groups"]]
     signs = []
     for target in cfg["targets"]:
@@ -494,144 +494,144 @@ def report(out, cfg, selected, summary, deltas, delta_summary, interactions, int
             if min(values) < 0 < max(values):
                 crossing.append(seed)
         consistent = [r["interaction"] for r in interaction_summary if r["target"] == target and (r["negative_seeds"] == 3 or r["positive_seeds"] == 3)]
-        signs.append(f"{target}：B−C随背景改变符号的配对块为{crossing or '无'}；三个块同方向的背景交互为{consistent or '无'}。")
+        signs.append (f"{target}: paired blocks where B−C changes sign across backgrounds: {crossing or 'none'}; background interactions with the same direction in all three blocks: {consistent or 'none'}.")
     strongest = sorted(contexts, key=lambda r: abs(r["interaction_test_accuracy"]), reverse=True)[:4]
     context_table = [[r["target"], r["seed"], r["interaction"], pp(r["interaction_test_accuracy"]),
                       pp(r["B_candidate_dev_change"]), pp(r["C_candidate_dev_change"]), f"{100*r['same_common_task_change_abs_max']:.2f}"] for r in strongest]
     common_max = max(abs(r["B_minus_C_dev_accuracy"]) for r in common)
     effects_table = [[r["scope"], r["count"], r["improved_at_least_5pp"], r["decreased_at_least_5pp"], r["within_5pp"]] for r in effects]
-    cost_table = [[r["kind"], "新增" if r["new_compute"] else "历史复用", r["runs"], f"{r['updates']:,}", f"{r['input_tokens']:,}", f"{r['supervised_tokens']:,}", f"{r['seconds']/60:.2f}"] for r in compute]
+    cost_table = [[r["kind"], "New" if r["new_compute"] else "Historical reuse", r["runs"], f"{r['updates']:,}", f"{r['input_tokens']:,}", f"{r['supervised_tokens']:,}", f"{r['seconds']/60:.2f}"] for r in compute]
     new_seconds = sum(r["seconds"] for r in compute if r["new_compute"])
     stage_seconds = sum(r["seconds"] for r in timing)
     unique_lr_counts = Counter(num(r, "lr") for r in selected)
     ce_worse = sum(r["dev_answer_ce_change"] > 0 for r in late)
     acc_worse = sum(r["dev_accuracy_change"] < 0 for r in late)
-    text = f"""# Pilot v4：背景任务是否改变组成效应
+    text = f"""# Pilot v4: do background tasks change composition effects?
 
-完成两个探索性目标、三个预先冻结背景、三个配对块、固定256目标训练样本的有限比较。主结果为42个唯一开发选择；共享A仅训练/选择一次，加入三个背景比较后展示54行，不能计作54个独立训练。全部126个学习率候选的best和endpoint在同一新测试协议下评估，252行全部保留，不按测试重选。
+A limited comparison is complete for two exploratory targets, three prespecified backgrounds, three paired blocks, and 256 fixed target-training examples. There are 42 unique development-selected primary results. Shared A is trained/selected once; showing it in three background comparisons produces 54 display rows, not 54 independent training runs. Best and endpoint checkpoints for all 126 learning-rate candidates were evaluated under the same new-test protocol. All 252 rows are retained, with no test-based reselection.
 
-本轮最清楚的现象是：固定点在原背景的负迁移可随背景改变，LDR在g1的原有收益消失，但这不能由候选源的终点准确率单独解释。下文同时保留效应幅度、逐块差异、训练终点和反例；n=3仅作描述，不作为背景、任务或初始化的一般因果结论。
+The clearest observation is that fixed_points negative transfer in the original background can change with the background, while the original LDR benefit disappears in g1. Candidate-source endpoint accuracy alone cannot explain this. Effect sizes, block-level differences, training endpoints, and counterexamples are all retained below. With n=3 these are descriptive observations, not general causal conclusions about backgrounds, tasks, or initialization.
 
-## 主结果与背景交互
+## Primary results and background interactions
 
-准确率为三个配对块均值；差值以百分点计，±为逐块差值的样本SD，不是置信区间。背景间A为同一权重与同一测试预测，均值重复显示仅便于对照。
+Accuracies are means over three paired blocks; differences are percentage points, and ± denotes the sample SD of block-level differences, not a confidence interval. A uses the same weights and test predictions across backgrounds; its mean is repeated only for comparison.
 
-{table(['目标','背景','A','B','C','B−A均值±SD','C−A均值±SD','B−C均值±SD'], main_table)}
+{table(['Target','Background','A','B','C','B−A mean±SD','C−A mean±SD','B−C mean±SD'], main_table)}
 
 {cases['target_text']}
 
-![逐块准确率]({link('figures/accuracy_by_background_seed.png')})
+![Accuracy by block]({link('figures/accuracy_by_background_seed.png')})
 
-![背景上的组成差值]({link('figures/contrasts_by_background_seed.png')})
+![Composition contrasts across backgrounds]({link('figures/contrasts_by_background_seed.png')})
 
-交互定义为Δ(B−C)=(B−C)_后背景−(B−C)_前背景，按同一配对块和相同新测试输入相减。正数表示后背景更有利于B相对C，不等于B本身必然改善；可同时检查B−A和C−A。
+The interaction is Δ(B−C)=(B−C)_later_background−(B−C)_earlier_background, differenced within the same paired block on identical new-test inputs. Positive values mean the later background favors B relative to C, not necessarily that B itself improves; B−A and C−A provide additional context.
 
-{table(['目标','后背景−前背景',*[f'块{s}交互pp' for s in cfg['seeds']],'交互均值±SD(pp)','负/零/正块数','B−C符号翻转块数'], interaction_table)}
+{table(['Target','Later−earlier background',*[f'Block{s} interaction pp' for s in cfg['seeds']],'Interaction mean±SD (pp)','Negative/zero/positive blocks','Blocks with B−C sign reversal'], interaction_table)}
 
-{' '.join(signs)} 符号记录须结合幅度解读：LDR的g1块17 B−C仅−0.0488pp，等于2048个测试样本中的一个；g2块42 B−C为+0.6836pp，而开发B−C为−0.3906pp。这些接近零的差异不足以支持稳定优劣，不能用符号翻转计数代替效应量。
+{' '.join (signs)} Signs must be interpreted alongside magnitude: LDR g1 block17 B−C is only −0.0488pp, one of 2048 test examples; g2 block42 B−C is +0.6836pp, whereas development B−C is −0.3906pp. These near-zero differences do not establish stable superiority. Sign-flip counts cannot replace effect sizes.
 
-![背景交互]({link('figures/background_interactions.png')})
+![Background interaction]({link('figures/background_interactions.png')})
 
-42项唯一主结果如下（[CSV]({link('results_selected.csv')})）；A的background为shared。每种子84行全部候选原始结果见报告末链接。多数基线使用该块256条目标训练数据的众数，在测试集计算命中率。
+The 42 unique primary results are below ([CSV]({link('results_selected.csv')})); A has background=shared. Links at the end provide all 84 candidate rows per seed. The majority baseline predicts the mode of that block's 256 target-training labels and measures accuracy on the test set.
 
-{table(['目标','背景','配对块','条件','新测试准确率','多数基线','选择LR','选择步','训练来源'], raw_table)}
+{table(['Target','Background','Paired block','Condition','New-test accuracy','Majority baseline','Selected LR','Selected step','Training origin'], raw_table)}
 
 {cases['fit_text']}
 
-{table(['块','条件','选择LR','选择步','所选train','终点train','所选dev','终点dev','所选test','终点test'], cases['fit_table'])}
+{table(['Block','Condition','Selected LR','Selected step','Selected train','Endpoint train','Selected dev','Endpoint dev','Selected test','Endpoint test'], cases['fit_table'])}
 
-## 有限设计与既有数据平台
+## Limited design and existing data platform
 
-案例fixed_points和longest_decreasing_run根据v3结果选定，属于探索性案例；不代表完整任务库，也不是独立于v3的目标选择。相关/替换候选保持v3不变：fixed_points为anti_fixed_points/successions，longest_decreasing_run为longest_increasing_run/left_to_right_maxima。两条目标—相关源关系都使用补值C(p)_i=n+1−p_i及恒等答案映射：target(p)=related(C(p))；不覆盖所有数学关系。
+The fixed_points and longest_decreasing_run cases were selected from v3 results and are exploratory. They do not represent the full task library, and target selection is not independent of v3. Related/replacement candidates remain unchanged: anti_fixed_points/successions for fixed_points, and longest_increasing_run/left_to_right_maxima for longest_decreasing_run. Both target–related-source relations use complement C(p)_i=n+1−p_i and an identity answer map: target(p)=related(C(p)). They do not cover all mathematical relations.
 
-{table(['目标','背景','B候选slot0','C候选slot0','公共slot1','公共slot2','公共slot3'], bg_table)}
+{table(['Target','Background','B candidate slot0','C candidate slot0','Common slot1','Common slot2','Common slot3'], bg_table)}
 
-g0_v3保留原背景；g1_recoils只将公共slot1的descents换成recoils；g2_deficiencies只将公共slot2的peaks换成deficiencies。新增背景在本轮迁移训练/测试之前依据定义及既有单任务参照冻结，没有声称难度或答案分布完全匹配。每个背景内部B/C仅slot0不同，公共三个slot相同。跨背景则任务本身和集合内部已知关系结构也可能变化，不能将效应仅归因于候选与目标的直接关系，也不能称C数学上无关。目录、输入变换/答案映射和复用检查分别保存在实验根目录TASK_CATALOG.csv、DATA_PLATFORM.md及references/REUSE_AUDIT.md。
+g0_v3 preserves the original background; g1_recoils replaces only common slot1 descents with recoils; g2_deficiencies replaces only common slot2 peaks with deficiencies. New backgrounds were frozen from definitions and existing single-task references before this round's transfer training/testing, without claiming fully matched difficulty or answer distributions. Within each background only slot0 differs between B/C, and the three common slots match. Across backgrounds, task definitions and known relations within the set can both change. Effects cannot be attributed solely to the direct candidate–target relation, and C must not be called mathematically unrelated. The catalog, input transformations/answer maps, and reuse checks are in TASK_CATALOG.csv, DATA_PLATFORM.md, and references/REUSE_AUDIT.md in the experiment directory.
 
-冻结的 [BACKGROUND_MATCHING.csv]({matching_link}) 显示：g1被换任务的源训练答案分布TV为{tv_ranges['g1_recoils'][0]:.5f}–{tv_ranges['g1_recoils'][1]:.5f}，但recoils的单任务早期学习明显慢于descents；g2的TV为{tv_ranges['g2_deficiencies'][0]:.5f}–{tv_ranges['g2_deficiencies'][1]:.5f}，答案分布差异很大，早期学习轨迹也不同。总体等分布不等于有限池直方图完全一致，更不等于优化难度匹配。下表是冻结前已有记录的描述，背景没有根据这些数值搜索最优得分。
+Frozen [BACKGROUND_MATCHING.csv]({matching_link}) shows source-training answer-distribution TV of {tv_ranges['g1_recoils'][0]:.5f}–{tv_ranges['g1_recoils'][1]:.5f} for the g1 replacement, but early single-task learning is much slower for recoils than descents. g2 TV is {tv_ranges['g2_deficiencies'][0]:.5f}–{tv_ranges['g2_deficiencies'][1]:.5f}, a large distribution difference, with different early learning trajectories as well. Equal population distributions do not imply identical finite-pool histograms or matched optimization difficulty. The table describes existing records before freezing; backgrounds were not searched for an optimal score using these values.
 
-{table(['块','背景','替换','答案TV','原任务dev1200','新任务dev1200','原任务dev4800','新任务dev4800','曲线绝对差均值pp'], matching_table)}
+{table(['Block','Background','Replacement','Answer TV','Original dev1200','New dev1200','Original dev4800','New dev4800','Mean absolute curve gap pp'], matching_table)}
 
-同样需要保留B/C候选对本身的剩余差异，不能只核对公共背景替换。以下 [candidate_matching.csv]({link('candidate_matching.csv')}) 从冻结的源答案直方图和既有单任务参考曲线计算，三背景共用同一候选对；没有使用本轮新增预训练、适配或测试来挑候选。原选择证据为 [v3 replacement_matching.csv]({previous_matching_link})：fixed_points保持历史anti_fixed_points/successions锚点，longest_decreasing_run沿用v3基于seed17开发记录选定的longest_increasing_run/left_to_right_maxima；本轮只是描述其三个配对块上的匹配程度。
+Remaining differences within the B/C candidate pairs must also be retained, beyond checking common-background replacements. [candidate_matching.csv]({link('candidate_matching.csv')}) below uses frozen source-answer histograms and existing single-task reference curves; the same pair is used in all three backgrounds. This round's new pretraining, adaptation, and test results were not used to choose candidates. The original selection evidence is [v3 replacement_matching.csv]({previous_matching_link}): fixed_points retains the historical anti_fixed_points/successions anchor, and longest_decreasing_run retains the longest_increasing_run/left_to_right_maxima pair selected in v3 using seed17 development records. This round only describes matching across the three paired blocks.
 
-{table(['目标','块','B候选','C候选','答案TV','B单dev1200','C单dev1200','B单dev4800','C单dev4800','曲线绝对差均值pp'], candidate_table)}
+{table(['Target','Block','B candidate','C candidate','Answer TV','B single dev1200','C single dev1200','B single dev4800','C single dev4800','Mean absolute curve gap pp'], candidate_table)}
 
-这张表与背景匹配表分别描述两类替换：TV接近不保证学习速度相同，4800步都学会也不保证早期轨迹一致。它们是保留的混杂说明，不是本轮重新优化组成的依据。
+This table and the background-matching table describe two types of replacement. Similar TV does not guarantee equal learning speed; both tasks being learned by step4800 does not guarantee matching early trajectories. These are retained confounding differences, not grounds for reoptimizing composition in this round.
 
-组合冻结后、查看本轮新迁移结果之前，定义级科学复核补充了原目录未覆盖的关系；未改组合、数据、预算或选择规则，详见 [catalog_addenda/README.md]({addendum_link})。记D=deficiencies，I=反演，R=一行反序，C=补值，则 fixed_points(p)=n−D(p)−D(I(p))，anti_fixed_points(p)=n−D(C(p))−D(R(I(p)))。因此fixed_points的g2中B/C都含有能通过多个变换输入联合重建目标的背景任务，不能把C理解为不含目标数学联系；单个输入的一个D标签不足以确定目标。正式训练不提供这种配对查询、联合答案或关系损失，池内轨道隔离也不保留不同的变换等价输入。这是隐含数学联系，并非单标签泄漏或模型实际使用该恒等式的证据。
+After composition freezing and before inspecting new transfer results, a definition-level scientific review added relations absent from the original catalog; compositions, data, budgets, and selection rules were unchanged. See [catalog_addenda/README.md]({addendum_link}). Let D=deficiencies, I=inverse, R=one-line reversal, and C=complement. Then fixed_points(p)=n−D(p)−D(I(p)), and anti_fixed_points(p)=n−D(C(p))−D(R(I(p))). Thus both B/C in fixed_points g2 contain a background task that jointly reconstructs the target across transformed inputs; C cannot be interpreted as lacking target relations. One D label on one input does not determine the target. Training supplies no such paired queries, joint answers, or relation loss, and within-pool orbit isolation does not retain distinct transformation-equivalent inputs. This is an implicit mathematical relation, not single-label leakage or evidence that the model used the identity.
 
-g1是移除descents再换成recoils，并非新增一对共存的descents/recoils源任务。对于longest_decreasing_run，LDR/LIR/descents/peaks共享局部比较符号序列：descents计下降边，LDR/LIR分别取最长连续下降/上升段，peaks计局部峰；这些标量答案不能互相决定。g1移除descents但保留peaks，g2保留descents但移除peaks并加入位置不等计数，对计算结构的改变不同。背景的边缘答案分布、学习动态、源—源/多输入关系和局部计算结构均随之变化，单一关系图边数不足以概括本实验。
+g1 removes descents and replaces it with recoils; it does not add a coexisting descents/recoils pair. For longest_decreasing_run, LDR/LIR/descents/peaks share the local comparison-sign sequence: descents counts descending edges, LDR/LIR take the longest consecutive descending/ascending segment, and peaks counts local peaks. These scalar answers do not determine each other. g1 removes descents but retains peaks; g2 retains descents, removes peaks, and adds a position-inequality count. They alter computational structure differently. Marginal answer distributions, learning dynamics, source–source/multi-input relations, and local computational structure all change; a single relation-graph edge count cannot summarize this experiment.
 
-模型/数据/预算保持v3兼容：PermWorld n=10、one-line encoding、Transformer 4层/256宽/8头/dropout0.1、188词表与绑定embedding/output，FP32权重/评估、BF16训练、TF32关闭。源池8192与源开发1024，目标训练256与开发1024，最终新测试每块2048。两个目标、各背景和A/B/C在块内共享输入池；此共享并不使跨目标或背景成为独立样本。
+Model/data/budgets remain v3-compatible: PermWorld n=10, one-line encoding, Transformer with 4 layers/width256/8 heads/dropout0.1, vocabulary188, and tied embedding/output; FP32 weights/evaluation, BF16 training, TF32 disabled. Source train/dev pools have 8192/1024 inputs, target train/dev have 256/1024, and the final new test has 2048 per block. Targets, backgrounds, and A/B/C share input pools within a block; this sharing does not make targets or backgrounds independent samples.
 
-配对块标签17/42/73联合索引初始化和数据池，不能当作数据生成RNG seed：s17/s42源于顺序使用RNG20261018，s73源于RNG2026101803；模型初始化seed分别17/42/73。预训练采样/dropout seed=块标签+1000，适配为+2000，新测试RNG2026101805。训练/开发池及step0权重逐字节复用v3，seed_provenance.json记录来源。块间差异混合输入、初始化及优化随机性，本轮未独立干预这些因素。
+Paired-block labels 17/42/73 jointly index initialization and data pools; they are not data-generation RNG seeds. s17/s42 were generated sequentially with RNG 20261018, and s73 with RNG 2026101803; model initialization seeds are 17/42/73. Pretraining sampling/dropout seed=block label +1000, adaptation=+2000, and new-test RNG 2026101805. Training/development pools and step0 weights are reused byte-for-byte from v3; seed_provenance.json records their origins. Block differences combine input, initialization, and optimization randomness; these factors were not independently manipulated.
 
-## 源学习、暴露与解释限制
+## Source learning, exposure, and limits of interpretation
 
-每预训练run4800步，batch64的slot0…3每步精确16条，四任务采样比例各25%。各slot累计76800次暴露；input/label/index stream hash逐slot核对，同块所有背景/条件共享输入索引及slot赋值。对固定数学任务的相同slot，标签流也相同。完整144行 [source_exposures.csv]({link('source_exposures.csv')}) 保留不同输入数、真实暴露、tokens和hash；不能将76800次暴露当76800个不同输入。
+Each pretraining run has 4800 steps. Each batch of 64 contains exactly 16 examples in each slot0…3, giving exactly 25% task sampling. Each slot receives 76800 exposures. Input/label/index-stream hashes are checked per slot; all backgrounds/conditions in a block share input indices and slot assignment. The same mathematical task in the same slot also has the same label stream. All 144 rows of [source_exposures.csv]({link('source_exposures.csv')}) retain unique-input counts, actual exposures, tokens, and hashes. 76800 exposures are not 76800 distinct inputs.
 
-全部源任务train/dev准确率、answer/EOS/two-token CE、按n=10多数基线和曲线保留，[source_learning_table.csv]({link('source_learning_table.csv')})另连接v3相同输入/初始化的单任务1200/4800步参照。没有新增单任务计算。单任务4800与组合4800具有相同总更新数及全局LR轨迹，但每任务暴露是组合4倍，任务交替也不同；单任务1200只匹配每任务暴露，LR历史和总更新不同，无法据此孤立识别纯干扰。
+All source train/dev accuracies, answer/EOS/two-token CE, n=10 majority baselines, and curves are retained. [source_learning_table.csv]({link('source_learning_table.csv')}) additionally links v3 single-task step1200/4800 references using identical inputs/initialization. No new single-task computation was performed. Single-task4800 and multitask 4800 have the same total updates and global LR trajectory, but single-task per-task exposure is four times larger, with different task alternation. Single-task1200 matches only per-task exposure; LR history and total updates differ. These comparisons cannot isolate pure interference.
 
-相对单任务4800步的源开发差异，改善和下降都保留。±5pp仅为描述门槛，去重按seed×任务×source终点state hash；同一任务在多个组合的出现次数并非独立样本。36逻辑源run共有{state_count}个不同终点state hash。
+Both increases and decreases in source-development accuracy relative to single-task4800 are retained. ±5pp is only a descriptive threshold; deduplication uses seed×task×source-endpoint-state hash. Multiple appearances of a task in compositions are not independent samples. The 36 logical source runs have {state_count} distinct endpoint-state hashes.
 
-{table(['范围','记录数','改善≥5pp','下降≥5pp','绝对差<5pp'], effects_table)}
+{table(['Scope','Records','Improvement≥5pp','Decline≥5pp','Absolute gap<5pp'], effects_table)}
 
-背景内部相同公共任务B/C开发准确率差的绝对值最大为{100*common_max:.2f}pp。跨背景逐slot检查：[source_background_slot_changes.csv]({link('source_background_slot_changes.csv')})对同一数学任务计算变化；若slot内任务被替换，仅展示两边任务和指标，差值留空，避免把两个任务的准确率差当成同一任务学习改变。
+Within-background B/C development differences for the same common task reach an absolute maximum of {100*common_max:.2f}pp. Across backgrounds, [source_background_slot_changes.csv]({link('source_background_slot_changes.csv')}) computes changes only for the same mathematical task in each slot. When a slot's task is replaced, it shows both tasks and metrics but leaves the difference blank, avoiding interpretation of different-task accuracy differences as a change in learning the same task.
 
-以下为按目标交互绝对值排序的最多四个描述性案例。候选B/C源开发变化是同一任务在后背景减前背景；公共源列只统计未换任务的slot。这里只并列保存状态变化，不拟合相关系数、不作因果归因，也未用这些表追加实验或选择主结果。
+The following are up to four descriptive cases ranked by absolute target interaction. Candidate B/C source-development changes are later-minus-earlier background differences for the same task; common-source columns cover only unchanged slots. These tables juxtapose state changes without fitting correlations or making causal attributions, and were not used to add experiments or select primary results.
 
-{table(['目标','块','后−前背景','目标交互pp','B候选源dev变化pp','C候选源dev变化pp','同任务公共源最大绝对变化pp'], context_table)}
+{table(['Target','Block','Later−earlier background','Target interaction pp','B candidate source dev change pp','C candidate source dev change pp','Max absolute same-task common-source change pp'], context_table)}
 
-下面进一步列出两个B候选的源学习状态，数列按17/42/73排列。单1200步只匹配每任务暴露，LR历史和总更新仍不同。
+Source-learning states for the two B candidates are listed below in 17/42/73 order. Single-task1200 matches only per-task exposure; LR history and total updates still differ.
 
-{table(['目标','背景','B候选源','组合train三块','组合dev三块','单1200 dev三块'], cases['source_table'])}
+{table(['Target','Background','B candidate source','Multitask train across 3 blocks','Multitask dev across 3 blocks','Single1200 dev across 3 blocks'], cases['source_table'])}
 
 {cases['source_text']}
 
-g0复用源曲线有历史空缺：fixed_points块17/42只有2400及3000/3600/4200/4800全量train/dev记录；对应图线从2400开始，未补造早期点。新训练run及其余兼容v3记录有0/600/1200/2400/3600/4800步指标。按长度参照只有n=10，不宣称长度外推。
+Reused g0 source curves have historical gaps: fixed_points blocks 17/42 contain full train/dev records only at 2400 and 3000/3600/4200/4800. Their plots start at 2400; earlier points were not fabricated. Newly trained runs and other compatible v3 records contain metrics at 0/600/1200/2400/3600/4800. Length-specific references cover only n=10, with no length-extrapolation claim.
 
-## 适配选择、隔离及预算
+## Adaptation selection, isolation, and budget
 
-B/C各4800步，源LR为100步warmup至3e−4、2400步余弦到3e−5、随后常数3e−5至4800；不再延长。AdamW(weight_decay=.01, betas=.9/.999, eps=1e−8)，梯度裁剪1。每适配条件同三档LR（3e−4/1e−4/3e−5）、每档800步、warmup100后余弦到初始LR的0.1；所有块内候选共享适配数据及采样顺序。目标已有专有token的绑定embedding/output行恢复同块step0值，严格加载预训练权重，重置优化器，无新输出头。
+B/C each receive 4800 steps. Source LR warms up for 100 steps to 3e−4, follows cosine decay to 3e−5 at 2400, then stays at 3e−5 through 4800; no extension was added. AdamW (weight_decay=.01, betas=.9/.999, eps=1e−8), gradient clipping 1. Every adaptation condition uses the same three LRs (3e−4/1e−4/3e−5),800 steps each,100-step warmup and cosine decay to 0.1 of initial LR. All candidates within a block share adaptation data and sampling order. The existing target token's tied embedding/output row is restored to the block's step0 value. Pretrained weights are strictly loaded, the optimizer is reset, and no new output head is added.
 
-每100步评估全量训练/开发，依次按最高开发答案准确率、最低开发answer CE、最早步数、声明LR顺序选择，step0排除。答案准确率在完整词表prompt-only argmax计算；答案与EOS各占训练loss一半。42项唯一选择的LR计数为{dict(sorted(unique_lr_counts.items(), reverse=True))}；全部候选400→800固定窗口有{ce_worse}/126开发CE上升、{acc_worse}/126开发准确率下降，保留最佳开发与训练终点对照，不把选择后差距直接解释为独立过拟合证据。
+Full training/development evaluation occurs every 100 steps. Selection prioritizes highest development answer accuracy, lowest development answer CE, earliest step, then declared LR order; step0 is excluded. Answer accuracy uses prompt-only argmax over the full vocabulary; answer and EOS each contribute half of training loss. LR counts among 42 unique selections are {dict (sorted (unique_lr_counts.items(), reverse=True))}. Over the fixed400→800 window, {ce_worse}/126 candidates have increased development CE and {acc_worse}/126 decreased development accuracy. Best-development and endpoint comparisons are retained; post-selection gaps alone are not treated as independent evidence of overfitting.
 
-FROZEN_PROTOCOL锁定六个目标/背景组成、源码与既有证据；SELECTIONS_FROZEN锁定42项选择及checkpoint hash后才生成独立新测试。新测试排除v1/v2/v3所有输入及v4训练/开发的inverse/reverse/complement完整轨道，三个新测试池也隔离；块内目标/背景/条件统一评估。测试不用于选择背景、LR或checkpoint。{audit_text}；完整证据见FINAL_AUDIT.json。
+FROZEN_PROTOCOL locks six target/background compositions, code, and prior evidence. Independent new tests are generated only after SELECTIONS_FROZEN locks 42 selections and checkpoint hashes. New tests exclude the full inverse/reverse/complement orbits of all v1/v2/v3 inputs and v4 train/dev inputs; the three new test pools are isolated from each other as well. Targets/backgrounds/conditions are evaluated uniformly within a block. Tests do not select backgrounds, LRs, or checkpoints. {audit_text}; see FINAL_AUDIT.json for complete evidence.
 
-预训练36逻辑run中12复用、24新增；126适配候选中18个共享A与36个g0 B/C复用，72个新增。精确复用基于有序任务tuple、输入池、初始化、采样及预算兼容，不仅比较无序任务集合。历史权重在新测试上重评估，不是本轮重新训练的独立重复。所有252候选best/endpoint测试记录保留；测试次数及其评估开销在本轮阶段时间中，不计入训练token数。
+Of 36 logical pretraining runs,12 are reused and 24 new. Of 126 adaptation candidates,18 shared-A and 36 g0 B/C candidates are reused, and 72 are new. Exact reuse requires compatibility of ordered task tuples, input pools, initialization, sampling, and budgets, not merely unordered task sets. Historical weights are reevaluated on new tests, not retrained as independent repeats. All 252 best/endpoint candidate test records are retained. Test evaluation costs appear in stage timings, not training-token totals.
 
-{table(['阶段','来源','run数','更新数','训练input tokens','监督tokens','训练timer分钟'], cost_table)}
+{table(['Stage','Origin','Runs','Updates','Training input tokens','Supervised tokens','Training timer minutes'], cost_table)}
 
-本轮新增训练timer合计{new_seconds/60:.2f}分钟，引擎阶段墙钟合计{stage_seconds/60:.2f}分钟。timer包含训练、全量train/dev评估、保存及部分记账，复用timer来自历史阶段且范围略异，不计本轮新增；两种时间不能相加。审计与绘图另行运行，不在引擎阶段计时。输入tokens计完整28-token训练前向序列，监督tokens计答案/EOS两个位置；不含评估tokens。本轮单任务参照为既有记录复用，不再付训练成本。
+New training timers total {new_seconds/60:.2f} minutes; engine-stage wall time totals {stage_seconds/60:.2f} minutes. Timers include training, full train/dev evaluation, saving, and some bookkeeping. Reuse timers come from historical stages with somewhat different scope and are not new compute. The two timing measures must not be added. Auditing and plotting run separately, outside engine-stage timing. Input tokens count the full 28-token training forward sequence; supervised tokens count answer/EOS positions; evaluation tokens are excluded. Single-task references are reused records with no additional training cost.
 
-## 结论边界与下一步
+## Limits and next steps
 
-这是一项两个经v3结果挑选案例、三个背景、三个配对块的有限探索。背景和任务共享数据、初始化、来源权重；样本数固定256，预训练固定4800、适配每档800，不建立样本效率曲线或scaling law。非正收益、负迁移、方向翻转以及未充分学会的源/目标均保留。目标先前在8192条单任务数据下通过可学习性门槛，不能保证在256条条件下也学会；需要结合多数基线解读小样本结果。
+This is a limited exploration of two cases selected from v3 results, three backgrounds, and three paired blocks. Backgrounds and tasks share data, initialization, and source weights. Target samples are fixed at 256, pretraining at 4800 steps, and adaptation at 800 per LR; this establishes neither a sample-efficiency curve nor a scaling law. Nonpositive gains, negative transfer, direction reversals, and insufficiently learned sources/targets are retained. Targets previously passed a learnability threshold with 8192 single-task examples; this does not ensure learning with 256. Small-sample outcomes require interpretation alongside majority baselines.
 
-两个目标每个背景下的C具有相同无序任务集合，只是successions与left_to_right_maxima在slot0/slot3互换。相同索引/slot流下，任务分配到的具体输入随之不同，因此C的训练权重/表现可以不同；目标任务没有进入预训练输入，不能把跨目标C差异解释成目标名称改变了预训练。这也进一步限制两个案例的独立性。
+For each background, C has the same unordered task set for both targets, with successions and left_to_right_maxima swapped between slot0/slot3. Under identical index/slot streams, the specific inputs assigned to tasks therefore differ, so C weights/performance can differ. The target task never enters pretraining inputs; cross-target C differences cannot be interpreted as the target name changing pretraining. This further limits independence of the two cases.
 
-下一阶段优先完善“关系类型×背景计算结构”的任务目录和有限组合对照，而非直接增加源任务数量。当前证据是：固定点负迁移可在g2改变，LDR收益在g1消失，公共源学习同时变化，且候选源准确率与目标收益存在反例。候选库宜明确覆盖以下类别，把分布匹配、学习曲线匹配和关系类别分开标注：
+The next priority is a task catalog and limited composition controls spanning relation type × background computational structure, rather than immediately increasing source-task count. Current evidence shows that fixed_points negative transfer can change in g2, LDR benefits disappear in g1, common-source learning changes concurrently, and candidate-source accuracy has counterexamples as a proxy for target gains. Candidate libraries should distinguish distribution matching, learning-curve matching, and relation categories:
 
-1. **直接可逆变换及答案映射。** 保留complement/reverse/inverse下恒等答案关系作为锚点，增加非恒等仿射映射参照，例如同一descents任务在补值输入上满足d(Cp)=n−1−d(p)。这是同任务的变换/映射变体，不计作新独立任务。
-2. **边缘等分布但计算结构不同。** 以现有descents/recoils/exceedances等Eulerian统计作候选，区分one-line下邻接位置比较、逆位置比较和对角线位置比较；g1表明TV接近仍会伴随早期学习和组合效果差异，不能只匹配答案直方图。
-3. **多源或多输入联合关系。** 标注fixed/exceedances/deficiencies的位置划分、D(p)与D(Ip)联合恢复fixed，以及cycle_count=fixed_points+nontrivial_cycle_count；区分同输入多源答案与变换输入多查询。以后若检验模型是否利用这些关系，须另行冻结成对输入/关系约束干预，不能拿本轮隐含关系当已利用机制。
-4. **共享局部计算结构但标量不互定。** 用已有LIR/LDR/descents/peaks/valleys及局部三元组计数组织背景，区分共同中间比较序列、等式与上下界，避免将共同计算统计的保留/删除简化成关系边数变化。
-5. **单向信息关系及其他计算族。** 现有cycle_count到parity的模2映射、cycle分解相关计数可提供不同于局部/位置统计的结构，但应先复核单任务可学习性；v3的cycle_count候选曾未达学习门槛，不能直接把未学会任务当已匹配对照。
+1. **Direct invertible transformations and answer maps.** Retain identity-answer relations under complement/reverse/inverse as anchors; add nonidentity affine-map references, such as the same descents task on complemented inputs satisfying d(Cp)=n−1−d(p). These are transformation/map variants of one task, not new independent tasks.
+2. **Equal marginal distributions with different computational structures.** Existing Eulerian statistics such as descents/recoils/exceedances can distinguish adjacent-position comparisons, inverse-position comparisons, and diagonal-position comparisons under one-line encoding. g1 shows that similar TV can coexist with different early learning and composition effects; matching answer histograms alone is insufficient.
+3. **Multi-source or multi-input joint relations.** Register the fixed/exceedances/deficiencies position partition, joint recovery of fixed from D(p) and D(Ip), and cycle_count=fixed_points+nontrivial_cycle_count. Distinguish multiple source answers on one input from multiple queries on transformed inputs. Testing whether models use these relations requires separately frozen paired-input/relation-constraint interventions; implicit relations here are not evidence of an implemented mechanism.
+4. **Shared local computational structure without mutually determining scalars.** Organize backgrounds using existing LIR/LDR/descents/peaks/valleys and local triple counts. Distinguish a shared intermediate comparison sequence, equalities, and bounds, rather than reducing retention/removal of shared computations to relation-edge counts.
+5. **One-way information relations and other computational families.** The existing cycle_count-to-parity modulo 2 map and cycle-decomposition counts offer structures beyond local/position statistics, but require single-task learnability review first. The v3 cycle_count candidate failed its learning threshold; an unlearned task cannot simply be treated as a matched control.
 
-组合层面先保留固定四源数、固定预算和有序slot配对，明确哪些组仅改边缘分布/学习速度，哪些组同时改变局部结构或联合关系。若跨目标比较相同C集合，还应单独处理slot到输入的分配。以上为后续研究建议，并未执行新目标、成对查询、slot控制或训练；不依据本轮候选测试最高分再搜索最优背景。
+At the composition level, retain four sources, fixed budgets, and ordered-slot pairing. Specify which groups change only marginal distributions/learning speed and which also change local structure or joint relations. Cross-target comparisons of identical C sets must separately address slot-to-input assignment. These are future recommendations: no new targets, paired queries, slot controls, or training were executed, and no search for the best background was performed using candidate test maxima.
 
-本轮已按预设规模停止；没有追加学习率、预算、背景或目标，等待后续指导。
+This round stopped at the prespecified scale, with no additional learning rates, budgets, backgrounds, or targets, pending further guidance.
 
-## 文件
+## Files
 
-- [42唯一主结果]({link('results_selected.csv')})、[54背景对照展示行]({link('results_display_ABC.csv')})、[252全部候选]({link('results_all_candidates.csv')})。
-- 每块原始CSV：[17]({link('results_seed17.csv')})、[42]({link('results_seed42.csv')})、[73]({link('results_seed73.csv')})。
-- [配对组成差值]({link('paired_deltas.csv')})、[背景交互逐块]({link('background_interactions.csv')})、[交互汇总]({link('background_interactions_summary.csv')})、[终点对照]({link('selected_vs_endpoint.csv')})。
-- [源学习/单任务参照]({link('source_learning_table.csv')})、[公共源B/C差异]({link('common_source_BC.csv')})、[源与目标交互并列记录]({link('interaction_source_context.csv')})。
-- [沿用B/C候选对的分布与难度差异]({link('candidate_matching.csv')})，选择来源为 [v3冻结前的匹配记录]({previous_matching_link})。
-- [完整目标曲线]({link('target_curves.csv')})、[源曲线]({link('source_curves.csv')})、[冻结配置]({link('FROZEN_PROTOCOL.json')})、[成本]({link('compute_summary.csv')})、[阶段耗时]({link('stage_timings.csv')})；复现命令见README.md。
-- [独立统计重算与CSV绑定审计]({link('STATISTICS_AUDIT.json')})，与权重/协议最终审计分开记录。
-- [冻结后的定义级关系复核补充]({addendum_link})；它在查看本轮新迁移结果之前完成，不触发新实验，也不改写冻结目录。
+- [42 unique primary results]({link('results_selected.csv')}), [54 background-comparison display rows]({link('results_display_ABC.csv')}), [All 252 candidate results]({link('results_all_candidates.csv')}).
+- Raw CSV per block: [17]({link('results_seed17.csv')}), [42]({link('results_seed42.csv')}), [73]({link('results_seed73.csv')}).
+- [Paired composition differences]({link('paired_deltas.csv')}), [Background interactions by block]({link('background_interactions.csv')}), [Interaction summary]({link('background_interactions_summary.csv')}), [Endpoint comparison]({link('selected_vs_endpoint.csv')}).
+- [Source learning/single-task references]({link('source_learning_table.csv')}), [Common-source B/C differences]({link('common_source_BC.csv')}), [Source and target interactions side by side]({link('interaction_source_context.csv')}).
+- [Distribution and difficulty differences for retained B/C candidate pairs]({link('candidate_matching.csv')}); selection evidence: [v3 pre-freeze matching records]({previous_matching_link}).
+- [Full target curves]({link('target_curves.csv')}), [Source curves]({link('source_curves.csv')}), [Frozen configuration]({link('FROZEN_PROTOCOL.json')}), [Cost]({link('compute_summary.csv')}), [Stage timings]({link('stage_timings.csv')}); see README.md for reproduction commands.
+- [Independent statistical recomputation and CSV-binding audit]({link('STATISTICS_AUDIT.json')}); recorded separately from the final weights/protocol audit.
+- [Post-freeze definition-level relation review addendum]({addendum_link}); completed before inspecting new transfer results, without triggering new experiments or rewriting the frozen catalog.
 """
     report_path.write_text(text, encoding="utf-8")
     (out / "key_results.json").write_text(json.dumps(dict(selected_unique=42, display_rows=54, candidate_rows=252, target_samples=256,

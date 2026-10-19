@@ -1,34 +1,34 @@
-# PermWorld 第二轮诊断
+# PermWorld second-round diagnostics
 
-本轮固定 n=10、目标 fixed_points、B/C 四任务组成、one-line 编码和 v1 Transformer，仅分析256个目标训练样本、配对种子17/42。v1的所有文件及checkpoint保持原字节；新增数据、模型、曲线、审计、CSV放在本目录 `artifacts/`。本轮完成后暂停扩展。
+This round fixes n=10, target fixed_points, the B/C four-task compositions, one-line encoding, and the v1 Transformer. It examines only 256 target training examples and paired seeds17/42. All v1 files and checkpoints were preserved byte for byte when this round was conducted; new data, models, curves, audits, and CSV files are in this directory's `artifacts/`. Expansion pauses after this round.
 
-## 冻结的比较
+## Frozen comparisons
 
-每个种子共15个适配候选：A随机初始化3个；B/C各在2400和4800源更新预算下各3个。所有候选学习率集合均为 `3e-4, 1e-4, 3e-5`，最多800更新、批量64，训练池为v1目标池前256条，开发集为原1024条；原数据、任务、模型、优化器类型、warmup100和余弦末端比例0.1不变。新增完整train/dev的accuracy、answer CE、EOS CE、二token CE每100步记录。训练batch loss另列，不能与完整数据eval loss混淆。
+Each seed has 15 adaptation candidates: 3 for random-initialized A, and 3 each for B/C at source budgets of 2400 and 4800 updates. All use learning rates `3e-4, 1e-4, 3e-5`, at most 800 updates, batch 64, the first 256 examples of the v1 target pool, and the original 1024-example development set. Data, tasks, model, optimizer type, warmup 100, and cosine endpoint ratio 0.1 are unchanged. Full train/dev accuracy, answer CE, EOS CE, and two-token CE are recorded every 100 steps. Training-batch loss is separate and must not be confused with full-dataset evaluation loss.
 
-候选内与跨候选共同规则：开发答案accuracy最大，其次开发answer CE最小，其次更早更新，其次声明的学习率顺序。step0仅记录，不参选。固定最终800步仍保存并报告；不提前停止任何候选。A没有源预算，在2400/4800两组比较中复用同一组A结果，不重复算成独立实验。
+The same within- and across-candidate rule maximizes development answer accuracy, then minimizes development answer CE, then favors earlier updates, then follows the declared learning-rate order. Step0 is recorded but ineligible. The fixed 800-step endpoint is also saved and reported; no candidate stops early. A has no source budget, so the same A results are reused in both the 2400/4800 comparisons, not counted as independent experiments.
 
-v1缺少逐任务历史源损失、完整目标训练曲线和中间checkpoint。原源终点损失从已保存checkpoint补算；中间轨迹不伪造，重新适配的曲线明确为v2 replay。高学习率终点与v1原终点逐参数比较，以检查诊断插入是否改变原运行。历史v1测试结果保持原有探索性质，不混入v2测试均值。
+V1 lacks historical per-task source losses, complete target training curves, and intermediate checkpoints. Original source-endpoint losses are recomputed from saved checkpoints. Intermediate trajectories are not fabricated; the new adaptation curves are explicitly v2 replays. High-learning-rate endpoints are compared parameter by parameter with the original v1 endpoints to check whether added diagnostics changed the run. Historical v1 test results retain their exploratory status and are not pooled into v2 test averages.
 
-## 预训练预算扩展
+## Extended pretraining budget
 
-v1源任务开发结果支持尚未充分学习。因此B/C均从原2400步checkpoint继承模型、AdamW状态、NumPy采样和torch/CUDA随机状态，再训练2400步。仍是同一个8192输入池，四任务各占25%、每批各16条。扩展段固定原余弦末端学习率 `3e-5`，不重启warmup，也不重写前2400步。**这是真实原训练轨迹的继续，不是从头使用4800步cosine日程的等价实验。**
+V1 source-development results support incomplete learning. B/C therefore inherit the model, AdamW state, NumPy sampling state, and torch/CUDA random states from the original 2400-step checkpoints and train for another 2400 steps. They retain the same 8192-input pool, 25% sampling per task, and 16 examples per task in each batch. The extension fixes the learning rate at the original cosine endpoint, `3e-5`, without restarting warmup or rewriting the first 2400 steps. **This continues the actual original training trajectory; it is not equivalent to training from scratch with a 4800-step cosine schedule.**
 
-每个预算总输入tokens分别为4,300,800和8,601,600（含答案/EOS），监督tokens为307,200和614,400。每个源任务样本曝光38400→76800；“可用8192个输入”与“每任务实际访问的独特输入数”分别报告。源训练/开发全量指标在原终点和新增3000/3600/4200/4800步计算。
+Total input tokens are 4,300,800 and 8,601,600 at the two budgets, including answers/EOS; supervised tokens are 307,200 and 614,400. Per-source exposures increase from 38400 to 76800. The available 8192 inputs and each task's actually visited distinct inputs are reported separately. Full source train/dev metrics are computed at the original endpoint and at added steps 3000/3600/4200/4800.
 
-## 初始化、保存与隔离
+## Initialization, saving, and isolation
 
-每次适配先严格加载source/step0 state_dict并核对全部参数哈希；恢复 `<FIXED_POINTS>` 对应的token_embedding/lm_head绑定行至同一种子的step0，记录行哈希。共享数字输出参数沿用预训练值，没有新增独立输出头。新建AdamW、确认初始状态为空；所有候选配对采样schedule hash一致。源续训则明确继承优化器，不与适配混淆。
+Each adaptation strictly loads the source/step0 state_dict and checks all parameter hashes. The tied token_embedding/lm_head row for `<FIXED_POINTS>` is restored to the same seed's step0 row, with its hash recorded. Shared numeric output parameters retain pretrained values; no independent head is added. A new AdamW is created and its initial state confirmed empty. Paired sampling schedule hashes match across all candidates. Source continuation explicitly inherits the optimizer and is distinct from adaptation.
 
-`FROZEN_PROTOCOL.json` 在训练前记录配置与训练代码哈希。`SELECTIONS_FROZEN.json` 在全部候选结束后记录每组选择及checkpoint哈希，然后才生成新测试。每种子2048个新的n=10排列；排除v1所有数据池（包含独立开发、两个旧测试池）和v2另一个种子的完整 inverse/reverse/complement 轨道。新测试只用于统一最终评估。所有候选best/endpoint都保留原始测试读数，主表只引用冻结选择，不再按测试挑候选。
+`FROZEN_PROTOCOL.json` records configuration and training-code hashes before training. After all candidates finish, `SELECTIONS_FROZEN.json` records each selection and checkpoint hash; only then is the new test set generated. Each seed receives 2048 new n=10 permutations, excluding complete inverse/reverse/complement orbits from every v1 pool, including independent development and both old test pools, and from the other v2 seed. The new test is used only for unified final evaluation. Raw test readings for all candidate best/endpoint checkpoints are retained; the main table uses only frozen selections, with no further test-based candidate selection.
 
-多数基线由相应训练标签众数确定，按长度报告；本轮只有长度10，不声称跨长度诊断。answer accuracy采用与v1相同的prompt-only预测、全188词表argmax；EOS准确率条件于gold answer，不是自由生成整段准确率。
+Majority baselines are defined by the corresponding training-label mode and reported by length. Only length 10 is used here; no cross-length diagnosis is claimed. Answer accuracy uses the same prompt-only prediction and full 188-vocabulary argmax as v1. EOS accuracy is conditioned on the gold answer, not freely generated whole-sequence accuracy.
 
-## 运行和复现
+## Running and reproduction
 
-当前环境沿用v1的Python3.13 / torch2.11.0+cu128 / NumPy2.5.4，完整依赖见上一级 `permworld_pilot/requirements-lock.txt`。需要v1的原数据与step0/pretrain/256-adapt checkpoint；大体积checkpoint保留本地并由清单哈希验证，未提交Git。主训练代码直接import已冻结的v1模型/任务实现，未复制或更改数学定义。
+The environment retains v1's Python 3.13 / torch 2.11.0+cu128 / NumPy 2.5.4; full dependencies are in the sibling `permworld_pilot/requirements-lock.txt`. The original v1 data and step0/pretrain/256-adapt checkpoints are required. Large checkpoints remain local, verified by manifest hashes, and are not committed to Git. Training imports the frozen v1 model/task implementation directly without copying or changing mathematical definitions.
 
-在仓库根目录运行：
+Run from the repository root:
 
 ```powershell
 .venv/Scripts/python.exe -u experiments/pilot_v2_diagnostics/run_all.py
@@ -37,11 +37,11 @@ v1源任务开发结果支持尚未充分学习。因此B/C均从原2400步check
 .venv/Scripts/python.exe experiments/pilot_v2_diagnostics/audit_final.py
 ```
 
-`run_all.py` 串行执行 inventory→smoke→freeze→train→select→test，跳过有完成标记的阶段。单个完整候选可复用；未完成候选从其原始起点重做，不宣称任意中间步自动恢复。smoke实际检验源续训连续8步与4步保存加载再4步的参数逐项一致，并核验评估不消耗dropout RNG。
+`run_all.py` runs inventory→smoke→freeze→train→select→test sequentially and skips stages with completion markers. Fully completed candidates can be reused; incomplete candidates restart from their original starting point, without claiming automatic recovery at any intermediate step. The smoke test checks exact parameter equality between 8 continuous source-continuation steps and 4 steps followed by save/load and another 4 steps. It also verifies that evaluation does not consume dropout RNG.
 
-首次 `audit_final.py` 核验训练与测试产物，随后 `summarize.py` 生成报告、汇总CSV和曲线并引用审计结果；最后再次审计，更新包含这些生成产物的 `artifact_manifest.json`。汇总与最终审计均不运行模型forward。
+The first `audit_final.py` checks training and test artifacts. Next, `summarize.py` generates the report, summary CSV files, and curves while referencing the audit result. The final audit updates `artifact_manifest.json` to include those generated artifacts. Neither summarization nor the final audit runs model forwards.
 
-独立重跑使用新目录，保留本次结果：
+Use a new directory for an independent rerun, preserving these results:
 
 ```powershell
 .venv/Scripts/python.exe -u experiments/pilot_v2_diagnostics/run_all.py --out experiments/pilot_v2_diagnostics/replication
@@ -50,4 +50,4 @@ v1源任务开发结果支持尚未充分学习。因此B/C均从原2400步check
 .venv/Scripts/python.exe experiments/pilot_v2_diagnostics/audit_final.py --out experiments/pilot_v2_diagnostics/replication
 ```
 
-如需从v1起始重建，先按 `../permworld_pilot/README.md` 在新checkout完整复现v1。数值核验记录设备和运行环境；不同CUDA/硬件环境不保证位级重现。后续实验不能用本轮新测试选择方案。
+To rebuild from v1, first reproduce v1 in a fresh checkout following `../permworld_pilot/README.md`. Numerical checks record the device and environment; bitwise reproduction across CUDA/hardware environments is not guaranteed. Later experiments must not use this round's new test set to select protocols.

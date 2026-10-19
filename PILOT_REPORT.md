@@ -1,58 +1,58 @@
-# DMLR 最小探索试点（2026-10-18）
+# DMLR minimal exploratory pilot (2026-10-18)
 
-已在分支 `pilot/permworld-composition` 实际完成两个配对种子（17、42）、4次源任务预训练、18次目标适配及最终测试。**本次没有观察到稳定的样本效率收益，低样本量出现负迁移；源任务学习不足和难度不匹配，使结果不能用于否定或确认“数学关系促进迁移”。** 当前更值得修正小试点的学习条件，而不是立即扩展大型任务库。
+Two paired seeds (17, 42), 4 source pretraining runs, 18 target adaptations, and final testing were completed on branch `pilot/permworld-composition`. **This pilot found no stable sample-efficiency benefit and observed negative transfer at small sample sizes. Incomplete source-task learning and difficulty mismatches prevent these results from confirming or rejecting the claim that mathematical relations promote transfer.** Improving the learning conditions of this small pilot is more worthwhile than immediately expanding the task library.
 
-## 做了什么
+## What was done
 
-复用 GitHub 2026TMLR 与其固定 neurips 上游的 PermWorld 任务、one-line 编码、188词表及3,240,448参数 Transformer（宽256、4层、8头）。当前 DMLR 仓库原为空且无提交；参考克隆置于 `reference/`，没有修改原 alignment 项目及结果。
+The pilot reuses PermWorld tasks, one-line encoding, the 188-token vocabulary, and a 3,240,448-parameter Transformer (width 256, 4 layers, 8 heads) from GitHub 2026TMLR and its pinned neurips upstream. The DMLR repository was initially empty with no commits; reference clones were placed in `reference/`. The original alignment project and results were not modified.
 
-只取 n=10。唯一目标候选在迁移前确定为 `fixed_points(p)=#{i:p(i)=i}`；原项目单任务开发集表现可靠，本轮独立单任务开发实验最终达到1024/1024，超过预定90%门槛后才冻结正式方案。该开发池独立于正式数据，未用迁移表现或最终测试选任务。
+Only n=10 is used. The sole target candidate, `fixed_points(p)=#{i:p(i)=i}`, was determined before transfer: the original project's single-task development results were reliable, and this round's independent single-task development experiment reached 1024/1024. The formal protocol was frozen only after passing the predefined 90% threshold. This development pool is independent of the formal data; neither transfer performance nor the final test set was used for target selection.
 
-A从随机初始化适配；B预训练 `anti_fixed_points / descents / peaks / left_to_right_maxima`；C仅将第一个任务替换为 `successions`。已知关系为 `fixed_points(p)=anti_fixed_points(c(p))`，`c(p)(i)=n+1-p(i)`。successions计数相邻的正向连续值，不在登记的该直接关系对中；没有将其称为“数学上无关”。
+A adapts from random initialization. B pretrains on `anti_fixed_points / descents / peaks / left_to_right_maxima`. C replaces only the first task with `successions`. The known relation is `fixed_points(p)=anti_fixed_points(c(p))`, where `c(p)(i)=n+1-p(i)`. Successions counts adjacent values increasing by exactly one; it is outside the registered direct relation pair and is not described as mathematically unrelated.
 
-每种子预训练8192个不同排列；目标训练前64/256/1024个排列严格嵌套，目标开发1024、测试2048。三条件共享同种子的目标数据和适配预算。所有池及两个种子之间统一排斥 inverse/reverse/complement 的完整轨道；审计发现输入重复0、跨池轨道交集0。最终测试仅在全部训练结束后评估，不选任务、超参或checkpoint。没有声称穷尽排除旧 alignment 项目全部历史输入；本次未加载旧训练数据或权重。
+Each seed uses 8192 distinct pretraining permutations. The first 64/256/1024 target training permutations form strictly nested subsets; target development and test sets contain 1024 and 2048 examples. The three conditions share target data and adaptation budgets within each seed. Complete inverse/reverse/complement orbits are excluded across all pools and both seeds. The audit found 0 duplicate inputs and 0 cross-pool orbit intersections. Final testing occurred only after all training ended and did not select tasks, hyperparameters, or checkpoints. This does not claim exhaustive exclusion of every historical input from the original alignment project; no old training data or weights were loaded.
 
-B/C均2400更新、批量64、四任务各占1/4；每次适配均800更新×64曝光，重置优化器、恢复相同的目标task token初始行，并从对应endpoint独立开始。AdamW lr3e-4、100步warmup与余弦衰减，沿用dropout0.1与BF16。完整定义、配置、冻结协议及复现命令见[实验说明](experiments/permworld_pilot/README.md)。
+B/C each use 2400 updates, batch size 64, and exactly 1/4 sampling per task. Each adaptation uses 800 updates × 64 exposures, resets the optimizer, restores the same initial target-task-token row, and starts independently from the corresponding endpoint. AdamW uses lr3e-4, 100 warmup steps, and cosine decay, retaining dropout 0.1 and BF16. Full definitions, configuration, the frozen protocol, and reproduction commands are in the [experiment documentation](experiments/permworld_pilot/README.md).
 
-## 观察结果
+## Observations
 
-以下是两个种子的测试准确率简单平均，非显著性结论：
+The following are simple averages of test accuracy over two seeds, not significance claims:
 
-| 不同目标训练样本数 | A 随机初始化 | B 含已知相关任务 | C 替换任务 |
+| Distinct target training examples | A: random initialization | B: includes known related task | C: replacement task |
 |---:|---:|---:|---:|
 | 64 | 42.72% | 38.11% | 38.23% |
 | 256 | 84.01% | 68.26% | 75.51% |
 | 1024 | 98.85% | 98.36% | 97.92% |
 
-![两个种子与均值曲线](experiments/permworld_pilot/runs/pilot_v1/sample_efficiency.png)
+![Two-seed and mean curves](experiments/permworld_pilot/runs/pilot_v1/sample_efficiency.png)
 
-64样本下B−A为−4.61个百分点，C−A为−4.49个百分点；三个条件训练准确率均100%，测试却仅约37%–44%，过拟合明显。按各训练子集多数标签计算的测试基线为35.35%–38.38%。
+At 64 examples, B−A is −4.61 percentage points and C−A is −4.49. All three conditions have 100% training accuracy but only about 37%–44% test accuracy, showing substantial overfitting. Test baselines using the majority label of each training subset range from 35.35% to 38.38%.
 
-256样本下种子差异大：seed17的A/B/C为81.05%/82.28%/79.15%，seed42为86.96%/54.25%/71.88%。B−C分别为+3.13和−17.63个百分点，方向不一致。两个种子同时改变初始化和数据抽样，不能单独归因于初始化。1024样本下三者都接近饱和，没有稳定优势。
+At 256 examples, seed differences are large: seed17 A/B/C are 81.05%/82.28%/79.15%, and seed42 gives 86.96%/54.25%/71.88%. B−C is +3.13 and −17.63 percentage points, with inconsistent directions. Both initialization and data sampling change between seeds, so the differences cannot be attributed to initialization alone. At 1024 examples, all three conditions approach saturation with no stable advantage.
 
-源任务没有充分学会，尤其替换任务：
+Source tasks were not fully learned, especially the replacement task:
 
-| 种子 | B anti_fixed_points 训练/开发 | C successions 训练/开发 | successions 开发多数基线 |
+| Seed | B anti_fixed_points train/dev | C successions train/dev | successions dev majority baseline |
 |---:|---:|---:|---:|
 | 17 | 79.42% / 79.20% | 45.47% / 42.48% | 41.41% |
 | 42 | 79.28% / 76.76% | 47.57% / 47.75% | 41.31% |
 
-公共源任务的开发准确率范围：descents 44.63%–49.80%，peaks 58.98%–65.82%，left_to_right_maxima 95.80%–97.36%。因此本轮不能描述为“四个源任务均已学会后”的迁移实验。
+Development accuracy on common sources ranges from 44.63%–49.80% for descents, 58.98%–65.82% for peaks, and 95.80%–97.36% for left_to_right_maxima. Thus this is not a transfer experiment conducted after all four sources were learned.
 
-被替换任务的答案分布较接近但未完全匹配：两个种子的经验总变差距离为0.0443/0.0520；anti_fixed_points均值0.998/1.016、熵1.876/1.903 bit，successions均值0.891/0.883、熵1.783/1.778 bit。**难度差异远大于答案分布差异，是主要混杂因素。** 原始训练/开发结果与完整直方图均保留。
+The replaced tasks have similar but imperfectly matched answer distributions: empirical total variation distances are 0.0443/0.0520 across seeds; anti_fixed_points has means 0.998/1.016 and entropies 1.876/1.903 bits, while successions has means 0.891/0.883 and entropies 1.783/1.778 bits. **The difficulty gap is much larger than the distribution gap and is a major confound.** Raw train/dev results and full histograms are retained.
 
-## 预算、验证与产物
+## Budget, validation, and artifacts
 
-每次B/C预训练实际处理4,300,800个完整输入token（含答案和EOS），其中307,200个受监督token；每次适配1,433,600个输入token、102,400个受监督token。配对预算审计通过。正式22次训练共43,008,000输入token、3,072,000受监督token；训练循环累计499.9秒，正式阶段墙钟523.1秒（约8.7分钟），RTX 5070。另有独立开发59.7秒、smoke25.5秒、最终评估与绘图19.9秒；环境安装和初次排查不计入这些训练时间。
+Each B/C pretraining run processed 4,300,800 full input tokens, including answers and EOS, with 307,200 supervised tokens. Each adaptation processed 1,433,600 input tokens and 102,400 supervised tokens. Paired-budget checks passed. The 22 formal runs total 43,008,000 input tokens and 3,072,000 supervised tokens. Training loops took 499.9 seconds in total; formal-stage wall time was 523.1 seconds (about 8.7 minutes) on an RTX 5070. Independent development took another 59.7 seconds, smoke testing 25.5 seconds, and final evaluation/plotting 19.9 seconds. Environment installation and initial troubleshooting are excluded from these training times.
 
-smoke穷举5912个n=2..7排列，独立核验六种标签及关系；因果后缀误差0、保存加载误差0。初次运行因上游tokenizer不接受NumPy整数失败，转换为Python int后重跑通过，失败记录保留。正式训练全部完成，无未运行单元。额外验证SDPA与原注意力FP32最大误差1.72e-5，双token损失与原shifted CE误差7.45e-9。最终产物审计通过。CKA接口已实际提取16条开发输入的四层及final_norm特征，没有展开几何指标扫描。
+The smoke test exhaustively checked 5912 permutations of n=2..7 against independent definitions of six labels and their relation; causal-suffix error was 0 and save/load error was 0. The initial run failed because the upstream tokenizer did not accept NumPy integers. Converting them to Python int fixed the rerun; the failure record is retained. All formal runs completed, with no unrun units. Additional checks found a maximum FP32 difference of 1.72e-5 between SDPA and the original attention and a 7.45e-9 difference between the two-token loss and original shifted CE. The final artifact audit passed. The CKA interface extracted four-layer and final_norm features for 16 development inputs; no geometry-metric sweep was conducted.
 
-- [seed17原始CSV](experiments/permworld_pilot/runs/pilot_v1/results_seed17.csv)、[seed42原始CSV](experiments/permworld_pilot/runs/pilot_v1/results_seed42.csv)、[均值与配对差值](experiments/permworld_pilot/runs/pilot_v1/summary.csv)。
-- [源任务学习](experiments/permworld_pilot/runs/pilot_v1/source_learning.csv)、[实际预算与时间](experiments/permworld_pilot/runs/pilot_v1/actual_budgets.csv)、[最终审计](experiments/permworld_pilot/runs/pilot_v1/final_audit.json)。
-- 数据、冻结协议、配置、源码哈希、loss/dev曲线、初始/预训练/适配checkpoint及产物清单均在 `experiments/permworld_pilot/runs/pilot_v1/`。checkpoint保留本地，未纳入Git；其余数据与报告入库，复现不依赖参考克隆。
+- [seed17 raw CSV](experiments/permworld_pilot/runs/pilot_v1/results_seed17.csv), [seed42 raw CSV](experiments/permworld_pilot/runs/pilot_v1/results_seed42.csv), [means and paired differences](experiments/permworld_pilot/runs/pilot_v1/summary.csv).
+- [Source learning](experiments/permworld_pilot/runs/pilot_v1/source_learning.csv), [actual budgets and timing](experiments/permworld_pilot/runs/pilot_v1/actual_budgets.csv), [final audit](experiments/permworld_pilot/runs/pilot_v1/final_audit.json).
+- Data, frozen protocol, configuration, source hashes, loss/dev curves, initial/pretraining/adaptation checkpoints, and the artifact manifest are in `experiments/permworld_pilot/runs/pilot_v1/`. Checkpoints remain local and are excluded from Git; the other data and reports are tracked. Reproduction does not depend on the reference clones.
 
-## 解释限制与下一步
+## Interpretation limits and next step
 
-这只是单一n、单一目标、单次任务替换和两个随机单元的探索。B/C控制了任务数量、token预算和采样，但没有控制学习难度或最终源任务能力。已知恒等式需要输入complement，并不保证网络能自动复用。固定适配预算使64/256/1024样本分别重复约800/200/50轮，低样本量优化过拟合明显。不得将负迁移外推为 data-centric 方向无效，也不得将B/C差异归因于数学关系本身。
+This explores one length, one target, one task replacement, and two random units. B/C control task count, token budget, and sampling, but not learning difficulty or final source capability. The identity requires complementing the input and does not guarantee automatic reuse by the network. Under the fixed adaptation budget, 64/256/1024 examples are repeated for roughly 800/200/50 epochs, with clear optimization overfitting at low sample sizes. Negative transfer must not be generalized into a rejection of the data-centric direction, and B/C differences must not be attributed to the mathematical relation alone.
 
-**最值得先检查的是“源任务都学会后，现象是否仍在”**：继续固定这一个目标与四任务数量，用独立源开发数据设定更充分且B/C相等的预训练预算；若successions仍明显更难，再用目标迁移结果不可见的单任务开发验证选择更可比的替换任务。与此同时仅在独立开发池检查64样本适配的学习率/预算敏感性。本次测试集封存，后续新方案使用新的隔离测试池；暂不扩大任务库或做多指标扫描。
+**The first priority is to check whether the phenomenon persists after the source tasks are learned.** Keep this target and four sources fixed, and use independent source-development data to set a more adequate, equal B/C pretraining budget. If successions remains substantially harder, select a more comparable replacement through single-task development checks with target transfer results hidden. Meanwhile, examine learning-rate/budget sensitivity for 64-example adaptation only on an independent development pool. Seal this test set; subsequent protocols must use a newly isolated test pool. Do not yet expand the task library or run multi-metric sweeps.

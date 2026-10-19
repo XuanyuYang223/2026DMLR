@@ -1,25 +1,25 @@
 target,condition,classification,classification_zh,task_seed_occurrences
-fixed_points,B,single_not_mastered,本配置单任务未充分学会,0
-fixed_points,B,multi_degradation,单任务能学会、组合训练下降,9
-fixed_points,B,insufficient_degradation_evidence,不足以认定组合训练下降,3
-fixed_points,C,single_not_mastered,本配置单任务未充分学会,2
-fixed_points,C,multi_degradation,单任务能学会、组合训练下降,7
-fixed_points,C,insufficient_degradation_evidence,不足以认定组合训练下降,3
-exceedances,B,single_not_mastered,本配置单任务未充分学会,2
-exceedances,B,multi_degradation,单任务能学会、组合训练下降,6
-exceedances,B,insufficient_degradation_evidence,不足以认定组合训练下降,4
-exceedances,C,single_not_mastered,本配置单任务未充分学会,2
-exceedances,C,multi_degradation,单任务能学会、组合训练下降,9
-exceedances,C,insufficient_degradation_evidence,不足以认定组合训练下降,1
-left_to_right_minima,B,single_not_mastered,本配置单任务未充分学会,2
-left_to_right_minima,B,multi_degradation,单任务能学会、组合训练下降,9
-left_to_right_minima,B,insufficient_degradation_evidence,不足以认定组合训练下降,1
-left_to_right_minima,C,single_not_mastered,本配置单任务未充分学会,2
-left_to_right_minima,C,multi_degradation,单任务能学会、组合训练下降,9
-left_to_right_minima,C,insufficient_degradation_evidence,不足以认定组合训练下降,1
-longest_decreasing_run,B,single_not_mastered,本配置单任务未充分学会,2
-longest_decreasing_run,B,multi_degradation,单任务能学会、组合训练下降,9
-longest_decreasing_run,B,insufficient_degradation_evidence,不足以认定组合训练下降,1
-longest_decreasing_run,C,single_not_mastered,本配置单任务未充分学会,2
-longest_decreasing_run,C,multi_degradation,单任务能学会、组合训练下降,7
-longest_decreasing_run,C,insufficient_degradation_evidence,不足以认定组合训练下降,3
+fixed_points,B,single_not_mastered,Single task not fully learned under this configuration,0
+fixed_points,B,multi_degradation,Learned alone but degraded in multitask training,9
+fixed_points,B,insufficient_degradation_evidence,Insufficient evidence of multitask degradation,3
+fixed_points,C,single_not_mastered,Single task not fully learned under this configuration,2
+fixed_points,C,multi_degradation,Learned alone but degraded in multitask training,7
+fixed_points,C,insufficient_degradation_evidence,Insufficient evidence of multitask degradation,3
+exceedances,B,single_not_mastered,Single task not fully learned under this configuration,2
+exceedances,B,multi_degradation,Learned alone but degraded in multitask training,6
+exceedances,B,insufficient_degradation_evidence,Insufficient evidence of multitask degradation,4
+exceedances,C,single_not_mastered,Single task not fully learned under this configuration,2
+exceedances,C,multi_degradation,Learned alone but degraded in multitask training,9
+exceedances,C,insufficient_degradation_evidence,Insufficient evidence of multitask degradation,1
+left_to_right_minima,B,single_not_mastered,Single task not fully learned under this configuration,2
+left_to_right_minima,B,multi_degradation,Learned alone but degraded in multitask training,9
+left_to_right_minima,B,insufficient_degradation_evidence,Insufficient evidence of multitask degradation,1
+left_to_right_minima,C,single_not_mastered,Single task not fully learned under this configuration,2
+left_to_right_minima,C,multi_degradation,Learned alone but degraded in multitask training,9
+left_to_right_minima,C,insufficient_degradation_evidence,Insufficient evidence of multitask degradation,1
+longest_decreasing_run,B,single_not_mastered,Single task not fully learned under this configuration,2
+longest_decreasing_run,B,multi_degradation,Learned alone but degraded in multitask training,9
+longest_decreasing_run,B,insufficient_degradation_evidence,Insufficient evidence of multitask degradation,1
+longest_decreasing_run,C,single_not_mastered,Single task not fully learned under this configuration,2
+longest_decreasing_run,C,multi_degradation,Learned alone but degraded in multitask training,7
+longest_decreasing_run,C,insufficient_degradation_evidence,Insufficient evidence of multitask degradation,3

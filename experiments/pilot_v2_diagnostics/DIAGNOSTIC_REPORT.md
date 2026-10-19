@@ -1,34 +1,34 @@
-# PermWorld 第二轮诊断报告（2026-10-18）
+# PermWorld second-round diagnostic report (2026-10-18)
 
-已实际完成两个配对种子[17, 42]、30次学习率候选适配（每次800更新）、4次预训练延长（每次新增2400更新），以及冻结选择后生成的新隔离测试集评估。目标固定为256个不同训练样本的 fixed_points，任务组合、one-line编码和模型结构均沿用pilot_v1。没有增加任务或目标。
+Completed two paired seeds [17, 42], 30 learning-rate candidate adaptations of 800 updates each, 4 pretraining extensions of 2400 additional updates each, and evaluation on a new isolated test set generated after selections were frozen. The target is fixed_points with 256 distinct training examples; task composition, one-line encoding, and architecture follow pilot_v1. No tasks or targets were added.
 
-**2400步预训练、开发集选择后，B−A=-17.26、C−A=-8.74、B−C=-8.52个百分点。 4800步预训练、开发集选择后，B−A=-10.55、C−A=-12.87、B−C=+2.32个百分点。**
+**2400 pretraining steps and development selection: B−A=-17.26, C−A=-8.74, B−C=-8.52 percentage points. 4800 pretraining steps and development selection: B−A=-10.55, C−A=-12.87, B−C=+2.32 percentage points.**
 
-开发集选择后仍有低于A的均值，负迁移保留在结果中；两倍预算后仍有11/16个源任务×种子×条件组合的开发准确率低于90%。90%仅用于描述未充分掌握的诊断门槛，不是跨任务统一难度标准。不能从这些结果把迁移机制归因于已知数学关系。
+Some development-selected means remain below A; negative transfer is retained in the results. After doubling the budget, 11/16 source-task × seed × condition combinations still have development accuracy below 90%. The 90% threshold describes incomplete mastery diagnostically, not a universal difficulty standard across tasks. These results cannot attribute transfer mechanisms to the known mathematical relation.
 
-## 任务、数据与公平比较
+## Tasks, data, and fair comparison
 
-目标 fixed_points(p)=#{i:p(i)=i}，固定n=10。B预训练 anti_fixed_points、descents、peaks、left_to_right_maxima；C仅把anti_fixed_points替换成successions。关系为fixed_points(p)=anti_fixed_points(c(p))，c(p)(i)=11−p(i)。这是输入complement下的恒等式。successions没有被登记为该直接关系任务，未断言数学上无关。
+The target is fixed_points(p)=#{i:p(i)=i}, at fixed n=10. B pretrains on anti_fixed_points, descents, peaks, left_to_right_maxima; C replaces only anti_fixed_points with successions. The relation fixed_points(p)=anti_fixed_points(c(p)), c(p)(i)=11−p(i), is an identity under input complement. Successions is not registered as having this direct relation; mathematical unrelatedness is not asserted.
 
-两种子各沿用v1目标训练前256条及1024条开发输入；B/C共用8192条预训练输入、1024条源开发输入，四任务每批各16/64。适配所有候选共享同种子数据、采样序列与最大800更新。没有新增参数；目标专有初始化处理仅将既有目标task token的tied embedding/output行恢复到同种子共享step0值，数字输出参数继续迁移。每次适配新建AdamW并检查状态为空。
+Both seeds retain the first 256 v1 target training inputs and 1024 development inputs. B/C share 8192 pretraining inputs and 1024 source development inputs, with 16/64 examples per task in every batch. All adaptation candidates share same-seed data, sampling sequences, and a maximum 800 updates. No parameters are added: target-specific initialization restores only the existing target-task token's tied embedding/output row to the shared same-seed step0 value; numeric output parameters continue to transfer. Each adaptation creates AdamW afresh and verifies an empty state.
 
-新测试在10个开发集选择全部冻结之后生成，每种子2048条；按identity/inverse/reverse/complement完整轨道排除v1所有数据（包含历史测试）及跨种子新测试输入。显式轨道交集为0。两个种子均在同种子各条件、候选和协议之间共享同一新测试集。下列表全部是这批新测试结果，v1旧测试分数没有混入均值。v1原endpoint重新在新测试上评估。旧开发集被复用，且本轮问题来源于历史探索，所以这仍是诊断性探索。
+The new test set was generated after all 10 development selections were frozen, with 2048 inputs per seed. Complete identity/inverse/reverse/complement orbits exclude every v1 pool, including historical tests, and cross-seed new test inputs. Explicit orbit overlap is 0. Within each seed, all conditions, candidates, and protocols share the same new test set. All tables below use this test set; old v1 scores are not pooled into averages. Original v1 endpoints are reevaluated on the new test. The old development set is reused and the question arose from historical exploration, so this remains diagnostic exploration.
 
-## 历史记录与补充诊断
+## Historical records and supplementary diagnostics
 
-历史记录保存了预训练稀疏的最后一批双token损失、源endpoint准确率、目标每400更新（仅400和800步）的开发准确率/答案CE和最后一批训练损失。缺少逐源任务历史训练/开发损失轨迹、目标完整训练集轨迹及中间模型checkpoint。此次对原checkpoint补测完整源训练/开发集准确率、答案CE、双token CE、EOS准确率和按长度多数基线。历史中间模型无法从endpoint恢复，新重跑曲线明确记为replay，不伪装成历史测量。
+Historical records retain sparse last-batch two-token pretraining losses, source endpoint accuracies, target development accuracy/answer CE every 400 updates (only steps 400 and 800), and last-batch training loss. They lack per-source historical train/dev loss trajectories, full-target-training trajectories, and intermediate checkpoints. This round recomputes full source train/dev accuracy, answer CE, two-token CE, EOS accuracy, and majority baselines by length from original checkpoints. Historical intermediate models cannot be recovered from endpoints; new trajectories are explicitly labeled replay rather than presented as historical measurements.
 
-按长度基线在本轮只有n=10一层；多数标签由对应训练池确定，再测量该标签在训练/开发/测试池的命中率。源任务表中的答案CE使用全188词表；训练损失是答案与EOS的双token平均CE，两者不可混用。
+The length-stratified baseline has only n=10 in this round. The majority label comes from the corresponding training pool, then its accuracy is measured on train/dev/test. Source-table answer CE uses the full 188-token vocabulary; training loss averages answer and EOS CE and must not be conflated with answer CE.
 
-权重严格加载hash检查通过=True；同种子目标专有行一致=True；目标数据哈希一致=True；适配采样序列哈希一致=True；保存/继续训练4+4更新逐位一致=True。原预训练优化器步数为2400，原适配保存步数为800；新的适配优化器状态从0开始。
+Strict weight-load hash checks passed=True; same-seed target-specific rows match=True; target data hashes match=True; adaptation sampling hashes match=True; save/resume 4+4 updates are bitwise equal=True. Original pretraining optimizer steps are 2400 and saved adaptation steps 800; new adaptation optimizer states start at 0.
 
-历史v1没有保存适配起点参数指纹，历史加载/重置判断依据代码、保存的优化器步数及本次重建检查，不能声称掌握历史起点的直接哈希证据。v2每个候选实际运行前保存initialization.json，具有加载前后hash、目标行hash及空优化器状态记录。
+V1 did not save adaptation-start parameter fingerprints. Historical load/reset conclusions rely on code, saved optimizer steps, and reconstruction checks, not direct historical start-state hashes. Every v2 candidate saves initialization.json before running, recording pre/post-load hashes, target-row hashes, and empty optimizer state.
 
-历史6组256样本适配从400到800步，有6组开发答案CE上升、1组开发准确率下降。CE恶化可能反映置信度/校准恶化，不能全部写成准确率过拟合；历史最后一批混合双token loss也不能代替完整训练集损失。
+Across the 6 historical 256-example adaptations from step400 to 800, development answer CE rises in 6 groups and development accuracy declines in 1. Worse CE may reflect confidence/calibration deterioration and does not always mean accuracy overfitting. Historical last-batch mixed two-token loss is not a substitute for full-training-set loss.
 
-高学习率原协议重跑与v1原endpoint在6/6个单元逐位相同。最大参数绝对差见[replay表](artifacts/replay_v1_weight_differences.csv)。重跑补出的完整训练曲线可与相同权重终点关联，历史稀疏记录仍单独保留。
+High-learning-rate protocol replays are bitwise identical to original v1 endpoints in 6/6 units. Maximum absolute parameter differences are in the [replay table](artifacts/replay_v1_weight_differences.csv). The replayed full training curves can be associated with identical endpoint weights; sparse historical records remain separately available.
 
-| 种子 | 条件 | 预训练更新 | 逐位相同 | 最大参数差 |
+| Seed | Condition | Pretraining updates | Bitwise equal | Maximum parameter difference |
 | --- | --- | --- | --- | --- |
 | 17 | A | 0 | True | 0 |
 | 17 | B | 2400 | True | 0 |
@@ -37,11 +37,11 @@
 | 42 | B | 2400 | True | 0 |
 | 42 | C | 2400 | True | 0 |
 
-## 源任务学习与替换难度
+## Source learning and replacement difficulty
 
-下表为每种子的原预算和两倍预算endpoint。准确率与CE全部为完整池测量；更完整的双token/EOS指标和训练多数基线保存在[源学习表](artifacts/source_learning_table.csv)，延长阶段每600更新的结果见[全部源曲线CSV](artifacts/source_learning_all.csv)。
+The table gives original- and double-budget endpoints for each seed. Accuracy and CE use complete pools. Full two-token/EOS metrics and training majority baselines are in the [source-learning table](artifacts/source_learning_table.csv); extension measurements every 600 updates are in the [complete source-curve CSV](artifacts/source_learning_all.csv).
 
-| seed | 条件/更新 | 任务 | 训练acc | 开发acc | 训练CE | 开发CE | 开发多数 |
+| seed | Condition/updates | Task | Train acc | Dev acc | Train CE | Dev CE | Dev majority |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 17 | B/2400 | anti_fixed_points | 79.42% | 79.20% | 0.4954 | 0.4998 | 36.82% |
 | 17 | B/2400 | descents | 46.63% | 44.63% | 1.1989 | 1.2233 | 36.82% |
@@ -76,24 +76,24 @@
 | 42 | C/4800 | peaks | 70.32% | 71.19% | 0.6617 | 0.6622 | 52.64% |
 | 42 | C/4800 | successions | 56.41% | 55.37% | 0.9968 | 0.9891 | 41.31% |
 
-答案分布使用相同8192条源训练输入，延长训练不改变输入分布：
+Answer distributions use the same 8192 source training inputs; extending training does not change the input distribution:
 
-| seed | 任务 | 标签均值 | 熵(bit) | B/C总变差 |
+| seed | Task | Label mean | Entropy (bits) | B/C total variation |
 | --- | --- | --- | --- | --- |
 | 17 | anti_fixed_points | 0.9982 | 1.8757 | 0.0443 |
 | 17 | successions | 0.8905 | 1.7832 | 0.0443 |
 | 42 | anti_fixed_points | 1.0160 | 1.9031 | 0.0520 |
 | 42 | successions | 0.8829 | 1.7777 | 0.0520 |
 
-2400更新时，被替换任务开发准确率均值：anti_fixed_points=77.98%，successions=45.12%；开发答案CE均值分别为0.5617/1.1695。这是当前多任务优化条件下的学习差异，尚不能当作任务内在难度的独立估计。
+2400 updates, mean development accuracy for the replaced tasks is anti_fixed_points=77.98%, successions=45.12%; their mean development answer CE is 0.5617/1.1695. This is a learning difference under the current multitask optimization conditions, not an independent estimate of intrinsic task difficulty.
 
-4800更新时，被替换任务开发准确率均值：anti_fixed_points=89.31%，successions=51.86%；开发答案CE均值分别为0.2801/1.0721。这是当前多任务优化条件下的学习差异，尚不能当作任务内在难度的独立估计。
+4800 updates, mean development accuracy for the replaced tasks is anti_fixed_points=89.31%, successions=51.86%; their mean development answer CE is 0.2801/1.0721. This is a learning difference under the current multitask optimization conditions, not an independent estimate of intrinsic task difficulty.
 
-原预算→两倍预算的16个配对源任务单元中，16/16个开发准确率提高、16/16个开发答案CE下降；逐项训练/开发指标变化见[source_budget_changes.csv](artifacts/source_budget_changes.csv)。这说明继续训练对源学习的实际影响，同时保留仍未充分掌握的单元，不能以“有提升”代替“已经学会”。
+Among 16 paired source units from the original to doubled budget, development accuracy improves in 16/16 and development answer CE decreases in 16/16. Per-unit train/dev changes are in [source_budget_changes.csv](artifacts/source_budget_changes.csv). This records the actual impact of continued training while retaining units without mastery; improvement is not equivalent to having learned a task.
 
-B/C共有的三个源任务在两种组成下也呈现不同学习水平。下表是两种子平均开发结果，B/C使用相同公共任务输入、标签、采样比例和总预算：
+The three common B/C sources also reach different learning levels in the two compositions. The following development results average both seeds; B/C use identical common-task inputs, labels, sampling ratios, and total budgets:
 
-| 预训练更新 | 公共任务 | B开发acc | C开发acc | B−C百分点 | B开发CE | C开发CE |
+| Pretraining updates | Common task | B dev acc | C dev acc | B−C pp | B dev CE | C dev CE |
 | --- | --- | --- | --- | --- | --- | --- |
 | 2400 | descents | 47.07% | 49.66% | -2.59 | 1.1757 | 1.1016 |
 | 2400 | left_to_right_maxima | 96.24% | 96.97% | -0.73 | 0.1165 | 0.1002 |
@@ -102,15 +102,15 @@ B/C共有的三个源任务在两种组成下也呈现不同学习水平。下�
 | 4800 | left_to_right_maxima | 96.58% | 98.14% | -1.56 | 0.0986 | 0.0693 |
 | 4800 | peaks | 63.09% | 68.80% | -5.71 | 0.8073 | 0.6954 |
 
-任务替换伴随整个多任务模型的源能力差异，包括公共任务；因此后续替换匹配需要同时核对替换任务和公共任务的学习曲线与最终能力。该观察没有识别梯度冲突、数学关系或其他具体机制，也不能证明任何单任务的内在难度。完整训练/开发均值见[common_source_tasks_comparison.csv](artifacts/common_source_tasks_comparison.csv)。
+Task replacement accompanies source-capability differences across the whole multitask model, including common tasks. Later replacement matching should therefore examine both candidate and common-task learning curves and final capability. This observation identifies neither gradient conflict, mathematical relations, nor another specific mechanism, and does not prove intrinsic difficulty of any single task. Full train/dev means are in [common_source_tasks_comparison.csv](artifacts/common_source_tasks_comparison.csv).
 
-## 适配协议与新测试对照
+## Adaptation protocol and new-test comparison
 
-各条件/种子/预训练预算拥有同样三个学习率3e−4、1e−4、3e−5，各800更新；100步warmup后余弦衰减到0.1倍。每100更新测量完整训练集与开发集，step0仅诊断，不参与选择。按开发答案准确率最大、答案CE最小、更新步最早、声明学习率顺序依次打破平局。先在各候选中选checkpoint，再以同一规则选择学习率；测试分数从不参与选择。
+Every condition/seed/pretraining budget has the same three learning rates 3e−4,1e−4,3e−5 and 800 updates each, with 100 warmup steps followed by cosine decay to 0.1 of the initial rate. Full train/dev metrics are measured every 100 updates. Step0 is diagnostic only and ineligible for selection. Ties are resolved by highest development answer accuracy, lowest answer CE, earliest update, then declared learning-rate order. A checkpoint is selected within each candidate and then a learning rate using the same rule; test scores never participate.
 
-两倍预算从原2400更新checkpoint继续，保留原优化器与随机数状态，用原末端学习率3e−5继续2400更新。它检验固定末端学习率的继续训练，并非从头训练4800步的新余弦计划。两预算使用同一适配选择规则。A的预训练预算恒为0，在两预算面板中复用同一运行，未额外训练或当成新增种子。
+The doubled budget continues from the original 2400-update checkpoint, preserving optimizer and random states, for another 2400 updates at the original endpoint learning rate 3e−5. It tests continuation at a fixed final rate, not a fresh 4800-step cosine plan. Both budgets use the same adaptation selection rule. A always has pretraining budget 0 and is reused in both panels, without extra training or counting as another seed.
 
-| 比较预训练预算 | 协议 | A | B | C |
+| Comparison pretraining budget | Protocol | A | B | C |
 | --- | --- | --- | --- | --- |
 | 2400 | original_v1_endpoint_new_test | 84.35% | 69.68% | 77.05% |
 | 2400 | replay_fixed_lr_endpoint | 84.35% | 69.68% | 77.05% |
@@ -120,11 +120,11 @@ B/C共有的三个源任务在两种组成下也呈现不同学习水平。下�
 | 4800 | dev_selected | 84.64% | 74.10% | 71.78% |
 | 4800 | selected_lr_endpoint | 84.35% | 74.56% | 72.39% |
 
-`original_v1_endpoint_new_test`为原学习率、800步原权重在新测试上的结果；`replay_fixed_lr_endpoint`为同原学习率重新训练的终点；`dev_selected`为开发选择的学习率及checkpoint；`selected_lr_endpoint`为同一选中学习率在800步的终点。表为两个种子算术均值；每种子结果及描述性标准差见[协议均值CSV](artifacts/protocol_comparison_mean.csv)和[配对对照CSV](artifacts/protocol_comparison_paired.csv)，不作显著性推断。
+`original_v1_endpoint_new_test` evaluates original 800-step weights at the original learning rate on the new test; `replay_fixed_lr_endpoint` is the retrained endpoint at that rate; `dev_selected` is the development-selected learning rate and checkpoint; `selected_lr_endpoint` is the 800-step endpoint at the same selected rate. Tables show arithmetic means across two seeds. Per-seed values and descriptive standard deviations are in the [protocol means CSV](artifacts/protocol_comparison_mean.csv) and [paired comparison CSV](artifacts/protocol_comparison_paired.csv); no significance inference is made.
 
-![协议对照](artifacts/figures/protocol_comparison.png)
+![Protocol comparison](artifacts/figures/protocol_comparison.png)
 
-| seed | 条件/预训练 | 选中LR | 选中步 | 选中开发acc | 终点开发acc | 选中测试acc | 终点测试acc |
+| seed | Condition/pretraining | Selected LR | Selected step | Selected dev acc | Endpoint dev acc | Selected test acc | Endpoint test acc |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 17 | A/0 | 0.0003 | 700 | 81.54% | 81.05% | 82.81% | 82.23% |
 | 17 | B/2400 | 0.0003 | 700 | 83.79% | 82.71% | 84.47% | 83.89% |
@@ -137,17 +137,17 @@ B/C共有的三个源任务在两种组成下也呈现不同学习水平。下�
 | 42 | B/4800 | 0.0003 | 500 | 74.22% | 73.24% | 71.88% | 72.80% |
 | 42 | C/4800 | 0.0003 | 700 | 70.70% | 70.51% | 69.97% | 70.02% |
 
-开发集选择的学习率计数：0.0003选中9/10组、0.0001选中1/10组、3e-05选中0/10组；seed42 B/2400选择0.0001、500步。每种子的A0只计一次，10组不是10个独立随机种子。当前同为800步的候选预算下，结果不支持把简单统一降低学习率视为普遍修复；这不排除低学习率需要更多更新、不同warmup/衰减日程，或候选集合以外的适配策略更合适。计数见[selected_learning_rate_counts.csv](artifacts/selected_learning_rate_counts.csv)。
+Development-selected learning-rate counts: 0.0003 selected in 9/10 groups, 0.0001 selected in 1/10 groups, 3e-05 selected in 0/10 groups; seed42 B/2400 selects 0.0001, 500 steps. Each seed's A0 is counted once;10 groups are not 10 independent seeds. With equally budgeted 800-step candidates, the results do not support uniformly lowering the rate as a universal repair. This does not exclude lower rates requiring more updates, different warmup/decay schedules, or better adaptation strategies outside the candidate set. See [selected_learning_rate_counts.csv](artifacts/selected_learning_rate_counts.csv).
 
-固定2400预训练预算下，开发选择相对原v1 endpoint的新测试准确率变化：A +0.29、B -2.29、C -1.15个百分点。这同时改变学习率和停止位置，只能评价这一联合适配协议；不能把差值全部归因于其中一个因素。
+At the fixed 2400-update pretraining budget, development selection changes new-test accuracy relative to the original v1 endpoint by A +0.29, B -2.29, C -1.15 percentage points. Both learning rate and stopping point change, so this evaluates their joint adaptation protocol; the difference cannot be attributed entirely to either factor.
 
-10个选择中7个早于800更新；其中6个从最佳开发checkpoint到终点出现开发准确率下降且开发CE上升。该计数受开发集选择规则影响：被选checkpoint的开发准确率不低于终点几乎是规则本身的结果，不能单凭它证明过拟合。完整曲线见[曲线CSV](artifacts/target_curves.csv)，最佳与终点差值见[best_vs_endpoint](artifacts/best_vs_endpoint.csv)；对应新测试差值只作为冻结后的验证，不用于重新选择。
+Of 10 selections, 7 occur before 800 updates; in 6 of these, development accuracy decreases and development CE rises from the best development checkpoint to the endpoint. This count is affected by selection: the selected checkpoint having development accuracy at least as high as the endpoint is almost inherent in the rule, and alone does not prove overfitting. See the [curve CSV](artifacts/target_curves.csv) and [best-versus-endpoint differences](artifacts/best_vs_endpoint.csv). Corresponding new-test differences are frozen-protocol validation only, never used for reselection.
 
-在这7个提前选择中，只有2个选中checkpoint的新测试准确率高于同学习率800步终点，5个更低。开发选择没有保证在新测试上获益；这些失败选择按冻结方案完整保留，不根据新测试反向挑选终点、学习率或重新训练。
+Among these 7 early selections, only 2 selected checkpoints have higher new-test accuracy than their same-rate 800-step endpoints, while 5 are lower. Development selection does not guarantee new-test benefits. Failed selections are fully retained under the frozen plan, without using the new test to choose endpoints or rates retrospectively or to retrain.
 
-另对全部30候选统一比较固定400→800步，不依赖选中学习率或checkpoint：23/30出现训练答案CE下降且开发答案CE上升，其中1/30同时开发准确率下降。前者支持训练拟合继续改善但开发损失退化的现象，只有后者同时表明准确率也退化；均不证明其是负迁移的唯一原因。每100步的稀疏评估不能把这些现象等同于数值优化不稳定，也不能完全排除未采样时间点的瞬时不稳定。这是探索性固定窗口诊断，30个共享数据/初始化的候选不是30个独立种子。原始指标和标记见[late_training_diagnostics.csv](artifacts/late_training_diagnostics.csv)。
+Separately, a uniform fixed 400→800-step comparison over all 30 candidates, independent of selected rates or checkpoints, finds training answer CE decreasing while development answer CE increases in 23/30; development accuracy also declines in 1/30. The former supports improving training fit with worsening development loss; only the latter additionally shows accuracy deterioration. Neither proves a sole cause of negative transfer. Sparse 100-step evaluation cannot equate this with numerical optimization instability or rule out transient instability at unsampled steps. This is an exploratory fixed-window diagnostic;30 candidates sharing data/initialization are not 30 independent seeds. Raw metrics and flags are in [late_training_diagnostics.csv](artifacts/late_training_diagnostics.csv).
 
-| 条件/预训练 | 候选数 | 训练CE下降 | 开发CE上升 | 开发acc下降 | 训练CE↓且开发CE↑ | 前项且开发acc↓ |
+| Condition/pretraining | Candidates | Train CE decreases | Dev CE increases | Dev acc decreases | Train CE↓ and dev CE↑ | Previous and dev acc↓ |
 | --- | --- | --- | --- | --- | --- | --- |
 | A/0 | 6 | 6 | 2 | 0 | 2 | 0 |
 | B/2400 | 6 | 6 | 6 | 1 | 6 | 1 |
@@ -155,20 +155,20 @@ B/C共有的三个源任务在两种组成下也呈现不同学习水平。下�
 | B/4800 | 6 | 6 | 5 | 0 | 5 | 0 |
 | C/4800 | 6 | 6 | 5 | 0 | 5 | 0 |
 
-开发选择后两倍预训练相对原预算的新测试差值：B +6.71个百分点；C -4.13个百分点。增加预训练预算与固定预算结果分开呈现，不能把两倍计算带来的差值当作原固定预算条件下的任务组成效应。
+New-test differences after development selection for doubled versus original pretraining budget: B +6.71 percentage points; C -4.13 percentage points. Increased-budget results are separate from fixed-budget results; differences from twice the computation are not task-composition effects under the original fixed budget.
 
-预算变化的逐种子效应如下（开发选择后的4800−2400测试准确率，百分点）；均值不能代表每个种子都受益：
+Per-seed budget effects follow (development-selected 4800−2400 test accuracy, percentage points). A mean benefit need not occur in every seed:
 
-| seed | B预算变化 | C预算变化 |
+| seed | B budget effect | C budget effect |
 | --- | --- | --- |
 | 17 | -8.15 | -7.81 |
 | 42 | +21.58 | -0.44 |
 
-B的预算效应在两个种子之间异号，说明当前预算效应有明显异质性，不能将其均值解释为稳定收益。各协议的逐种子预算差值见[target_budget_deltas.csv](artifacts/target_budget_deltas.csv)。
+B budget effects have opposite signs across the two seeds, showing substantial heterogeneity; their means cannot be interpreted as stable benefits.Per-seed budget differences for all protocols are in [target_budget_deltas.csv](artifacts/target_budget_deltas.csv).
 
-逐配对种子差值如下（百分点）：
+Differences by paired seed (percentage points):
 
-| seed | 预算 | 协议 | B−A | C−A | B−C |
+| seed | Budget | Protocol | B−A | C−A | B−C |
 | --- | --- | --- | --- | --- | --- |
 | 17 | 2400 | dev_selected | +1.66 | -1.42 | +3.08 |
 | 17 | 2400 | selected_lr_endpoint | +1.66 | -0.83 | +2.49 |
@@ -179,21 +179,21 @@ B的预算效应在两个种子之间异号，说明当前预算效应有明显�
 | 42 | 4800 | dev_selected | -14.60 | -16.50 | +1.90 |
 | 42 | 4800 | selected_lr_endpoint | -13.67 | -16.46 | +2.78 |
 
-## 计算预算与运行时间
+## Compute budget and runtime
 
-原B/C预训练每次2400更新×64=153600次样本曝光、4300800输入tokens（含答案与EOS）、307200监督tokens；两倍预算总计307200次曝光、8601600输入tokens、614400监督tokens。四任务严格各25%；预训练池8192条，实际每任务看过的不同输入数与采样hash见[source_budgets.csv](artifacts/source_budgets.csv)。延长继续使用相同池，增加的是曝光次数，不是不同训练样本数。
+Each original B/C pretraining run uses 2400 updates×64=153600 sample exposures, 4300800 input tokens including answer/EOS, and 307200 supervised tokens. The doubled budget totals 307200 exposures, 8601600 input tokens, and 614400 supervised tokens. Each of four tasks receives exactly 25%. The pool has 8192 inputs; distinct inputs actually visited per task and sampling hashes are in [source_budgets.csv](artifacts/source_budgets.csv). Continuation uses the same pool, increasing exposures rather than distinct examples.
 
-每次适配800×64=51200次曝光、1433600输入tokens、102400监督tokens；256条目标训练样本平均曝光200遍。每组3个候选共2400更新。A复用使本轮实际候选数为30，而非36。
+Each adaptation uses 800×64=51200 exposures, 1433600 input tokens, and 102400 supervised tokens; each of 256 target training examples is exposed 200 times on average. 3 candidates per group total 2400 updates. Reusing A gives 30 actual candidates, not 36.
 
-| 阶段 | 运行数 | 新增计算 | 更新合计 | 输入tokens | 监督tokens | 记录循环秒数 |
+| Stage | Runs | New compute | Total updates | Input tokens | Supervised tokens | Recorded loop seconds |
 | --- | --- | --- | --- | --- | --- | --- |
 | v1_pretraining_reused | 4 | False | 9,600 | 17,203,200 | 1,228,800 | 169.6 |
 | v2_adapt_candidate | 30 | True | 24,000 | 43,008,000 | 3,072,000 | 866.9 |
 | v2_pretrain_extension | 4 | True | 9,600 | 17,203,200 | 1,228,800 | 348.5 |
 
-本轮记录的训练及关联评估/保存计时合计1215.3秒；其中新增预训练348.5秒、额外17,203,200输入tokens。仅已记录阶段的墙钟合计1275.7秒（21.3分钟），实际覆盖freeze, select, smoke, test, train；与上述训练计时重叠，不应相加。inventory经独立CLI执行且没有timing_inventory记录，因此其耗时不在上述墙钟合计内。这不是包含全部诊断工作的端到端总时长。适配计时包含step0和后续完整训练/开发评估、候选内best checkpoint保存、适用时的重放权重差异检查；不含初始化和最终endpoint保存。源延长计时包含训练、源训练/开发测量和CPU NumPy采样器重放核验，不含最后保存。均不是纯GPU训练时间，未记录诊断forward的精确tokens。模型训练tokens与评估成本严格区分。smoke小步更新另计在smoke阶段墙钟，不计入正式训练tokens。
+Recorded training and associated evaluation/saving timers total 1215.3 seconds, including 348.5 seconds and 17,203,200 additional input tokens for extended pretraining. Recorded-stage wall time totals 1275.7 seconds (21.3 minutes), coveringfreeze, select, smoke, test, train; it overlaps training timers and must not be added to them. Inventory ran through a separate CLI without a timing_inventory record, so its duration is excluded from the wall-time total above. This is not end-to-end duration for all diagnostic work. Adaptation timing includes step0 and later full train/dev evaluations, candidate best-checkpoint saves, and replay-weight comparisons where applicable; it excludes initialization and final endpoint saving. Source-extension timing includes training, source train/dev measurements, and CPU NumPy sampler replay checks, but excludes final saving. These are not pure GPU training times; exact diagnostic-forward tokens were not recorded. Model training tokens and evaluation costs are distinguished. Smoke-test updates are counted separately in smoke-stage wall time, not formal training tokens.
 
-| 阶段 | 墙钟秒数 |
+| Stage | Wall seconds |
 | --- | --- |
 | freeze | 0.01 |
 | select | 0.02 |
@@ -201,26 +201,26 @@ B的预算效应在两个种子之间异号，说明当前预算效应有明显�
 | test | 40.88 |
 | train | 1232.41 |
 
-## 得到支持的解释与仍无法区分的因素
+## Supported explanations and unresolved factors
 
-1. **源任务未充分掌握、当前多任务条件下学习水平不匹配有直接证据。** 完整源训练/开发结果及继续训练曲线说明被替换任务和公共任务均存在B/C能力差异；仅答案分布近似并不等于学习条件或最终能力匹配。训练与开发同时较低的任务不能仅用源过拟合解释，公共任务差异也没有单独识别梯度冲突或数学关系机制。
-2. **固定窗口显示部分训练后期泛化退化，适配协议敏感性由同数据同预算候选直接检验。** 统一400→800步中，23/30候选训练答案CE下降而开发答案CE上升，1/30还伴随开发准确率下降。该证据不依赖挑选最佳checkpoint；最佳开发点与终点的开发差距受选择规则约束，不能独立证明过拟合。开发选择与原协议的新测试差异是冻结后的验证；LR和checkpoint联合选择的影响不能单独识别负迁移的原因，失败的选择也完整保留。
-3. **检查未发现加载、目标专有行、优化器重置或条件间数据/评估不一致。** 哈希与状态审计、继续训练smoke、原高LR重跑差异表给出了可检查证据；这些工程错误作为本轮差异的解释不受现有证据支持。
-4. **机制仍无法识别。** 没有控制替换任务最终能力、梯度冲突、表示变化或输入complement归纳偏置。更长预训练同时改变源能力与参数位置，不是隔离机制的干预。本轮没有开展CKA扫描；兼容state_dict及配置保留供后续接入。
-5. **统计与选择范围有限。** 两个随机单元同时改变初始化和数据，不能分开估计两者；单一长度、目标和任务替换不能外推到任务库。开发集长期复用可能有选择偏差；全部候选的新测试数值只作冻结后披露，不据此追选学习率、重训或改配置。旧v1测试保持其探索性质。
+1. **There is direct evidence of incomplete source mastery and mismatched learning levels under current multitask conditions.** Full source train/dev results and continuation curves show B/C capability differences for both replaced and common tasks. Similar answer distributions do not ensure matched learning conditions or final capability. Low training and development scores cannot be explained solely by source overfitting, and common-task differences do not isolate gradient conflict or a mathematical-relation mechanism.
+2. **The fixed window shows some late-training generalization deterioration; same-data, same-budget candidates directly test protocol sensitivity.** From 400→800 steps, training answer CE decreases while development answer CE increases in 23/30 candidates, with development accuracy also declining in 1/30. This evidence does not depend on best-checkpoint selection. The development gap between best and endpoint is constrained by selection and does not independently prove overfitting. New-test differences between development selection and the original protocol are frozen-protocol validation. Joint learning-rate/checkpoint selection cannot alone identify the cause of negative transfer; failed selections are retained.
+3. **Checks found no inconsistency in loading, target-specific rows, optimizer reset, or data/evaluation across conditions.** Hash/state audits, continuation smoke tests, and original-high-LR replay comparisons provide inspectable evidence. These engineering errors are not supported as explanations of the observed differences.
+4. **Mechanisms remain unidentified.** Final replacement-task capability, gradient conflicts, representation changes, and complement-input inductive bias were not controlled. Longer pretraining changes both source capability and parameter location; it is not a mechanism-isolating intervention. No CKA sweep was conducted; compatible state_dicts and configurations remain available.
+5. **Statistical and selection scope is limited.** Both initialization and data change across two random units, so their effects cannot be estimated separately. One length, target, and task replacement cannot generalize to the library. Repeated development-set reuse may introduce selection bias. All candidate new-test scores are disclosed only after freezing, without further rate selection, retraining, or configuration changes. The old v1 test retains its exploratory status.
 
-## 下一步建议与停止边界
+## Next-step recommendation and stopping boundary
 
-**优先检查替换任务匹配，其次才增加目标任务，最后再考虑扩大源任务数量。** 当前任务组合中的源开发能力差异尚未消除，先在不看目标迁移测试的条件下，以单任务/源开发学习曲线、标签分布及收敛能力匹配替换任务，能直接减少B/C机制解释的混杂。匹配检查同时覆盖被替换任务及三个公共源任务的训练/开发曲线和最终能力，因为本轮任务替换也伴随公共任务能力变化。当前v2不更换任务；若后续保留现有替换任务，则先建立更充分且等计算预算的源学习条件。匹配检查之后，再增加少量预先指定且具已知关系的目标，检验单目标结论是否可复现；扩大任务数量现在会同时增加混杂与计算量。
+**Prioritize replacement-task matching, then add targets, and only later increase source-task count.** Source-development capability differences remain unresolved. Match replacements using single-task/source-development learning curves, label distributions, and convergence capability while target transfer tests remain unseen, reducing confounds in interpreting B/C mechanisms. Matching must include train/dev curves and final capability for the replaced task and all three common sources, because replacement also accompanies common-task changes here. V2 does not change tasks. If later work retains these replacements, first establish more adequate source learning under equal compute budgets. After matching, add a few prespecified targets with known relations to test reproducibility beyond one target. Increasing task count now would add both confounds and cost.
 
-本轮到此停止扩展，等待后续指导。所有已运行结果（包括负迁移和源任务未充分学会）均保留。
+Expansion stops here pending further guidance. All completed results, including negative transfer and incompletely learned sources, are retained.
 
-## 产物与复现
+## Artifacts and reproduction
 
-- 每种子全部候选测试：[seed17](artifacts/results_seed17.csv)、[seed42](artifacts/results_seed42.csv)；[原始协议对照](artifacts/protocol_comparison.csv)。
-- [完整配置与冻结代码hash](artifacts/FROZEN_PROTOCOL.json)、[选择冻结记录](artifacts/SELECTIONS_FROZEN.json)、[新测试隔离审计](artifacts/test_data_audit.json)。
-- [源学习表](artifacts/source_learning_table.csv)、[实际预算](artifacts/source_budgets.csv)、[候选开发结果](artifacts/candidate_development_results.csv)、[完整目标曲线](artifacts/target_curves.csv)、[实际成本](artifacts/compute_costs.csv)。
-- 目标每seed/condition/budget的选中LR训练/开发曲线为`artifacts/figures/target_selected_*.png`，三LR比较为`target_lr_comparison_*.png`，源学习曲线为`source_seed*.png`。图使用答案准确率和答案CE，不把双token训练loss伪装成答案CE。
-- [复现说明](README.md)。本报告与图由`.venv/Scripts/python.exe experiments/pilot_v2_diagnostics/summarize.py`从已保存产物生成；该脚本没有任何模型forward，不选择或重跑训练。
+- All candidate tests by seed: [seed17](artifacts/results_seed17.csv), [seed42](artifacts/results_seed42.csv); [raw protocol comparison](artifacts/protocol_comparison.csv).
+- [Full configuration and frozen code hashes](artifacts/FROZEN_PROTOCOL.json), [frozen selections](artifacts/SELECTIONS_FROZEN.json), [new-test isolation audit](artifacts/test_data_audit.json).
+- [Source-learning table](artifacts/source_learning_table.csv), [actual budgets](artifacts/source_budgets.csv), [candidate development results](artifacts/candidate_development_results.csv), [complete target curves](artifacts/target_curves.csv), [actual cost](artifacts/compute_costs.csv).
+- Selected-rate target train/dev curves by seed/condition/budget are `artifacts/figures/target_selected_*.png`; three-rate comparisons are `target_lr_comparison_*.png`; source-learning curves are `source_seed*.png`. Figures use answer accuracy and answer CE, without presenting two-token training loss as answer CE.
+- [Reproduction instructions](README.md). This report and figures are generated from saved artifacts by `.venv/Scripts/python.exe experiments/pilot_v2_diagnostics/summarize.py`; the script has no model forwards and does not select or rerun training.
 
-最终产物审计状态：passed，见[FINAL_AUDIT.json](artifacts/FINAL_AUDIT.json)。审计另核验选择冻结先于新测试生成、测试/选择hash、源码冻结hash和v1文件逐字节保留。
+Final artifact audit status: passed; see [FINAL_AUDIT.json](artifacts/FINAL_AUDIT.json). The audit also verifies that selection freezing precedes new-test generation, test/selection hashes, frozen source hashes, and byte preservation of v1 files.

@@ -105,33 +105,33 @@ def exploratory():
     fig.suptitle("v4 exploratory evidence: differences computed within each paired seed", fontsize=13)
     fig.tight_layout()
     savefig(fig, out / "exploratory_paired_background_changes")
-    body = table(["目标", "背景改变", "seed", "Δ(B−A) pp", "Δ(C−A) pp", "Δ(B−C) pp"],
+    body = table(["Target", "Background change", "seed", "Δ(B−A) pp", "Δ(C−A) pp", "Δ(B−C) pp"],
                  [[r["target"], r["new_background"] + "−g0", r["seed"],
                    *(f"{100 * r[m]:+.4f}" for m in ps.METRICS)] for r in differences])
-    summary_table = table(["目标", "背景改变", "Δ(B−A)均值 pp", "Δ(C−A)均值 pp", "Δ(B−C)均值 pp", "交互逐seed范围 pp"],
+    summary_table = table(["Target", "Background change", "Mean Δ(B−A) pp", "Mean Δ(C−A) pp", "Mean Δ(B−C) pp", "Per-seed interaction range pp"],
                           [[target, background + "−g0",
                             *(f"{100 * next(r['mean'] for r in summaries if r['target'] == target and r['new_background'] == background and r['metric'] == m):+.4f}" for m in ps.METRICS),
                             f"[{100 * min(r['delta_B_minus_C'] for r in differences if r['target'] == target and r['new_background'] == background):+.4f}, {100 * max(r['delta_B_minus_C'] for r in differences if r['target'] == target and r['new_background'] == background):+.4f}]"]
                            for target in TARGETS for background, *_ in backgrounds])
-    report = f"""# v4 现有结果的逐种子配对重算
+    report = f"""# Per-seed paired recomputation of existing v4 results
 
-本文件只读取既有 `pilot_v4_backgrounds/artifacts/results_selected.csv`，没有新增训练，也不读取 v5 验证结果。旧种子17/42/73仅为探索证据。全部结果使用各自按开发集选出的checkpoint在同一v4新测试池上的准确率；A在各背景共享。
+This file reads only existing `pilot_v4_backgrounds/artifacts/results_selected.csv`, without new training or reading v5 confirmation results. Old seeds 17/42/73 provide exploratory evidence only. All results are accuracies of development-selected checkpoints on the same new v4 test pools; A is shared across backgrounds.
 
-对于每个种子，先计算 `Δ(B−A)=(B新−A)−(B原−A)`、`Δ(C−A)=(C新−A)−(C原−A)`，再计算主交互 `Δ(B−C)=(B新−C新)−(B原−C原)`。共享A使前两项分别等于B与C本身的背景差；交互等于前两项之差。以下数字为百分点，CSV保留准确率比例原值。
+For each seed, compute `Δ(B−A)=(B_new−A)−(B_original−A)` and `Δ(C−A)=(C_new−A)−(C_original−A)`, then the primary interaction `Δ(B−C)=(B_new−C_new)−(B_original−C_original)`. Shared A cancels, so the first two terms equal the background changes in B and C themselves; the interaction is their difference. Values below are percentage points; CSV files retain raw accuracy proportions.
 
 {body}
 
 {summary_table}
 
-fixed_points的deficiencies背景相对原背景，B−A平均增加16.59pp、C−A平均增加12.22pp，因此主交互只有+4.36pp；三个种子均为正，但幅度从约+0.34到+11.33pp。不能把B单独的改善全部归于相关源相对替换源的优势。
+For fixed_points, the deficiencies background versus the original increases mean B−A by 16.59pp and C−A by 12.22pp, leaving a primary interaction of only +4.36pp. All three seeds are positive, ranging from about +0.34 to +11.33pp. Improvement in B alone cannot all be attributed to the advantage of the related source over its replacement.
 
-longest_decreasing_run的recoils背景相对原背景，主交互平均−12.00pp，三个种子中两个为负、一个为正；主要表现为B的变化，而C平均变化较小。另两组探索组合也保留，未据其结果增加验证对比。
+For longest_decreasing_run, the recoils background versus the original has a mean primary interaction of −12.00pp, negative in two seeds and positive in one. This mainly reflects change in B, while C changes less on average. The other two exploratory compositions are retained without adding confirmation contrasts from their results.
 
-这些是直接逐种子相减的结果，不通过两组各自的标准差判断背景差异是否可靠。三个探索块和依据同批结果挑出的对比不能提供独立验证；本轮不对这三块作显著性承诺。下一步固定验证FP的g2−g0正方向、LDR的g1−g0负方向，使用五个新数据/初始化配对单元，统计方案见 `../stats_plan.json`。探索与验证分别报告，不合并成八重复。
+These are direct within-seed differences; separate SDs for the two groups are not used to judge background-effect reliability. Three exploratory blocks and contrasts chosen from the same results cannot provide independent confirmation; no significance claim is made for those blocks. The next stage fixes the positive FP g2−g0 and negative LDR g1−g0 directions, using five new paired data/initialization units; see `../stats_plan.json`. Exploration and confirmation are reported separately, not pooled as eight repeats.
 
-![逐种子背景差](exploratory_paired_background_changes.png)
+![Background differences by seed](exploratory_paired_background_changes.png)
 
-原始重算数据：[exploratory_paired_differences.csv](exploratory_paired_differences.csv)。全部12条交互另与v4旧交互CSV逐项核对，在1e−12精度内一致；该旧表没有参与重算，见[审计](exploratory_statistics_audit.json)。
+Recomputed raw data: [exploratory_paired_differences.csv](exploratory_paired_differences.csv). All 12 interactions were independently checked against the old v4 interaction CSV and agree within 1e−12. That old table was not used in recomputation; see the [audit](exploratory_statistics_audit.json).
 """
     (out / "EXPLORATORY_ANALYSIS_ZH.md").write_text(report, encoding="utf-8")
     print(json.dumps({"stage": "exploratory", "rows": len(differences), "report": str(out / "EXPLORATORY_ANALYSIS_ZH.md")}))
@@ -391,19 +391,19 @@ def source_result_findings(learning, contexts, summaries):
                      - dev_by_key["longest_decreasing_run", r["seed"], "g0_v3", condition, "peaks"])
                     for r in ldr for condition in ("B", "C")]
     peak_positive = "; ".join(f"{condition}/seed{seed}: {pp(value)}pp" for seed, condition, value in peak_changes if value > 0)
-    ldr_exceptions = "；".join(
-        f"seed{r['seed']}的LIR源dev变化{pp(r['B_candidate_dev_change'])}pp，目标B变化{pp(r['delta_B_minus_A'])}pp、C变化{pp(r['delta_C_minus_A'])}pp，主交互却为{pp(r['delta_B_minus_C'])}pp"
+    ldr_exceptions = "; ".join(
+        f"seed{r['seed']}: LIR source dev changes by {pp (r['B_candidate_dev_change'])}pp, target B by {pp (r['delta_B_minus_A'])}pp and C by {pp (r['delta_C_minus_A'])}pp, yet the primary interaction is {pp (r['delta_B_minus_C'])}pp"
         for r in ldr if r["B_candidate_dev_change"] < 0 and r["delta_B_minus_C"] > 0)
     component = {(r["target"], r["metric"]): r["mean"] for r in summaries}
-    return f"""源学习的测试前独立描述已保存在[SOURCE_LEARNING_NOTES.md](SOURCE_LEARNING_NOTES.md)，其审计记录当时TEST_COMPLETE尚不存在。以下才将源记录与冻结后的目标结果并列，区分证据和解释。
+    return f"""The independent description of source learning before testing is saved in [SOURCE_LEARNING_NOTES.md](SOURCE_LEARNING_NOTES.md); its audit records that TEST_COMPLETE did not yet exist. Only the following section juxtaposes source records with frozen target results, distinguishing evidence from interpretation.
 
-**FP：B/C共同改善再次出现，预指定的正替换交互未复现。** anti_fixed_points的源dev均值由{pct(average_field(af0, 'multi4800_dev_accuracy'))}变为{pct(average_field(af2, 'multi4800_dev_accuracy'))}，两边都已接近99%；{fp_source_target_opposed}/5个重复中该源dev下降但B的目标准确率提高。因此“原背景没有学会相关候选”不能作为这一目标的统一解释，也不能用候选源准确率直接代理目标收益。B−A与C−A的背景改变均值分别为{pp(component['fixed_points', 'delta_B_minus_A'])}/{pp(component['fixed_points', 'delta_C_minus_A'])}pp，五个重复的两项都提高，但后者平均更大；主交互为{pp(component['fixed_points', 'delta_B_minus_C'])}pp。deficiencies在B/C新背景中都学得很高，也都具有跨输入联合恢复FP的公式，这是重要的设计事实；本轮并未证明模型利用该公式，不能把共同收益直接归因于这条路径。
+**FP: joint improvement in B/C appears again, but the prespecified positive replacement interaction does not reproduce.** Mean anti_fixed_points source dev changes from {pct (average_field (af0, 'multi4800_dev_accuracy'))} to {pct (average_field (af2, 'multi4800_dev_accuracy'))}, both near 99%. In {fp_source_target_opposed}/5 repeats this source dev decreases while B target accuracy increases. Failure to learn the related candidate in the original background therefore cannot uniformly explain this target, and candidate-source accuracy cannot directly proxy target benefit. Mean background changes in B−A and C−A are {pp (component['fixed_points', 'delta_B_minus_A'])}/{pp (component['fixed_points', 'delta_C_minus_A'])}pp. Both improve in all five repeats, but C improves more on average; the primary interaction is {pp (component['fixed_points', 'delta_B_minus_C'])}pp. deficiencies is well learned in both B/C new backgrounds, and both admit the formula for cross-input joint recovery of FP. This is an important design fact, but the round does not prove that the model used the formula, so joint gains cannot be directly attributed to this pathway.
 
-**LDR：源学习下降与B目标收益下降共同出现，但不能据此推出交互机制。** LIR源dev均值由{pct(average_field(lir0, 'multi4800_dev_accuracy'))}变为{pct(average_field(lir1, 'multi4800_dev_accuracy'))}，五次均下降；新背景train均值{pct(average_field(lir1, 'multi4800_train_accuracy'))}、dev多数基线均值{pct(average_field(lir1, 'multi4800_dev_majority_accuracy'))}。训练和开发都低，支持当前预算下源学习不足，而不是仅有训练拟合后的泛化落差。五次B目标准确率也均下降，B−A背景改变均值{pp(component['longest_decreasing_run', 'delta_B_minus_A'])}pp；C−A同时改变{pp(component['longest_decreasing_run', 'delta_C_minus_A'])}pp，所以主交互均值为{pp(component['longest_decreasing_run', 'delta_B_minus_C'])}pp。保留关键反例：{ldr_exceptions}。交互取决于B和C两边，单看B源下降会漏掉它。
+**LDR: lower source learning accompanies lower B target benefit, but does not establish an interaction mechanism.** Mean LIR source dev changes from {pct (average_field (lir0, 'multi4800_dev_accuracy'))} to {pct (average_field (lir1, 'multi4800_dev_accuracy'))}, decreasing in all five repeats. New-background mean train is {pct (average_field (lir1, 'multi4800_train_accuracy'))}, and mean development majority baseline is {pct (average_field (lir1, 'multi4800_dev_majority_accuracy'))}. Both train and development are low, supporting insufficient source learning under this budget rather than only a generalization gap after training fit. B target accuracy also decreases in all five repeats, with mean B−A background change {pp (component['longest_decreasing_run', 'delta_B_minus_A'])}pp. C−A simultaneously changes by {pp (component['longest_decreasing_run', 'delta_C_minus_A'])}pp, leaving mean primary interaction {pp (component['longest_decreasing_run', 'delta_B_minus_C'])}pp. Important counterexamples are retained: {ldr_exceptions}. The interaction depends on both B and C; looking only at declining B-source learning misses this.
 
-**公共源并非一致受损。** LDR的peaks跨两个条件共10条同任务背景差，{sum(value < 0 for _, _, value in peak_changes)}条降低、{sum(value > 0 for _, _, value in peak_changes)}条提高；正向项为{peak_positive}。这也说明v4“peaks全部下降”的源观察在新重复中不逐项成立。公共源以及successions的变化存在seed/条件差异，不能把组合效应描述为所有源同步变差。
+**Common sources are not uniformly harmed.** Across the two LDR conditions,10 same-task peaks background differences contain {sum (value < 0 for _, _, value in peak_changes)} decreases and {sum (value > 0 for _, _, value in peak_changes)} increases; positive entries are {peak_positive}. Thus the v4 observation that peaks always declined does not reproduce entry by entry. Changes in common sources and successions depend on seed/condition; the composition effect is not a simultaneous decline in all sources.
 
-已有记录支持上述并列变化、低训练学习水平和反例。它们仍无法区分共享计算结构、优化速度/梯度竞争、答案分布、联合关系利用或适配阶段可塑性等解释；本轮没有中介量干预、梯度实验或显式变换查询，也没有证明任何机制。"""
+Existing records support these concurrent changes, low training-learning levels, and counterexamples. They cannot distinguish shared computational structure, optimization speed/gradient competition, answer distributions, use of joint relations, or adaptation-stage plasticity. No mediator interventions, gradient experiments, or explicit transformed-input queries were performed, and no mechanism was established."""
 
 
 def write_report(out, differences, summaries, selected, aggregate, contexts, learning, common, costs, timings, plan):
@@ -422,31 +422,31 @@ def write_report(out, differences, summaries, selected, aggregate, contexts, lea
         individual = row["ci95_lower"] > 0 if row["prespecified_direction"] > 0 else row["ci95_upper"] < 0
         family = row["family95_lower"] > 0 if row["prespecified_direction"] > 0 else row["family95_upper"] < 0
         if not row["mean_matches_direction"]:
-            verdict = "预指定均值方向未复现"
+            verdict = "The prespecified mean direction did not reproduce"
         elif family:
-            verdict = "均值方向复现，且模型假设下的两对比同时区间排除0"
+            verdict = "The mean direction reproduced, and simultaneous intervals for both contrasts exclude 0 under the model assumptions"
         elif individual:
-            verdict = "均值方向复现；单项t区间排除0，同时区间仍包含0"
+            verdict = "The mean direction reproduced; the individual t interval excludes 0, but the simultaneous interval still includes 0"
         else:
-            verdict = "均值方向复现，但单项和同时区间仍包含0，方向与幅度尚不稳定"
-        judgments.append(f"- **{row['target']}**：{verdict}。交互均值{pp(row['mean'])}pp，{row['direction_matching_count']}/5个重复符合预指定方向；95%配对t区间[{pp(row['ci95_lower'])}, {pp(row['ci95_upper'])}]pp，两项Bonferroni同时区间[{pp(row['family95_lower'])}, {pp(row['family95_upper'])}]pp。")
+            verdict = "The mean direction reproduced, but individual and simultaneous intervals include 0; direction and magnitude remain unstable"
+        judgments.append (f"- **{row['target']}**: {verdict}. Mean interaction {pp (row['mean'])}pp; {row['direction_matching_count']}/5 repeats match the prespecified direction. 95% paired-t interval [{pp (row['ci95_lower'])}, {pp (row['ci95_upper'])}]pp; two-contrast Bonferroni simultaneous interval [{pp (row['family95_lower'])}, {pp (row['family95_upper'])}]pp.")
     ps.write_csv(out / "confirmation_vs_exploration.csv", comparisons)
-    primary_table = table(["目标", "v4探索均值 pp", "v5验证均值±样本SD pp", "逐重复范围 pp", "95%配对t区间 pp", "两项同时区间 pp"],
+    primary_table = table(["Target", "v4 exploratory mean pp", "v5 confirmation mean±sample SD pp", "Per-repeat range pp", "95% paired-t interval pp", "Two-contrast simultaneous interval pp"],
                           [[r["target"], pp(c["exploratory_mean_interaction"]), f"{pp(r['mean'])} ± {100*r['sample_sd']:.2f}",
                             f"[{pp(r['min'])}, {pp(r['max'])}]", f"[{pp(r['ci95_lower'])}, {pp(r['ci95_upper'])}]",
                             f"[{pp(r['family95_lower'])}, {pp(r['family95_upper'])}]"] for r, c in zip(primary, comparisons)])
-    repeat_table = table(["目标", "新重复/初始化seed", "Δ(B−A) pp", "Δ(C−A) pp", "主Δ(B−C) pp"],
+    repeat_table = table(["Target", "New repeat/initialization seed", "Δ(B−A) pp", "Δ(C−A) pp", "Primary Δ(B−C) pp"],
                          [[r["target"], r["seed"], *(pp(r[m]) for m in ps.METRICS)] for r in differences])
-    level_table = table(["目标", "背景", "A准确率", "B准确率", "C准确率", "目标多数基线"],
+    level_table = table(["Target", "Background", "A accuracy", "B accuracy", "C accuracy", "Target majority baseline"],
                         [[contrast["target"], background,
                           *(pct(next(r["mean"] for r in aggregate if r["target"] == contrast["target"] and r["background"] == background and r["condition"] == c)) for c in ("A", "B", "C")),
                           pct(next(r["majority_accuracy_mean"] for r in aggregate if r["target"] == contrast["target"] and r["background"] == background))]
                          for contrast in plan["contrasts"] for background in (contrast["original_background"], contrast["new_background"])])
-    diagnostic_table = table(["目标", "双侧符号翻转p", "双侧符号p", "符合方向/非零n", "留一均值范围 pp"],
+    diagnostic_table = table(["Target", "Two-sided sign-flip p", "Two-sided sign p", "Direction matches/nonzero n", "Leave-one-out mean range pp"],
                             [[r["target"], f"{r['sign_flip_two_sided_p']:.4f}", f"{r['sign_test_two_sided_p']:.4f}",
                               f"{r['direction_matching_count']}/{r['sign_test_nonzero_n']}",
                               f"[{pp(r['leave_one_mean_min'])}, {pp(r['leave_one_mean_max'])}]"] for r in primary])
-    source_context_table = table(["目标", "重复", "目标交互 pp", "B候选源dev背景差 pp", "C候选源dev背景差 pp", "未换公共源最大绝对dev差 pp"],
+    source_context_table = table(["Target", "Repeat", "Target interaction pp", "B candidate source dev background difference pp", "C candidate source dev background difference pp", "Max absolute unchanged-common-source dev difference pp"],
                                  [[r["target"], r["seed"], pp(r["delta_B_minus_C"]), pp(r["B_candidate_dev_change"]),
                                    pp(r["C_candidate_dev_change"]), f"{100*r['unchanged_common_max_abs_dev_change']:.2f}"] for r in contexts])
     source_aggregate = []
@@ -459,119 +459,119 @@ def write_report(out, differences, summaries, selected, aggregate, contexts, lea
                                          pct(ps.average(r["multi4800_dev_accuracy"] for r in matched)),
                                          f"[{pct(min(r['multi4800_dev_accuracy'] for r in matched))}, {pct(max(r['multi4800_dev_accuracy'] for r in matched))}]",
                                          pct(ps.average(r["multi4800_dev_majority_accuracy"] for r in matched))])
-    source_summary_table = table(["目标", "背景", "条件", "候选源", "train均值", "dev均值", "dev范围", "dev多数基线"], source_aggregate)
-    cost_table = table(["阶段", "run数", "更新数", "输入tokens", "监督tokens", "运行计时分钟"],
+    source_summary_table = table(["Target", "Background", "Condition", "Candidate source", "Mean train", "Mean dev", "Dev range", "Dev majority baseline"], source_aggregate)
+    cost_table = table(["Stage", "Runs", "Updates", "Input tokens", "Supervised tokens", "Run timer minutes"],
                        [[r["kind"], r["runs"], r["updates"], r["input_tokens"], r["supervised_tokens"], f"{r['seconds']/60:.2f}"] for r in costs])
-    seed_table = table(["重复", "初始化seed", "训练/开发生成seed", "测试生成seed"],
+    seed_table = table(["Repeat", "Initialization seed", "Train/dev generation seed", "Test generation seed"],
                        [[f"R{i+1}", r["seed"], r["data_generation_seed"], r["test_data_seed"]] for i, r in enumerate(plan["repetitions"])])
     lr_counts = dict(Counter(r["lr"] for r in selected))
     audit_path = out / "FINAL_AUDIT.json"
     audit_passed = audit_path.exists() and js(audit_path).get("status") == "passed"
-    audit_text = "最终独立审计通过，完整状态和逐项记录见FINAL_AUDIT.json" if audit_passed else "最终独立审计尚未通过，需运行audit_final.py后再视为交付完成"
+    audit_text = "The final independent audit passed; see FINAL_AUDIT.json for complete status and itemized records" if audit_passed else "The final independent audit has not passed; run audit_final.py before treating delivery as complete"
     total_seconds = sum(r["seconds"] for r in costs)
     stage_seconds = sum(r["seconds"] for r in timings)
     main_lines = "\n".join(judgments)
     source_max = max(abs(float(r["B_minus_C_dev_accuracy"])) for r in common)
     source_findings = source_result_findings(learning, contexts, summaries)
-    report = f"""# pilot_v5：固定假设的背景交互验证
+    report = f"""# pilot_v5: confirmation of fixed background-interaction hypotheses
 
-本轮完成两个由v4探索结果提出的固定对比、五个新数据/初始化配对重复。主量是在每个重复内先计算的 `Δ(B−C)=(B−C)新背景−(B−C)原背景`，不是两个背景均值各自标准差的比较。
+This round completes two fixed contrasts proposed from v4 exploration, with five new paired data/initialization repeats. The primary quantity is computed within each repeat: `Δ(B−C)=(B−C)_new_background−(B−C)_original_background`. It is not a comparison of separate SDs for two background means.
 
 {main_lines}
 
-以上只验证这两个预选案例、n=10、256个目标样本和固定预算。旧三个seed属于探索，新五个重复属于验证；没有将它们合并为八次重复。训练及开发选择已完成后才生成统一新测试，保留所有负收益、未学会和不一致结果。
+This validation is limited to these two preselected cases at n=10, 256 target examples, and fixed budgets. The old three seeds are exploratory; the new five repeats are confirmatory. They are not pooled as eight repeats. Uniform new tests were generated only after training and development selection finished; all negative gains, unlearned tasks, and inconsistent results are retained.
 
-## 先重算探索证据，再冻结验证
+## Recompute exploration before freezing confirmation
 
-从v4的42条唯一selected原始行重算所有目标的g1−g0、g2−g0，12条逐seed背景差和图见[探索说明](exploratory/EXPLORATORY_ANALYSIS_ZH.md)。FP g2−g0的Δ(B−A)/Δ(C−A)/Δ(B−C)探索均值为+16.59/+12.22/+4.36pp，主交互逐seed为+1.42/+0.34/+11.33pp；LDR g1−g0为−11.56/+0.44/−12.00pp，主交互逐seed为−20.07/+2.00/−17.92pp。共享A在背景差中严格消去。
+All targets' g1−g0 and g2−g0 differences were recomputed from v4's 42 unique selected raw rows. The 12 per-seed background differences and plots are in the [exploratory analysis](exploratory/EXPLORATORY_ANALYSIS_ZH.md). FP g2−g0 exploratory mean Δ(B−A)/Δ(C−A)/Δ(B−C) is +16.59/+12.22/+4.36pp, with primary interactions +1.42/+0.34/+11.33pp by seed. LDR g1−g0 is −11.56/+0.44/−12.00pp, with primary interactions −20.07/+2.00/−17.92pp. Shared A cancels exactly in background differences.
 
-预先固定H1：fixed_points，原背景→deficiencies背景，期望主交互为正；H2：longest_decreasing_run，原背景→recoils背景，期望主交互为负。方向来自v4探索，不是独立提出的理论预测。此次不再验证另外两个背景对比，也不依据新结果更换方向、改用单侧检验或新增重复。
+Prespecified H1: fixed_points, original→deficiencies background, expecting a positive primary interaction. H2: longest_decreasing_run, original→recoils background, expecting a negative primary interaction. Directions come from v4 exploration, not independent theoretical predictions. This round does not confirm the other two background contrasts, change directions from new results, switch to one-sided tests, or add repeats.
 
-| 目标 | 候选B / 候选C | 原三个公共源 | 新三个公共源 |
+| Target | Candidate B / candidate C | Original three common sources | New three common sources |
 | --- | --- | --- | --- |
 | fixed_points | anti_fixed_points / successions | descents, peaks, left_to_right_maxima | descents, deficiencies, left_to_right_maxima |
 | longest_decreasing_run | longest_increasing_run / left_to_right_maxima | descents, peaks, successions | recoils, peaks, successions |
 
-候选固定slot0，公共源slots1–3。两个目标均不进入任一预训练组；数学任务关系与实例隔离是不同层面的检查。组定义和统计方法在新正式训练之前按hash冻结，详见[冻结配置](artifacts/FROZEN_PROTOCOL.json)、[stats_plan.json](stats_plan.json)。
+Candidates occupy fixed slot0 and common sources slots 1–3. Neither target enters any pretraining group. Mathematical task relations and instance isolation are distinct checks. Group definitions and statistical methods were hash-frozen before new formal training; see the [frozen configuration](artifacts/FROZEN_PROTOCOL.json) and [stats_plan.json](stats_plan.json).
 
-## 五个新重复的验证结果
+## Confirmation results from five new repeats
 
 {primary_table}
 
 {repeat_table}
 
-![逐重复主交互及区间](artifacts/figures/confirmation_interactions_by_repeat.png)
+![Primary interactions and intervals by repeat](artifacts/figures/confirmation_interactions_by_repeat.png)
 
-![主交互的B−A/C−A分量](artifacts/figures/confirmation_background_components.png)
+![B−A/C−A components of the primary interaction](artifacts/figures/confirmation_background_components.png)
 
-下表为五重复的准确率均值，仅帮助理解水平与多数基线；A每目标/重复只训练和选择一次，在背景展示表中重复显示。60条展示行对应50个唯一选中模型，并非60次独立选择。
+The following means over five repeats provide context on accuracy levels and majority baselines. A is trained and selected once per target/repeat and repeated in background display tables. The 60 display rows correspond to 50 unique selected models, not 60 independent selections.
 
 {level_table}
 
-区间直接基于五个配对交互差，SD使用n−1分母。单项区间采用df=4、t=.975分位2.776445；两个主要对比的Bonferroni同时区间，每项边际覆盖97.5%，临界值3.495406。后者不要求两个目标对比之间独立，但t覆盖仍依赖重复层面的近似独立正态假设。五次重复不足以检验正态性或尾部；不同RNG/初始化流也不等于严格IID数据池，因为跨块orbit排除构成有限总体不放回依赖。区间包含有限测试池的随机变化，不能当作所有任务族的区间。
+Intervals use the five paired interaction differences directly, with SD denominator n−1. Individual intervals use df=4 and t=.975 quantile 2.776445. Bonferroni simultaneous intervals for the two primary contrasts have 97.5% marginal coverage each and critical value 3.495406. The latter do not require independence between the two target contrasts, but t coverage still assumes approximately independent normal repeat-level values. Five repeats cannot test normality or tails. Distinct RNG/initialization streams also do not imply strictly IID pools, because cross-block orbit exclusion creates finite-population sampling-without-replacement dependence. Intervals include finite-test-pool random variation and do not cover all task families.
 
 {diagnostic_table}
 
-符号翻转诊断穷举32种符号，要求零中心下独立符号对称，不是由本实验设计保证的处理随机化检验；符号检验另要求独立重复下正负概率各1/2，针对符号/中位数倾向而非均值。五个非零重复时两者双侧p最小都为0.0625，所以不能承诺常规显著性。留一均值只描述对单个重复的敏感性，不替代主分析。辅助Δ(B−A)/Δ(C−A)及源学习只报告描述结果，不增加检验家族或事后筛选显著结果。
+The sign-flip diagnostic enumerates 32 sign assignments and requires independent sign symmetry around zero; it is not a treatment-randomization test guaranteed by this design. The sign test additionally assumes independent repeats with positive/negative probability 1/2 and concerns sign/median tendencies rather than the mean. With five nonzero repeats, both have minimum two-sided p=0.0625, so conventional significance cannot be promised. Leave-one-out means describe sensitivity to one repeat and do not replace the primary analysis. Auxiliary Δ(B−A)/Δ(C−A) and source learning are descriptive only, without expanding the testing family or selecting significant findings afterward.
 
-## 联合数学关系与数据隔离
+## Joint mathematical relations and data isolation
 
-实际任务实现与独立核验见[数学关系说明](mathematics/README.md)、[核验结果](mathematics/MATH_AUDIT.json)。清单明确区分有公式/证明、数据观察和未检查；穷举与随机大n核验是实现检查，不能将有限核验代替一般证明。尤其要区分同一输入的源答案能否联合恢复目标，和允许对变换输入另做查询时能否恢复目标。
+Actual task implementations and independent checks are documented in the [mathematical relations](mathematics/README.md) and [audit results](mathematics/MATH_AUDIT.json). The inventory distinguishes formulas/proofs, empirical observations, and unchecked claims. Exhaustive and random larger-n checks validate implementations; finite verification is not a general proof. In particular, distinguish recovering a target jointly from source answers on the same input from recovering it when additional transformed-input queries are allowed.
 
-对于每个位置i，p(i)与i恰好满足等于、大于、小于之一，所以 `fixed_points(p)+exceedances(p)+deficiencies(p)=n`。若同时提供同输入的exceedances和deficiencies答案，则可求fixed_points；本轮FP新背景只有deficiencies，没有exceedances，因此不能仅凭该等式声称当前组同输入联合给出了fixed_points。又有 `exceedances(p)=deficiencies(inverse(p))`，故允许额外逆排列查询时，`fixed_points(p)=n−deficiencies(p)−deficiencies(inverse(p))`；本轮没有给模型显式成对查询或联合推理监督。
+At each position i, p(i) is exactly one of equal to, greater than, or less than i, so `fixed_points(p)+exceedances (p)+deficiencies (p)=n`. Same-input exceedances and deficiencies answers jointly determine fixed_points. The new FP background contains deficiencies but not exceedances, so this identity alone does not establish same-input joint recovery by the current group. Also, `exceedances (p)=deficiencies (inverse(p))`; if an extra inverse-permutation query is allowed, `fixed_points(p)=n−deficiencies (p)−deficiencies (inverse(p))`. This round supplies no explicit paired queries or joint-reasoning supervision.
 
-**FP的deficiencies背景中，B和C都具有上述严格的跨输入联合关系，不能把C解释为不含目标数学关系的对照。** 数学核验已为v4全部12组提供n=10的反例：相同n及同一输入的四源标量答案不能唯一恢复目标。限定到四源×I/R/C八变换的32个答案时，六个B都可从候选变换查询恢复目标，FP g2 C可用两次deficiencies查询恢复；其余五个C各有n=10不充分反例。这只排除指定答案查询模型，不排除从raw input计算目标或其他未检查关系。清单见[TARGET_JOINT_DERIVABILITY.csv](mathematics/audit/TARGET_JOINT_DERIVABILITY.csv)和[显式反例](mathematics/audit/COUNTEREXAMPLES.csv)。
+**Both B and C in the FP deficiencies background have this exact cross-input joint relation; C is not a control without target mathematical relations.** The mathematical audit provides n=10 counterexamples for all 12 v4 groups: equal n and equal four-source scalar answers on the same input do not uniquely recover the target. Restricting queries to four sources × eight I/R/C transformations, or 32 answers, all six B groups recover the target from transformed candidate queries, and FP g2 C recovers it from two deficiencies queries. Each of the remaining five C groups has an n=10 insufficiency counterexample. This excludes only the specified answer-query model, not computation from raw input or other unchecked relations. See [TARGET_JOINT_DERIVABILITY.csv](mathematics/audit/TARGET_JOINT_DERIVABILITY.csv) and [explicit counterexamples](mathematics/audit/COUNTEREXAMPLES.csv).
 
-核验实际完成S1…S7穷举5913个输入与4096个n=10 fixture；20个定义在八变换上完成1,601,440次独立标签比对，28条公式/界各验证10,009次。fixture仅为数学实现核对，没有送入训练或用于选择迁移配置。仅由数据观察的关联与未检查机制分别见[OBSERVED_ASSOCIATIONS.csv](mathematics/audit/OBSERVED_ASSOCIATIONS.csv)、[UNCHECKED_CLAIMS.csv](mathematics/audit/UNCHECKED_CLAIMS.csv)。
+Verification completed exhaustive S1…S7 coverage of 5913 inputs plus 4096 n=10 fixtures. Twenty definitions under eight transformations received 1,601,440 independent label comparisons, and 28 formulas/bounds each received 10,009 checks. Fixtures validate mathematical implementations only; they were not used for training or transfer-configuration selection. Empirically observed associations and unchecked mechanisms are separately recorded in [OBSERVED_ASSOCIATIONS.csv](mathematics/audit/OBSERVED_ASSOCIATIONS.csv) and [UNCHECKED_CLAIMS.csv](mathematics/audit/UNCHECKED_CLAIMS.csv).
 
-相关候选anti_fixed_points与fixed_points由补值/反向输入变换联系，LIR/LDR由补值或反向变换联系。descents、runs、peaks/valleys等还共享局部比较结构。它们是合法数学关系，不能自动标为泄漏；本轮泄漏检查针对训练、开发、测试的实际输入及inverse/reverse/complement完整轨道重叠。是否能从某组全部源标量答案恢复目标，以及是否需要变换查询，以数学清单逐组条目和反例为准；没有检查的关系不写成不存在。
+The related candidate anti_fixed_points connects to fixed_points through complement/reversal input transforms; LIR/LDR connect through complement or reversal. descents, runs, peaks/valleys also share local comparison structure. These are legitimate mathematical relations, not automatically leakage. Leakage checks concern actual train/dev/test inputs and full inverse/reverse/complement orbit overlap. Whether a group's complete source scalar answers recover a target, and whether transformed queries are required, is specified group by group in the mathematical inventory and counterexamples. Unchecked relations are not declared absent.
 
-## 源学习辅助结果及机制边界
+## Auxiliary source-learning results and limits on mechanisms
 
-每个四源run4800步，batch64，每步每任务16条，精确25%采样。各任务76800次暴露、2150400输入tokens、153600监督tokens；实际不同输入数、流hash、每长度(n=10)训练/开发准确率、答案CE、EOS CE与多数基线逐条保存于[source_learning_table.csv](artifacts/source_learning_table.csv)与[source_exposures.csv](artifacts/source_exposures.csv)。
+Each four-source run has 4800 steps with batch64,16 examples per task per step, and exactly 25% sampling. Each task receives 76800 exposures,2150400 input tokens, and 153600 supervised tokens. Actual unique-input counts, stream hashes, length-specific (n=10) train/dev accuracy, answer CE, EOS CE, and majority baselines are retained in [source_learning_table.csv](artifacts/source_learning_table.csv) and [source_exposures.csv](artifacts/source_exposures.csv).
 
 {source_summary_table}
 
 {source_context_table}
 
-上述10条为全部重复，而不是按迁移幅度挑出的案例。候选源两列比较的是同一任务跨背景的dev准确率；公共源最大值仅覆盖没有更换定义的任务。更换的peaks/deficiencies或descents/recoils只并列其水平与基线，不把不同任务的准确率相减当作学习改变。相同背景内公共任务B/C dev差的绝对值最大为{100*source_max:.2f}pp，完整记录见[common_source_BC.csv](artifacts/common_source_BC.csv)。
+These 10 entries cover all repeats, not cases selected by transfer magnitude. Candidate-source columns compare the same task's development accuracy across backgrounds; the common-source maximum includes only unchanged task definitions. Replaced peaks/deficiencies or descents/recoils tasks have their levels/baselines juxtaposed, without treating different-task accuracy differences as learning changes. The maximum absolute within-background common-task B/C development difference is {100*source_max:.2f}pp; see [common_source_BC.csv](artifacts/common_source_BC.csv) for full records.
 
-源记录能支持“组合改变与源学习状态改变同时出现”及“某些源在当前预算仍未学会”的描述，不能证明源准确率变化导致迁移交互。源与目标可能共同受优化、共享计算、答案分布、表示竞争和有限样本影响；本轮没有对这些中介量做独立干预。数学上可推导也不等于Transformer实际学会或利用了公式。若某个重复源与迁移变化方向不一致，仍完整保留，不能事后只解释符合直觉的重复。
+Source records support descriptions that composition changes accompany changed source learning and that some sources remain unlearned under the current budget. They do not prove that source-accuracy changes cause transfer interactions. Sources and targets may jointly depend on optimization, shared computation, answer distributions, representation competition, and finite samples; these mediators were not independently manipulated. Mathematical derivability does not mean the Transformer learned or used the formula. Repeats with opposing source/transfer changes are fully retained, without post hoc explanations limited to intuitive cases.
 
 {source_findings}
 
-旧v3单任务记录作为历史参照复制到[historical_single_references.csv](artifacts/historical_single_references.csv)，本轮没有重训单任务。它们使用旧seed/输入池，与新多任务不构成严格配对对照；单1200步只匹配每任务暴露，学习率轨迹与总更新仍不同，单4800步暴露为多任务每任务的四倍。因此不能把新多任务−旧单任务差直接解释为组合干扰效应。完整新源曲线与目标曲线均保留，选中LR的train/dev图位于[figures目录](artifacts/figures)。
+Old v3 single-task records are copied as historical references in [historical_single_references.csv](artifacts/historical_single_references.csv); no single-task retraining was performed. They use old seeds/pools and are not strictly paired controls for new multitask runs. Single1200 matches only per-task exposure, with different LR history and total updates; single4800 has four times the multitask per-task exposure. New-multitask minus old-single-task gaps therefore cannot directly identify composition interference. Complete new source and target curves are retained; selected-LR train/dev plots are in the [figures directory](artifacts/figures).
 
-## 配置、实际预算与复现
+## Configuration, actual budget, and reproduction
 
 {seed_table}
 
-各重复重新初始化模型并生成独立seed流的数据，没有用旧权重充当新重复。五个新重复之间及与v1–v4所有旧输入，按统一的完整变换轨道规则隔离。每块source_train8192/source_dev1024/target_train256/target_dev1024，测试2048；同一块各目标、背景、条件共享相应输入，目标标签由定义确定。source采样/dropout seed为初始化seed+1000，adapt为+2000；完整生成顺序与数据hash见seed_provenance、DATA_READY及test_data_audit。
+Every repeat uses a freshly initialized model and an independent data-seed stream, without reusing old weights as new repeats. The five new repeats are isolated from each other and all v1–v4 inputs using the same full transformation-orbit rule. Each block has source_train8192/source_dev1024/target_train256/target_dev1024 and test 2048. Targets/backgrounds/conditions share corresponding inputs within a block; task definitions determine target labels. Source sampling/dropout seed=initialization seed+1000, adaptation=+2000. Full generation order and data hashes are in seed_provenance, DATA_READY, and test_data_audit.
 
-模型保持4层Transformer，width256、8 heads、MLP4、dropout.1、绑定输入/output embedding、词表188，PermWorld one-line，n=10；参数3,240,448。每训练前向28 tokens，其中答案/EOS两位置监督，前缀不计loss。B/C各4800步，LR先100步warmup到3e−4，2400步余弦到3e−5后保持到4800。每适配条件沿用三档LR 3e−4/1e−4/3e−5，各800步，100步warmup和余弦到初值0.1。没有新增超参数搜索。
+The model remains a4-layer Transformer, width256,8 heads, MLP4, dropout.1, tied input/output embedding, vocabulary188, PermWorld one-line, n=10, with 3,240,448 parameters. Each training forward has 28 tokens, with supervision only on answer/EOS; prefix tokens do not contribute loss. B/C each receive 4800 steps:100-step warmup to 3e−4, cosine decay to 3e−5 at 2400, then constant through 4800. Each adaptation condition retains three LRs 3e−4/1e−4/3e−5,800 steps each,100-step warmup and cosine decay to 0.1 of the initial value. No new hyperparameter search was added.
 
-每100步全量评估train/dev，排除step0，依次按最高dev答案准确率、最低dev答案CE、最早step、固定LR顺序选择。50个唯一模型选择LR计数：{lr_counts}。适配严格加载源参数、将目标token的绑定embedding/output行重置为同块step0值、使用全新AdamW状态。AdamW wd=.01、betas=.9/.999、eps=1e−8、clip1；BF16训练、FP32权重/评估、TF32关闭。
+Full train/dev evaluation occurs every 100 steps, excluding step0. Selection prioritizes highest development answer accuracy, lowest development answer CE, earliest step, then fixed LR order. LR counts for 50 unique selected models: {lr_counts}. Adaptation strictly loads source parameters, restores the target token's tied embedding/output row to the block's step0 value, and uses fresh AdamW state. AdamW wd=.01, betas=.9/.999, eps=1e−8, clip1; BF16 training, FP32 weights/evaluation, TF32 disabled.
 
-先冻结全部50项开发选择，再生成五个新测试池；300条全部LR的best/endpoint测试结果保留为诊断，不据测试重选模型。主分析只使用50条selected；训练终点对照保留于[selected_vs_endpoint.csv](artifacts/selected_vs_endpoint.csv)。{audit_text}。实际命令、文件职责与继续运行方式见[README](README.md)。
+All 50 development selections are frozen before generating five new test pools. All 300 best/endpoint results across LRs are retained diagnostically, without test-based model reselection. Primary analysis uses only 50 selected rows; endpoint comparisons are in [selected_vs_endpoint.csv](artifacts/selected_vs_endpoint.csv). {audit_text}. Commands, file responsibilities, and resumption instructions are in the [README](README.md).
 
 {cost_table}
 
-新增训练计时合计{total_seconds/60:.2f}分钟；引擎各阶段墙钟合计{stage_seconds/60:.2f}分钟。训练计时包括训练、全量train/dev评估、checkpoint保存和记账，不等同于纯GPU计算时间；二者不相加，独立审计与绘图另计。40个预训练run和150个适配候选全部新增，合计312000次更新、559104000输入tokens；没有延长预算，也没有新增单任务训练。checkpoint和配置保留，便于后续CKA接口使用。
+New training timers total {total_seconds/60:.2f} minutes; engine-stage wall time totals {stage_seconds/60:.2f} minutes. Training timers include training, full train/dev evaluation, checkpoint saving, and bookkeeping, not pure GPU time. The two measures are not added; independent auditing and plotting are separate. All 40 pretraining runs and 150 adaptation candidates are new, totaling 312000 updates and 559104000 input tokens. Budgets were not extended, and no new single-task training was performed. Checkpoints/configuration are retained for later CKA integration.
 
-## 下一阶段任务族扩展方案与收口
+## Next-stage task-family expansion plan and stopping point
 
-详见冻结在新迁移结果之前的[TASK_FAMILY_PLAN.md](TASK_FAMILY_PLAN.md)。优先复用现有循环分解、全局有序子序列、置换分块族，使已研究的局部比较和位置不等计数获得不同计算结构的参照；其次加入位移/成对次序与模式计数，参数实例不重复计成独立族。后续真正需要新增的族包括无向图连通/循环秩、含奇异矩阵的有限域rank/kernel、奇特征域二次型/双线性形式；这些新生成器本轮尚未实现或认证。各族先完成独立oracle核验与单任务开发，再冻结组合，保留不能学会的候选；不由两个预选案例外推任务族的普遍排序。
+See [TASK_FAMILY_PLAN.md](TASK_FAMILY_PLAN.md), frozen before new transfer results. Prioritize existing cycle-decomposition, global ordered-subsequence, and permutation-block families to provide different computational references for studied local comparisons and position-inequality counts. Next add displacement/pairwise-order and pattern counts; parameter instances are not independent families. Future genuinely new families include undirected connectivity/cycle rank, finite-field rank/kernel with singular matrices, and quadratic/bilinear forms over odd-characteristic fields. These new generators are not implemented or certified in this round. Each family should receive independent oracle checks and single-task development before compositions are frozen, retaining unlearned candidates. Two preselected cases cannot establish a universal ranking of families.
 
-平台应把数学task_id、参数、编码、输入变换分开；单任务关系记录域条件、方向、输入作用与答案映射，联合关系用多输入/多源超边记录需要的源集合、查询变换、公式/证明与测试范围，另存观察关联及未检查标记。生成器复用base-instance→变换→标签oracle→统一split/orbit去重→编码，并存版本、seed、实际pool hash、采样slot与暴露量。关系导出的合法任务不自动称为泄漏，实例隔离和关系类别分别审计。
+The platform should separate mathematical task_id, parameters, encoding, and input transforms. Single-task relations record domain conditions, direction, input actions, and answer maps. Joint relations use multi-input/multi-source hyperedges to record required source sets, query transformations, formulas/proofs, and verification scope; observed associations and unchecked markers are stored separately. Generators reuse base-instance→transform→label oracle→uniform split/orbit deduplication→encoding, recording versions, seeds, actual pool hashes, sampling slots, and exposures. Legitimate relation-derived tasks are not automatically leakage; instance isolation and relation categories are audited separately.
 
-本轮只完成两个预指定对比的五次新重复。对效应方向、幅度不确定性和机制猜想分别报告，不追加这两个目标的背景变体、额外重复、训练预算或学习率，等待后续指导。
+This round completes only five new repeats for the two prespecified contrasts. Effect direction, magnitude uncertainty, and mechanistic conjectures are reported separately. No more background variants for these targets, extra repeats, training budgets, or learning rates are added, pending further guidance.
 
-## 主要交付
+## Main deliverables
 
-- [逐重复配对差](artifacts/confirmation_paired_differences.csv)、[主/辅助汇总](artifacts/confirmation_summary.csv)、[探索与验证分表](artifacts/confirmation_vs_exploration.csv)。
-- [50条唯一主结果](artifacts/results_selected.csv)、[300条全部候选best/endpoint](artifacts/results_all_candidates.csv)；每重复原始CSV：[101](artifacts/results_seed101.csv)、[211](artifacts/results_seed211.csv)、[307](artifacts/results_seed307.csv)、[401](artifacts/results_seed401.csv)、[503](artifacts/results_seed503.csv)。
-- [源学习](artifacts/source_learning_table.csv)、[实际暴露](artifacts/source_exposures.csv)、[背景间同源变化](artifacts/source_background_changes.csv)、[源与目标交互并列](artifacts/source_interaction_context.csv)。
-- [统计审计](artifacts/confirmation_statistics_audit.json)、[最终独立审计](artifacts/FINAL_AUDIT.json)、[数学核验](mathematics/MATH_AUDIT.json)、[冻结统计方案](stats_plan.json)。
+- [Paired differences by repeat](artifacts/confirmation_paired_differences.csv), [Primary/auxiliary summaries](artifacts/confirmation_summary.csv), [Exploration and confirmation separately](artifacts/confirmation_vs_exploration.csv).
+- [50 unique primary results](artifacts/results_selected.csv), [All 300 candidate best/endpoint results](artifacts/results_all_candidates.csv); Raw CSV per repeat: [101](artifacts/results_seed101.csv), [211](artifacts/results_seed211.csv), [307](artifacts/results_seed307.csv), [401](artifacts/results_seed401.csv), [503](artifacts/results_seed503.csv).
+- [Source learning](artifacts/source_learning_table.csv), [Actual exposures](artifacts/source_exposures.csv), [Same-source changes across backgrounds](artifacts/source_background_changes.csv), [Source and target interactions side by side](artifacts/source_interaction_context.csv).
+- [Statistical audit](artifacts/confirmation_statistics_audit.json), [Final independent audit](artifacts/FINAL_AUDIT.json), [Mathematical verification](mathematics/MATH_AUDIT.json), [Frozen statistical plan](stats_plan.json).
 """
     path = HERE / "PILOT_V5_REPORT.md" if out == (HERE / "artifacts").resolve() else out / "PILOT_V5_REPORT.md"
     path.write_text(resolve_report_links(report, path, out), encoding="utf-8")

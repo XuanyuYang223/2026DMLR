@@ -1,12 +1,12 @@
-# v5 源任务学习记录：在验证测试之前的描述
+# v5 source-task learning records: description before confirmation testing
 
-本说明只读 `source_curves.csv`、`source_exposures.csv`、冻结config和预训练完成标记。没有导入模型、没有新增训练/forward，没有读取任何新目标测试结果。分析时TEST_COMPLETE存在：False。**尚未将这些源变化与新验证交互联系起来**；下面只描述在固定4800步预算下能直接看到的源学习现象。
+This note reads only `source_curves.csv`, `source_exposures.csv`, the frozen configuration, and pretraining completion markers. It imports no model, performs no new training/forward passes, and reads no new target-test results. TEST_COMPLETE exists at analysis time: False. **These source changes have not yet been linked to the new confirmation interactions.** The following describes only directly observed source learning under the fixed4800-step budget.
 
-40个新预训练run全部完成，160条任务×run记录均为n=10、每任务76800次暴露。每个源run均按原配置完成4800步，源训练不足不触发延长。结果由各任务的8192条train和1024条dev计算；多数类别由该任务训练池决定，并在相应dev上评估。学习程度须结合任务自己的基线，而不是跨任务直接比较准确率。
+All 40 new pretraining runs are complete. The 160 task×run records all use n=10 and 76800 exposures per task. Every source run completed 4800 steps under the original configuration; insufficient source learning does not trigger extensions. Metrics use 8192 training and 1024 development examples per task. The majority class is determined from that task's training pool and evaluated on its development pool. Learning must be interpreted relative to each task's own baseline, not by directly comparing accuracies across tasks.
 
-## 候选源的全部五重复配对差
+## Paired candidate-source differences for all five repeats
 
-| 目标 | seed | B dev原→新 | B dev变化pp | C dev原→新 | C dev变化pp |
+| Target | seed | B dev original→new | B dev change pp | C dev original→new | C dev change pp |
 | --- | --- | --- | --- | --- | --- |
 | fixed_points | 101 | 99.41%→98.93% | -0.49 | 49.32%→47.07% | -2.25 |
 | fixed_points | 211 | 99.22%→97.66% | -1.56 | 43.95%→56.05% | +12.11 |
@@ -19,13 +19,13 @@
 | longest_decreasing_run | 401 | 66.50%→55.96% | -10.55 | 97.85%→96.58% | -1.27 |
 | longest_decreasing_run | 503 | 96.29%→62.11% | -34.18 | 96.88%→95.90% | -0.98 |
 
-FP相关候选anti_fixed_points的dev均值由99.08%变为98.50%，平均变化-0.59pp；五次中4次降低、1次提高。两个背景下均接近99%，因此不能把FP背景差泛化解释为“原背景完全没学会相关候选”。这一观察尚不说明目标迁移如何变化。
+For the FP-related candidate anti_fixed_points, mean development accuracy changes from 99.08% to 98.50%, a mean change of -0.59pp; 4 of five repeats decrease and 1 increase. Both backgrounds are near 99%, so FP background differences cannot generally be explained by complete failure to learn the related candidate in the original background. This observation does not yet establish how target transfer changes.
 
-LDR相关候选longest_increasing_run的dev均值由74.04%变为57.01%，五次均下降：-23.05, -15.14, -2.25, -10.55, -34.18pp。新背景dev多数基线均值为54.00%，平均超基线仅+3.01pp，其中0/5次低于各自基线，seed211恰好等于自己的基线。其新背景train均值也仅57.02%，所以这种源学习不足并非只表现为训练集学会后的开发集落差；优化速度与表示限制仍不能据此区分。原背景dev从56.54%到96.29%，仍有明显初始化/数据重复差异。这支持“recoils背景伴随LIR源学习下降”的有限重复描述，尚不证明源下降导致目标收益消失。
+For the LDR-related candidate longest_increasing_run, mean development accuracy changes from 74.04% to 57.01%, declining in all five repeats: -23.05, -15.14, -2.25, -10.55, -34.18pp. The new-background mean development majority baseline is 54.00%; mean accuracy above baseline is only +3.01pp, with 0/5 below their own baseline and seed211 exactly at its baseline. New-background mean training accuracy is also only 57.02%; insufficient source learning is therefore not limited to a development gap after successful training fit. Optimization speed and representational limitations remain indistinguishable. Original-background development accuracy ranges from 56.54% to 96.29%, with substantial initialization/data-repeat variation. This supports the limited-repeat observation that the recoils background accompanies lower LIR source learning, not a causal claim that this decline removes target benefits.
 
-## 未换公共任务及不一致现象
+## Unchanged common tasks and inconsistent changes
 
-| 目标 | seed | 条件 | 未换公共源 | dev背景差pp |
+| Target | seed | Condition | Unchanged common source | Dev background difference pp |
 | --- | --- | --- | --- | --- |
 | fixed_points | 101 | B | descents | -9.67 |
 | fixed_points | 101 | B | left_to_right_maxima | +3.42 |
@@ -68,13 +68,13 @@ LDR相关候选longest_increasing_run的dev均值由74.04%变为57.01%，五次�
 | longest_decreasing_run | 503 | C | peaks | -12.99 |
 | longest_decreasing_run | 503 | C | successions | -33.01 |
 
-LDR两个条件的peaks共有10条同任务跨背景差，其中8条为负、2条为正。因此旧v4中peaks各块均下降的描述在新源记录上并非逐项完全复现；必须保留这些正向变化，不能写成所有公共源一致受损。successions同样具有seed/条件差异，完整40条未换公共源对照保留；20条被换slot只列不同任务的原/新水平，不计算其“同任务学习差”。
+For peaks across the two LDR conditions, the 10 same-task background differences include 8 negative and 2 positive changes. The v4 observation that peaks decreased in every block therefore does not reproduce entry by entry. These positive changes must be retained, rather than claiming that all common sources are consistently harmed. successions also varies by seed/condition. All 40 unchanged-common-source comparisons are retained;20 replaced-slot entries show original/new task levels without computing a same-task learning difference.
 
-同一背景内B/C公共源差另见 `source_analysis/common_source_BC.csv`。这些task定义及输入流相同而组合不同，所以它们的学习改变是组合研究的实际结果；仅凭准确率表仍不能判断是优化速度、梯度竞争、共享结构还是其他原因。候选与公共源可能不同步改善，也不能用一个候选准确率作所有目标效果的代理。
+Within-background B/C common-source differences are in `source_analysis/common_source_BC.csv`. These tasks have identical definitions and input streams but different compositions, so learning changes are substantive composition results. Accuracy tables alone cannot determine whether optimization speed, gradient competition, shared structure, or other causes explain them. Candidate and common sources need not improve together; one candidate accuracy cannot proxy all target outcomes.
 
-## 所有源的训练、开发与后半预算变化
+## Training, development, and second-half budget changes for all sources
 
-| 目标 | 背景 | 条件 | 任务 | train均值 | dev均值 | dev范围 | 多数基线均值 | 2400→4800 dev均值变化pp |
+| Target | Background | Condition | Task | Mean train | Mean dev | Dev range | Mean majority baseline | 2400→4800 mean dev change pp |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | fixed_points | g0_v3 | B | anti_fixed_points | 99.19% | 99.08% | [98.05%, 99.41%] | 37.03% | +0.70 |
 | fixed_points | g0_v3 | B | descents | 51.47% | 50.43% | [45.70%, 58.98%] | 36.23% | +4.18 |
@@ -109,6 +109,6 @@ LDR两个条件的peaks共有10条同任务跨背景差，其中8条为负、2�
 | longest_decreasing_run | g1_recoils | C | peaks | 63.72% | 62.93% | [59.96%, 66.21%] | 51.15% | +1.80 |
 | longest_decreasing_run | g1_recoils | C | successions | 48.94% | 45.41% | [43.85%, 50.00%] | 39.00% | +2.27 |
 
-`source_final_by_repeat.csv`逐条保留train/dev CE、与多数基线之差、泛化差、2400→4800变化、暴露量及输入流hash。许多descents/recoils/peaks/successions条件在4800步仍远未接近满分，且部分仍有后半程改善；这说明当前预算的源学习状态不同，不能视为所有源充分学会后的纯任务组成比较。这里不设新“学会”门槛，也不据曲线延长预算；已有历史单任务数据使用不同seed和池，不能替代同预算新重复的单任务因果对照。
+`source_final_by_repeat.csv` retains train/dev CE, differences from majority baselines, generalization gaps,2400→4800 changes, exposures, and input-stream hashes for every entry. Many descents/recoils/peaks/successions conditions remain far below perfect accuracy at 4800, with some still improving in the second half. Source learning therefore differs under this budget; this is not a pure composition comparison after all sources have been fully learned. No new learning threshold or curve-based budget extension is introduced. Historical single-task records use different seeds/pools and cannot replace same-budget single-task causal controls for the new repeats.
 
-至此能支持的是源学习存在背景及重复依赖，以及LDR相关候选在recoils背景下的五次一致下降。是否复现预指定的正/负目标交互，必须等待全部新适配、开发选择和独立测试完成，再按冻结统计方案回答。本说明不读取新目标曲线或测试，也不改变任何组合、训练预算、选择规则或统计方法。
+The current evidence supports background- and repeat-dependent source learning and five consistent decreases for the LDR-related candidate in the recoils background. Whether the prespecified positive/negative target interactions reproduce must be answered under the frozen statistical plan after all new adaptation, development selection, and independent testing finish. This note reads no new target curves or tests and changes no compositions, budgets, selection rules, or statistical methods.

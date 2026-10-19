@@ -1,42 +1,42 @@
-# Pilot v3：固定256样本的多目标组成诊断
+# Pilot v3: multitarget composition diagnostics with 256 fixed samples
 
-本实验在独立目录中保留四目标、三个配对种子的 PermWorld 比较；不修改 pilot_v1/pilot_v2 的代码、配置、数据、结果或 checkpoint。本轮结束后停止扩展。结果生成后阅读 [PILOT_V3_REPORT.md](PILOT_V3_REPORT.md)；若引擎未完成，汇总脚本拒绝生成“已完成”报告。
+This independent directory retains a PermWorld comparison with four targets and three paired seeds. When conducted, this round left pilot_v1/pilot_v2 code, configurations, data, results, and checkpoints unchanged. Expansion stops after this round. Read [PILOT_V3_REPORT.md](PILOT_V3_REPORT.md) for results; if the engine has not completed, the summary script refuses to generate a completion report.
 
-## 范围与设计
+## Scope and design
 
-目标是 `fixed_points`、`exceedances`、`left_to_right_minima`、`longest_decreasing_run`，使用现有库的数学定义；相关源分别是 `anti_fixed_points`、`deficiencies`、`right_to_left_minima`、`longest_increasing_run`。目标与相关源满足 `target(p) = source(T(p))`，变换依次为补值、反演、反序、补值，答案映射为恒等。全部四目标从所有预训练集合中排除。fixed_points 与 exceedances 同属位置比较类；四个目标不是四个独立数学领域。
+Targets are `fixed_points`, `exceedances`, `left_to_right_minima`, and `longest_decreasing_run`, using existing mathematical definitions. Related sources are respectively `anti_fixed_points`, `deficiencies`, `right_to_left_minima`, and `longest_increasing_run`. They satisfy `target(p) = source(T(p))` under complement, inverse, reverse, and complement, respectively, with identity answer mappings. All four targets are excluded from every pretraining set. Fixed_points and exceedances share the positional-comparison family; the four targets are not four independent mathematical domains.
 
-这四条关系都使用恒等答案映射，没有覆盖非平凡答案映射或多任务加和恒等式；任务目录保存了这些其他关系，但本轮在可学习性和规模约束下未纳入。
+All four relations use identity answer mappings, without nontrivial mappings or multitask additive identities. The catalog retains those other relations, which this round excludes under learnability and scale constraints.
 
-每个目标的 A 为随机初始化，B 为四源任务预训练，C 替换B的相关源并保留另三个公共源。fixed_points 保留 v1/v2 源组合和 successions 替换；其他候选集合在 `DESIGN_FROZEN.json` 中声明，最终组成在 `FROZEN_PROTOCOL.json` 中保存。C不代表数学上完全无关。
+For every target, A starts randomly, B pretrains on four sources, and C replaces B's related source while keeping three common sources. Fixed_points retains the v1/v2 composition and successions replacement. Other candidate sets are declared in `DESIGN_FROZEN.json`, with final compositions in `FROZEN_PROTOCOL.json`. C does not mean complete mathematical unrelatedness.
 
-例如exceedances的C以recoils替换deficiencies时，公共源descents与recoils满足 `recoils(I(p)) = descents(p)`（目录中的 `descent_inverse`）。替换还改变源集合内部的已知关系结构，不能将B/C差值只归因于指定目标—源关系。
+For example, when exceedances C replaces deficiencies with recoils, common source descents satisfies `recoils(I(p)) = descents(p)` with recoils (the catalog's `descent_inverse`). Replacement also changes known relations within the source set; B/C differences cannot be attributed solely to the designated target–source relation.
 
-目标门槛使用seed17单任务4800步的源开发准确率：至少90%，且高于训练众数开发基线至少15个百分点。替换选择分数为源训练答案分布TV + 单任务4800步开发准确率差绝对值 + 600/1200/2400/3600/4800步开发准确率差绝对值的均值；取最小值，并列按候选顺序。没有使用迁移测试挑目标或替换任务。候选分数、剩余难度/分布差异全部保留，单一候选不声称通过搜索改善了匹配。
+Target eligibility uses seed17 single-task 4800-step source-development accuracy: at least 90%, and at least 15 percentage points above the training-mode development baseline. The replacement score is source-training answer-distribution TV + absolute 4800-step single-task development-accuracy difference + mean absolute development-accuracy difference at 600/1200/2400/3600/4800 steps. Choose the minimum, breaking ties by candidate order. Transfer tests select neither targets nor replacements. Candidate scores and residual difficulty/distribution differences are retained; a single candidate does not imply search improved matching.
 
-目标资格门槛使用8192条单任务训练样本；通过该门槛不意味着A在本轮256条目标样本、800步预算下也能学会。报告分别解释目标资格与小样本条件下接近多数基线的结果。
+The eligibility gate uses 8192 single-task training examples. Passing it does not mean A can learn with this round's 256 target examples and 800-step budget. The report distinguishes target eligibility from near-majority-baseline outcomes under small-sample conditions.
 
-`TASK_CATALOG.csv` 区分数学任务、参数变体、编码/输出接口变体。目录覆盖当前PermWorld及项目已有其他world接口，本轮只运行现有PermWorld标量任务。`catalog/RELATION_AUDIT.csv` 和 `catalog/REPLACEMENT_RELATION_COUNTEREXAMPLES.csv` 记录关系检查；有限反例只能否定检查的恒等式，不能证明数学无关。
+`TASK_CATALOG.csv` distinguishes mathematical tasks, parameter variants, and encoding/output-interface variants. It covers current PermWorld and existing interfaces from other worlds, while this round runs existing PermWorld scalar tasks only. `catalog/RELATION_AUDIT.csv` and `catalog/REPLACEMENT_RELATION_COUNTEREXAMPLES.csv` record relation checks; finite counterexamples reject only checked identities, not all mathematical relationships.
 
-## 数据、模型与预算
+## Data, model, and budget
 
-- 输入均为长度10的均匀随机置换，one-line encoding。源训练池8192、源开发1024、目标训练256、目标开发1024、新测试2048，种子17/42/73。
-- 同种子内所有目标与A/B/C共享置换输入，按不同任务定义重新生成精确标签。seed17/42复用原输入池；seed73输入新生成。目标间共享输入、公共源任务乃至完整源组合，不能将跨目标结果当独立样本。
-- 新数据与新测试以 inverse/reverse/complement 生成的完整变换轨道隔离。新测试在36项开发选择冻结后生成，排除v1/v2所有输入和v3训练/开发；不同新测试种子也隔离。旧测试仅用于排除，不参与选择。
-- 原Transformer：4层、宽256、8头、dropout0.1、188词表、绑定token embedding/output权重。FP32权重与评估、BF16训练、TF32关闭。精确模型配置见冻结JSON。
-- 源预训练4800步、batch64，四任务每步各16个样本（25%）。LR前100步warmup到3e-4，至2400步cosine到3e-5，随后常数3e-5至4800；本轮不自动延长。每个组合前向训练输入8,601,600 tokens，监督614,400 tokens；每任务76,800次样本暴露。
-- 所有实际源任务有三个种子的单任务参照，复用相同初始化和源输入池、相同4800步LR轨迹；保存1200/2400/4800 checkpoint及0/600/1200/2400/3600/4800全量train/dev曲线。单任务4800步每任务暴露是组合的4倍；单任务1200步仅等每任务暴露，LR轨迹不同，不能据此单独识别因果干扰。
-- A/B/C各有三档适配LR：3e-4、1e-4、3e-5；每个候选800步、batch64、warmup100后cosine到初始LR的0.1，输入1,433,600 tokens、监督102,400 tokens。相同目标/种子使用相同样本顺序；不同条件共享相同最大选择预算。
-- AdamW：weight decay=.01，betas=(.9,.999)，eps=1e-8；gradient clip=1。训练loss为答案与EOS两位置CE均值。prompt-only全词表argmax计算答案准确率，gold-conditioned EOS单独计量。多数基线使用训练众数，分别计算各split命中率。
-- 适配加载源权重后，只将目标已有task token的绑定embedding/output行恢复为同种子step0值；未新增输出头。优化器清空。每100步评估完整训练/开发；最高开发答案准确率、最低开发answer CE、最早步数、声明LR顺序依次破同分，step0不参与选择。
+- Inputs are uniformly random length 10 permutations with one-line encoding. Source train/dev pools contain 8192/1024 examples; target train/dev/new-test pools contain 256/1024/2048. Seeds are 17/42/73.
+- Within each seed, all targets and A/B/C share permutation inputs with exact labels regenerated for each definition. Seeds17/42 reuse original pools; seed73 has new inputs. Shared inputs, common sources, and even entire source compositions prevent treating cross-target outcomes as independent samples.
+- New data and tests are isolated by full inverse/reverse/complement orbits. New tests are generated after 36 development selections freeze, excluding all v1/v2 inputs and v3 train/dev inputs. New test seeds are also isolated. Old tests are used only for exclusion, not selection.
+- Original Transformer:4 layers,width 256,8 heads,dropout 0.1, vocabulary 188, tied token embedding/output weights. FP32 weights/evaluation, BF16 training, TF32 disabled. Exact configuration is in the frozen JSON.
+- Source pretraining uses 4800 steps,batch 64, exactly 16 examples per task each step (25%). Learning rate warms up to 3e-4 over 100 steps, follows cosine to 3e-5 by 2400, then stays 3e-5 through 4800. No automatic extension follows. Each mixture processes 8,601,600 forward training input tokens and 614,400 supervised tokens; each source receives 76,800 exposures.
+- Every actual source has three-seed single-task references using the same initialization, source pools, and 4800-step rate trajectory. Checkpoints at 1200/2400/4800 and full train/dev curves at 0/600/1200/2400/3600/4800 are saved. Single-task 4800 exposure is 4 times the mixture's per-task exposure; single-task 1200 matches exposure only, with a different rate trajectory, so it cannot alone identify causal interference.
+- A/B/C each have three adaptation rates:3e-4,1e-4,3e-5. Every candidate runs 800 steps,batch 64, warmup 100, then cosine to 0.1 of the initial rate, processing 1,433,600 input and 102,400 supervised tokens. The same target/seed uses identical sample order; conditions share the maximum selection budget.
+- AdamW:weight decay=.01, betas=(.9,.999),eps=1e-8; gradient clip=1. Training loss averages CE at answer/EOS positions. Answer accuracy is prompt-only full-vocabulary argmax; gold-conditioned EOS is separate. Majority baselines use the training mode, with accuracy measured separately per split.
+- After loading source weights, adaptation restores only the target's existing tied task-token embedding/output row to same-seed step0. No head is added. Optimizer state is emptied. Full train/dev evaluation occurs every 100 steps. Ties follow highest development answer accuracy, lowest answer CE, earliest step, then declared rate order; step0 is ineligible.
 
-fixed_points的seed17/42精确复用v2两倍预算的4个预训练模型与18个适配候选，核对checkpoint hash和配置/数据后使用v3新测试重新评估。这些历史权重不是新独立训练重复。其他20个组合预训练和90个适配候选实际新增；单任务运行数取决于冻结的源组合，见计算成本表。逻辑源组可能重复；`source_composition_reuse.csv` 记录有序/无序组合与模型state hash重复，重复计算按实际执行计成本。
+Fixed_points seeds17/42 exactly reuse 4 v2 double-budget pretrained models and 18 adaptation candidates, verifying checkpoint hashes and configuration/data compatibility before reevaluation on v3's new test. These historical weights are not newly trained independent repetitions. The other 20 mixture pretrainings and 90 adaptation candidates are new. The single-task run count depends on frozen source sets; see the cost table. Logical source groups may repeat. `source_composition_reuse.csv` records ordered/unordered compositions and duplicate state hashes; compute counts actual execution.
 
-这些复用的fixed_points源模型缺少2400步以前的全量train/dev曲线。图表仅保留2400步原预算终点以及v2续训3000/3600/4200/4800步记录，B/C曲线从2400步开始；不补造或插值到0/600步。本轮新训练的单任务和其他多任务曲线才有统一0/600/1200/2400/3600/4800评估。未选替换候选的单任务曲线与4800步终点同样保留，即使开发准确率未达90%；未选且未用作其他源任务的候选通常只有设计seed17参照。
+These reused fixed_points source models lack full train/dev curves before 2400 steps. Figures retain only the original 2400-step endpoint and v2 continuation at 3000/3600/4200/4800. B/C curves begin at 2400, without fabrication or interpolation back to 0/600. Only new single-task and other multitask runs have unified 0/600/1200/2400/3600/4800 evaluations. Unselected replacement candidates retain single-task curves and 4800-step endpoints even below 90% development accuracy. Unselected candidates not used elsewhere generally have only the design seed17 reference.
 
-## 复现
+## Reproduction
 
-在仓库根目录 `F:\2026DMLR` 使用已有CUDA PyTorch环境（环境版本最终见 `artifacts/environment.json`）：
+Use the existing CUDA PyTorch environment from repository root `F:\2026DMLR`; final environment versions are in `artifacts/environment.json`:
 
 ```powershell
 .venv/Scripts/python.exe -u experiments/pilot_v3_multitarget/run_pipeline.py
@@ -45,9 +45,9 @@ fixed_points的seed17/42精确复用v2两倍预算的4个预训练模型与18个
 .venv/Scripts/python.exe experiments/pilot_v3_multitarget/audit_final.py
 ```
 
-包装入口依次执行 `pilot_v3.py` 的 prepare、smoke、design_references、freeze，在freeze之后执行 `freeze_evidence.py` 保存冻结证据，然后完成single references、pretrain、adapt、select、test。完成标记存在时跳过该阶段；源码和配置hash检查阻止已冻结实验静默变更。原始底层入口 `pilot_v3.py all` 可执行引擎全部阶段，但完整审计流程应使用包装入口，确保额外冻结证据保存于后续计算之前。
+The wrapper runs `pilot_v3.py` prepare, smoke, design_references, and freeze, then `freeze_evidence.py` to save frozen evidence before single references, pretrain, adapt, select, and test. Completion markers skip finished stages; source/configuration hash checks prevent silent changes to frozen experiments. The lower-level `pilot_v3.py all` runs all engine stages, but the wrapper is required for the complete audit workflow so additional frozen evidence precedes later computation.
 
-在新目录重跑（仍按设计复用明确兼容的历史 fixed_points 权重，不覆盖现有输出）：
+Rerun in a new directory, still reusing explicitly compatible historical fixed_points weights by design, without overwriting existing outputs:
 
 ```powershell
 .venv/Scripts/python.exe -u experiments/pilot_v3_multitarget/run_pipeline.py --out experiments/pilot_v3_multitarget/replication
@@ -56,36 +56,36 @@ fixed_points的seed17/42精确复用v2两倍预算的4个预训练模型与18个
 .venv/Scripts/python.exe experiments/pilot_v3_multitarget/audit_final.py --out experiments/pilot_v3_multitarget/replication
 ```
 
-`summarize.py` 只读取保存的CSV/JSON，不import模型，不训练、推理或依据测试作新选择。先audit、后summary、再audit使报告能引用审计状态，最终manifest包含报告、表格和图。checkpoint保留本地并由hash追踪，通常不进入Git；复用路径指向v1/v2，迁移实验目录时须保留这些引用或完整复制仓库。
+`summarize.py` only reads saved CSV/JSON; it imports no model, runs no training or inference, and makes no new test-based selections. Audit→summary→audit lets the report cite audit status and includes reports, tables, and figures in the final manifest. Checkpoints remain local and hash-tracked, usually outside Git. Reuse paths point to v1/v2; preserve references or copy the full repository when relocating experiment directories.
 
-报告仅在 `FINAL_AUDIT.json` 的 `status` 为 `passed` 且 `old_files_byte_preserved` 为正时写历史字节保留检查通过；缺失或其他状态明确标为待审计，不把实验完成标记当作最终审计通过。
+The report claims historical byte preservation passed only when `FINAL_AUDIT.json` has `status=passed` and positive `old_files_byte_preserved`. Missing or other states are explicitly marked pending audit; experiment completion is not equated with final audit success.
 
-## 输出索引
+## Output index
 
-| 文件 | 内容 |
+| File | Contents |
 | --- | --- |
-| `TASK_CATALOG.csv` | 任务定义、输入/输出范围、生成、关系、变换和答案映射；区分参数/编码变体 |
-| `PILOT_V3_REPORT.md` | 中文观察、限制与下一阶段建议 |
-| `artifacts/results_seed17.csv` / `results_seed42.csv` / `results_seed73.csv` | 每种子72条全部候选best/endpoint新测试原始结果 |
-| `artifacts/results_all_candidates.csv` / `results_selected.csv` | 216条披露全集 / 36条开发选择主结果 |
-| `artifacts/results_summary.csv` | 每目标条件三个种子的均值、样本SD和范围 |
-| `artifacts/paired_deltas.csv` / `paired_deltas_summary.csv` | B−A、C−A、B−C逐种子与描述性汇总 |
-| `artifacts/selected_vs_endpoint.csv` | 所选LR的最佳开发checkpoint与800步终点 |
-| `artifacts/target_curves.csv` / `late_training_diagnostics.csv` | 全部候选目标train/dev曲线 / 固定400→800窗口变化 |
-| `artifacts/single_task_references.csv` | 单任务1200/4800步完整train/dev指标、长度及多数基线 |
-| `artifacts/source_learning_all.csv` / `single_vs_multi_sources.csv` | 所有源学习曲线 / 同种子单多任务对照 |
-| `artifacts/source_classification_summary.csv` | 预定义描述性分类计数，不将重复源出现数当独立任务 |
-| `artifacts/source_learning_effect_counts.csv` / `source_learning_effects_unique.csv` | 源组合相对单任务的改善/下降计数；按seed×任务×source state去重后的完整正负差值 |
-| `artifacts/common_source_differences.csv` | 公共源B/C开发准确率、CE及其差异 |
-| `artifacts/source_composition_reuse.csv` | 源任务组合重复和相同模型state hash |
-| `artifacts/replacement_matching.csv` | 全部预设替换候选及剩余匹配差异 |
-| `artifacts/compute_by_run.csv` / `compute_summary.csv` / `stage_timings.csv` | 新增与历史复用预算、时间，分别计成本 |
-| `artifacts/FROZEN_PROTOCOL.json` / `SELECTIONS_FROZEN.json` | 完整冻结配置、组成和开发选择 |
-| `artifacts/FINAL_AUDIT.json` / `artifact_manifest.json` | 协议/泄漏/权重/保存核验及文件hash |
-| `artifacts/figures/*.png` | 每目标逐种子准确率、配对差值、单多任务曲线与目标所选曲线 |
+| `TASK_CATALOG.csv` | Definitions, input/output ranges, generation, relations, transformations, answer mappings; parameter/encoding variants distinguished |
+| `PILOT_V3_REPORT.md` | Observations, limitations, and next-stage recommendations |
+| `artifacts/results_seed17.csv` / `results_seed42.csv` / `results_seed73.csv` |72 raw new-test candidate best/endpoint results per seed |
+| `artifacts/results_all_candidates.csv` / `results_selected.csv` |216 disclosed results /36 development-selected main results |
+| `artifacts/results_summary.csv` | Three-seed means, sample SDs, and ranges per target/condition |
+| `artifacts/paired_deltas.csv` / `paired_deltas_summary.csv` | Per-seed B−A,C−A,B−C and descriptive summaries |
+| `artifacts/selected_vs_endpoint.csv` | Best development checkpoint versus 800-step endpoint at the selected LR |
+| `artifacts/target_curves.csv` / `late_training_diagnostics.csv` | All candidate target train/dev curves / fixed 400→800-window changes |
+| `artifacts/single_task_references.csv` | Full 1200/4800-step single-task train/dev metrics, length, and majority baseline |
+| `artifacts/source_learning_all.csv` / `single_vs_multi_sources.csv` | All source curves / same-seed single/multitask comparisons |
+| `artifacts/source_classification_summary.csv` | Predefined descriptive category counts; repeated source occurrences are not independent tasks |
+| `artifacts/source_learning_effect_counts.csv` / `source_learning_effects_unique.csv` | Source-mixture improvement/decline counts relative to single-task training; complete signed differences deduplicated by seed×task×source state |
+| `artifacts/common_source_differences.csv` | Common-source B/C development accuracy, CE, and differences |
+| `artifacts/source_composition_reuse.csv` | Repeated source compositions and identical model-state hashes |
+| `artifacts/replacement_matching.csv` | All predefined replacement candidates and residual matching differences |
+| `artifacts/compute_by_run.csv` / `compute_summary.csv` / `stage_timings.csv` | New versus historical reused budgets and runtimes, with separate costs |
+| `artifacts/FROZEN_PROTOCOL.json` / `SELECTIONS_FROZEN.json` | Full frozen configuration, compositions, and development selections |
+| `artifacts/FINAL_AUDIT.json` / `artifact_manifest.json` | Protocol/leakage/weight/save checks and file hashes |
+| `artifacts/figures/*.png` | Per-target/per-seed accuracy, paired differences, single/multitask curves, and selected target curves |
 
-单/多任务分类门槛事先固定：单任务4800步开发准确率<90%为“本配置单任务未充分学会”；≥90%且组合低至少5个百分点为“单任务能学会、组合训练下降”；其余“不足以认定组合训练下降”。这受样本暴露和LR轨迹混杂影响，不是任务固有难度或纯多任务干扰的结论。
+Single/multitask class thresholds were fixed in advance: single-task 4800-step development accuracy<90% means "Single task not fully learned under this configuration"; ≥90% with mixture accuracy at least 5 points lower means "Learned alone but degraded in multitask training"; otherwise, "Insufficient evidence of multitask degradation". Exposure and rate-trajectory confounds prevent conclusions about intrinsic task difficulty or pure multitask interference.
 
-三类学习状态不会单独标记组合改善，因此另外披露组合4800步减单任务4800步开发准确率≥+5pp和≤−5pp的出现次数、每方向最多三个最强例子及全部差值。统计同时提供原始任务出现次数和seed×任务×source state hash去重版本；去重仍不意味着独立样本。单任务4800与组合4800的总优化器更新数和全局LR轨迹相同，但每任务暴露相差四倍并存在任务交替，纯任务干扰仍被混杂；单任务1200只匹配每任务暴露，LR历史与总更新数不同。改善与下降也受seed相关优化过程影响，不直接解释为因果协同或干扰。
+These classes do not separately mark mixture improvements. Additional disclosures therefore count mixture 4800 minus single-task 4800 development accuracy≥+5pp and≤−5pp, show up to three strongest examples per direction, and retain all differences. Counts are reported both by raw occurrence and after seed×task×source-state deduplication, which still does not imply independent samples. Single-task 4800 and mixture 4800 share total optimizer updates and global rates but differ fourfold in per-task exposure and introduce task alternation, leaving pure interference confounded. Single-task 1200 matches exposure only, not rate history or total updates. Both improvements and declines also depend on seed-related optimization; neither is directly interpreted as causal synergy or interference.
 
-主图均保留三个种子。跨目标共享输入与来源模型，只有三个配对种子，均值±SD仅作描述。本轮固定256样本，不声称建立完整样本效率曲线或scaling law；保留全部负迁移、无收益和未充分学会结果。
+All main figures retain three seeds. Cross-target inputs and source models are shared, with only three paired seeds; mean±SD is descriptive. This fixed 256-example round establishes neither a full sample-efficiency curve nor a scaling law. All negative transfer, no-benefit, and incomplete-learning results are retained.

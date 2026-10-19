@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "base_revision": "c4aeb499a0c7f2dc59b70e438f66c5b6dad4244a",
+  "scope": "English translation of documentation, report templates, and textual CSV classifications",
+  "historical_manifests_rewritten": false,
+  "training_or_model_evaluation_run": false,
+  "files": {
+    "PILOT_REPORT.md": {
+      "original_sha256": "f3e7fd09e567b068aae37f5c2a7ffac649f11072583ca7071c361a3785c755e7",
+      "english_sha256": "d99dc23f765bb46d4e1f87970038bbffb3c7d7f94784010ab430c1979cdd790b",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "README.md": {
+      "original_sha256": "92ce449ba1e1b3a8a9728c15bd77401eb2f6162c9b118685dbaab135a70792bb",
+      "english_sha256": "12f3c3b85197b47dc8aea01d26fe9c4d1b5807e290f2e8026913f0e71dc95fda",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/permworld_pilot/README.md": {
+      "original_sha256": "3dbce7a9faa58f9c429d7d2d4df60e84298e966d3da374f0dbe1ce9c864e89e7",
+      "english_sha256": "05ed05c1f19ba9e5c63b9c43a30fe5cbf6f711d98bf5d8c72c725d5e473b190b",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/pilot_v2_diagnostics/DIAGNOSTIC_REPORT.md": {
+      "original_sha256": "80e2f7f1a773fca1ef5ade327bb53490e25c8ed6e4d839fb977dbd3e954dc925",
+      "english_sha256": "3f62aa2541ed26061bc7fa70b00b35997dbdd87150d2b4c9fa1974ad4a7c0c2a",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/pilot_v2_diagnostics/README.md": {
+      "original_sha256": "8677d0ab1ff4cb325ce14c44062c9f8f60417f6399d193e2e37815a34cd9e145",
+      "english_sha256": "a06fa1a43d10146a167729ea17cac4545395cf0bbce78789269ad8d5c1a4d391",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/pilot_v2_diagnostics/summarize.py": {
+      "original_sha256": "52caafe7e9f8fd17295b68348d6c8a7f642d603bc2b58d099d14d73ae45b5723",
+      "english_sha256": "17cd58e8e42905038a80209a1247584bc5718400cce62d5a1c256107be22b6ad",
+      "changed_string_literals": 171,
+      "executable_ast_preserved": true
+    },
+    "experiments/pilot_v3_multitarget/PILOT_V3_REPORT.md": {
+      "original_sha256": "7a8b320eedb98c0e2b1647b790f45c54d1b6cdeaa050e04f51ed0f7f095f49fe",
+      "english_sha256": "60089a7ddac0bd19899295d4d4156019bd42cf7197aebe8dfcfdba0c46db060f",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/pilot_v3_multitarget/README.md": {
+      "original_sha256": "633955671f9f7cb7724b3caa845613f8ddb72c49803c09dab1063b9703eb8e27",
+      "english_sha256": "4bc9c5e597a6f3aa11105f4c0109ba360baac92fec3934168f5cc83a798d1419",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/pilot_v3_multitarget/artifacts/single_vs_multi_sources.csv": {
+      "original_sha256": "382a4c60539b759c1eff06d5ae589be2518e1b4bd0c4d40448ce1e318222d3fc",
+      "english_sha256": "7c76ab3d81e4724719106dfb6e250a5dde71d89e0bdf5fcd5e14b104bd88b798",
+      "translated_cells": 96,
+      "all_other_cells_preserved": true
+    },
+    "experiments/pilot_v3_multitarget/artifacts/source_classification_summary.csv": {
+      "original_sha256": "57d38758f44bc1e92f5751dcdc45aa87f61f8237013ce976279be45028cab72c",
+      "english_sha256": "b47bbe32651b6e81657280f569821e43b1e42b34fe62787f5b3258a40f6851f7",
+      "translated_cells": 24,
+      "all_other_cells_preserved": true
+    },
+    "experiments/pilot_v3_multitarget/catalog/README.md": {
+      "original_sha256": "3196ac52c5fd2254798f5a4b220ae99a2a84ac514de9f73580122a1312fa4eec",
+      "english_sha256": "c88b592d58eda54d86f5a807409e389e01cf836cf816e055dcb7b2ae1cd66d2a",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/pilot_v3_multitarget/references/EXISTING_REFERENCES.md": {
+      "original_sha256": "2ce0186f7a49cc26a606cb06cff52cda0b3e7ec74a12884d4ec1cb2a23367212",
+      "english_sha256": "dd4c960dc5b11cb5ebfe189ca33eeeef7fcc7911385f00c6e0ccdf1b0e732d2c",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/pilot_v3_multitarget/summarize.py": {
+      "original_sha256": "f8e670e5e1bbea8c5559eef8fc671d0009c5d9a0b1bfafa98e7c158ed4ebf709",
+      "english_sha256": "b15fb5218b06af2bb7188d177556ff878d32cc029289e69039c6de4f19c3d239",
+      "changed_string_literals": 176,
+      "executable_ast_preserved": true
+    },
+    "experiments/pilot_v4_backgrounds/DATA_PLATFORM.md": {
+      "original_sha256": "ee752e45aeee1dc15284d2b258a63e2e5c62fa2e62b39b176990ef3088259c3a",
+      "english_sha256": "0dccc57d667f26df67b01ef4787f5eccebfffb4f0c6ce1163b85a45894864d42",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/pilot_v4_backgrounds/PILOT_V4_REPORT.md": {
+      "original_sha256": "60adc2e47de4d23d3617ef267b61befb3bf1cfe9bada9df3b3daf6b7c1761f10",
+      "english_sha256": "157050867f039fd29863e82745ba67638ebac9be00c5f4bbd9f0dfdb46c918ff",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/pilot_v4_backgrounds/README.md": {
+      "original_sha256": "124a6f58ef09828812b522f57b3ffe394c4386d93ce09dd38472a9cec570bd38",
+      "english_sha256": "ace5f5c1e51da5674c21fc7ff1c5398d8756869360c5250115a77b81684f7ca3",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/pilot_v4_backgrounds/catalog/README.md": {
+      "original_sha256": "f57be21b86c105c372677d4dda17791daf443bf2f536d93b385f97ff7a7cc0e4",
+      "english_sha256": "9859cfba684e6154232b65807bb19511a87711643aad99e021621993ad730c91",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/pilot_v4_backgrounds/catalog_addenda/README.md": {
+      "original_sha256": "f76176389f00b3608655aca742332bff4e2f506cfb7a91b355388d7825fbfb67",
+      "english_sha256": "387bbba9d53be4a45504c066fb8d74957be00d9023ce42d507a5e0b49705a915",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/pilot_v4_backgrounds/references/REUSE_AUDIT.md": {
+      "original_sha256": "408ad6fdfc1bfe223d4925aacfffdb414c2b3b7f2dfe946a942736da231042af",
+      "english_sha256": "77a3943def1d06191f291a1e0e1243e73744c46e62dd20827060241495f5481f",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/pilot_v4_backgrounds/summarize.py": {
+      "original_sha256": "4ba0535acccb942333216660af037f615d868ca434ff7525981f2d4febf5a4c7",
+      "english_sha256": "8f511a1eb3f301b2d1e93ce7f8f3a11ee379d9a2d5ae9555ea65de231d35f6ae",
+      "changed_string_literals": 175,
+      "executable_ast_preserved": true
+    },
+    "experiments/pilot_v5_confirmation/PILOT_V5_REPORT.md": {
+      "original_sha256": "a61ba4b1e73bfca47f5a7076de79ac39b1e213e0d9c18bcd32baf23542dea206",
+      "english_sha256": "c3aa246d26863fca447ca89ffc13bd030e11ce887c154823a58624da63792ddc",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/pilot_v5_confirmation/README.md": {
+      "original_sha256": "fe97d404594dde7f88f7ad52c9da933aedf23fbcf914e2701ab8a7a1b0f8fe3d",
+      "english_sha256": "57011cde6577878e4a63303f48f5e0100b0d7693b105382a1acfe9978b4148db",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/pilot_v5_confirmation/SOURCE_LEARNING_NOTES.md": {
+      "original_sha256": "9c18a8908a07c4c145df2c2e7977247331edcd24755a9a59ed077b85ad40435f",
+      "english_sha256": "7ab91ecfd749f41500e3be51658c4cad63866693cbc8d3d34eada2a4ce8d7f7b",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/pilot_v5_confirmation/TASK_FAMILY_PLAN.md": {
+      "original_sha256": "5badc5805981a37a6c0a1b55b0c7378e2a187b96d6f3f758c815152dcb638932",
+      "english_sha256": "7a2940907a601a11df36f047c5c1ef10ac194a4c5ac1e8a042039fc2bba8ef0c",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/pilot_v5_confirmation/exploratory/EXPLORATORY_ANALYSIS_ZH.md": {
+      "original_sha256": "a4ac836d4f1ce0203b85c10c6d0ec7f085d3d26299554defaae196ccf6b4b2c0",
+      "english_sha256": "7811dd16e2d42a07ee7d181d0546adbdc7d7bd2f89fc35655d35d1617ae50e57",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/pilot_v5_confirmation/mathematics/README.md": {
+      "original_sha256": "5fbc91638e60bfbd00967ad848d6a08d924e7f115dfd175d3628806fc124b44c",
+      "english_sha256": "b1227754692119f9f9202674c2c8169410d7c4807fd183b0864aad7e6445ef23",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/pilot_v5_confirmation/source_learning_analysis.py": {
+      "original_sha256": "38555bd9ac68fd9d09fd9cd161ce323a3d9c79b4d515a317cb709c3611ea6612",
+      "english_sha256": "10393ce3abcd9c805818327e47da2a0c4c4113bf3dc467c9780d0ce4c5a48ec7",
+      "changed_string_literals": 39,
+      "executable_ast_preserved": true
+    },
+    "experiments/pilot_v5_confirmation/summarize.py": {
+      "original_sha256": "1b13a4cfc7a8ced6eba1074aadad08071df9f8ec3b8885c8bffda36d8522491e",
+      "english_sha256": "e88486014a7e539627d9d501203ba1c12d3e797f3d092cef54bfc125c82dea3f",
+      "changed_string_literals": 102,
+      "executable_ast_preserved": true
+    },
+    "experiments/platform_v01/PLATFORM_REPORT.md": {
+      "original_sha256": "3e1659b8db4d117da7052a67abf63f0429215c4fe1244c1e62bf24ad01919b5d",
+      "english_sha256": "feceb59ab482c2826a2734b47313bf5ce3763b16dafb17bdb0bad68f03b2a4a3",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/platform_v01/README.md": {
+      "original_sha256": "8657b290385b0f876acc75a6f7c3fba577b2b1082f0504e6fc593905359cc5c8",
+      "english_sha256": "d7ecbdaca1561d64895a9bfb653b8983d2cb5cfd40a83ae80704698c1a66faa7",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/platform_v01/build_report.py": {
+      "original_sha256": "9ccaad3d4403957de3bdcdf862bf3b655dd61f33ba37404e0b5917ae50a5ce9f",
+      "english_sha256": "a88d08b0832700862e339e762c7c029dcfa303e1d0f8c9bfed07635461e03500",
+      "changed_string_literals": 49,
+      "executable_ast_preserved": true
+    },
+    "experiments/platform_v01/calibration/CALIBRATION_REPORT.md": {
+      "original_sha256": "26c7f229fcba78c2efe3133d7e4b7fe0aded3ceab9ea23e34138464ad86641d1",
+      "english_sha256": "eaa82c58870596c03e9f29f7ffe23480b49ee52a7b6730f7945e7d1cf01edcd5",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    },
+    "experiments/platform_v01/calibration/summarize.py": {
+      "original_sha256": "773aa09a30a1b5ff7b24ace1b4f7649413fd44f6482f5ef76f61b5044091d2e5",
+      "english_sha256": "50ba0e447a6e5f02993eb6f63fdf24cce6e6303113200c9a882dbe0cd2f03a40",
+      "changed_string_literals": 25,
+      "executable_ast_preserved": true
+    },
+    "experiments/platform_v01/mathematics/README.md": {
+      "original_sha256": "2f94c6fb692a6ee2b32fe3921fb50d786a0f7610457641a6f5086a4ff34f3933",
+      "english_sha256": "dff104f798073c1d180a56cb1892f843a873c2555e7b3df5b144190d237ac028",
+      "review": "English prose; numerical statements, equations, commands, and links reviewed separately"
+    }
+  }
+}
