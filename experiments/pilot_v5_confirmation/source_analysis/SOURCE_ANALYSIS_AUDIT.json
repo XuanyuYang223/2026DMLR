@@ -1,0 +1,18 @@
+{
+  "unix": 1792380793.814876,
+  "status": "source_only_complete",
+  "target_test_results_read": false,
+  "test_complete_exists_at_analysis": false,
+  "model_imports_or_forward": false,
+  "source_runs": 40,
+  "final_task_rows": 160,
+  "same_task_background_comparisons": 60,
+  "changed_task_background_comparisons": 20,
+  "candidate_comparison_rows": 10,
+  "common_BC_rows": 60,
+  "source_curves_sha256": "7b9be14e10c2e004c78b112f198ad901b02c03c570147d2a0fe2da8fd6e34311",
+  "source_exposures_sha256": "f8c6480ae62d79a1c25345beb5df7f5b287d7eaac52957e623727964d169a2dd",
+  "config_sha256": "70f5ce3dfd4911528700adb5d0e9dc23401878fe3fbbf6021e3cd2915be55203",
+  "script_sha256": "38555bd9ac68fd9d09fd9cd161ce323a3d9c79b4d515a317cb709c3611ea6612",
+  "note": "Descriptive source-only analysis. No association with new confirmation transfer interactions has been assessed."
+}

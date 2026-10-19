@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "reviewed_utc": "2026-10-19T01:59:26.113399+00:00",
+  "freeze_utc": "2026-10-19T01:57:01.746055+00:00",
+  "data_ready_unix": 1792374841.0728629,
+  "smoke_unix": 1792374871.4065735,
+  "mathematics_unix": 1792374958.135196,
+  "freeze_unix": 1792375021.7460546,
+  "frozen_file_hashes_checked": 27,
+  "exploratory_evidence_hashes_checked": 4,
+  "mathematics_nested_hashes_checked": 9,
+  "statistical_plan_code_exploration_bindings_verified": true,
+  "old_initial_state_hashes_compared": 3,
+  "new_initializations_replayed": 5,
+  "old_source_metadata_checked": 60,
+  "old_generator_seed_set": [
+    20261018,
+    2026101802,
+    2026101803,
+    2026101804,
+    2026101805
+  ],
+  "new_generator_seed_set": [
+    2026101901,
+    2026101902,
+    2026101903,
+    2026101904,
+    2026101905,
+    2026101951,
+    2026101952,
+    2026101953,
+    2026101954,
+    2026101955
+  ],
+  "new_data_and_initialization_seed_sets_disjoint_from_old": true,
+  "saved_formal_checkpoints_after_freeze": 5,
+  "no_new_test_inputs_or_results_yet": true,
+  "model_forward_calls": 0,
+  "gpu_query_or_execution": false,
+  "old_checkpoint_reuse_incompatibility": [
+    "Architecture/encoding and nominal budgets are reusable, but the confirmation requires fresh initializations and fresh input pools.",
+    "Every old v3/v4 source record has an initial parameter hash different from all five confirmation initializations.",
+    "Every old v3/v4 source train-data hash differs from every new confirmation input pool.",
+    "Old adaptations likewise cannot count as independent new repetitions; their initializations and target examples belong to exploration.",
+    "V1 source checkpoints also used the earlier2400-update budget; even budget-compatible later checkpoints fail the fresh-data/fresh-initialization requirement."
+  ],
+  "scope": "Pretraining evidence review only; final checkpoint/result audit awaits all tests and summaries."
+}

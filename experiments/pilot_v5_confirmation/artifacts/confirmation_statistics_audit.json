@@ -1,0 +1,18 @@
+{
+  "mode": "confirmation",
+  "input": "F:\\2026DMLR\\experiments\\pilot_v5_confirmation\\artifacts\\results_selected.csv",
+  "input_sha256": "1370fc42738a9ce0885aba7efe3960c57daa5475a1f196b68457deb9b43de6b2",
+  "plan_sha256": "e5ba71ae898d84693eb74ba7bcf7ed1d466f7a683b93722361299ac04339157f",
+  "statistics_sha256": "06c929e5693de7364036e5de931dbdacd08edbcb33f9d7031a9bee78449750d4",
+  "seed_count": 5,
+  "difference_rows": 10,
+  "summary_rows": 6,
+  "self_check": {
+    "passed": true,
+    "t_95_critical": 2.7764451051977934,
+    "t_family_critical": 3.4954059325164364,
+    "smallest_two_sided_exact_p_n5": 0.0625
+  },
+  "unit": "accuracy fraction; multiply by 100 for percentage points",
+  "pairing": "Within-repeat differences computed directly from selected raw A/B/C accuracies; shared A cancels algebraically."
+}

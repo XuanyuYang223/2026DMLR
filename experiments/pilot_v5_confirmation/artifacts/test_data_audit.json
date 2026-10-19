@@ -1,0 +1,44 @@
+{
+  "unix": 1792382308.2617123,
+  "selection_sha256": "816f44db75a08cd091582f770964e8dd299381649468750d92119140ee42935b",
+  "excluded_orbits": 115200,
+  "overlap": 0,
+  "pools": [
+    {
+      "seed": 101,
+      "data_generation_seed": 2026101951,
+      "count": 2048,
+      "sha256": "efa0725d6d98f55e53046fcb9fb1f9eadcd0c2d5d2df1736e0d1998ea5506e7a",
+      "unique_orbits": 2048
+    },
+    {
+      "seed": 211,
+      "data_generation_seed": 2026101952,
+      "count": 2048,
+      "sha256": "eac04df07f9aa3118e76de6e4222fb6204b0a9d03a426970d15abbf447838a07",
+      "unique_orbits": 2048
+    },
+    {
+      "seed": 307,
+      "data_generation_seed": 2026101953,
+      "count": 2048,
+      "sha256": "afe49d44d108f16f2f1156f611113fee478d7d9a6f02eb3fa2bab563fae44a59",
+      "unique_orbits": 2048
+    },
+    {
+      "seed": 401,
+      "data_generation_seed": 2026101954,
+      "count": 2048,
+      "sha256": "83a8b819a820a24aa6272f80cf33620e4fb3e97323d4fc93fe0882399c26cf5b",
+      "unique_orbits": 2048
+    },
+    {
+      "seed": 503,
+      "data_generation_seed": 2026101955,
+      "count": 2048,
+      "sha256": "d31f5fb5bdf1e15df3da27d14faf923d3307b96d527460d03deadeb1bb3226f7",
+      "unique_orbits": 2048
+    }
+  ],
+  "shared_across_targets_backgrounds_conditions": true
+}

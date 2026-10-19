@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "generated_utc": "2026-10-19T01:55:58.135196+00:00",
+  "detail": "audit/MATHEMATICS_AUDIT.json",
+  "definitions_compared": 20,
+  "independent_label_checks": 1601440,
+  "proved_formula_or_bound_count": 28,
+  "proved_distribution_relation_count": 1,
+  "same_input_n10_counterexample_groups": 12,
+  "eight_transform_n10_counterexample_groups": 5,
+  "eight_transform_reconstructible_groups": 7,
+  "old_files_unchanged": true,
+  "v5_validation_results_read": false,
+  "new_training_started_by_this_audit": false,
+  "sha256": {
+    "mathematics\\audit\\COUNTEREXAMPLES.csv": "5a33c43f1ce65f1479b5bcf636f1aba5723c39f869e5222f574e9b88a762003c",
+    "mathematics\\audit\\MATHEMATICS_AUDIT.json": "abe146533bd3d6d74895ff54b1437a847e63c09e59d12be5dac11f04007b6d4d",
+    "mathematics\\audit\\OBSERVED_ASSOCIATIONS.csv": "ea27535661a5342cc8ed28425c3987f14ee2a871a83d15deda85b645361cf65f",
+    "mathematics\\audit\\RELATION_INVENTORY.csv": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+    "mathematics\\audit\\TARGET_JOINT_DERIVABILITY.csv": "56e9f0b755556e3a4512dbf149b470c3dabdafc3df732a1ae7488c0c46cee143",
+    "mathematics\\audit\\UNCHECKED_CLAIMS.csv": "b069354ce02da361c7cca4abe0cc52fdaf213356c49aaef0726c2f2355200291",
+    "mathematics\\audit_relations.py": "e9d47784c04f8eb71a40a1db7e8753bcd089f920bcd3f37ef3d71f5fbdc949fc",
+    "mathematics\\README.md": "5fbc91638e60bfbd00967ad848d6a08d924e7f115dfd175d3628806fc124b44c",
+    "TASK_FAMILY_PLAN.md": "5badc5805981a37a6c0a1b55b0c7378e2a187b96d6f3f758c815152dcb638932"
+  }
+}

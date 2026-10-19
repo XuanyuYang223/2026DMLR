@@ -1,0 +1,458 @@
+{
+  "unix": 1792375021.7460546,
+  "config": {
+    "n": 10,
+    "model": {
+      "d_model": 256,
+      "layers": 4,
+      "n_heads": 8,
+      "mlp_ratio": 4,
+      "dropout": 0.1,
+      "tie_embeddings": true,
+      "max_seq_len": 128
+    },
+    "vocab_size": 188,
+    "encoding": "one_line",
+    "source_pool": 8192,
+    "source_dev": 1024,
+    "target_samples": 256,
+    "target_dev": 1024,
+    "test_count": 2048,
+    "batch": 64,
+    "pretrain_updates": 4800,
+    "source_lr": "3e-4; warmup100 and cosine to3e-5 at2400, then constant3e-5 through4800",
+    "adaptation_updates": 800,
+    "learning_rates": [
+      0.0003,
+      0.0001,
+      3e-05
+    ],
+    "adapt_eval_every": 100,
+    "source_eval_steps": [
+      0,
+      600,
+      1200,
+      2400,
+      3600,
+      4800
+    ],
+    "weight_decay": 0.01,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "clip": 1.0,
+    "precision": "FP32 weights/evaluation; BF16 training; TF32 disabled",
+    "selection": "max dev answer accuracy; min dev answer CE; earliest update; declared LR order; step0 excluded",
+    "version": "pilot_v5_confirmation/v1",
+    "seeds": [
+      101,
+      211,
+      307,
+      401,
+      503
+    ],
+    "repeats": [
+      {
+        "repeat_id": "R1",
+        "seed": 101,
+        "model_initialization_seed": 101,
+        "data_generation_seed": 2026101901,
+        "test_generation_seed": 2026101951,
+        "source_sampling_seed": 1101,
+        "source_dropout_seed": 1101,
+        "adapt_sampling_seed": 2101,
+        "adapt_dropout_seed": 2101
+      },
+      {
+        "repeat_id": "R2",
+        "seed": 211,
+        "model_initialization_seed": 211,
+        "data_generation_seed": 2026101902,
+        "test_generation_seed": 2026101952,
+        "source_sampling_seed": 1211,
+        "source_dropout_seed": 1211,
+        "adapt_sampling_seed": 2211,
+        "adapt_dropout_seed": 2211
+      },
+      {
+        "repeat_id": "R3",
+        "seed": 307,
+        "model_initialization_seed": 307,
+        "data_generation_seed": 2026101903,
+        "test_generation_seed": 2026101953,
+        "source_sampling_seed": 1307,
+        "source_dropout_seed": 1307,
+        "adapt_sampling_seed": 2307,
+        "adapt_dropout_seed": 2307
+      },
+      {
+        "repeat_id": "R4",
+        "seed": 401,
+        "model_initialization_seed": 401,
+        "data_generation_seed": 2026101904,
+        "test_generation_seed": 2026101954,
+        "source_sampling_seed": 1401,
+        "source_dropout_seed": 1401,
+        "adapt_sampling_seed": 2401,
+        "adapt_dropout_seed": 2401
+      },
+      {
+        "repeat_id": "R5",
+        "seed": 503,
+        "model_initialization_seed": 503,
+        "data_generation_seed": 2026101905,
+        "test_generation_seed": 2026101955,
+        "source_sampling_seed": 1503,
+        "source_dropout_seed": 1503,
+        "adapt_sampling_seed": 2503,
+        "adapt_dropout_seed": 2503
+      }
+    ],
+    "targets": [
+      "fixed_points",
+      "longest_decreasing_run"
+    ],
+    "backgrounds": [
+      "g0_v3",
+      "g2_deficiencies",
+      "g1_recoils"
+    ],
+    "background_by_target": {
+      "fixed_points": [
+        "g0_v3",
+        "g2_deficiencies"
+      ],
+      "longest_decreasing_run": [
+        "g0_v3",
+        "g1_recoils"
+      ]
+    },
+    "groups": [
+      {
+        "target": "fixed_points",
+        "background": "g0_v3",
+        "common": [
+          "descents",
+          "peaks",
+          "left_to_right_maxima"
+        ],
+        "related": "anti_fixed_points",
+        "replacement": "successions",
+        "sources": {
+          "B": [
+            "anti_fixed_points",
+            "descents",
+            "peaks",
+            "left_to_right_maxima"
+          ],
+          "C": [
+            "successions",
+            "descents",
+            "peaks",
+            "left_to_right_maxima"
+          ]
+        },
+        "changed_slot": null
+      },
+      {
+        "target": "fixed_points",
+        "background": "g2_deficiencies",
+        "common": [
+          "descents",
+          "deficiencies",
+          "left_to_right_maxima"
+        ],
+        "related": "anti_fixed_points",
+        "replacement": "successions",
+        "sources": {
+          "B": [
+            "anti_fixed_points",
+            "descents",
+            "deficiencies",
+            "left_to_right_maxima"
+          ],
+          "C": [
+            "successions",
+            "descents",
+            "deficiencies",
+            "left_to_right_maxima"
+          ]
+        },
+        "changed_slot": 2
+      },
+      {
+        "target": "longest_decreasing_run",
+        "background": "g0_v3",
+        "common": [
+          "descents",
+          "peaks",
+          "successions"
+        ],
+        "related": "longest_increasing_run",
+        "replacement": "left_to_right_maxima",
+        "sources": {
+          "B": [
+            "longest_increasing_run",
+            "descents",
+            "peaks",
+            "successions"
+          ],
+          "C": [
+            "left_to_right_maxima",
+            "descents",
+            "peaks",
+            "successions"
+          ]
+        },
+        "changed_slot": null
+      },
+      {
+        "target": "longest_decreasing_run",
+        "background": "g1_recoils",
+        "common": [
+          "recoils",
+          "peaks",
+          "successions"
+        ],
+        "related": "longest_increasing_run",
+        "replacement": "left_to_right_maxima",
+        "sources": {
+          "B": [
+            "longest_increasing_run",
+            "recoils",
+            "peaks",
+            "successions"
+          ],
+          "C": [
+            "left_to_right_maxima",
+            "recoils",
+            "peaks",
+            "successions"
+          ]
+        },
+        "changed_slot": 1
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "H1",
+        "target": "fixed_points",
+        "old_background": "g0_v3",
+        "new_background": "g2_deficiencies",
+        "expected_direction": "positive"
+      },
+      {
+        "id": "H2",
+        "target": "longest_decreasing_run",
+        "old_background": "g0_v3",
+        "new_background": "g1_recoils",
+        "expected_direction": "negative"
+      }
+    ],
+    "hypothesis_origin": "Two fixed contrasts selected after v4 exploratory results, explicitly requested by the user. V4 seeds17/42/73 are exploration only; no pooling with validation.",
+    "data_generation_seeds": {
+      "101": 2026101901,
+      "211": 2026101902,
+      "307": 2026101903,
+      "401": 2026101904,
+      "503": 2026101905
+    },
+    "model_initialization_seeds": {
+      "101": 101,
+      "211": 211,
+      "307": 307,
+      "401": 401,
+      "503": 503
+    },
+    "test_generation_seeds": {
+      "101": 2026101951,
+      "211": 2026101952,
+      "307": 2026101953,
+      "401": 2026101954,
+      "503": 2026101955
+    },
+    "pretrain_sampler_and_dropout_seeds": {
+      "101": 1101,
+      "211": 1211,
+      "307": 1307,
+      "401": 1401,
+      "503": 1503
+    },
+    "adapt_sampler_and_dropout_seeds": {
+      "101": 2101,
+      "211": 2211,
+      "307": 2307,
+      "401": 2401,
+      "503": 2503
+    },
+    "pool_generation_order": [
+      "source_train",
+      "source_dev",
+      "target_train",
+      "target_dev"
+    ],
+    "repeat_order": [
+      101,
+      211,
+      307,
+      401,
+      503
+    ],
+    "data_reuse": "None. Five distinct initialization seeds and five distinct input-generator streams; all old v1-v4 inputs excluded. All roles/blocks orbit-disjoint; within-block sharing is intentional.",
+    "pairing": "same initialization,source input pool,index stream and task slot stream;candidate slot0,common slots1..3;one shared A per target/block;paired 256 target samples and dev/test inputs",
+    "isolation": "Full inverse/reverse/complement orbit exclusion across old v1-v4 and all new roles/blocks. Test generators run only after all development selections freeze. Rejection without replacement creates a disjoint finite-population design, not a claim of mathematically independent IID pools.",
+    "primary_contrast": "Per block: (B-C)_new_background-(B-C)_g0; primary mean over five blocks, not difference of unpaired standard deviations.",
+    "statistics_plan": "stats_plan.json and paired_statistics.py frozen before formal training; two primary contrasts, auxiliary B-A/C-A/source learning; no optional stopping or enlargement",
+    "reuse": "Frozen model/encoding/training primitives only. No old trained weights or old results counted as new validation repeats.",
+    "scope": "2 fixed hypotheses;5 new paired units;4 target/background groups;40 source runs;150 adaptation LR candidates;50 selections;300 best/endpoint tests;no new single-task training,no extra LR,no extension,no further backgrounds."
+  },
+  "groups": [
+    {
+      "target": "fixed_points",
+      "background": "g0_v3",
+      "common": [
+        "descents",
+        "peaks",
+        "left_to_right_maxima"
+      ],
+      "related": "anti_fixed_points",
+      "replacement": "successions",
+      "sources": {
+        "B": [
+          "anti_fixed_points",
+          "descents",
+          "peaks",
+          "left_to_right_maxima"
+        ],
+        "C": [
+          "successions",
+          "descents",
+          "peaks",
+          "left_to_right_maxima"
+        ]
+      },
+      "changed_slot": null
+    },
+    {
+      "target": "fixed_points",
+      "background": "g2_deficiencies",
+      "common": [
+        "descents",
+        "deficiencies",
+        "left_to_right_maxima"
+      ],
+      "related": "anti_fixed_points",
+      "replacement": "successions",
+      "sources": {
+        "B": [
+          "anti_fixed_points",
+          "descents",
+          "deficiencies",
+          "left_to_right_maxima"
+        ],
+        "C": [
+          "successions",
+          "descents",
+          "deficiencies",
+          "left_to_right_maxima"
+        ]
+      },
+      "changed_slot": 2
+    },
+    {
+      "target": "longest_decreasing_run",
+      "background": "g0_v3",
+      "common": [
+        "descents",
+        "peaks",
+        "successions"
+      ],
+      "related": "longest_increasing_run",
+      "replacement": "left_to_right_maxima",
+      "sources": {
+        "B": [
+          "longest_increasing_run",
+          "descents",
+          "peaks",
+          "successions"
+        ],
+        "C": [
+          "left_to_right_maxima",
+          "descents",
+          "peaks",
+          "successions"
+        ]
+      },
+      "changed_slot": null
+    },
+    {
+      "target": "longest_decreasing_run",
+      "background": "g1_recoils",
+      "common": [
+        "recoils",
+        "peaks",
+        "successions"
+      ],
+      "related": "longest_increasing_run",
+      "replacement": "left_to_right_maxima",
+      "sources": {
+        "B": [
+          "longest_increasing_run",
+          "recoils",
+          "peaks",
+          "successions"
+        ],
+        "C": [
+          "left_to_right_maxima",
+          "recoils",
+          "peaks",
+          "successions"
+        ]
+      },
+      "changed_slot": 1
+    }
+  ],
+  "code": {
+    "experiments/pilot_v5_confirmation/pilot_v5.py": "258b7ba636eb1082aa5a42ec6a736f1e6531172188b17b67d34db8040bbe6910",
+    "experiments/pilot_v5_confirmation/design.py": "9abd205d277474b1bc19a84db026e4c8d139b3b6e2f8ed18042832384b958072",
+    "experiments/pilot_v5_confirmation/stats_plan.json": "e5ba71ae898d84693eb74ba7bcf7ed1d466f7a683b93722361299ac04339157f",
+    "experiments/pilot_v5_confirmation/paired_statistics.py": "06c929e5693de7364036e5de931dbdacd08edbcb33f9d7031a9bee78449750d4",
+    "experiments/pilot_v5_confirmation/TASK_FAMILY_PLAN.md": "5badc5805981a37a6c0a1b55b0c7378e2a187b96d6f3f758c815152dcb638932",
+    "experiments/pilot_v5_confirmation/mathematics/audit/COUNTEREXAMPLES.csv": "5a33c43f1ce65f1479b5bcf636f1aba5723c39f869e5222f574e9b88a762003c",
+    "experiments/pilot_v5_confirmation/mathematics/audit/MATHEMATICS_AUDIT.json": "abe146533bd3d6d74895ff54b1437a847e63c09e59d12be5dac11f04007b6d4d",
+    "experiments/pilot_v5_confirmation/mathematics/audit/OBSERVED_ASSOCIATIONS.csv": "ea27535661a5342cc8ed28425c3987f14ee2a871a83d15deda85b645361cf65f",
+    "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+    "experiments/pilot_v5_confirmation/mathematics/audit/TARGET_JOINT_DERIVABILITY.csv": "56e9f0b755556e3a4512dbf149b470c3dabdafc3df732a1ae7488c0c46cee143",
+    "experiments/pilot_v5_confirmation/mathematics/audit/UNCHECKED_CLAIMS.csv": "b069354ce02da361c7cca4abe0cc52fdaf213356c49aaef0726c2f2355200291",
+    "experiments/pilot_v5_confirmation/mathematics/audit_relations.py": "e9d47784c04f8eb71a40a1db7e8753bcd089f920bcd3f37ef3d71f5fbdc949fc",
+    "experiments/pilot_v5_confirmation/mathematics/MATH_AUDIT.json": "e0c9e721eba464cd4706da9306706f9ec5b2b8415087fac023fb5cdba85f55fc",
+    "experiments/pilot_v5_confirmation/mathematics/README.md": "5fbc91638e60bfbd00967ad848d6a08d924e7f115dfd175d3628806fc124b44c",
+    "experiments/pilot_v5_confirmation/exploratory/EXPLORATORY_ANALYSIS_ZH.md": "a4ac836d4f1ce0203b85c10c6d0ec7f085d3d26299554defaae196ccf6b4b2c0",
+    "experiments/pilot_v5_confirmation/exploratory/exploratory_paired_background_changes.png": "b4a465c66db783cabca6d8c315c5de74318a6c93f549a1cede3e744ea3d02814",
+    "experiments/pilot_v5_confirmation/exploratory/exploratory_paired_background_changes.svg": "e9599c29798be334c60727fdda27a5967a8cea87e5d3894b00c0c56b9e0a0dee",
+    "experiments/pilot_v5_confirmation/exploratory/exploratory_paired_differences.csv": "efe37cca1688590cee131eb1df6a2a7a7e08ff51d5b838369ac152985dc66a95",
+    "experiments/pilot_v5_confirmation/exploratory/exploratory_statistics_audit.json": "2f6d26ea7fda7aef714554a3baa8482dad347f1a36b2bf72ad575fb91212521b",
+    "experiments/pilot_v5_confirmation/exploratory/exploratory_summary.csv": "e79f8d8e3f7eb3a5ae550f5fc39972c11986f5ba363a3e2afbedd6b7ed965a3c",
+    "experiments/pilot_v3_multitarget/pilot_v3.py": "34aec3e95fea2240e08b884ec36e2b1e6dd13c1feecc18d35db0f8307d7ad42e",
+    "experiments/permworld_pilot/pilot.py": "ac1a270c3157a0e4720c1646ef90237374b29af869b028defb1d60a1810df4c8",
+    "experiments/permworld_pilot/vendor/neurips_permutations/__init__.py": "cded340b85f88422b18cde5b894e6543f089d254d94faa3d3b2b2b1c08e9d91e",
+    "experiments/permworld_pilot/vendor/neurips_permutations/math_ops.py": "3f6832b4798a20cc6b813a0b64ec01cf10360fbf3d6256cb59d1d793d4ad345f",
+    "experiments/permworld_pilot/vendor/neurips_permutations/models.py": "ed3ac73b6edaa6ed5c0c2528ba2c37fb903b55259840dfb17f8851562c2599a0",
+    "experiments/permworld_pilot/vendor/neurips_permutations/passage.py": "6c103494507358b8b4d2ee6a5c69a31fc391ae4cd35d7f1126bdac891fe07e09",
+    "experiments/permworld_pilot/vendor/sdpa.py": "5035f58453ddee5c5d5b05878491dfcc81764e172f2ebada437dc9e325048918"
+  },
+  "evidence": {
+    "../../pilot_v4_backgrounds/artifacts/FROZEN_PROTOCOL.json": "14403b1f92b18d1798c10d7768448e8223dea043e9f5c0a1d07abbf4283244bf",
+    "../../pilot_v4_backgrounds/artifacts/FINAL_AUDIT.json": "f622a5ccb37e42fa2309f9d155c7fcb51363e03e4071d7e551f4af82d8faaf3d",
+    "../../pilot_v4_backgrounds/artifacts/results_selected.csv": "850847ff9721e4dbf4446d1b339e09f8890c69400de5b8e9fecf6e90e31575ac",
+    "../../pilot_v4_backgrounds/artifacts/background_interactions.csv": "d8b6a44f9b881280aff00761e624549c2b4ec601c0b27a8137505ca0d0fab4f6"
+  },
+  "data_sha256": "8d96c4ad35f9d5cd53aad92d37efb1c159389476ca83a0d3aa37a68307d6b7af",
+  "compositions_sha256": "1e95509c94324dec13b7183bbcfa21ff2226080843b553d3de09bee2721f2607",
+  "statistics_plan_sha256": "e5ba71ae898d84693eb74ba7bcf7ed1d466f7a683b93722361299ac04339157f",
+  "mathematics_audit_sha256": "e0c9e721eba464cd4706da9306706f9ec5b2b8415087fac023fb5cdba85f55fc",
+  "historical_selection": "Hypotheses explicitly chosen from v4 exploration; old seeds are not pooled with fresh confirmation units.",
+  "new_test_exists": false
+}

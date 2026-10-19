@@ -1,0 +1,38 @@
+{
+  "version": "pilot_v5_confirmation_statistics_v1",
+  "hypothesis_origin": "The two cases and directions were chosen from pilot_v4 exploratory test results, not from independent confirmation results.",
+  "unit": "One new data-generator stream paired with one independent model initialization; all within-unit conditions share train/dev/test inputs, target examples, model initialization and selection budget. Cross-role and cross-repeat orbit rejection produces disjoint samples from a finite universe, so independently seeded streams do not imply exactly IID input pools.",
+  "repetitions": [
+    {"seed": 101, "model_initialization_seed": 101, "data_generation_seed": 2026101901, "test_data_seed": 2026101951},
+    {"seed": 211, "model_initialization_seed": 211, "data_generation_seed": 2026101902, "test_data_seed": 2026101952},
+    {"seed": 307, "model_initialization_seed": 307, "data_generation_seed": 2026101903, "test_data_seed": 2026101953},
+    {"seed": 401, "model_initialization_seed": 401, "data_generation_seed": 2026101904, "test_data_seed": 2026101954},
+    {"seed": 503, "model_initialization_seed": 503, "data_generation_seed": 2026101905, "test_data_seed": 2026101955}
+  ],
+  "contrasts": [
+    {"target": "fixed_points", "original_background": "g0_v3", "new_background": "g2_deficiencies", "expected_direction": 1},
+    {"target": "longest_decreasing_run", "original_background": "g0_v3", "new_background": "g1_recoils", "expected_direction": -1}
+  ],
+  "primary_statistic": "delta_B_minus_C = (accuracy_B_new - accuracy_C_new) - (accuracy_B_original - accuracy_C_original), computed within each paired repeat before aggregation.",
+  "secondary_statistics": [
+    "delta_B_minus_A = (accuracy_B_new - accuracy_A_shared) - (accuracy_B_original - accuracy_A_shared)",
+    "delta_C_minus_A = (accuracy_C_new - accuracy_A_shared) - (accuracy_C_original - accuracy_A_shared)",
+    "source task train/dev learning and exposure records; descriptive associations only"
+  ],
+  "aggregation": "For each primary contrast show all five values, arithmetic mean, sample SD (n-1 denominator), min/max, number matching the prespecified direction, and the range of the five leave-one-repeat-out means. Secondary contrasts receive descriptive mean, SD, range and all per-repeat values only.",
+  "confidence_intervals": {
+    "individual": "Two-sided paired t interval: mean +/- t_(0.975,4) * sample_SD/sqrt(5).",
+    "family": "Two-sided Bonferroni intervals for the family of two primary contrasts: each marginal coverage 97.5%, critical t_(0.9875,4), yielding at least 95% family coverage under the t model; no independence between the two contrasts is required.",
+    "assumptions": "The t model approximates five repeat-level interaction differences as independent normal draws. Independent RNG/initialization streams and no checkpoint reuse separate validation from exploration, but cross-repeat finite-population orbit exclusion introduces dependence, so the design does not establish exact IID units or exact interval coverage. With five units normality and tail behavior are poorly assessed. Intervals are assumption-sensitive and include finite test-set variation; they do not establish generality beyond these cases, length and budget.",
+    "implementation": "Analytic Student t CDF at df=4: F(t)=1/2+3u/4-u^3/4 with u=t/sqrt(t^2+4); positive quantiles found by deterministic bisection. No optional scipy dependency."
+  },
+  "diagnostics": {
+    "sign_flip": "Enumerate all 32 sign vectors of the five interaction values; two-sided p is fraction with absolute mean at least the observed absolute mean, including equality. This conditional diagnostic requires independent sign symmetry under a zero-centered null, which is not guaranteed by the design; it is not a treatment-randomization test.",
+    "sign_test": "Two-sided exact binomial sign test against probability(positive)=1/2 across independent repeat units; discard exact zero differences and report resulting n. Tests the sign/median tendency under its own assumptions, not the mean. No inference from this diagnostic supersedes the primary intervals.",
+    "small_n_limit": "With five nonzero repeats, both two-sided exact sign and sign-flip p-values have minimum 2/32=0.0625. No promise of conventional significance. No switch to one-sided inference after observing results."
+  },
+  "interpretation": "Report separately whether the primary point estimate matches the prespecified direction, how many individual repeats match it, and whether the individual and family intervals exclude zero in that direction. Agreement of point estimates alone is described as directional replication with unresolved magnitude/uncertainty when appropriate, not established reliability. Do not infer the interaction from the separate SDs of background means. No statistical mechanism or causal claim is made from source-learning associations.",
+  "missing_or_failed_runs": "Retain failed/undertrained runs and logs; do not replace a repeat based on outcome. If a prespecified repeat is incomplete, mark confirmation incomplete and do not silently apply five-repeat statistics to fewer units.",
+  "exploratory_separation": "Old seeds 17/42/73 are exploratory only. Report their paired interactions separately and do not pool with the five new repeats for primary inference.",
+  "stopping": "Exactly five new paired repeats for these two contrasts with the frozen training/selection budget. No automatic additions of repeats, backgrounds, learning rates or training updates."
+}

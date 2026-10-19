@@ -1,0 +1,39 @@
+{
+  "seed": 503,
+  "tasks": [
+    "successions",
+    "descents",
+    "peaks",
+    "left_to_right_maxima"
+  ],
+  "kind": "multi",
+  "updates": 4800,
+  "input_tokens": 8601600,
+  "supervised_tokens": 614400,
+  "sample_exposures": 307200,
+  "task_exposures": 76800,
+  "actual_unique_per_task": {
+    "successions": 8189,
+    "descents": 8192,
+    "peaks": 8192,
+    "left_to_right_maxima": 8192
+  },
+  "task_fraction": 0.25,
+  "schedule_sha256": "a1ec94b12f12863c6de01fa89ec9d7b01ee4c9ab6480dcd807a376a052eb3473",
+  "model_state_hash": "665ad8bcb262e27818958e273736c2f3df7e3b26d7dd8ed126fc5204b52cdf42",
+  "seconds": 72.31304729997646,
+  "new_compute": true,
+  "checkpoint": "multi/s503_fixed_points_g0_v3_C/step4800.pt",
+  "checkpoint_sha256": "0362f721c6ec6a81e235fd1aeeec58656f5705b11f3f66df4008b03575133e78",
+  "initial_state_hash": "6aac8d467278748f76b958b47f8a030b0828a9a978e04f66ca883757c8081e7e",
+  "train_sha256": "cbdbbb64331e9dde46a50d700079659781a4328a4229722a6376544af1d0a9c4",
+  "dev_sha256": "60ffdffc40cde47b19421153737a0f4caadddf3b2c7e7734f3eeca55af68e49e",
+  "repeat_id": "R5",
+  "model_initialization_seed": 503,
+  "data_generation_seed": 2026101905,
+  "test_generation_seed": 2026101955,
+  "data_pool_id": "s503",
+  "target": "fixed_points",
+  "background": "g0_v3",
+  "condition": "C"
+}

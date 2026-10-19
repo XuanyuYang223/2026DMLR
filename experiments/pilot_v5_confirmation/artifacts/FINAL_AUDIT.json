@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "audit_unix": 1792382650.291412,
+  "audit_seconds": 63.34764400002314,
+  "confirmation_statistics_present": true,
+  "independently_recomputed_paired_interactions": 10,
+  "independently_recomputed_auxiliary_differences": 20,
+  "independent_pair_level_summaries": 6,
+  "independent_primary_t_intervals_and_sign_diagnostics": 2,
+  "exploratory_and_confirmation_not_pooled": true,
+  "cpu_only_checkpoint_loads": true,
+  "model_forward_calls": 0,
+  "tests_forwarded_by_this_audit": 0,
+  "historical_files_byte_preserved": 1801,
+  "frozen_code_and_evidence_verified": true,
+  "chronological_freeze_before_new_training_and_test": true,
+  "independent_train_dev_test_rng_replays": 25,
+  "independent_cpu_initialization_replays": 5,
+  "full_orbit_historical_and_cross_repeat_isolation_verified": true,
+  "mathematical_labels_recomputed": 2007040,
+  "targets": [
+    "fixed_points",
+    "longest_decreasing_run"
+  ],
+  "backgrounds": {
+    "fixed_points": [
+      "g0_v3",
+      "g2_deficiencies"
+    ],
+    "longest_decreasing_run": [
+      "g0_v3",
+      "g1_recoils"
+    ]
+  },
+  "paired_repeat_blocks": [
+    101,
+    211,
+    307,
+    401,
+    503
+  ],
+  "source_runs": 40,
+  "source_runs_new": 40,
+  "source_runs_reused": 0,
+  "source_per_slot_input_and_label_streams_verified": 160,
+  "adaptation_candidates": 150,
+  "adaptation_candidates_new": 150,
+  "adaptation_candidates_reused": 0,
+  "shared_A_candidates": 30,
+  "independently_recomputed_selections": 50,
+  "selected_test_rows": 50,
+  "candidate_test_rows": 300,
+  "logical_ABC_display_rows": 60,
+  "shared_A_not_independent_background_observations": true,
+  "checkpoints_cpu_loaded": 425,
+  "source_loaded_parameter_and_target_row_reset_hashes_verified": true,
+  "fresh_adaptation_optimizer_records_and_saved_counters_verified": true,
+  "new_pretrain_updates": 192000,
+  "new_adaptation_updates": 120000,
+  "new_pretrain_input_tokens": 344064000,
+  "new_adaptation_input_tokens": 215040000,
+  "new_pretrain_seconds": 5507.4583946000785,
+  "new_adaptation_seconds": 1719.797083699843,
+  "limitations": [
+    "Hypotheses and cases were selected after v4 exploratory outcomes; new repeats form the validation evidence.",
+    "Repeat blocks jointly vary data and initialization. Their separate variance components cannot be estimated.",
+    "Full-orbit exclusion couples rejection sampling across blocks; repeat RNG streams and initialization seeds are distinct.",
+    "A is shared across backgrounds. Display duplication does not add independent observations.",
+    "No new single-task references were trained for these repeat pools.",
+    "This CPU audit checks saved evidence and weights; it does not independently rerun neural inference."
+  ]
+}

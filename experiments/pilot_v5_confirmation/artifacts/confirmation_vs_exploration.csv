@@ -1,0 +1,3 @@
+target,original_background,new_background,exploratory_n,exploratory_mean_interaction,exploratory_sample_sd,confirmation_n,confirmation_mean_interaction,confirmation_sample_sd,confirmation_ci95_lower,confirmation_ci95_upper,confirmation_family95_lower,confirmation_family95_upper,pooled
+fixed_points,g0_v3,g2_deficiencies,3,0.043619791666666664,0.06056721663504393,5,-0.03017578125,0.1574725578258024,-0.22570378700735927,0.16535222450735926,-0.27633578996686337,0.21598422746686338,False
+longest_decreasing_run,g0_v3,g1_recoils,3,-0.11995442708333333,0.12169604081855522,5,-0.13154296875,0.12674571774564186,-0.28891856340125943,0.025832625901259454,-0.32967099445722026,0.06658505695722025,False

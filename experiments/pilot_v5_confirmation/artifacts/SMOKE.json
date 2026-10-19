@@ -1,0 +1,11 @@
+{
+  "unix": 1792374871.4065735,
+  "status": "passed",
+  "resume_bitwise_equal": true,
+  "causal_no_answer_leak": true,
+  "evaluation_preserves_rng": true,
+  "common_task_sequences_equal": true,
+  "fresh_optimizer": true,
+  "full_pretrain_reset_adapt_evaluate": true,
+  "expanded_historical_role_block_orbits_disjoint": true
+}

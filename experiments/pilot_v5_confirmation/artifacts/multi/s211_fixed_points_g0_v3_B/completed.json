@@ -1,0 +1,39 @@
+{
+  "seed": 211,
+  "tasks": [
+    "anti_fixed_points",
+    "descents",
+    "peaks",
+    "left_to_right_maxima"
+  ],
+  "kind": "multi",
+  "updates": 4800,
+  "input_tokens": 8601600,
+  "supervised_tokens": 614400,
+  "sample_exposures": 307200,
+  "task_exposures": 76800,
+  "actual_unique_per_task": {
+    "anti_fixed_points": 8191,
+    "descents": 8192,
+    "peaks": 8192,
+    "left_to_right_maxima": 8192
+  },
+  "task_fraction": 0.25,
+  "schedule_sha256": "61293e6632df48e3bcdc73a817087137d94b98be6541f1167cce7c0031838191",
+  "model_state_hash": "250236c4438d2334ed7722005457435a49ed8a044f2a3c34515163596d153494",
+  "seconds": 172.49281040002825,
+  "new_compute": true,
+  "checkpoint": "multi/s211_fixed_points_g0_v3_B/step4800.pt",
+  "checkpoint_sha256": "b55b53b164ae5974c098c797c770bcabc3fc60c686b915100afb6cb1ad626377",
+  "initial_state_hash": "4cb365f42e34530dc02344e83479a6a6260af6080ebb01dc11a8ba7de01391ad",
+  "train_sha256": "43e297b4811d62e43454b053f4d107f85a9a69e67f684a0444a54cee0ba091da",
+  "dev_sha256": "13ec853e7d883f0fe3bd3551934187436663a94eafcbce8d60692bffddfcad63",
+  "repeat_id": "R2",
+  "model_initialization_seed": 211,
+  "data_generation_seed": 2026101902,
+  "test_generation_seed": 2026101952,
+  "data_pool_id": "s211",
+  "target": "fixed_points",
+  "background": "g0_v3",
+  "condition": "B"
+}

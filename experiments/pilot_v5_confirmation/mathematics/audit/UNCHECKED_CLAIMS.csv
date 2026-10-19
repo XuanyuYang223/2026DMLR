@@ -1,0 +1,6 @@
+claim_id,evidence_class,claim,reason
+trained_model_uses_partition,not_checked,Models use F=n-D-DI internally,Requires a separate representation or intervention study; identity alone is insufficient.
+gradient_conflict_mechanism,not_checked,Gradient conflict causes background effects,No frozen gradient intervention or causal mediation measurement.
+all_possible_joint_relations,not_checked,All mathematical or algorithmic relations between tasks have been classified,This audit covers listed formulas and specific same-input/eight-transform answer query models only.
+all_lengths_model_transfer,not_checked,Transfer findings hold for lengths other than n=10,Training and evaluation use n=10; proofs of task identities do not prove model generalization.
+cross_family_certificates,not_checked,Suggested future task-family relations are implementation-certified here,Future-plan mathematical definitions need new implementation fixtures before experiments.

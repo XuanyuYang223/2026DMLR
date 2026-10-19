@@ -1,0 +1,308 @@
+{
+  "n": 10,
+  "model": {
+    "d_model": 256,
+    "layers": 4,
+    "n_heads": 8,
+    "mlp_ratio": 4,
+    "dropout": 0.1,
+    "tie_embeddings": true,
+    "max_seq_len": 128
+  },
+  "vocab_size": 188,
+  "encoding": "one_line",
+  "source_pool": 8192,
+  "source_dev": 1024,
+  "target_samples": 256,
+  "target_dev": 1024,
+  "test_count": 2048,
+  "batch": 64,
+  "pretrain_updates": 4800,
+  "source_lr": "3e-4; warmup100 and cosine to3e-5 at2400, then constant3e-5 through4800",
+  "adaptation_updates": 800,
+  "learning_rates": [
+    0.0003,
+    0.0001,
+    3e-05
+  ],
+  "adapt_eval_every": 100,
+  "source_eval_steps": [
+    0,
+    600,
+    1200,
+    2400,
+    3600,
+    4800
+  ],
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "epsilon": 1e-08,
+  "clip": 1.0,
+  "precision": "FP32 weights/evaluation; BF16 training; TF32 disabled",
+  "selection": "max dev answer accuracy; min dev answer CE; earliest update; declared LR order; step0 excluded",
+  "version": "pilot_v5_confirmation/v1",
+  "seeds": [
+    101,
+    211,
+    307,
+    401,
+    503
+  ],
+  "repeats": [
+    {
+      "repeat_id": "R1",
+      "seed": 101,
+      "model_initialization_seed": 101,
+      "data_generation_seed": 2026101901,
+      "test_generation_seed": 2026101951,
+      "source_sampling_seed": 1101,
+      "source_dropout_seed": 1101,
+      "adapt_sampling_seed": 2101,
+      "adapt_dropout_seed": 2101
+    },
+    {
+      "repeat_id": "R2",
+      "seed": 211,
+      "model_initialization_seed": 211,
+      "data_generation_seed": 2026101902,
+      "test_generation_seed": 2026101952,
+      "source_sampling_seed": 1211,
+      "source_dropout_seed": 1211,
+      "adapt_sampling_seed": 2211,
+      "adapt_dropout_seed": 2211
+    },
+    {
+      "repeat_id": "R3",
+      "seed": 307,
+      "model_initialization_seed": 307,
+      "data_generation_seed": 2026101903,
+      "test_generation_seed": 2026101953,
+      "source_sampling_seed": 1307,
+      "source_dropout_seed": 1307,
+      "adapt_sampling_seed": 2307,
+      "adapt_dropout_seed": 2307
+    },
+    {
+      "repeat_id": "R4",
+      "seed": 401,
+      "model_initialization_seed": 401,
+      "data_generation_seed": 2026101904,
+      "test_generation_seed": 2026101954,
+      "source_sampling_seed": 1401,
+      "source_dropout_seed": 1401,
+      "adapt_sampling_seed": 2401,
+      "adapt_dropout_seed": 2401
+    },
+    {
+      "repeat_id": "R5",
+      "seed": 503,
+      "model_initialization_seed": 503,
+      "data_generation_seed": 2026101905,
+      "test_generation_seed": 2026101955,
+      "source_sampling_seed": 1503,
+      "source_dropout_seed": 1503,
+      "adapt_sampling_seed": 2503,
+      "adapt_dropout_seed": 2503
+    }
+  ],
+  "targets": [
+    "fixed_points",
+    "longest_decreasing_run"
+  ],
+  "backgrounds": [
+    "g0_v3",
+    "g2_deficiencies",
+    "g1_recoils"
+  ],
+  "background_by_target": {
+    "fixed_points": [
+      "g0_v3",
+      "g2_deficiencies"
+    ],
+    "longest_decreasing_run": [
+      "g0_v3",
+      "g1_recoils"
+    ]
+  },
+  "groups": [
+    {
+      "target": "fixed_points",
+      "background": "g0_v3",
+      "common": [
+        "descents",
+        "peaks",
+        "left_to_right_maxima"
+      ],
+      "related": "anti_fixed_points",
+      "replacement": "successions",
+      "sources": {
+        "B": [
+          "anti_fixed_points",
+          "descents",
+          "peaks",
+          "left_to_right_maxima"
+        ],
+        "C": [
+          "successions",
+          "descents",
+          "peaks",
+          "left_to_right_maxima"
+        ]
+      },
+      "changed_slot": null
+    },
+    {
+      "target": "fixed_points",
+      "background": "g2_deficiencies",
+      "common": [
+        "descents",
+        "deficiencies",
+        "left_to_right_maxima"
+      ],
+      "related": "anti_fixed_points",
+      "replacement": "successions",
+      "sources": {
+        "B": [
+          "anti_fixed_points",
+          "descents",
+          "deficiencies",
+          "left_to_right_maxima"
+        ],
+        "C": [
+          "successions",
+          "descents",
+          "deficiencies",
+          "left_to_right_maxima"
+        ]
+      },
+      "changed_slot": 2
+    },
+    {
+      "target": "longest_decreasing_run",
+      "background": "g0_v3",
+      "common": [
+        "descents",
+        "peaks",
+        "successions"
+      ],
+      "related": "longest_increasing_run",
+      "replacement": "left_to_right_maxima",
+      "sources": {
+        "B": [
+          "longest_increasing_run",
+          "descents",
+          "peaks",
+          "successions"
+        ],
+        "C": [
+          "left_to_right_maxima",
+          "descents",
+          "peaks",
+          "successions"
+        ]
+      },
+      "changed_slot": null
+    },
+    {
+      "target": "longest_decreasing_run",
+      "background": "g1_recoils",
+      "common": [
+        "recoils",
+        "peaks",
+        "successions"
+      ],
+      "related": "longest_increasing_run",
+      "replacement": "left_to_right_maxima",
+      "sources": {
+        "B": [
+          "longest_increasing_run",
+          "recoils",
+          "peaks",
+          "successions"
+        ],
+        "C": [
+          "left_to_right_maxima",
+          "recoils",
+          "peaks",
+          "successions"
+        ]
+      },
+      "changed_slot": 1
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "H1",
+      "target": "fixed_points",
+      "old_background": "g0_v3",
+      "new_background": "g2_deficiencies",
+      "expected_direction": "positive"
+    },
+    {
+      "id": "H2",
+      "target": "longest_decreasing_run",
+      "old_background": "g0_v3",
+      "new_background": "g1_recoils",
+      "expected_direction": "negative"
+    }
+  ],
+  "hypothesis_origin": "Two fixed contrasts selected after v4 exploratory results, explicitly requested by the user. V4 seeds17/42/73 are exploration only; no pooling with validation.",
+  "data_generation_seeds": {
+    "101": 2026101901,
+    "211": 2026101902,
+    "307": 2026101903,
+    "401": 2026101904,
+    "503": 2026101905
+  },
+  "model_initialization_seeds": {
+    "101": 101,
+    "211": 211,
+    "307": 307,
+    "401": 401,
+    "503": 503
+  },
+  "test_generation_seeds": {
+    "101": 2026101951,
+    "211": 2026101952,
+    "307": 2026101953,
+    "401": 2026101954,
+    "503": 2026101955
+  },
+  "pretrain_sampler_and_dropout_seeds": {
+    "101": 1101,
+    "211": 1211,
+    "307": 1307,
+    "401": 1401,
+    "503": 1503
+  },
+  "adapt_sampler_and_dropout_seeds": {
+    "101": 2101,
+    "211": 2211,
+    "307": 2307,
+    "401": 2401,
+    "503": 2503
+  },
+  "pool_generation_order": [
+    "source_train",
+    "source_dev",
+    "target_train",
+    "target_dev"
+  ],
+  "repeat_order": [
+    101,
+    211,
+    307,
+    401,
+    503
+  ],
+  "data_reuse": "None. Five distinct initialization seeds and five distinct input-generator streams; all old v1-v4 inputs excluded. All roles/blocks orbit-disjoint; within-block sharing is intentional.",
+  "pairing": "same initialization,source input pool,index stream and task slot stream;candidate slot0,common slots1..3;one shared A per target/block;paired 256 target samples and dev/test inputs",
+  "isolation": "Full inverse/reverse/complement orbit exclusion across old v1-v4 and all new roles/blocks. Test generators run only after all development selections freeze. Rejection without replacement creates a disjoint finite-population design, not a claim of mathematically independent IID pools.",
+  "primary_contrast": "Per block: (B-C)_new_background-(B-C)_g0; primary mean over five blocks, not difference of unpaired standard deviations.",
+  "statistics_plan": "stats_plan.json and paired_statistics.py frozen before formal training; two primary contrasts, auxiliary B-A/C-A/source learning; no optional stopping or enlargement",
+  "reuse": "Frozen model/encoding/training primitives only. No old trained weights or old results counted as new validation repeats.",
+  "scope": "2 fixed hypotheses;5 new paired units;4 target/background groups;40 source runs;150 adaptation LR candidates;50 selections;300 best/endpoint tests;no new single-task training,no extra LR,no extension,no further backgrounds."
+}
