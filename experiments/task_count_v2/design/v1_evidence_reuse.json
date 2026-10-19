@@ -1,0 +1,21 @@
+{
+  "status": "reused_hash_verified",
+  "sha256": {
+    "experiments/task_count_v1/design.py": "5ff0905d93753a05566af2fc3271c27952e75a56064a2714048540589c8aa769",
+    "experiments/task_count_v1/design/FROZEN_DESIGN.json": "fb5a7a889fb3195f3f47c483bc7e024ee56cda2c0e2b1a69dc08c8395ff02d51",
+    "experiments/task_count_v1/design/configuration.json": "1e71f166a15799cede93f0d26315b90953bc3aa898d45ae7dc012a723f072871",
+    "experiments/task_count_v1/design/counts.json": "c990cf8b922e5deb5506eb1cc2ca025d3e48d44daf5e132ad419e7e5dfbab97c",
+    "experiments/task_count_v1/design/encoding_bounds.csv": "f4283a7dac53353552597e2b67f0fbeaf017c2020fa2ff41440cde55d367b8ed",
+    "experiments/task_count_v1/design/inequivalence_audit.json": "948fe5a75e22aa32af43f09298b0f466d9b516c3f80df46638ceed800b3ae1a5",
+    "experiments/task_count_v1/design/README.md": "14d285ea3bf68b7140f607e39337a4ff4408db0b464fdf179129a252746b851f",
+    "experiments/task_count_v1/design/relation_inventory.json": "eac1a15aa2cae3b8ad478e99a03506e18089b432a3e77510a2bae2f7c789de4d",
+    "experiments/task_count_v1/design/relation_reuse.json": "06306e5bb4501b28791a0dae13abab3ce138b53244d4aad7f965b474fd7b5fd0",
+    "experiments/task_count_v1/design/source_pool.csv": "b77a97b44e1f7546af1c14f3cf021adc4042f18da3349c5e220171a823acd28a",
+    "experiments/task_count_v1/design/target_relationships.csv": "b735121bd6bb62f2a5b234dd7565ecbd65fdb4d4b63da1dd10229d4a1ad2c2d4",
+    "experiments/task_count_v1/design/task_sets.csv": "2b04c580005b02d9c6673ce1e62bef7a182248f826ae80653877863aa4b2860f"
+  },
+  "historical_formula_rechecks_run": 0,
+  "new_witness_evaluations": 0,
+  "v1_transfer_evidence_role": "Hypothesis motivation only; no v2 outcomes read",
+  "all_existing_task_lists_unchanged": true
+}

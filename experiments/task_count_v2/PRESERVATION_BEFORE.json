@@ -1,0 +1,15 @@
+{
+  "status": "passed_before_v2_training",
+  "checked_at_utc": "2026-10-19T21:07:03.345362+00:00",
+  "base_commit": "a4d43fc7dafe1bce7e9f86ec4beee78068973ce7",
+  "prior_release_manifest": "experiments/task_count_v1/RELEASE_MANIFEST.json",
+  "prior_release_manifest_sha256": "b24bfd08517dfff75735911858dc91bfe292fab3423ce969b434385756bde55d",
+  "command": ".venv/Scripts/python.exe experiments/task_count_v1/release.py --verify",
+  "result": {
+    "status": "passed",
+    "mode": "full",
+    "files_verified": 1140,
+    "local_checkpoints_explicitly_skipped": 0
+  },
+  "scope": "All task_count_v1 release files, including local checkpoints; no historical artifact is rewritten."
+}

@@ -1,0 +1,7 @@
+{
+  "stage": "smoke_setup",
+  "error": "Missing data manifest in temporary smoke pool",
+  "training_updates_completed": 0,
+  "formal_training_started": false,
+  "resolution": "Copy byte-identical original manifest and NPZ archives into the smoke data root; corrected smoke rerun recorded separately"
+}

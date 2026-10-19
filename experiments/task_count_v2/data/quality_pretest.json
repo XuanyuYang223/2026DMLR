@@ -1,0 +1,46 @@
+{
+  "status": "pass",
+  "created_at_utc": "2026-10-19T21:10:43.290778+00:00",
+  "include_test": false,
+  "rng_replayed": true,
+  "pool_count": 24,
+  "object_count": 28416,
+  "objects_by_role": {
+    "source_train": 24576,
+    "source_dev": 1536,
+    "target_train": 768,
+    "target_dev": 1536
+  },
+  "within_pool_duplicate_orbits": 0,
+  "between_pool_overlapping_orbits": 0,
+  "historical_overlapping_orbits": 0,
+  "history_file_count": 130,
+  "capacity": [
+    {
+      "n": 10,
+      "permutations": 3628800,
+      "maximum_orbit_size": 8,
+      "orbit_count_lower_bound": 453600,
+      "historical_occupied_orbits": 144273,
+      "available_orbit_lower_bound": 309327,
+      "requested_new_orbits_all_roles_and_repeats": 15744,
+      "reserved_future_test_orbits": 1536,
+      "conservative_capacity_sufficient": true
+    },
+    {
+      "n": 12,
+      "permutations": 479001600,
+      "maximum_orbit_size": 8,
+      "orbit_count_lower_bound": 59875200,
+      "historical_occupied_orbits": 18840,
+      "available_orbit_lower_bound": 59856360,
+      "requested_new_orbits_all_roles_and_repeats": 15744,
+      "reserved_future_test_orbits": 1536,
+      "conservative_capacity_sufficient": true
+    }
+  ],
+  "ordered_pool_orbit_digest": "33bbc60ff896be43c0093fa0810a1fd69969d4747d2c5a7252517176d1de0883",
+  "primary_manifest_sha256": "263230752e4618809b59a014718d2e25f57b9f5f81f011c049e9c22e605bc131",
+  "test_manifest_sha256": null,
+  "seconds": 4.505735199956689
+}

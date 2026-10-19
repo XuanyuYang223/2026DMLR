@@ -1,0 +1,9 @@
+{
+  "status": "smoke_only",
+  "formal_data_selection": false,
+  "budgets": [
+    4000,
+    32000
+  ],
+  "adaptation_updates": 8
+}

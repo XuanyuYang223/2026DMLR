@@ -1,0 +1,48 @@
+{
+  "version": "task_count_budget_orbit_objects_v2",
+  "lengths": [
+    10,
+    12
+  ],
+  "replicates": [
+    {
+      "repeat": 1,
+      "model_seed": 4103,
+      "data_seed": 2026110101,
+      "test_seed": 2026110151
+    },
+    {
+      "repeat": 2,
+      "model_seed": 5207,
+      "data_seed": 2026110102,
+      "test_seed": 2026110152
+    },
+    {
+      "repeat": 3,
+      "model_seed": 6301,
+      "data_seed": 2026110103,
+      "test_seed": 2026110153
+    }
+  ],
+  "split_order": [
+    "source_train",
+    "source_dev",
+    "target_train",
+    "target_dev"
+  ],
+  "per_length_counts": {
+    "source_train": 4096,
+    "source_dev": 256,
+    "target_train": 128,
+    "target_dev": 256,
+    "test": 512
+  },
+  "test_generation": "after all 24 pretraining runs and 54 target training selections are frozen",
+  "proposal": "uniform permutation proposals; reject complete inverse/reverse/complement orbits",
+  "rng": "numpy.PCG64(SeedSequence([data_seed, role_index, n])); test uses test_seed and role_index=4",
+  "generation_order": "all training/development pools in repeat, role, length order; test pools last in repeat, length order",
+  "historical_exclusion": "pilot_v1 through pilot_v5, the canonical platform_v01/dataset, platform_v01 runnable-example objects, and all task_count_v1 training/development/test objects",
+  "pairing": "all source tasks and all target tasks use the same role-specific objects within a repeat; chains, task counts and token budgets do not alter object pools; the larger budget repeats exposure to this fixed pool",
+  "capacity_rule": "floor(n!/8) minus occupied historical orbits must cover every requested role across all repeats, including future tests",
+  "max_proposals_per_pool": 2000000
+}

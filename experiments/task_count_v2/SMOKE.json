@@ -1,0 +1,132 @@
+{
+  "status": "passed",
+  "completed_utc": "2026-10-19T21:10:08.375822+00:00",
+  "seconds": 26.109287399973255,
+  "environment": {
+    "python": "3.13.14 (main, Jun 23 2026, 15:19:27) [MSC v.1944 64 bit (AMD64)]",
+    "torch": "2.11.0+cu128",
+    "numpy": "2.5.4",
+    "cuda": "12.8",
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 5070",
+    "parameter_count": 3244288,
+    "encoding_version": "permworld_sequence_v1"
+  },
+  "k_values_checked": [
+    2,
+    16
+  ],
+  "parameterized_samples_checked": true,
+  "multi_token_answer_value": 220,
+  "multi_token_answer_ids": [
+    100,
+    2,
+    20,
+    101,
+    103
+  ],
+  "per_example_answer_plus_eos_loss_checked": true,
+  "save_resume_bitwise": true,
+  "causal_answer_leakage_absent": true,
+  "explicit_padding_checked": true,
+  "generation_independent_of_gold": true,
+  "evaluation_preserves_rng": true,
+  "fresh_adaptation_optimizer": true,
+  "target_row_reset": {
+    "loaded_state_sha256": "fcc8a9498aededf059a79e2512ade920f8da3a68348828f0c6c13b44baf1b9e0",
+    "loaded_target_rows_sha256": "47abdf0353dc2481413e9948d99c6e1d0f7d02199e3c6ad1d30ebec60ab9bad2",
+    "adaptation_initial_state_sha256": "ebfa06d877c8172044e4838c81fa04b6bb15560858ebb8ce768812b2455d617b",
+    "reset_target_rows_sha256": "c3c5096782872a0c2834dc3b5639145b74bf57d5fad2805c35bbd6fc953d3c6f",
+    "reset_target_token_ids": [
+      174,
+      122,
+      185,
+      119
+    ]
+  },
+  "toy_adaptation_and_evaluation": [
+    {
+      "length": 12,
+      "correct": 0,
+      "eos_generated": 8,
+      "majority_correct": 3,
+      "count": 8,
+      "accuracy": 0.0,
+      "answer_ce": 3.2289721965789795,
+      "eos_ce": 1.0939998626708984,
+      "sequence_ce": 2.1614861488342285,
+      "eos_accuracy": 1.0,
+      "majority_accuracy": 0.375,
+      "majority_answer": 4
+    },
+    {
+      "length": "all",
+      "count": 8,
+      "correct": 0,
+      "eos_generated": 8,
+      "majority_correct": 3,
+      "accuracy": 0.0,
+      "answer_ce": 3.2289721965789795,
+      "eos_ce": 1.0939998626708984,
+      "sequence_ce": 2.1614861488342285,
+      "eos_accuracy": 1.0,
+      "majority_accuracy": 0.375,
+      "majority_answer": "training-derived per-length values"
+    }
+  ],
+  "formal_test_opened": false,
+  "two_budget_production_pipeline": {
+    "status": "passed",
+    "seconds": 23.895997400046326,
+    "pretraining_models": 2,
+    "adaptations": 6,
+    "tiny_budgets": [
+      4000,
+      32000
+    ],
+    "paired_initialization": true,
+    "long_budget_sample_prefix_matches_short": true,
+    "baseline_and_pretrained_adaptation_schedules_match": true,
+    "four_heldout_rows_reset_identically": true,
+    "fresh_optimizers": true,
+    "development_selection_and_complete_answers_checked": true,
+    "production_functions_exercised": [
+      "run_pretraining",
+      "run_adaptation"
+    ],
+    "test_inputs_opened": false,
+    "artifact_root": "smoke\\end_to_end"
+  },
+  "learning_rate_relative_budget_checks": [
+    {
+      "budget_fraction": 0.0,
+      "learning_rate": 0.0
+    },
+    {
+      "budget_fraction": 0.041666666666666664,
+      "learning_rate": 0.0003
+    },
+    {
+      "budget_fraction": 0.125,
+      "learning_rate": 0.00029499383379195287
+    },
+    {
+      "budget_fraction": 0.5,
+      "learning_rate": 0.0001742127258042306
+    },
+    {
+      "budget_fraction": 1.0,
+      "learning_rate": 3e-05
+    }
+  ],
+  "learning_rate_4M_tokens_short_budget": 3e-05,
+  "learning_rate_4M_tokens_long_budget": 0.00029499383379195287,
+  "timing_updates": 32,
+  "timing_seconds": 0.5946250999695621,
+  "timing_input_tokens": 67584,
+  "timing_tokens_per_second": 113658.1688251295,
+  "estimated_4M_training_only_seconds": 35.193246920547004,
+  "estimated_32M_training_only_seconds": 281.54597536437603,
+  "estimated_all_pretraining_training_only_seconds": 3800.870667419076,
+  "timing_note": "Fixed smoke batch, training only; excludes formal evaluations, encoding, checkpoint and file I/O"
+}

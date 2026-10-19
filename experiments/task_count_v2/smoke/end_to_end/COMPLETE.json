@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "seconds": 23.895997400046326,
+  "pretraining_models": 2,
+  "adaptations": 6,
+  "tiny_budgets": [
+    4000,
+    32000
+  ],
+  "paired_initialization": true,
+  "long_budget_sample_prefix_matches_short": true,
+  "baseline_and_pretrained_adaptation_schedules_match": true,
+  "four_heldout_rows_reset_identically": true,
+  "fresh_optimizers": true,
+  "development_selection_and_complete_answers_checked": true,
+  "production_functions_exercised": [
+    "run_pretraining",
+    "run_adaptation"
+  ],
+  "test_inputs_opened": false,
+  "artifact_root": "smoke\\end_to_end"
+}
