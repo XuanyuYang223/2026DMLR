@@ -1,0 +1,107 @@
+{
+  "pool_instances": 24,
+  "pool_templates": 22,
+  "input_encoding_variants": 1,
+  "prefixes": [
+    {
+      "chain": "chain_alpha",
+      "k": 2,
+      "task_instances": 2,
+      "templates": 2,
+      "input_encoding_variants": 1,
+      "broad_family_counts": {
+        "cycle_decomposition": 1,
+        "global_subsequence": 1
+      }
+    },
+    {
+      "chain": "chain_alpha",
+      "k": 4,
+      "task_instances": 4,
+      "templates": 4,
+      "input_encoding_variants": 1,
+      "broad_family_counts": {
+        "cycle_decomposition": 1,
+        "global_subsequence": 1,
+        "legacy_statistics": 1,
+        "permutation_blocks": 1
+      }
+    },
+    {
+      "chain": "chain_alpha",
+      "k": 8,
+      "task_instances": 8,
+      "templates": 8,
+      "input_encoding_variants": 1,
+      "broad_family_counts": {
+        "cycle_decomposition": 2,
+        "global_subsequence": 2,
+        "legacy_statistics": 2,
+        "permutation_blocks": 2
+      }
+    },
+    {
+      "chain": "chain_alpha",
+      "k": 16,
+      "task_instances": 16,
+      "templates": 16,
+      "input_encoding_variants": 1,
+      "broad_family_counts": {
+        "cycle_decomposition": 4,
+        "global_subsequence": 3,
+        "legacy_statistics": 5,
+        "permutation_blocks": 4
+      }
+    },
+    {
+      "chain": "chain_beta",
+      "k": 2,
+      "task_instances": 2,
+      "templates": 2,
+      "input_encoding_variants": 1,
+      "broad_family_counts": {
+        "cycle_decomposition": 1,
+        "global_subsequence": 1
+      }
+    },
+    {
+      "chain": "chain_beta",
+      "k": 4,
+      "task_instances": 4,
+      "templates": 4,
+      "input_encoding_variants": 1,
+      "broad_family_counts": {
+        "cycle_decomposition": 1,
+        "global_subsequence": 1,
+        "legacy_statistics": 1,
+        "permutation_blocks": 1
+      }
+    },
+    {
+      "chain": "chain_beta",
+      "k": 8,
+      "task_instances": 8,
+      "templates": 8,
+      "input_encoding_variants": 1,
+      "broad_family_counts": {
+        "cycle_decomposition": 2,
+        "global_subsequence": 2,
+        "legacy_statistics": 2,
+        "permutation_blocks": 2
+      }
+    },
+    {
+      "chain": "chain_beta",
+      "k": 16,
+      "task_instances": 16,
+      "templates": 16,
+      "input_encoding_variants": 1,
+      "broad_family_counts": {
+        "cycle_decomposition": 4,
+        "global_subsequence": 3,
+        "legacy_statistics": 5,
+        "permutation_blocks": 4
+      }
+    }
+  ]
+}

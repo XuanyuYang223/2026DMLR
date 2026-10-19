@@ -1,0 +1,61 @@
+chain,k,position,task_key,task_id,params,broad_family,registry_family
+chain_alpha,2,1,nontrivial_cycle_count,nontrivial_cycle_count,{},cycle_decomposition,cycle_decomposition
+chain_alpha,2,2,lds_length,lds_length,{},global_subsequence,global_subsequence
+chain_alpha,4,1,nontrivial_cycle_count,nontrivial_cycle_count,{},cycle_decomposition,cycle_decomposition
+chain_alpha,4,2,lds_length,lds_length,{},global_subsequence,global_subsequence
+chain_alpha,4,3,largest_component,largest_component,{},permutation_blocks,permutation_blocks
+chain_alpha,4,4,descents,descents,{},legacy_statistics,descents
+chain_alpha,8,1,nontrivial_cycle_count,nontrivial_cycle_count,{},cycle_decomposition,cycle_decomposition
+chain_alpha,8,2,lds_length,lds_length,{},global_subsequence,global_subsequence
+chain_alpha,8,3,largest_component,largest_component,{},permutation_blocks,permutation_blocks
+chain_alpha,8,4,descents,descents,{},legacy_statistics,descents
+chain_alpha,8,5,even_cycle_count,even_cycle_count,{},cycle_decomposition,cycle_decomposition
+chain_alpha,8,6,increasing_subsequence_count_k3,increasing_subsequence_count,"{""k"": 3}",global_subsequence,global_subsequence
+chain_alpha,8,7,global_descents,global_descents,{},permutation_blocks,permutation_blocks
+chain_alpha,8,8,exceedances,exceedances,{},legacy_statistics,exceedances
+chain_alpha,16,1,nontrivial_cycle_count,nontrivial_cycle_count,{},cycle_decomposition,cycle_decomposition
+chain_alpha,16,2,lds_length,lds_length,{},global_subsequence,global_subsequence
+chain_alpha,16,3,largest_component,largest_component,{},permutation_blocks,permutation_blocks
+chain_alpha,16,4,descents,descents,{},legacy_statistics,descents
+chain_alpha,16,5,even_cycle_count,even_cycle_count,{},cycle_decomposition,cycle_decomposition
+chain_alpha,16,6,increasing_subsequence_count_k3,increasing_subsequence_count,"{""k"": 3}",global_subsequence,global_subsequence
+chain_alpha,16,7,global_descents,global_descents,{},permutation_blocks,permutation_blocks
+chain_alpha,16,8,exceedances,exceedances,{},legacy_statistics,exceedances
+chain_alpha,16,9,odd_cycle_count,odd_cycle_count,{},cycle_decomposition,cycle_decomposition
+chain_alpha,16,10,cycle_length_count_k2,cycle_length_count,"{""k"": 2}",cycle_decomposition,cycle_decomposition
+chain_alpha,16,11,decreasing_subsequence_count_k3,decreasing_subsequence_count,"{""k"": 3}",global_subsequence,global_subsequence
+chain_alpha,16,12,smallest_component,smallest_component,{},permutation_blocks,permutation_blocks
+chain_alpha,16,13,component_length_count_k1,component_length_count,"{""k"": 1}",permutation_blocks,permutation_blocks
+chain_alpha,16,14,length,length,{},legacy_statistics,length
+chain_alpha,16,15,recoils,recoils,{},legacy_statistics,recoils
+chain_alpha,16,16,deficiencies,deficiencies,{},legacy_statistics,deficiencies
+chain_beta,2,1,longest_cycle,longest_cycle,{},cycle_decomposition,cycle_decomposition
+chain_beta,2,2,decreasing_subsequence_count_k3,decreasing_subsequence_count,"{""k"": 3}",global_subsequence,global_subsequence
+chain_beta,4,1,longest_cycle,longest_cycle,{},cycle_decomposition,cycle_decomposition
+chain_beta,4,2,decreasing_subsequence_count_k3,decreasing_subsequence_count,"{""k"": 3}",global_subsequence,global_subsequence
+chain_beta,4,3,smallest_component,smallest_component,{},permutation_blocks,permutation_blocks
+chain_beta,4,4,peaks,peaks,{},legacy_statistics,peaks
+chain_beta,8,1,longest_cycle,longest_cycle,{},cycle_decomposition,cycle_decomposition
+chain_beta,8,2,decreasing_subsequence_count_k3,decreasing_subsequence_count,"{""k"": 3}",global_subsequence,global_subsequence
+chain_beta,8,3,smallest_component,smallest_component,{},permutation_blocks,permutation_blocks
+chain_beta,8,4,peaks,peaks,{},legacy_statistics,peaks
+chain_beta,8,5,cycle_length_count_k3,cycle_length_count,"{""k"": 3}",cycle_decomposition,cycle_decomposition
+chain_beta,8,6,lds_length,lds_length,{},global_subsequence,global_subsequence
+chain_beta,8,7,component_length_count_k2,component_length_count,"{""k"": 2}",permutation_blocks,permutation_blocks
+chain_beta,8,8,valleys,valleys,{},legacy_statistics,valleys
+chain_beta,16,1,longest_cycle,longest_cycle,{},cycle_decomposition,cycle_decomposition
+chain_beta,16,2,decreasing_subsequence_count_k3,decreasing_subsequence_count,"{""k"": 3}",global_subsequence,global_subsequence
+chain_beta,16,3,smallest_component,smallest_component,{},permutation_blocks,permutation_blocks
+chain_beta,16,4,peaks,peaks,{},legacy_statistics,peaks
+chain_beta,16,5,cycle_length_count_k3,cycle_length_count,"{""k"": 3}",cycle_decomposition,cycle_decomposition
+chain_beta,16,6,lds_length,lds_length,{},global_subsequence,global_subsequence
+chain_beta,16,7,component_length_count_k2,component_length_count,"{""k"": 2}",permutation_blocks,permutation_blocks
+chain_beta,16,8,valleys,valleys,{},legacy_statistics,valleys
+chain_beta,16,9,nontrivial_cycle_count,nontrivial_cycle_count,{},cycle_decomposition,cycle_decomposition
+chain_beta,16,10,even_cycle_count,even_cycle_count,{},cycle_decomposition,cycle_decomposition
+chain_beta,16,11,increasing_subsequence_count_k3,increasing_subsequence_count,"{""k"": 3}",global_subsequence,global_subsequence
+chain_beta,16,12,global_descents,global_descents,{},permutation_blocks,permutation_blocks
+chain_beta,16,13,largest_component,largest_component,{},permutation_blocks,permutation_blocks
+chain_beta,16,14,anti_fixed_points,anti_fixed_points,{},legacy_statistics,anti_fixed_points
+chain_beta,16,15,longest_increasing_run,longest_increasing_run,{},legacy_statistics,longest_increasing_run
+chain_beta,16,16,longest_decreasing_run,longest_decreasing_run,{},legacy_statistics,longest_decreasing_run

@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "created_at_utc": "2026-10-19T16:44:59.351104+00:00",
+  "checks": [
+    "missing_selection_manifest_rejected",
+    "missing_freeze_rejected",
+    "missing_selections_rejected",
+    "training_incomplete_rejected",
+    "modified_archive_rejected",
+    "unknown_repeat_rejected"
+  ],
+  "reader_example_complete": true,
+  "test_inputs_generated": false,
+  "primary_manifest_sha256": "3d5bcb9b852d001ee9e9a74c3ebdb678a00e36be237345b7286066dac387b00d"
+}

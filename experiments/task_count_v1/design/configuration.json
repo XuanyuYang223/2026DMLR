@@ -1,0 +1,404 @@
+{
+  "schema_version": "task-count-design-v1",
+  "targets": [
+    {
+      "task_id": "cycle_count",
+      "params": {}
+    },
+    {
+      "task_id": "lis_length",
+      "params": {}
+    },
+    {
+      "task_id": "components",
+      "params": {}
+    },
+    {
+      "task_id": "fixed_points",
+      "params": {}
+    }
+  ],
+  "k_values": [
+    2,
+    4,
+    8,
+    16
+  ],
+  "lengths": [
+    10,
+    12
+  ],
+  "chains": {
+    "chain_alpha": [
+      {
+        "task_id": "nontrivial_cycle_count",
+        "params": {}
+      },
+      {
+        "task_id": "lds_length",
+        "params": {}
+      },
+      {
+        "task_id": "largest_component",
+        "params": {}
+      },
+      {
+        "task_id": "descents",
+        "params": {}
+      },
+      {
+        "task_id": "even_cycle_count",
+        "params": {}
+      },
+      {
+        "task_id": "increasing_subsequence_count",
+        "params": {
+          "k": 3
+        }
+      },
+      {
+        "task_id": "global_descents",
+        "params": {}
+      },
+      {
+        "task_id": "exceedances",
+        "params": {}
+      },
+      {
+        "task_id": "odd_cycle_count",
+        "params": {}
+      },
+      {
+        "task_id": "cycle_length_count",
+        "params": {
+          "k": 2
+        }
+      },
+      {
+        "task_id": "decreasing_subsequence_count",
+        "params": {
+          "k": 3
+        }
+      },
+      {
+        "task_id": "smallest_component",
+        "params": {}
+      },
+      {
+        "task_id": "component_length_count",
+        "params": {
+          "k": 1
+        }
+      },
+      {
+        "task_id": "length",
+        "params": {}
+      },
+      {
+        "task_id": "recoils",
+        "params": {}
+      },
+      {
+        "task_id": "deficiencies",
+        "params": {}
+      }
+    ],
+    "chain_beta": [
+      {
+        "task_id": "longest_cycle",
+        "params": {}
+      },
+      {
+        "task_id": "decreasing_subsequence_count",
+        "params": {
+          "k": 3
+        }
+      },
+      {
+        "task_id": "smallest_component",
+        "params": {}
+      },
+      {
+        "task_id": "peaks",
+        "params": {}
+      },
+      {
+        "task_id": "cycle_length_count",
+        "params": {
+          "k": 3
+        }
+      },
+      {
+        "task_id": "lds_length",
+        "params": {}
+      },
+      {
+        "task_id": "component_length_count",
+        "params": {
+          "k": 2
+        }
+      },
+      {
+        "task_id": "valleys",
+        "params": {}
+      },
+      {
+        "task_id": "nontrivial_cycle_count",
+        "params": {}
+      },
+      {
+        "task_id": "even_cycle_count",
+        "params": {}
+      },
+      {
+        "task_id": "increasing_subsequence_count",
+        "params": {
+          "k": 3
+        }
+      },
+      {
+        "task_id": "global_descents",
+        "params": {}
+      },
+      {
+        "task_id": "largest_component",
+        "params": {}
+      },
+      {
+        "task_id": "anti_fixed_points",
+        "params": {}
+      },
+      {
+        "task_id": "longest_increasing_run",
+        "params": {}
+      },
+      {
+        "task_id": "longest_decreasing_run",
+        "params": {}
+      }
+    ]
+  },
+  "source_pool": [
+    {
+      "task_id": "anti_fixed_points",
+      "params": {}
+    },
+    {
+      "task_id": "component_length_count",
+      "params": {
+        "k": 1
+      }
+    },
+    {
+      "task_id": "component_length_count",
+      "params": {
+        "k": 2
+      }
+    },
+    {
+      "task_id": "cycle_length_count",
+      "params": {
+        "k": 2
+      }
+    },
+    {
+      "task_id": "cycle_length_count",
+      "params": {
+        "k": 3
+      }
+    },
+    {
+      "task_id": "decreasing_subsequence_count",
+      "params": {
+        "k": 3
+      }
+    },
+    {
+      "task_id": "deficiencies",
+      "params": {}
+    },
+    {
+      "task_id": "descents",
+      "params": {}
+    },
+    {
+      "task_id": "even_cycle_count",
+      "params": {}
+    },
+    {
+      "task_id": "exceedances",
+      "params": {}
+    },
+    {
+      "task_id": "global_descents",
+      "params": {}
+    },
+    {
+      "task_id": "increasing_subsequence_count",
+      "params": {
+        "k": 3
+      }
+    },
+    {
+      "task_id": "largest_component",
+      "params": {}
+    },
+    {
+      "task_id": "lds_length",
+      "params": {}
+    },
+    {
+      "task_id": "length",
+      "params": {}
+    },
+    {
+      "task_id": "longest_cycle",
+      "params": {}
+    },
+    {
+      "task_id": "longest_decreasing_run",
+      "params": {}
+    },
+    {
+      "task_id": "longest_increasing_run",
+      "params": {}
+    },
+    {
+      "task_id": "nontrivial_cycle_count",
+      "params": {}
+    },
+    {
+      "task_id": "odd_cycle_count",
+      "params": {}
+    },
+    {
+      "task_id": "peaks",
+      "params": {}
+    },
+    {
+      "task_id": "recoils",
+      "params": {}
+    },
+    {
+      "task_id": "smallest_component",
+      "params": {}
+    },
+    {
+      "task_id": "valleys",
+      "params": {}
+    }
+  ],
+  "k_definition": "Number of nonconstant task instances after removing complete same-input answer aliases; not number of independent mathematical quantities.",
+  "selection_rule": "Two human-specified nested, family-stratified chains chosen from exact definitions, before this experiment's training and transfer outcomes. Prefix family slots are cycle, subsequence, block, legacy; repeated at k=8; k=16 adds two cycles, one subsequence, two blocks and three legacy statistics. Different chain membership is intentional. All 24 pool instances occur in the union.",
+  "family_counts": {
+    "2": {
+      "cycle_decomposition": 1,
+      "global_subsequence": 1
+    },
+    "4": {
+      "cycle_decomposition": 1,
+      "global_subsequence": 1,
+      "legacy_statistics": 1,
+      "permutation_blocks": 1
+    },
+    "8": {
+      "cycle_decomposition": 2,
+      "global_subsequence": 2,
+      "legacy_statistics": 2,
+      "permutation_blocks": 2
+    },
+    "16": {
+      "cycle_decomposition": 4,
+      "global_subsequence": 3,
+      "legacy_statistics": 5,
+      "permutation_blocks": 4
+    }
+  },
+  "template_count_note": "The pool has 22 templates and 24 instances: cycle_length_count and component_length_count each have two k values. Each individual prefix uses distinct templates, so its template count equals its k. One input encoding: one_line_v1; sequence protocol permworld_sequence_v1.",
+  "exclusions": [
+    {
+      "instances": [
+        "cycle_count",
+        "lis_length",
+        "components",
+        "fixed_points"
+      ],
+      "reason": "All four held-out targets are excluded globally, not just for their own adaptation."
+    },
+    {
+      "instances": [
+        "cycle_length_count_k1"
+      ],
+      "reason": "Exact same-input answer alias of held-out fixed_points: c_1(p)=FP(p).",
+      "relation_ids": [
+        "cycle_length_one_fixed"
+      ]
+    },
+    {
+      "instances": [
+        "two_cycle_count",
+        "three_cycle_count"
+      ],
+      "reason": "Complete aliases of the retained cycle_length_count k=2 and k=3 instances.",
+      "relation_ids": [
+        "cycle_length_two_alias",
+        "cycle_length_three_alias"
+      ]
+    },
+    {
+      "instances": [
+        "decreasing_subsequence_count_k2"
+      ],
+      "reason": "Exact same-input answer alias of retained length (inversion count).",
+      "relation_ids": [
+        "decreasing_pairs_inversions"
+      ]
+    },
+    {
+      "instances": [
+        "increasing_subsequence_count_k1",
+        "decreasing_subsequence_count_k1"
+      ],
+      "reason": "Equal to n; constant conditional on length and exact aliases of each other.",
+      "relation_ids": [
+        "increasing_subsequence_count_k1_constant",
+        "decreasing_subsequence_count_k1_constant"
+      ]
+    },
+    {
+      "instances": [
+        "all k>n count instances"
+      ],
+      "reason": "Constant zero for the corresponding input length; none are instantiated."
+    },
+    {
+      "instances": [
+        "rsk_shape",
+        "cycle_type",
+        "all representation and permutation-valued endpoints",
+        "all binary endpoints"
+      ],
+      "reason": "Outside this prespecified scalar experiment. Shape, cycle type and representations can expose target answers by deterministic postprocessing; they are not mislabeled as exact answer aliases."
+    },
+    {
+      "instances": [
+        "increasing_subsequence_count_k2"
+      ],
+      "reason": "Not a full alias: equals binomial(n,2)-length(p). Omitted to use k=3 counts and exercise multi-token answers; this is a design restriction, not an unrelatedness claim."
+    }
+  ],
+  "relations_policy": "Transformed-input, answer-map and joint relations are retained and annotated. Absence of a registered derivation means unclassified, never mathematically unrelated.",
+  "interpretation": "A limited task-count curve along two fixed compositions. Increasing k changes composition, available relations, answer distribution and per-task exposure at fixed total tokens. These effects are not identified separately, and the two chains are not independent statistical repeats.",
+  "witness_policy": {
+    "lengths": [
+      10,
+      12
+    ],
+    "seed": 2026102701,
+    "random_proposals_per_length": 1024,
+    "training_examples": false,
+    "purpose": "Counterexamples to same-input equality and constancy, not task difficulty selection or train/dev/test performance."
+  },
+  "no_transfer_results_read": true,
+  "additional_model_selection": false
+}

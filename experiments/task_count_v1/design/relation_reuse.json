@@ -1,0 +1,44 @@
+{
+  "status": "reused_hash_verified",
+  "historical_formula_rechecks_run": 0,
+  "platform_formula_rechecks_run": 0,
+  "sha256": {
+    "permworld_platform/certificates.py": "181fa4f1cf3fd0586f2bf6f0e1b1a005d38f714d5ee9bda6c15790109d952969",
+    "permworld_platform/relations.py": "33efcc0b9baff7285785d1996bd143061c8affd1c43a669fc73dbae83b9ac174",
+    "permworld_platform/tasks.py": "61cb4d1cd45144079a91106772432ed47bf196dbd9d920727f55d95f8a26f5b5",
+    "permworld_platform/objects.py": "c0a90de4f2860c935ac28899a709ae5c1bed09c8336560d1a3cdaea215e5be7a",
+    "experiments/permworld_pilot/vendor/neurips_permutations/math_ops.py": "3f6832b4798a20cc6b813a0b64ec01cf10360fbf3d6256cb59d1d793d4ad345f",
+    "experiments/platform_v01/mathematics/RELATIONS.json": "eac1a15aa2cae3b8ad478e99a03506e18089b432a3e77510a2bae2f7c789de4d",
+    "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv": "74bf2bb4d02b2dd9f991d0c9d7880d962064e2b8a8263a1325dfb21b387730fe",
+    "experiments/platform_v01/mathematics/LABEL_CHECKS.csv": "c814bd3a020164f900edd1b7212d7d1350a88d5b65d578ab1bd66a62cffddc66",
+    "experiments/platform_v01/mathematics/EQUIVALENCE_AUDIT.json": "decae578698d1785115df579329765b3802e2c86bd2736ea47a439222d79634e",
+    "experiments/platform_v01/mathematics/CERTIFICATE.json": "a2f72d53c0a50691e1882ee8a909adbcb06c5cc93798a5c38b463d56fd554b8c"
+  },
+  "historical": {
+    "status": "reused_hash_verified",
+    "root": "experiments/pilot_v5_confirmation/mathematics",
+    "sha256": {
+      "audit/RELATION_INVENTORY.csv": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+      "audit/MATHEMATICS_AUDIT.json": "abe146533bd3d6d74895ff54b1437a847e63c09e59d12be5dac11f04007b6d4d",
+      "audit/OBSERVED_ASSOCIATIONS.csv": "ea27535661a5342cc8ed28425c3987f14ee2a871a83d15deda85b645361cf65f",
+      "audit/UNCHECKED_CLAIMS.csv": "b069354ce02da361c7cca4abe0cc52fdaf213356c49aaef0726c2f2355200291"
+    },
+    "historical_rechecks_run": 0,
+    "implementation_sha256": {
+      "experiments/permworld_pilot/vendor/neurips_permutations/math_ops.py": "3f6832b4798a20cc6b813a0b64ec01cf10360fbf3d6256cb59d1d793d4ad345f"
+    },
+    "previous_status": "passed",
+    "previous_exhaustive_n": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "previous_random_n": 10,
+    "previous_random_inputs": 4096,
+    "previous_independent_label_comparisons": 1601440
+  }
+}

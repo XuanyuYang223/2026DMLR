@@ -1,0 +1,29 @@
+{
+  "status": "pass",
+  "generated_at_utc": "2026-10-19T16:43:33.595356+00:00",
+  "method": "floor(n!/8) minus occupied historical orbits must cover every requested role across all repeats, including future tests",
+  "lengths": [
+    {
+      "n": 10,
+      "permutations": 3628800,
+      "maximum_orbit_size": 8,
+      "orbit_count_lower_bound": 453600,
+      "historical_occupied_orbits": 128529,
+      "available_orbit_lower_bound": 325071,
+      "requested_new_orbits_all_roles_and_repeats": 15744,
+      "reserved_future_test_orbits": 1536,
+      "conservative_capacity_sufficient": true
+    },
+    {
+      "n": 12,
+      "permutations": 479001600,
+      "maximum_orbit_size": 8,
+      "orbit_count_lower_bound": 59875200,
+      "historical_occupied_orbits": 3096,
+      "available_orbit_lower_bound": 59872104,
+      "requested_new_orbits_all_roles_and_repeats": 15744,
+      "reserved_future_test_orbits": 1536,
+      "conservative_capacity_sufficient": true
+    }
+  ]
+}

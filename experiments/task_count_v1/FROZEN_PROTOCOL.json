@@ -1,0 +1,578 @@
+{
+  "status": "frozen",
+  "frozen_at_utc": "2026-10-19T16:50:20.258107+00:00",
+  "config": {
+    "version": "permworld_task_count_v1",
+    "repeats": [
+      {
+        "initialization_seed": 1103,
+        "data_seed": 2026102101,
+        "pretrain_sampling_seed": 2026102181,
+        "adaptation_sampling_seed": 2026102191,
+        "pretrain_dropout_seed": 2026102281,
+        "adaptation_dropout_seed": 2026102291
+      },
+      {
+        "initialization_seed": 2207,
+        "data_seed": 2026102102,
+        "pretrain_sampling_seed": 2026102182,
+        "adaptation_sampling_seed": 2026102192,
+        "pretrain_dropout_seed": 2026102282,
+        "adaptation_dropout_seed": 2026102292
+      },
+      {
+        "initialization_seed": 3301,
+        "data_seed": 2026102103,
+        "pretrain_sampling_seed": 2026102183,
+        "adaptation_sampling_seed": 2026102193,
+        "pretrain_dropout_seed": 2026102283,
+        "adaptation_dropout_seed": 2026102293
+      }
+    ],
+    "lengths": [
+      10,
+      12
+    ],
+    "k_values": [
+      2,
+      4,
+      8,
+      16
+    ],
+    "pretraining_budget_nonpadding_sequence_tokens": 4000000,
+    "pretraining_checkpoint": "fixed token-budget endpoint only",
+    "pretraining_schedule": "cosine in consumed nonpadding sequence tokens; warmup first 1/24 budget, floor 3e-5",
+    "pretraining_sampling": "Each batch contains a concatenation of random task permutations; balanced within k slots. Independent length/index and task-slot RNGs. Same streams across chains at fixed k; final batch is a prefix fitting remaining tokens.",
+    "pretraining_length_schedule": "Seeded random permutation of lengths every two updates; paired across chains at fixed k until token-budget stopping",
+    "source_train_evaluation": "fixed first 256 training objects per length, for each task; majority computed from complete source training pool",
+    "source_evaluation_stages": [
+      "start",
+      "midpoint",
+      "endpoint"
+    ],
+    "source_midpoint": "first completed update with consumed tokens >= 2,000,000",
+    "adaptation_updates": 800,
+    "adaptation_samples_per_length": 128,
+    "adaptation_eval_every": 100,
+    "adaptation_warmup_updates": 100,
+    "adaptation_selection": "maximum development complete-answer accuracy, minimum answer CE, earliest update; update zero excluded",
+    "adaptation_learning_rate_candidates": [
+      0.0003
+    ],
+    "target_parameter_initialization": "All four held-out task-token rows of the tied embedding/output matrix are reset to the paired random initialization before every adaptation, including scratch. Other pretrained parameters are loaded exactly. Fresh AdamW state.",
+    "batch_size": 64,
+    "evaluation_batch_size": 128,
+    "learning_rate": 0.0003,
+    "minimum_lr": 3e-05,
+    "weight_decay": 0.01,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "gradient_clip": 1.0,
+    "model": {
+      "d_model": 256,
+      "layers": 4,
+      "n_heads": 8,
+      "mlp_ratio": 4,
+      "dropout": 0.1,
+      "tie_embeddings": true,
+      "max_seq_len": 128
+    },
+    "vocabulary_size": 203,
+    "max_new_tokens": 8,
+    "loss": "Mean over examples of mean teacher-forced CE over answer tokens and EOS; prompt tokens ignored",
+    "accuracy": "Unconstrained greedy generation from prompt alone; exact complete answer-token sequence including EOS",
+    "precision": "FP32 weights/evaluation; BF16 training on CUDA; TF32 disabled",
+    "test_policy": "Create independent test pools only after all 108 development selections have been frozen; report selected and fixed endpoint checkpoints, without further selection",
+    "scope": {
+      "pretraining_models": 24,
+      "adaptations_from_pretraining": 96,
+      "shared_random_initialization_baselines": 12,
+      "total_target_training_runs": 108
+    }
+  },
+  "target_specs": [
+    {
+      "task_id": "cycle_count",
+      "params": {}
+    },
+    {
+      "task_id": "lis_length",
+      "params": {}
+    },
+    {
+      "task_id": "components",
+      "params": {}
+    },
+    {
+      "task_id": "fixed_points",
+      "params": {}
+    }
+  ],
+  "chains": {
+    "chain_alpha": [
+      {
+        "task_id": "nontrivial_cycle_count",
+        "params": {}
+      },
+      {
+        "task_id": "lds_length",
+        "params": {}
+      },
+      {
+        "task_id": "largest_component",
+        "params": {}
+      },
+      {
+        "task_id": "descents",
+        "params": {}
+      },
+      {
+        "task_id": "even_cycle_count",
+        "params": {}
+      },
+      {
+        "task_id": "increasing_subsequence_count",
+        "params": {
+          "k": 3
+        }
+      },
+      {
+        "task_id": "global_descents",
+        "params": {}
+      },
+      {
+        "task_id": "exceedances",
+        "params": {}
+      },
+      {
+        "task_id": "odd_cycle_count",
+        "params": {}
+      },
+      {
+        "task_id": "cycle_length_count",
+        "params": {
+          "k": 2
+        }
+      },
+      {
+        "task_id": "decreasing_subsequence_count",
+        "params": {
+          "k": 3
+        }
+      },
+      {
+        "task_id": "smallest_component",
+        "params": {}
+      },
+      {
+        "task_id": "component_length_count",
+        "params": {
+          "k": 1
+        }
+      },
+      {
+        "task_id": "length",
+        "params": {}
+      },
+      {
+        "task_id": "recoils",
+        "params": {}
+      },
+      {
+        "task_id": "deficiencies",
+        "params": {}
+      }
+    ],
+    "chain_beta": [
+      {
+        "task_id": "longest_cycle",
+        "params": {}
+      },
+      {
+        "task_id": "decreasing_subsequence_count",
+        "params": {
+          "k": 3
+        }
+      },
+      {
+        "task_id": "smallest_component",
+        "params": {}
+      },
+      {
+        "task_id": "peaks",
+        "params": {}
+      },
+      {
+        "task_id": "cycle_length_count",
+        "params": {
+          "k": 3
+        }
+      },
+      {
+        "task_id": "lds_length",
+        "params": {}
+      },
+      {
+        "task_id": "component_length_count",
+        "params": {
+          "k": 2
+        }
+      },
+      {
+        "task_id": "valleys",
+        "params": {}
+      },
+      {
+        "task_id": "nontrivial_cycle_count",
+        "params": {}
+      },
+      {
+        "task_id": "even_cycle_count",
+        "params": {}
+      },
+      {
+        "task_id": "increasing_subsequence_count",
+        "params": {
+          "k": 3
+        }
+      },
+      {
+        "task_id": "global_descents",
+        "params": {}
+      },
+      {
+        "task_id": "largest_component",
+        "params": {}
+      },
+      {
+        "task_id": "anti_fixed_points",
+        "params": {}
+      },
+      {
+        "task_id": "longest_increasing_run",
+        "params": {}
+      },
+      {
+        "task_id": "longest_decreasing_run",
+        "params": {}
+      }
+    ]
+  },
+  "vocabulary": [
+    "00",
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51",
+    "52",
+    "53",
+    "54",
+    "55",
+    "56",
+    "57",
+    "58",
+    "59",
+    "60",
+    "61",
+    "62",
+    "63",
+    "64",
+    "65",
+    "66",
+    "67",
+    "68",
+    "69",
+    "70",
+    "71",
+    "72",
+    "73",
+    "74",
+    "75",
+    "76",
+    "77",
+    "78",
+    "79",
+    "80",
+    "81",
+    "82",
+    "83",
+    "84",
+    "85",
+    "86",
+    "87",
+    "88",
+    "89",
+    "90",
+    "91",
+    "92",
+    "93",
+    "94",
+    "95",
+    "96",
+    "97",
+    "98",
+    "99",
+    "<NUM_START>",
+    "<NUM_END>",
+    "<BOS>",
+    "<EOS>",
+    "<PAD>",
+    "<ONE_START>",
+    "<ONE_END>",
+    "<CYCLE_START>",
+    "<CYCLE_END>",
+    "<LEHMER_START>",
+    "<LEHMER_END>",
+    "<INVEC_START>",
+    "<INVEC_END>",
+    ",",
+    ";",
+    "<LENGTH>",
+    "<PARITY>",
+    "<PEAKS>",
+    "<EXCEEDANCES>",
+    "<FIXED_POINTS>",
+    "<DESCENTS>",
+    "<RECOILS>",
+    "<LIS_LENGTH>",
+    "<SIZE>",
+    "=",
+    "+",
+    "-",
+    "*",
+    "/",
+    "<YT_ROW_START>",
+    "<YT_ROW_END>",
+    "<YT_COL_START>",
+    "<YT_COL_END>",
+    "|",
+    "<P_TABLEAU>",
+    "<Q_TABLEAU>",
+    "<TO_CYCLE>",
+    "<TO_LEHMER>",
+    "<TO_INVERSION_VECTOR>",
+    "<TO_REDUCED_WORD>",
+    "<CYCLE_TYPE>",
+    "<RSK_SHAPE>",
+    "<LDS_LENGTH>",
+    "<PATTERN_AVOIDANCE>",
+    "<INVERSE>",
+    "<COMPOSE>",
+    "<POWER>",
+    "<CONJUGATE>",
+    "<COMMUTATOR>",
+    "<RIGHT_MULTIPLY_SIMPLE>",
+    "<BRUHAT_LEQ>",
+    "<ARG_START>",
+    "<ARG_END>",
+    "<PATTERN_START>",
+    "<PATTERN_END>",
+    "<EXPONENT>",
+    "<SIMPLE_INDEX>",
+    "<REDUCED_WORD_START>",
+    "<REDUCED_WORD_END>",
+    "<CYCLE_TYPE_START>",
+    "<CYCLE_TYPE_END>",
+    "<RSK_SHAPE_START>",
+    "<RSK_SHAPE_END>",
+    "<VALLEYS>",
+    "<DOUBLE_ASCENTS>",
+    "<DOUBLE_DESCENTS>",
+    "<SUCCESSIONS>",
+    "<ADJACENCIES>",
+    "<ANTI_FIXED_POINTS>",
+    "<DEFICIENCIES>",
+    "<LEFT_TO_RIGHT_MAXIMA>",
+    "<LEFT_TO_RIGHT_MINIMA>",
+    "<RIGHT_TO_LEFT_MAXIMA>",
+    "<RIGHT_TO_LEFT_MINIMA>",
+    "<CYCLE_COUNT>",
+    "<TWO_CYCLE_COUNT>",
+    "<THREE_CYCLE_COUNT>",
+    "<EVEN_CYCLE_COUNT>",
+    "<ODD_CYCLE_COUNT>",
+    "<LONGEST_CYCLE>",
+    "<SHORTEST_CYCLE>",
+    "<NONTRIVIAL_CYCLE_COUNT>",
+    "<LONGEST_INCREASING_RUN>",
+    "<LONGEST_DECREASING_RUN>",
+    "<GLOBAL_DESCENTS>",
+    "<COMPONENTS>",
+    "<MAX_DISPLACEMENT>",
+    "<DISPLACEMENT_ONE_COUNT>",
+    "<CYCLE_LENGTH_COUNT>",
+    "<INCREASING_SUBSEQUENCE_COUNT>",
+    "<DECREASING_SUBSEQUENCE_COUNT>",
+    "<LARGEST_COMPONENT>",
+    "<SMALLEST_COMPONENT>",
+    "<COMPONENT_LENGTH_COUNT>",
+    "<LIST_START>",
+    "<LIST_END>",
+    "<PARAM_START>",
+    "<PARAM_END>",
+    "<PARAM_K>",
+    "<PARAM_PATTERN>",
+    "<PARAM_EXPONENT>",
+    "<PARAM_INDEX>",
+    "<OPERAND_Q>"
+  ],
+  "data_config": {
+    "version": "task_count_orbit_objects_v1",
+    "lengths": [
+      10,
+      12
+    ],
+    "replicates": [
+      {
+        "repeat": 1,
+        "model_seed": 1103,
+        "data_seed": 2026102101,
+        "test_seed": 2026102151
+      },
+      {
+        "repeat": 2,
+        "model_seed": 2207,
+        "data_seed": 2026102102,
+        "test_seed": 2026102152
+      },
+      {
+        "repeat": 3,
+        "model_seed": 3301,
+        "data_seed": 2026102103,
+        "test_seed": 2026102153
+      }
+    ],
+    "split_order": [
+      "source_train",
+      "source_dev",
+      "target_train",
+      "target_dev"
+    ],
+    "per_length_counts": {
+      "source_train": 4096,
+      "source_dev": 256,
+      "target_train": 128,
+      "target_dev": 256,
+      "test": 512
+    },
+    "test_generation": "after all 24 pretraining runs and 108 target training selections are frozen",
+    "proposal": "uniform permutation proposals; reject complete inverse/reverse/complement orbits",
+    "rng": "numpy.PCG64(SeedSequence([data_seed, role_index, n])); test uses test_seed and role_index=4",
+    "generation_order": "all training/development pools in repeat, role, length order; test pools last in repeat, length order",
+    "historical_exclusion": "pilot_v1 through pilot_v5, the canonical platform_v01/dataset, and platform_v01 runnable-example objects",
+    "pairing": "all source tasks and all target tasks use the same role-specific objects within a repeat; conditions do not alter object pools",
+    "capacity_rule": "floor(n!/8) minus occupied historical orbits must cover every requested role across all repeats, including future tests",
+    "max_proposals_per_pool": 2000000
+  },
+  "code_sha256": {
+    "../../permworld_platform/__init__.py": "1200b01fb82bca544e7dabd2ff440dd026d0473343ad48855c7cb80e20c1f315",
+    "../../permworld_platform/__main__.py": "f138f7d7b754eb94a82204c74b21ec98af65bf483d60a38f087153bc63e0e5a4",
+    "../../permworld_platform/calibration.py": "2d37c1b72ee21b86d098b63127d18a3d67f94483490a37d0f323c95fae4d9066",
+    "../../permworld_platform/certificates.py": "181fa4f1cf3fd0586f2bf6f0e1b1a005d38f714d5ee9bda6c15790109d952969",
+    "../../permworld_platform/check_interface.py": "6e55bc402985201b191723083f57f3b236c7f90a508000ae2ec5a8eef11ac81c",
+    "../../permworld_platform/data.py": "0f011f6deea4667ea976ecc8e49df9c9b1e289a173c9afd645cc74302980e177",
+    "../../permworld_platform/encoding.py": "143c46d75da71b90ee05101e9c9742721c695156c2356fcf5f9b0bb791fe104b",
+    "../../permworld_platform/objects.py": "c0a90de4f2860c935ac28899a709ae5c1bed09c8336560d1a3cdaea215e5be7a",
+    "../../permworld_platform/registry.py": "edd23cb8ab645cb51ccc0b329ea7ba5b37fadea2abb0edbd9ecbe4eba10032c5",
+    "../../permworld_platform/relations.py": "33efcc0b9baff7285785d1996bd143061c8affd1c43a669fc73dbae83b9ac174",
+    "../../permworld_platform/tasks.py": "61cb4d1cd45144079a91106772432ed47bf196dbd9d920727f55d95f8a26f5b5",
+    "train.py": "bf1ad4b3d384659415c23a027ac31275560eea398e549ab3fd43ca49fa80e742",
+    "design.py": "5ff0905d93753a05566af2fc3271c27952e75a56064a2714048540589c8aa769",
+    "data_pipeline.py": "0dd379cea3a21b9777160f00118fe5b990d88b6de87460828691e543b6c566b0",
+    "../permworld_pilot/vendor/neurips_permutations/models.py": "ed3ac73b6edaa6ed5c0c2528ba2c37fb903b55259840dfb17f8851562c2599a0",
+    "../permworld_pilot/vendor/sdpa.py": "5035f58453ddee5c5d5b05878491dfcc81764e172f2ebada437dc9e325048918",
+    "../permworld_pilot/vendor/neurips_permutations/math_ops.py": "3f6832b4798a20cc6b813a0b64ec01cf10360fbf3d6256cb59d1d793d4ad345f",
+    "../permworld_pilot/vendor/neurips_permutations/passage.py": "6c103494507358b8b4d2ee6a5c69a31fc391ae4cd35d7f1126bdac891fe07e09"
+  },
+  "design_and_data_sha256": {
+    "SMOKE.json": "8bd9cdb07a3336b32d9eecd748d76be40f2671b37c0fef063de04884513f0036",
+    "EXPERIMENT_PLAN.md": "d6d4c989e5362709b19d1cb62138a50902632bc6607450d5f3e51e2cbafdb3a1",
+    "design/configuration.json": "1e71f166a15799cede93f0d26315b90953bc3aa898d45ae7dc012a723f072871",
+    "design/counts.json": "c990cf8b922e5deb5506eb1cc2ca025d3e48d44daf5e132ad419e7e5dfbab97c",
+    "design/FROZEN_DESIGN.json": "fb5a7a889fb3195f3f47c483bc7e024ee56cda2c0e2b1a69dc08c8395ff02d51",
+    "design/inequivalence_audit.json": "948fe5a75e22aa32af43f09298b0f466d9b516c3f80df46638ceed800b3ae1a5",
+    "design/relation_inventory.json": "eac1a15aa2cae3b8ad478e99a03506e18089b432a3e77510a2bae2f7c789de4d",
+    "design/relation_reuse.json": "06306e5bb4501b28791a0dae13abab3ce138b53244d4aad7f965b474fd7b5fd0",
+    "data/objects/s1103_source_dev_n10.npz": "104059f1d942fe14bfed9a0719483178cef24cf5455b4e6d43092844038754e5",
+    "data/objects/s1103_source_dev_n12.npz": "666229151ba3c781293d41543399237c08776a9398620ceda681e5313a263036",
+    "data/objects/s1103_source_train_n10.npz": "904ae97336d2a3719fa4174888863db7413ce6b555ee4ddc7798a7b8f4d25d1d",
+    "data/objects/s1103_source_train_n12.npz": "14e1e2621ede87f3a506aa8cd97719df8e9ae351d538acdb9cbfc072580834c9",
+    "data/objects/s1103_target_dev_n10.npz": "f2ea93d0618557753f6a58f57094b3405c2af2710a62937a2ebd6613bc3ab2f9",
+    "data/objects/s1103_target_dev_n12.npz": "61b6ca78fba068fd79dd8dc8840144ff5b2c1e4962a61079f253761491bc6398",
+    "data/objects/s1103_target_train_n10.npz": "6617eef5396a6805731d3bf161b4abc13df61f99cc3ed1223947b7007f54de5e",
+    "data/objects/s1103_target_train_n12.npz": "697d681187dbadae5357634f656612cb620e8d989d028127a2d8dba20c68e9ef",
+    "data/objects/s2207_source_dev_n10.npz": "eb67081e5d3e78e306dfb212eb2ecec3f1ce0ad1d0ca9f4ddddb2b86735ecfbb",
+    "data/objects/s2207_source_dev_n12.npz": "6db059bb6e1acfd38f39d49747d4ee37d5fd3beed78fb190934d181ea3a6780e",
+    "data/objects/s2207_source_train_n10.npz": "dda9b36d38a7e35bff00e6846b646c2e31c096684f76c33f92f00e834843ebf2",
+    "data/objects/s2207_source_train_n12.npz": "b38bbde2ac6b9e41912d6a5951d35c7a64cc2ced8bdf883ea2f74b601cfa9f1f",
+    "data/objects/s2207_target_dev_n10.npz": "43d11658e2ee015c938285da7bfcd553928a9396491c53c3bb1463345d0c2153",
+    "data/objects/s2207_target_dev_n12.npz": "af2963e57caf0df16df0c3141fe0600ebd674806f7f841e7b64cb4963212a94a",
+    "data/objects/s2207_target_train_n10.npz": "7ded3c91fdea8db310b621f8344d2ccd40a9dac0714fe9091faddb58c1dd7e74",
+    "data/objects/s2207_target_train_n12.npz": "2fdc530d71ede879bd88edbb748ccdd42bb13d91c79ed2a40e115c535ee41d91",
+    "data/objects/s3301_source_dev_n10.npz": "6401c4cf586eef2852a40099d0b60665e5205209686825e9bde1a417df30eeb6",
+    "data/objects/s3301_source_dev_n12.npz": "2c703930b8718cc095f2d0b32fda44d9e5828eedfb710388fae01f2bf8f9515e",
+    "data/objects/s3301_source_train_n10.npz": "4f977ef743d8b6250725dfbba7e40a1289d94e2e025989b8a9134c70eb8760ee",
+    "data/objects/s3301_source_train_n12.npz": "290ff7c88dbeb6b2f1284c965b4b8c7978f2ddf71cdae779962330f0c1531e3a",
+    "data/objects/s3301_target_dev_n10.npz": "1c0922cb95e60b7bd5ded70ff831138e9fbc0c0e317d006a959ca39be354c369",
+    "data/objects/s3301_target_dev_n12.npz": "b1a9b99640d5a9c86c5455f8b9ed38dc718da25d6d0f593fc4a97dbc2e175f6a",
+    "data/objects/s3301_target_train_n10.npz": "da38b409c13d2eb26f49418b4f0f89ab88f621f24a829c2c138e895f2fa06d6c",
+    "data/objects/s3301_target_train_n12.npz": "857f61fff021e9850380339c9ae6c28b0d6e91b25a36dbe45dad723f0a0b0af2",
+    "data/capacity_audit.json": "01d750a8db2130353ed167db98cc8b182904e91ecc247fe684a9bc4fc8ad68d2",
+    "data/DATA_CONFIG.json": "c443749b315963a14d32bb77e7565cdc2d4f3c9e74ccb867fe9ed8ee4597d133",
+    "data/DATA_CONTRACT_AUDIT.json": "34a830c4dcb925a99f40b782023c7ff8bd3adacb6332a53d83b7de600d3b79ef",
+    "data/manifest.json": "3d5bcb9b852d001ee9e9a74c3ebdb678a00e36be237345b7286066dac387b00d"
+  },
+  "test_generated": false,
+  "formal_training_started": false,
+  "hypothesis_scope": "Two prespecified nested chains, four held-out targets, three paired repeat units; no task replacement or budget extension"
+}
