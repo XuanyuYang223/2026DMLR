@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "synthetic_only": true,
+  "training_or_test_files_read": false,
+  "fixture_D4_pp": -10,
+  "fixture_D32_pp": 5,
+  "expected_interaction_pp": 15,
+  "interaction_records_checked": 72,
+  "shared_baseline_cancellation_verified": true,
+  "shared_baseline_gain_changes_verified": true,
+  "missing_and_duplicate_rows_rejected": [
+    "duplicate",
+    "missing"
+  ],
+  "note": "Analysis arithmetic and pairing check, not a new experiment or model evaluation"
+}

@@ -1,0 +1,20 @@
+{
+  "run_id": "chain_beta_k16_b4000000_fixed_points_s5207",
+  "initialization_seed": 5207,
+  "data_seed": 2026110102,
+  "test_seed": 2026110152,
+  "pretrain_sampling_seed": 2026110182,
+  "adaptation_sampling_seed": 2026110192,
+  "pretrain_dropout_seed": 2026110282,
+  "adaptation_dropout_seed": 2026110292,
+  "seed": 5207,
+  "chain": "chain_beta",
+  "k": 16,
+  "budget_tokens": 4000000,
+  "condition": "pretrained",
+  "target": "fixed_points",
+  "task_id": "fixed_points",
+  "params": "{}",
+  "started_utc": "2026-10-19T22:24:36.927496+00:00",
+  "frozen_protocol_sha256": "375e4dd34bd20208b4736c8c9a5cb20b89ef9923043a3c2a4219ecf218abaf16"
+}

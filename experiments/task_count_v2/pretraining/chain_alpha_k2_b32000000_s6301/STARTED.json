@@ -1,0 +1,17 @@
+{
+  "run_id": "chain_alpha_k2_b32000000_s6301",
+  "initialization_seed": 6301,
+  "data_seed": 2026110103,
+  "test_seed": 2026110153,
+  "pretrain_sampling_seed": 2026110183,
+  "adaptation_sampling_seed": 2026110193,
+  "pretrain_dropout_seed": 2026110283,
+  "adaptation_dropout_seed": 2026110293,
+  "seed": 6301,
+  "chain": "chain_alpha",
+  "k": 2,
+  "budget_tokens": 32000000,
+  "condition": "pretrained",
+  "started_utc": "2026-10-19T22:28:07.129234+00:00",
+  "frozen_protocol_sha256": "375e4dd34bd20208b4736c8c9a5cb20b89ef9923043a3c2a4219ecf218abaf16"
+}

@@ -1,0 +1,44 @@
+{
+  "status": "pass",
+  "scope": "partial pretest audit: first paired source runs only; no forwards or training",
+  "frozen_protocol_sha256": "375e4dd34bd20208b4736c8c9a5cb20b89ef9923043a3c2a4219ecf218abaf16",
+  "completed_utc": "2026-10-19T21:18:58.789763+00:00",
+  "runs": [
+    {
+      "run_id": "chain_alpha_k2_b4000000_s4103",
+      "stage": "pretraining",
+      "budget_tokens": 4000000,
+      "updates": 2084,
+      "input_tokens": 3999992,
+      "padded_input_tokens": 3999992,
+      "supervised_tokens": 266660,
+      "answer_tokens": 133330,
+      "sample_exposures": 133330,
+      "budget_tail_tokens": 8,
+      "uniform_task_count_max_minus_min": 0,
+      "unique_input_union": 8192,
+      "fixed_input_pool_size": 8192,
+      "checkpoint_count": 1,
+      "status": "pass"
+    },
+    {
+      "run_id": "chain_alpha_k2_b32000000_s4103",
+      "stage": "pretraining",
+      "budget_tokens": 32000000,
+      "updates": 16667,
+      "input_tokens": 31999980,
+      "padded_input_tokens": 31999980,
+      "supervised_tokens": 2133338,
+      "answer_tokens": 1066669,
+      "sample_exposures": 1066669,
+      "budget_tail_tokens": 20,
+      "uniform_task_count_max_minus_min": 1,
+      "unique_input_union": 8192,
+      "fixed_input_pool_size": 8192,
+      "checkpoint_count": 1,
+      "status": "pass"
+    }
+  ],
+  "test_inputs_opened": false,
+  "neural_forwards": 0
+}
