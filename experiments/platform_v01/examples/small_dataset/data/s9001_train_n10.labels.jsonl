@@ -1,0 +1,16 @@
+{"input_id":"9cb9951213648ec34ebe86beea909a9ba7f34e640f9de1d133c2e8766572c1a4","answers":{"cycle_count":4,"increasing_subsequence_count[k=4]":6}}
+{"input_id":"ae3dcf0d08a95462dacc4bde70a2c82af070ddcea0bf043350940440aa5cd2aa","answers":{"cycle_count":1,"increasing_subsequence_count[k=4]":10}}
+{"input_id":"4a44658e0b45c49003633ebafc829e6261198b2c3bbd3187fb95509a1b3c9abc","answers":{"cycle_count":2,"increasing_subsequence_count[k=4]":37}}
+{"input_id":"3d9dccb763dd1526cab9abe3c8d55e32090a676ac90e9e8bd1959cad43b3e4b4","answers":{"cycle_count":2,"increasing_subsequence_count[k=4]":4}}
+{"input_id":"ca1220d96219e8170ff0ac828cdebd7e7bc8d719257f7719796227a1c9262a6e","answers":{"cycle_count":4,"increasing_subsequence_count[k=4]":13}}
+{"input_id":"0b6c0ec7c728d54695f068c47835da16977e25b731b10de018f18e0c2d770823","answers":{"cycle_count":3,"increasing_subsequence_count[k=4]":0}}
+{"input_id":"5a1b612ddf7bd4cf5cde96ca5b7a0f77fb5c8b5bf25bf64b2bfc831470eb3907","answers":{"cycle_count":2,"increasing_subsequence_count[k=4]":3}}
+{"input_id":"f9be3646d943ccf90db655eb2a6dc0c6ddaea77535e38cc47fbb493405aaca6e","answers":{"cycle_count":1,"increasing_subsequence_count[k=4]":2}}
+{"input_id":"0e4736d0ea8d3c46d6e9f42ee5c8b273be26718d7ae4ab3ec5dc957121185ea7","answers":{"cycle_count":4,"increasing_subsequence_count[k=4]":1}}
+{"input_id":"9d472bf36ab1be1567ad170ced21e92949f45475a9adad675c415664cc01eb8e","answers":{"cycle_count":2,"increasing_subsequence_count[k=4]":5}}
+{"input_id":"091abb09f17af41f4db14cec7096dad33f739eccb934b7fed5e4f1f85c3d7cd0","answers":{"cycle_count":3,"increasing_subsequence_count[k=4]":0}}
+{"input_id":"ea1f18bc3a7f534b77664abe5e873378217dc9c212770d9a2c2a1b77d5ed22f1","answers":{"cycle_count":3,"increasing_subsequence_count[k=4]":8}}
+{"input_id":"d3a53f5159c697938df34c85d12c2cdc10c42df00df7205c98da0945d37a72d3","answers":{"cycle_count":4,"increasing_subsequence_count[k=4]":0}}
+{"input_id":"4288e489c12d88d8a6733806700ff20873f8eb5d2a944813db20330d6fe0ac38","answers":{"cycle_count":3,"increasing_subsequence_count[k=4]":6}}
+{"input_id":"0837fdd29fd4c71648ff0da664bdd9fb0f29e4cac616092d30b2037948666cf3","answers":{"cycle_count":2,"increasing_subsequence_count[k=4]":4}}
+{"input_id":"0619da4b326e1f918b2e9227a260de7b6445e89a4935080a3820dae1e13550a0","answers":{"cycle_count":3,"increasing_subsequence_count[k=4]":0}}

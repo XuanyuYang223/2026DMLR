@@ -1,0 +1,83 @@
+{
+  "run_id": "s829_components",
+  "initialization_seed": 829,
+  "data_seed": 2026102002,
+  "sampling_and_dropout_seed": 1829,
+  "task_id": "components",
+  "params": "{}",
+  "family": "permutation_blocks",
+  "completed_unix": 1792404393.1194162,
+  "seconds": 68.44176629994763,
+  "updates": 2400,
+  "sample_exposures": 153600,
+  "input_tokens": 4300800,
+  "padded_input_tokens": 4300800,
+  "supervised_tokens": 307200,
+  "answer_tokens": 153600,
+  "length_updates": {
+    "8": 800,
+    "10": 800,
+    "12": 800
+  },
+  "tokens_by_length": {
+    "8": {
+      "input_tokens": 1228800,
+      "padded_input_tokens": 1228800,
+      "supervised_tokens": 102400,
+      "answer_tokens": 51200
+    },
+    "10": {
+      "input_tokens": 1433600,
+      "padded_input_tokens": 1433600,
+      "supervised_tokens": 102400,
+      "answer_tokens": 51200
+    },
+    "12": {
+      "input_tokens": 1638400,
+      "padded_input_tokens": 1638400,
+      "supervised_tokens": 102400,
+      "answer_tokens": 51200
+    }
+  },
+  "best_step": 2400,
+  "best_dev": {
+    "length": "all",
+    "count": 768,
+    "correct": 766,
+    "eos_generated": 768,
+    "majority_correct": 589,
+    "accuracy": 0.9973958333333334,
+    "answer_ce": 0.008085594813261801,
+    "eos_ce": 9.083306940738112e-05,
+    "sequence_ce": 0.004088214084428425,
+    "eos_accuracy": 1.0,
+    "majority_accuracy": 0.7669270833333334,
+    "majority_answer": "training-derived per-length values"
+  },
+  "endpoint_dev": {
+    "length": "all",
+    "count": 768,
+    "correct": 766,
+    "eos_generated": 768,
+    "majority_correct": 589,
+    "accuracy": 0.9973958333333334,
+    "answer_ce": 0.008085594813261801,
+    "eos_ce": 9.083306940738112e-05,
+    "sequence_ce": 0.004088214084428425,
+    "eos_accuracy": 1.0,
+    "majority_accuracy": 0.7669270833333334,
+    "majority_answer": "training-derived per-length values"
+  },
+  "initial_state_sha256": "819cf12b5dd9174ff46bf4817b53c9bf272123a9b2a7cbf0d760cccdfb9f821a",
+  "parameter_count": 3244288,
+  "length_and_index_schedule_sha256": "4007f13af135bbf8f464465923e3ad2cfd5f1df1dee06217ca9bfc7f7f3473a4",
+  "peak_memory_bytes": 171117568,
+  "frozen_protocol_sha256": "7f3de88f42a15fd80db4e6ddc2c8036df7a52d605bcb4aeb9cbe893455baddfd",
+  "checkpoint_sha256": {
+    "best.pt": "b976deb6a9d4e90644ce7f8e5a08e525204209ac7e1588825b6f1f2942744bc9",
+    "endpoint.pt": "9818ba2c646f2c06675e0645d93080003992012e5a8f507983f773771e819212"
+  },
+  "test_evaluated": false,
+  "optimizer_started_empty": true,
+  "training_timer_scope": "Training, all full train/dev evaluations, and checkpoints; excludes data encoding, summary and final audits"
+}

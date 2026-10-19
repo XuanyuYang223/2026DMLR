@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "unix": 1792404483.0360544,
+  "seconds": 7.687814300006721,
+  "runs": 12,
+  "checkpoint_loads": 26,
+  "checkpoint_audits": 24,
+  "curve_rows": 1248,
+  "input_exposure_records": 36864,
+  "frozen_code_registry_data_verified": true,
+  "paired_initialization_and_sample_schedules": true,
+  "initializers_rebuilt_from_seed": 2,
+  "sampling_streams_replayed_from_seed": 2,
+  "development_selection_recomputed": true,
+  "optimizer_counters_verified": true,
+  "development_forwards_repeated": true,
+  "test_forward_calls": 0,
+  "scope": "Training/evaluation replay uses the frozen model and evaluator; independent oracle certificates cover label correctness separately"
+}

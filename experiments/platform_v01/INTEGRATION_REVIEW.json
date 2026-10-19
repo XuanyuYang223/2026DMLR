@@ -1,0 +1,218 @@
+{
+  "status": "passed",
+  "review_scope": "Read-only interface/data integration review, separate from full dataset RNG replay and mathematical certificates.",
+  "dataset": "experiments/platform_v01/dataset",
+  "manifest_sha256": "8b7fcfc6b355117d1c66916053c80aa6a8ff7dc7abcac2bf645e4d192c819f06",
+  "script_sha256": "c2bad49ed768333216cf4ce88240067934d0cd33e0e90d5100ab3aa7ad6f5720",
+  "pools_checked": 18,
+  "objects_checked": 9216,
+  "instances_per_object": 56,
+  "materialized_label_values": 516096,
+  "stored_label_rows_with_exact_instance_keys": 9216,
+  "sampled_exact_label_and_encoding_checks": 4032,
+  "sample_rule": "Every 128th object in every pool, starting at index zero; all 56 instances per selected object.",
+  "checked_file_hashes": {
+    "data/s617_train_n8.npz": "6267653fe6dd63b2f8ddbdcd40d8d35ff59a8c1c8a4cff59093e36262c79bc65",
+    "data/s617_train_n8.labels.jsonl": "386ada6e7d7e0c6a93688a06516aac5690f1419e9abcf2e271233d616eade02e",
+    "data/s617_train_n10.npz": "27b61a8b98fd1ff74346bcaecaf5053180303f097e5bc8500d9be246a36b0dff",
+    "data/s617_train_n10.labels.jsonl": "ab117583f723f482df8655ff1249598135d92c01224c2c14193596982a8f5932",
+    "data/s617_train_n12.npz": "3268206fa8f1e3720f3186c15e981d34b59c04c6a8cc6331367c71cb64421a50",
+    "data/s617_train_n12.labels.jsonl": "fe118f3ded6e5110a688cb562fdd08ea0c90d9403d844d03cb26d34d88f7dd86",
+    "data/s617_dev_n8.npz": "f464857e67e04fcb3ea146c7cfbf749edfcbe43c6c9f3eccbca4cd71c318830b",
+    "data/s617_dev_n8.labels.jsonl": "f0a12b24b3743c136a089dbc09894611cb0ea39a6e88d0f79fa8500ea6b10a76",
+    "data/s617_dev_n10.npz": "8b9c80ecf46f983a38683c016ee43ae78c49fcf6fae610cfec91733d5cd2a8ee",
+    "data/s617_dev_n10.labels.jsonl": "eb957b300566186db5ffb0aabbf087dfa23e4b3ff7eadaf6af5e32a9fd7c92b7",
+    "data/s617_dev_n12.npz": "a6a3ea3b9876ffccf161ece47e9a8344c96260b363bd03148833a3f1f0fd99a0",
+    "data/s617_dev_n12.labels.jsonl": "560f224e735c33bdc3d415c326ccd02f22b6a87962d49e481f94c32afbf72b00",
+    "data/s617_test_n8.npz": "50a5dac1096a991a52927e8ee132817392ef0190b7eaa1285f4a90329919b09b",
+    "data/s617_test_n8.labels.jsonl": "6e87fb0e21f6c83b7adbd3186d1c6fd0e010e713bcbacb0a33f678604b5bb487",
+    "data/s617_test_n10.npz": "af2dc2b64b8fe5906da0c2cc9e3c0b355aae85dd329d474562e0c2c61cedce36",
+    "data/s617_test_n10.labels.jsonl": "258d8d5ce0e3fcd289637a3151f0542aad4a56d1dca831eab8571759b2eb423d",
+    "data/s617_test_n12.npz": "f2118670fc6b51bfc364d77c0ef8bfa6b6f8332cc86121bcc53981266e76a06c",
+    "data/s617_test_n12.labels.jsonl": "c037ad6f3add43dc7a22e7a54664d9c41d61b671646f05402358af8265e47e40",
+    "data/s829_train_n8.npz": "867610580eedc4ed17a445cd93cd3be2388a40559d4ca59c3090b363018a2669",
+    "data/s829_train_n8.labels.jsonl": "f1b1af0378297574c3259f45c7cfbf9eb22eaa9bc6d4bf7e282972981972bf23",
+    "data/s829_train_n10.npz": "c524d9d93657c301e7f7eec986d21feac58bb70267d8cfd89e6737f54326c939",
+    "data/s829_train_n10.labels.jsonl": "444e21ff3854482495b787eadf04ead04fc0338078b75c1a5199081f3d1d1b99",
+    "data/s829_train_n12.npz": "01caedef471a7243d9b6e4758ab2c61abcbd324168d810123d2438d6c1750930",
+    "data/s829_train_n12.labels.jsonl": "becbe9bf69ee56bc57251813f2ec14dad7602399d4eef0228a1c06421da83269",
+    "data/s829_dev_n8.npz": "ae15377b7a0708132500d05bfdf871ceb4b0d3fa04a1b4c2fed834fbbe994152",
+    "data/s829_dev_n8.labels.jsonl": "03352788a34ed2ac05f4ed7e36d292bee2887590785fd4562494401458eef427",
+    "data/s829_dev_n10.npz": "b1e5b4c8a792bd2340f8222b6b83dc54e24348417c862a60706c56927faee4c6",
+    "data/s829_dev_n10.labels.jsonl": "ed539cdab03dcbf7d1d8aeee9a9bb0683ee7b5f9656e4ad1e4921bed130acbd1",
+    "data/s829_dev_n12.npz": "896aa571aa37657bb9a9264af76fdbc7b9d80dd7c0e62be0bd5fa86a284763bb",
+    "data/s829_dev_n12.labels.jsonl": "0eb7814f757396ba05441ef1a7ef2f8caaacac4718cd966e42f3e4b2d73962bb",
+    "data/s829_test_n8.npz": "0b34b41cc91ab4efdaa1fafe8f97494c216bd9584c05bfa2968b13f5acf2c94f",
+    "data/s829_test_n8.labels.jsonl": "2a83b34879762662390400b34c583007edb339007a505627ca3e3a54751594d3",
+    "data/s829_test_n10.npz": "9eee9f1a40a2a9fb630799a1b1a02901493478f0df97b76e7b502d9927ebcbbe",
+    "data/s829_test_n10.labels.jsonl": "9ef931726467aa4743f0ec7f271d9f764e8eddc531ad5f73399f69b654baf2a3",
+    "data/s829_test_n12.npz": "fd88806df95d43016958c413c7ae557214039da1f16032b79dca4171c9790991",
+    "data/s829_test_n12.labels.jsonl": "43a6b3c2f88e1c096cccdc092d0e4ef70aeef7880fe61a80151487bde3884fcc"
+  },
+  "within_platform_orbit_collisions": 0,
+  "saved_vocabulary_hash_matches": true,
+  "current_vocabulary_equals_saved": true,
+  "increasing_subsequence_count_k3_answers_ge100": 32,
+  "increasing_subsequence_count_k3_answers_ge100_by_role": {
+    "train": 21,
+    "dev": 3,
+    "test": 8
+  },
+  "maximum_observed_increasing_subsequence_count_k3": 139,
+  "sampled_context_overflows_at128": {},
+  "sampled_maximum_sequence_tokens": 120,
+  "majority_tie_policy_difference_count": 17,
+  "majority_tie_policy_differences": [
+    {
+      "seed": 617,
+      "n": 8,
+      "instance_id": "to_cycle",
+      "dataset_json_string_tie_choice": "[[1,2,3,4,6,7],[5],[8]]",
+      "numeric_or_recursive_tie_choice": "[[1],[2],[3],[4,6,5],[7,8]]",
+      "calibration_representative": false
+    },
+    {
+      "seed": 617,
+      "n": 10,
+      "instance_id": "to_cycle",
+      "dataset_json_string_tie_choice": "[[1,10,2,3,8,6,9],[4],[5,7]]",
+      "numeric_or_recursive_tie_choice": "[[1],[2],[3,4,5],[6,7,9],[8],[10]]",
+      "calibration_representative": false
+    },
+    {
+      "seed": 617,
+      "n": 10,
+      "instance_id": "inverse",
+      "dataset_json_string_tie_choice": "[1,10,2,8,6,3,5,7,9,4]",
+      "numeric_or_recursive_tie_choice": "[1,2,4,6,5,8,9,7,10,3]",
+      "calibration_representative": false
+    },
+    {
+      "seed": 617,
+      "n": 10,
+      "instance_id": "right_multiply_simple[index=1]",
+      "dataset_json_string_tie_choice": "[1,10,2,9,3,4,5,6,7,8]",
+      "numeric_or_recursive_tie_choice": "[1,2,3,6,4,9,10,8,5,7]",
+      "calibration_representative": false
+    },
+    {
+      "seed": 617,
+      "n": 12,
+      "instance_id": "to_cycle",
+      "dataset_json_string_tie_choice": "[[1,10,11,6,2,8,4,3],[5],[7,9],[12]]",
+      "numeric_or_recursive_tie_choice": "[[1],[2],[3,5,4,6,9],[7,8,12,10,11]]",
+      "calibration_representative": false
+    },
+    {
+      "seed": 617,
+      "n": 12,
+      "instance_id": "inverse",
+      "dataset_json_string_tie_choice": "[1,10,11,7,2,3,12,6,4,9,5,8]",
+      "numeric_or_recursive_tie_choice": "[1,2,6,8,9,11,3,4,7,10,12,5]",
+      "calibration_representative": false
+    },
+    {
+      "seed": 617,
+      "n": 12,
+      "instance_id": "power[exponent=2]",
+      "dataset_json_string_tie_choice": "[1,10,11,3,12,6,7,8,9,2,4,5]",
+      "numeric_or_recursive_tie_choice": "[1,2,3,4,5,6,7,8,9,10,11,12]",
+      "calibration_representative": false
+    },
+    {
+      "seed": 617,
+      "n": 12,
+      "instance_id": "right_multiply_simple[index=1]",
+      "dataset_json_string_tie_choice": "[1,10,11,3,6,12,2,4,7,9,8,5]",
+      "numeric_or_recursive_tie_choice": "[1,2,4,5,6,3,7,11,9,10,8,12]",
+      "calibration_representative": false
+    },
+    {
+      "seed": 829,
+      "n": 8,
+      "instance_id": "to_cycle",
+      "dataset_json_string_tie_choice": "[[1,2,3,4,5,7,6],[8]]",
+      "numeric_or_recursive_tie_choice": "[[1],[2],[3],[4],[5,6,7,8]]",
+      "calibration_representative": false
+    },
+    {
+      "seed": 829,
+      "n": 8,
+      "instance_id": "to_reduced_word",
+      "dataset_json_string_tie_choice": "[1,2,3,4,2,3,1,2,1]",
+      "numeric_or_recursive_tie_choice": "[1,2,3,4,2,3]",
+      "calibration_representative": false
+    },
+    {
+      "seed": 829,
+      "n": 10,
+      "instance_id": "to_cycle",
+      "dataset_json_string_tie_choice": "[[1,10,2,3,6,5,7,4,8,9]]",
+      "numeric_or_recursive_tie_choice": "[[1],[2],[3],[4],[5,7,6,10,8],[9]]",
+      "calibration_representative": false
+    },
+    {
+      "seed": 829,
+      "n": 10,
+      "instance_id": "inverse",
+      "dataset_json_string_tie_choice": "[1,10,2,4,3,8,6,5,7,9]",
+      "numeric_or_recursive_tie_choice": "[1,2,3,4,8,7,5,10,9,6]",
+      "calibration_representative": false
+    },
+    {
+      "seed": 829,
+      "n": 10,
+      "instance_id": "right_multiply_simple[index=1]",
+      "dataset_json_string_tie_choice": "[1,10,3,8,2,9,7,6,5,4]",
+      "numeric_or_recursive_tie_choice": "[1,2,3,5,4,7,10,6,8,9]",
+      "calibration_representative": false
+    },
+    {
+      "seed": 829,
+      "n": 12,
+      "instance_id": "to_cycle",
+      "dataset_json_string_tie_choice": "[[1,10,11,2,12,6,9],[3,4,8,5],[7]]",
+      "numeric_or_recursive_tie_choice": "[[1],[2],[3,4,10,5,11,12,9,8,6,7]]",
+      "calibration_representative": false
+    },
+    {
+      "seed": 829,
+      "n": 12,
+      "instance_id": "inverse",
+      "dataset_json_string_tie_choice": "[1,10,2,12,4,7,9,3,11,5,8,6]",
+      "numeric_or_recursive_tie_choice": "[1,2,4,7,5,12,8,3,9,10,11,6]",
+      "calibration_representative": false
+    },
+    {
+      "seed": 829,
+      "n": 12,
+      "instance_id": "power[exponent=2]",
+      "dataset_json_string_tie_choice": "[1,10,12,3,8,7,9,4,2,6,11,5]",
+      "numeric_or_recursive_tie_choice": "[1,2,3,4,10,6,11,12,5,9,7,8]",
+      "calibration_representative": false
+    },
+    {
+      "seed": 829,
+      "n": 12,
+      "instance_id": "right_multiply_simple[index=1]",
+      "dataset_json_string_tie_choice": "[1,10,11,6,3,5,8,9,2,7,12,4]",
+      "numeric_or_recursive_tie_choice": "[1,2,4,10,6,7,11,8,5,12,9,3]",
+      "calibration_representative": false
+    }
+  ],
+  "calibration_representative_tie_differences": 0,
+  "historical_orbit_exclusion_replayed_in_this_review": false,
+  "model_imported_or_executed": false,
+  "model_metrics_computed": false,
+  "test_labels_inspected_for_data_quality_only": true,
+  "test_results_used_for_selection": false,
+  "configuration_or_representative_changes": false,
+  "limitations": [
+    "This review checks current artifact coherence, not universal future version compatibility.",
+    "load_objects is a convenience reader without integrity checks; read_samples checks object/label hashes and exact labels but does not independently bind saved vocabulary. Frozen calibration binds code and vocabulary separately.",
+    "Some legacy structural outputs at other inputs/lengths exceed 128 tokens; exact generation supports them while the model-ready reader rejects an insufficient context explicitly.",
+    "Binary task interfaces are executable but no binary dataset/pair-group isolation is certified in v0.1.",
+    "Dataset distribution mode ties use JSON-string order; calibration uses numeric order. All six actual representative tasks agree under both policies."
+  ],
+  "issues": []
+}

@@ -1,0 +1,63 @@
+instance_id,task_id,params,status,seeds,lengths,endpoint_dev_mean,majority_dev_mean,retained,model_test_evaluated
+to_cycle,to_cycle,{},not_run_in_v0.1,,,,,True,False
+to_lehmer,to_lehmer,{},not_run_in_v0.1,,,,,True,False
+to_inversion_vector,to_inversion_vector,{},not_run_in_v0.1,,,,,True,False
+to_reduced_word,to_reduced_word,{},not_run_in_v0.1,,,,,True,False
+length,length,{},not_run_in_v0.1,,,,,True,False
+descents,descents,{},not_run_in_v0.1,,,,,True,False
+fixed_points,fixed_points,{},not_run_in_v0.1,,,,,True,False
+parity,parity,{},not_run_in_v0.1,,,,,True,False
+cycle_type,cycle_type,{},not_run_in_v0.1,,,,,True,False
+rsk_shape,rsk_shape,{},not_run_in_v0.1,,,,,True,False
+lis_length,lis_length,{},calibrated_fixed_budget_dev_only,617;829,8;10;12,0.8626302083333333,0.41796875,True,False
+lds_length,lds_length,{},not_run_in_v0.1,,,,,True,False
+"pattern_avoidance[pattern=1,2,3]",pattern_avoidance,"{""pattern"": [1, 2, 3]}",not_run_in_v0.1,,,,,True,False
+inverse,inverse,{},not_run_in_v0.1,,,,,True,False
+compose,compose,{},not_run_in_v0.1,,,,,True,False
+power[exponent=2],power,"{""exponent"": 2}",not_run_in_v0.1,,,,,True,False
+conjugate,conjugate,{},not_run_in_v0.1,,,,,True,False
+commutator,commutator,{},not_run_in_v0.1,,,,,True,False
+right_multiply_simple[index=1],right_multiply_simple,"{""index"": 1}",not_run_in_v0.1,,,,,True,False
+bruhat_leq,bruhat_leq,{},not_run_in_v0.1,,,,,True,False
+peaks,peaks,{},not_run_in_v0.1,,,,,True,False
+exceedances,exceedances,{},not_run_in_v0.1,,,,,True,False
+recoils,recoils,{},not_run_in_v0.1,,,,,True,False
+valleys,valleys,{},not_run_in_v0.1,,,,,True,False
+double_ascents,double_ascents,{},not_run_in_v0.1,,,,,True,False
+double_descents,double_descents,{},not_run_in_v0.1,,,,,True,False
+successions,successions,{},not_run_in_v0.1,,,,,True,False
+adjacencies,adjacencies,{},not_run_in_v0.1,,,,,True,False
+anti_fixed_points,anti_fixed_points,{},not_run_in_v0.1,,,,,True,False
+deficiencies,deficiencies,{},not_run_in_v0.1,,,,,True,False
+left_to_right_maxima,left_to_right_maxima,{},not_run_in_v0.1,,,,,True,False
+left_to_right_minima,left_to_right_minima,{},not_run_in_v0.1,,,,,True,False
+right_to_left_maxima,right_to_left_maxima,{},not_run_in_v0.1,,,,,True,False
+right_to_left_minima,right_to_left_minima,{},not_run_in_v0.1,,,,,True,False
+cycle_count,cycle_count,{},calibrated_fixed_budget_dev_only,617;829,8;10;12,0.42838541666666663,0.32682291666666663,True,False
+two_cycle_count,two_cycle_count,{},not_run_in_v0.1,,,,,True,False
+three_cycle_count,three_cycle_count,{},not_run_in_v0.1,,,,,True,False
+even_cycle_count,even_cycle_count,{},not_run_in_v0.1,,,,,True,False
+odd_cycle_count,odd_cycle_count,{},not_run_in_v0.1,,,,,True,False
+longest_cycle,longest_cycle,{},calibrated_fixed_budget_dev_only,617;829,8;10;12,0.22526041666666666,0.169921875,True,False
+shortest_cycle,shortest_cycle,{},not_run_in_v0.1,,,,,True,False
+nontrivial_cycle_count,nontrivial_cycle_count,{},not_run_in_v0.1,,,,,True,False
+longest_increasing_run,longest_increasing_run,{},not_run_in_v0.1,,,,,True,False
+longest_decreasing_run,longest_decreasing_run,{},not_run_in_v0.1,,,,,True,False
+global_descents,global_descents,{},not_run_in_v0.1,,,,,True,False
+components,components,{},calibrated_fixed_budget_dev_only,617;829,8;10;12,0.9973958333333334,0.7708333333333334,True,False
+max_displacement,max_displacement,{},not_run_in_v0.1,,,,,True,False
+displacement_one_count,displacement_one_count,{},not_run_in_v0.1,,,,,True,False
+cycle_length_count[k=1],cycle_length_count,"{""k"": 1}",not_run_in_v0.1,,,,,True,False
+cycle_length_count[k=2],cycle_length_count,"{""k"": 2}",not_run_in_v0.1,,,,,True,False
+cycle_length_count[k=3],cycle_length_count,"{""k"": 3}",not_run_in_v0.1,,,,,True,False
+increasing_subsequence_count[k=1],increasing_subsequence_count,"{""k"": 1}",not_run_in_v0.1,,,,,True,False
+increasing_subsequence_count[k=2],increasing_subsequence_count,"{""k"": 2}",not_run_in_v0.1,,,,,True,False
+increasing_subsequence_count[k=3],increasing_subsequence_count,"{""k"": 3}",calibrated_fixed_budget_dev_only,617;829,8;10;12,0.2526041666666667,0.043619791666666664,True,False
+decreasing_subsequence_count[k=1],decreasing_subsequence_count,"{""k"": 1}",not_run_in_v0.1,,,,,True,False
+decreasing_subsequence_count[k=2],decreasing_subsequence_count,"{""k"": 2}",not_run_in_v0.1,,,,,True,False
+decreasing_subsequence_count[k=3],decreasing_subsequence_count,"{""k"": 3}",not_run_in_v0.1,,,,,True,False
+largest_component,largest_component,{},calibrated_fixed_budget_dev_only,617;829,8;10;12,0.990234375,0.7708333333333334,True,False
+smallest_component,smallest_component,{},not_run_in_v0.1,,,,,True,False
+component_length_count[k=1],component_length_count,"{""k"": 1}",not_run_in_v0.1,,,,,True,False
+component_length_count[k=2],component_length_count,"{""k"": 2}",not_run_in_v0.1,,,,,True,False
+component_length_count[k=3],component_length_count,"{""k"": 3}",not_run_in_v0.1,,,,,True,False

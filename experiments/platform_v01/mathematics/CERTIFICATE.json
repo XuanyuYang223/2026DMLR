@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "schema_version": "permworld-certificates-v0.1",
+  "generated_utc": "2026-10-19T09:52:11.382955+00:00",
+  "elapsed_seconds": 10.714392299996689,
+  "exhaustive_n": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "exhaustive_input_count": 5913,
+  "random_n": [
+    8,
+    10,
+    12
+  ],
+  "random_count_per_n": 64,
+  "random_seed": 2026101907,
+  "total_fixtures": 6105,
+  "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95",
+  "task_implementations_independently_compared": 17,
+  "independent_label_comparisons": 272741,
+  "new_relation_count": 45,
+  "new_relation_pointwise_checks": 445581,
+  "historical_relation_count_reused": 29,
+  "historical_formula_rechecks_run": 0,
+  "finite_checks_are_not_universal_proofs": true,
+  "fixtures_passed_to_models": false,
+  "new_training_started": false,
+  "source_sha256": {
+    "permworld_platform/certificates.py": "181fa4f1cf3fd0586f2bf6f0e1b1a005d38f714d5ee9bda6c15790109d952969",
+    "permworld_platform/relations.py": "33efcc0b9baff7285785d1996bd143061c8affd1c43a669fc73dbae83b9ac174",
+    "permworld_platform/tasks.py": "61cb4d1cd45144079a91106772432ed47bf196dbd9d920727f55d95f8a26f5b5",
+    "permworld_platform/objects.py": "c0a90de4f2860c935ac28899a709ae5c1bed09c8336560d1a3cdaea215e5be7a",
+    "experiments/permworld_pilot/vendor/neurips_permutations/math_ops.py": "3f6832b4798a20cc6b813a0b64ec01cf10360fbf3d6256cb59d1d793d4ad345f"
+  },
+  "artifact_sha256": {
+    "RELATIONS.json": "eac1a15aa2cae3b8ad478e99a03506e18089b432a3e77510a2bae2f7c789de4d",
+    "NEW_RELATION_CHECKS.csv": "74bf2bb4d02b2dd9f991d0c9d7880d962064e2b8a8263a1325dfb21b387730fe",
+    "LABEL_CHECKS.csv": "c814bd3a020164f900edd1b7212d7d1350a88d5b65d578ab1bd66a62cffddc66",
+    "EQUIVALENCE_AUDIT.json": "decae578698d1785115df579329765b3802e2c86bd2736ea47a439222d79634e",
+    "HISTORICAL_REUSE.json": "b087855a4eaa1c6b7d16c34f6c16c8bf4097c427ad8de8b80cb3f661b658bfa7",
+    "DEFINITION_DISTRIBUTIONS.csv": "7aa883d43c996e612fc0803989f4e1ee4308da79f5e17ac50331d008af8693b1"
+  }
+}

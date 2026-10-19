@@ -1,0 +1,27 @@
+{
+  "status": "reused_hash_verified",
+  "root": "experiments/pilot_v5_confirmation/mathematics",
+  "sha256": {
+    "audit/RELATION_INVENTORY.csv": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+    "audit/MATHEMATICS_AUDIT.json": "abe146533bd3d6d74895ff54b1437a847e63c09e59d12be5dac11f04007b6d4d",
+    "audit/OBSERVED_ASSOCIATIONS.csv": "ea27535661a5342cc8ed28425c3987f14ee2a871a83d15deda85b645361cf65f",
+    "audit/UNCHECKED_CLAIMS.csv": "b069354ce02da361c7cca4abe0cc52fdaf213356c49aaef0726c2f2355200291"
+  },
+  "historical_rechecks_run": 0,
+  "implementation_sha256": {
+    "experiments/permworld_pilot/vendor/neurips_permutations/math_ops.py": "3f6832b4798a20cc6b813a0b64ec01cf10360fbf3d6256cb59d1d793d4ad345f"
+  },
+  "previous_status": "passed",
+  "previous_exhaustive_n": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "previous_random_n": 10,
+  "previous_random_inputs": 4096,
+  "previous_independent_label_comparisons": 1601440
+}

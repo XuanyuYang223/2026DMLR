@@ -1,0 +1,77 @@
+{
+  "legacy_endpoints_preserved": 48,
+  "new_registry_endpoints": 6,
+  "total_registry_endpoints": 54,
+  "parameter_alias_endpoints": 2,
+  "representation_only_endpoints": 4,
+  "canonical_mathematical_templates": 48,
+  "all_declared_endpoint_instances_including_aliases_and_binary": 62,
+  "canonical_declared_instances_including_binary": 60,
+  "default_unary_manifest_instances": 56,
+  "focus_templates": 16,
+  "focus_declared_instances": 24,
+  "focus_nonconstant_instances": 22,
+  "focus_same_input_distinct_functions": 23,
+  "focus_value_preserving_declared_transform_classes": 20,
+  "focus_nonconstant_value_preserving_declared_transform_classes": 19,
+  "effective_count_scope": "Focus instances only; collapse the two k=1 constants, and declared complement/reversal identity-answer pairs LIS/LDS and increasing/decreasing count k=2,3. This is not a classification under arbitrary answer maps. See mathematics/EQUIVALENCE_AUDIT.json for formulas and distinctness witnesses.",
+  "input_encoding_variants": [
+    "one_line_v1"
+  ],
+  "upstream_encodings_not_exposed_in_platform_v01": [
+    "canonical_cycle",
+    "lehmer",
+    "inversion_vector"
+  ],
+  "output_protocol_versions": [
+    "permworld_sequence_v1"
+  ],
+  "families": {
+    "cycle_decomposition": {
+      "canonical_templates": 6,
+      "declared_instances": 8,
+      "parameterized_templates": 1,
+      "implemented_input_encoding_variants": 1
+    },
+    "global_subsequence": {
+      "canonical_templates": 5,
+      "declared_instances": 9,
+      "parameterized_templates": 2,
+      "implemented_input_encoding_variants": 1
+    },
+    "permutation_blocks": {
+      "canonical_templates": 5,
+      "declared_instances": 7,
+      "parameterized_templates": 1,
+      "implemented_input_encoding_variants": 1
+    }
+  },
+  "exact_equivalences": [
+    {
+      "left": "two_cycle_count",
+      "right": "cycle_length_count[k=2]",
+      "class": "parameter_alias"
+    },
+    {
+      "left": "three_cycle_count",
+      "right": "cycle_length_count[k=3]",
+      "class": "parameter_alias"
+    },
+    {
+      "left": "fixed_points",
+      "right": "cycle_length_count[k=1]",
+      "class": "same_input_identical_label"
+    },
+    {
+      "left": "length",
+      "right": "decreasing_subsequence_count[k=2]",
+      "class": "same_input_identical_label"
+    },
+    {
+      "left": "increasing_subsequence_count[k=1]",
+      "right": "decreasing_subsequence_count[k=1]",
+      "class": "both equal n; constant conditional on length"
+    }
+  ],
+  "interpretation": "48 is a canonical template count, not a claim of 48 mathematically independent tasks. Input-transform and answer-map equivalences are kept in the relation registry, not silently erased; global constant tasks remain visible."
+}

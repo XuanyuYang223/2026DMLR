@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "seconds": 323.6771372000221,
+  "historical_files_byte_preserved": 2740,
+  "mathematical_certificate_source_and_artifacts_bound": true,
+  "old_formulas_rechecked": 0,
+  "data_pool_pairs_hash_verified": 18,
+  "input_orbits_and_rng_replay": {
+    "status": "passed",
+    "objects_checked": 9216,
+    "labels_recomputed": 516096,
+    "duplicate_inputs": 0,
+    "cross_role_or_repeat_orbit_overlap": 0,
+    "historical_orbit_overlap": 0,
+    "all_pool_rng_streams_replayed": true,
+    "empirical_constant_tasks_retained": true,
+    "binary_pair_isolation_checked": false
+  },
+  "encoding_boundary_audit": {
+    "status": "passed",
+    "encoding": "permworld_sequence_v1",
+    "vocabulary_size": 203,
+    "historical_ids_preserved": 188,
+    "endpoint_instance_roundtrips": 62,
+    "integer_or_structure_roundtrips": 14,
+    "malformed_decodings_rejected": 3,
+    "large_answer": 155117520,
+    "large_answer_token_count": 8,
+    "excessive_context_explicitly_rejected": true
+  },
+  "formal_calibration_runs": 12,
+  "test_evaluated": false,
+  "no_transfer_or_background_variant_training": true,
+  "calibration_checkpoints_independently_forwarded": 24,
+  "limitation": "Use calibration/CALIBRATION_AUDIT.json for repeat neural forward checks; this audit itself only checks bytes and saved evidence."
+}

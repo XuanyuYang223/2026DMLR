@@ -1,0 +1,2794 @@
+{
+  "status": "passed",
+  "scope": "The 16 named focus templates and their 24 declared instances, n=1..7 exhaustive plus n=8,10,12 fixtures",
+  "counting_contract": "A template is a parameterized mathematical function; each declared parameter assignment is an instance. Encoding choices never increase mathematical counts.",
+  "by_family": [
+    {
+      "family": "cycle_decomposition",
+      "template_count": 6,
+      "declared_parameter_instances": 8,
+      "conditional_constant_instances": 0
+    },
+    {
+      "family": "global_subsequence",
+      "template_count": 5,
+      "declared_parameter_instances": 9,
+      "conditional_constant_instances": 2
+    },
+    {
+      "family": "permutation_blocks",
+      "template_count": 5,
+      "declared_parameter_instances": 7,
+      "conditional_constant_instances": 0
+    }
+  ],
+  "focus_templates": 16,
+  "focus_parameter_instances": 24,
+  "same_input_distinct_functions": 23,
+  "nonconstant_same_input_classes_conditional_on_n": 22,
+  "value_preserving_declared_transform_classes_including_constant": 20,
+  "nonconstant_value_preserving_declared_transform_classes": 19,
+  "conditional_constant_instances": [
+    "increasing_subsequence_count[k=1]",
+    "decreasing_subsequence_count[k=1]"
+  ],
+  "proved_same_input_equivalences": [
+    {
+      "members": [
+        "increasing_subsequence_count[k=1]",
+        "decreasing_subsequence_count[k=1]"
+      ],
+      "evidence_class": "proved_from_definitions",
+      "reason": "Both equal n; constant conditional on length",
+      "relation_ids": [
+        "increasing_subsequence_count_k1_constant",
+        "decreasing_subsequence_count_k1_constant"
+      ]
+    }
+  ],
+  "proved_value_preserving_transformed_equivalences": [
+    {
+      "members": [
+        "lis_length",
+        "lds_length"
+      ],
+      "transform": "complement",
+      "answer_map": "identity",
+      "relation_id": "lis_length_complement"
+    },
+    {
+      "members": [
+        "increasing_subsequence_count[k=2]",
+        "decreasing_subsequence_count[k=2]"
+      ],
+      "transform": "complement",
+      "answer_map": "identity",
+      "relation_id": "increasing_subsequence_count_complement"
+    },
+    {
+      "members": [
+        "increasing_subsequence_count[k=3]",
+        "decreasing_subsequence_count[k=3]"
+      ],
+      "transform": "complement",
+      "answer_map": "identity",
+      "relation_id": "increasing_subsequence_count_complement"
+    }
+  ],
+  "additional_invertible_answer_map_equivalence": {
+    "members": [
+      "components",
+      "global_descents"
+    ],
+    "transform": "complement",
+    "answer_map": "components = global_descents + 1",
+    "relation_id": "components_complement_global_descents",
+    "note": "Not collapsed in the value-preserving count. Quotienting also by this declared affine map gives 19 classes, 18 nonconstant. Not a complete classification under arbitrary answer maps."
+  },
+  "legacy_aliases": [
+    {
+      "instance": "cycle_length_count[k=1]",
+      "same_input_legacy": "fixed_points"
+    },
+    {
+      "instance": "cycle_length_count[k=2]",
+      "same_input_legacy": "two_cycle_count"
+    },
+    {
+      "instance": "cycle_length_count[k=3]",
+      "same_input_legacy": "three_cycle_count"
+    },
+    {
+      "instance": "decreasing_subsequence_count[k=2]",
+      "same_input_legacy": "length"
+    },
+    {
+      "instance": "increasing_subsequence_count[k=2]",
+      "legacy": "length",
+      "answer_map": "n(n-1)/2 - length"
+    }
+  ],
+  "nonduplicate_same_input_witnesses": [
+    {
+      "left": "cycle_count",
+      "right": "nontrivial_cycle_count",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_count",
+      "right": "even_cycle_count",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_count",
+      "right": "odd_cycle_count",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_count",
+      "right": "cycle_length_count[k=1]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_count",
+      "right": "cycle_length_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_count",
+      "right": "cycle_length_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_count",
+      "right": "longest_cycle",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_count",
+      "right": "lis_length",
+      "input": [
+        2,
+        3,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 2
+    },
+    {
+      "left": "cycle_count",
+      "right": "lds_length",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_count",
+      "right": "increasing_subsequence_count[k=1]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 2
+    },
+    {
+      "left": "cycle_count",
+      "right": "increasing_subsequence_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_count",
+      "right": "increasing_subsequence_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_count",
+      "right": "decreasing_subsequence_count[k=1]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 2
+    },
+    {
+      "left": "cycle_count",
+      "right": "decreasing_subsequence_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_count",
+      "right": "decreasing_subsequence_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_count",
+      "right": "rsk_shape",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": [
+        1
+      ]
+    },
+    {
+      "left": "cycle_count",
+      "right": "components",
+      "input": [
+        3,
+        2,
+        1
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_count",
+      "right": "global_descents",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_count",
+      "right": "largest_component",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_count",
+      "right": "smallest_component",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_count",
+      "right": "component_length_count[k=1]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_count",
+      "right": "component_length_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_count",
+      "right": "component_length_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "even_cycle_count",
+      "input": [
+        2,
+        3,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "odd_cycle_count",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "cycle_length_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "cycle_length_count[k=2]",
+      "input": [
+        2,
+        3,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "cycle_length_count[k=3]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "longest_cycle",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "lis_length",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "lds_length",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "increasing_subsequence_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "increasing_subsequence_count[k=2]",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "increasing_subsequence_count[k=3]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "decreasing_subsequence_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "decreasing_subsequence_count[k=2]",
+      "input": [
+        2,
+        3,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 2
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "decreasing_subsequence_count[k=3]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "rsk_shape",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": [
+        1
+      ]
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "components",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "global_descents",
+      "input": [
+        1,
+        3,
+        2
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "largest_component",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "smallest_component",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "component_length_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "component_length_count[k=2]",
+      "input": [
+        2,
+        3,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "nontrivial_cycle_count",
+      "right": "component_length_count[k=3]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "even_cycle_count",
+      "right": "odd_cycle_count",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "even_cycle_count",
+      "right": "cycle_length_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "even_cycle_count",
+      "right": "cycle_length_count[k=2]",
+      "input": [
+        2,
+        3,
+        4,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "even_cycle_count",
+      "right": "cycle_length_count[k=3]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "even_cycle_count",
+      "right": "longest_cycle",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "even_cycle_count",
+      "right": "lis_length",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "even_cycle_count",
+      "right": "lds_length",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "even_cycle_count",
+      "right": "increasing_subsequence_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "even_cycle_count",
+      "right": "increasing_subsequence_count[k=2]",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "even_cycle_count",
+      "right": "increasing_subsequence_count[k=3]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "even_cycle_count",
+      "right": "decreasing_subsequence_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "even_cycle_count",
+      "right": "decreasing_subsequence_count[k=2]",
+      "input": [
+        2,
+        3,
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 2
+    },
+    {
+      "left": "even_cycle_count",
+      "right": "decreasing_subsequence_count[k=3]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "even_cycle_count",
+      "right": "rsk_shape",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": [
+        1
+      ]
+    },
+    {
+      "left": "even_cycle_count",
+      "right": "components",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "even_cycle_count",
+      "right": "global_descents",
+      "input": [
+        1,
+        3,
+        2
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "even_cycle_count",
+      "right": "largest_component",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "even_cycle_count",
+      "right": "smallest_component",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "even_cycle_count",
+      "right": "component_length_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "even_cycle_count",
+      "right": "component_length_count[k=2]",
+      "input": [
+        3,
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "even_cycle_count",
+      "right": "component_length_count[k=3]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "odd_cycle_count",
+      "right": "cycle_length_count[k=1]",
+      "input": [
+        2,
+        3,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "odd_cycle_count",
+      "right": "cycle_length_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "odd_cycle_count",
+      "right": "cycle_length_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "odd_cycle_count",
+      "right": "longest_cycle",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "odd_cycle_count",
+      "right": "lis_length",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "odd_cycle_count",
+      "right": "lds_length",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "odd_cycle_count",
+      "right": "increasing_subsequence_count[k=1]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 2
+    },
+    {
+      "left": "odd_cycle_count",
+      "right": "increasing_subsequence_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "odd_cycle_count",
+      "right": "increasing_subsequence_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "odd_cycle_count",
+      "right": "decreasing_subsequence_count[k=1]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 2
+    },
+    {
+      "left": "odd_cycle_count",
+      "right": "decreasing_subsequence_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "odd_cycle_count",
+      "right": "decreasing_subsequence_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "odd_cycle_count",
+      "right": "rsk_shape",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": [
+        1
+      ]
+    },
+    {
+      "left": "odd_cycle_count",
+      "right": "components",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "odd_cycle_count",
+      "right": "global_descents",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "odd_cycle_count",
+      "right": "largest_component",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "odd_cycle_count",
+      "right": "smallest_component",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "odd_cycle_count",
+      "right": "component_length_count[k=1]",
+      "input": [
+        2,
+        3,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "odd_cycle_count",
+      "right": "component_length_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "odd_cycle_count",
+      "right": "component_length_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_length_count[k=1]",
+      "right": "cycle_length_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_length_count[k=1]",
+      "right": "cycle_length_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_length_count[k=1]",
+      "right": "longest_cycle",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=1]",
+      "right": "lis_length",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=1]",
+      "right": "lds_length",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=1]",
+      "right": "increasing_subsequence_count[k=1]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 2
+    },
+    {
+      "left": "cycle_length_count[k=1]",
+      "right": "increasing_subsequence_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_length_count[k=1]",
+      "right": "increasing_subsequence_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_length_count[k=1]",
+      "right": "decreasing_subsequence_count[k=1]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 2
+    },
+    {
+      "left": "cycle_length_count[k=1]",
+      "right": "decreasing_subsequence_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_length_count[k=1]",
+      "right": "decreasing_subsequence_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_length_count[k=1]",
+      "right": "rsk_shape",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": [
+        1
+      ]
+    },
+    {
+      "left": "cycle_length_count[k=1]",
+      "right": "components",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=1]",
+      "right": "global_descents",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_length_count[k=1]",
+      "right": "largest_component",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=1]",
+      "right": "smallest_component",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=1]",
+      "right": "component_length_count[k=1]",
+      "input": [
+        3,
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_length_count[k=1]",
+      "right": "component_length_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_length_count[k=1]",
+      "right": "component_length_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_length_count[k=2]",
+      "right": "cycle_length_count[k=3]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_length_count[k=2]",
+      "right": "longest_cycle",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=2]",
+      "right": "lis_length",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=2]",
+      "right": "lds_length",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=2]",
+      "right": "increasing_subsequence_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=2]",
+      "right": "increasing_subsequence_count[k=2]",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=2]",
+      "right": "increasing_subsequence_count[k=3]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_length_count[k=2]",
+      "right": "decreasing_subsequence_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=2]",
+      "right": "decreasing_subsequence_count[k=2]",
+      "input": [
+        2,
+        3,
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 2
+    },
+    {
+      "left": "cycle_length_count[k=2]",
+      "right": "decreasing_subsequence_count[k=3]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_length_count[k=2]",
+      "right": "rsk_shape",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": [
+        1
+      ]
+    },
+    {
+      "left": "cycle_length_count[k=2]",
+      "right": "components",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=2]",
+      "right": "global_descents",
+      "input": [
+        1,
+        3,
+        2
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_length_count[k=2]",
+      "right": "largest_component",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=2]",
+      "right": "smallest_component",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=2]",
+      "right": "component_length_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=2]",
+      "right": "component_length_count[k=2]",
+      "input": [
+        3,
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_length_count[k=2]",
+      "right": "component_length_count[k=3]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_length_count[k=3]",
+      "right": "longest_cycle",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=3]",
+      "right": "lis_length",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=3]",
+      "right": "lds_length",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=3]",
+      "right": "increasing_subsequence_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=3]",
+      "right": "increasing_subsequence_count[k=2]",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=3]",
+      "right": "increasing_subsequence_count[k=3]",
+      "input": [
+        1,
+        2,
+        3
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=3]",
+      "right": "decreasing_subsequence_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=3]",
+      "right": "decreasing_subsequence_count[k=2]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=3]",
+      "right": "decreasing_subsequence_count[k=3]",
+      "input": [
+        2,
+        3,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "cycle_length_count[k=3]",
+      "right": "rsk_shape",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": [
+        1
+      ]
+    },
+    {
+      "left": "cycle_length_count[k=3]",
+      "right": "components",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=3]",
+      "right": "global_descents",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=3]",
+      "right": "largest_component",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=3]",
+      "right": "smallest_component",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=3]",
+      "right": "component_length_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=3]",
+      "right": "component_length_count[k=2]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "cycle_length_count[k=3]",
+      "right": "component_length_count[k=3]",
+      "input": [
+        3,
+        2,
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "longest_cycle",
+      "right": "lis_length",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 1,
+      "right_answer": 2
+    },
+    {
+      "left": "longest_cycle",
+      "right": "lds_length",
+      "input": [
+        2,
+        3,
+        1
+      ],
+      "left_answer": 3,
+      "right_answer": 2
+    },
+    {
+      "left": "longest_cycle",
+      "right": "increasing_subsequence_count[k=1]",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 1,
+      "right_answer": 2
+    },
+    {
+      "left": "longest_cycle",
+      "right": "increasing_subsequence_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "longest_cycle",
+      "right": "increasing_subsequence_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "longest_cycle",
+      "right": "decreasing_subsequence_count[k=1]",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 1,
+      "right_answer": 2
+    },
+    {
+      "left": "longest_cycle",
+      "right": "decreasing_subsequence_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "longest_cycle",
+      "right": "decreasing_subsequence_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "longest_cycle",
+      "right": "rsk_shape",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": [
+        1
+      ]
+    },
+    {
+      "left": "longest_cycle",
+      "right": "components",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 1,
+      "right_answer": 2
+    },
+    {
+      "left": "longest_cycle",
+      "right": "global_descents",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "longest_cycle",
+      "right": "largest_component",
+      "input": [
+        3,
+        2,
+        1
+      ],
+      "left_answer": 2,
+      "right_answer": 3
+    },
+    {
+      "left": "longest_cycle",
+      "right": "smallest_component",
+      "input": [
+        1,
+        3,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "longest_cycle",
+      "right": "component_length_count[k=1]",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 1,
+      "right_answer": 2
+    },
+    {
+      "left": "longest_cycle",
+      "right": "component_length_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "longest_cycle",
+      "right": "component_length_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "lis_length",
+      "right": "lds_length",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "lis_length",
+      "right": "increasing_subsequence_count[k=1]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 2
+    },
+    {
+      "left": "lis_length",
+      "right": "increasing_subsequence_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "lis_length",
+      "right": "increasing_subsequence_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "lis_length",
+      "right": "decreasing_subsequence_count[k=1]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 2
+    },
+    {
+      "left": "lis_length",
+      "right": "decreasing_subsequence_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "lis_length",
+      "right": "decreasing_subsequence_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "lis_length",
+      "right": "rsk_shape",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": [
+        1
+      ]
+    },
+    {
+      "left": "lis_length",
+      "right": "components",
+      "input": [
+        2,
+        3,
+        1
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "lis_length",
+      "right": "global_descents",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "lis_length",
+      "right": "largest_component",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "lis_length",
+      "right": "smallest_component",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "lis_length",
+      "right": "component_length_count[k=1]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "lis_length",
+      "right": "component_length_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "lis_length",
+      "right": "component_length_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "lds_length",
+      "right": "increasing_subsequence_count[k=1]",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 1,
+      "right_answer": 2
+    },
+    {
+      "left": "lds_length",
+      "right": "increasing_subsequence_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "lds_length",
+      "right": "increasing_subsequence_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "lds_length",
+      "right": "decreasing_subsequence_count[k=1]",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 1,
+      "right_answer": 2
+    },
+    {
+      "left": "lds_length",
+      "right": "decreasing_subsequence_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "lds_length",
+      "right": "decreasing_subsequence_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "lds_length",
+      "right": "rsk_shape",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": [
+        1
+      ]
+    },
+    {
+      "left": "lds_length",
+      "right": "components",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 1,
+      "right_answer": 2
+    },
+    {
+      "left": "lds_length",
+      "right": "global_descents",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "lds_length",
+      "right": "largest_component",
+      "input": [
+        2,
+        3,
+        1
+      ],
+      "left_answer": 2,
+      "right_answer": 3
+    },
+    {
+      "left": "lds_length",
+      "right": "smallest_component",
+      "input": [
+        1,
+        3,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "lds_length",
+      "right": "component_length_count[k=1]",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 1,
+      "right_answer": 2
+    },
+    {
+      "left": "lds_length",
+      "right": "component_length_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "lds_length",
+      "right": "component_length_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "increasing_subsequence_count[k=1]",
+      "right": "increasing_subsequence_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "increasing_subsequence_count[k=1]",
+      "right": "increasing_subsequence_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "increasing_subsequence_count[k=1]",
+      "right": "decreasing_subsequence_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "increasing_subsequence_count[k=1]",
+      "right": "decreasing_subsequence_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "increasing_subsequence_count[k=1]",
+      "right": "rsk_shape",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": [
+        1
+      ]
+    },
+    {
+      "left": "increasing_subsequence_count[k=1]",
+      "right": "components",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "increasing_subsequence_count[k=1]",
+      "right": "global_descents",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "increasing_subsequence_count[k=1]",
+      "right": "largest_component",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "increasing_subsequence_count[k=1]",
+      "right": "smallest_component",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "increasing_subsequence_count[k=1]",
+      "right": "component_length_count[k=1]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 2,
+      "right_answer": 0
+    },
+    {
+      "left": "increasing_subsequence_count[k=1]",
+      "right": "component_length_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "increasing_subsequence_count[k=1]",
+      "right": "component_length_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "increasing_subsequence_count[k=2]",
+      "right": "increasing_subsequence_count[k=3]",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "increasing_subsequence_count[k=2]",
+      "right": "decreasing_subsequence_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "increasing_subsequence_count[k=2]",
+      "right": "decreasing_subsequence_count[k=2]",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "increasing_subsequence_count[k=2]",
+      "right": "decreasing_subsequence_count[k=3]",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "increasing_subsequence_count[k=2]",
+      "right": "rsk_shape",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": [
+        1
+      ]
+    },
+    {
+      "left": "increasing_subsequence_count[k=2]",
+      "right": "components",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "increasing_subsequence_count[k=2]",
+      "right": "global_descents",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "increasing_subsequence_count[k=2]",
+      "right": "largest_component",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "increasing_subsequence_count[k=2]",
+      "right": "smallest_component",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "increasing_subsequence_count[k=2]",
+      "right": "component_length_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "increasing_subsequence_count[k=2]",
+      "right": "component_length_count[k=2]",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "increasing_subsequence_count[k=2]",
+      "right": "component_length_count[k=3]",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "increasing_subsequence_count[k=3]",
+      "right": "decreasing_subsequence_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "increasing_subsequence_count[k=3]",
+      "right": "decreasing_subsequence_count[k=2]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "increasing_subsequence_count[k=3]",
+      "right": "decreasing_subsequence_count[k=3]",
+      "input": [
+        1,
+        2,
+        3
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "increasing_subsequence_count[k=3]",
+      "right": "rsk_shape",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": [
+        1
+      ]
+    },
+    {
+      "left": "increasing_subsequence_count[k=3]",
+      "right": "components",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "increasing_subsequence_count[k=3]",
+      "right": "global_descents",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "increasing_subsequence_count[k=3]",
+      "right": "largest_component",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "increasing_subsequence_count[k=3]",
+      "right": "smallest_component",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "increasing_subsequence_count[k=3]",
+      "right": "component_length_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "increasing_subsequence_count[k=3]",
+      "right": "component_length_count[k=2]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "increasing_subsequence_count[k=3]",
+      "right": "component_length_count[k=3]",
+      "input": [
+        1,
+        2,
+        3
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "decreasing_subsequence_count[k=1]",
+      "right": "decreasing_subsequence_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "decreasing_subsequence_count[k=1]",
+      "right": "decreasing_subsequence_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "decreasing_subsequence_count[k=1]",
+      "right": "rsk_shape",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": [
+        1
+      ]
+    },
+    {
+      "left": "decreasing_subsequence_count[k=1]",
+      "right": "components",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "decreasing_subsequence_count[k=1]",
+      "right": "global_descents",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "decreasing_subsequence_count[k=1]",
+      "right": "largest_component",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "decreasing_subsequence_count[k=1]",
+      "right": "smallest_component",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "decreasing_subsequence_count[k=1]",
+      "right": "component_length_count[k=1]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 2,
+      "right_answer": 0
+    },
+    {
+      "left": "decreasing_subsequence_count[k=1]",
+      "right": "component_length_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "decreasing_subsequence_count[k=1]",
+      "right": "component_length_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "decreasing_subsequence_count[k=2]",
+      "right": "decreasing_subsequence_count[k=3]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "decreasing_subsequence_count[k=2]",
+      "right": "rsk_shape",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": [
+        1
+      ]
+    },
+    {
+      "left": "decreasing_subsequence_count[k=2]",
+      "right": "components",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "decreasing_subsequence_count[k=2]",
+      "right": "global_descents",
+      "input": [
+        1,
+        3,
+        2
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "decreasing_subsequence_count[k=2]",
+      "right": "largest_component",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "decreasing_subsequence_count[k=2]",
+      "right": "smallest_component",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "decreasing_subsequence_count[k=2]",
+      "right": "component_length_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "decreasing_subsequence_count[k=2]",
+      "right": "component_length_count[k=2]",
+      "input": [
+        2,
+        3,
+        1
+      ],
+      "left_answer": 2,
+      "right_answer": 0
+    },
+    {
+      "left": "decreasing_subsequence_count[k=2]",
+      "right": "component_length_count[k=3]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "decreasing_subsequence_count[k=3]",
+      "right": "rsk_shape",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": [
+        1
+      ]
+    },
+    {
+      "left": "decreasing_subsequence_count[k=3]",
+      "right": "components",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "decreasing_subsequence_count[k=3]",
+      "right": "global_descents",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "decreasing_subsequence_count[k=3]",
+      "right": "largest_component",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "decreasing_subsequence_count[k=3]",
+      "right": "smallest_component",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "decreasing_subsequence_count[k=3]",
+      "right": "component_length_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "decreasing_subsequence_count[k=3]",
+      "right": "component_length_count[k=2]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "decreasing_subsequence_count[k=3]",
+      "right": "component_length_count[k=3]",
+      "input": [
+        2,
+        3,
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "rsk_shape",
+      "right": "components",
+      "input": [
+        1
+      ],
+      "left_answer": [
+        1
+      ],
+      "right_answer": 1
+    },
+    {
+      "left": "rsk_shape",
+      "right": "global_descents",
+      "input": [
+        1
+      ],
+      "left_answer": [
+        1
+      ],
+      "right_answer": 0
+    },
+    {
+      "left": "rsk_shape",
+      "right": "largest_component",
+      "input": [
+        1
+      ],
+      "left_answer": [
+        1
+      ],
+      "right_answer": 1
+    },
+    {
+      "left": "rsk_shape",
+      "right": "smallest_component",
+      "input": [
+        1
+      ],
+      "left_answer": [
+        1
+      ],
+      "right_answer": 1
+    },
+    {
+      "left": "rsk_shape",
+      "right": "component_length_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": [
+        1
+      ],
+      "right_answer": 1
+    },
+    {
+      "left": "rsk_shape",
+      "right": "component_length_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": [
+        1
+      ],
+      "right_answer": 0
+    },
+    {
+      "left": "rsk_shape",
+      "right": "component_length_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": [
+        1
+      ],
+      "right_answer": 0
+    },
+    {
+      "left": "components",
+      "right": "global_descents",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "components",
+      "right": "largest_component",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "components",
+      "right": "smallest_component",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "components",
+      "right": "component_length_count[k=1]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "components",
+      "right": "component_length_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "components",
+      "right": "component_length_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "global_descents",
+      "right": "largest_component",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "global_descents",
+      "right": "smallest_component",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "global_descents",
+      "right": "component_length_count[k=1]",
+      "input": [
+        1
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "global_descents",
+      "right": "component_length_count[k=2]",
+      "input": [
+        1,
+        3,
+        2
+      ],
+      "left_answer": 0,
+      "right_answer": 1
+    },
+    {
+      "left": "global_descents",
+      "right": "component_length_count[k=3]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "largest_component",
+      "right": "smallest_component",
+      "input": [
+        1,
+        3,
+        2
+      ],
+      "left_answer": 2,
+      "right_answer": 1
+    },
+    {
+      "left": "largest_component",
+      "right": "component_length_count[k=1]",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 1,
+      "right_answer": 2
+    },
+    {
+      "left": "largest_component",
+      "right": "component_length_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "largest_component",
+      "right": "component_length_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "smallest_component",
+      "right": "component_length_count[k=1]",
+      "input": [
+        1,
+        2
+      ],
+      "left_answer": 1,
+      "right_answer": 2
+    },
+    {
+      "left": "smallest_component",
+      "right": "component_length_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "smallest_component",
+      "right": "component_length_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "component_length_count[k=1]",
+      "right": "component_length_count[k=2]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "component_length_count[k=1]",
+      "right": "component_length_count[k=3]",
+      "input": [
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    },
+    {
+      "left": "component_length_count[k=2]",
+      "right": "component_length_count[k=3]",
+      "input": [
+        2,
+        1
+      ],
+      "left_answer": 1,
+      "right_answer": 0
+    }
+  ],
+  "limitations": [
+    "Counts describe this declared inventory and equivalence policy, not a number of independent information sources.",
+    "Known joint formulas and one-way maps do not collapse task templates.",
+    "Different task families are not asserted unrelated.",
+    "Constant within length does not mean constant when varying n; input length alone predicts these labels."
+  ]
+}

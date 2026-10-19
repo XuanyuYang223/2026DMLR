@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "objects_checked": 72,
+  "labels_recomputed": 0,
+  "duplicate_inputs": 0,
+  "cross_role_or_repeat_orbit_overlap": 0,
+  "historical_orbit_overlap": 0,
+  "all_pool_rng_streams_replayed": true,
+  "empirical_constant_tasks_retained": true,
+  "binary_pair_isolation_checked": false
+}

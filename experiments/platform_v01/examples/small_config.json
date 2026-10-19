@@ -1,0 +1,40 @@
+{
+  "version": "permworld_objects_labels_v1",
+  "lengths": [
+    8,
+    10,
+    12
+  ],
+  "replicates": [
+    {
+      "model_seed": 9001,
+      "data_seed": 9002
+    }
+  ],
+  "per_length_counts": {
+    "train": 16,
+    "dev": 4,
+    "test": 4
+  },
+  "proposal": "uniform permutation conditional on length; sequential rejection of occupied I/R/C orbits",
+  "split_order": [
+    "train",
+    "dev",
+    "test"
+  ],
+  "historical_exclusion": false,
+  "max_proposals_per_pool": 2000000,
+  "test_use": "reserved platform holdout; not evaluated or used to select calibration tasks/configuration",
+  "task_instances": [
+    {
+      "task_id": "cycle_count",
+      "params": {}
+    },
+    {
+      "task_id": "increasing_subsequence_count",
+      "params": {
+        "k": 4
+      }
+    }
+  ]
+}

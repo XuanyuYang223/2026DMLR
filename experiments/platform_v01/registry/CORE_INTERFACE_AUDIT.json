@@ -1,0 +1,1093 @@
+{
+  "status": "passed",
+  "hand_derived_endpoint_labels": 54,
+  "invalid_input_rejections": 24,
+  "boundary_encoding_and_upper_bound_checks": 248,
+  "large_integer_exact_value": 155117520,
+  "large_integer_answer_tokens_including_eos": 8,
+  "historical_relation_rechecks": 0,
+  "cases": [
+    {
+      "task_id": "to_cycle",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": [
+        [
+          1,
+          3,
+          4,
+          2
+        ]
+      ],
+      "actual": [
+        [
+          1,
+          3,
+          4,
+          2
+        ]
+      ],
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "to_lehmer",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": [
+        2,
+        0,
+        1,
+        0
+      ],
+      "actual": [
+        2,
+        0,
+        1,
+        0
+      ],
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "to_inversion_vector",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": [
+        1,
+        2,
+        0,
+        0
+      ],
+      "actual": [
+        1,
+        2,
+        0,
+        0
+      ],
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "to_reduced_word",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": [
+        2,
+        3,
+        1
+      ],
+      "actual": [
+        2,
+        3,
+        1
+      ],
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "length",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 3,
+      "actual": 3,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "descents",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 2,
+      "actual": 2,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "fixed_points",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 0,
+      "actual": 0,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "parity",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 1,
+      "actual": 1,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "cycle_type",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": [
+        4
+      ],
+      "actual": [
+        4
+      ],
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "rsk_shape",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": [
+        2,
+        2
+      ],
+      "actual": [
+        2,
+        2
+      ],
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "lis_length",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 2,
+      "actual": 2,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "lds_length",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 2,
+      "actual": 2,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "pattern_avoidance",
+      "params": {
+        "pattern": [
+          1,
+          2,
+          3
+        ]
+      },
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": true,
+      "actual": true,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "inverse",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": [
+        2,
+        4,
+        1,
+        3
+      ],
+      "actual": [
+        2,
+        4,
+        1,
+        3
+      ],
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "compose",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": [
+        2,
+        4,
+        1,
+        3
+      ],
+      "expected": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "actual": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "power",
+      "params": {
+        "exponent": 2
+      },
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "actual": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "conjugate",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": [
+        2,
+        4,
+        1,
+        3
+      ],
+      "expected": [
+        2,
+        4,
+        1,
+        3
+      ],
+      "actual": [
+        2,
+        4,
+        1,
+        3
+      ],
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "commutator",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": [
+        2,
+        4,
+        1,
+        3
+      ],
+      "expected": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "actual": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "right_multiply_simple",
+      "params": {
+        "index": 1
+      },
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": [
+        1,
+        3,
+        4,
+        2
+      ],
+      "actual": [
+        1,
+        3,
+        4,
+        2
+      ],
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "bruhat_leq",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": [
+        2,
+        4,
+        1,
+        3
+      ],
+      "expected": false,
+      "actual": false,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "peaks",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 1,
+      "actual": 1,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "exceedances",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 2,
+      "actual": 2,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "recoils",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 1,
+      "actual": 1,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "valleys",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 1,
+      "actual": 1,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "double_ascents",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 0,
+      "actual": 0,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "double_descents",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 0,
+      "actual": 0,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "successions",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 0,
+      "actual": 0,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "adjacencies",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 0,
+      "actual": 0,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "anti_fixed_points",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 0,
+      "actual": 0,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "deficiencies",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 2,
+      "actual": 2,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "left_to_right_maxima",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 2,
+      "actual": 2,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "left_to_right_minima",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 2,
+      "actual": 2,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "right_to_left_maxima",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 2,
+      "actual": 2,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "right_to_left_minima",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 2,
+      "actual": 2,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "cycle_count",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 1,
+      "actual": 1,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "two_cycle_count",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 0,
+      "actual": 0,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "three_cycle_count",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 0,
+      "actual": 0,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "even_cycle_count",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 1,
+      "actual": 1,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "odd_cycle_count",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 0,
+      "actual": 0,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "longest_cycle",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 4,
+      "actual": 4,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "shortest_cycle",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 4,
+      "actual": 4,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "nontrivial_cycle_count",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 1,
+      "actual": 1,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "longest_increasing_run",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 2,
+      "actual": 2,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "longest_decreasing_run",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 2,
+      "actual": 2,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "global_descents",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 0,
+      "actual": 0,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "components",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 1,
+      "actual": 1,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "max_displacement",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 2,
+      "actual": 2,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "displacement_one_count",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 2,
+      "actual": 2,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "cycle_length_count",
+      "params": {
+        "k": 2
+      },
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 0,
+      "actual": 0,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "increasing_subsequence_count",
+      "params": {
+        "k": 2
+      },
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 3,
+      "actual": 3,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "decreasing_subsequence_count",
+      "params": {
+        "k": 2
+      },
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 3,
+      "actual": 3,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "largest_component",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 4,
+      "actual": 4,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "smallest_component",
+      "params": {},
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 4,
+      "actual": 4,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    },
+    {
+      "task_id": "component_length_count",
+      "params": {
+        "k": 2
+      },
+      "p": [
+        3,
+        1,
+        4,
+        2
+      ],
+      "q": null,
+      "expected": 0,
+      "actual": 0,
+      "exact_type_pass": true,
+      "encoding_roundtrip_pass": true
+    }
+  ],
+  "rejections": [
+    {
+      "case": "empty permutation",
+      "rejected": true,
+      "exception": "ValueError"
+    },
+    {
+      "case": "too long",
+      "rejected": true,
+      "exception": "ValueError"
+    },
+    {
+      "case": "duplicate",
+      "rejected": true,
+      "exception": "ValueError"
+    },
+    {
+      "case": "noninteger",
+      "rejected": true,
+      "exception": "TypeError"
+    },
+    {
+      "case": "boolean entry",
+      "rejected": true,
+      "exception": "TypeError"
+    },
+    {
+      "case": "string input",
+      "rejected": true,
+      "exception": "TypeError"
+    },
+    {
+      "case": "unknown task",
+      "rejected": true,
+      "exception": "KeyError"
+    },
+    {
+      "case": "missing k",
+      "rejected": true,
+      "exception": "ValueError"
+    },
+    {
+      "case": "zero k",
+      "rejected": true,
+      "exception": "ValueError"
+    },
+    {
+      "case": "too large k",
+      "rejected": true,
+      "exception": "ValueError"
+    },
+    {
+      "case": "boolean k",
+      "rejected": true,
+      "exception": "TypeError"
+    },
+    {
+      "case": "extra parameter",
+      "rejected": true,
+      "exception": "ValueError"
+    },
+    {
+      "case": "malformed parameter mapping",
+      "rejected": true,
+      "exception": "TypeError"
+    },
+    {
+      "case": "malformed pattern",
+      "rejected": true,
+      "exception": "ValueError"
+    },
+    {
+      "case": "negative power",
+      "rejected": true,
+      "exception": "ValueError"
+    },
+    {
+      "case": "boolean power",
+      "rejected": true,
+      "exception": "TypeError"
+    },
+    {
+      "case": "invalid simple index",
+      "rejected": true,
+      "exception": "ValueError"
+    },
+    {
+      "case": "boolean simple index",
+      "rejected": true,
+      "exception": "TypeError"
+    },
+    {
+      "case": "missing operand",
+      "rejected": true,
+      "exception": "ValueError"
+    },
+    {
+      "case": "extra operand",
+      "rejected": true,
+      "exception": "ValueError"
+    },
+    {
+      "case": "wrong operand length",
+      "rejected": true,
+      "exception": "ValueError"
+    },
+    {
+      "case": "unexpected operand",
+      "rejected": true,
+      "exception": "ValueError"
+    },
+    {
+      "case": "unknown transform",
+      "rejected": true,
+      "exception": "ValueError"
+    },
+    {
+      "case": "too short context",
+      "rejected": true,
+      "exception": "ValueError"
+    }
+  ]
+}

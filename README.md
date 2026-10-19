@@ -40,3 +40,11 @@
 - [数学关系与联合可推导性](experiments/pilot_v5_confirmation/mathematics/README.md)、[下一阶段任务族方案](experiments/pilot_v5_confirmation/TASK_FAMILY_PLAN.md)
 
 第五轮只验证由第四轮探索选出的两个背景对比，使用五个新数据/初始化配对重复；主统计量为逐重复的背景间 B−C 交互差。旧探索与新验证分别报告，保留前四轮全部文件，不自动追加背景变体。
+
+PermWorld 数据平台 v0.1 位于 `permworld_platform/` 和 `experiments/platform_v01/`，分支为 `platform/permworld-v0.1`：
+
+- [平台接口、任务计数与复现命令](experiments/platform_v01/README.md)
+- [机器可读任务注册表](experiments/platform_v01/registry/TASK_REGISTRY.json)、[数学关系与证书](experiments/platform_v01/mathematics/README.md)
+- [平台交付报告](experiments/platform_v01/PLATFORM_REPORT.md)、[有限单任务标定](experiments/platform_v01/calibration/CALIBRATION_REPORT.md)
+
+本版统一保留48个旧端点，实现循环分解、全局子序列和排列块三个重点任务族；区分模板、参数实例、编码与数学等价关系。pilot_v5的未复现及不确定结果保持原样。本轮仅做六个事前固定代表任务的两个种子单任务标定，不追加背景交互或迁移组合训练。

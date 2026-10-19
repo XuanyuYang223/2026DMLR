@@ -1,0 +1,242 @@
+{
+  "version": "permworld_objects_labels_v1",
+  "config": {
+    "version": "permworld_objects_labels_v1",
+    "lengths": [
+      8,
+      10,
+      12
+    ],
+    "replicates": [
+      {
+        "model_seed": 9001,
+        "data_seed": 9002
+      }
+    ],
+    "per_length_counts": {
+      "train": 16,
+      "dev": 4,
+      "test": 4
+    },
+    "proposal": "uniform permutation conditional on length; sequential rejection of occupied I/R/C orbits",
+    "split_order": [
+      "train",
+      "dev",
+      "test"
+    ],
+    "historical_exclusion": false,
+    "max_proposals_per_pool": 2000000,
+    "test_use": "reserved platform holdout; not evaluated or used to select calibration tasks/configuration",
+    "task_instances": [
+      {
+        "task_id": "cycle_count",
+        "params": {}
+      },
+      {
+        "task_id": "increasing_subsequence_count",
+        "params": {
+          "k": 4
+        }
+      }
+    ]
+  },
+  "instances": [
+    {
+      "instance_id": "cycle_count",
+      "task_id": "cycle_count",
+      "params": {},
+      "input_arity": 1,
+      "family": "cycle_decomposition",
+      "focus_template": true,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "increasing_subsequence_count[k=4]",
+      "task_id": "increasing_subsequence_count",
+      "params": {
+        "k": 4
+      },
+      "input_arity": 1,
+      "family": "global_subsequence",
+      "focus_template": true,
+      "identity_kind": "parameterized_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    }
+  ],
+  "pools": [
+    {
+      "seed": 9001,
+      "data_seed": 9002,
+      "role": "train",
+      "n": 8,
+      "count": 16,
+      "proposals": 16,
+      "accepted": 16,
+      "rejected": 0,
+      "rng": "numpy.PCG64(SeedSequence([data_seed,role_index,n]))",
+      "object_path": "data/s9001_train_n8.npz",
+      "object_sha256": "07dafdb32800015cd9bf8b42ec08632d78e69c64401480c9570374f53cfd9a2f",
+      "canonical_object_content_sha256": "be186e9e22cc45bc46d110ceb7ff29a6be1b28727901a72fe32e9e4e89c08ac9",
+      "label_path": "data/s9001_train_n8.labels.jsonl",
+      "label_sha256": "fdc1f5578aba61feeed5ff782efdc7ddce0b59094d5636b9a0b1ea5b80db98d2",
+      "unique_inputs": 16,
+      "unique_orbits": 16
+    },
+    {
+      "seed": 9001,
+      "data_seed": 9002,
+      "role": "train",
+      "n": 10,
+      "count": 16,
+      "proposals": 16,
+      "accepted": 16,
+      "rejected": 0,
+      "rng": "numpy.PCG64(SeedSequence([data_seed,role_index,n]))",
+      "object_path": "data/s9001_train_n10.npz",
+      "object_sha256": "7092a90ac77f8ee53bc6e666c0e7218e5cdee2f9bbdfd1189487e9ccc347910c",
+      "canonical_object_content_sha256": "cb73ae44f4f0d2241b08d8d363a8052ec8e26926ecdbe339fb8d0fa95b1d8c8f",
+      "label_path": "data/s9001_train_n10.labels.jsonl",
+      "label_sha256": "6765f1b283fa622ec62cd247e644dd9ccb1578cb698ccef6e551335868fdf4b8",
+      "unique_inputs": 16,
+      "unique_orbits": 16
+    },
+    {
+      "seed": 9001,
+      "data_seed": 9002,
+      "role": "train",
+      "n": 12,
+      "count": 16,
+      "proposals": 16,
+      "accepted": 16,
+      "rejected": 0,
+      "rng": "numpy.PCG64(SeedSequence([data_seed,role_index,n]))",
+      "object_path": "data/s9001_train_n12.npz",
+      "object_sha256": "2d69de398d0a9841a3177844454aa2c1079eb8b15b726c26cb2e03caa5245f10",
+      "canonical_object_content_sha256": "fddf95b38e7f3258a15439e4a203a11075cd33b271e8d2aa5cc9a0dfc0d3759e",
+      "label_path": "data/s9001_train_n12.labels.jsonl",
+      "label_sha256": "9fe8e34e81aa3ec5f7b8a6ef757df47ffa670ff385e361e88746c0ad4a846728",
+      "unique_inputs": 16,
+      "unique_orbits": 16
+    },
+    {
+      "seed": 9001,
+      "data_seed": 9002,
+      "role": "dev",
+      "n": 8,
+      "count": 4,
+      "proposals": 4,
+      "accepted": 4,
+      "rejected": 0,
+      "rng": "numpy.PCG64(SeedSequence([data_seed,role_index,n]))",
+      "object_path": "data/s9001_dev_n8.npz",
+      "object_sha256": "a561c87e66a583b83e26ef5fe3d38de9a90f4b7346b0e54867f2aac31bc145c2",
+      "canonical_object_content_sha256": "4fff0671ba28e91dc7b88cde2535059a30eeba0d461d1a5fdb817bffef3bdcea",
+      "label_path": "data/s9001_dev_n8.labels.jsonl",
+      "label_sha256": "431291a33ce7a85ab80c45e4547da60a52ee7b5137695f342d82c576a3e00363",
+      "unique_inputs": 4,
+      "unique_orbits": 4
+    },
+    {
+      "seed": 9001,
+      "data_seed": 9002,
+      "role": "dev",
+      "n": 10,
+      "count": 4,
+      "proposals": 4,
+      "accepted": 4,
+      "rejected": 0,
+      "rng": "numpy.PCG64(SeedSequence([data_seed,role_index,n]))",
+      "object_path": "data/s9001_dev_n10.npz",
+      "object_sha256": "20a31da4032244d7f94ba5dce902b08233d1ca94651306dadeb6c64c0cb92368",
+      "canonical_object_content_sha256": "8d2e38bc446a0da9c871ca0f7ebdbc85043d8163d6948cafc06f4b2e3b83fa70",
+      "label_path": "data/s9001_dev_n10.labels.jsonl",
+      "label_sha256": "7d1911eeac5e615d606836b6c966b2451e58b6c3f821d5564c319cebe0a68c10",
+      "unique_inputs": 4,
+      "unique_orbits": 4
+    },
+    {
+      "seed": 9001,
+      "data_seed": 9002,
+      "role": "dev",
+      "n": 12,
+      "count": 4,
+      "proposals": 4,
+      "accepted": 4,
+      "rejected": 0,
+      "rng": "numpy.PCG64(SeedSequence([data_seed,role_index,n]))",
+      "object_path": "data/s9001_dev_n12.npz",
+      "object_sha256": "4cd95737ec172bb9ab13d4a7ce72fe8431a752edc0be2cae1dbeccd651140e6b",
+      "canonical_object_content_sha256": "1a94d1da2b091b9e32a6a305c34a4bfb9f631114c0802250b5a20ed548f04a21",
+      "label_path": "data/s9001_dev_n12.labels.jsonl",
+      "label_sha256": "ce282264f0c6e448ce0770ad74fb93c219f368ac4b829b43d3e75530bfd6bbfa",
+      "unique_inputs": 4,
+      "unique_orbits": 4
+    },
+    {
+      "seed": 9001,
+      "data_seed": 9002,
+      "role": "test",
+      "n": 8,
+      "count": 4,
+      "proposals": 4,
+      "accepted": 4,
+      "rejected": 0,
+      "rng": "numpy.PCG64(SeedSequence([data_seed,role_index,n]))",
+      "object_path": "data/s9001_test_n8.npz",
+      "object_sha256": "d840e34fb94663c9f5d877b7de319e39756761741ba6ecd49d9ad92b32cf4ba1",
+      "canonical_object_content_sha256": "99378e97abc117d6a499f535d3b45ddb5ebc904f25fabe7d1fef0c887aec36f6",
+      "label_path": "data/s9001_test_n8.labels.jsonl",
+      "label_sha256": "e286ca22b39f28c48cd5d36078f2d23531782174c1e0a156e69b530e8647c3ac",
+      "unique_inputs": 4,
+      "unique_orbits": 4
+    },
+    {
+      "seed": 9001,
+      "data_seed": 9002,
+      "role": "test",
+      "n": 10,
+      "count": 4,
+      "proposals": 4,
+      "accepted": 4,
+      "rejected": 0,
+      "rng": "numpy.PCG64(SeedSequence([data_seed,role_index,n]))",
+      "object_path": "data/s9001_test_n10.npz",
+      "object_sha256": "7c12bb8de0fe402c8bde1d3198e282802dfff146f5e69f1b5a9e506ad86c7651",
+      "canonical_object_content_sha256": "25f1697cd53c3fbf6ec898e6afcd046e8437694a1d452f2d2c10009700c1c639",
+      "label_path": "data/s9001_test_n10.labels.jsonl",
+      "label_sha256": "332cf990ea9d028e4aecef776fbc8b4ac98ce035c50ad39814c95b3727721cb8",
+      "unique_inputs": 4,
+      "unique_orbits": 4
+    },
+    {
+      "seed": 9001,
+      "data_seed": 9002,
+      "role": "test",
+      "n": 12,
+      "count": 4,
+      "proposals": 4,
+      "accepted": 4,
+      "rejected": 0,
+      "rng": "numpy.PCG64(SeedSequence([data_seed,role_index,n]))",
+      "object_path": "data/s9001_test_n12.npz",
+      "object_sha256": "cf73e0b42821690e3c9a7d20e4ad4c6d7398aff1e405cc510b1235db634fd555",
+      "canonical_object_content_sha256": "037fb7d3a16b0845d1bc5d13b949ea28652230b352bba709c305155e4ba83cb6",
+      "label_path": "data/s9001_test_n12.labels.jsonl",
+      "label_sha256": "972869c2eb6d90cf02fdf40fbfaa5b854357071346272d07c24a24d1fb8c758b",
+      "unique_inputs": 4,
+      "unique_orbits": 4
+    }
+  ],
+  "historical_files": {},
+  "historical_unique_orbits": 0,
+  "vocabulary_sha256": "9cd9c2dbd343e2b69246f426943ce94b914ba0dd945a1ef136936fb5bda528f1",
+  "generation_seconds": 0.10128629999235272,
+  "generated_unix": 1792403517.60533,
+  "numpy_version": "2.5.4",
+  "relation_isolation": "full inverse/reverse/complement orbit across roles, lengths implicitly, and replicates; historical pools excluded",
+  "sampling_limitations": "uniform proposals with sequential orbit rejection; not uniform orbit classes; no replacement induces finite-population dependence",
+  "binary_dataset_policy": "no materialized binary pools; explicit pair input interface supported; not claiming pair-group split certification"
+}

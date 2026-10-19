@@ -1,0 +1,4 @@
+{"input_id":"89f396b1a1fd3a04babe6e283d8d81d69575fea85e6e92668316f732b7258707","answers":{"cycle_count":3,"increasing_subsequence_count[k=4]":16}}
+{"input_id":"232c9efcca072e310bdd0cc497091edb5cc4c56fbff6fc0e58d4061f44466615","answers":{"cycle_count":4,"increasing_subsequence_count[k=4]":21}}
+{"input_id":"a126c0d8c0782f34f998e30d386f52148c13fc2b0aae5170cf30fb59654eec0a","answers":{"cycle_count":4,"increasing_subsequence_count[k=4]":15}}
+{"input_id":"cfa5cbac5e62f8ee79d3cbf45845c496623895c1412da34e5bf55e2353316650","answers":{"cycle_count":3,"increasing_subsequence_count[k=4]":0}}

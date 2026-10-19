@@ -1,0 +1,3567 @@
+{
+  "schema_version": "permworld-relations-v0.1",
+  "historical_certificates": {
+    "status": "reused_hash_verified",
+    "root": "experiments/pilot_v5_confirmation/mathematics",
+    "sha256": {
+      "audit/RELATION_INVENTORY.csv": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+      "audit/MATHEMATICS_AUDIT.json": "abe146533bd3d6d74895ff54b1437a847e63c09e59d12be5dac11f04007b6d4d",
+      "audit/OBSERVED_ASSOCIATIONS.csv": "ea27535661a5342cc8ed28425c3987f14ee2a871a83d15deda85b645361cf65f",
+      "audit/UNCHECKED_CLAIMS.csv": "b069354ce02da361c7cca4abe0cc52fdaf213356c49aaef0726c2f2355200291"
+    },
+    "historical_rechecks_run": 0,
+    "implementation_sha256": {
+      "experiments/permworld_pilot/vendor/neurips_permutations/math_ops.py": "3f6832b4798a20cc6b813a0b64ec01cf10360fbf3d6256cb59d1d793d4ad345f"
+    },
+    "previous_status": "passed",
+    "previous_exhaustive_n": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "previous_random_n": 10,
+    "previous_random_inputs": 4096,
+    "previous_independent_label_comparisons": 1601440
+  },
+  "transformation_order": "Apply listed transforms left to right to the original input_id.",
+  "absence_semantics": "No registered edge means not classified; never mathematically unrelated.",
+  "relations": [
+    {
+      "relation_id": "position_partition",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "F(p)+E(p)+D(p)=n",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "joint",
+      "query_model": "same_input_multiple_answers",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "fixed_points",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "exceedances",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        },
+        {
+          "task_id": "deficiencies",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        }
+      ],
+      "answer_map": {
+        "op": "sub",
+        "args": [
+          {
+            "context": "n"
+          },
+          {
+            "query": 0
+          },
+          {
+            "query": 1
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "At every position exactly one of p_i=i, p_i>i, p_i<i holds.",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "position_partition",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "inverse_exceedance_deficiency",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "E(p)=D(Ip)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "exceedances",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "deficiencies",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "inverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "The graph point (i,p_i) with p_i>i becomes (p_i,i) below the diagonal after inversion.",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "inverse_exceedance_deficiency",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "fixed_from_two_deficiency_queries",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "F(p)=n-D(p)-D(Ip)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "joint",
+      "query_model": "multiple_transformed_inputs",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "fixed_points",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "deficiencies",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        },
+        {
+          "task_id": "deficiencies",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "inverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "op": "sub",
+        "args": [
+          {
+            "context": "n"
+          },
+          {
+            "query": 0
+          },
+          {
+            "query": 1
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "Substitute E(p)=D(Ip) into the position partition.",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "fixed_from_two_deficiency_queries",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "anti_fixed_from_two_deficiency_queries",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "AF(p)=n-D(Cp)-D(ICp)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "joint",
+      "query_model": "multiple_transformed_inputs",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "anti_fixed_points",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "deficiencies",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "complement"
+          ]
+        },
+        {
+          "task_id": "deficiencies",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "complement",
+            "inverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "op": "sub",
+        "args": [
+          {
+            "context": "n"
+          },
+          {
+            "query": 0
+          },
+          {
+            "query": 1
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "Apply the fixed-point two-query identity to Cp and use F(Cp)=AF(p).",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "anti_fixed_from_two_deficiency_queries",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "fixed_complement",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "F(p)=AF(Cp)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "fixed_points",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "anti_fixed_points",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "complement"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "n+1-p_i=n+1-i if and only if p_i=i.",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "fixed_complement",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "fixed_reverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "F(p)=AF(Rp)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "fixed_points",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "anti_fixed_points",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "reverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Reindex the reversed position j=n+1-i in the anti-diagonal equality.",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "fixed_reverse",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "fixed_inverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "F(p)=F(Ip)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "fixed_points",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "fixed_points",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "inverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "A point is fixed by a bijection if and only if it is fixed by its inverse.",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "fixed_inverse",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "anti_fixed_inverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "AF(p)=AF(Ip)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "anti_fixed_points",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "anti_fixed_points",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "inverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Graph transposition preserves the anti-diagonal i+p_i=n+1.",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "anti_fixed_inverse",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "run_complement",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "LDR(p)=LIR(Cp)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "longest_decreasing_run",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "longest_increasing_run",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "complement"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Complement changes every strict descent in a contiguous interval into an ascent, preserving length.",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "run_complement",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "run_reverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "LDR(p)=LIR(Rp)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "longest_decreasing_run",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "longest_increasing_run",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "reverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Reversal maps contiguous decreasing intervals bijectively to increasing intervals of equal length.",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "run_reverse",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "descent_recoil_inverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "d(p)=recoils(Ip)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "descents",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "recoils",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "inverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Recoils is the descent count of the inverse, and I is involutive.",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "descent_recoil_inverse",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "descent_complement",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "d(Cp)=n-1-d(p)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "same_input",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "descents",
+        "params": {},
+        "input_id": "p",
+        "transforms": [
+          "complement"
+        ]
+      },
+      "queries": [
+        {
+          "task_id": "descents",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        }
+      ],
+      "answer_map": {
+        "op": "sub",
+        "args": [
+          {
+            "context": "n"
+          },
+          1,
+          {
+            "query": 0
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "Each of the n-1 unequal adjacent comparisons reverses its sign.",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "descent_complement",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "descent_reverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "d(Rp)=n-1-d(p)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "same_input",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "descents",
+        "params": {},
+        "input_id": "p",
+        "transforms": [
+          "reverse"
+        ]
+      },
+      "queries": [
+        {
+          "task_id": "descents",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        }
+      ],
+      "answer_map": {
+        "op": "sub",
+        "args": [
+          {
+            "context": "n"
+          },
+          1,
+          {
+            "query": 0
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "Reversal reverses each of the n-1 adjacent comparisons.",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "descent_reverse",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "peaks_reverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "peaks(Rp)=peaks(p)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "same_input",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "peaks",
+        "params": {},
+        "input_id": "p",
+        "transforms": [
+          "reverse"
+        ]
+      },
+      "queries": [
+        {
+          "task_id": "peaks",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "The two neighbors exchange places while the center remains larger than both.",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "peaks_reverse",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "peaks_complement",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "peaks(p)=valleys(Cp)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "peaks",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "valleys",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "complement"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Complement reverses both inequalities at each interior position.",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "peaks_complement",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "interior_partition",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "peaks+valleys+double_ascents+double_descents=max(n-2,0)",
+      "relation_type": "same_input_joint_identity",
+      "scope": "All permutations in S_n, n>=1; lengths known",
+      "required_tasks": [
+        "peaks",
+        "valleys",
+        "double_ascents",
+        "double_descents"
+      ],
+      "proof": "The two comparison bits at each interior position belong to exactly one of 01,10,00,11.",
+      "answer_map": null,
+      "executable": false,
+      "execution_note": "Historical inequality, extra-feature identity or distribution statement; retained declaratively with original certificate.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "interior_partition",
+        "historical_rechecks_run": 0
+      }
+    },
+    {
+      "relation_id": "peak_valley_endpoints",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "peaks-valleys=s_last-s_first (0 when n=1)",
+      "relation_type": "same_input_identity_with_extra_input_features",
+      "scope": "All permutations in S_n, n>=1; lengths known",
+      "required_tasks": [
+        "peaks",
+        "valleys",
+        "adjacent_comparison_endpoints"
+      ],
+      "proof": "The number of 0-to-1 transitions minus 1-to-0 transitions telescopes along the comparison-bit sequence.",
+      "answer_map": null,
+      "executable": false,
+      "execution_note": "Historical inequality, extra-feature identity or distribution statement; retained declaratively with original certificate.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "peak_valley_endpoints",
+        "historical_rechecks_run": 0
+      }
+    },
+    {
+      "relation_id": "successions_inverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "successions(Ip)=successions(p)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "same_input",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "successions",
+        "params": {},
+        "input_id": "p",
+        "transforms": [
+          "inverse"
+        ]
+      },
+      "queries": [
+        {
+          "task_id": "successions",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "An edge from (i,a) to (i+1,a+1) maps bijectively under transposition to an edge from (a,i) to (a+1,i+1).",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "successions_inverse",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "successions_reverse_complement",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "successions(CRp)=successions(p)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "same_input",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "successions",
+        "params": {},
+        "input_id": "p",
+        "transforms": [
+          "reverse",
+          "complement"
+        ]
+      },
+      "queries": [
+        {
+          "task_id": "successions",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Reverse and complement together preserve an adjacent upward difference of one.",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "successions_reverse_complement",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "adjacency_two_successions",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "adjacencies(p)=successions(p)+successions(Cp)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "joint",
+      "query_model": "multiple_transformed_inputs",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "adjacencies",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "successions",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        },
+        {
+          "task_id": "successions",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "complement"
+          ]
+        }
+      ],
+      "answer_map": {
+        "op": "add",
+        "args": [
+          {
+            "query": 0
+          },
+          {
+            "query": 1
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "An absolute difference of one is exactly an upward or downward difference of one, exchanged by complement.",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "adjacency_two_successions",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "successions_descents_bound",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "successions(p)+d(p)<=n-1",
+      "relation_type": "same_input_inequality",
+      "scope": "All permutations in S_n, n>=1; lengths known",
+      "required_tasks": [
+        "successions",
+        "descents"
+      ],
+      "proof": "Every succession is an ascent, so successions and descents count disjoint adjacent positions.",
+      "answer_map": null,
+      "executable": false,
+      "execution_note": "Historical inequality, extra-feature identity or distribution statement; retained declaratively with original certificate.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "successions_descents_bound",
+        "historical_rechecks_run": 0
+      }
+    },
+    {
+      "relation_id": "successions_recoils_bound",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "successions(p)+recoils(p)<=n-1",
+      "relation_type": "same_input_inequality",
+      "scope": "All permutations in S_n, n>=1; lengths known",
+      "required_tasks": [
+        "successions",
+        "recoils"
+      ],
+      "proof": "Apply the previous bound to Ip and use succession inverse-invariance.",
+      "answer_map": null,
+      "executable": false,
+      "execution_note": "Historical inequality, extra-feature identity or distribution statement; retained declaratively with original certificate.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "successions_recoils_bound",
+        "historical_rechecks_run": 0
+      }
+    },
+    {
+      "relation_id": "decreasing_run_bounds",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "ceil(n/(n-d))<=LDR<=d+1",
+      "relation_type": "same_input_inequality",
+      "scope": "All permutations in S_n, n>=1; lengths known",
+      "required_tasks": [
+        "longest_decreasing_run",
+        "descents"
+      ],
+      "proof": "Cut at ascents into n-d decreasing runs; the largest is at least the average and uses at most all d descent edges.",
+      "answer_map": null,
+      "executable": false,
+      "execution_note": "Historical inequality, extra-feature identity or distribution statement; retained declaratively with original certificate.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "decreasing_run_bounds",
+        "historical_rechecks_run": 0
+      }
+    },
+    {
+      "relation_id": "increasing_run_bounds",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "ceil(n/(d+1))<=LIR<=n-d",
+      "relation_type": "same_input_inequality",
+      "scope": "All permutations in S_n, n>=1; lengths known",
+      "required_tasks": [
+        "longest_increasing_run",
+        "descents"
+      ],
+      "proof": "Cut at descents into d+1 increasing runs; use the average and the n-1-d available ascent edges.",
+      "answer_map": null,
+      "executable": false,
+      "execution_note": "Historical inequality, extra-feature identity or distribution statement; retained declaratively with original certificate.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "increasing_run_bounds",
+        "historical_rechecks_run": 0
+      }
+    },
+    {
+      "relation_id": "deficiencies_inverse_reverse_complement",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "D(CRIp)=D(p)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "same_input",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "deficiencies",
+        "params": {},
+        "input_id": "p",
+        "transforms": [
+          "inverse",
+          "reverse",
+          "complement"
+        ]
+      },
+      "queries": [
+        {
+          "task_id": "deficiencies",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "RC exchanges above- and below-diagonal graph points, and inverse exchanges E and D once more.",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "deficiencies_inverse_reverse_complement",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "cycle_fixed_partition",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "cycle_count=F+nontrivial_cycle_count",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "joint",
+      "query_model": "same_input_multiple_answers",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "cycle_count",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "fixed_points",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        },
+        {
+          "task_id": "nontrivial_cycle_count",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        }
+      ],
+      "answer_map": {
+        "op": "add",
+        "args": [
+          {
+            "query": 0
+          },
+          {
+            "query": 1
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "Partition disjoint cycles into singleton and non-singleton cycles.",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "cycle_fixed_partition",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "cycle_parity_partition",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "cycle_count=even_cycle_count+odd_cycle_count",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "joint",
+      "query_model": "same_input_multiple_answers",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "cycle_count",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "even_cycle_count",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        },
+        {
+          "task_id": "odd_cycle_count",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        }
+      ],
+      "answer_map": {
+        "op": "add",
+        "args": [
+          {
+            "query": 0
+          },
+          {
+            "query": 1
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "Partition disjoint cycles by parity of their lengths.",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "cycle_parity_partition",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "permutation_parity_cycles",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "parity=(n-cycle_count) mod 2",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "same_input",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "parity",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "cycle_count",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        }
+      ],
+      "answer_map": {
+        "op": "mod",
+        "args": [
+          {
+            "op": "sub",
+            "args": [
+              {
+                "context": "n"
+              },
+              {
+                "query": 0
+              }
+            ]
+          },
+          2
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "A k-cycle is a product of k-1 transpositions; multiply the cycle signs.",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 10009,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "permutation_parity_cycles",
+        "historical_rechecks_run": 0
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate"
+    },
+    {
+      "relation_id": "descent_recoil_uniform_distribution",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "Law(d(P))=Law(recoils(P)) for P uniform on S_n",
+      "relation_type": "equal_population_marginal_under_explicit_distribution",
+      "scope": "Uniform distribution on all permutations; not arbitrary orbit-filtered finite samples",
+      "required_tasks": [
+        "descents",
+        "recoils"
+      ],
+      "proof": "Inverse is a bijection of S_n and recoils(p)=d(Ip).",
+      "answer_map": null,
+      "executable": false,
+      "execution_note": "Historical inequality, extra-feature identity or distribution statement; retained declaratively with original certificate.",
+      "mechanism_claim": false,
+      "origin": "pilot_v5_unchanged_certificate",
+      "finite_check": {
+        "status": "reused_hash_verified",
+        "inputs_checked": 5913,
+        "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+        "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+        "relation_id": "descent_recoil_uniform_distribution",
+        "historical_rechecks_run": 0
+      }
+    },
+    {
+      "relation_id": "cycle_length_one_fixed",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "cycle_length_count(p,1)=fixed_points(p)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "same_input",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "cycle_length_count",
+        "params": {
+          "k": 1
+        },
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "fixed_points",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "A singleton orbit consists exactly of one fixed point.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "cycle_length_two_alias",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "cycle_length_count(p,2)=two_cycle_count(p)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "same_input",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "cycle_length_count",
+        "params": {
+          "k": 2
+        },
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "two_cycle_count",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "The retained legacy endpoint is the k=2 instance by its actual definition.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "cycle_length_three_alias",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "cycle_length_count(p,3)=three_cycle_count(p)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "same_input",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "cycle_length_count",
+        "params": {
+          "k": 3
+        },
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "three_cycle_count",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "The retained legacy endpoint is the k=3 instance by its actual definition.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "cycle_count_inverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "cycle_count(p)= cycle_count(inverse(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "cycle_count",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "cycle_count",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "inverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Inversion reverses the direction of each disjoint cycle and preserves its members and length.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "nontrivial_cycle_count_inverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "nontrivial_cycle_count(p)= nontrivial_cycle_count(inverse(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "nontrivial_cycle_count",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "nontrivial_cycle_count",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "inverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Inversion reverses the direction of each disjoint cycle and preserves its members and length.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "even_cycle_count_inverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "even_cycle_count(p)= even_cycle_count(inverse(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "even_cycle_count",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "even_cycle_count",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "inverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Inversion reverses the direction of each disjoint cycle and preserves its members and length.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "odd_cycle_count_inverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "odd_cycle_count(p)= odd_cycle_count(inverse(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "odd_cycle_count",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "odd_cycle_count",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "inverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Inversion reverses the direction of each disjoint cycle and preserves its members and length.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "longest_cycle_inverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "longest_cycle(p)= longest_cycle(inverse(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "longest_cycle",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "longest_cycle",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "inverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Inversion reverses the direction of each disjoint cycle and preserves its members and length.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "shortest_cycle_inverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "shortest_cycle(p)= shortest_cycle(inverse(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "shortest_cycle",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "shortest_cycle",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "inverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Inversion reverses the direction of each disjoint cycle and preserves its members and length.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "cycle_length_count_inverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "cycle_length_count(p)= cycle_length_count(inverse(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "cycle_length_count",
+        "params": {
+          "k": {
+            "context": "k"
+          }
+        },
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "cycle_length_count",
+          "params": {
+            "k": {
+              "context": "k"
+            }
+          },
+          "input_id": "p",
+          "transforms": [
+            "inverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {
+        "k": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        }
+      },
+      "proof": "Inversion reverses the direction of each disjoint cycle and preserves its members and length.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 30513,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "parity_from_even_cycles",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "parity(p)=even_cycle_count(p) mod 2",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "same_input",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "parity",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "even_cycle_count",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        }
+      ],
+      "answer_map": {
+        "op": "mod",
+        "args": [
+          {
+            "query": 0
+          },
+          2
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "An even-length cycle is odd, an odd-length cycle is even, and cycle signs multiply.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "cycle_count_from_cycle_histogram",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "C=sum_k c_k",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "joint",
+      "query_model": "same_input_multiple_answers",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "cycle_count",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [],
+      "answer_map": {
+        "op": "sum",
+        "args": [
+          {
+            "queries": "all"
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "The disjoint cycle lengths form a multiset partition of all n vertices; the complete histogram determines its size and extrema.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "query_family": {
+        "task_id": "cycle_length_count",
+        "params": {
+          "k": {
+            "index": "j"
+          }
+        },
+        "input_id": "p",
+        "transforms": [],
+        "index_range": [
+          1,
+          {
+            "context": "n"
+          }
+        ]
+      },
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "longest_cycle_from_cycle_histogram",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "longest_cycle=max{k:c_k>0}",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "joint",
+      "query_model": "same_input_multiple_answers",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "longest_cycle",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [],
+      "answer_map": {
+        "op": "last_positive_index",
+        "args": [
+          {
+            "queries": "all"
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "The disjoint cycle lengths form a multiset partition of all n vertices; the complete histogram determines its size and extrema.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "query_family": {
+        "task_id": "cycle_length_count",
+        "params": {
+          "k": {
+            "index": "j"
+          }
+        },
+        "input_id": "p",
+        "transforms": [],
+        "index_range": [
+          1,
+          {
+            "context": "n"
+          }
+        ]
+      },
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "shortest_cycle_from_cycle_histogram",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "shortest_cycle=min{k:c_k>0}",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "joint",
+      "query_model": "same_input_multiple_answers",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "shortest_cycle",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [],
+      "answer_map": {
+        "op": "first_positive_index",
+        "args": [
+          {
+            "queries": "all"
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "The disjoint cycle lengths form a multiset partition of all n vertices; the complete histogram determines its size and extrema.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "query_family": {
+        "task_id": "cycle_length_count",
+        "params": {
+          "k": {
+            "index": "j"
+          }
+        },
+        "input_id": "p",
+        "transforms": [],
+        "index_range": [
+          1,
+          {
+            "context": "n"
+          }
+        ]
+      },
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "cycle_histogram_weighted_size",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "n=sum_{k=1}^n k*cycle_length_count(p,k)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "joint",
+      "query_model": "same_input_multiple_answers",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "context": "n"
+      },
+      "queries": [],
+      "answer_map": {
+        "op": "weighted_sum_1based",
+        "args": [
+          {
+            "queries": "all"
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "Every vertex belongs to exactly one disjoint cycle.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "query_family": {
+        "task_id": "cycle_length_count",
+        "params": {
+          "k": {
+            "index": "j"
+          }
+        },
+        "input_id": "p",
+        "transforms": [],
+        "index_range": [
+          1,
+          {
+            "context": "n"
+          }
+        ]
+      },
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "lis_length_complement",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "lis_length(p)= lds_length(complement(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "lis_length",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "lds_length",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "complement"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Complement reverses value comparisons; reversal reverses index order. Either maps increasing subsequences bijectively to decreasing subsequences of equal length.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "lis_length_reverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "lis_length(p)= lds_length(reverse(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "lis_length",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "lds_length",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "reverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Complement reverses value comparisons; reversal reverses index order. Either maps increasing subsequences bijectively to decreasing subsequences of equal length.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "increasing_subsequence_count_complement",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "increasing_subsequence_count(p)= decreasing_subsequence_count(complement(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "increasing_subsequence_count",
+        "params": {
+          "k": {
+            "context": "k"
+          }
+        },
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "decreasing_subsequence_count",
+          "params": {
+            "k": {
+              "context": "k"
+            }
+          },
+          "input_id": "p",
+          "transforms": [
+            "complement"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {
+        "k": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        }
+      },
+      "proof": "Complement reverses value comparisons; reversal reverses index order. Either maps increasing subsequences bijectively to decreasing subsequences of equal length.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 30513,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "increasing_subsequence_count_reverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "increasing_subsequence_count(p)= decreasing_subsequence_count(reverse(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "increasing_subsequence_count",
+        "params": {
+          "k": {
+            "context": "k"
+          }
+        },
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "decreasing_subsequence_count",
+          "params": {
+            "k": {
+              "context": "k"
+            }
+          },
+          "input_id": "p",
+          "transforms": [
+            "reverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {
+        "k": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        }
+      },
+      "proof": "Complement reverses value comparisons; reversal reverses index order. Either maps increasing subsequences bijectively to decreasing subsequences of equal length.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 30513,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "lis_length_inverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "lis_length(p)=lis_length(inverse(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "lis_length",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "lis_length",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "inverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Transposition of permutation graph points bijects monotone k-point subsets; sorting the new index coordinates preserves monotonicity type.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "lds_length_inverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "lds_length(p)=lds_length(inverse(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "lds_length",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "lds_length",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "inverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Transposition of permutation graph points bijects monotone k-point subsets; sorting the new index coordinates preserves monotonicity type.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "increasing_subsequence_count_inverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "increasing_subsequence_count(p)=increasing_subsequence_count(inverse(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "increasing_subsequence_count",
+        "params": {
+          "k": {
+            "context": "k"
+          }
+        },
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "increasing_subsequence_count",
+          "params": {
+            "k": {
+              "context": "k"
+            }
+          },
+          "input_id": "p",
+          "transforms": [
+            "inverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {
+        "k": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        }
+      },
+      "proof": "Transposition of permutation graph points bijects monotone k-point subsets; sorting the new index coordinates preserves monotonicity type.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 30513,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "decreasing_subsequence_count_inverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "decreasing_subsequence_count(p)=decreasing_subsequence_count(inverse(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "decreasing_subsequence_count",
+        "params": {
+          "k": {
+            "context": "k"
+          }
+        },
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "decreasing_subsequence_count",
+          "params": {
+            "k": {
+              "context": "k"
+            }
+          },
+          "input_id": "p",
+          "transforms": [
+            "inverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {
+        "k": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        }
+      },
+      "proof": "Transposition of permutation graph points bijects monotone k-point subsets; sorting the new index coordinates preserves monotonicity type.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 30513,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "increasing_subsequence_count_k1_constant",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "increasing_subsequence_count(p,1)=n",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "same_input",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "increasing_subsequence_count",
+        "params": {
+          "k": 1
+        },
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [],
+      "answer_map": {
+        "context": "n"
+      },
+      "parameter_schema": {},
+      "proof": "Every one-position subset is a monotone subsequence. Constant conditional on input length; not a learnability target.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "decreasing_subsequence_count_k1_constant",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "decreasing_subsequence_count(p,1)=n",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "same_input",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "decreasing_subsequence_count",
+        "params": {
+          "k": 1
+        },
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [],
+      "answer_map": {
+        "context": "n"
+      },
+      "parameter_schema": {},
+      "proof": "Every one-position subset is a monotone subsequence. Constant conditional on input length; not a learnability target.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "decreasing_pairs_inversions",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "decreasing_subsequence_count(p,2)=length(p)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "same_input",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "decreasing_subsequence_count",
+        "params": {
+          "k": 2
+        },
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "length",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Both definitions count exactly pairs i<j with p_i>p_j; legacy length is inversion count, not input size.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "increasing_pairs_complement_inversions",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "increasing_subsequence_count(p,2)=n(n-1)/2-length(p)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "same_input",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "increasing_subsequence_count",
+        "params": {
+          "k": 2
+        },
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "length",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        }
+      ],
+      "answer_map": {
+        "op": "sub",
+        "args": [
+          {
+            "op": "choose2",
+            "args": [
+              {
+                "context": "n"
+              }
+            ]
+          },
+          {
+            "query": 0
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "Every two-position subset has distinct values and is either increasing or decreasing, exclusively.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "monotone_pair_partition",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "I_2(p)+D_2(p)=n(n-1)/2",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "joint",
+      "query_model": "same_input_multiple_answers",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "context": "choose_n_2"
+      },
+      "queries": [
+        {
+          "task_id": "increasing_subsequence_count",
+          "params": {
+            "k": 2
+          },
+          "input_id": "p",
+          "transforms": []
+        },
+        {
+          "task_id": "decreasing_subsequence_count",
+          "params": {
+            "k": 2
+          },
+          "input_id": "p",
+          "transforms": []
+        }
+      ],
+      "answer_map": {
+        "op": "add",
+        "args": [
+          {
+            "query": 0
+          },
+          {
+            "query": 1
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "Partition all pairs by their strict comparison. This does not extend to k>=3 because mixed patterns also exist.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "lis_from_subsequence_histogram",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "LIS(p)=max{k:I_k(p)>0}",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "joint",
+      "query_model": "same_input_multiple_answers",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "lis_length",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [],
+      "answer_map": {
+        "op": "last_positive_index",
+        "args": [
+          {
+            "queries": "all"
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "LIS is the greatest length for which an increasing subsequence exists.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "query_family": {
+        "task_id": "increasing_subsequence_count",
+        "params": {
+          "k": {
+            "index": "j"
+          }
+        },
+        "input_id": "p",
+        "transforms": [],
+        "index_range": [
+          1,
+          {
+            "context": "n"
+          }
+        ]
+      },
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "lis_from_rsk_first_row",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_rsk_insertion_theorem",
+      "formula": "LIS(p)=rsk_shape(p)[0]",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "same_input",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "lis_length",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "rsk_shape",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        }
+      ],
+      "answer_map": {
+        "op": "first",
+        "args": [
+          {
+            "query": 0
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "The first row of row insertion stores minimal tails for increasing subsequences: insertion extends its length exactly when a longer increasing subsequence becomes possible.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "lds_from_rsk_first_column",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_rsk_insertion_theorem",
+      "formula": "LDS(p)=len(rsk_shape(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "same_input",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "lds_length",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "rsk_shape",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        }
+      ],
+      "answer_map": {
+        "op": "len",
+        "args": [
+          {
+            "query": 0
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "The row-bumping lemma identifies the maximum decreasing subsequence length with the number of nonempty insertion rows (Schensted's theorem). Full theorem, not a claim derived from the finite checks.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "rsk_shape_size",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "sum(rsk_shape(p))=n",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "same_input",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "context": "n"
+      },
+      "queries": [
+        {
+          "task_id": "rsk_shape",
+          "params": {},
+          "input_id": "p",
+          "transforms": []
+        }
+      ],
+      "answer_map": {
+        "op": "sum",
+        "args": [
+          {
+            "query": 0
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "Each insertion adds exactly one box and never deletes any box.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "components_complement_global_descents",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "components(p)=global_descents(complement(p))+1",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "components",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "global_descents",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "complement"
+          ]
+        }
+      ],
+      "answer_map": {
+        "op": "add",
+        "args": [
+          {
+            "query": 0
+          },
+          1
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "At each internal cut j, all prefix values of p are smaller than all suffix values iff the first j values are {1,...,j}. Complement reverses this comparison. Direct-sum components count internal cuts plus one.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "components_inverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "components(p)=components(inverse(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "components",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "components",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "inverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Inversion preserves every initial interval invariant under p. Reverse-complement reverses the ordered direct-sum decomposition and preserves its component-length multiset.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "components_reverse_complement",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "components(p)=components(reverse_complement(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "components",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "components",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "reverse",
+            "complement"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Inversion preserves every initial interval invariant under p. Reverse-complement reverses the ordered direct-sum decomposition and preserves its component-length multiset.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "largest_component_inverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "largest_component(p)=largest_component(inverse(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "largest_component",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "largest_component",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "inverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Inversion preserves every initial interval invariant under p. Reverse-complement reverses the ordered direct-sum decomposition and preserves its component-length multiset.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "largest_component_reverse_complement",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "largest_component(p)=largest_component(reverse_complement(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "largest_component",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "largest_component",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "reverse",
+            "complement"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Inversion preserves every initial interval invariant under p. Reverse-complement reverses the ordered direct-sum decomposition and preserves its component-length multiset.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "smallest_component_inverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "smallest_component(p)=smallest_component(inverse(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "smallest_component",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "smallest_component",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "inverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Inversion preserves every initial interval invariant under p. Reverse-complement reverses the ordered direct-sum decomposition and preserves its component-length multiset.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "smallest_component_reverse_complement",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "smallest_component(p)=smallest_component(reverse_complement(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "smallest_component",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "smallest_component",
+          "params": {},
+          "input_id": "p",
+          "transforms": [
+            "reverse",
+            "complement"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {},
+      "proof": "Inversion preserves every initial interval invariant under p. Reverse-complement reverses the ordered direct-sum decomposition and preserves its component-length multiset.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "component_length_count_inverse",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "component_length_count(p)=component_length_count(inverse(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "component_length_count",
+        "params": {
+          "k": {
+            "context": "k"
+          }
+        },
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "component_length_count",
+          "params": {
+            "k": {
+              "context": "k"
+            }
+          },
+          "input_id": "p",
+          "transforms": [
+            "inverse"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {
+        "k": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        }
+      },
+      "proof": "Inversion preserves every initial interval invariant under p. Reverse-complement reverses the ordered direct-sum decomposition and preserves its component-length multiset.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 30513,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "component_length_count_reverse_complement",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "component_length_count(p)=component_length_count(reverse_complement(p))",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "single_task",
+      "query_model": "transformed_input",
+      "requires_distinct_input_values": true,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "component_length_count",
+        "params": {
+          "k": {
+            "context": "k"
+          }
+        },
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [
+        {
+          "task_id": "component_length_count",
+          "params": {
+            "k": {
+              "context": "k"
+            }
+          },
+          "input_id": "p",
+          "transforms": [
+            "reverse",
+            "complement"
+          ]
+        }
+      ],
+      "answer_map": {
+        "query": 0
+      },
+      "parameter_schema": {
+        "k": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        }
+      },
+      "proof": "Inversion preserves every initial interval invariant under p. Reverse-complement reverses the ordered direct-sum decomposition and preserves its component-length multiset.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 30513,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "components_from_component_histogram",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "components reconstructed from all component_length_count(p,k), k=1..n",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "joint",
+      "query_model": "same_input_multiple_answers",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "components",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [],
+      "answer_map": {
+        "op": "sum",
+        "args": [
+          {
+            "queries": "all"
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "The unique maximal splitting at invariant initial intervals partitions p into indecomposable direct-sum blocks. Its full length histogram determines count and extrema.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "query_family": {
+        "task_id": "component_length_count",
+        "params": {
+          "k": {
+            "index": "j"
+          }
+        },
+        "input_id": "p",
+        "transforms": [],
+        "index_range": [
+          1,
+          {
+            "context": "n"
+          }
+        ]
+      },
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "largest_component_from_component_histogram",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "largest_component reconstructed from all component_length_count(p,k), k=1..n",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "joint",
+      "query_model": "same_input_multiple_answers",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "largest_component",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [],
+      "answer_map": {
+        "op": "last_positive_index",
+        "args": [
+          {
+            "queries": "all"
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "The unique maximal splitting at invariant initial intervals partitions p into indecomposable direct-sum blocks. Its full length histogram determines count and extrema.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "query_family": {
+        "task_id": "component_length_count",
+        "params": {
+          "k": {
+            "index": "j"
+          }
+        },
+        "input_id": "p",
+        "transforms": [],
+        "index_range": [
+          1,
+          {
+            "context": "n"
+          }
+        ]
+      },
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "smallest_component_from_component_histogram",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "smallest_component reconstructed from all component_length_count(p,k), k=1..n",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "joint",
+      "query_model": "same_input_multiple_answers",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "task_id": "smallest_component",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      "queries": [],
+      "answer_map": {
+        "op": "first_positive_index",
+        "args": [
+          {
+            "queries": "all"
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "The unique maximal splitting at invariant initial intervals partitions p into indecomposable direct-sum blocks. Its full length histogram determines count and extrema.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "query_family": {
+        "task_id": "component_length_count",
+        "params": {
+          "k": {
+            "index": "j"
+          }
+        },
+        "input_id": "p",
+        "transforms": [],
+        "index_range": [
+          1,
+          {
+            "context": "n"
+          }
+        ]
+      },
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    },
+    {
+      "relation_id": "component_histogram_weighted_size",
+      "version": "permworld-relations-v0.1",
+      "evidence_class": "proved_from_definitions",
+      "formula": "n=sum_{k=1}^n k*component_length_count(p,k)",
+      "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+      "relation_type": "joint",
+      "query_model": "same_input_multiple_answers",
+      "requires_distinct_input_values": false,
+      "input_ids": [
+        "p"
+      ],
+      "target": {
+        "context": "n"
+      },
+      "queries": [],
+      "answer_map": {
+        "op": "weighted_sum_1based",
+        "args": [
+          {
+            "queries": "all"
+          }
+        ]
+      },
+      "parameter_schema": {},
+      "proof": "Every position belongs to one maximal indecomposable direct-sum block.",
+      "finite_check": {
+        "status": "passed",
+        "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv",
+        "pointwise_checks": 6105,
+        "fixture_sha256": "ea031dad7c33391c4339bcd53c93612ee358eceff6fea4b693cdd292d5609d95"
+      },
+      "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+      "mechanism_claim": false,
+      "query_family": {
+        "task_id": "component_length_count",
+        "params": {
+          "k": {
+            "index": "j"
+          }
+        },
+        "input_id": "p",
+        "transforms": [],
+        "index_range": [
+          1,
+          {
+            "context": "n"
+          }
+        ]
+      },
+      "origin": "platform_v0.1_new_relation",
+      "executable": true
+    }
+  ],
+  "empirical_associations": {
+    "evidence_class": "empirically_observed",
+    "source": "experiments/pilot_v5_confirmation/mathematics/audit/OBSERVED_ASSOCIATIONS.csv",
+    "note": "Historical v4 learning co-movements, not identities or causal explanations; kept separate from executable formulas."
+  },
+  "unchecked": [
+    {
+      "claim": "Arbitrary unlisted joint reconstruction among tasks",
+      "evidence_class": "unchecked"
+    },
+    {
+      "claim": "A trained model actually computes a registered formula",
+      "evidence_class": "unchecked"
+    },
+    {
+      "claim": "Input-orbit relation equivalence implies equal learning difficulty",
+      "evidence_class": "unchecked"
+    },
+    {
+      "claim": "All tasks in distinct families are independent",
+      "evidence_class": "unchecked"
+    }
+  ]
+}

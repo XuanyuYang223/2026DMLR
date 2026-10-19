@@ -1,0 +1,22 @@
+{
+  "status": "reused_hash_verified",
+  "root": "experiments/pilot_v5_confirmation/mathematics",
+  "sha256": {
+    "audit/RELATION_INVENTORY.csv": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+    "audit/MATHEMATICS_AUDIT.json": "abe146533bd3d6d74895ff54b1437a847e63c09e59d12be5dac11f04007b6d4d"
+  },
+  "historical_rechecks_run": 0,
+  "previous_status": "passed",
+  "previous_exhaustive_n": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "previous_random_n": 10,
+  "previous_random_inputs": 4096,
+  "previous_independent_label_comparisons": 1601440
+}

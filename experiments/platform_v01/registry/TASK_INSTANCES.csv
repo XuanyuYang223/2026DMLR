@@ -1,0 +1,63 @@
+instance_id,task_id,params,input_arity,family,focus_template,identity_kind,output_type,output_encoding
+to_cycle,to_cycle,{},1,permutation_identity,False,representation_endpoint,cycle_decomposition,permworld_sequence_v1
+to_lehmer,to_lehmer,{},1,permutation_identity,False,representation_endpoint,integer_vector,permworld_sequence_v1
+to_inversion_vector,to_inversion_vector,{},1,permutation_identity,False,representation_endpoint,integer_vector,permworld_sequence_v1
+to_reduced_word,to_reduced_word,{},1,permutation_identity,False,representation_endpoint,integer_sequence,permworld_sequence_v1
+length,length,{},1,length,False,task_template,integer,permworld_sequence_v1
+descents,descents,{},1,descents,False,task_template,integer,permworld_sequence_v1
+fixed_points,fixed_points,{},1,fixed_points,False,task_template,integer,permworld_sequence_v1
+parity,parity,{},1,parity,False,task_template,integer,permworld_sequence_v1
+cycle_type,cycle_type,{},1,cycle_decomposition,False,task_template,integer_partition,permworld_sequence_v1
+rsk_shape,rsk_shape,{},1,global_subsequence,True,task_template,integer_partition,permworld_sequence_v1
+lis_length,lis_length,{},1,global_subsequence,True,task_template,integer,permworld_sequence_v1
+lds_length,lds_length,{},1,global_subsequence,True,task_template,integer,permworld_sequence_v1
+"pattern_avoidance[pattern=1,2,3]",pattern_avoidance,"{""pattern"": [1, 2, 3]}",1,pattern_avoidance,False,parameterized_template,boolean,permworld_sequence_v1
+inverse,inverse,{},1,inverse,False,task_template,permutation,permworld_sequence_v1
+compose,compose,{},2,compose,False,task_template,permutation,permworld_sequence_v1
+power[exponent=2],power,"{""exponent"": 2}",1,power,False,parameterized_template,permutation,permworld_sequence_v1
+conjugate,conjugate,{},2,conjugate,False,task_template,permutation,permworld_sequence_v1
+commutator,commutator,{},2,commutator,False,task_template,permutation,permworld_sequence_v1
+right_multiply_simple[index=1],right_multiply_simple,"{""index"": 1}",1,right_multiply_simple,False,parameterized_template,permutation,permworld_sequence_v1
+bruhat_leq,bruhat_leq,{},2,bruhat_leq,False,task_template,boolean,permworld_sequence_v1
+peaks,peaks,{},1,peaks,False,task_template,integer,permworld_sequence_v1
+exceedances,exceedances,{},1,exceedances,False,task_template,integer,permworld_sequence_v1
+recoils,recoils,{},1,recoils,False,task_template,integer,permworld_sequence_v1
+valleys,valleys,{},1,valleys,False,task_template,integer,permworld_sequence_v1
+double_ascents,double_ascents,{},1,double_ascents,False,task_template,integer,permworld_sequence_v1
+double_descents,double_descents,{},1,double_descents,False,task_template,integer,permworld_sequence_v1
+successions,successions,{},1,successions,False,task_template,integer,permworld_sequence_v1
+adjacencies,adjacencies,{},1,adjacencies,False,task_template,integer,permworld_sequence_v1
+anti_fixed_points,anti_fixed_points,{},1,anti_fixed_points,False,task_template,integer,permworld_sequence_v1
+deficiencies,deficiencies,{},1,deficiencies,False,task_template,integer,permworld_sequence_v1
+left_to_right_maxima,left_to_right_maxima,{},1,left_to_right_maxima,False,task_template,integer,permworld_sequence_v1
+left_to_right_minima,left_to_right_minima,{},1,left_to_right_minima,False,task_template,integer,permworld_sequence_v1
+right_to_left_maxima,right_to_left_maxima,{},1,right_to_left_maxima,False,task_template,integer,permworld_sequence_v1
+right_to_left_minima,right_to_left_minima,{},1,right_to_left_minima,False,task_template,integer,permworld_sequence_v1
+cycle_count,cycle_count,{},1,cycle_decomposition,True,task_template,integer,permworld_sequence_v1
+two_cycle_count,two_cycle_count,{},1,cycle_decomposition,False,parameter_alias,integer,permworld_sequence_v1
+three_cycle_count,three_cycle_count,{},1,cycle_decomposition,False,parameter_alias,integer,permworld_sequence_v1
+even_cycle_count,even_cycle_count,{},1,cycle_decomposition,True,task_template,integer,permworld_sequence_v1
+odd_cycle_count,odd_cycle_count,{},1,cycle_decomposition,True,task_template,integer,permworld_sequence_v1
+longest_cycle,longest_cycle,{},1,cycle_decomposition,True,task_template,integer,permworld_sequence_v1
+shortest_cycle,shortest_cycle,{},1,cycle_decomposition,False,task_template,integer,permworld_sequence_v1
+nontrivial_cycle_count,nontrivial_cycle_count,{},1,cycle_decomposition,True,task_template,integer,permworld_sequence_v1
+longest_increasing_run,longest_increasing_run,{},1,longest_increasing_run,False,task_template,integer,permworld_sequence_v1
+longest_decreasing_run,longest_decreasing_run,{},1,longest_decreasing_run,False,task_template,integer,permworld_sequence_v1
+global_descents,global_descents,{},1,permutation_blocks,True,task_template,integer,permworld_sequence_v1
+components,components,{},1,permutation_blocks,True,task_template,integer,permworld_sequence_v1
+max_displacement,max_displacement,{},1,max_displacement,False,task_template,integer,permworld_sequence_v1
+displacement_one_count,displacement_one_count,{},1,displacement_one_count,False,task_template,integer,permworld_sequence_v1
+cycle_length_count[k=1],cycle_length_count,"{""k"": 1}",1,cycle_decomposition,True,parameterized_template,integer,permworld_sequence_v1
+cycle_length_count[k=2],cycle_length_count,"{""k"": 2}",1,cycle_decomposition,True,parameterized_template,integer,permworld_sequence_v1
+cycle_length_count[k=3],cycle_length_count,"{""k"": 3}",1,cycle_decomposition,True,parameterized_template,integer,permworld_sequence_v1
+increasing_subsequence_count[k=1],increasing_subsequence_count,"{""k"": 1}",1,global_subsequence,True,parameterized_template,integer,permworld_sequence_v1
+increasing_subsequence_count[k=2],increasing_subsequence_count,"{""k"": 2}",1,global_subsequence,True,parameterized_template,integer,permworld_sequence_v1
+increasing_subsequence_count[k=3],increasing_subsequence_count,"{""k"": 3}",1,global_subsequence,True,parameterized_template,integer,permworld_sequence_v1
+decreasing_subsequence_count[k=1],decreasing_subsequence_count,"{""k"": 1}",1,global_subsequence,True,parameterized_template,integer,permworld_sequence_v1
+decreasing_subsequence_count[k=2],decreasing_subsequence_count,"{""k"": 2}",1,global_subsequence,True,parameterized_template,integer,permworld_sequence_v1
+decreasing_subsequence_count[k=3],decreasing_subsequence_count,"{""k"": 3}",1,global_subsequence,True,parameterized_template,integer,permworld_sequence_v1
+largest_component,largest_component,{},1,permutation_blocks,True,task_template,integer,permworld_sequence_v1
+smallest_component,smallest_component,{},1,permutation_blocks,True,task_template,integer,permworld_sequence_v1
+component_length_count[k=1],component_length_count,"{""k"": 1}",1,permutation_blocks,True,parameterized_template,integer,permworld_sequence_v1
+component_length_count[k=2],component_length_count,"{""k"": 2}",1,permutation_blocks,True,parameterized_template,integer,permworld_sequence_v1
+component_length_count[k=3],component_length_count,"{""k"": 3}",1,permutation_blocks,True,parameterized_template,integer,permworld_sequence_v1

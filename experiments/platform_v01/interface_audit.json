@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "encoding": "permworld_sequence_v1",
+  "vocabulary_size": 203,
+  "historical_ids_preserved": 188,
+  "endpoint_instance_roundtrips": 62,
+  "integer_or_structure_roundtrips": 14,
+  "malformed_decodings_rejected": 3,
+  "large_answer": 155117520,
+  "large_answer_token_count": 8,
+  "excessive_context_explicitly_rejected": true
+}

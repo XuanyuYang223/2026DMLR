@@ -1,0 +1,10 @@
+{
+  "unix": 1792403604.8283987,
+  "torch": "2.11.0+cu128",
+  "numpy": "2.5.4",
+  "python": "3.13.14 (main, Jun 23 2026, 15:19:27) [MSC v.1944 64 bit (AMD64)]",
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 5070",
+  "cuda": "12.8",
+  "frozen_protocol_sha256": "7f3de88f42a15fd80db4e6ddc2c8036df7a52d605bcb4aeb9cbe893455baddfd"
+}

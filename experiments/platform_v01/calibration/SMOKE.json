@@ -1,0 +1,91 @@
+{
+  "passed": true,
+  "unix": 1792403418.1839182,
+  "seconds": 1.6700846999883652,
+  "save_resume_bitwise": true,
+  "causal_answer_leakage_absent": true,
+  "greedy_generation_independent_of_gold": true,
+  "explicit_padding_checked": true,
+  "evaluation_preserves_rng": true,
+  "optimizer_initially_empty": true,
+  "two_updates": true,
+  "test_split_opened": false,
+  "metrics": [
+    {
+      "length": 8,
+      "correct": 0,
+      "eos_generated": 8,
+      "majority_correct": 0,
+      "count": 8,
+      "accuracy": 0.0,
+      "answer_ce": 5.3774542808532715,
+      "eos_ce": 2.0832977294921875,
+      "sequence_ce": 3.7303762435913086,
+      "eos_accuracy": 1.0,
+      "majority_accuracy": 0.0,
+      "majority_answer": 4
+    },
+    {
+      "length": 10,
+      "correct": 0,
+      "eos_generated": 8,
+      "majority_correct": 0,
+      "count": 8,
+      "accuracy": 0.0,
+      "answer_ce": 5.186947822570801,
+      "eos_ce": 2.1631903648376465,
+      "sequence_ce": 3.6750690937042236,
+      "eos_accuracy": 1.0,
+      "majority_accuracy": 0.0,
+      "majority_answer": 6
+    },
+    {
+      "length": 12,
+      "correct": 0,
+      "eos_generated": 8,
+      "majority_correct": 0,
+      "count": 8,
+      "accuracy": 0.0,
+      "answer_ce": 5.425180435180664,
+      "eos_ce": 1.7814501523971558,
+      "sequence_ce": 3.6033153533935547,
+      "eos_accuracy": 1.0,
+      "majority_accuracy": 0.0,
+      "majority_answer": 27
+    },
+    {
+      "length": "all",
+      "count": 24,
+      "correct": 0,
+      "eos_generated": 24,
+      "majority_correct": 0,
+      "accuracy": 0.0,
+      "answer_ce": 5.329860846201579,
+      "eos_ce": 2.0093127489089966,
+      "sequence_ce": 3.6695868968963623,
+      "eos_accuracy": 1.0,
+      "majority_accuracy": 0.0,
+      "majority_answer": "training-derived per-length values"
+    }
+  ],
+  "smoke_answer_values": [
+    220,
+    0,
+    21,
+    57,
+    27,
+    41,
+    27,
+    20
+  ],
+  "smoke_answer_token_lengths": [
+    5,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "runs": 12,
+  "updates": 28800,
+  "input_tokens": 52841514,
+  "padded_input_tokens": 52987008,
+  "supervised_tokens": 3689514,
+  "sample_exposures": 1843200,
+  "run_seconds": 853.6019291999401,
+  "test_evaluated": false,
+  "training_timer_scope": "Full train/dev evaluations and checkpoint saves included; data encoding, summaries/audits excluded"
+}
