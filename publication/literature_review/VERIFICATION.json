@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "baseline_commit": "5cb6b9f3898c4d8c2857b5f5530d9785c8124a38",
+  "changed_baseline_paths": [
+    "publication/CONTRIBUTIONS.md",
+    "publication/PAPER_DRAFT.md",
+    "publication/README.md",
+    "publication/references.bib",
+    "publication/verify.py"
+  ],
+  "new_document_hashes_checked": 11,
+  "external_bibliography_entries": 9,
+  "markdown_table_blocks_checked": 11,
+  "unchanged_manuscript_sections": [
+    "## 4. Experimental record and protocol boundaries",
+    "## 5. Findings",
+    "## Appendix A. Evidence and protocol map"
+  ],
+  "historical_release_records": "unchanged",
+  "all_other_baseline_tracked_paths": "unchanged",
+  "scientific_source_and_figure_hashes": "checked separately by publication/verify.py",
+  "external_capability_review": "primary-source inspection; no external software reproduction",
+  "training_runs": 0,
+  "model_forwards": 0,
+  "checkpoint_files_opened": 0
+}

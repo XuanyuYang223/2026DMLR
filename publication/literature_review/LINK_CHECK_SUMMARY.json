@@ -1,0 +1,23 @@
+{
+  "scope": "External URL reachability only; paper/code content reviewed separately; no software execution",
+  "urls": 56,
+  "http_200": 56,
+  "access_caveats": [
+    {
+      "url": "https://openreview.net/forum?id=H1gR5iR5FX",
+      "status": 200,
+      "final_url": "https://openreview.net/challenge?redirect=%2Fforum%3Fid%3DH1gR5iR5FX",
+      "content_type": "text/html; charset=utf-8",
+      "access_note": "browser_challenge; metadata/fulltext reviewed through cited alternate sources",
+      "seconds": 0.354
+    },
+    {
+      "url": "https://openreview.net/forum?id=S1eZYeHFDS",
+      "status": 200,
+      "final_url": "https://openreview.net/challenge?redirect=%2Fforum%3Fid%3DS1eZYeHFDS",
+      "content_type": "text/html; charset=utf-8",
+      "access_note": "browser_challenge; metadata/fulltext reviewed through cited alternate sources",
+      "seconds": 0.29
+    }
+  ]
+}

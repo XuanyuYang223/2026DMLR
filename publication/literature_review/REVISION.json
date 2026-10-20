@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "revision": "literature-positioning-v1",
+  "baseline_commit": "5cb6b9f3898c4d8c2857b5f5530d9785c8124a38",
+  "scope": "Literature and editorial revision; scientific artifacts and prior acceptance unchanged",
+  "changed_files": {
+    "publication/CONTRIBUTIONS.md": {
+      "before_sha256": "4a0367b04a728d8664b9602a86b20685201d976b46e94491baf8f4defbc74673",
+      "after_sha256": "a5393583d1e9d07c0faaa6383e6c03c1d4903d44ff2d1b55a075321992ca4b18"
+    },
+    "publication/PAPER_DRAFT.md": {
+      "before_sha256": "ee573f8ce39d2cace0c2770d1f5a5763e1e55c26b3c5d19558b08f24b3646389",
+      "after_sha256": "d88e3f807f052e8230355e0c3a08e41e31e2d5f87d4c9130a24b0a70c826e8ca"
+    },
+    "publication/README.md": {
+      "before_sha256": "53e6c7a240a238e097cd1b9da1691910c73949a14d3bfe254f6dcb35609d0f90",
+      "after_sha256": "ee6c191d1071225557a6e39017c8958fc0e94e9177fac768c28139fda64f01e6"
+    },
+    "publication/references.bib": {
+      "before_sha256": "db48051aba3708bb4b591c3b7ef912f480d6106a912a9c35abace064ea11c728",
+      "after_sha256": "a0bfd9ddc631b39ca51b7bcb38efd4c30d1b428b281d61392a570d30571d351f"
+    },
+    "publication/verify.py": {
+      "before_sha256": "dc25058d5386bceca4992096dd44ea8865d891dde5fabb8b33ac9d3b0e2da8af",
+      "after_sha256": "73cce14de147fdf1905b37be8a8af283f5e8fcd6241024118108414c035866fd"
+    }
+  },
+  "added_files": {
+    "publication/literature_review/EXISTING_REFERENCES.md": {
+      "sha256": "6de02dd11f691a3f9eb03b12bee035e9d5c9f0bb87d8bbe717e02e4950256c4e"
+    },
+    "publication/literature_review/GUARD_CHECKS.json": {
+      "sha256": "73497842891fb4c5c163df11ce827dca652eb6a411e6e1cfc5293ac0687dde71"
+    },
+    "publication/literature_review/LINK_CHECK_SUMMARY.json": {
+      "sha256": "a89e4b78558e0660fa001fab4d52ed6e254207c06569ce0d20e5cf7c762f1018"
+    },
+    "publication/literature_review/LINK_CHECKS.csv": {
+      "sha256": "2082dabd96513c01fda7eed4a3015c612b2b897f7ffce071d1b35426e29c0c98"
+    },
+    "publication/literature_review/LOCAL_EVIDENCE_NOTES.md": {
+      "sha256": "85dad9a3de2e5301c13e631cb3176b66f080c0ede31f7cb0e0a266ead4157a28"
+    },
+    "publication/literature_review/METHOD_NOTES.md": {
+      "sha256": "c49ce21b5f7adb267c70953aaabb0949694784e6e29c46828cd777dab641a56b"
+    },
+    "publication/literature_review/RESOURCE_NOTES.md": {
+      "sha256": "aca6af60393d2ca84a1a3b9aeedf778b598906eb4f3e51fadde70cad41bb4467"
+    },
+    "publication/literature_review/REVISION.md": {
+      "sha256": "543f43cc44159e04c0f05430bc5702bec158ca4e10760ab920c48b3676f0bd52"
+    },
+    "publication/literature_review/START_STATE.json": {
+      "sha256": "599b8bf1b551f550442ade1d570d30aadbd1135f6eda254b5393d01dad81e256"
+    },
+    "publication/literature_review/verify_revision.py": {
+      "sha256": "cba5b77b16e34a09285daf1439d8b8ed9f2338fd9755230e80659ea52d66eac0"
+    },
+    "publication/RESOURCE_COMPARISON.md": {
+      "sha256": "36572b95480f4535b7c6c23f216e936f38a2f7e875b403fc672ca34fa8e72dd7"
+    }
+  },
+  "excluded_outputs": [
+    "PUBLICATION_VERIFICATION.json",
+    "REVISION.json",
+    "VERIFICATION.json",
+    "english_verify.log",
+    "publication_verify.log",
+    "validation.log"
+  ],
+  "output_scope": "Revision ledger and execution reports are recorded separately to avoid self-hash cycles.",
+  "training_runs": 0,
+  "model_forwards": 0
+}

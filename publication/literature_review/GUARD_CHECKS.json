@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "scope": "Expected rejection of historical-record writes; no historical record modified",
+  "checks": [
+    {
+      "argv": [
+        "F:\\permworld-release-check\\attempt03\\venv\\Scripts\\python.exe",
+        "-I",
+        "publication/verify.py",
+        "--report",
+        "publication/VERIFICATION.json"
+      ],
+      "expected_exit_code": 2,
+      "actual_exit_code": 2,
+      "stderr": "usage: verify.py [-h] [--record] [--report REPORT]\nverify.py: error: This editorial revision writes reports only to publication/literature_review/PUBLICATION_VERIFICATION.json; historical release records and inputs are protected.\n",
+      "status": "passed"
+    },
+    {
+      "argv": [
+        "F:\\permworld-release-check\\attempt03\\venv\\Scripts\\python.exe",
+        "-I",
+        "publication/verify.py",
+        "--record"
+      ],
+      "expected_exit_code": 1,
+      "actual_exit_code": 1,
+      "stderr": "Traceback (most recent call last):\n  File \"F:\\2026DMLR\\publication\\verify.py\", line 185, in <module>\n    write_manifest()\n    ~~~~~~~~~~~~~~^^\n  File \"F:\\2026DMLR\\publication\\verify.py\", line 69, in write_manifest\n    assert not DOCUMENTATION_REVISION.exists(), \\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Preserve the accepted release manifest; record this editorial revision separately.\n",
+      "status": "passed"
+    },
+    {
+      "argv": [
+        "F:\\permworld-release-check\\attempt03\\venv\\Scripts\\python.exe",
+        "-I",
+        "publication/literature_review/verify_revision.py",
+        "--report",
+        "publication/MANIFEST.json"
+      ],
+      "expected_exit_code": 2,
+      "actual_exit_code": 2,
+      "stderr": "usage: verify_revision.py [-h] [--record] [--report REPORT]\nverify_revision.py: error: Write this revision's report only to publication/literature_review/VERIFICATION.json\n",
+      "status": "passed"
+    }
+  ],
+  "protected_hashes_unchanged": true
+}

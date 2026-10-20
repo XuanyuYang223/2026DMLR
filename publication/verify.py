@@ -19,6 +19,12 @@ ARCHIVED_PROVENANCE = {
     "upstream_alignment_by_relation.csv", "upstream_alignment_by_seed.csv",
     "upstream_alignment_final_norm.csv", "UPSTREAM_AUDIT.json", "upstream_resource_inventory.json",
 }
+DOCUMENTATION_BASE = "5cb6b9f3898c4d8c2857b5f5530d9785c8124a38"
+DOCUMENTATION_REVISION = HERE / "literature_review/REVISION.json"
+DOCUMENTATION_EDITS = {
+    "publication/PAPER_DRAFT.md", "publication/CONTRIBUTIONS.md",
+    "publication/README.md", "publication/references.bib", "publication/verify.py",
+}
 
 
 def sha(path):
@@ -33,7 +39,35 @@ def git(*args):
     return subprocess.check_output(["git", "-C", str(ROOT), *args])
 
 
+def documentation_overlay(manifest):
+    """Resolve an explicit editorial revision without rebinding release evidence."""
+    if not DOCUMENTATION_REVISION.exists():
+        return {}
+    revision = load(DOCUMENTATION_REVISION)
+    assert revision["baseline_commit"] == DOCUMENTATION_BASE
+    for rel in ("publication/MANIFEST.json", "publication/VERIFICATION.json"):
+        assert (ROOT / rel).read_bytes() == git("show", f"{DOCUMENTATION_BASE}:{rel}"), \
+            f"Historical release record changed: {rel}"
+    overlay = revision["changed_files"]
+    assert set(overlay) <= DOCUMENTATION_EDITS, "Unexpected editorial override"
+    for rel, info in overlay.items():
+        before = hashlib.sha256(git("show", f"{DOCUMENTATION_BASE}:{rel}")).hexdigest()
+        assert before == info["before_sha256"] == manifest["files"][rel]["sha256"], \
+            f"Editorial baseline mismatch: {rel}"
+        assert sha(ROOT / rel) == info["after_sha256"], f"Editorial revision changed: {rel}"
+    baseline_paths = set(git("ls-tree", "-r", "--name-only", DOCUMENTATION_BASE).decode().splitlines())
+    for rel, info in revision["added_files"].items():
+        assert rel not in baseline_paths, f"New documentation overwrites history: {rel}"
+        assert rel == "publication/RESOURCE_COMPARISON.md" or rel.startswith("publication/literature_review/"), \
+            f"Unexpected documentation addition: {rel}"
+        assert ".." not in Path(rel).parts and not Path(rel).is_absolute()
+        assert sha(ROOT / rel) == info["sha256"], f"New documentation changed: {rel}"
+    return overlay
+
+
 def write_manifest():
+    assert not DOCUMENTATION_REVISION.exists(), \
+        "Preserve the accepted release manifest; record this editorial revision separately."
     paths = [p for p in HERE.rglob("*") if p.is_file() and "__pycache__" not in p.parts
              and p.name not in {"MANIFEST.json", "VERIFICATION.json"}
              and p.name not in ARCHIVED_PROVENANCE]
@@ -53,9 +87,11 @@ def write_manifest():
 def verify():
     manifest = load(MANIFEST)
     assert manifest["base_revision"] == BASE
+    overlay = documentation_overlay(manifest)
     for rel, info in manifest["files"].items():
         path = ROOT / rel
-        assert path.is_file() and sha(path) == info["sha256"], f"Publication file changed: {rel}"
+        expected = overlay[rel]["after_sha256"] if rel in overlay else info["sha256"]
+        assert path.is_file() and sha(path) == expected, f"Publication file changed: {rel}"
     changed = set(filter(None, git("diff", "--name-only", "-z", BASE).decode().split("\0")))
     unexpected = {p for p in changed if p not in ALLOWED_PRIOR_EDITS
                   and not p.startswith(("publication/", "maintenance/documentation_revisions/", "release_checks/", "permworld_release/"))}
@@ -126,6 +162,10 @@ def verify():
               "training_runs": 0, "neural_forwards": 0,
               "checkpoint_files_opened": 0,
               "note": "Validates source bindings and saved arithmetic audits; not a new model replication"}
+    if overlay:
+        result["documentation_revision"] = "literature-positioning-v1"
+        result["explicit_documentation_overrides"] = len(overlay)
+        result["historical_release_manifest_and_verification"] = "byte-identical to release-check baseline"
     print(json.dumps(result, indent=2))
     return result
 
@@ -135,6 +175,12 @@ if __name__ == "__main__":
     parser.add_argument("--record", action="store_true", help="Record after reviewing the publication package")
     parser.add_argument("--report", type=Path)
     args = parser.parse_args()
+    if args.report and DOCUMENTATION_REVISION.exists():
+        destination = HERE / "literature_review/PUBLICATION_VERIFICATION.json"
+        if args.report.resolve() != destination.resolve():
+            parser.error("This editorial revision writes reports only to "
+                         "publication/literature_review/PUBLICATION_VERIFICATION.json; "
+                         "historical release records and inputs are protected.")
     if args.record:
         write_manifest()
     result = verify()

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "known_baseline": "5cb6b9f3898c4d8c2857b5f5530d9785c8124a38",
+  "initial_head": "5cb6b9f3898c4d8c2857b5f5530d9785c8124a38",
+  "initial_branch": "publication/permworld-dmlr-release-check",
+  "initial_porcelain_status": "",
+  "working_branch": "publication/permworld-dmlr-literature-positioning",
+  "workspace": "F:/2026DMLR",
+  "preexisting_changes": "None; no reset, checkout restoration or historical overwrite performed.",
+  "applicable_instructions": ["AGENTS.md"],
+  "scope": "Primary-source literature verification, resource comparison and manuscript positioning; no training or model test evaluation."
+}
