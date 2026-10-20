@@ -1,0 +1,127 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-10-20T01:37:30.178251+00:00",
+  "checkouts": {
+    "neurips": {
+      "repository": "XuanyuYang223/neurips",
+      "revision": "74f0de2017115f06f11b7285366b66e7e8431d30",
+      "remote": "https://github.com/XuanyuYang223/neurips.git",
+      "clean_worktree": true,
+      "remote_head_observed": "74f0de2017115f06f11b7285366b66e7e8431d30\tHEAD"
+    },
+    "tmlr": {
+      "repository": "XuanyuYang223/2026TMLR",
+      "revision": "d9a113d20d34db3c21cf69cf546cff4a0ab4904a",
+      "remote": "https://github.com/XuanyuYang223/2026TMLR.git",
+      "clean_worktree": true,
+      "remote_head_observed": "d9a113d20d34db3c21cf69cf546cff4a0ab4904a\tHEAD"
+    }
+  },
+  "source_inventory_rows": 42,
+  "missing_publication_inventory": {
+    "neurips": {
+      "tex_sources": [],
+      "bib_sources": [],
+      "license_notice_files": []
+    },
+    "tmlr": {
+      "tex_sources": [],
+      "bib_sources": [],
+      "license_notice_files": []
+    }
+  },
+  "alignment_raw_export_rows": 72,
+  "alignment_seed_units": 24,
+  "alignment_relation_units": 8,
+  "positive_seed_contrasts": {
+    "correct_minus_identity": 24,
+    "correct_minus_wrong": 24
+  },
+  "positive_relation_contrasts": {
+    "correct_minus_identity": 8,
+    "correct_minus_wrong": 8
+  },
+  "relation_level_two_sided_sign_p_when_all_eight_positive": 0.0078125,
+  "original_summary_recomputed_from_saved_raw_rows": true,
+  "training_or_model_forwards_run": false,
+  "upstream_modified": false,
+  "verified_vendor_reuse": [
+    {
+      "source": "reference/neurips/src/neurips_permutations/__init__.py",
+      "copy": "experiments/permworld_pilot/vendor/neurips_permutations/__init__.py",
+      "exact_bytes": true,
+      "newline_normalized_text_equal": true,
+      "source_sha256": "cded340b85f88422b18cde5b894e6543f089d254d94faa3d3b2b2b1c08e9d91e",
+      "copy_sha256": "cded340b85f88422b18cde5b894e6543f089d254d94faa3d3b2b2b1c08e9d91e"
+    },
+    {
+      "source": "reference/neurips/src/neurips_permutations/math_ops.py",
+      "copy": "experiments/permworld_pilot/vendor/neurips_permutations/math_ops.py",
+      "exact_bytes": true,
+      "newline_normalized_text_equal": true,
+      "source_sha256": "3f6832b4798a20cc6b813a0b64ec01cf10360fbf3d6256cb59d1d793d4ad345f",
+      "copy_sha256": "3f6832b4798a20cc6b813a0b64ec01cf10360fbf3d6256cb59d1d793d4ad345f"
+    },
+    {
+      "source": "reference/neurips/src/neurips_permutations/models.py",
+      "copy": "experiments/permworld_pilot/vendor/neurips_permutations/models.py",
+      "exact_bytes": true,
+      "newline_normalized_text_equal": true,
+      "source_sha256": "ed3ac73b6edaa6ed5c0c2528ba2c37fb903b55259840dfb17f8851562c2599a0",
+      "copy_sha256": "ed3ac73b6edaa6ed5c0c2528ba2c37fb903b55259840dfb17f8851562c2599a0"
+    },
+    {
+      "source": "reference/neurips/src/neurips_permutations/passage.py",
+      "copy": "experiments/permworld_pilot/vendor/neurips_permutations/passage.py",
+      "exact_bytes": true,
+      "newline_normalized_text_equal": true,
+      "source_sha256": "6c103494507358b8b4d2ee6a5c69a31fc391ae4cd35d7f1126bdac891fe07e09",
+      "copy_sha256": "6c103494507358b8b4d2ee6a5c69a31fc391ae4cd35d7f1126bdac891fe07e09"
+    },
+    {
+      "source": "reference/2026TMLR/experiments/longrun_attention.py",
+      "copy": "experiments/permworld_pilot/vendor/sdpa.py",
+      "exact_bytes": true,
+      "newline_normalized_text_equal": true,
+      "source_sha256": "5035f58453ddee5c5d5b05878491dfcc81764e172f2ebada437dc9e325048918",
+      "copy_sha256": "5035f58453ddee5c5d5b05878491dfcc81764e172f2ebada437dc9e325048918"
+    }
+  ],
+  "remote_release_metadata": [
+    {
+      "api_url": "https://api.github.com/repos/XuanyuYang223/neurips/releases/tags/permutation-data-2026-09-04",
+      "url": "https://github.com/XuanyuYang223/neurips/releases/tag/permutation-data-2026-09-04",
+      "tag": "permutation-data-2026-09-04",
+      "draft": false,
+      "prerelease": false,
+      "asset_count": 12,
+      "asset_bytes": 15401813684,
+      "asset_payloads_downloaded": false
+    },
+    {
+      "api_url": "https://api.github.com/repos/XuanyuYang223/neurips/releases/tags/permutation-checkpoints-2026-09-04",
+      "url": "https://github.com/XuanyuYang223/neurips/releases/tag/permutation-checkpoints-2026-09-04",
+      "tag": "permutation-checkpoints-2026-09-04",
+      "draft": false,
+      "prerelease": false,
+      "asset_count": 16,
+      "asset_bytes": 17235227035,
+      "asset_payloads_downloaded": false
+    },
+    {
+      "api_url": "https://api.github.com/repos/XuanyuYang223/2026TMLR/releases/tags/representation-selectivity-2026-10-11-caveat",
+      "url": "https://github.com/XuanyuYang223/2026TMLR/releases/tag/representation-selectivity-2026-10-11-caveat",
+      "tag": "representation-selectivity-2026-10-11-caveat",
+      "draft": false,
+      "prerelease": true,
+      "asset_count": 91,
+      "asset_bytes": 66296943147,
+      "asset_payloads_downloaded": false
+    }
+  ],
+  "exported_data_sha256": {
+    "upstream_alignment_by_relation.csv": "37ffd41f9edfdd59e7eb84bb52cf656fefa2a635ec3bd45134e35e814b8e2b5e",
+    "upstream_alignment_by_seed.csv": "e86e846dc19bb74fb1374b5084b9aad4195376fc2d38c8b5daf674427d751c76",
+    "upstream_alignment_final_norm.csv": "2d2b37269e5c3ed0aaa98f621b15fc5eb92ed8c385f953cccde13cea10c96dbb"
+  }
+}

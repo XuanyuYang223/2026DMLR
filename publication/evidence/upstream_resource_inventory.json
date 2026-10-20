@@ -1,0 +1,316 @@
+{
+  "original_task_grids": {
+    "V2_TASK_NAMES": [
+      "to_cycle",
+      "to_lehmer",
+      "to_inversion_vector",
+      "to_reduced_word",
+      "length",
+      "descents",
+      "fixed_points",
+      "parity",
+      "cycle_type",
+      "rsk_shape",
+      "lis_length",
+      "lds_length",
+      "pattern_avoidance",
+      "inverse",
+      "compose",
+      "power",
+      "conjugate",
+      "commutator",
+      "right_multiply_simple",
+      "bruhat_leq"
+    ],
+    "V3_TASK_NAMES": [
+      "to_cycle",
+      "to_lehmer",
+      "to_inversion_vector",
+      "to_reduced_word",
+      "length",
+      "descents",
+      "fixed_points",
+      "parity",
+      "cycle_type",
+      "rsk_shape",
+      "lis_length",
+      "lds_length",
+      "pattern_avoidance",
+      "peaks",
+      "exceedances",
+      "recoils",
+      "inverse",
+      "compose",
+      "right_multiply_simple",
+      "bruhat_leq"
+    ],
+    "PROPERTY32_TASK_NAMES": [
+      "descents",
+      "recoils",
+      "peaks",
+      "valleys",
+      "double_ascents",
+      "double_descents",
+      "successions",
+      "adjacencies",
+      "fixed_points",
+      "anti_fixed_points",
+      "exceedances",
+      "deficiencies",
+      "left_to_right_maxima",
+      "left_to_right_minima",
+      "right_to_left_maxima",
+      "right_to_left_minima",
+      "cycle_count",
+      "two_cycle_count",
+      "three_cycle_count",
+      "even_cycle_count",
+      "odd_cycle_count",
+      "longest_cycle",
+      "shortest_cycle",
+      "nontrivial_cycle_count",
+      "lis_length",
+      "lds_length",
+      "longest_increasing_run",
+      "longest_decreasing_run",
+      "global_descents",
+      "components",
+      "max_displacement",
+      "displacement_one_count"
+    ]
+  },
+  "original_grid_sizes": {
+    "V2_TASK_NAMES": 20,
+    "V3_TASK_NAMES": 20,
+    "PROPERTY32_TASK_NAMES": 32
+  },
+  "original_distinct_endpoint_union": 48,
+  "original_input_representations": [
+    "one_line",
+    "cycle",
+    "lehmer",
+    "inversion_vector"
+  ],
+  "dmlr_platform_counts": {
+    "legacy_endpoints_preserved": 48,
+    "new_registry_endpoints": 6,
+    "total_registry_endpoints": 54,
+    "parameter_alias_endpoints": 2,
+    "representation_only_endpoints": 4,
+    "canonical_mathematical_templates": 48,
+    "all_declared_endpoint_instances_including_aliases_and_binary": 62,
+    "canonical_declared_instances_including_binary": 60,
+    "default_unary_manifest_instances": 56,
+    "focus_templates": 16,
+    "focus_declared_instances": 24,
+    "focus_nonconstant_instances": 22,
+    "focus_same_input_distinct_functions": 23,
+    "focus_value_preserving_declared_transform_classes": 20,
+    "focus_nonconstant_value_preserving_declared_transform_classes": 19,
+    "effective_count_scope": "Focus instances only; collapse the two k=1 constants, and declared complement/reversal identity-answer pairs LIS/LDS and increasing/decreasing count k=2,3. This is not a classification under arbitrary answer maps. See mathematics/EQUIVALENCE_AUDIT.json for formulas and distinctness witnesses.",
+    "input_encoding_variants": [
+      "one_line_v1"
+    ],
+    "upstream_encodings_not_exposed_in_platform_v01": [
+      "canonical_cycle",
+      "lehmer",
+      "inversion_vector"
+    ],
+    "output_protocol_versions": [
+      "permworld_sequence_v1"
+    ],
+    "families": {
+      "cycle_decomposition": {
+        "canonical_templates": 6,
+        "declared_instances": 8,
+        "parameterized_templates": 1,
+        "implemented_input_encoding_variants": 1
+      },
+      "global_subsequence": {
+        "canonical_templates": 5,
+        "declared_instances": 9,
+        "parameterized_templates": 2,
+        "implemented_input_encoding_variants": 1
+      },
+      "permutation_blocks": {
+        "canonical_templates": 5,
+        "declared_instances": 7,
+        "parameterized_templates": 1,
+        "implemented_input_encoding_variants": 1
+      }
+    },
+    "exact_equivalences": [
+      {
+        "left": "two_cycle_count",
+        "right": "cycle_length_count[k=2]",
+        "class": "parameter_alias"
+      },
+      {
+        "left": "three_cycle_count",
+        "right": "cycle_length_count[k=3]",
+        "class": "parameter_alias"
+      },
+      {
+        "left": "fixed_points",
+        "right": "cycle_length_count[k=1]",
+        "class": "same_input_identical_label"
+      },
+      {
+        "left": "length",
+        "right": "decreasing_subsequence_count[k=2]",
+        "class": "same_input_identical_label"
+      },
+      {
+        "left": "increasing_subsequence_count[k=1]",
+        "right": "decreasing_subsequence_count[k=1]",
+        "class": "both equal n; constant conditional on length"
+      }
+    ],
+    "interpretation": "48 is a canonical template count, not a claim of 48 mathematically independent tasks. Input-transform and answer-map equivalences are kept in the relation registry, not silently erased; global constant tasks remain visible."
+  },
+  "dmlr_registered_relations": 74,
+  "dmlr_relation_origins": {
+    "pilot_v5_unchanged_certificate": 29,
+    "platform_v0.1_new_relation": 45
+  },
+  "dmlr_relation_evidence_classes": {
+    "proved_from_definitions": 72,
+    "proved_rsk_insertion_theorem": 2
+  },
+  "original_geometry_model_seeds": [
+    17,
+    42,
+    101
+  ],
+  "original_geometry_probe_inputs": 4096,
+  "original_geometry_probe": {
+    "input_encoding": "one_line",
+    "split": "validation",
+    "task_query_present": false,
+    "feature_layer": "final_norm",
+    "feature_position": "last task-free prefix token <ONE_END>",
+    "token_mean_pooling": false,
+    "feature_width": 256,
+    "similarity": "ordinary centered linear CKA across all 4096 pooled example vectors",
+    "length_adjustment": "none; not computed separately within length",
+    "answer_stratification": false,
+    "n_histogram": {
+      "10": 143,
+      "11": 150,
+      "12": 148,
+      "13": 156,
+      "14": 147,
+      "15": 142,
+      "16": 139,
+      "17": 154,
+      "18": 123,
+      "19": 134,
+      "2": 155,
+      "20": 144,
+      "21": 149,
+      "22": 142,
+      "23": 141,
+      "24": 137,
+      "25": 146,
+      "26": 144,
+      "27": 149,
+      "28": 125,
+      "29": 126,
+      "3": 134,
+      "30": 140,
+      "4": 141,
+      "5": 122,
+      "6": 139,
+      "7": 131,
+      "8": 143,
+      "9": 152
+    },
+    "probe_sha256": "3e30ab83d41ef53c97ea5d50917be4c073c9440d7300b252215c3f09aa3bd62f",
+    "probe_seed": 20260908,
+    "selection": "smallest_sha256(seed:record_id)",
+    "probe_manifest_binding": {
+      "source_repository": "XuanyuYang223/neurips",
+      "source_revision": "74f0de2017115f06f11b7285366b66e7e8431d30",
+      "source_repository_path": "results/property-task-geometry/cka/probe_manifests.json",
+      "source_local_path": "reference/neurips/results/property-task-geometry/cka/probe_manifests.json",
+      "source_url": "https://github.com/XuanyuYang223/neurips/blob/74f0de2017115f06f11b7285366b66e7e8431d30/results/property-task-geometry/cka/probe_manifests.json",
+      "source_worktree_sha256": "07a3cd3b487e3496a883cf01e371b17ab47f041c4e3e08b7088e74290269ec50",
+      "source_git_blob_sha256": "0168cbc7c0af2ab5f3384c128a156cb9fb1b22858e24b90396a385ab05cdc093",
+      "source_worktree_bytes": 211915,
+      "source_git_blob_bytes": 199493
+    },
+    "feature_code_binding": {
+      "source_repository": "XuanyuYang223/neurips",
+      "source_revision": "74f0de2017115f06f11b7285366b66e7e8431d30",
+      "source_repository_path": "src/neurips_permutations/cka.py",
+      "source_local_path": "reference/neurips/src/neurips_permutations/cka.py",
+      "source_url": "https://github.com/XuanyuYang223/neurips/blob/74f0de2017115f06f11b7285366b66e7e8431d30/src/neurips_permutations/cka.py",
+      "source_worktree_sha256": "c21b56701db590002617141d5b82fbbb9598624234c7adaabfbd2b94d920f7b0",
+      "source_git_blob_sha256": "baaf8805426260d95412137235fab618a4be6cee8befe8a0c340e3064970cf7f",
+      "source_worktree_bytes": 65482,
+      "source_git_blob_bytes": 63796
+    }
+  },
+  "original_geometry_updates": 20000,
+  "tmlr_primary_cells": 32,
+  "tmlr_positive_Bt": 26,
+  "tmlr_positive_Delta": 18,
+  "tmlr_unit_caveat": "One paired data world; shared initial weights and models; 32 cells are not independent repeats",
+  "source_bindings": {
+    "src/neurips_permutations/math_ops.py": {
+      "source_repository": "XuanyuYang223/neurips",
+      "source_revision": "74f0de2017115f06f11b7285366b66e7e8431d30",
+      "source_repository_path": "src/neurips_permutations/math_ops.py",
+      "source_local_path": "reference/neurips/src/neurips_permutations/math_ops.py",
+      "source_url": "https://github.com/XuanyuYang223/neurips/blob/74f0de2017115f06f11b7285366b66e7e8431d30/src/neurips_permutations/math_ops.py",
+      "source_worktree_sha256": "3f6832b4798a20cc6b813a0b64ec01cf10360fbf3d6256cb59d1d793d4ad345f",
+      "source_git_blob_sha256": "968e7580c01289e5ffeab9f07c52beb334be40d95c0e61d7a7f9e2cab694c62c",
+      "source_worktree_bytes": 27982,
+      "source_git_blob_bytes": 27121
+    },
+    "src/neurips_permutations/passage.py": {
+      "source_repository": "XuanyuYang223/neurips",
+      "source_revision": "74f0de2017115f06f11b7285366b66e7e8431d30",
+      "source_repository_path": "src/neurips_permutations/passage.py",
+      "source_local_path": "reference/neurips/src/neurips_permutations/passage.py",
+      "source_url": "https://github.com/XuanyuYang223/neurips/blob/74f0de2017115f06f11b7285366b66e7e8431d30/src/neurips_permutations/passage.py",
+      "source_worktree_sha256": "6c103494507358b8b4d2ee6a5c69a31fc391ae4cd35d7f1126bdac891fe07e09",
+      "source_git_blob_sha256": "d200ffe6f5f6cff717c1b6ed6698a5a6af42bb6580fa4e8729a2fd84b79babd6",
+      "source_worktree_bytes": 25378,
+      "source_git_blob_bytes": 24650
+    },
+    "configs/property_task_geometry.toml": {
+      "source_repository": "XuanyuYang223/neurips",
+      "source_revision": "74f0de2017115f06f11b7285366b66e7e8431d30",
+      "source_repository_path": "configs/property_task_geometry.toml",
+      "source_local_path": "reference/neurips/configs/property_task_geometry.toml",
+      "source_url": "https://github.com/XuanyuYang223/neurips/blob/74f0de2017115f06f11b7285366b66e7e8431d30/configs/property_task_geometry.toml",
+      "source_worktree_sha256": "efbaa709b20b787398147ed43c4c1b7ba913c566dceb981a5f4d512c557dc218",
+      "source_git_blob_sha256": "8a3b21366ca344c0cb50f5a26108375b96eceb3ca49720ff001749ef09155e88",
+      "source_worktree_bytes": 8362,
+      "source_git_blob_bytes": 8133
+    },
+    "experiments/platform_v01/registry/TASK_COUNTS.json": {
+      "source_repository": "XuanyuYang223/2026DMLR",
+      "source_revision": "95e84e6af5de2c0a692da2f64bf95745455f5c3c",
+      "source_repository_path": "experiments/platform_v01/registry/TASK_COUNTS.json",
+      "source_local_path": "experiments/platform_v01/registry/TASK_COUNTS.json",
+      "source_url": "https://github.com/XuanyuYang223/2026DMLR/blob/95e84e6af5de2c0a692da2f64bf95745455f5c3c/experiments/platform_v01/registry/TASK_COUNTS.json",
+      "source_worktree_sha256": "8bafca96e93669726927dedeb785cc2721df48ba7ac870ec4d885fb5b8cce6ee",
+      "source_git_blob_sha256": "8bafca96e93669726927dedeb785cc2721df48ba7ac870ec4d885fb5b8cce6ee",
+      "source_worktree_bytes": 2820,
+      "source_git_blob_bytes": 2820
+    },
+    "experiments/platform_v01/mathematics/RELATIONS.json": {
+      "source_repository": "XuanyuYang223/2026DMLR",
+      "source_revision": "95e84e6af5de2c0a692da2f64bf95745455f5c3c",
+      "source_repository_path": "experiments/platform_v01/mathematics/RELATIONS.json",
+      "source_local_path": "experiments/platform_v01/mathematics/RELATIONS.json",
+      "source_url": "https://github.com/XuanyuYang223/2026DMLR/blob/95e84e6af5de2c0a692da2f64bf95745455f5c3c/experiments/platform_v01/mathematics/RELATIONS.json",
+      "source_worktree_sha256": "eac1a15aa2cae3b8ad478e99a03506e18089b432a3e77510a2bae2f7c789de4d",
+      "source_git_blob_sha256": "eac1a15aa2cae3b8ad478e99a03506e18089b432a3e77510a2bae2f7c789de4d",
+      "source_worktree_bytes": 136361,
+      "source_git_blob_bytes": 136361
+    }
+  }
+}

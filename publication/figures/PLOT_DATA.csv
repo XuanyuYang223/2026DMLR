@@ -1,0 +1,233 @@
+figure,panel,study,estimand,group,repeat_id,value,unit
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,descent_inverse,17,0.5084228088677445,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,descent_inverse,42,0.1588069523910259,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,descent_inverse,101,0.4041710224520228,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,exceedance_inverse,17,0.6518310922714403,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,exceedance_inverse,42,0.670394564628654,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,exceedance_inverse,101,0.5885662449608278,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,peak_complement,17,0.27388612791129485,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,peak_complement,42,0.2678617136847964,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,peak_complement,101,0.38189726392628126,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,fixed_complement,17,0.12177366344852361,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,fixed_complement,42,0.3748177462522055,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,fixed_complement,101,0.06340511783274161,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,subsequence_complement,17,0.21657805905413513,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,subsequence_complement,42,0.3575794544412663,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,subsequence_complement,101,0.5054936147732417,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,run_complement,17,0.902148919996522,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,run_complement,42,0.8306036241144864,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,run_complement,101,0.8758744671756677,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,record_complement,17,0.298269415366168,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,record_complement,42,0.32387252307836434,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,record_complement,101,0.3481032221371601,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,decomposition_complement,17,0.3704877889248537,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,decomposition_complement,42,0.20880492381128063,linear CKA difference
+figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,decomposition_complement,101,0.261924455229031,linear CKA difference
+figure1,d,platform_v0.1,Fixed-endpoint complete-answer dev accuracy,cycle_count,617,43.75,% accuracy
+figure1,d,platform_v0.1,Fixed-endpoint complete-answer dev accuracy,cycle_count,829,41.92708333333333,% accuracy
+figure1,d,platform_v0.1,Train-derived majority accuracy on dev,cycle_count,617,32.94270833333333,% accuracy
+figure1,d,platform_v0.1,Train-derived majority accuracy on dev,cycle_count,829,32.421875,% accuracy
+figure1,d,platform_v0.1,Fixed-endpoint complete-answer dev accuracy,longest_cycle,617,20.572916666666664,% accuracy
+figure1,d,platform_v0.1,Fixed-endpoint complete-answer dev accuracy,longest_cycle,829,24.479166666666664,% accuracy
+figure1,d,platform_v0.1,Train-derived majority accuracy on dev,longest_cycle,617,18.489583333333336,% accuracy
+figure1,d,platform_v0.1,Train-derived majority accuracy on dev,longest_cycle,829,15.494791666666666,% accuracy
+figure1,d,platform_v0.1,Fixed-endpoint complete-answer dev accuracy,lis_length,617,87.5,% accuracy
+figure1,d,platform_v0.1,Fixed-endpoint complete-answer dev accuracy,lis_length,829,85.02604166666666,% accuracy
+figure1,d,platform_v0.1,Train-derived majority accuracy on dev,lis_length,617,41.40625,% accuracy
+figure1,d,platform_v0.1,Train-derived majority accuracy on dev,lis_length,829,42.1875,% accuracy
+figure1,d,platform_v0.1,Fixed-endpoint complete-answer dev accuracy,increasing_subsequence_count,617,26.041666666666668,% accuracy
+figure1,d,platform_v0.1,Fixed-endpoint complete-answer dev accuracy,increasing_subsequence_count,829,24.479166666666664,% accuracy
+figure1,d,platform_v0.1,Train-derived majority accuracy on dev,increasing_subsequence_count,617,3.7760416666666665,% accuracy
+figure1,d,platform_v0.1,Train-derived majority accuracy on dev,increasing_subsequence_count,829,4.947916666666666,% accuracy
+figure1,d,platform_v0.1,Fixed-endpoint complete-answer dev accuracy,components,617,99.73958333333334,% accuracy
+figure1,d,platform_v0.1,Fixed-endpoint complete-answer dev accuracy,components,829,99.73958333333334,% accuracy
+figure1,d,platform_v0.1,Train-derived majority accuracy on dev,components,617,77.47395833333334,% accuracy
+figure1,d,platform_v0.1,Train-derived majority accuracy on dev,components,829,76.69270833333334,% accuracy
+figure1,d,platform_v0.1,Fixed-endpoint complete-answer dev accuracy,largest_component,617,98.95833333333334,% accuracy
+figure1,d,platform_v0.1,Fixed-endpoint complete-answer dev accuracy,largest_component,829,99.08854166666666,% accuracy
+figure1,d,platform_v0.1,Train-derived majority accuracy on dev,largest_component,617,77.47395833333334,% accuracy
+figure1,d,platform_v0.1,Train-derived majority accuracy on dev,largest_component,829,76.69270833333334,% accuracy
+figure2,a,pilot_v3,B-A,fixed_points,17,-6.4453125,percentage points
+figure2,a,pilot_v3,B-A,fixed_points,42,-13.28125,percentage points
+figure2,a,pilot_v3,B-A,fixed_points,73,-10.64453125,percentage points
+figure2,a,pilot_v3,C-A,fixed_points,17,-8.7890625,percentage points
+figure2,a,pilot_v3,C-A,fixed_points,42,-14.94140625,percentage points
+figure2,a,pilot_v3,C-A,fixed_points,73,-2.1484375,percentage points
+figure2,a,pilot_v3,B-A,exceedances,17,3.466796875,percentage points
+figure2,a,pilot_v3,B-A,exceedances,42,-1.3671875,percentage points
+figure2,a,pilot_v3,B-A,exceedances,73,5.6640625,percentage points
+figure2,a,pilot_v3,C-A,exceedances,17,-1.708984375,percentage points
+figure2,a,pilot_v3,C-A,exceedances,42,0.830078125,percentage points
+figure2,a,pilot_v3,C-A,exceedances,73,-8.837890625,percentage points
+figure2,a,pilot_v3,B-A,left_to_right_minima,17,0.244140625,percentage points
+figure2,a,pilot_v3,B-A,left_to_right_minima,42,-11.083984375,percentage points
+figure2,a,pilot_v3,B-A,left_to_right_minima,73,6.25,percentage points
+figure2,a,pilot_v3,C-A,left_to_right_minima,17,-7.080078125,percentage points
+figure2,a,pilot_v3,C-A,left_to_right_minima,42,2.392578125,percentage points
+figure2,a,pilot_v3,C-A,left_to_right_minima,73,13.818359375,percentage points
+figure2,a,pilot_v3,B-A,longest_decreasing_run,17,16.2109375,percentage points
+figure2,a,pilot_v3,B-A,longest_decreasing_run,42,-1.07421875,percentage points
+figure2,a,pilot_v3,B-A,longest_decreasing_run,73,18.45703125,percentage points
+figure2,a,pilot_v3,C-A,longest_decreasing_run,17,-1.953125,percentage points
+figure2,a,pilot_v3,C-A,longest_decreasing_run,42,0.244140625,percentage points
+figure2,a,pilot_v3,C-A,longest_decreasing_run,73,-0.634765625,percentage points
+figure2,b,pilot_v4,(B-C)new background - (B-C)original,fixed_points,17,1.416015625,percentage points
+figure2,b,pilot_v4,(B-C)new background - (B-C)original,fixed_points,42,0.341796875,percentage points
+figure2,b,pilot_v4,(B-C)new background - (B-C)original,fixed_points,73,11.328125,percentage points
+figure2,b,pilot_v5,(B-C)new background - (B-C)original,fixed_points,101,20.703125,percentage points
+figure2,b,pilot_v5,(B-C)new background - (B-C)original,fixed_points,211,0.1953125,percentage points
+figure2,b,pilot_v5,(B-C)new background - (B-C)original,fixed_points,307,-5.615234375,percentage points
+figure2,b,pilot_v5,(B-C)new background - (B-C)original,fixed_points,401,-7.568359375,percentage points
+figure2,b,pilot_v5,(B-C)new background - (B-C)original,fixed_points,503,-22.802734375,percentage points
+figure2,b,pilot_v4,(B-C)new background - (B-C)original,longest_decreasing_run,17,-20.068359375,percentage points
+figure2,b,pilot_v4,(B-C)new background - (B-C)original,longest_decreasing_run,42,2.001953125,percentage points
+figure2,b,pilot_v4,(B-C)new background - (B-C)original,longest_decreasing_run,73,-17.919921875,percentage points
+figure2,b,pilot_v5,(B-C)new background - (B-C)original,longest_decreasing_run,101,-24.462890625,percentage points
+figure2,b,pilot_v5,(B-C)new background - (B-C)original,longest_decreasing_run,211,-22.265625,percentage points
+figure2,b,pilot_v5,(B-C)new background - (B-C)original,longest_decreasing_run,307,-0.439453125,percentage points
+figure2,b,pilot_v5,(B-C)new background - (B-C)original,longest_decreasing_run,401,1.66015625,percentage points
+figure2,b,pilot_v5,(B-C)new background - (B-C)original,longest_decreasing_run,503,-20.263671875,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,cycle_count/chain_alpha,1103,-3.61328125,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,cycle_count/chain_alpha,2207,2.05078125,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,cycle_count/chain_alpha,3301,1.5625,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,cycle_count/chain_beta,1103,-6.25,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,cycle_count/chain_beta,2207,0.9765625,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,cycle_count/chain_beta,3301,-0.5859375,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,lis_length/chain_alpha,1103,-9.1796875,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,lis_length/chain_alpha,2207,-5.859375,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,lis_length/chain_alpha,3301,-1.3671875,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,lis_length/chain_beta,1103,-4.58984375,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,lis_length/chain_beta,2207,-4.8828125,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,lis_length/chain_beta,3301,-8.59375,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,components/chain_alpha,1103,0.87890625,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,components/chain_alpha,2207,0.1953125,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,components/chain_alpha,3301,4.6875,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,components/chain_beta,1103,-0.87890625,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,components/chain_beta,2207,3.7109375,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,components/chain_beta,3301,1.26953125,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,fixed_points/chain_alpha,1103,-8.49609375,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,fixed_points/chain_alpha,2207,6.73828125,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,fixed_points/chain_alpha,3301,3.7109375,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,fixed_points/chain_beta,1103,-3.3203125,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,fixed_points/chain_beta,2207,-0.48828125,percentage points
+figure2,c,task_count_v1,Accuracy k16 - k2 at 4M,fixed_points/chain_beta,3301,-11.1328125,percentage points
+figure2,d,task_count_v2,(k16-k2)32M - (k16-k2)4M,lis_length/chain_alpha,4103,13.28125,percentage points
+figure2,d,task_count_v2,(k16-k2)32M - (k16-k2)4M,lis_length/chain_alpha,5207,27.05078125,percentage points
+figure2,d,task_count_v2,(k16-k2)32M - (k16-k2)4M,lis_length/chain_alpha,6301,13.4765625,percentage points
+figure2,d,task_count_v2,(k16-k2)32M - (k16-k2)4M,lis_length/chain_beta,4103,3.80859375,percentage points
+figure2,d,task_count_v2,(k16-k2)32M - (k16-k2)4M,lis_length/chain_beta,5207,13.37890625,percentage points
+figure2,d,task_count_v2,(k16-k2)32M - (k16-k2)4M,lis_length/chain_beta,6301,2.44140625,percentage points
+figure2,d,task_count_v2,(k16-k2)32M - (k16-k2)4M,fixed_points/chain_alpha,4103,38.0859375,percentage points
+figure2,d,task_count_v2,(k16-k2)32M - (k16-k2)4M,fixed_points/chain_alpha,5207,41.50390625,percentage points
+figure2,d,task_count_v2,(k16-k2)32M - (k16-k2)4M,fixed_points/chain_alpha,6301,44.62890625,percentage points
+figure2,d,task_count_v2,(k16-k2)32M - (k16-k2)4M,fixed_points/chain_beta,4103,-22.16796875,percentage points
+figure2,d,task_count_v2,(k16-k2)32M - (k16-k2)4M,fixed_points/chain_beta,5207,-0.29296875,percentage points
+figure2,d,task_count_v2,(k16-k2)32M - (k16-k2)4M,fixed_points/chain_beta,6301,-4.78515625,percentage points
+figureS1,a,task_count_v1,Shared scratch accuracy,cycle_count,1103,30.859375,% accuracy
+figureS1,a,task_count_v1,Shared scratch accuracy,cycle_count,2207,28.125,% accuracy
+figureS1,a,task_count_v1,Shared scratch accuracy,cycle_count,3301,31.73828125,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_alpha/k2,1103,30.95703125,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_alpha/k2,2207,29.39453125,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_alpha/k2,3301,26.66015625,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_alpha/k4,1103,28.80859375,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_alpha/k4,2207,29.8828125,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_alpha/k4,3301,28.61328125,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_alpha/k8,1103,29.4921875,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_alpha/k8,2207,30.56640625,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_alpha/k8,3301,30.37109375,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_alpha/k16,1103,27.34375,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_alpha/k16,2207,31.4453125,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_alpha/k16,3301,28.22265625,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_beta/k2,1103,30.76171875,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_beta/k2,2207,30.2734375,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_beta/k2,3301,27.734375,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_beta/k4,1103,28.41796875,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_beta/k4,2207,29.1015625,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_beta/k4,3301,30.37109375,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_beta/k8,1103,29.19921875,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_beta/k8,2207,31.25,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_beta/k8,3301,27.9296875,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_beta/k16,1103,24.51171875,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_beta/k16,2207,31.25,% accuracy
+figureS1,a,task_count_v1,Test accuracy,cycle_count/chain_beta/k16,3301,27.1484375,% accuracy
+figureS1,b,task_count_v1,Shared scratch accuracy,lis_length,1103,42.48046875,% accuracy
+figureS1,b,task_count_v1,Shared scratch accuracy,lis_length,2207,43.75,% accuracy
+figureS1,b,task_count_v1,Shared scratch accuracy,lis_length,3301,43.06640625,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_alpha/k2,1103,56.0546875,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_alpha/k2,2207,56.640625,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_alpha/k2,3301,52.9296875,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_alpha/k4,1103,55.46875,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_alpha/k4,2207,51.07421875,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_alpha/k4,3301,56.4453125,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_alpha/k8,1103,54.98046875,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_alpha/k8,2207,50.9765625,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_alpha/k8,3301,55.56640625,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_alpha/k16,1103,46.875,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_alpha/k16,2207,50.78125,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_alpha/k16,3301,51.5625,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_beta/k2,1103,55.17578125,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_beta/k2,2207,50.87890625,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_beta/k2,3301,53.80859375,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_beta/k4,1103,50.0,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_beta/k4,2207,50.78125,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_beta/k4,3301,54.58984375,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_beta/k8,1103,48.4375,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_beta/k8,2207,52.63671875,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_beta/k8,3301,56.54296875,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_beta/k16,1103,50.5859375,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_beta/k16,2207,45.99609375,% accuracy
+figureS1,b,task_count_v1,Test accuracy,lis_length/chain_beta/k16,3301,45.21484375,% accuracy
+figureS1,c,task_count_v1,Shared scratch accuracy,components,1103,94.04296875,% accuracy
+figureS1,c,task_count_v1,Shared scratch accuracy,components,2207,91.30859375,% accuracy
+figureS1,c,task_count_v1,Shared scratch accuracy,components,3301,94.23828125,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_alpha/k2,1103,93.5546875,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_alpha/k2,2207,92.96875,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_alpha/k2,3301,91.9921875,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_alpha/k4,1103,94.43359375,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_alpha/k4,2207,94.7265625,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_alpha/k4,3301,95.8984375,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_alpha/k8,1103,94.62890625,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_alpha/k8,2207,94.43359375,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_alpha/k8,3301,94.7265625,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_alpha/k16,1103,94.43359375,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_alpha/k16,2207,93.1640625,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_alpha/k16,3301,96.6796875,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_beta/k2,1103,95.41015625,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_beta/k2,2207,90.33203125,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_beta/k2,3301,93.75,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_beta/k4,1103,93.9453125,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_beta/k4,2207,92.1875,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_beta/k4,3301,95.21484375,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_beta/k8,1103,94.7265625,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_beta/k8,2207,93.84765625,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_beta/k8,3301,96.38671875,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_beta/k16,1103,94.53125,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_beta/k16,2207,94.04296875,% accuracy
+figureS1,c,task_count_v1,Test accuracy,components/chain_beta/k16,3301,95.01953125,% accuracy
+figureS1,d,task_count_v1,Shared scratch accuracy,fixed_points,1103,56.93359375,% accuracy
+figureS1,d,task_count_v1,Shared scratch accuracy,fixed_points,2207,60.9375,% accuracy
+figureS1,d,task_count_v1,Shared scratch accuracy,fixed_points,3301,66.6015625,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_alpha/k2,1103,60.15625,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_alpha/k2,2207,49.90234375,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_alpha/k2,3301,60.3515625,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_alpha/k4,1103,64.35546875,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_alpha/k4,2207,54.00390625,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_alpha/k4,3301,63.0859375,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_alpha/k8,1103,83.10546875,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_alpha/k8,2207,72.94921875,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_alpha/k8,3301,55.6640625,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_alpha/k16,1103,51.66015625,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_alpha/k16,2207,56.640625,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_alpha/k16,3301,64.0625,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_beta/k2,1103,51.26953125,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_beta/k2,2207,54.58984375,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_beta/k2,3301,59.86328125,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_beta/k4,1103,57.6171875,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_beta/k4,2207,60.9375,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_beta/k4,3301,48.828125,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_beta/k8,1103,47.55859375,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_beta/k8,2207,51.7578125,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_beta/k8,3301,50.87890625,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_beta/k16,1103,47.94921875,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_beta/k16,2207,54.1015625,% accuracy
+figureS1,d,task_count_v1,Test accuracy,fixed_points/chain_beta/k16,3301,48.73046875,% accuracy

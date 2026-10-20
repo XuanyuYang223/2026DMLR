@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "base_revision": "95e84e6af5de2c0a692da2f64bf95745455f5c3c",
+  "scope": "Integrated English publication entry page; substantive documentation revision, not a translation",
+  "historical_scientific_manifests_rewritten": false,
+  "training_or_model_evaluation_run": false,
+  "files": {
+    "README.md": {
+      "before_sha256": "12f3c3b85197b47dc8aea01d26fe9c4d1b5807e290f2e8026913f0e71dc95fda",
+      "after_sha256": "1e00abcfd44f7087ecf1166b3e3a848b264ca99a3baf0a23ec6dec8570e228c6",
+      "reason": "Connect original PermWorld, representation alignment, the DMLR platform and all completed transfer stages."
+    }
+  }
+}

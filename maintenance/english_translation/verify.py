@@ -126,9 +126,25 @@ def verify(skip_archived_bytes=False):
     files = ledger["files"]
     originals = {}
     python_files = csv_cells = 0
+    # A later publication entry page is a substantive documentation revision,
+    # not another translation. Keep the original translation ledger immutable
+    # and validate the intermediate English Git bytes through an explicit bridge.
+    bridge_path = ROOT / "maintenance/documentation_revisions/publication_integration.json"
+    bridge = json.loads(bridge_path.read_text(encoding="utf8")) if bridge_path.exists() else None
+    documentation_revisions = 0
     for rel, entry in files.items():
         before, after = original(rel), (ROOT / rel).read_bytes()
         assert digest(before) == entry["original_sha256"], f"Original Git content mismatch: {rel}"
+        if digest(after) != entry["english_sha256"] and bridge and rel in bridge["files"]:
+            assert set(bridge["files"]) == {"README.md"}, "Unexpected documentation bridge scope"
+            assert bridge["base_revision"] == "95e84e6af5de2c0a692da2f64bf95745455f5c3c"
+            revision = bridge["files"][rel]
+            intermediate = git("show", f"{bridge['base_revision']}:{rel}")
+            assert digest(intermediate) == revision["before_sha256"] == entry["english_sha256"]
+            assert digest(after) == revision["after_sha256"], f"Publication documentation changed: {rel}"
+            assert not HAN.search(decode(after)), f"Non-English publication documentation: {rel}"
+            after = intermediate
+            documentation_revisions += 1
         assert digest(after) == entry["english_sha256"], f"English translation changed: {rel}"
         checks = validate_translation(rel, before, after)
         python_files += int(checks.get("executable_ast_preserved", False))
@@ -188,6 +204,7 @@ def verify(skip_archived_bytes=False):
         "remaining_han_files": 0,
         "unique_untranslated_archived_files_hash_verified": len(checked),
         "historical_references_resolved_through_translation_ledger": translated_references,
+        "subsequent_documentation_revisions_verified": documentation_revisions,
         "archived_byte_checks_skipped": skip_archived_bytes,
         "historical_manifests_rewritten": False,
         "training_or_model_evaluation_run": False,

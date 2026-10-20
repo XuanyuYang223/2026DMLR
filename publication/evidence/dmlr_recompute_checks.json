@@ -1,0 +1,98 @@
+{
+  "status": "pass",
+  "claim_count": 19,
+  "checks": [
+    {
+      "stage": "pilot_v1",
+      "check": "all three sample-size A/B/C means and differences from 18 raw rows",
+      "rows": 18
+    },
+    {
+      "stage": "pilot_v2",
+      "check": "all development-selected condition means from original protocol rows"
+    },
+    {
+      "stage": "pilot_v3",
+      "check": "all 36 paired target contrasts from 36 unique selected models"
+    },
+    {
+      "stage": "pilot_v4_recomputed_before_v5",
+      "check": "all per-repeat background differences, means and sample SDs; v5 primary paired-t and simultaneous intervals",
+      "raw_rows": 12
+    },
+    {
+      "stage": "pilot_v5",
+      "check": "all per-repeat background differences, means and sample SDs; v5 primary paired-t and simultaneous intervals",
+      "raw_rows": 10
+    },
+    {
+      "stage": "platform_v01",
+      "check": "all 24 task-by-length endpoint development means and majority baselines from two raw seeds"
+    },
+    {
+      "stage": "task_count_v1",
+      "check": "all archived paired count/budget contrasts reconstructed directly from unique raw test rows",
+      "raw_rows": 648
+    },
+    {
+      "stage": "task_count_v2",
+      "check": "all archived paired count/budget contrasts reconstructed directly from unique raw test rows",
+      "raw_rows": 324
+    }
+  ],
+  "training_runs": 0,
+  "neural_forwards": 0,
+  "historical_files_written": 0,
+  "independent_units_pooled_across_stages": false,
+  "source_artifact_sha256": {
+    "PILOT_REPORT.md": "d99dc23f765bb46d4e1f87970038bbffb3c7d7f94784010ab430c1979cdd790b",
+    "experiments/permworld_pilot/runs/pilot_v1/results_all.csv": "6c718febcda3e1fe254920434de4805292626abcecee0ddb0c5471c0178f4874",
+    "experiments/permworld_pilot/runs/pilot_v1/summary.csv": "21f33853c4fd274d4da2bc8ffcfe5da63207fc4dcd8c4961f80467edaf3812d9",
+    "experiments/pilot_v2_diagnostics/DIAGNOSTIC_REPORT.md": "3f62aa2541ed26061bc7fa70b00b35997dbdd87150d2b4c9fa1974ad4a7c0c2a",
+    "experiments/pilot_v2_diagnostics/artifacts/protocol_comparison.csv": "d6b099025a3bcf673d4b812ceab5f7754ba599ba672b9d6359e5c1cd45028a01",
+    "experiments/pilot_v2_diagnostics/artifacts/protocol_comparison_mean.csv": "44942d7b5cd1b350124ae0d190888c183b90ab94e31ac3714c6c62bc63658fa1",
+    "experiments/pilot_v2_diagnostics/artifacts/replacement_matching_summary.csv": "fe41100145c8eb3df0f0e4663b5ffe3e7bc26e23b21b7ec712675809c5c1bc19",
+    "experiments/pilot_v2_diagnostics/artifacts/source_learning_table.csv": "a25b1a72421ef431c951509de1cbff478d361c332a7173d6c042dcdf64d8c84f",
+    "experiments/pilot_v3_multitarget/PILOT_V3_REPORT.md": "60089a7ddac0bd19899295d4d4156019bd42cf7197aebe8dfcfdba0c46db060f",
+    "experiments/pilot_v3_multitarget/artifacts/paired_deltas.csv": "0d0a6a14ba56e95b276fa78562b006100499bde7a8a558521f7fcc3423ea25af",
+    "experiments/pilot_v3_multitarget/artifacts/results_selected.csv": "1af28a4ca8b9c21a60620b68578e42882d921803d1a23d3cd7830759f5cb83bc",
+    "experiments/pilot_v3_multitarget/artifacts/single_vs_multi_sources.csv": "7c76ab3d81e4724719106dfb6e250a5dde71d89e0bdf5fcd5e14b104bd88b798",
+    "experiments/pilot_v3_multitarget/artifacts/source_learning_effects_unique.csv": "d6f8c69026c68c220895bf29cbdc43bc5ea25a0618e712e827fa48cc1d898d1f",
+    "experiments/pilot_v4_backgrounds/artifacts/background_interactions.csv": "d8b6a44f9b881280aff00761e624549c2b4ec601c0b27a8137505ca0d0fab4f6",
+    "experiments/pilot_v4_backgrounds/artifacts/results_selected.csv": "850847ff9721e4dbf4446d1b339e09f8890c69400de5b8e9fecf6e90e31575ac",
+    "experiments/pilot_v5_confirmation/PILOT_V5_REPORT.md": "c3aa246d26863fca447ca89ffc13bd030e11ce887c154823a58624da63792ddc",
+    "experiments/pilot_v5_confirmation/artifacts/confirmation_paired_differences.csv": "758e80b62b99d2049aeb9f2bafafb04d36894e350243bc585bc9a0766aebe87d",
+    "experiments/pilot_v5_confirmation/artifacts/confirmation_summary.csv": "6ae33532253b78cd6cc3cc768adcd19031d0ac0795677a37f1a26ab15bb52fd7",
+    "experiments/pilot_v5_confirmation/exploratory/exploratory_paired_differences.csv": "efe37cca1688590cee131eb1df6a2a7a7e08ff51d5b838369ac152985dc66a95",
+    "experiments/pilot_v5_confirmation/mathematics/MATH_AUDIT.json": "e0c9e721eba464cd4706da9306706f9ec5b2b8415087fac023fb5cdba85f55fc",
+    "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+    "experiments/pilot_v5_confirmation/mathematics/audit/TARGET_JOINT_DERIVABILITY.csv": "56e9f0b755556e3a4512dbf149b470c3dabdafc3df732a1ae7488c0c46cee143",
+    "experiments/pilot_v5_confirmation/stats_plan.json": "e5ba71ae898d84693eb74ba7bcf7ed1d466f7a683b93722361299ac04339157f",
+    "experiments/platform_v01/PLATFORM_REPORT.md": "feceb59ab482c2826a2734b47313bf5ce3763b16dafb17bdb0bad68f03b2a4a3",
+    "experiments/platform_v01/calibration/FROZEN_CALIBRATION.json": "7f3de88f42a15fd80db4e6ddc2c8036df7a52d605bcb4aeb9cbe893455baddfd",
+    "experiments/platform_v01/calibration/results_by_seed.csv": "c99a6e3a103a88b534e350b5472d07de13375b607238d7f355620e2e94919396",
+    "experiments/platform_v01/calibration/task_summary.csv": "f9d323881fec6ccfa68dbebc6f447750ac88d3f37364e937d65017a58c5eebce",
+    "experiments/platform_v01/dataset/manifest.json": "8b7fcfc6b355117d1c66916053c80aa6a8ff7dc7abcac2bf645e4d192c819f06",
+    "experiments/platform_v01/mathematics/CERTIFICATE.json": "a2f72d53c0a50691e1882ee8a909adbcb06c5cc93798a5c38b463d56fd554b8c",
+    "experiments/platform_v01/mathematics/EQUIVALENCE_AUDIT.json": "decae578698d1785115df579329765b3802e2c86bd2736ea47a439222d79634e",
+    "experiments/platform_v01/mathematics/HISTORICAL_REUSE.json": "b087855a4eaa1c6b7d16c34f6c16c8bf4097c427ad8de8b80cb3f661b658bfa7",
+    "experiments/platform_v01/mathematics/RELATIONS.json": "eac1a15aa2cae3b8ad478e99a03506e18089b432a3e77510a2bae2f7c789de4d",
+    "experiments/platform_v01/registry/MODEL_INTERFACE_COMPATIBILITY.csv": "ca9f96ffa69e23c9ed5b34821d908d50ebff1a52e9c69ad49356476d60b10aff",
+    "experiments/platform_v01/registry/TASK_COUNTS.json": "8bafca96e93669726927dedeb785cc2721df48ba7ac870ec4d885fb5b8cce6ee",
+    "experiments/platform_v01/registry/TASK_INSTANCES.csv": "6428feecd8015ea347d292ae907005d2f75a2614d4b6fea470c5eac1499a0803",
+    "experiments/platform_v01/registry/TASK_REGISTRY.json": "4798c60cee09d27d85318d3278edfa411899c1d3a477d2288afbd042c5b7225f",
+    "experiments/task_count_v1/REPORT.md": "6f7e6ea23afe817e2203202ed30a7420d3a66c5fd121d7367f3c270da6609015",
+    "experiments/task_count_v1/paired_deltas.csv": "b956d4a7bcfbe6e2bd5652ad958ed2ab609fd977e828b2ee15695a02189f0ecc",
+    "experiments/task_count_v1/paired_k_contrasts.csv": "c786d308dc4c1459dadc255faf5758018d20f744f643f38a3f16553a114ae5c2",
+    "experiments/task_count_v1/raw_test_results.csv": "49bdc14e2fb2c7139708a294585400fdcbbcaec15b3c0dc73a50299e1177484c",
+    "experiments/task_count_v1/source_learning.csv": "12df4c5829cd713c8961f359d03b6e4e2ac62311f2a3f3c18439531c51143734",
+    "experiments/task_count_v2/FROZEN_PROTOCOL.json": "375e4dd34bd20208b4736c8c9a5cb20b89ef9923043a3c2a4219ecf218abaf16",
+    "experiments/task_count_v2/RUN_AUDIT.json": "7e7e86b6d3b27d81e130bfb3d0693219e0258c5d8290c0819655e000d0af17f5",
+    "experiments/task_count_v2/audit_budget_pairing.csv": "49da64df96ead119871593716f3ce29054db2273282768b0d54c99d0f1e0074d",
+    "experiments/task_count_v2/budget_interaction_summary.csv": "85b4c8630a054d49791ca0ca82342ea9a5aa873f3a2478d3eaa4ee3e84423819",
+    "experiments/task_count_v2/learning_rate_schedule.csv": "2b7f2c6af207297a5fd4b331cecf58881c2e6a3a9cd95cc0b4eade4f6450c53a",
+    "experiments/task_count_v2/paired_budget_interactions.csv": "67060bfca722eeb8ed07e7d68d6aac4f269b70cba010827eebd99d7a45f1948b",
+    "experiments/task_count_v2/raw_test_results.csv": "589043ef94ccdda2d48a751dcbae08f9664fe5c61083c1552cbe8f12b24b4d6c",
+    "experiments/task_count_v2/task_exposures.csv": "0baee8802d93940c838b53165a8c3b63e100781cf374e2e4693ea3a826f2f572"
+  }
+}
