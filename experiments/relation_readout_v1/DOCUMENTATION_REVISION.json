@@ -1,0 +1,6 @@
+{
+  "reason": "Post-inference reporting and measured compute joins only; executor, inference code, routes, data and predictions unchanged.",
+  "original_summary_generator_sha256": "1817de984caec3c35345641fdd5efd2ed94ea7874d5401e2d63a3b6af17b1a5d",
+  "current_summary_generator_sha256": "0e23687540f37c4e01c27d56b49ce438d4843baa2af64aac71d0d12fed1efbc8",
+  "inference_source_unchanged": true
+}

@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "review_scope": "Read-only completeness and consistency review; no training or inference rerun.",
+  "checkpoint_count": 78,
+  "summary_conditions": 396,
+  "raw_target_records": 202752,
+  "available_pretraining_route_pairs": 36,
+  "all_available_routes_A_D_both_lengths_and_diagnostics_present": true,
+  "unavailable_routes_not_scored": true,
+  "beta_and_lis_retained": true,
+  "three_original_paired_training_repeats": [
+    4103,
+    5207,
+    6301
+  ],
+  "new_test_vs_historical_test_explicitly_distinguished": true,
+  "shared_routes_not_independent_replications": true,
+  "causal_source_degradation_claim_not_made": true
+}

@@ -1,0 +1,223 @@
+[
+  {
+    "relation_id": "position_partition",
+    "version": "permworld-relations-v0.1",
+    "evidence_class": "proved_from_definitions",
+    "formula": "F(p)+E(p)+D(p)=n",
+    "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+    "relation_type": "joint",
+    "query_model": "same_input_multiple_answers",
+    "uses_transformed_input_queries": false,
+    "requires_distinct_input_values": false,
+    "input_query_note": "Transformed query arguments can coincide for symmetric permutations; no assumption of distinct numerical inputs is required.",
+    "input_ids": [
+      "p"
+    ],
+    "target": {
+      "task_id": "fixed_points",
+      "params": {},
+      "input_id": "p",
+      "transforms": []
+    },
+    "queries": [
+      {
+        "task_id": "exceedances",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      {
+        "task_id": "deficiencies",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      }
+    ],
+    "answer_map": {
+      "op": "sub",
+      "args": [
+        {
+          "context": "n"
+        },
+        {
+          "query": 0
+        },
+        {
+          "query": 1
+        }
+      ]
+    },
+    "parameter_schema": {},
+    "proof": "At every position exactly one of p_i=i, p_i>i, p_i<i holds.",
+    "finite_check": {
+      "status": "reused_hash_verified",
+      "inputs_checked": 10009,
+      "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+      "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+      "relation_id": "position_partition",
+      "historical_rechecks_run": 0
+    },
+    "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+    "mechanism_claim": false,
+    "origin": "pilot_v5_unchanged_certificate",
+    "evidence_status": "proved_from_definitions"
+  },
+  {
+    "relation_id": "fixed_from_two_deficiency_queries",
+    "version": "permworld-relations-v0.1",
+    "evidence_class": "proved_from_definitions",
+    "formula": "F(p)=n-D(p)-D(Ip)",
+    "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+    "relation_type": "joint",
+    "query_model": "multiple_transformed_inputs",
+    "uses_transformed_input_queries": true,
+    "requires_distinct_input_values": false,
+    "input_query_note": "Transformed query arguments can coincide for symmetric permutations; no assumption of distinct numerical inputs is required.",
+    "input_ids": [
+      "p"
+    ],
+    "target": {
+      "task_id": "fixed_points",
+      "params": {},
+      "input_id": "p",
+      "transforms": []
+    },
+    "queries": [
+      {
+        "task_id": "deficiencies",
+        "params": {},
+        "input_id": "p",
+        "transforms": []
+      },
+      {
+        "task_id": "deficiencies",
+        "params": {},
+        "input_id": "p",
+        "transforms": [
+          "inverse"
+        ]
+      }
+    ],
+    "answer_map": {
+      "op": "sub",
+      "args": [
+        {
+          "context": "n"
+        },
+        {
+          "query": 0
+        },
+        {
+          "query": 1
+        }
+      ]
+    },
+    "parameter_schema": {},
+    "proof": "Substitute E(p)=D(Ip) into the position partition.",
+    "finite_check": {
+      "status": "reused_hash_verified",
+      "inputs_checked": 10009,
+      "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+      "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+      "relation_id": "fixed_from_two_deficiency_queries",
+      "historical_rechecks_run": 0
+    },
+    "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+    "mechanism_claim": false,
+    "origin": "pilot_v5_unchanged_certificate",
+    "evidence_status": "proved_from_definitions"
+  },
+  {
+    "relation_id": "fixed_complement",
+    "version": "permworld-relations-v0.1",
+    "evidence_class": "proved_from_definitions",
+    "formula": "F(p)=AF(Cp)",
+    "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+    "relation_type": "single_task",
+    "query_model": "transformed_input",
+    "uses_transformed_input_queries": true,
+    "requires_distinct_input_values": false,
+    "input_query_note": "Transformed query arguments can coincide for symmetric permutations; no assumption of distinct numerical inputs is required.",
+    "input_ids": [
+      "p"
+    ],
+    "target": {
+      "task_id": "fixed_points",
+      "params": {},
+      "input_id": "p",
+      "transforms": []
+    },
+    "queries": [
+      {
+        "task_id": "anti_fixed_points",
+        "params": {},
+        "input_id": "p",
+        "transforms": [
+          "complement"
+        ]
+      }
+    ],
+    "answer_map": {
+      "query": 0
+    },
+    "parameter_schema": {},
+    "proof": "n+1-p_i=n+1-i if and only if p_i=i.",
+    "finite_check": {
+      "status": "reused_hash_verified",
+      "inputs_checked": 10009,
+      "artifact": "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+      "artifact_sha256": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+      "relation_id": "fixed_complement",
+      "historical_rechecks_run": 0
+    },
+    "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+    "mechanism_claim": false,
+    "origin": "pilot_v5_unchanged_certificate",
+    "evidence_status": "proved_from_definitions"
+  },
+  {
+    "relation_id": "lis_length_complement",
+    "version": "permworld-relations-v0.1",
+    "evidence_class": "proved_from_definitions",
+    "formula": "lis_length(p)= lds_length(complement(p))",
+    "scope": "S_n, 1 <= n <= 30 in platform v0.1; mathematical statement for every n >= 1",
+    "relation_type": "single_task",
+    "query_model": "transformed_input",
+    "uses_transformed_input_queries": true,
+    "requires_distinct_input_values": false,
+    "input_query_note": "Transformed query arguments can coincide for symmetric permutations; no assumption of distinct numerical inputs is required.",
+    "input_ids": [
+      "p"
+    ],
+    "target": {
+      "task_id": "lis_length",
+      "params": {},
+      "input_id": "p",
+      "transforms": []
+    },
+    "queries": [
+      {
+        "task_id": "lds_length",
+        "params": {},
+        "input_id": "p",
+        "transforms": [
+          "complement"
+        ]
+      }
+    ],
+    "answer_map": {
+      "query": 0
+    },
+    "parameter_schema": {},
+    "proof": "Complement reverses value comparisons; reversal reverses index order. Either maps increasing subsequences bijectively to decreasing subsequences of equal length.",
+    "finite_check": {
+      "status": "pending_certificate",
+      "artifact": "experiments/platform_v01/mathematics/NEW_RELATION_CHECKS.csv"
+    },
+    "training_exposure": "Relation metadata does not imply joint presentation or model use.",
+    "mechanism_claim": false,
+    "origin": "platform_v0.1_new_relation",
+    "executable": true,
+    "evidence_status": "proved_from_definitions"
+  }
+]

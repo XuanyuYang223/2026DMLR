@@ -1,0 +1,6 @@
+{
+  "physical_batched_forward_calls": 6342,
+  "physical_query_objects": 202752,
+  "synchronized_prediction_seconds": 18.476953899371438,
+  "route_rows": 396
+}

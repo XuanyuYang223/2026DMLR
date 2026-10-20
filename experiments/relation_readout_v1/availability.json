@@ -1,0 +1,578 @@
+[
+  {
+    "run_id": "chain_alpha_k2_b4000000_s4103",
+    "route": "position_partition",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k2_b4000000_s4103",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k2_b4000000_s4103",
+    "route": "fixed_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k2_b4000000_s4103",
+    "route": "lis_length_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k2_b32000000_s4103",
+    "route": "position_partition",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k2_b32000000_s4103",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k2_b32000000_s4103",
+    "route": "fixed_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k2_b32000000_s4103",
+    "route": "lis_length_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k16_b4000000_s4103",
+    "route": "position_partition",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k16_b4000000_s4103",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k16_b4000000_s4103",
+    "route": "fixed_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k16_b4000000_s4103",
+    "route": "lis_length_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k16_b32000000_s4103",
+    "route": "position_partition",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k16_b32000000_s4103",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k16_b32000000_s4103",
+    "route": "fixed_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k16_b32000000_s4103",
+    "route": "lis_length_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_beta_k2_b4000000_s4103",
+    "route": "position_partition",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k2_b4000000_s4103",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k2_b4000000_s4103",
+    "route": "fixed_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k2_b4000000_s4103",
+    "route": "lis_length_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k2_b32000000_s4103",
+    "route": "position_partition",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k2_b32000000_s4103",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k2_b32000000_s4103",
+    "route": "fixed_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k2_b32000000_s4103",
+    "route": "lis_length_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k16_b4000000_s4103",
+    "route": "position_partition",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k16_b4000000_s4103",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k16_b4000000_s4103",
+    "route": "fixed_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_beta_k16_b4000000_s4103",
+    "route": "lis_length_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_beta_k16_b32000000_s4103",
+    "route": "position_partition",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k16_b32000000_s4103",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k16_b32000000_s4103",
+    "route": "fixed_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_beta_k16_b32000000_s4103",
+    "route": "lis_length_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k2_b4000000_s5207",
+    "route": "position_partition",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k2_b4000000_s5207",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k2_b4000000_s5207",
+    "route": "fixed_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k2_b4000000_s5207",
+    "route": "lis_length_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k2_b32000000_s5207",
+    "route": "position_partition",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k2_b32000000_s5207",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k2_b32000000_s5207",
+    "route": "fixed_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k2_b32000000_s5207",
+    "route": "lis_length_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k16_b4000000_s5207",
+    "route": "position_partition",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k16_b4000000_s5207",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k16_b4000000_s5207",
+    "route": "fixed_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k16_b4000000_s5207",
+    "route": "lis_length_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k16_b32000000_s5207",
+    "route": "position_partition",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k16_b32000000_s5207",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k16_b32000000_s5207",
+    "route": "fixed_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k16_b32000000_s5207",
+    "route": "lis_length_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_beta_k2_b4000000_s5207",
+    "route": "position_partition",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k2_b4000000_s5207",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k2_b4000000_s5207",
+    "route": "fixed_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k2_b4000000_s5207",
+    "route": "lis_length_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k2_b32000000_s5207",
+    "route": "position_partition",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k2_b32000000_s5207",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k2_b32000000_s5207",
+    "route": "fixed_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k2_b32000000_s5207",
+    "route": "lis_length_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k16_b4000000_s5207",
+    "route": "position_partition",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k16_b4000000_s5207",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k16_b4000000_s5207",
+    "route": "fixed_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_beta_k16_b4000000_s5207",
+    "route": "lis_length_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_beta_k16_b32000000_s5207",
+    "route": "position_partition",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k16_b32000000_s5207",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k16_b32000000_s5207",
+    "route": "fixed_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_beta_k16_b32000000_s5207",
+    "route": "lis_length_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k2_b4000000_s6301",
+    "route": "position_partition",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k2_b4000000_s6301",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k2_b4000000_s6301",
+    "route": "fixed_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k2_b4000000_s6301",
+    "route": "lis_length_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k2_b32000000_s6301",
+    "route": "position_partition",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k2_b32000000_s6301",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k2_b32000000_s6301",
+    "route": "fixed_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k2_b32000000_s6301",
+    "route": "lis_length_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k16_b4000000_s6301",
+    "route": "position_partition",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k16_b4000000_s6301",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k16_b4000000_s6301",
+    "route": "fixed_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k16_b4000000_s6301",
+    "route": "lis_length_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k16_b32000000_s6301",
+    "route": "position_partition",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k16_b32000000_s6301",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_alpha_k16_b32000000_s6301",
+    "route": "fixed_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_alpha_k16_b32000000_s6301",
+    "route": "lis_length_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_beta_k2_b4000000_s6301",
+    "route": "position_partition",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k2_b4000000_s6301",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k2_b4000000_s6301",
+    "route": "fixed_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k2_b4000000_s6301",
+    "route": "lis_length_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k2_b32000000_s6301",
+    "route": "position_partition",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k2_b32000000_s6301",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k2_b32000000_s6301",
+    "route": "fixed_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k2_b32000000_s6301",
+    "route": "lis_length_complement",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k16_b4000000_s6301",
+    "route": "position_partition",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k16_b4000000_s6301",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k16_b4000000_s6301",
+    "route": "fixed_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_beta_k16_b4000000_s6301",
+    "route": "lis_length_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_beta_k16_b32000000_s6301",
+    "route": "position_partition",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k16_b32000000_s6301",
+    "route": "fixed_from_two_deficiency_queries",
+    "status": "NA",
+    "reason": "missing source exposure or invalid checkpoint"
+  },
+  {
+    "run_id": "chain_beta_k16_b32000000_s6301",
+    "route": "fixed_complement",
+    "status": "available",
+    "reason": ""
+  },
+  {
+    "run_id": "chain_beta_k16_b32000000_s6301",
+    "route": "lis_length_complement",
+    "status": "available",
+    "reason": ""
+  }
+]

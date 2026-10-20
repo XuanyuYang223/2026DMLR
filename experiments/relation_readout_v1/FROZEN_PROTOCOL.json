@@ -1,0 +1,42 @@
+{
+  "base_commit": "5db3bc9001110f96eee40918225da06144d5426a",
+  "created_utc": "2026-10-20T07:16:45.428463+00:00",
+  "routes_sha256": "249619d191cf82928ee0dade82f85622f2d9a62db3d5c9472fbab97bb22bd269",
+  "checkpoints_sha256": "663fea1ef426738f410ba4f5d66b4840a2e6ea75646c0813c91f0a06bda59de0",
+  "seeds": [
+    2026102001,
+    2026102002,
+    2026102003
+  ],
+  "lengths": [
+    10,
+    12
+  ],
+  "count_per_length": 512,
+  "formal_gpu_wall_limit_seconds": 7200,
+  "batch_size": 64,
+  "statistics": "Three original paired training repeats; per-repeat values, mean and sample SD (ddof=1). No input-level inference or route selection.",
+  "diagnostics": "Complement -> identity; inverse -> identity; E+D -> D from cyclic successor index within length (fixed derangement).",
+  "failure_policy": "No clipping, modulo, imputation or voting; missing required pretrained source is NA.",
+  "precision": "FP32 weights/evaluation; BF16 training on CUDA; TF32 disabled",
+  "max_new_tokens": 8,
+  "metrics": [
+    "accuracy",
+    "paired_delta_B",
+    "query_accuracy",
+    "all_sources_correct",
+    "error_cancellation",
+    "illegal",
+    "eos_failure",
+    "out_of_bounds",
+    "diagnostic_gap",
+    "queries",
+    "actual_forward_calls",
+    "seconds"
+  ],
+  "code_sha256": {
+    "executor.py": "2a2379bac07709259deffdc8640856637f496855e3ef1646285f19e94445a4e1",
+    "run.py": "16df076b3fc6db8b61ddacf8ac59a9c4a5cb14c2040021b34ec3d4a5b2cbf847",
+    "summarize.py": "1817de984caec3c35345641fdd5efd2ed94ea7874d5401e2d63a3b6af17b1a5d"
+  }
+}

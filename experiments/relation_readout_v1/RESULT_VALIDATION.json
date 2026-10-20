@@ -1,0 +1,10 @@
+{
+  "target_evaluation_rows": 202752,
+  "executor_consistency_cases": 32595,
+  "consistency_violations": 0,
+  "failures_including_reused_predictions": {
+    "illegal": 13,
+    "eos_failure": 0,
+    "out_of_bounds": 960
+  }
+}

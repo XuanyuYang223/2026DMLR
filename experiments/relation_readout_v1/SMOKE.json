@@ -1,0 +1,10 @@
+{
+  "timing": {
+    "task": "lds_length",
+    "count": 16,
+    "seconds": 0.19534829998156056,
+    "actual_forward_calls": 2
+  },
+  "count": 16,
+  "purpose": "Pipeline and throughput only; no route, checkpoint or budget changes."
+}
