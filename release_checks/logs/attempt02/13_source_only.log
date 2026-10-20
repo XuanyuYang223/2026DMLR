@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "mode": "source_only",
+  "files_verified": 650,
+  "exact_archived_files_verified": 646,
+  "translated_files_verified": 4,
+  "local_checkpoints_explicitly_skipped": 151
+}

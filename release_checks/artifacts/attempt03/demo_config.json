@@ -1,0 +1,57 @@
+{
+  "version": "permworld_objects_labels_v1",
+  "lengths": [
+    8,
+    10
+  ],
+  "replicates": [
+    {
+      "model_seed": 19001,
+      "data_seed": 2026101901
+    },
+    {
+      "model_seed": 19002,
+      "data_seed": 2026101902
+    }
+  ],
+  "per_length_counts": {
+    "train": 8,
+    "dev": 4,
+    "test": 4
+  },
+  "proposal": "uniform permutation proposals; reject occupied I/R/C orbits",
+  "split_order": [
+    "train",
+    "dev",
+    "test"
+  ],
+  "historical_exclusion": false,
+  "max_proposals_per_pool": 10000,
+  "test_use": "disposable installation fixture only; no model evaluation or research use",
+  "task_instances": [
+    {
+      "task_id": "cycle_count"
+    },
+    {
+      "task_id": "lis_length"
+    },
+    {
+      "task_id": "components"
+    },
+    {
+      "task_id": "fixed_points"
+    },
+    {
+      "task_id": "increasing_subsequence_count",
+      "params": {
+        "k": 3
+      }
+    },
+    {
+      "task_id": "cycle_length_count",
+      "params": {
+        "k": 2
+      }
+    }
+  ]
+}

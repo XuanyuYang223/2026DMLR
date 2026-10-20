@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "base_revision": "7ef277d3f2cdd6faef0d2f7c1b844e3b0e1bcf9e",
+  "publication_files_hash_verified": 55,
+  "scientific_source_files_hash_verified": 50,
+  "local_links_checked": 187,
+  "broken_local_links": 0,
+  "derived_evidence_stages_checked": 8,
+  "plot_values": 208,
+  "upstream_result_files_read": 0,
+  "reference_clones_required": false,
+  "cpu_label_encoding_and_canonical_sample_read": "passed",
+  "historical_experiment_paths_changed": 0,
+  "training_runs": 0,
+  "neural_forwards": 0,
+  "checkpoint_files_opened": 0,
+  "note": "Validates source bindings and saved arithmetic audits; not a new model replication"
+}

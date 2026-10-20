@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "permworld-platform"
+version = "0.1.0"
+description = "Exact, relation-annotated permutation tasks and reproducible data interfaces"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=2.0,<3"]
+
+[project.optional-dependencies]
+publication = ["matplotlib>=3.9,<4"]
+
+[project.scripts]
+permworld-data = "permworld_release.cli:main"
+
+[project.urls]
+Repository = "https://github.com/XuanyuYang223/2026DMLR"
+Documentation = "https://github.com/XuanyuYang223/2026DMLR/tree/publication/permworld-dmlr-release-check/publication"
+
+[tool.setuptools]
+include-package-data = false
+# Preserve the frozen relative paths used by the exact oracles and certificates.
+# The experiments namespace below carries data, not archived model weights.
+packages = [
+    "permworld_platform",
+    "permworld_release",
+    "experiments",
+    "experiments.permworld_pilot.vendor.neurips_permutations",
+]
+
+[tool.setuptools.package-data]
+experiments = [
+    "pilot_v4_backgrounds/TASK_CATALOG.csv",
+    "pilot_v5_confirmation/mathematics/audit/MATHEMATICS_AUDIT.json",
+    "pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv",
+    "pilot_v5_confirmation/mathematics/audit/OBSERVED_ASSOCIATIONS.csv",
+    "pilot_v5_confirmation/mathematics/audit/UNCHECKED_CLAIMS.csv",
+    "platform_v01/mathematics/*.json",
+    "platform_v01/mathematics/*.csv",
+    "platform_v01/registry/*.json",
+    "platform_v01/registry/*.csv",
+]

@@ -1,13 +1,13 @@
 """Rebuild publication figures from archived tables, without model evaluation.
 
-Each panel retains its own protocol, estimand and repeated unit. In particular,
-alignment geometry, development calibration and held-out transfer accuracy are
-never pooled. No checkpoint is opened and no new training/test forward is run.
+Each panel retains its own protocol, estimand and repeated unit. Development
+calibration and held-out transfer accuracy are never pooled. All sources are
+tracked DMLR tables: upstream research audits are optional historical documents,
+not figure inputs. No checkpoint is opened and no training/test forward is run.
 """
 from __future__ import annotations
 
 import argparse
-from collections import defaultdict
 import csv
 import hashlib
 import json
@@ -18,7 +18,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
-from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
+from matplotlib.patches import FancyBboxPatch
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUT = ROOT / "publication/figures"
@@ -83,7 +83,7 @@ def style():
         "xtick.color": MUTED, "ytick.color": INK, "axes.spines.top": False,
         "axes.spines.right": False, "axes.titleweight": "bold", "axes.titlelocation": "left",
         "axes.grid": False, "pdf.fonttype": 42, "ps.fonttype": 42,
-        "svg.fonttype": "none", "svg.hashsalt": "permworld-publication-v1",
+        "svg.fonttype": "none", "svg.hashsalt": "permworld-dmlr-release-v2",
         "savefig.facecolor": "white", "figure.facecolor": "white"})
 
 
@@ -140,26 +140,24 @@ def card(ax, xy, width, height, title, body, color=BLUE, fontsize=9):
             va="top", ha="left", linespacing=1.6)
 
 
-def resource_panel(ax, counts, upstream):
+def resource_panel(ax, counts):
     ax.set_axis_off()
-    heading(ax, "a", "A mathematical task resource, extended", "Endpoint names, templates and instances are different counts")
-    # Upstream counts are derived from the exported source audit, not added together.
+    heading(ax, "a", "A reusable mathematical task platform", "Endpoint names, templates and instances are different counts")
     assert counts["legacy_endpoints_preserved"] == 48 and counts["total_registry_endpoints"] == 54
-    assert upstream["original_distinct_endpoint_union"] == 48
-    assert sorted(upstream["original_grid_sizes"].values()) == [20,20,32]
-    assert len(upstream["original_input_representations"]) == 4
-    card(ax, (.015, .58), .97, .37, "Original PermWorld",
-         "V2: 20 endpoints   |   V3: 20   |   Property32: 32\n"
-         "Union: 48 endpoint names (overlapping catalogs)\n"
-         "4 upstream encodings; exact permutation tasks", BLUE, 9.1)
-    card(ax, (.015, .06), .97, .47, "Reusable platform v0.1",
-         "48 retained + 6 added = 54 endpoints\n"
+    assert counts["canonical_mathematical_templates"] == 48
+    assert counts["all_declared_endpoint_instances_including_aliases_and_binary"] == 62
+    assert counts["default_unary_manifest_instances"] == 56
+    assert counts["input_encoding_variants"] == ["one_line_v1"]
+    card(ax, (.015, .55), .97, .40, "Platform v0.1: exact labels, shared interface",
+         "48 retained + 6 added = 54 task endpoints\n"
          "48 canonical templates; 62 declared instances\n"
          "56 materialized unary instances; one-line input\n"
-         "Focus families         Templates / instances\n"
-         "Cycles 6 / 8     Subsequences 5 / 9     Blocks 5 / 7", GREEN, 9.0)
-    ax.annotate("", xy=(.5,.535), xytext=(.5,.575), xycoords="axes fraction",
-        arrowprops={"arrowstyle": "-|>", "color": MUTED, "lw": 1.3})
+         "Versioned integer / structured-answer encoding", BLUE, 9.1)
+    card(ax, (.015, .06), .97, .42, "Three focus families",
+         "Family                              Templates / instances\n"
+         "Cycle decomposition                          6 / 8\n"
+         "Global subsequences                          5 / 9\n"
+         "Permutation blocks                           5 / 7", GREEN, 9.0)
     ax.text(.025, -.025, "Focus: 16 templates / 24 instances / 22 nonconstant.\nCounts do not establish mathematical independence.",
             transform=ax.transAxes, fontsize=8.0, color=MUTED, va="top")
 
@@ -211,47 +209,34 @@ def calibration_panel(ax, records):
         loc="lower left", bbox_to_anchor=(0,-.27), frameon=False, ncol=2, fontsize=7.8)
 
 
-def load_upstream():
-    inventory=read_json("publication/evidence/upstream_resource_inventory.json", "Source-audited original PermWorld catalog, representations and geometry protocol")
-    audit=read_json("publication/evidence/UPSTREAM_AUDIT.json", "Audited raw-to-summary upstream export; source commits and byte hashes")
-    assert audit["status"]=="passed" and audit["alignment_seed_units"]==24 and audit["alignment_relation_units"]==8
-    raw=read_csv("publication/evidence/upstream_alignment_final_norm.csv", "Original geometry: final_norm, 4096 shared task-free validation inputs; identity/correct/wrong transforms")
-    seeds=read_csv("publication/evidence/upstream_alignment_by_seed.csv", "Correct-minus-wrong transform CKA within each relation and model seed")
-    assert len(raw)==72 and len(seeds)==24
-    assert {r["layer"] for r in raw}=={"final_norm"}
-    assert {r["probe_split"] for r in raw}=={"validation"}
-    assert {r["probe_inputs"] for r in raw}=={"4096"}
-    raw_lookup={(r["pair_id"],r["model_seed"],r["condition"]):float(r["linear_cka"]) for r in raw}
-    assert len(raw_lookup)==72
-    for r in seeds:
-        expected=raw_lookup[r["pair_id"],r["model_seed"],"correct"]-raw_lookup[r["pair_id"],r["model_seed"],"wrong"]
-        assert abs(expected-float(r["correct_minus_wrong"]))<1e-14
-    return {"upstream":inventory,"alignment":seeds}
-
-
-def alignment_panel(ax,records):
-    pairs=["descent_inverse","exceedance_inverse","peak_complement","fixed_complement",
-           "subsequence_complement","run_complement","record_complement","decomposition_complement"]
-    names=["Descents / recoils (I)","Exceedances / deficiencies (I)","Peaks / valleys (C)",
-           "Fixed / anti-fixed points (C)","LIS / LDS (C)","Increasing / decreasing runs (C)",
-           "Left-to-right max / min (C)","Global descents / blocks (C)"]
-    heading(ax,"c","Original relations leave a geometric signature","One-line · task-free final_norm · 3 seeds per relation\n4096 shared validation inputs, pooled over n=2–30")
-    for y,pair in enumerate(pairs):
-        rows=sorted([r for r in records if r["pair_id"]==pair],key=lambda r:int(r["model_seed"]))
-        assert [int(r["model_seed"]) for r in rows]==[17,42,101]
-        paired_points(ax,y,[float(r["correct_minus_wrong"]) for r in rows],BLUE,[int(r["model_seed"]) for r in rows],
-                      "figure1","c","original_permworld_geometry","Correct-transform CKA - wrong-transform CKA",pair,"linear CKA difference")
-    finish_effect_axis(ax,names,(-.035,1.02))
-    ax.set_xticks([0,.25,.5,.75,1])
-    ax.set_xlabel("Linear CKA: correct transform − wrong transform")
-    ax.text(0,-.26,"I = inverse; C = complement. Seed variation is descriptive;\n8 relation-level contrasts, not 24 independent relations. Geometry ≠ transfer.",
-            transform=ax.transAxes,fontsize=8,color=MUTED,va="top")
+def data_and_protocol_panel(ax, quality):
+    ax.set_axis_off()
+    heading(ax, "c", "Data and compute have explicit audit trails",
+            "Archived platform audit · fixed inputs · paired training budgets")
+    assert quality["status"] == "passed"
+    assert quality["objects_checked"] == 9216 and quality["labels_recomputed"] == 516096
+    assert quality["duplicate_inputs"] == 0
+    assert quality["cross_role_or_repeat_orbit_overlap"] == 0
+    assert quality["historical_orbit_overlap"] == 0
+    card(ax, (.015, .54), .97, .41, "Input and label checks",
+         "9,216 inputs; 516,096 exact labels recomputed\n"
+         "0 duplicate inputs; 0 cross-role / repeat orbit overlaps\n"
+         "0 historical orbit overlaps; RNG streams replayed\n"
+         "Inverse, reversal and complement define isolation", BLUE, 8.9)
+    card(ax, (.015, .055), .97, .40, "Transfer protocol",
+         "Freeze tasks, input pools and selection rules\n"
+         "Account for sequence tokens and per-task exposure\n"
+         "Pair adaptation data, initialization and repeats\n"
+         "Evaluate full generated answers + EOS", GREEN, 9.0)
+    ax.text(.025, -.025, "Audit counts describe the archived unary dataset.\nBinary-pair isolation was not certified; no new model run here.",
+            transform=ax.transAxes, fontsize=8.0, color=MUTED, va="top")
 
 
 def load_evidence():
     data = {}
     data["counts"] = read_json("experiments/platform_v01/registry/TASK_COUNTS.json", "Platform endpoint/template/instance count conventions")
     data["relations"] = read_json("experiments/platform_v01/mathematics/RELATIONS.json", "Typed formulas, input transforms and joint-answer metadata")
+    data["quality"] = read_json("experiments/platform_v01/dataset/quality_full.json", "Archived platform unary input and exact-label audit; not a new generation or model evaluation")
     data["calibration"] = read_csv("experiments/platform_v01/calibration/results_by_seed.csv", "Endpoint, dev, length=all; six prespecified tasks and two seeds")
     data["v3"] = read_csv("experiments/pilot_v3_multitarget/artifacts/paired_deltas.csv", "Development-selected target test deltas; B-A and C-A; three paired seeds")
     data["v4"] = read_csv("experiments/pilot_v5_confirmation/exploratory/exploratory_paired_differences.csv", "V4 exploratory background contrasts selected in advance of v5; old three seeds")
@@ -368,7 +353,7 @@ experiment results and checkpoints are untouched.
 
 | Figure | Browse | Vector downloads |
 | --- | --- | --- |
-| 1: resource, alignment and calibration | [PNG](figure1_permworld_resource.png) | [PDF](figure1_permworld_resource.pdf), [SVG](figure1_permworld_resource.svg) |
+| 1: resource, data audit and calibration | [PNG](figure1_permworld_resource.png) | [PDF](figure1_permworld_resource.pdf), [SVG](figure1_permworld_resource.svg) |
 | 2: transfer evidence across stages | [PNG](figure2_evidence_overview.png) | [PDF](figure2_evidence_overview.pdf), [SVG](figure2_evidence_overview.svg) |
 | S1: all four-target task-count curves | [PNG](figureS1_full_task_count_curves.png) | [PDF](figureS1_full_task_count_curves.pdf), [SVG](figureS1_full_task_count_curves.svg) |
 
@@ -377,15 +362,14 @@ and the [source/hash map](SOURCE_MAP.json).
 
 ## Figure 1: PermWorld as a relation-aware experimental resource
 
-**a. Resource scope.** Original V2, V3 and Property32 catalogs overlap: their
-20/20/32 entries have a union of 48 endpoint names, not 72 independent tasks.
-The platform retains those 48 and adds six endpoints. Its 48 canonical templates,
+**a. Resource scope.** The platform retains 48 inherited endpoints and adds six.
+Its 48 canonical templates,
 62 declared instances and 56 materialized unary instances use different counting
 conventions. The three focus families contain 16 templates and 24 instances,
 including two fixed-length constants, leaving 22 nonconstant instances at the
-release lengths. Four upstream representations are distinct from the one-line
-input encoding exposed in the DMLR platform. None of these counts establishes
-mathematical independence.
+release lengths. The active input encoding is one-line; output encoding is
+versioned for integer and structured answers. Counts come directly from the
+tracked DMLR registry. They do not establish mathematical independence.
 
 **b. Relation-aware workflow.** Registered transformed-input and same-input joint
 relations specify which answers and input transformations are needed. The examples
@@ -395,17 +379,16 @@ paired training and full-answer evaluation are separate parts of the design.
 Formula availability does not prove use by a model, and unlisted relations are
 unclassified rather than unrelated.
 
-**c. Original alignment evidence.** This panel uses the exported original
-PermWorld representation analysis: one-line inputs, task-free prefixes ending at
-`<ONE_END>`, one final-normalization hidden vector at that last prefix token per
-example, and 4096 shared validation inputs spanning n=2–30. Ordinary linear CKA is
-computed over the pooled vectors, not within length or answer strata. It is not
-a test-set or n=10-only analysis. The statistical unit is stated alongside the
-panel and in the source inventory. Seed dots and
-sample-SD whiskers describe variation within each relation. Relations and seeds
-must not be multiplied into extra independent inferential units. CKA differences
-are geometry measurements, not transfer accuracy or evidence that geometry causes
-target learning.
+**c. Data and protocol audit.** The archived platform unary-data audit checked
+9,216 inputs and recomputed 516,096 exact labels. Duplicate inputs, cross-role or
+repeat orbit overlaps, and historical orbit overlaps were all zero; pool RNG
+streams were replayed. Orbit isolation uses the group generated by inverse,
+reversal and complement. These are archived audit results, not a newly generated
+dataset or an additional scientific replication. Binary-pair isolation was not
+certified. The workflow separately freezes tasks and pools, records actual token
+and task exposure, pairs repeats, and evaluates complete generated answers plus
+EOS. The earlier scalar-answer pilots in Figure 2 are explicitly distinguished
+from this platform protocol.
 
 **d. Platform calibration.** Six representatives were fixed before training, with
 two seeds (617,829), 2400 updates, and n=8,10,12. Points are fixed-endpoint
@@ -468,38 +451,42 @@ and seed disagreement remain visible; no best chain or k was chosen from tests.
 
 ## Reproduction
 
-Run from the repository root after the committed upstream exports are present:
+Run from the repository root in the installed publication environment:
 
 ```powershell
-.venv/Scripts/python.exe publication/build_figures.py
+python publication/build_figures.py --out build/publication-figures
 ```
 
 Use `--out` with a fresh directory to preserve the released figure bytes. The
-original upstream checkout under `reference/` is not needed for figure rendering;
-the exported values and their provenance are included in the publication package.
+builder depends only on tracked DMLR registry and result tables. Source audits,
+upstream repositories, `reference/` and local checkpoints are not required.
+TMLR-specific experiments and original workshop alignment results are outside
+this DMLR figure package.
 """
 
 
 def build(out):
     out.mkdir(parents=True,exist_ok=True)
+    SOURCE_BINDINGS.clear()
+    PLOT_DATA.clear()
+    PLOT_SUMMARIES.clear()
     style()
     data=load_evidence()
-    # The upstream alignment panel is supplied by the source-provenance export.
-    data.update(load_upstream())
     fig,axes=plt.subplots(2,2,figsize=(12.6,9.3),layout="constrained",gridspec_kw={"height_ratios":[1.13,1]})
     fig.get_layout_engine().set(hspace=.16,wspace=.13)
     fig.suptitle("PermWorld: exact tasks, explicit relationships, auditable evidence",fontsize=17,weight="bold")
-    resource_panel(axes[0,0],data["counts"],data["upstream"])
+    resource_panel(axes[0,0],data["counts"])
     relation_panel(axes[0,1],data["relations"])
-    alignment_panel(axes[1,0],data["alignment"])
+    data_and_protocol_panel(axes[1,0],data["quality"])
     calibration_panel(axes[1,1],data["calibration"])
-    save(fig,out,"figure1_permworld_resource","PermWorld resource, mathematical relationship workflow, alignment evidence and platform calibration")
+    save(fig,out,"figure1_permworld_resource","PermWorld resource, mathematical relationships, data audit and development calibration")
     figure2(data,out)
     supplementary_count_curves(data,out)
     write_csv(out/"PLOT_DATA.csv",PLOT_DATA)
     write_csv(out/"PLOT_SUMMARIES.csv",PLOT_SUMMARIES)
     (out/"README.md").write_text(captions(),encoding="utf-8")
-    result={"status":"complete","builder_sha256":sha(Path(__file__)),"matplotlib_version":matplotlib.__version__,
+    result={"schema_version":"permworld-dmlr-figures-v2","status":"complete","builder_sha256":sha(Path(__file__)),"matplotlib_version":matplotlib.__version__,
+        "scope":"DMLR resource and transfer evidence; upstream alignment studies are excluded",
         "training_or_model_evaluations_run":False,"source_files":SOURCE_BINDINGS,
         "plotted_repeat_values":len(PLOT_DATA),"plotted_group_summaries":len(PLOT_SUMMARIES),
         "output_sha256":{p.name:sha(p) for p in sorted(out.iterdir()) if p.is_file() and p.name!="SOURCE_MAP.json"}}

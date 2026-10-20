@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import argparse
-import csv
 import hashlib
 import json
 from pathlib import Path
@@ -12,9 +11,14 @@ from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 HERE = Path(__file__).resolve().parent
-BASE = "95e84e6af5de2c0a692da2f64bf95745455f5c3c"
+BASE = "7ef277d3f2cdd6faef0d2f7c1b844e3b0e1bcf9e"
 MANIFEST = HERE / "MANIFEST.json"
-ALLOWED_PRIOR_EDITS = {"README.md", "maintenance/english_translation/verify.py"}
+ALLOWED_PRIOR_EDITS = {"README.md", ".gitignore", "pyproject.toml", "maintenance/english_translation/verify.py"}
+ARCHIVED_PROVENANCE = {
+    "audit_original_permworld.py", "original_permworld_audit.md", "source_inventory.csv",
+    "upstream_alignment_by_relation.csv", "upstream_alignment_by_seed.csv",
+    "upstream_alignment_final_norm.csv", "UPSTREAM_AUDIT.json", "upstream_resource_inventory.json",
+}
 
 
 def sha(path):
@@ -31,11 +35,15 @@ def git(*args):
 
 def write_manifest():
     paths = [p for p in HERE.rglob("*") if p.is_file() and "__pycache__" not in p.parts
-             and p.name not in {"MANIFEST.json", "VERIFICATION.json"}]
+             and p.name not in {"MANIFEST.json", "VERIFICATION.json"}
+             and p.name not in ARCHIVED_PROVENANCE]
     paths += [ROOT / p for p in ALLOWED_PRIOR_EDITS]
     paths += list((ROOT / "maintenance/documentation_revisions").glob("*"))
-    data = {"schema_version": 1, "base_revision": BASE,
-            "scope": "Publication synthesis; no new training or model test evaluation",
+    paths += [p for folder in ("release_checks", "permworld_release")
+              for p in (ROOT / folder).rglob("*") if p.is_file() and "__pycache__" not in p.parts]
+    data = {"schema_version": 2, "release_version": "dmlr-publication-release-check-v1", "base_revision": BASE,
+            "scope": "DMLR platform, accountable transfer and conditional findings; CPU release acceptance only",
+            "archived_upstream_provenance_optional_not_default_dependencies": sorted(ARCHIVED_PROVENANCE),
             "allowed_prior_file_edits": sorted(ALLOWED_PRIOR_EDITS),
             "files": {p.relative_to(ROOT).as_posix(): {"sha256": sha(p), "bytes": p.stat().st_size}
                       for p in sorted(paths) if p.is_file()}}
@@ -50,7 +58,7 @@ def verify():
         assert path.is_file() and sha(path) == info["sha256"], f"Publication file changed: {rel}"
     changed = set(filter(None, git("diff", "--name-only", "-z", BASE).decode().split("\0")))
     unexpected = {p for p in changed if p not in ALLOWED_PRIOR_EDITS
-                  and not p.startswith(("publication/", "maintenance/documentation_revisions/"))}
+                  and not p.startswith(("publication/", "maintenance/documentation_revisions/", "release_checks/", "permworld_release/"))}
     assert not unexpected, f"Historical artifact edits: {sorted(unexpected)}"
 
     bindings = {}
@@ -71,8 +79,9 @@ def verify():
         assert sha(ROOT / rel) == expected, f"Scientific source changed: {rel}"
 
     links = 0
+    optional_links = 0
     broken = []
-    documents = [ROOT / "README.md", *HERE.rglob("*.md")]
+    documents = [ROOT / "README.md", *[p for p in HERE.rglob("*.md") if p.name not in ARCHIVED_PROVENANCE]]
     for document in documents:
         text = document.read_text(encoding="utf-8-sig")
         for href in re.findall(r"\]\(([^\s)]+)(?:\s+[^)]*)?\)", text):
@@ -80,14 +89,15 @@ def verify():
             if href.startswith(("https://", "http://", "mailto:", "#")):
                 continue
             target = (document.parent / href.split("#", 1)[0]).resolve()
+            if target.parent == HERE / "evidence" and target.name in ARCHIVED_PROVENANCE:
+                optional_links += 1
+                continue
             links += 1
             if not target.exists():
                 broken.append(f"{document.relative_to(ROOT)} -> {href}")
     assert not broken, "Broken local links: " + repr(broken)
 
     # The supported data-to-model-sample path runs on CPU without changing data.
-    import sys
-    sys.path.insert(0, str(ROOT))
     from permworld_platform import label
     from permworld_platform.encoding import encode_example
     from permworld_platform.data import read_samples
@@ -100,30 +110,17 @@ def verify():
                                "train", "increasing_subsequence_count", {"k": 3}))
     assert sample["input_ids"][sample["prompt_length"]:] == sample["answer_ids"]
 
-    # Report availability of optional upstream clones without treating their
-    # presence as an independent repetition of the saved upstream audit.
-    upstream_count = 0
-    missing_clones = set()
-    with (HERE / "evidence/source_inventory.csv").open(encoding="utf8", newline="") as handle:
-        inventory = list(csv.DictReader(handle))
-    # Pinned re-extraction has its own saved audit; optional clones are not required
-    # for the source-only publication verification or figure rebuilding.
-    for directory in ("reference/neurips", "reference/2026TMLR"):
-        if not (ROOT / directory / ".git").exists():
-            missing_clones.add(directory)
-        else:
-            upstream_count += 1
-    audit = load(HERE / "evidence/UPSTREAM_AUDIT.json")
-    assert audit["status"] == "passed"
+    assert not any("upstream" in rel or "UPSTREAM_AUDIT" in rel or "reference/" in rel
+                   for rel in figures["source_files"]), "Default figures depend on archival upstream results"
     result = {"status": "passed", "base_revision": BASE,
               "publication_files_hash_verified": len(manifest["files"]),
               "scientific_source_files_hash_verified": len(bindings),
               "local_links_checked": links, "broken_local_links": 0,
+              "optional_archival_links_not_required": optional_links,
               "derived_evidence_stages_checked": len(evidence["checks"]),
               "plot_values": figures["plotted_repeat_values"],
-              "upstream_inventory_entries": len(inventory),
-              "optional_upstream_clones_present": upstream_count,
-              "optional_upstream_clones_absent": sorted(missing_clones),
+              "upstream_result_files_read": 0,
+              "reference_clones_required": False,
               "cpu_label_encoding_and_canonical_sample_read": "passed",
               "historical_experiment_paths_changed": 0,
               "training_runs": 0, "neural_forwards": 0,

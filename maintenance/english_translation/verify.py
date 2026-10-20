@@ -129,22 +129,31 @@ def verify(skip_archived_bytes=False):
     # A later publication entry page is a substantive documentation revision,
     # not another translation. Keep the original translation ledger immutable
     # and validate the intermediate English Git bytes through an explicit bridge.
-    bridge_path = ROOT / "maintenance/documentation_revisions/publication_integration.json"
-    bridge = json.loads(bridge_path.read_text(encoding="utf8")) if bridge_path.exists() else None
+    bridge_paths = [ROOT / "maintenance/documentation_revisions" / name for name in
+                    ("publication_integration.json", "release_check.json")]
+    bridges = [json.loads(path.read_text(encoding="utf8")) for path in bridge_paths if path.exists()]
     documentation_revisions = 0
     for rel, entry in files.items():
         before, after = original(rel), (ROOT / rel).read_bytes()
         assert digest(before) == entry["original_sha256"], f"Original Git content mismatch: {rel}"
-        if digest(after) != entry["english_sha256"] and bridge and rel in bridge["files"]:
-            assert set(bridge["files"]) == {"README.md"}, "Unexpected documentation bridge scope"
-            assert bridge["base_revision"] == "95e84e6af5de2c0a692da2f64bf95745455f5c3c"
-            revision = bridge["files"][rel]
-            intermediate = git("show", f"{bridge['base_revision']}:{rel}")
-            assert digest(intermediate) == revision["before_sha256"] == entry["english_sha256"]
-            assert digest(after) == revision["after_sha256"], f"Publication documentation changed: {rel}"
+        relevant = [bridge for bridge in bridges if rel in bridge["files"]]
+        if digest(after) != entry["english_sha256"] and relevant:
+            expected = entry["english_sha256"]
+            intermediate = None
+            for bridge in relevant:
+                assert set(bridge["files"]) == {"README.md"}, "Unexpected documentation bridge scope"
+                assert bridge["base_revision"] in {
+                    "95e84e6af5de2c0a692da2f64bf95745455f5c3c", "7ef277d3f2cdd6faef0d2f7c1b844e3b0e1bcf9e"}
+                revision = bridge["files"][rel]
+                prior = git("show", f"{bridge['base_revision']}:{rel}")
+                assert digest(prior) == revision["before_sha256"] == expected
+                if intermediate is None:
+                    intermediate = prior
+                expected = revision["after_sha256"]
+                documentation_revisions += 1
+            assert digest(after) == expected, f"Publication documentation changed: {rel}"
             assert not HAN.search(decode(after)), f"Non-English publication documentation: {rel}"
             after = intermediate
-            documentation_revisions += 1
         assert digest(after) == entry["english_sha256"], f"English translation changed: {rel}"
         checks = validate_translation(rel, before, after)
         python_files += int(checks.get("executable_ast_preserved", False))

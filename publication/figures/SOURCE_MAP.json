@@ -1,7 +1,9 @@
 {
+  "schema_version": "permworld-dmlr-figures-v2",
   "status": "complete",
-  "builder_sha256": "f6fd2e1322625664205da03f510d3131b253c04e274cfb90d881d5445a27bdbb",
+  "builder_sha256": "692c956efd234fd85635aa83fdefa61063da79fa48181d8fc4b53ef55b35f079",
   "matplotlib_version": "3.11.2",
+  "scope": "DMLR resource and transfer evidence; upstream alignment studies are excluded",
   "training_or_model_evaluations_run": false,
   "source_files": {
     "experiments/platform_v01/registry/TASK_COUNTS.json": {
@@ -13,6 +15,11 @@
       "sha256": "eac1a15aa2cae3b8ad478e99a03506e18089b432a3e77510a2bae2f7c789de4d",
       "bytes": 136361,
       "scope": "Typed formulas, input transforms and joint-answer metadata"
+    },
+    "experiments/platform_v01/dataset/quality_full.json": {
+      "sha256": "0f211bd0137232f5fb49dd1e22494342da912edea9404ea8fa37f699710777b4",
+      "bytes": 323,
+      "scope": "Archived platform unary input and exact-label audit; not a new generation or model evaluation"
     },
     "experiments/platform_v01/calibration/results_by_seed.csv": {
       "sha256": "c99a6e3a103a88b534e350b5472d07de13375b607238d7f355620e2e94919396",
@@ -48,42 +55,22 @@
       "sha256": "67060bfca722eeb8ed07e7d68d6aac4f269b70cba010827eebd99d7a45f1948b",
       "bytes": 31474,
       "scope": "Development-selected, length=all; [k16-k2]32M-[k16-k2]4M within each new repeat"
-    },
-    "publication/evidence/upstream_resource_inventory.json": {
-      "sha256": "ddedfd55293790843062a66c5309ade63cf87ecb322a7c7305f02bac9320369f",
-      "bytes": 12391,
-      "scope": "Source-audited original PermWorld catalog, representations and geometry protocol"
-    },
-    "publication/evidence/UPSTREAM_AUDIT.json": {
-      "sha256": "39667d4f1c0fe4f3ab3b4a15e95c706d0fbd53b4fad46aad3ed9e4b7228eabd8",
-      "bytes": 5453,
-      "scope": "Audited raw-to-summary upstream export; source commits and byte hashes"
-    },
-    "publication/evidence/upstream_alignment_final_norm.csv": {
-      "sha256": "2d2b37269e5c3ed0aaa98f621b15fc5eb92ed8c385f953cccde13cea10c96dbb",
-      "bytes": 42097,
-      "scope": "Original geometry: final_norm, 4096 shared task-free validation inputs; identity/correct/wrong transforms"
-    },
-    "publication/evidence/upstream_alignment_by_seed.csv": {
-      "sha256": "e86e846dc19bb74fb1374b5084b9aad4195376fc2d38c8b5daf674427d751c76",
-      "bytes": 14355,
-      "scope": "Correct-minus-wrong transform CKA within each relation and model seed"
     }
   },
-  "plotted_repeat_values": 232,
-  "plotted_group_summaries": 80,
+  "plotted_repeat_values": 208,
+  "plotted_group_summaries": 72,
   "output_sha256": {
-    "figure1_permworld_resource.pdf": "8d67aa0b5e3097953f37e4fe5b47dd87ad04c8907a216e1c33b537fba510e4ee",
-    "figure1_permworld_resource.png": "21742654412d5597d617c0439559f08e92d68748e37e5ce97cf02e5cf14ea924",
-    "figure1_permworld_resource.svg": "3442b88cc320e5b3c6db9c786b665f9a55d4aee9d0ca09cc4108699f254f3b44",
-    "figure2_evidence_overview.pdf": "4aaa1fb907b04affb81b3cb0b9623a4c14a54b3c7303e146a6bfb3083e291729",
+    "figure1_permworld_resource.pdf": "1d2a1893b2949ca1de43d8892ab6df02d4b0c5fc9ba3d69df903f5c7446e2d4e",
+    "figure1_permworld_resource.png": "69f139747a0f76e037296774fa35655beddfabaabe3da3fe41fd82eba02982bb",
+    "figure1_permworld_resource.svg": "8abb9724a03e0c6a6249034c6c0affe76bfeb52608f6e2b4624f8197f469c124",
+    "figure2_evidence_overview.pdf": "155e53606fe160de919b930847495b0be2fb1834b0e5d5f11e4c7fdab03ac38a",
     "figure2_evidence_overview.png": "a132f44b61dc029b2d9868f7ab3b8884a44c7e6cf955164d498b67789d10d54c",
-    "figure2_evidence_overview.svg": "2e354f318d366947f593d0aba64d6f8b872472d46c00a915aecd3feeb14ee8b1",
-    "figureS1_full_task_count_curves.pdf": "060234eaa3d81ab39473337f8d868eb3588b654c61cb141fe1995f1e6fd5a091",
+    "figure2_evidence_overview.svg": "11eec0922097608481a34c6f19f3d9ad8c45a755ee743f1c62573995f1557c33",
+    "figureS1_full_task_count_curves.pdf": "cb08ccbd7d59df58db157917f9ba1e112779adf290c3d9a6f198e56b225f4c5f",
     "figureS1_full_task_count_curves.png": "e8fda82330079ce9afabfd33f4bfe3f5c6ea7d878950afd57fdb55e5ece4528f",
-    "figureS1_full_task_count_curves.svg": "a1baedc9fec9b25d397fc70dad7229a9acafdda6009c317daed7e8ba25f49ca4",
-    "PLOT_DATA.csv": "cfb3e958a81fb45d2ff7e58a94137efc0cd9eb04eb3486838b1782603e6885f3",
-    "PLOT_SUMMARIES.csv": "c5e0de67c0f9beecddac9bf3e78f2461e5d35ec6c9bea300d10d28f906c4eefe",
-    "README.md": "8366d33e396b650ff8958991ba400fbd6b2f62982f13f4ae8278f00dc969f3db"
+    "figureS1_full_task_count_curves.svg": "7b0b622c806e58b1b8ddfffa37ce8627608add92df29e9a0b37d2b1e1514e610",
+    "PLOT_DATA.csv": "1d306cd62d5ad2ba3d6fca09725e5309f8fc6a073d96561b0c19b87529d927d7",
+    "PLOT_SUMMARIES.csv": "b841bce063d6176afb690c1294443f9dec9949ff0653eb9e1287d8616c9b4d84",
+    "README.md": "994a5f4c9e905ead2edcfebfb2e3e4aab34f23f7cf1ff1a32f5d3db6ffceb975"
   }
 }

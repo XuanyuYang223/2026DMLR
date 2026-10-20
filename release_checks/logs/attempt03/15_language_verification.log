@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "base_revision": "c4aeb499a0c7f2dc59b70e438f66c5b6dad4244a",
+  "translated_files": 34,
+  "python_files_with_same_executable_ast_except_translated_strings": 7,
+  "csv_text_cells_translated_all_other_cells_preserved": 120,
+  "repository_text_files_scanned": 3218,
+  "remaining_han_files": 0,
+  "unique_untranslated_archived_files_hash_verified": 0,
+  "historical_references_resolved_through_translation_ledger": 40,
+  "subsequent_documentation_revisions_verified": 2,
+  "archived_byte_checks_skipped": true,
+  "historical_manifests_rewritten": false,
+  "training_or_model_evaluation_run": false
+}
+{
+  "status": "passed",
+  "base_revision": "d5f2b5c22e241322c619ada0e9ec7642b5b1eced",
+  "translated_or_language_policy_files": 4,
+  "executable_ast_preserved_except_language_strings": true,
+  "changed_string_literals": 63,
+  "report_numeric_table_cells_preserved": true,
+  "report_evidence_links_preserved": true,
+  "additional_report_links": {
+    "PRESERVATION_AFTER.json": 1
+  },
+  "original_release_manifest_preserved": true,
+  "other_tracked_study_artifacts_unchanged": true,
+  "earlier_translation_verification": {
+    "status": "passed",
+    "base_revision": "c4aeb499a0c7f2dc59b70e438f66c5b6dad4244a",
+    "translated_files": 34,
+    "python_files_with_same_executable_ast_except_translated_strings": 7,
+    "csv_text_cells_translated_all_other_cells_preserved": 120,
+    "repository_text_files_scanned": 3218,
+    "remaining_han_files": 0,
+    "unique_untranslated_archived_files_hash_verified": 0,
+    "historical_references_resolved_through_translation_ledger": 40,
+    "subsequent_documentation_revisions_verified": 2,
+    "archived_byte_checks_skipped": true,
+    "historical_manifests_rewritten": false,
+    "training_or_model_evaluation_run": false
+  },
+  "decoded_json_files_scanned": 1453,
+  "remaining_han_files": 0,
+  "training_or_model_evaluation_run": false,
+  "v2_checkpoint_byte_verification": "Run release.py --verify separately; do not infer from this check"
+}

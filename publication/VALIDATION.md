@@ -1,36 +1,26 @@
-# Integration validation
+# DMLR release validation
 
-The integration uses no new training, neural forwards, checkpoint selection or
-mathematical re-enumeration. Validation reads existing source artifacts and
-recomputes arithmetic and figures. All checks below completed in the existing
-local environment; this is not a clean-machine installation audit.
+The clean-installation acceptance passes. See the [full report](RELEASE_CHECK_REPORT.md)
+for the two paper boundaries, failures/repairs, exact environment and limits.
 
-| Check | Completed evidence |
-| --- | --- |
-| Original-source audit | 42 pinned files from the original repositories and DMLR; clean reference snapshots; original CKA exports reproduce saved summaries to 1e-14 |
-| DMLR numerical synthesis | 19 claims bound to 49 source artifacts; eight stage-level arithmetic checks from raw CSVs pass |
-| Figure generation | Two main figures and one supplement, each in PNG/SVG/PDF; 232 plotted repeat values and 80 descriptive summaries |
-| Visual inspection | Main figures inspected for labeling, clipping, axes and protocol separation; full task-count supplement retains four targets and both chains |
-| Publication verification | Package hashes, source bindings, local links, allowed file changes and CPU label/encoding/sample-reader smoke all pass; see VERIFICATION.json |
-| Repository English | Existing English verifier passes with the explicit root-README revision bridge; zero remaining Han characters in scanned repository text or decoded JSON |
-| task_count_v2 source release | 650 files verified: 646 exact archived bytes and four previously documented English revisions; 151 local checkpoints explicitly skipped |
-| Historical preservation | No prior experiment path differs from the integration base; original scientific manifests and translation ledgers remain unchanged |
+- [Starting Git/worktree state](../release_checks/START_STATE.json).
+- [Final 21-command clean run](../release_checks/logs/attempt03/RUN.json).
+- [Accepted source hashes](../release_checks/ACCEPTED_SOURCE.json).
+- [Installed interface and data checks](../release_checks/artifacts/attempt03/ACCEPTANCE.json).
+- [Four budget-interaction groups](../release_checks/artifacts/attempt03/budget_interactions.json).
+- [Default workflow with optional audits absent](../release_checks/artifacts/attempt03/OPTIONAL_PROVENANCE_ABSENT.json).
+- [Publication manifest verification](VERIFICATION.json).
 
-Reproduce the lightweight checks from the repository root:
+Validated: noneditable wheel installation on Windows/Python 3.14.6 with no system
+third-party packages; 12 exact fixtures; parameter and complete-answer handling;
+64 disposable objects and 384 exact labels; model-ready reading; deterministic
+replay; DMLR raw-table arithmetic; two main figures and one supplement; source-only
+verification of 650 task-count v2 deliverables; and English repository content.
 
-```powershell
-.venv/Scripts/python.exe publication/evidence/build_dmlr_evidence.py
-.venv/Scripts/python.exe publication/verify.py
-.venv/Scripts/python.exe maintenance/english_translation/task_count_v2/verify.py
-.venv/Scripts/python.exe experiments/task_count_v2/release.py --verify --source-only
-```
+All 208 DMLR plotted values and 72 descriptive summaries reproduce exactly. The
+four v2 budget-interaction means and sample SDs agree within 1e-12. Eight optional
+upstream records can be absent without breaking default DMLR figures or checks.
 
-The first command rebuilds only the new evidence synthesis. For plot regeneration,
-use `publication/build_figures.py --out` with a fresh directory. Optional original
-source re-extraction requires the pinned local clones and is documented in the
-upstream audit. The publication verifier checks the saved upstream audit and
-exports; it does not independently download or verify public release payloads.
-
-Full checkpoint-inclusive audits were not repeated for this documentation task.
-Weights remain local and unchanged by the executed commands. The difference
-between source-only verification and full model replication is intentional.
+No training, neural forwards or checkpoint-inclusive audit was rerun. The old
+integration validation remains in Git at 7ef277d; it is distinct from this
+clean-environment acceptance. Historical scientific artifacts remain unchanged.

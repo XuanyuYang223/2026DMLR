@@ -1,0 +1,56 @@
+[
+  {
+    "command": [
+      "F:\\permworld-release-check\\attempt03\\venv\\Scripts\\permworld-data.exe",
+      "--help"
+    ],
+    "returncode": 0,
+    "stdout": "usage: python.exe F:\\permworld-release-check\\attempt03\\venv\\Scripts\\permworld-data\n       [-h] {registry,generate,verify-data,sample} ...\n\nExplicit-output CLI for an installed PermWorld data package. Historical\nresearch generators remain in the checkout. The wheel contains exact oracles\nand mathematical certificates, not the historical experiment input pools. It\ntherefore cannot certify exclusion against those pools.\n\npositional arguments:\n  {registry,generate,verify-data,sample}\n    registry            Export definitions and certificate references\n    generate            Generate explicitly scoped disposable data\n    verify-data         Replay and verify disposable generated data\n    sample              Read complete model-ready samples\n\noptions:\n  -h, --help            show this help message and exit\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "F:\\permworld-release-check\\attempt03\\venv\\Scripts\\permworld-data.exe",
+      "generate",
+      "--out",
+      "F:\\permworld-release-check\\attempt03\\acceptance\\dataset_cli",
+      "--config",
+      "F:\\permworld-release-check\\attempt03\\acceptance\\demo_config.json"
+    ],
+    "returncode": 0,
+    "stdout": "[data] seed19001 train n8: 8 objects, 6 label instances\n[data] seed19001 train n10: 8 objects, 6 label instances\n[data] seed19001 dev n8: 4 objects, 6 label instances\n[data] seed19001 dev n10: 4 objects, 6 label instances\n[data] seed19001 test n8: 4 objects, 6 label instances\n[data] seed19001 test n10: 4 objects, 6 label instances\n[data] seed19002 train n8: 8 objects, 6 label instances\n[data] seed19002 train n10: 8 objects, 6 label instances\n[data] seed19002 dev n8: 4 objects, 6 label instances\n[data] seed19002 dev n10: 4 objects, 6 label instances\n[data] seed19002 test n8: 4 objects, 6 label instances\n[data] seed19002 test n10: 4 objects, 6 label instances\n{\n  \"status\": \"generated_and_verified\",\n  \"out\": \"F:\\\\permworld-release-check\\\\attempt03\\\\acceptance\\\\dataset_cli\",\n  \"pools\": 12,\n  \"instances\": 6,\n  \"historical_exclusion\": false,\n  \"scope\": \"Disposable data; isolated across its own splits and repeats only\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "F:\\permworld-release-check\\attempt03\\venv\\Scripts\\permworld-data.exe",
+      "verify-data",
+      "--out",
+      "F:\\permworld-release-check\\attempt03\\acceptance\\dataset_cli"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"status\": \"passed\",\n  \"objects_checked\": 64,\n  \"labels_recomputed\": 384,\n  \"duplicate_inputs\": 0,\n  \"cross_role_or_repeat_orbit_overlap\": 0,\n  \"historical_orbit_overlap\": null,\n  \"all_pool_rng_streams_replayed\": true,\n  \"empirical_constant_tasks_retained\": true,\n  \"binary_pair_isolation_checked\": false,\n  \"historical_exclusion\": false,\n  \"historical_overlap\": \"not checked; historical pools are not part of the wheel\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "F:\\permworld-release-check\\attempt03\\venv\\Scripts\\permworld-data.exe",
+      "sample",
+      "--dataset",
+      "F:\\permworld-release-check\\attempt03\\acceptance\\dataset_cli",
+      "--seed",
+      "19001",
+      "--role",
+      "train",
+      "--task",
+      "increasing_subsequence_count",
+      "--params",
+      "{\"k\":3}",
+      "--count",
+      "1"
+    ],
+    "returncode": 0,
+    "stdout": "[\n  {\n    \"task_id\": \"increasing_subsequence_count\",\n    \"params\": {\n      \"k\": 3\n    },\n    \"p\": [\n      6,\n      5,\n      3,\n      7,\n      4,\n      8,\n      1,\n      2\n    ],\n    \"n\": 8,\n    \"answer_value\": 4,\n    \"encoding_version\": \"permworld_sequence_v1\",\n    \"input_encoding\": \"one_line_v1\",\n    \"prompt_ids\": [\n      102,\n      123,\n      8,\n      105,\n      6,\n      113,\n      5,\n      113,\n      3,\n      113,\n      7,\n      113,\n      4,\n      113,\n      8,\n      113,\n      1,\n      113,\n      2,\n      106,\n      189,\n      196,\n      198,\n      3,\n      197,\n      124\n    ],\n    \"prompt_length\": 26,\n    \"answer_ids\": [\n      4,\n      103\n    ],\n    \"input_ids\": [\n      102,\n      123,\n      8,\n      105,\n      6,\n      113,\n      5,\n      113,\n      3,\n      113,\n      7,\n      113,\n      4,\n      113,\n      8,\n      113,\n      1,\n      113,\n      2,\n      106,\n      189,\n      196,\n      198,\n      3,\n      197,\n      124,\n      4,\n      103\n    ]\n  }\n]\n",
+    "stderr": ""
+  }
+]

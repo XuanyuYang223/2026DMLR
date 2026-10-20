@@ -1,0 +1,4 @@
+
+[notice] A new release of pip is available: 26.1.2 -> 26.2.1
+[notice] To update, run: F:\permworld-release-check\attempt00\venv\Scripts\python.exe -m pip install --upgrade pip
+ERROR: Directory 'F:\\permworld-release-check\\attempt00\\repo[publication]' is not installable. Neither 'setup.py' nor 'pyproject.toml' found.

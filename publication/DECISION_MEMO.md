@@ -1,39 +1,38 @@
-# What is missing: a decision memo
+# DMLR scope and release decisions
 
-## Assessment from the complete record
+## Supported paper
 
-The immediate gap is **presentation and scientific positioning**, followed by a few concrete release requirements. The project already contains a broad exact-label environment, original geometry experiments, typed mathematical relations, correctness and split audits, single-task calibration, cross-target transfer, a failed/uncertain confirmation, and task-count/budget experiments. Describing it only through the newest LIS/fixed-points comparison hides most of that work.
+The DMLR paper is a resource-and-science paper with three contributions: a relation-annotated data platform, a composition-and-budget-accounted transfer workflow, and conditional empirical findings. The available record already extends beyond the newest two targets: four-target transfer, six-task calibration, four-target task-count curves, and a separate budget comparison are documented.
 
-The balanced paper can make a substantive claim now: a relation-annotated testbed exposes conditional, protocol-sensitive transfer rather than a universal advantage from related tasks or greater task count. Existing evidence supports that bounded claim. It does not support a mechanism linking geometric alignment to downstream transfer.
+The separate TMLR representation study has its own scientific scope. Its encoding, architecture, initialization and answer-control results are excluded from DMLR's claims, main figures and default reproduction. Original workshop alignment work may be cited as background to PermWorld; it is not a missing DMLR experiment or an additional contribution.
 
 ## Gap assessment
 
-| Question | Evidence already available | Remaining gap | Priority |
-| --- | --- | --- | --- |
-| Is there a reusable resource? | Exact labels, 54 endpoints, versioned complete-answer encoding, registry, relation certificates, reproducible pools and a model-ready reader | A compact public-facing narrative and tested onboarding path; this package supplies the narrative and entry points | Immediate documentation |
-| Is the resource scientifically distinctive? | Known single-task and joint relations, transformed-input queries, and incorrect-pairing geometry controls | Explain how these controls differ from merely collecting many task names; count templates/instances/encodings separately | Immediate positioning |
-| Are findings broader than two targets? | Four-target v3, six-task calibration, four-target task-count v1, and original alignment studies | Present this breadth without pooling incompatible protocols or hiding weak tasks | Immediate figures and draft |
-| Is a background effect established? | Exploratory v4 followed by five new repeats in v5 | Fixed-points direction did not replicate; longest-run interaction remains uncertain | Report uncertainty; do not add variants automatically |
-| Is there a pure task-count effect? | Two frozen nested compositions and a paired budget intervention | Count changes composition, mathematical information and per-task exposure simultaneously | Bound the claim; a general count claim would need a new design |
-| Does geometry explain transfer? | Both lines exist on related mathematical resources | No matched-checkpoint, matched-task causal or predictive bridge has been evaluated | Required only for a stronger mechanism claim |
-| Can an external reader reproduce everything from Git alone? | Code, data pools, frozen protocols, raw results and figure sources are tracked | Weights are local; upstream claims are pinned extracts; no unified clean-machine installation audit or formal license/DOI is supplied | Release engineering before formal publication |
+| Question | Evidence available | Remaining boundary or action |
+| --- | --- | --- |
+| Is there a reusable resource? | Exact labels, a registry, versioned complete-answer encoding, relation certificates, reproducible pools and a reader | Maintain an installable package and a tested clean-environment onboarding path |
+| What is scientifically distinctive? | Same-input and transformed-input relations, joint answer requirements and explicit evidence status | Explain these controls and count templates/instances/encodings separately |
+| Are findings broader than two targets? | Four-target v3 and task-count v1, six-task calibration, followed by a focused budget study | Preserve protocol boundaries; do not pool absolute accuracy across evaluator generations |
+| Is a background interaction established? | Exploratory v4 followed by five new repeats in v5 | Fixed-points direction did not replicate; longest-run interaction remains uncertain |
+| Is there a pure task-count effect? | Two fixed nested compositions and a paired budget comparison | Count changes composition and per-task exposure; the current evidence is conditional |
+| Is a formula-use mechanism established? | Registered identities and source-learning records | Correlated improvements do not identify a computation or mechanism |
+| What can be reproduced without checkpoints? | Labels, data interfaces, quality checks, released raw tables and derived figures | Release acceptance validates these paths; GPU training and model predictions are separate |
+| What still blocks a formal archive? | Reviewable source, protocols and results | Rights-holder-approved licenses, author credit, immutable release/tag and archival identifier |
 
-## What to settle before another experiment
+## Release acceptance before another experiment
 
-First agree on the claim budget: a resource plus conditional-transfer findings is already supported; a general task-count law or formula-use mechanism is not. Finalize authorship/credit across the repositories, license the code and data with rights-holder agreement, choose a stable artifact archive, and run a clean-environment onboarding check. These are release decisions and engineering tasks, not missing transfer runs.
+The current release check exercises installation in a newly created isolated environment, labels and parameters, encoding, sample reading, small data generation and quality checks, DMLR table recomputation, figure generation and source-only archive verification. The exact checked environment, commands, failures and fixes belong in the release acceptance record linked from [VALIDATION.md](VALIDATION.md). Passing these checks establishes an artifact-use path; it does not constitute an independent rerun of GPU training or test predictions.
 
-The paper draft should then be reviewed against the source ledgers, especially the original alignment protocol and the transition from single-token pilot evaluation to complete-answer platform evaluation. Current local audits establish traceability, not independent peer review.
+Raw data, frozen configurations and scientific manifests remain unchanged. Derived publication material has its own versioned manifest and provenance. Optional upstream audit records remain historical records, outside the default reproduction dependencies.
 
-## If one further scientific experiment is justified later
+## A possible later scientific extension
 
-For the current balanced positioning, the most useful addition would be **a predeclared relation-and-exposure control on a broader task-family sample**, rather than another background variant for the same two targets. Hold the model and full-answer interface fixed; define task-set sampling independently of outcomes; stratify sets by available single-task/joint information; measure source mastery and both repeated and unique task-input exposure. Select the estimand first: total-token performance, exposure-matched performance, or the effect of a relation intervention. These answer different questions and should not be conflated.
+A future study could separate relation availability from exposure over a broader, prespecified task-family sample. Keep the model and full-answer interface fixed; select task sets independently of outcomes; annotate single-task and joint information; measure source mastery and unique as well as repeated task-input exposure. Choose the estimand first: performance at fixed total tokens, performance at matched exposure, or a relation intervention. These answer different questions.
 
-If the intended headline instead becomes "alignment predicts transfer," prioritize a matched-checkpoint study that measures geometry before adaptation, uses a frozen predictive analysis and held-out task pairs, and controls task difficulty/source mastery. That would test the missing bridge, not retroactively turn the existing CKA and transfer results into a causal explanation.
+This proposal is not executed by the release check. Further background variants for the existing two targets, extra training budgets and additional hyperparameter searches are outside the present scope.
 
-Neither proposal is executed in this integration. No additional training, background variants, learning-rate search or task replacement is triggered.
+## Task-library expansion
 
-## Task-library expansion after this review
+Use the existing [task-family plan](../experiments/pilot_v5_confirmation/TASK_FAMILY_PLAN.md) and [registry](../experiments/platform_v01/registry/TASK_REGISTRY.json) as the engineering contract. The first three planned families are already implemented. Possible future axes include local versus global order statistics, distribution- or shape-valued outputs, and unary versus binary composition queries. Binary generation and query-level isolation require validation before making a binary benchmark claim.
 
-Use the existing [task-family plan](../experiments/pilot_v5_confirmation/TASK_FAMILY_PLAN.md) and [platform registry](../experiments/platform_v01/registry/TASK_REGISTRY.json) as the engineering contract. The first three planned families are already implemented; count their present coverage before adding variants. Future additions should supply different computational structure and relation types: local-versus-global order statistics, distribution/shape-valued outputs, and unary-to-binary composition queries are more informative axes than many aliases of one count. Binary generation and orbit isolation need their own validated query-level design before any binary benchmark claim.
-
-For every addition, record the mathematical template, parameters, output bounds, exact algorithm, independent checker, same-input equivalences, transformed-input relations, and joint-query dependencies. Preserve separate proof, finite-verification and empirical statuses. Calibrate representative tasks before using them in composition experiments, while retaining failures. Expansion is a later decision, not part of this delivery.
+Each addition should record the template, parameters, output bounds, exact algorithm, independent checker, same-input equivalences, transformed-input relations and joint-query requirements. Proof, finite verification and empirical status stay separate. Representative-task calibration should retain difficult cases and failures.

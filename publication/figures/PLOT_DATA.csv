@@ -1,28 +1,4 @@
 figure,panel,study,estimand,group,repeat_id,value,unit
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,descent_inverse,17,0.5084228088677445,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,descent_inverse,42,0.1588069523910259,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,descent_inverse,101,0.4041710224520228,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,exceedance_inverse,17,0.6518310922714403,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,exceedance_inverse,42,0.670394564628654,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,exceedance_inverse,101,0.5885662449608278,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,peak_complement,17,0.27388612791129485,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,peak_complement,42,0.2678617136847964,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,peak_complement,101,0.38189726392628126,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,fixed_complement,17,0.12177366344852361,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,fixed_complement,42,0.3748177462522055,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,fixed_complement,101,0.06340511783274161,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,subsequence_complement,17,0.21657805905413513,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,subsequence_complement,42,0.3575794544412663,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,subsequence_complement,101,0.5054936147732417,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,run_complement,17,0.902148919996522,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,run_complement,42,0.8306036241144864,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,run_complement,101,0.8758744671756677,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,record_complement,17,0.298269415366168,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,record_complement,42,0.32387252307836434,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,record_complement,101,0.3481032221371601,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,decomposition_complement,17,0.3704877889248537,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,decomposition_complement,42,0.20880492381128063,linear CKA difference
-figure1,c,original_permworld_geometry,Correct-transform CKA - wrong-transform CKA,decomposition_complement,101,0.261924455229031,linear CKA difference
 figure1,d,platform_v0.1,Fixed-endpoint complete-answer dev accuracy,cycle_count,617,43.75,% accuracy
 figure1,d,platform_v0.1,Fixed-endpoint complete-answer dev accuracy,cycle_count,829,41.92708333333333,% accuracy
 figure1,d,platform_v0.1,Train-derived majority accuracy on dev,cycle_count,617,32.94270833333333,% accuracy

@@ -1,0 +1,56 @@
+Processing F:\permworld-release-check\attempt02\repo
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting numpy<3,>=2.0 (from permworld-platform==0.1.0)
+  Downloading numpy-2.5.4-cp314-cp314-win_amd64.whl.metadata (6.6 kB)
+Collecting matplotlib<4,>=3.9 (from permworld-platform==0.1.0)
+  Downloading matplotlib-3.11.2-cp314-cp314-win_amd64.whl.metadata (80 kB)
+Collecting contourpy>=1.0.1 (from matplotlib<4,>=3.9->permworld-platform==0.1.0)
+  Downloading contourpy-1.4.0-cp314-cp314-win_amd64.whl.metadata (3.8 kB)
+Collecting cycler>=0.10 (from matplotlib<4,>=3.9->permworld-platform==0.1.0)
+  Using cached cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.28.2 (from matplotlib<4,>=3.9->permworld-platform==0.1.0)
+  Downloading fonttools-4.67.0-cp314-cp314-win_amd64.whl.metadata (139 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib<4,>=3.9->permworld-platform==0.1.0)
+  Downloading kiwisolver-1.5.1-cp314-cp314-win_amd64.whl.metadata (5.2 kB)
+Collecting packaging>=20.0 (from matplotlib<4,>=3.9->permworld-platform==0.1.0)
+  Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pillow>=9 (from matplotlib<4,>=3.9->permworld-platform==0.1.0)
+  Downloading pillow-13.0.0-cp314-cp314-win_amd64.whl.metadata (9.3 kB)
+Collecting pyparsing>=3 (from matplotlib<4,>=3.9->permworld-platform==0.1.0)
+  Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting python-dateutil>=2.7 (from matplotlib<4,>=3.9->permworld-platform==0.1.0)
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting six>=1.5 (from python-dateutil>=2.7->matplotlib<4,>=3.9->permworld-platform==0.1.0)
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Downloading matplotlib-3.11.2-cp314-cp314-win_amd64.whl (9.5 MB)
+   ---------------------------------------- 9.5/9.5 MB 53.8 MB/s  0:00:00
+Downloading numpy-2.5.4-cp314-cp314-win_amd64.whl (12.7 MB)
+   ---------------------------------------- 12.7/12.7 MB 114.0 MB/s  0:00:00
+Downloading contourpy-1.4.0-cp314-cp314-win_amd64.whl (240 kB)
+Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.67.0-cp314-cp314-win_amd64.whl (2.5 MB)
+   ---------------------------------------- 2.5/2.5 MB 79.3 MB/s  0:00:00
+Downloading kiwisolver-1.5.1-cp314-cp314-win_amd64.whl (72 kB)
+Using cached packaging-26.3-py3-none-any.whl (129 kB)
+Downloading pillow-13.0.0-cp314-cp314-win_amd64.whl (7.3 MB)
+   ---------------------------------------- 7.3/7.3 MB 110.4 MB/s  0:00:00
+Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Building wheels for collected packages: permworld-platform
+  Building wheel for permworld-platform (pyproject.toml): started
+  Building wheel for permworld-platform (pyproject.toml): finished with status 'done'
+  Created wheel for permworld-platform: filename=permworld_platform-0.1.0-py3-none-any.whl size=141362 sha256=c61470e2a2ca5718460f181197ba177841f53cc5577cc559b4f04976daed1ff9
+  Stored in directory: C:\Users\yangx\AppData\Local\Temp\pip-ephem-wheel-cache-xdxesvq4\wheels\45\e7\6e\8981667ca143a9c28ee3e32a5c4c3c2631defb0cc519ab9130
+Successfully built permworld-platform
+Installing collected packages: six, pyparsing, pillow, packaging, numpy, kiwisolver, fonttools, cycler, python-dateutil, permworld-platform, contourpy, matplotlib
+
+Successfully installed contourpy-1.4.0 cycler-0.12.1 fonttools-4.67.0 kiwisolver-1.5.1 matplotlib-3.11.2 numpy-2.5.4 packaging-26.3 permworld-platform-0.1.0 pillow-13.0.0 pyparsing-3.3.3 python-dateutil-2.9.0.post0 six-1.17.0
+
+[notice] A new release of pip is available: 26.1.2 -> 26.2.1
+[notice] To update, run: F:\permworld-release-check\attempt02\venv\Scripts\python.exe -m pip install --upgrade pip

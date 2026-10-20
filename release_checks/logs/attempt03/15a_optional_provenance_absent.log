@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "optional_files_absent_during_commands": [
+    "audit_original_permworld.py",
+    "original_permworld_audit.md",
+    "source_inventory.csv",
+    "upstream_alignment_by_relation.csv",
+    "upstream_alignment_by_seed.csv",
+    "upstream_alignment_final_norm.csv",
+    "UPSTREAM_AUDIT.json",
+    "upstream_resource_inventory.json"
+  ],
+  "all_files_restored_with_identical_sha256": true,
+  "sha256": {
+    "audit_original_permworld.py": "5bc83ee83d541e1ebe959830e91bb8b85c85e7f97e3fbcc83fc8b7063b9604f8",
+    "original_permworld_audit.md": "1d9e3f08380e3b931fc74e2628716440de5958035691d0767f386daddb254929",
+    "source_inventory.csv": "e3d29ca1a5d6d739ba2368c6f1cf20259f377c7e7c7a02457eb9ada15989b44f",
+    "upstream_alignment_by_relation.csv": "37ffd41f9edfdd59e7eb84bb52cf656fefa2a635ec3bd45134e35e814b8e2b5e",
+    "upstream_alignment_by_seed.csv": "e86e846dc19bb74fb1374b5084b9aad4195376fc2d38c8b5daf674427d751c76",
+    "upstream_alignment_final_norm.csv": "2d2b37269e5c3ed0aaa98f621b15fc5eb92ed8c385f953cccde13cea10c96dbb",
+    "UPSTREAM_AUDIT.json": "39667d4f1c0fe4f3ab3b4a15e95c706d0fbd53b4fad46aad3ed9e4b7228eabd8",
+    "upstream_resource_inventory.json": "ddedfd55293790843062a66c5309ade63cf87ecb322a7c7305f02bac9320369f"
+  },
+  "commands": [
+    {
+      "name": "verify",
+      "argv": [
+        "F:\\permworld-release-check\\attempt03\\venv\\Scripts\\python.exe",
+        "-I",
+        "F:\\permworld-release-check\\attempt03\\repo\\publication\\verify.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "figures",
+      "argv": [
+        "F:\\permworld-release-check\\attempt03\\venv\\Scripts\\python.exe",
+        "-I",
+        "F:\\permworld-release-check\\attempt03\\repo\\publication\\build_figures.py",
+        "--out",
+        "F:\\permworld-release-check\\attempt03\\optional_provenance_check\\figures"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "training_runs": 0,
+  "model_forwards": 0
+}

@@ -1,19 +1,12 @@
 # Artifact and release guide
 
-## Publication status
+## Publication status and paper boundary
 
-This branch provides a **reviewable integrated research artifact**, not an accepted paper or a new DOI release. The paper draft, figures, contribution statement and evidence ledgers are in [publication/](README.md). Existing experiments remain in their original directories. Checkpoints in this DMLR repository remain local and Git-ignored; no model weights are uploaded by this integration.
+This branch provides a **DMLR research artifact under release review**, not an accepted paper or a new DOI release. The [paper draft](PAPER_DRAFT.md) has three contributions: a relation-annotated data platform, an auditable composition-and-budget transfer workflow, and conditional empirical findings. Existing experiments remain in their original directories. DMLR checkpoints remain local and Git-ignored.
 
-The root README is the public entry point. This guide links the original PermWorld and alignment artifacts as prior parts of the research program, with their own provenance and caveats. It does not merge incompatible training protocols or relicense inherited code.
+Original PermWorld definitions, generators and mathematical transformations are inherited from the [pinned original repository](https://github.com/XuanyuYang223/neurips/tree/74f0de2017115f06f11b7285366b66e7e8431d30). Its [dataset release](https://github.com/XuanyuYang223/neurips/releases/tag/permutation-data-2026-09-04) is a separate historical resource, not an installation prerequisite. The workshop alignment study is background only. Newer TMLR representation results belong to the separate paper and are excluded from DMLR's figures and default numerical reproduction.
 
-## Original resources and alignment work
-
-| Resource | Source snapshot | Existing release entry |
-| --- | --- | --- |
-| Original permutation environment, behavior and geometry | [neurips at 74f0de2](https://github.com/XuanyuYang223/neurips/tree/74f0de2017115f06f11b7285366b66e7e8431d30) | [Dataset release](https://github.com/XuanyuYang223/neurips/releases/tag/permutation-data-2026-09-04), [checkpoint release](https://github.com/XuanyuYang223/neurips/releases/tag/permutation-checkpoints-2026-09-04) |
-| Representation pairing with encoding/architecture/answer controls | [2026TMLR at d9a113d](https://github.com/XuanyuYang223/2026TMLR/tree/d9a113d20d34db3c21cf69cf546cff4a0ab4904a) | [Artifact prerelease with retained caveats](https://github.com/XuanyuYang223/2026TMLR/releases/tag/representation-selectivity-2026-10-11-caveat) |
-
-Release metadata was checked during the [upstream audit](evidence/original_permworld_audit.md). Asset payloads were not downloaded or rehashed in this integration. Use the original repositories' checksum and extraction instructions. Small audited CSV extracts are committed here so the integrated figures do not require those assets or local reference clones.
+The [upstream audit](evidence/original_permworld_audit.md) and its source inventory remain optional archival provenance. Installing this package, reading samples and rebuilding DMLR tables/figures require no upstream clone, release asset, reference directory or checkpoint. Historical upstream assets were not downloaded or rehashed in this release check.
 
 ## DMLR resource entry points
 
@@ -42,14 +35,29 @@ Release metadata was checked during the [upstream audit](evidence/original_permw
 
 The [claim ledger](evidence/dmlr_claims.csv) gives exact source paths and hashes for integrated numerical statements. Original experiment reports contain their full configurations, costs, seed roles, source-learning records and frozen selection rules. No new training command is needed to read or reproduce the publication figures.
 
-## Minimal local use
+## Install in a new environment
 
-Use the recorded project Python environment from the repository root. For a clean machine, inspect the [task-count environment inventory](../experiments/task_count_v1/ENVIRONMENT.json) and the archived [requirements lock](../experiments/permworld_pilot/requirements-lock.txt). They document environments; this integration does not claim a newly validated cross-platform installer or standalone wheel.
+The release acceptance uses Python 3.14 on Windows, a new virtual environment with system and user third-party packages excluded, and a **noneditable wheel install**. Git and access to the Python package index are required. Core installation provides the data interface with NumPy; the `publication` extra supplies the plotting dependencies. It does not install a GPU training runtime.
+
+From a fresh clone, the PowerShell installation commands are:
+
+```powershell
+git clone --branch publication/permworld-dmlr-release-check https://github.com/XuanyuYang223/2026DMLR.git permworld-dmlr-release
+Set-Location permworld-dmlr-release
+py -3.14 -m venv ../permworld-release-venv
+$releasePython = (Resolve-Path ../permworld-release-venv/Scripts/python.exe).Path
+& $releasePython -I -m pip --isolated install ".[publication]"
+& $releasePython -I -m pip check
+$releaseData = (Resolve-Path ../permworld-release-venv/Scripts/permworld-data.exe).Path
+```
+
+Use new checkout and environment paths when repeating this procedure. The package metadata declares runtime dependencies; the actual resolved versions and command transcripts are recorded by the [release acceptance report](RELEASE_CHECK_REPORT.md). The tested configuration is a reproducible example, not a claim that every Python/operating-system combination has been validated.
+
+The installed API can be imported outside the checkout:
 
 ```python
 from permworld_platform import label
 from permworld_platform.encoding import encode_example
-from permworld_platform.data import read_samples
 
 p = (3, 1, 4, 2)
 assert label("cycle_count", p) == 1
@@ -57,33 +65,65 @@ assert label("increasing_subsequence_count", p, {"k": 2}) == 3
 example = encode_example("increasing_subsequence_count", p, {"k": 2},
                          max_seq_len=128)
 assert example["input_ids"][example["prompt_length"]:] == example["answer_ids"]
-sample = next(read_samples("experiments/platform_v01/dataset", 617, "train",
-                           "increasing_subsequence_count", {"k": 3}))
-assert sample["input_ids"][sample["prompt_length"]:] == sample["answer_ids"]
 ```
 
-For a data-reading smoke check and source-only archive verification:
+For installed-package generation, use the `permworld-data` entry point or `permworld_release.generate_dataset(out, config)`. Both require an explicit output path and a configuration declaring `historical_exclusion: false`; they reject an absent or enabled historical-exclusion policy. The wheel includes exact oracles and certificates but does not include historical research input pools. The archived low-level generator under `permworld_platform` retains its original scientific source bytes and must not be used from the standalone wheel to claim historical isolation.
+
+Released data and experiment tables remain in the source checkout; they are not copied into the wheel. The installed reader can read a released dataset when its path is supplied explicitly. From the clone root:
 
 ```powershell
-.venv/Scripts/python.exe -m permworld_platform sample --count 1
-.venv/Scripts/python.exe publication/verify.py
-.venv/Scripts/python.exe experiments/task_count_v2/release.py --verify --source-only
+& $releaseData sample --dataset experiments/platform_v01/dataset --seed 617 --role train --task cycle_count --count 1
+& $releasePython -I publication/evidence/build_dmlr_evidence.py
+& $releasePython -I publication/build_figures.py --out ../permworld-rebuilt-figures
+& $releasePython -I experiments/task_count_v2/release.py --verify --source-only
+& $releasePython -I publication/verify.py
 ```
 
-To regenerate figures, use `publication/build_figures.py`. To repeat model experiments, follow each study's commands and create fresh output directories. Historical input pools are required for the original orbit exclusions. Do not relax those rules or overwrite frozen outputs to make a reproduction run succeed.
+The table recomputation reads released aggregate and raw records; it does not run inference. The figure output should be a fresh directory. Rendering with a different Matplotlib/font version can alter image bytes even when plot data are identical; publication verification checks the checked-in release bytes.
 
-## Preservation and publication checks
+## Full clean-environment acceptance
 
-The integration starts from DMLR revision `95e84e6af5de2c0a692da2f64bf95745455f5c3c` on its own branch. It adds new publication files and revises the root entry page; the English audit checker learns to follow an explicit documentation revision bridge. Historical scientific manifests, data, raw results, configurations, reports and model weights are not changed.
+The acceptance runner creates a second fresh Git clone, a new environment and a separate working directory outside that clone. It clears inherited Python-path environment variables, uses Python isolated mode (`-I`), checks that no `reference/`, prior environment or checkpoint is present, and verifies that imports resolve to the installed wheel. Run it with a standard Python interpreter; it uses the standard library before installation:
 
-The [documentation revision record](../maintenance/documentation_revisions/publication_integration.json) binds the prior English root README to the new entry page. It is separate from the old English translation ledger and from scientific preservation manifests. Publication verification checks the package's local links, source hashes, derived evidence checks and allowed change scope. It is not a fresh model replication or a replacement for the full checkpoint-inclusive release audits.
+```powershell
+py -3.14 release_checks/run_clean_check.py --source https://github.com/XuanyuYang223/2026DMLR.git --branch publication/permworld-dmlr-release-check --work ../permworld-clean-acceptance --logs ../permworld-clean-acceptance-logs
+```
+
+Both output directories must be new. Logs include the exact checkout revision, system and Python version, initial and installed packages, each command/exit code, timing and failure information. The runner exercises:
+
+- Installed-package imports, representative exact labels and parameterized tasks.
+- Multi-token answers, versioned encoding, bounds/errors and model-ready sample reading.
+- Small reproducible generated pools, within-fixture orbit isolation, duplicates, answer distributions and corruption detection.
+- DMLR result recomputation, figure rebuilding and all four v2 budget-interaction means/sample standard deviations against raw results.
+- Source-only task-count release verification and DMLR publication verification.
+
+The interface check writes its explicit small configuration to `../permworld-clean-acceptance/acceptance/demo_config.json`. It declares lengths 8 and 10, two repeats, 8/4/4 train/development/test objects per length and repeat, six task instances, and `historical_exclusion: false`. After that check has completed, the following commands exercise the installed CLI using the saved configuration and another fresh output directory. Run them from the same source-checkout root as the acceptance command above:
+
+```powershell
+$acceptedData = (Resolve-Path ../permworld-clean-acceptance/venv/Scripts/permworld-data.exe).Path
+& $acceptedData generate --out ../permworld-demo-cli --config ../permworld-clean-acceptance/acceptance/demo_config.json
+& $acceptedData verify-data --out ../permworld-demo-cli
+& $acceptedData sample --dataset ../permworld-demo-cli --seed 19001 --role train --task cycle_count --count 2
+```
+
+This example reads a scalar task; the same fixture also contains parameterized length-3 subsequence counts and length-2 cycle counts. The automated interface check reads their full encoded answers, verifies multi-token handling and checks deterministic regeneration. A Python caller uses `from permworld_release import generate_dataset, verify_dataset` with the same JSON configuration and explicit paths.
+
+The small generator fixture explicitly sets `historical_exclusion=False`: it tests installation and data interfaces, with isolation between its own roles. It is **not a research split** and does not claim isolation from historical experiments. Reproducing a frozen scientific dataset requires its recorded historical exclusion inputs and rules; those are never silently relaxed. The fixture output cannot be substituted for published research data.
+
+The actual release-check outcome, including failures followed by repairs and clean reruns, is recorded in [RELEASE_CHECK_REPORT.md](RELEASE_CHECK_REPORT.md). No GPU training, checkpoint loading or model test-set evaluation is part of this acceptance. Use each original study's frozen protocol and a fresh output directory for such a later rerun.
+
+## Preservation and provenance
+
+The original integration was based on `95e84e6af5de2c0a692da2f64bf95745455f5c3c`; this release check starts from the latest integration commit recorded in [START_STATE.json](../release_checks/START_STATE.json). Starting worktree changes, if any, are recorded before edits. Raw data, results, frozen configurations and scientific manifests remain unchanged.
+
+Publication figures, captions, source mappings and documentation are derived release material with a new manifest. Historical upstream audit files are retained as archival provenance. Documentation changes are recorded separately from original experiment and translation manifests. Source-only verification explicitly excludes missing local checkpoint payloads; it is not a substitute for a full checkpoint-inclusive archive audit.
 
 ## Before a formal archived release
 
-1. Confirm author and contributor credit across the original PermWorld, TMLR and DMLR work.
+1. Confirm author and contributor credit for original PermWorld and DMLR, and the boundary with the separate representation paper.
 2. Choose code and data licenses with the relevant rights holders; no license is invented here.
-3. Decide which local weights to archive, their access policy and storage location.
-4. Validate installation and the minimal data-to-sample example in a clean environment.
-5. Select a release tag and archival DOI, then cite those exact immutable artifacts in the submitted manuscript.
+3. Decide whether local weights will be archived, and specify their access policy and storage location.
+4. Select an immutable release tag and archival DOI, then cite those exact artifacts in the submitted manuscript.
+5. Review the clean-environment record and maintain supported dependency versions; GPU-training reproduction remains a separate validation scope.
 
-These are identifiable remaining release tasks. Existing upstream releases remain accessible; this integration does not replace or silently upgrade their scientific or numerical caveats.
+These release decisions remain explicit. Successful CPU/interface/table acceptance does not imply formal licensing, archival publication or a new model replication.

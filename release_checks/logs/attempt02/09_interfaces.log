@@ -1,0 +1,256 @@
+[data] seed19001 train n8: 8 objects, 6 label instances
+[data] seed19001 train n10: 8 objects, 6 label instances
+[data] seed19001 dev n8: 4 objects, 6 label instances
+[data] seed19001 dev n10: 4 objects, 6 label instances
+[data] seed19001 test n8: 4 objects, 6 label instances
+[data] seed19001 test n10: 4 objects, 6 label instances
+[data] seed19002 train n8: 8 objects, 6 label instances
+[data] seed19002 train n10: 8 objects, 6 label instances
+[data] seed19002 dev n8: 4 objects, 6 label instances
+[data] seed19002 dev n10: 4 objects, 6 label instances
+[data] seed19002 test n8: 4 objects, 6 label instances
+[data] seed19002 test n10: 4 objects, 6 label instances
+[data] seed19001 train n8: 8 objects, 6 label instances
+[data] seed19001 train n10: 8 objects, 6 label instances
+[data] seed19001 dev n8: 4 objects, 6 label instances
+[data] seed19001 dev n10: 4 objects, 6 label instances
+[data] seed19001 test n8: 4 objects, 6 label instances
+[data] seed19001 test n10: 4 objects, 6 label instances
+[data] seed19002 train n8: 8 objects, 6 label instances
+[data] seed19002 train n10: 8 objects, 6 label instances
+[data] seed19002 dev n8: 4 objects, 6 label instances
+[data] seed19002 dev n10: 4 objects, 6 label instances
+[data] seed19002 test n8: 4 objects, 6 label instances
+[data] seed19002 test n10: 4 objects, 6 label instances
+{
+  "status": "passed",
+  "scope": "installed-wheel CPU interfaces and disposable generated fixtures",
+  "python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "executable": "F:\\permworld-release-check\\attempt02\\venv\\Scripts\\python.exe",
+  "environment_prefix": "F:\\permworld-release-check\\attempt02\\venv",
+  "base_prefix": "C:\\Users\\yangx\\AppData\\Local\\Python\\pythoncore-3.14-64",
+  "isolated_python": true,
+  "system_site_packages": false,
+  "user_site_packages": false,
+  "package_file": "F:\\permworld-release-check\\attempt02\\venv\\Lib\\site-packages\\permworld_platform\\__init__.py",
+  "distribution_version": "0.1.0",
+  "numpy_version": "2.5.4",
+  "editable_install": false,
+  "outside_checkout_import": true,
+  "representative_exact_fixtures": [
+    {
+      "task_id": "cycle_count",
+      "params": {},
+      "answer": 1,
+      "answer_tokens_including_eos": 2
+    },
+    {
+      "task_id": "lis_length",
+      "params": {},
+      "answer": 2,
+      "answer_tokens_including_eos": 2
+    },
+    {
+      "task_id": "components",
+      "params": {},
+      "answer": 1,
+      "answer_tokens_including_eos": 2
+    },
+    {
+      "task_id": "fixed_points",
+      "params": {},
+      "answer": 0,
+      "answer_tokens_including_eos": 2
+    },
+    {
+      "task_id": "increasing_subsequence_count",
+      "params": {
+        "k": 2
+      },
+      "answer": 3,
+      "answer_tokens_including_eos": 2
+    },
+    {
+      "task_id": "increasing_subsequence_count",
+      "params": {
+        "k": 5
+      },
+      "answer": 0,
+      "answer_tokens_including_eos": 2
+    },
+    {
+      "task_id": "cycle_length_count",
+      "params": {
+        "k": 4
+      },
+      "answer": 1,
+      "answer_tokens_including_eos": 2
+    },
+    {
+      "task_id": "component_length_count",
+      "params": {
+        "k": 2
+      },
+      "answer": 2,
+      "answer_tokens_including_eos": 2
+    },
+    {
+      "task_id": "to_cycle",
+      "params": {},
+      "answer": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "answer_tokens_including_eos": 14
+    },
+    {
+      "task_id": "compose",
+      "params": {},
+      "answer": [
+        2,
+        3,
+        1
+      ],
+      "answer_tokens_including_eos": 8
+    },
+    {
+      "task_id": "power",
+      "params": {
+        "exponent": 2
+      },
+      "answer": [
+        3,
+        1,
+        2
+      ],
+      "answer_tokens_including_eos": 8
+    },
+    {
+      "task_id": "pattern_avoidance",
+      "params": {
+        "pattern": [
+          1,
+          2,
+          3
+        ]
+      },
+      "answer": true,
+      "answer_tokens_including_eos": 2
+    }
+  ],
+  "rejections": {
+    "missing_parameter": {
+      "type": "ValueError",
+      "message": "cycle_length_count requires exactly parameters ['k']; got []"
+    },
+    "zero_parameter": {
+      "type": "ValueError",
+      "message": "k must be in 1..30 (k>n yields zero)"
+    },
+    "boolean_parameter": {
+      "type": "TypeError",
+      "message": "k must be a built-in integer"
+    },
+    "duplicate_input_value": {
+      "type": "ValueError",
+      "message": "permutation must contain each integer 1..n exactly once"
+    },
+    "missing_binary_operand": {
+      "type": "ValueError",
+      "message": "compose requires exactly operands={'q': permutation}"
+    },
+    "answer_without_eos": {
+      "type": "ValueError",
+      "message": "answer must terminate with EOS"
+    },
+    "insufficient_context": {
+      "type": "ValueError",
+      "message": "sample requires 39 tokens, context=4; no truncation permitted"
+    },
+    "wheel_cli_history_policy": {
+      "type": "SystemExit",
+      "message": "2"
+    },
+    "safe_api_missing_config": {
+      "type": "TypeError",
+      "message": "An explicit data configuration is required"
+    },
+    "safe_api_missing_policy": {
+      "type": "ValueError",
+      "message": "The installed release requires historical_exclusion=false in an explicit disposable-data config. Historical object pools are not bundled in the wheel. Use the documented repository research workflow to certify historical exclusion; this interface does not silently relax that policy."
+    },
+    "safe_api_history_policy": {
+      "type": "ValueError",
+      "message": "The installed release requires historical_exclusion=false in an explicit disposable-data config. Historical object pools are not bundled in the wheel. Use the documented repository research workflow to certify historical exclusion; this interface does not silently relax that policy."
+    },
+    "corrupt_dataset": {
+      "type": "ValueError",
+      "message": "dataset object/label bytes differ from manifest"
+    }
+  },
+  "vocabulary_size": 203,
+  "multi_token_value": 220,
+  "multi_token_answer_length": 5,
+  "large_integer_roundtrip": 155117520,
+  "registry_export_endpoints": 54,
+  "relation_entries": 74,
+  "historical_certificate_reuse": {
+    "status": "reused_hash_verified",
+    "root": "experiments/pilot_v5_confirmation/mathematics",
+    "sha256": {
+      "audit/RELATION_INVENTORY.csv": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+      "audit/MATHEMATICS_AUDIT.json": "abe146533bd3d6d74895ff54b1437a847e63c09e59d12be5dac11f04007b6d4d",
+      "audit/OBSERVED_ASSOCIATIONS.csv": "ea27535661a5342cc8ed28425c3987f14ee2a871a83d15deda85b645361cf65f",
+      "audit/UNCHECKED_CLAIMS.csv": "b069354ce02da361c7cca4abe0cc52fdaf213356c49aaef0726c2f2355200291"
+    },
+    "historical_rechecks_run": 0,
+    "implementation_sha256": {
+      "experiments/permworld_pilot/vendor/neurips_permutations/math_ops.py": "3f6832b4798a20cc6b813a0b64ec01cf10360fbf3d6256cb59d1d793d4ad345f"
+    },
+    "previous_status": "passed",
+    "previous_exhaustive_n": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "previous_random_n": 10,
+    "previous_random_inputs": 4096,
+    "previous_independent_label_comparisons": 1601440
+  },
+  "generated_objects": 64,
+  "exact_labels_recomputed": 384,
+  "quality": {
+    "status": "passed",
+    "objects_checked": 64,
+    "labels_recomputed": 384,
+    "duplicate_inputs": 0,
+    "cross_role_or_repeat_orbit_overlap": 0,
+    "historical_orbit_overlap": 0,
+    "all_pool_rng_streams_replayed": true,
+    "empirical_constant_tasks_retained": true,
+    "binary_pair_isolation_checked": false,
+    "historical_exclusion": false,
+    "historical_overlap": "not checked; historical pools are not part of the wheel"
+  },
+  "reader_samples": 16,
+  "distribution_rows": 72,
+  "seeded_regeneration": "same object content and label hashes",
+  "installed_console_commands_passed": 4,
+  "historical_exclusion_enabled": false,
+  "fixture_warning": "Demo inputs are isolated within this fixture only, not from historical experiments. The frozen generator's generic relation_isolation prose must be interpreted with config.historical_exclusion=false. Do not use these pools for scientific comparisons.",
+  "checkpoint_files_opened": 0,
+  "training_runs": 0,
+  "model_test_forwards": 0,
+  "elapsed_seconds": 17.243037200008985
+}

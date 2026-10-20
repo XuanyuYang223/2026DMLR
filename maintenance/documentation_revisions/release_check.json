@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "base_revision": "7ef277d3f2cdd6faef0d2f7c1b844e3b0e1bcf9e",
+  "scope": "DMLR paper boundary and clean-release installation entry; substantive English documentation revision",
+  "historical_scientific_manifests_rewritten": false,
+  "training_or_model_evaluation_run": false,
+  "files": {
+    "README.md": {
+      "before_sha256": "1e00abcfd44f7087ecf1166b3e3a848b264ca99a3baf0a23ec6dec8570e228c6",
+      "after_sha256": "06bd8920629388912aad391e82418b95d38aaa3ac4def5c68adf8c06174c35e3",
+      "reason": "Restrict DMLR to platform, accounted transfer protocols and conditional findings; separate optional TMLR provenance."
+    }
+  }
+}

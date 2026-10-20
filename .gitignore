@@ -3,3 +3,6 @@ reference/
 __pycache__/
 *.pyc
 *.pt
+build/
+dist/
+*.egg-info/

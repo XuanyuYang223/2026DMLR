@@ -1,38 +1,41 @@
-# PermWorld and DMLR: integrated publication package
+# PermWorld DMLR publication package
 
-This is an English, evidence-linked synthesis of the original PermWorld resource, representation-alignment work, and the DMLR transfer program. It contains **no new training or model test evaluation**. Scientific evidence remains in its original experiment directories. The agreed framing gives equal weight to the data platform and the scientific findings.
+This English package presents a relation-annotated data platform, an auditable composition-and-budget transfer workflow, and conditional findings from completed DMLR experiments. The current release check performs CPU installation/interface checks and recomputes released tables and figures. It adds **no training or model test evaluation**.
 
 ## Start here
 
 | Purpose | Entry point |
 | --- | --- |
-| Understand the contributions and inherited work | [Contribution statement](CONTRIBUTIONS.md) |
-| Read the integrated argument | [Paper draft](PAPER_DRAFT.md) |
+| Understand the three contributions and paper boundary | [Contribution statement](CONTRIBUTIONS.md) |
+| Read the DMLR argument | [Paper draft](PAPER_DRAFT.md) |
 | Inspect the main visuals | [Figure guide and captions](figures/README.md) |
-| Decide what is actually missing | [Decision memo](DECISION_MEMO.md) |
-| Use or reproduce the resource | [Artifact and release guide](RELEASE.md) |
-| Audit original PermWorld/alignment evidence | [Pinned upstream audit](evidence/original_permworld_audit.md) and [source inventory](evidence/source_inventory.csv) |
+| Assess scientific and release gaps | [Decision memo](DECISION_MEMO.md) |
+| Install and use the resource | [Artifact and release guide](RELEASE.md) |
+| Inspect actual clean-environment acceptance | [Release-check report](RELEASE_CHECK_REPORT.md) |
 | Audit DMLR claims | [Evidence synthesis](evidence/dmlr_evidence.md) and [claim ledger](evidence/dmlr_claims.csv) |
 
-## Scope of the figures
+## Paper and figure scope
 
-The main figures cover the original alignment evidence, platform breadth and calibration, four-target transfer, exploratory-versus-confirmatory background interactions, and task-count/budget contrasts. A supplementary figure retains the complete four-target task-count curves. Each panel uses its own protocol and statistical unit; the panels are not pooled into a single estimate.
+The main figures cover platform breadth, typed relations, archived data quality, development-only calibration, four-target transfer, exploratory-versus-confirmatory background interactions, and task-count/budget contrasts. The supplementary figure retains the complete four-target task-count curves. Each panel uses its own protocol and paired repeat units; panels are not pooled into a single estimate.
 
-Figures are provided as PNG for browsing and SVG/PDF for publication. Their script and source bindings are in this directory. Figure regeneration uses archived CSVs and the compact upstream extracts; it requires neither model weights nor the ignored local reference clones.
+Original PermWorld task definitions, exact generators and mathematical transformations are inherited and credited. Original workshop alignment research is cited background only. The newer TMLR encoding/architecture/initialization/answer-control results are reserved for the separate representation paper; they are absent from the DMLR manuscript, main figures and default recomputation. The [upstream audit](evidence/original_permworld_audit.md) and [historical inventory](evidence/source_inventory.csv) remain optional provenance records.
 
-## Rebuild and verify without training
+## Rebuild without training or checkpoints
 
-Run from the repository root in the existing Python environment:
+First follow the [new-environment installation instructions](RELEASE.md). From the source checkout, with the installed environment's Python:
 
 ```powershell
-.venv/Scripts/python.exe publication/build_figures.py
-.venv/Scripts/python.exe publication/verify.py
-.venv/Scripts/python.exe -m permworld_platform sample --count 1
-.venv/Scripts/python.exe experiments/task_count_v2/release.py --verify --source-only
+python -I publication/evidence/build_dmlr_evidence.py
+python -I publication/build_figures.py --out ../permworld-rebuilt-figures
+python -I publication/verify.py
+python -I -m permworld_release.cli sample --dataset experiments/platform_v01/dataset --seed 617 --role train --task cycle_count --count 1
+python -I experiments/task_count_v2/release.py --verify --source-only
 ```
 
-The default figure output is `publication/figures/`; use `--out` with a fresh directory to preserve released bytes. Regenerating plots with a different Matplotlib/font version can change bytes without changing numerical results; keep the checked-in figures when verifying the publication manifest. `verify.py` does not train or evaluate models and reports missing optional local upstream clones separately.
+The `python` executable above must be the newly installed environment; the release guide shows explicit PowerShell paths. All default numerical inputs are tracked DMLR-local files. These commands do not require ignored reference clones, untracked files or local model weights. The full automated acceptance creates a new clone/environment and also runs from outside the checkout to exercise the wheel install.
 
-Completed checks are summarized in [VALIDATION.md](VALIDATION.md). The paper's external references are also provided as [BibTeX](references.bib).
+For standalone data generation, use the installed `permworld-data generate --out ... --config ...` interface. The [release guide](RELEASE.md) provides a complete generate/verify/read example using the acceptance fixture's saved configuration. This interface requires an explicit `historical_exclusion: false` policy: the fixture is isolated within its own splits, while historical research pools are absent from the wheel. The unchanged low-level research generator is not a standalone historical-isolation entry point.
 
-The [release guide](RELEASE.md) distinguishes a browsable research artifact from a formal licensed, archived release. Checkpoints remain local and Git-ignored. No DOI, accepted paper, authorship list, or new software license is implied.
+Figures are supplied as PNG and SVG/PDF. Use `--out` with a fresh directory so rebuilding does not overwrite published bytes. Different plotting/font versions may change image bytes without changing plotted numbers. Verification checks the release's stored bytes and numerical source bindings. See [VALIDATION.md](VALIDATION.md) for verification scope and [references.bib](references.bib) for the paper's external references.
+
+The package is a reviewable research artifact. Author approval, licensing and formal archival publication remain separate release decisions; no DOI or acceptance is implied.

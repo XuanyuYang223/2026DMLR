@@ -1,0 +1,336 @@
+{
+  "schema_version": 1,
+  "started_at_utc": "2026-10-20T03:30:29.027611+00:00",
+  "bootstrap_python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
+  "bootstrap_executable": "C:\\Users\\yangx\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "work_directory": "F:\\permworld-release-check\\attempt03",
+  "source": "F:/2026DMLR",
+  "branch": "publication/permworld-dmlr-integration",
+  "isolated_python_flag": true,
+  "system_site_packages": false,
+  "commands": [
+    {
+      "name": "01_clone",
+      "argv": [
+        "git",
+        "clone",
+        "--no-local",
+        "--single-branch",
+        "--branch",
+        "publication/permworld-dmlr-integration",
+        "F:/2026DMLR",
+        "F:\\permworld-release-check\\attempt03\\repo"
+      ],
+      "cwd": "F:\\permworld-release-check\\attempt03",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 66.3641604000004,
+      "log": "01_clone.log"
+    },
+    {
+      "name": "02_revision",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "F:\\permworld-release-check\\attempt03\\repo",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.022470599971711636,
+      "log": "02_revision.log"
+    },
+    {
+      "name": "03_initial_status",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "F:\\permworld-release-check\\attempt03\\repo",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.11209180002333596,
+      "log": "03_initial_status.log"
+    },
+    {
+      "name": "03a_apply_candidate",
+      "argv": [
+        "git",
+        "apply",
+        "--index",
+        "--whitespace=nowarn",
+        "F:\\permworld-release-check\\candidate03.patch"
+      ],
+      "cwd": "F:\\permworld-release-check\\attempt03\\repo",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.6041861000121571,
+      "log": "03a_apply_candidate.log"
+    },
+    {
+      "name": "03b_candidate_tree",
+      "argv": [
+        "git",
+        "write-tree"
+      ],
+      "cwd": "F:\\permworld-release-check\\attempt03\\repo",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 6.396437000017613,
+      "log": "03b_candidate_tree.log"
+    },
+    {
+      "name": "04_create_venv",
+      "argv": [
+        "C:\\Users\\yangx\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-I",
+        "-m",
+        "venv",
+        "F:\\permworld-release-check\\attempt03\\venv"
+      ],
+      "cwd": "F:\\permworld-release-check\\attempt03",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 5.3984789999667555,
+      "log": "04_create_venv.log"
+    },
+    {
+      "name": "05_initial_packages",
+      "argv": [
+        "F:\\permworld-release-check\\attempt03\\venv\\Scripts\\python.exe",
+        "-I",
+        "-m",
+        "pip",
+        "list",
+        "--format=json"
+      ],
+      "cwd": "F:\\permworld-release-check\\attempt03\\outside_checkout",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.18327779998071492,
+      "log": "05_initial_packages.log"
+    },
+    {
+      "name": "06_install",
+      "argv": [
+        "F:\\permworld-release-check\\attempt03\\venv\\Scripts\\python.exe",
+        "-I",
+        "-m",
+        "pip",
+        "--isolated",
+        "install",
+        "F:\\permworld-release-check\\attempt03\\repo[publication]"
+      ],
+      "cwd": "F:\\permworld-release-check\\attempt03\\outside_checkout",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 19.120608099969104,
+      "log": "06_install.log"
+    },
+    {
+      "name": "07_installed_packages",
+      "argv": [
+        "F:\\permworld-release-check\\attempt03\\venv\\Scripts\\python.exe",
+        "-I",
+        "-m",
+        "pip",
+        "freeze",
+        "--all"
+      ],
+      "cwd": "F:\\permworld-release-check\\attempt03\\outside_checkout",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.2156661999761127,
+      "log": "07_installed_packages.log"
+    },
+    {
+      "name": "08_dependency_check",
+      "argv": [
+        "F:\\permworld-release-check\\attempt03\\venv\\Scripts\\python.exe",
+        "-I",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "cwd": "F:\\permworld-release-check\\attempt03\\outside_checkout",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.2383471999783069,
+      "log": "08_dependency_check.log"
+    },
+    {
+      "name": "09_interfaces",
+      "argv": [
+        "F:\\permworld-release-check\\attempt03\\venv\\Scripts\\python.exe",
+        "-I",
+        "F:\\permworld-release-check\\attempt03\\repo\\release_checks\\acceptance.py",
+        "--repo",
+        "F:\\permworld-release-check\\attempt03\\repo",
+        "--out",
+        "F:\\permworld-release-check\\attempt03\\acceptance"
+      ],
+      "cwd": "F:\\permworld-release-check\\attempt03\\outside_checkout",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 3.2991063999943435,
+      "log": "09_interfaces.log"
+    },
+    {
+      "name": "10_dmlr_recompute",
+      "argv": [
+        "F:\\permworld-release-check\\attempt03\\venv\\Scripts\\python.exe",
+        "-I",
+        "F:\\permworld-release-check\\attempt03\\repo\\publication\\evidence\\build_dmlr_evidence.py"
+      ],
+      "cwd": "F:\\permworld-release-check\\attempt03\\outside_checkout",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.07528250000905246,
+      "log": "10_dmlr_recompute.log"
+    },
+    {
+      "name": "11_figures",
+      "argv": [
+        "F:\\permworld-release-check\\attempt03\\venv\\Scripts\\python.exe",
+        "-I",
+        "F:\\permworld-release-check\\attempt03\\repo\\publication\\build_figures.py",
+        "--out",
+        "F:\\permworld-release-check\\attempt03\\rebuilt_figures"
+      ],
+      "cwd": "F:\\permworld-release-check\\attempt03\\outside_checkout",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 4.636414300010074,
+      "log": "11_figures.log"
+    },
+    {
+      "name": "12_budget_interactions",
+      "argv": [
+        "F:\\permworld-release-check\\attempt03\\venv\\Scripts\\python.exe",
+        "-I",
+        "F:\\permworld-release-check\\attempt03\\repo\\release_checks\\check_budget_interactions.py",
+        "--repo",
+        "F:\\permworld-release-check\\attempt03\\repo",
+        "--out",
+        "F:\\permworld-release-check\\attempt03\\budget_interactions.json",
+        "--rebuilt-figures",
+        "F:\\permworld-release-check\\attempt03\\rebuilt_figures"
+      ],
+      "cwd": "F:\\permworld-release-check\\attempt03\\outside_checkout",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.08124109997879714,
+      "log": "12_budget_interactions.log"
+    },
+    {
+      "name": "13_source_only",
+      "argv": [
+        "F:\\permworld-release-check\\attempt03\\venv\\Scripts\\python.exe",
+        "-I",
+        "F:\\permworld-release-check\\attempt03\\repo\\experiments\\task_count_v2\\release.py",
+        "--verify",
+        "--source-only"
+      ],
+      "cwd": "F:\\permworld-release-check\\attempt03\\outside_checkout",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 2.1433589999796823,
+      "log": "13_source_only.log"
+    },
+    {
+      "name": "14_publication_verify",
+      "argv": [
+        "F:\\permworld-release-check\\attempt03\\venv\\Scripts\\python.exe",
+        "-I",
+        "F:\\permworld-release-check\\attempt03\\repo\\publication\\verify.py"
+      ],
+      "cwd": "F:\\permworld-release-check\\attempt03\\outside_checkout",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.22586980002233759,
+      "log": "14_publication_verify.log"
+    },
+    {
+      "name": "15_language_verification",
+      "argv": [
+        "F:\\permworld-release-check\\attempt03\\venv\\Scripts\\python.exe",
+        "-I",
+        "F:\\permworld-release-check\\attempt03\\repo\\maintenance\\english_translation\\task_count_v2\\verify.py"
+      ],
+      "cwd": "F:\\permworld-release-check\\attempt03\\outside_checkout",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 4.3685395999928005,
+      "log": "15_language_verification.log"
+    },
+    {
+      "name": "15a_optional_provenance_absent",
+      "argv": [
+        "F:\\permworld-release-check\\attempt03\\venv\\Scripts\\python.exe",
+        "-I",
+        "F:\\permworld-release-check\\attempt03\\repo\\release_checks\\check_optional_provenance.py",
+        "--repo",
+        "F:\\permworld-release-check\\attempt03\\repo",
+        "--out",
+        "F:\\permworld-release-check\\attempt03\\optional_provenance_check"
+      ],
+      "cwd": "F:\\permworld-release-check\\attempt03\\outside_checkout",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 4.116126100008842,
+      "log": "15a_optional_provenance_absent.log"
+    },
+    {
+      "name": "16_final_status",
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "F:\\permworld-release-check\\attempt03\\repo",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.03271940001286566,
+      "log": "16_final_status.log"
+    },
+    {
+      "name": "17_candidate_bytes_unchanged",
+      "argv": [
+        "git",
+        "diff",
+        "--exit-code"
+      ],
+      "cwd": "F:\\permworld-release-check\\attempt03\\repo",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.0319444999913685,
+      "log": "17_candidate_bytes_unchanged.log"
+    },
+    {
+      "name": "18_scientific_paths_unchanged",
+      "argv": [
+        "git",
+        "diff",
+        "--exit-code",
+        "7ef277d3f2cdd6faef0d2f7c1b844e3b0e1bcf9e",
+        "--",
+        "experiments",
+        "permworld_platform"
+      ],
+      "cwd": "F:\\permworld-release-check\\attempt03\\repo",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "seconds": 0.030542799970135093,
+      "log": "18_scientific_paths_unchanged.log"
+    }
+  ],
+  "training_runs": 0,
+  "neural_forwards": 0,
+  "status": "passed",
+  "checkout_head": "7ef277d3f2cdd6faef0d2f7c1b844e3b0e1bcf9e",
+  "candidate_patch_sha256": "aaf21b5008d5e5b4ac20296749b13f695dd200cd05588e0937457a2b83aa37de",
+  "candidate_git_tree": "bf1085de9dfb88303cedde47eb931211e82718c0",
+  "finished_at_utc": "2026-10-20T03:32:27.072910+00:00"
+}
