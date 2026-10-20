@@ -1,8 +1,10 @@
 """Inventory the completed study, or verify its archived bytes without training.
 
 Writing requires the final test, independent audit, report, figures, and local
-checkpoints. Full verification checks every inventoried file. --source-only is
-an explicit verification mode for a Git checkout without the local .pt files.
+checkpoints. Full verification checks every inventoried file. Explicit English
+translations may be resolved through a separately bound translation ledger;
+the original release manifest is never rewritten for that resolution.
+--source-only is an explicit mode for a checkout without the local .pt files.
 Paths in this manifest use POSIX separators on every operating system.
 """
 from __future__ import annotations
@@ -13,12 +15,17 @@ from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path, PurePosixPath
+import re
 import subprocess
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 MANIFEST_NAME = "RELEASE_MANIFEST.json"
 BASE_COMMIT = "a4d43fc7dafe1bce7e9f86ec4beee78068973ce7"
+TRANSLATION_BASE_REVISION = "d5f2b5c22e241322c619ada0e9ec7642b5b1eced"
+TRANSLATION_LEDGER = ROOT / "maintenance" / "english_translation" / "task_count_v2" / "TRANSLATION_MANIFEST.json"
+TRANSLATABLE_FILES = {"REPORT.md", "summarize.py", "README.md", "release.py"}
+HAN = re.compile("[\u3400-\u4dbf\u4e00-\u9fff\U00020000-\U0002fa1f]")
 GIT_FILE_LIMIT = 100 * 1024 * 1024
 TEMP_SUFFIXES = {".tmp", ".temp", ".part", ".partial", ".swp", ".pyc", ".pyo"}
 REQUIRED_FILES = [
@@ -95,8 +102,7 @@ def completion_gate(out):
         path = relative_file(out, relative)
         check(path.is_file() and path.stat().st_size > 0, f"Missing required output: {relative}")
     report_text = (out / "REPORT.md").read_text(encoding="utf-8-sig")
-    check(any("\u4e00" <= character <= "\u9fff" for character in report_text),
-          "The requested Chinese report is missing")
+    check(not HAN.search(report_text), "The report must be in English")
     protocol = read_json(out / "FROZEN_PROTOCOL.json")
     selections = read_json(out / "FROZEN_SELECTIONS.json")
     tested = read_json(out / "TEST_COMPLETE.json")
@@ -171,7 +177,7 @@ def write_manifest(out):
         "base_commit": BASE_COMMIT, "branch": git_value("branch", "--show-current"),
         "worktree_head_at_manifest_creation": git_value("rev-parse", "HEAD"),
         "checkpoint_policy": "All .pt files remain local and are ignored by Git; all other inventoried files are Git deliverables.",
-        "report_language": "Chinese, as explicitly requested for task-count v2",
+        "report_language": "English",
         "verification_modes": {"default": "Check every listed file, including local checkpoints.",
                                "source_only": "Check all Git deliverables; explicitly skip all .pt checkpoints."},
         "exclusions": [MANIFEST_NAME, "__pycache__", "temporary files and Python bytecode"],
@@ -185,10 +191,12 @@ def write_manifest(out):
 
 
 def verify_manifest(out, source_only=False):
-    value = read_json(out / MANIFEST_NAME)
+    manifest_path = out / MANIFEST_NAME
+    value = read_json(manifest_path)
     check(value["version"] == "task_count_v2_release_manifest_v1", "Unknown manifest version")
     check(value["base_commit"] == BASE_COMMIT, "Unexpected base commit")
-    expected, skipped = set(), 0
+    expected, skipped, translated = set(), 0, 0
+    translation_entries = None
     for relative, record in value["files"].items():
         path = relative_file(out, relative)
         check(record["delivery"] in ("local_checkpoint", "git_deliverable"), f"Unknown delivery type: {relative}")
@@ -200,11 +208,33 @@ def verify_manifest(out, source_only=False):
         check(local or record["bytes"] < GIT_FILE_LIMIT, f"Oversized Git deliverable: {relative}")
         expected.add(relative)
         check(path.is_file() and not path.is_symlink(), f"Missing or invalid artifact: {relative}")
-        check(path.stat().st_size == record["bytes"] and sha(path) == record["sha256"], f"Artifact changed: {relative}")
+        current_size, current_sha = path.stat().st_size, sha(path)
+        if current_size != record["bytes"] or current_sha != record["sha256"]:
+            check(not local and relative in TRANSLATABLE_FILES, f"Artifact changed: {relative}")
+            if translation_entries is None:
+                check(TRANSLATION_LEDGER.is_file(), f"Artifact changed without a translation ledger: {relative}")
+                ledger = read_json(TRANSLATION_LEDGER)
+                check(ledger.get("schema_version") == 1 and
+                      ledger.get("base_revision") == TRANSLATION_BASE_REVISION,
+                      "Unexpected translation ledger schema or base revision")
+                check(ledger.get("original_release_manifest_sha256") == sha(manifest_path),
+                      "Translation ledger does not bind the archived release manifest")
+                translation_entries = ledger.get("files")
+                check(isinstance(translation_entries, dict) and
+                      set(translation_entries).issubset(TRANSLATABLE_FILES),
+                      "Translation ledger contains unsupported paths")
+            entry = translation_entries.get(relative)
+            check(isinstance(entry, dict) and entry.get("original_sha256") == record["sha256"] and
+                  entry.get("english_sha256") == current_sha and entry.get("english_bytes") == current_size,
+                  f"Translated artifact differs from its explicit ledger: {relative}")
+            check(current_size < GIT_FILE_LIMIT, f"Oversized translated Git deliverable: {relative}")
+            translated += 1
     actual = {relative for relative, path in inventory_paths(out) if not (source_only and path.suffix.lower() == ".pt")}
     check(actual == expected, f"Manifest inventory mismatch: extra={sorted(actual - expected)}, missing={sorted(expected - actual)}")
     return {"status": "passed", "mode": "source_only" if source_only else "full",
-            "files_verified": len(expected), "local_checkpoints_explicitly_skipped": skipped}
+            "files_verified": len(expected), "exact_archived_files_verified": len(expected) - translated,
+            "translated_files_verified": translated,
+            "local_checkpoints_explicitly_skipped": skipped}
 
 
 def main():

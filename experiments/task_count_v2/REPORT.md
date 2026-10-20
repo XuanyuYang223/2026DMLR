@@ -1,23 +1,23 @@
-# PermWorld task-count v2：任务数量与训练预算的配对交互
+# PermWorld task-count v2: paired interaction between task count and training budget
 
-本轮已完成冻结范围内的 **24 个预训练模型、48 次预训练后适配及 6 个共享随机初始化基线**，共 54 次目标训练。LIS 长度是主要目标，fixed_points 是辅助目标；每个目标仍只有 256 个适配样本。三个新的配对重复为 4103、5207、6301。学习率方案预先固定；checkpoint 只依据开发集选择。冻结选择后生成独立测试输入并统一评估。没有根据结果追加预算、换任务或增加搜索。
+The frozen scope is complete: **24 pretrained models, 48 adaptations from pretrained models, and 6 shared random-initialization baselines**, totaling 54 target-training runs. LIS length is the primary target and fixed_points is auxiliary; each target still uses only 256 adaptation examples. The three new paired repeats are 4103, 5207, and 6301. Learning-rate schedules were fixed in advance; checkpoint selection used development data only. Independent test inputs were generated and evaluated together after selections were frozen. No outcome triggered extra budget, task replacement, or additional search.
 
-本轮假设来自 v1 对 LIS 随 k 增大下降及 fixed_points 依赖任务链的探索观察。v1 的旧结果不是本轮重复，不与新种子合并统计。两条链只保留原名单的 k=2、16，分别从同一配对随机初始化训练到 400 万或 3200 万 tokens；每条链内任务组成在两档预算之间不变。
+This hypothesis follows v1's exploratory observations that LIS performance declined with increasing k and that fixed_points transfer depended on the task chain. Old v1 results are not repeats of this study and are not pooled with the new seeds. Both chains retain only k=2 and k=16 from their original lists, trained from the same paired random initialization to 4M or 32M tokens; task composition within each chain and k is unchanged across budgets.
 
-## 主要结果：先做逐重复差分，再汇总
+## Primary results: compute within-repeat differences before summarizing
 
-D4 表示 400 万预算下 k16−k2，D32 表示 3200 万预算下 k16−k2；交互差为 D32−D4。正交互表示更大预算使 k16 相对 k2 的表现改善，不等于所有条件的绝对准确率都提高，也不等于已经消除负迁移。下表单位均为百分点，± 为三个配对差的样本标准差，不是置信区间。
+D4 denotes k16−k2 at the 4M budget, D32 denotes k16−k2 at 32M, and the interaction is D32−D4. A positive interaction means the larger budget improves k16 relative to k2; it does not imply higher absolute accuracy in every condition or the elimination of negative transfer. All values below are percentage points. The ± term is the sample standard deviation of the three paired differences, not a confidence interval.
 
-| 目标 | 链 | D4 均值 | D32 均值 | 交互差均值 ± SD | 三个交互差范围 |
+| Target | Chain | Mean D4 | Mean D32 | Mean interaction ± SD | Range of three interactions |
 |---|---|---:|---:|---:|---:|
 | lis_length | alpha | -6.18 | +11.75 | +17.94 ± 7.89 | [+13.28, +27.05] |
 | lis_length | beta | -5.79 | +0.75 | +6.54 ± 5.96 | [+2.44, +13.38] |
 | fixed_points | alpha | -0.33 | +41.08 | +41.41 ± 3.27 | [+38.09, +44.63] |
 | fixed_points | beta | +2.73 | -6.35 | -9.08 ± 11.55 | [-22.17, -0.29] |
 
-逐重复结果如下。三种差值均在同一链、同一初始化、同一数据及采样重复单元内计算，不能由两组各自标准差替代。共享随机初始化基线在交互差中精确抵消。
+Individual repeats are shown below. All three differences are computed within the same chain, initialization, data, and sampling repeat unit; they cannot be replaced by the two conditions' separate standard deviations. The shared random-initialization baseline cancels exactly in the interaction.
 
-| 目标 | 链 | 初始化种子 | D4 | D32 | D32−D4 |
+| Target | Chain | Initialization seed | D4 | D32 | D32−D4 |
 |---|---|---:|---:|---:|---:|
 | lis_length | alpha | 4103 | -2.44 | +10.84 | +13.28 |
 | lis_length | alpha | 5207 | -8.50 | +18.55 | +27.05 |
@@ -32,34 +32,34 @@ D4 表示 400 万预算下 k16−k2，D32 表示 3200 万预算下 k16−k2；�
 | fixed_points | beta | 5207 | -7.91 | -8.20 | -0.29 |
 | fixed_points | beta | 6301 | -1.37 | -6.15 | -4.79 |
 
-![LIS 预算交互](figures/lis_length_budget_interaction.png)
+![LIS budget interaction](figures/lis_length_budget_interaction.png)
 
-![fixed_points 预算交互](figures/fixed_points_budget_interaction.png)
+![fixed_points budget interaction](figures/fixed_points_budget_interaction.png)
 
-**lis_length**：alpha 链交互均值 +17.94 个百分点，3/3 个重复为正；beta 链交互均值 +6.54 个百分点，3/3 个重复为正。这些是当前有限重复的实际观察，不能推广为所有任务组成的预算规律。
+**lis_length**: alpha has a mean interaction of +17.94 percentage points, positive in 3/3 repeats; beta has a mean interaction of +6.54 percentage points, positive in 3/3 repeats. These are observations from the current limited repeats, not a budget law for all task compositions.
 
-**fixed_points**：alpha 链交互均值 +41.41 个百分点，3/3 个重复为正；beta 链交互均值 -9.08 个百分点，0/3 个重复为正。这些是当前有限重复的实际观察，不能推广为所有任务组成的预算规律。
+**fixed_points**: alpha has a mean interaction of +41.41 percentage points, positive in 3/3 repeats; beta has a mean interaction of -9.08 percentage points, positive in 0/3 repeats. These are observations from the current limited repeats, not a budget law for all task compositions.
 
-LIS 在新种子的 4M 条件下复现了 v1 的方向：两条链均为三个重复的 k16 低于 k2。增加预算后，alpha 的 k16 在三个重复都反超 k2；beta 的交互虽三个重复均为正，但 32M 下 k16−k2 本身只有两个重复为正、一个为负，平均接近零。因此 beta 更适合描述为原有 k16 劣势缩小，而非稳定建立 k16 优势。这里的两条链共享三个重复单元，不能把六个链内交互当作六个独立重复。
+At 4M, the new LIS seeds reproduce v1's direction: k16 is below k2 in all three repeats of both chains. With the larger budget, alpha k16 overtakes k2 in all three repeats. Beta also has positive interactions in all three repeats, but its 32M k16−k2 difference itself is positive in two repeats and negative in one, with a mean near zero. Beta therefore supports a reduction of the original k16 disadvantage rather than a stable k16 advantage. The two chains share three repeat units; their six within-chain interactions cannot be treated as six independent repeats.
 
-fixed_points 呈现相反的链间方向：alpha 的 32M k16 出现明显改善，beta 的 32M k16 反而更差；后者的交互范围从 −22.17 到 −0.29 个百分点，幅度不稳定。预算效果依赖任务组成及目标，不能概括为扩大预算普遍消除负迁移。
+fixed_points shows opposite directions across chains: alpha k16 improves markedly at 32M, whereas beta k16 worsens. Beta's interaction ranges from −22.17 to −0.29 percentage points, indicating unstable magnitude. Budget effects depend on task composition and target; these results do not establish that larger budgets generally eliminate negative transfer.
 
-## v1 探索证据：独立列出，不并入本轮统计
+## V1 exploratory evidence: reported separately, not pooled with this study
 
-旧种子为 1103、2207、3301，只有 4M 预算。下表直接保留 v1 的 k16−k2 配对差及源 CSV 哈希；不同测试输入和重复单元不与 v2 合并，也不能把跨轮差异仅归于训练预算。
+The old seeds were 1103, 2207, and 3301, with only a 4M budget. The table directly preserves v1's paired k16−k2 differences and the source CSV hash. Different test inputs and repeat units are not pooled with v2, and cross-round differences cannot be attributed solely to training budget.
 
-| 目标 | 链 | v1 D4 均值 ± SD（百分点） | v1 逐种子差（1103 / 2207 / 3301） |
+| Target | Chain | V1 mean D4 ± SD (pp) | V1 seed differences (1103 / 2207 / 3301) |
 |---|---|---:|---|
 | lis_length | alpha | -5.47 ± 3.92 | -9.18 / -5.86 / -1.37 |
 | lis_length | beta | -6.02 ± 2.23 | -4.59 / -4.88 / -8.59 |
 | fixed_points | alpha | +0.65 ± 8.06 | -8.50 / +6.74 / +3.71 |
 | fixed_points | beta | -4.98 ± 5.51 | -3.32 / -0.49 / -11.13 |
 
-[v1 探索参照 CSV](v1_exploratory_reference.csv)仅解释假设来源；本轮的交互估计全部来自 v2。
+The [v1 exploratory reference CSV](v1_exploratory_reference.csv) explains only the hypothesis's origin; all interaction estimates in this study come from v2.
 
-## 各条件准确率与共享 A 的收益
+## Condition accuracy and gains over shared A
 
-| 目标 | 链 | k | 预算 | 测试准确率均值 | 相对 A 的配对收益均值 ± SD（百分点） |
+| Target | Chain | k | Budget | Mean test accuracy | Mean paired gain over A ± SD (pp) |
 |---|---|---:|---:|---:|---:|
 | lis_length | baseline | 0 | 0M | 47.98% | +0.00 ± 0.00 |
 | lis_length | alpha | 2 | 4M | 57.03% | +9.05 ± 3.04 |
@@ -80,28 +80,28 @@ fixed_points 呈现相反的链间方向：alpha 的 32M k16 出现明显改善�
 | fixed_points | beta | 16 | 4M | 55.27% | -9.54 ± 6.30 |
 | fixed_points | beta | 16 | 32M | 43.39% | -21.42 ± 3.33 |
 
-LIS 的 32M 四个条件在每个重复均高于其共享 A；不过 alpha k2 的平均准确率从 57.03% 降到 54.10%，说明正交互也可以包含小 k 表现下降。Alpha k16 从 50.85% 升到 65.85%，才是其反超的主要变化。Beta 的 k2 和 k16 都随预算改善，分别为 54.82%→61.46% 和 49.02%→62.21%。
+All four LIS conditions at 32M exceed their shared A in every repeat. However, alpha k2 mean accuracy falls from 57.03% to 54.10%, showing that a positive interaction can include poorer small-k performance. Alpha k16 improves from 50.85% to 65.85%, which is the main change behind its reversal. Beta k2 and k16 both improve with budget, from 54.82%→61.46% and 49.02%→62.21%, respectively.
 
-fixed_points 只有 alpha k16 的 32M 条件获得平均正迁移：88.44%，相对 A 为 +23.63 个百分点，三个重复均为正。其余七个条件的平均收益均为负；beta k16 的 32M 仅 43.39%，相对 A 为 −21.42 个百分点。大的 alpha 交互不能掩盖这些保留的负结果。
+For fixed_points, only alpha k16 at 32M has positive mean transfer: 88.44% accuracy and +23.63 percentage points over A, positive in all three repeats. The other seven conditions have negative mean gains. Beta k16 at 32M reaches only 43.39%, or −21.42 percentage points relative to A. The large alpha interaction must not obscure these retained negative results.
 
 
-![LIS 准确率和基线差](figures/lis_length_budget_comparison.png)
+![LIS accuracy and baseline gains](figures/lis_length_budget_comparison.png)
 
-![fixed_points 准确率和基线差](figures/fixed_points_budget_comparison.png)
+![fixed_points accuracy and baseline gains](figures/fixed_points_budget_comparison.png)
 
-## 预算增加究竟改变了什么
+## What changes with the larger budget
 
-两档预算均从配对的随机初始化和全新 AdamW 开始；32M 没有接续 4M 衰减终点。相对预算进度规则相同，但热身长度分别为 166,666.67 与 1,333,333.33 tokens。在累计 4M tokens 处，4M 曲线学习率是 3e-05，32M 曲线仍为 0.000294994。因此本轮比较的是更大预算及其预先固定的学习率轨迹，不单独识别更新次数和学习率轨迹各自的作用。实际逐更新 LR 在各运行的 updates.csv 中，解析规则在 [learning_rate_schedule.csv](learning_rate_schedule.csv)。
+Both budgets start from paired random initialization with fresh AdamW optimizers; 32M does not continue the decayed 4M endpoint. The relative-budget progress rule is identical, but warmup lasts 166,666.67 and 1,333,333.33 tokens, respectively. At 4M consumed tokens, the 4M schedule has learning rate 3e-05, while the 32M schedule is still at 0.000294994. This comparison therefore combines the larger budget with its prespecified learning-rate trajectory; it does not separately identify the effects of update count and learning-rate trajectory. Actual per-update learning rates are in each run's updates.csv, and the analytic rule is in [learning_rate_schedule.csv](learning_rate_schedule.csv).
 
-![两档预算的学习率轨迹](figures/learning_rate_schedule.png)
+![Learning-rate trajectories for both budgets](figures/learning_rate_schedule.png)
 
-源训练池在两档预算完全相同：每个重复、每个长度 4096 个对象，共 8192 个，不是八倍独立数据。但同一任务在 4M 时未必见过整个输入池，尤其是 k16；32M 可以同时提高该任务对固定池的覆盖率并增加已见任务—输入对的重复暴露，不能把每个新增样本都称为已见任务—输入对的重复。任务按样本均匀采样；不同任务的 prompt/答案长度不同，token 份额并不相等。最后只取容纳于预算的完整样本前缀，保留尾差。32M 是约八倍总 tokens，不宣称 k16 的每任务暴露与 k2 的 4M 严格匹配。每个任务的独立输入数最多 8192；跨任务把相同输入重复计数不能成为更多独立对象。每任务覆盖率、首次暴露与重复暴露的实际差异保留在 task_exposures.csv 和 source_budget_comparisons.csv。
+Both budgets use exactly the same source-training pool: 4096 objects per repeat and length, or 8192 total, not eight times as much independent data. A task may not have seen the entire pool at 4M, especially at k16. The 32M run can both increase that task's coverage of the fixed pool and repeat previously seen task-input pairs; not every additional example is a repeated task-input pair. Tasks are sampled uniformly by examples, while different prompt/answer lengths imply unequal token shares. The last batch uses only the whole-example prefix that fits the budget, retaining the unused tail. The 32M budget is approximately eight times total tokens; k16 per-task exposure is not claimed to match k2 at 4M exactly. Each task can expose at most 8192 distinct inputs; counting the same input again across tasks does not create more independent objects. Actual differences in per-task coverage, first exposures, and repeated exposures are preserved in task_exposures.csv and source_budget_comparisons.csv.
 
-## 源任务学习与重复暴露
+## Source learning and repeated exposure
 
-训练准确率使用每长度固定前 256 个源训练对象的诊断子集；开发集使用每长度全部 256 个对象。多数答案从每长度完整 4096 个源训练标签确定。曲线分别在起点、首次跨过半预算的更新及终点保存。以下聚焦 LDS、I3、D3，其他任务完整保留在 CSV 中。
+Training accuracy uses the fixed first 256 source-training objects per length as a diagnostic probe; development uses all 256 objects per length. Majority answers are determined from the full 4096 source-training labels per length. Curves are saved at initialization, the first update crossing half the budget, and the endpoint. The focus below is LDS, I3, and D3; all other tasks remain in the CSVs.
 
-| 链 | k | 源任务 | 预算 | 开发准确率 | 训练诊断准确率 | 开发多数基线 | 样本暴露均值 | 独立输入均值 |
+| Chain | k | Source task | Budget | Dev accuracy | Training-probe accuracy | Dev majority baseline | Mean sample exposures | Mean distinct inputs |
 |---|---:|---|---:|---:|---:|---:|---:|---:|
 | alpha | 2 | lds_length | 4M | 84.57% | 88.35% | 41.73% | 66,666 | 8,189.7 |
 | alpha | 2 | lds_length | 32M | 99.09% | 99.93% | 41.73% | 533,335 | 8,192.0 |
@@ -120,11 +120,11 @@ fixed_points 只有 alpha k16 的 32M 条件获得平均正迁移：88.44%，相
 | beta | 16 | decreasing_subsequence_count_k3 | 4M | 4.69% | 5.01% | 2.34% | 8,064 | 5,149.0 |
 | beta | 16 | decreasing_subsequence_count_k3 | 32M | 17.45% | 20.57% | 2.34% | 64,513 | 8,189.0 |
 
-全部 216 个源任务×模型终点记录中，53 个开发准确率未超过各自多数基线。它们重叠使用任务和模型，不能作为 216 个独立实验。训练/开发差距、源任务学习改善及迁移交互同时发生，只能描述关联，不能直接证明模型干扰、数学恒等式利用或其反面。
+Of the 216 source-task × model endpoint records, 53 have development accuracy at or below their own majority baseline. These records reuse tasks and models and are not 216 independent experiments. Concurrent training/development gaps, source-learning improvements, and transfer interactions are associations; they do not directly establish interference, use of mathematical identities, or the absence of either.
 
-按预算分别计，4M 有 38/108 个源任务终点未超过多数基线，32M 仍有 15/108 个。重点源任务的预算变化按同一重复配对后如下；这些数值没有把不同任务当作重复。
+By budget, 38/108 source-task endpoints at 4M do not exceed their majority baseline, and 15/108 still do not at 32M. Budget changes for the focus tasks are paired within repeat below; different tasks are not treated as repeats.
 
-| 链 | k | 源任务 | 32M−4M 开发准确率变化均值 ± SD（百分点） | 逐重复为正数量 |
+| Chain | k | Source task | Mean 32M−4M dev-accuracy change ± SD (pp) | Positive repeat count |
 |---|---:|---|---:|---:|
 | alpha | 2 | lds_length | +14.52 ± 1.59 | 3/3 |
 | alpha | 16 | decreasing_subsequence_count_k3 | +13.02 ± 2.94 | 3/3 |
@@ -135,74 +135,76 @@ fixed_points 只有 alpha k16 的 32M 条件获得平均正迁移：88.44%，相
 | beta | 16 | increasing_subsequence_count_k3 | +12.70 ± 0.39 | 3/3 |
 | beta | 16 | lds_length | +27.67 ± 1.58 | 3/3 |
 
-LDS 和三元子序列计数的开发表现都随预算改善，k16 每任务独立输入覆盖也从约 5100 增至约 8190，接近固定池的 8192 上限；每任务样本暴露约 8064→64513。同时 k16 的 LDS 仍低于 alpha k2 的 99.09%，三元计数也远未充分学会。Beta k2 的 D3 在 32M 时训练诊断为 55.66%、开发为 40.30%，约 15.36 个百分点的差距说明更多重复暴露没有自动解决泛化。Alpha k2 的 LDS 从 84.57% 提升到 99.09%，而其 LIS 迁移均值下降，这直接限制了“相关源任务准确率更高就必然迁移更好”的简单解释。
+LDS and length-three subsequence-count development performance both improve with budget. At k16, distinct input coverage per task rises from about 5100 to about 8190, near the fixed-pool limit of 8192; sample exposure per task is approximately 8064→64513. Nevertheless, k16 LDS remains below alpha k2's 99.09%, and the three-element counts remain far from fully learned. At 32M, beta k2 D3 reaches 55.66% on the training probe versus 40.30% on development. This gap of about 15.36 percentage points shows that more repeated exposure does not automatically resolve generalization. Alpha k2 LDS improves from 84.57% to 99.09% while its mean LIS transfer falls, directly limiting the simple explanation that higher related-source accuracy necessarily yields better transfer.
 
-与 fixed_points 有明确联合关系的 alpha k16 exceedances 和 deficiencies，开发准确率分别从 43.23%→99.35% 与 38.93%→98.96%，同时 fixed_points 迁移明显改善；这是值得后续研究的对应现象。但 even_cycle_count 仍接近多数基线，不能说所有相关数学量都被充分学会。Beta k16 的 anti_fixed_points 也从 44.27% 提高到 63.35%，其 fixed_points 迁移却恶化。合法公式存在及相关源任务进步均不足以证明模型利用了公式，当前记录不能区分公式利用、一般表示变化和优化过程等机制。
+Alpha k16 exceedances and deficiencies have an explicit joint relationship to fixed_points. Their development accuracies improve from 43.23%→99.35% and 38.93%→98.96%, respectively, alongside markedly improved fixed_points transfer. This correspondence merits future investigation. However, even_cycle_count remains near its majority baseline, so not all related mathematical quantities are fully learned. Beta k16 anti_fixed_points also improves from 44.27% to 63.35% while fixed_points transfer worsens. The existence of a valid formula and improvements on related sources are insufficient to prove that the model uses the formula. Current records cannot distinguish formula use, broader representation changes, and optimization mechanisms.
 
-![lds_length 源任务曲线](figures/source_lds_length.png)
+![lds_length source-learning curves](figures/source_lds_length.png)
 
-![increasing_subsequence_count_k3 源任务曲线](figures/source_increasing_subsequence_count_k3.png)
+![increasing_subsequence_count_k3 source-learning curves](figures/source_increasing_subsequence_count_k3.png)
 
-![decreasing_subsequence_count_k3 源任务曲线](figures/source_decreasing_subsequence_count_k3.png)
+![decreasing_subsequence_count_k3 source-learning curves](figures/source_decreasing_subsequence_count_k3.png)
 
-## 配置、隔离和适配核对
+## Configuration, isolation, and adaptation checks
 
-模型与 v1 相同：平台当前 203-token 词表，4 层、宽度 256、8 头 Transformer、FFN 比例 4、dropout 0.1、上下文 128、共享 embedding/输出头。使用 one_line_v1 和 permworld_sequence_v1。损失先在每个样本的答案 token 加 EOS 上平均交叉熵，再平均样本；准确率要求完整自由生成答案加 EOS。I3/D3 的多 token 整数答案没有截断或取模。
+The model is unchanged from v1: the platform's current 203-token vocabulary, a 4-layer Transformer of width 256 with 8 heads, FFN ratio 4, dropout 0.1, context 128, and tied embedding/output head. Encodings are one_line_v1 and permworld_sequence_v1. Loss averages answer-token-plus-EOS cross-entropy within each example before averaging examples; accuracy requires free generation of the complete answer plus EOS. Multi-token I3/D3 integer answers are neither truncated nor reduced modulo a bound.
 
-每次适配均重置全部四个原留出任务的专有 token 行（含共享输出头），其余预训练权重准确加载，创建全新优化器。800 次更新、batch 64、初始 LR 3e-4、100 次热身后余弦衰减到 3e-5；每 100 次更新评估开发集，共八个合格 checkpoint。按开发准确率最高、答案 CE 最低、最早更新的固定规则选择；起点不参与选择。所有条件只有一个 LR 候选。
+Every adaptation resets all four original held-out task-token rows, including the tied output-head rows, loads all remaining pretrained parameters exactly, and creates a fresh optimizer. It uses 800 updates, batch 64, initial LR 3e-4, 100-update warmup, then cosine decay to 3e-5. Development evaluation occurs every 100 updates, giving eight eligible checkpoints. Selection uses highest development accuracy, then lowest answer CE, then earliest update; initialization is ineligible. Every condition has exactly one LR candidate.
 
-全输入按完整 inverse/reverse/complement 轨道隔离，覆盖角色、重复、历史 pilot、平台及 v1。生成前容量检查，不静默放宽规则。每目标适配 128×2=256 个不同对象，开发 256×2，最终测试 512×2。长度 10、12 都出现在训练中，按长度结果不是长度外推。开发选择冻结后才生成最终测试。
+Complete inverse/reverse/complement orbits isolate inputs across roles, repeats, historical pilots, the platform, and v1. Capacity is checked before generation, and rules are never silently relaxed. Each target has 128×2=256 distinct adaptation objects, 256×2 development objects, and 512×2 final-test objects. Both lengths 10 and 12 appear in training, so per-length results are not length extrapolation. Final tests are generated only after development selections are frozen.
 
-| 初始化 | 数据 | 测试 | 源采样 | 适配采样 | 源 dropout | 适配 dropout |
+| Initialization | Data | Test | Source sampling | Adapt sampling | Source dropout | Adapt dropout |
 |---:|---:|---:|---:|---:|---:|---:|
 | 4103 | 2026110101 | 2026110151 | 2026110181 | 2026110191 | 2026110281 | 2026110291 |
 | 5207 | 2026110102 | 2026110152 | 2026110182 | 2026110192 | 2026110282 | 2026110292 |
 | 6301 | 2026110103 | 2026110153 | 2026110183 | 2026110193 | 2026110283 | 2026110293 |
 
-目标多数答案仅从每长度的 128 个训练标签估计；新测试上的均值如下。
+Target majority answers are estimated only from the 128 training labels per length. Their mean accuracies on the new test are shown below.
 
-| 目标 | n=10 多数准确率 | n=12 多数准确率 |
+| Target | n=10 majority accuracy | n=12 majority accuracy |
 |---|---:|---:|
 | lis_length | 46.22% | 39.06% |
 | fixed_points | 36.78% | 37.83% |
 
-54 次适配中 48 次开发选择早于更新 800。新测试上，预选 checkpoint 比终点高的有 28 次，低的有 17 次，其余相同。这是预先指定的辅助比较，不用于重新选择模型。完整终点交互与按长度结果在原始 CSV 和交互 CSV 中。
+Development selects an update earlier than 800 in 48 of the 54 adaptations. On the new test, the preselected checkpoint exceeds the endpoint in 28 runs and falls below it in 17; the rest tie. This is a prespecified auxiliary comparison, not a new model-selection step. Complete endpoint interactions and per-length results remain in the raw and interaction CSVs.
 
-| 目标 | 链 | 开发预选交互均值 | 固定终点交互均值（百分点） |
+| Target | Chain | Mean development-selected interaction | Mean fixed-endpoint interaction (pp) |
 |---|---|---:|---:|
 | lis_length | alpha | +17.94 | +18.49 |
 | lis_length | beta | +6.54 | +9.44 |
 | fixed_points | alpha | +41.41 | +40.69 |
 | fixed_points | beta | -9.08 | -5.92 |
 
-四个目标×链的平均交互方向在固定终点相同，主要方向并非只出现在开发预选 checkpoint；具体幅度和种子模式仍随 checkpoint 改变。终点结果只是预先指定的辅助诊断，不取代主结果。
+All four target × chain mean interactions retain their directions at the fixed endpoint, so the main directions are not confined to development-selected checkpoints. Magnitudes and seed patterns still change with the checkpoint. Endpoint results are a prespecified auxiliary diagnostic and do not replace the primary results.
 
-## 实际计算成本
+## Actual compute cost
 
-| 阶段 | 运行数 | 更新数 | 非 padding 序列 tokens | 监督 tokens | 累计运行分钟 |
+| Stage | Runs | Updates | Nonpadding sequence tokens | Supervised tokens | Cumulative run minutes |
 |---|---:|---:|---:|---:|---:|
 | pretraining_32M | 12 | 193,641 | 383,999,811 | 24,816,121 | 87.39 |
 | pretraining_4M | 12 | 24,212 | 47,999,861 | 3,101,895 | 12.20 |
 | baseline_adaptation | 6 | 4,800 | 9,216,000 | 614,400 | 2.56 |
 | pretrained_adaptation | 48 | 38,400 | 73,728,000 | 4,915,200 | 21.43 |
 
-训练阶段墙钟时间 124.20 分钟，独立测试 0.51 分钟。各预训练模型尾差为 0–25 tokens。运行计时包含相应训练、开发评估和 checkpoint/CSV 写入，不含数据编码；阶段计时与运行计时重叠，不能相加。每次运行的 padded tokens、监督 tokens、样本暴露、内存及时间见 compute.csv。
+Training-stage wall time was 124.20 minutes, and independent testing took 0.51 minutes. Unused token tails range from 0–25 per pretrained model. Run timers include the respective training, development evaluation, and checkpoint/CSV writes but exclude data encoding. Stage and run timers overlap and must not be added. Per-run padded tokens, supervised tokens, sample exposures, memory, and time remain in compute.csv.
 
-Smoke 固定小批次测速为 113,658 tokens/s，据此预估全部源模型的纯更新耗时 63.35 分钟。实际源模型纯更新累计 93.60 分钟，含源评估及写入的预训练运行累计 99.59 分钟；前述 124.20 分钟还含全部目标适配和阶段开销。Smoke 是资源可行性估算，正式成本以实际记录为准，不能用估计值替代。
+The fixed small-batch smoke timing was 113,658 tokens/s, projecting 63.35 minutes for all source-model training updates alone. Actual source-model updates took 93.60 cumulative minutes, and source runs including evaluations and writes took 99.59 minutes. The 124.20-minute stage time also includes all target adaptations and stage overhead. Smoke timing is a resource-feasibility estimate; actual recorded costs, not estimates, define the completed experiment's cost.
 
-## 证据边界与收口
+## Evidence limits and stopping point
 
-三个新配对重复是统计重复单元。两条链、两个目标、多个 k/预算、共享源模型及共享随机基线不能增加独立重复数。这里只展示逐重复差、均值、样本 SD 和范围，未从各条件边际 SD 推断显著性，也没有进行结果驱动的最佳任务链选择。少量重复与有限测试输入留下较大不确定性。
+The three new paired repeats are the statistical units. Two chains, two targets, multiple k/budget conditions, shared source models, and shared random baselines do not create extra independent repeats. We show individual paired differences, means, sample SDs, and ranges, without inferring significance from separate marginal condition SDs or selecting a preferred chain from outcomes. The small repeat count and finite test inputs leave substantial uncertainty.
 
-同一源集合内预算变化没有换任务，但跨 k 仍改变组成、数学关系和每任务暴露。两档预算还伴随不同的绝对 token 学习率轨迹；固定池重复训练与增加独立数据也未分离。Alpha k16 的 fixed_points 联合可推导关系与 beta 的输入变换关系均保留，合法数学关系不是数据泄漏。现有记录没有证明模型采用这些公式。
+Budget changes within a source set do not replace tasks, but changing k still changes composition, mathematical relationships, and exposure per task. The budgets also imply different absolute-token learning-rate trajectories; repeated training on a fixed pool and adding independent data are not separately identified. Alpha k16's joint fixed_points derivations and beta's transformed-input relations remain part of the design. Valid mathematical relationships are not data leakage, and these records do not show that the model uses the formulas.
 
-负收益、零收益、种子分歧和训练不足全部保留。本轮仅回答两条既定链、两档预算、一个模型、两个长度和 256 个目标样本下的有限预算交互；不宣称 scaling law。本轮已按冻结范围结束，不追加预算或替换任务。
+Negative gains, zero gains, seed disagreement, and incomplete learning are all retained. This study addresses only the finite budget interaction for two fixed chains, two budgets, one model, two lengths, and 256 target examples; it makes no scaling-law claim. The frozen scope is complete, with no added budget or task replacement.
 
-- [逐重复原始结果](raw_test_results.csv)、[逐重复预算交互](paired_budget_interactions.csv)、[交互汇总](budget_interaction_summary.csv)、[相对共享 A 的收益](paired_deltas.csv)
-- [所有源任务学习](source_learning.csv)、[源任务预算配对比较](source_budget_comparisons.csv)、[每任务每长度暴露](task_exposures.csv)、[每任务合计暴露](task_exposure_totals.csv)
-- [目标训练/开发曲线](adaptation_curves.csv)、[按长度多数基线](majority_per_length.csv)、[实际计算成本](compute.csv)
-- [冻结配置](FROZEN_PROTOCOL.json)、[任务名单及数学关系](design/README.md)、[复现命令](README.md)
+- [Per-repeat raw results](raw_test_results.csv), [per-repeat budget interactions](paired_budget_interactions.csv), [interaction summary](budget_interaction_summary.csv), [gains over shared A](paired_deltas.csv)
+- [All source learning](source_learning.csv), [paired source-budget comparisons](source_budget_comparisons.csv), [per-task/per-length exposure](task_exposures.csv), [per-task exposure totals](task_exposure_totals.csv)
+- [Target training/development curves](adaptation_curves.csv), [majority baselines by length](majority_per_length.csv), [actual compute cost](compute.csv)
+- [Frozen configuration](FROZEN_PROTOCOL.json), [task lists and mathematical relationships](design/README.md), [reproduction commands](README.md)
 
-[独立运行审计](RUN_AUDIT.json)已通过，覆盖 24 个源模型、54 次目标训练、135 个正式权重文件及 12 对从同一初始化开始的预算运行；重放源和目标采样，核对权重加载、四个留出 token 行、优化器重置、开发选择及全部 324 行测试记录。另复算 2 个开发 checkpoint，未增加测试神经网络前向。审计用时 110.43 秒，详见 [预算配对](audit_budget_pairing.csv)、[逐运行核算](audit_run_accounting.csv)及[开发前向核验](audit_development_forwards.csv)。
+The [independent run audit](RUN_AUDIT.json) passed, covering 24 source models, 54 target fits, 135 formal checkpoint files, and 12 budget pairs starting from the same initialization. It replayed source and target sampling and checked parameter loading, all four held-out token rows, optimizer resets, development selection, and all 324 test rows. It also recomputed 2 development checkpoints without any new test neural forwards. The audit took 110.43 seconds; see [budget pairing](audit_budget_pairing.csv), [per-run accounting](audit_run_accounting.csv), and [development-forward checks](audit_development_forwards.csv).
 
-工程 smoke 最初遇到缩小版输入清单与归档哈希不一致，在进入训练前停止；修正为复制原始清单及归档的精确字节后，最终 smoke 通过。初始设置失败证据保留于 smoke/failed_manifest_setup，不能与正式模型训练失败混为一谈。[SMOKE.json](SMOKE.json)记录最终参数化任务、多 token 答案、损失、保存加载、适配和计时检查。[分析自检](SUMMARY_SELF_CHECK.json)验证四格差分符号、共享基线抵消以及缺失/重复行拒绝。
+The initial engineering smoke encountered a mismatch between its reduced input manifest and archived hashes and stopped before training. Copying the exact original manifest/archive bytes corrected the setup, and the final smoke passed. The initial setup-failure evidence remains in smoke/failed_manifest_setup and must not be conflated with formal training failure. [SMOKE.json](SMOKE.json) records the final parameterized-task, multi-token-answer, loss, save/load, adaptation, and timing checks. The [analysis self-check](SUMMARY_SELF_CHECK.json) verifies the four-cell difference signs, shared-baseline cancellation, and rejection of missing/duplicate rows.
+
+The [historical preservation check](PRESERVATION_AFTER.json) records preservation of previous results and v1.

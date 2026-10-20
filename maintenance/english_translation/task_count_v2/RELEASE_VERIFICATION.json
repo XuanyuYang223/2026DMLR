@@ -1,0 +1,19 @@
+{
+  "completed_utc": "2026-10-20T00:44:17.118324+00:00",
+  "command": [
+    ".venv/Scripts/python.exe",
+    "experiments/task_count_v2/release.py",
+    "--verify"
+  ],
+  "exit_code": 0,
+  "result": {
+    "status": "passed",
+    "mode": "full",
+    "files_verified": 801,
+    "exact_archived_files_verified": 797,
+    "translated_files_verified": 4,
+    "local_checkpoints_explicitly_skipped": 0
+  },
+  "original_release_manifest_rewritten": false,
+  "training_or_model_evaluation_run": false
+}

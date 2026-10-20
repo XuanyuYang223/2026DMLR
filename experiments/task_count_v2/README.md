@@ -3,8 +3,9 @@
 Completed scope: 24 pretrained models, 48 pretrained adaptations and six shared
 scratch baselines. LIS length is primary; fixed points is auxiliary. Each unchanged
 v1 chain contributes k2 and k16 at 4M and 32M sequence-token budgets, with three new
-paired repeats. The Chinese [report](REPORT.md) is explicitly requested; code and
-other documentation are English. V1 exploration is not pooled with these data.
+paired repeats. The [report](REPORT.md), its generator, and this README were revised
+to English at the user's request; experimental results are unchanged.
+V1 exploration is not pooled with these data.
 
 Start with [paired interactions](paired_budget_interactions.csv),
 [interaction summary](budget_interaction_summary.csv), [raw test results](raw_test_results.csv)
@@ -97,9 +98,13 @@ Copy-Item -LiteralPath experiments/task_count_v2/train.py,experiments/task_count
 .venv/Scripts/python.exe experiments/task_count_v2/release.py --out experiments/task_count_v2_reproduction --verify
 ```
 
-For the original archived output, the release writer is run once after all
-artifacts are final. Full verification includes local weights; a Git checkout
-without weights explicitly uses source-only verification:
+The original RELEASE_MANIFEST.json remains the evidence of the pretranslation
+archive, and frozen scientific records are unchanged. The user-requested English
+revision is recorded in the [translation ledger documentation](../../maintenance/english_translation/task_count_v2/README.md).
+Release verification resolves that explicit ledger rather than rewriting old
+hashes. Do not rerun the release writer to erase the original archive's provenance.
+Full verification includes local weights; a Git checkout without weights
+explicitly uses source-only verification:
 
 ```powershell
 .venv/Scripts/python.exe experiments/task_count_v2/release.py --verify

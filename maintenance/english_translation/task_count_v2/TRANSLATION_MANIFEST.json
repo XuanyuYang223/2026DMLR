@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "base_revision": "d5f2b5c22e241322c619ada0e9ec7642b5b1eced",
+  "original_release_manifest_sha256": "ee7fff56846b0140d39e596e9499d81b7f1ba11d24bbe7f543c55ae9a864140f",
+  "scope": "User-requested English repository revision after the completed task-count v2 experiment",
+  "historical_manifests_rewritten": false,
+  "training_or_model_evaluation_run": false,
+  "files": {
+    "REPORT.md": {
+      "original_sha256": "ad7a16174959bac0fa684e272c6ccdfcf721befd2f24459375446f21d4da8dbe",
+      "english_sha256": "20a8ac13500fb426db0e84e771c298f494932fa3e7ca7d7f89ef1f75c1f9f6f5",
+      "english_bytes": 23107,
+      "change_scope": "English translation of recorded scientific results; existing preservation audit link emitted by unchanged conditional"
+    },
+    "README.md": {
+      "original_sha256": "748303e4b527fe1460afc793931b678c1a04d6c01774203a92d6ede85808fc0b",
+      "english_sha256": "b6b06b3ecea8aba9d85f87c2e23359d1a2523b0c08247fd05d44ed4ad1e56a05",
+      "english_bytes": 10126,
+      "change_scope": "English report policy and explicit translation-ledger explanation"
+    },
+    "summarize.py": {
+      "original_sha256": "dbbc74eccfdce0ca5cd175732368bdac88cacd23a1ca2e9f4e2e32d6f448b380",
+      "english_sha256": "d9b445f1db02fe15d89e73c8b7a4c110b75f28738b89dbf6068ee8cfce6fd589",
+      "english_bytes": 69500,
+      "change_scope": "Translated string literals and English README policy; executable structure unchanged"
+    },
+    "release.py": {
+      "original_sha256": "c7024aca60b93eb28a27012b19b2e2b80eb633e22c1304c122a1f1ab75e1ed4d",
+      "english_sha256": "5c798fc9cab93a29cd07f48017ee24fe2820aa46042a3002506c204b9ff2dcaa",
+      "english_bytes": 14738,
+      "change_scope": "English report requirement and explicit ledger-bound archived verification"
+    }
+  }
+}
