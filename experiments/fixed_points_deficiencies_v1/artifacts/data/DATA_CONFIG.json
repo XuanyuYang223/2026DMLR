@@ -1,0 +1,130 @@
+{
+  "version": "fixed_points_deficiencies_orbit_objects_v1",
+  "n": 10,
+  "repeats": [
+    {
+      "repeat_id": "R1",
+      "repeat": 1,
+      "model_seed": 17011,
+      "data_seed": 2026111001,
+      "test_seed": 2026111051,
+      "subset_seed": 2026111101,
+      "source_sampling_seed": 2026111201,
+      "source_dropout_seed": 2026111301,
+      "adapt_sampling_seed": 2026111401,
+      "adapt_dropout_seed": 2026111501
+    },
+    {
+      "repeat_id": "R2",
+      "repeat": 2,
+      "model_seed": 18013,
+      "data_seed": 2026111002,
+      "test_seed": 2026111052,
+      "subset_seed": 2026111102,
+      "source_sampling_seed": 2026111202,
+      "source_dropout_seed": 2026111302,
+      "adapt_sampling_seed": 2026111402,
+      "adapt_dropout_seed": 2026111502
+    },
+    {
+      "repeat_id": "R3",
+      "repeat": 3,
+      "model_seed": 19001,
+      "data_seed": 2026111003,
+      "test_seed": 2026111053,
+      "subset_seed": 2026111103,
+      "source_sampling_seed": 2026111203,
+      "source_dropout_seed": 2026111303,
+      "adapt_sampling_seed": 2026111403,
+      "adapt_dropout_seed": 2026111503
+    },
+    {
+      "repeat_id": "R4",
+      "repeat": 4,
+      "model_seed": 20011,
+      "data_seed": 2026111004,
+      "test_seed": 2026111054,
+      "subset_seed": 2026111104,
+      "source_sampling_seed": 2026111204,
+      "source_dropout_seed": 2026111304,
+      "adapt_sampling_seed": 2026111404,
+      "adapt_dropout_seed": 2026111504
+    },
+    {
+      "repeat_id": "R5",
+      "repeat": 5,
+      "model_seed": 21001,
+      "data_seed": 2026111005,
+      "test_seed": 2026111055,
+      "subset_seed": 2026111105,
+      "source_sampling_seed": 2026111205,
+      "source_dropout_seed": 2026111305,
+      "adapt_sampling_seed": 2026111405,
+      "adapt_dropout_seed": 2026111505
+    },
+    {
+      "repeat_id": "R6",
+      "repeat": 6,
+      "model_seed": 22003,
+      "data_seed": 2026111006,
+      "test_seed": 2026111056,
+      "subset_seed": 2026111106,
+      "source_sampling_seed": 2026111206,
+      "source_dropout_seed": 2026111306,
+      "adapt_sampling_seed": 2026111406,
+      "adapt_dropout_seed": 2026111506
+    },
+    {
+      "repeat_id": "R7",
+      "repeat": 7,
+      "model_seed": 23003,
+      "data_seed": 2026111007,
+      "test_seed": 2026111057,
+      "subset_seed": 2026111107,
+      "source_sampling_seed": 2026111207,
+      "source_dropout_seed": 2026111307,
+      "adapt_sampling_seed": 2026111407,
+      "adapt_dropout_seed": 2026111507
+    },
+    {
+      "repeat_id": "R8",
+      "repeat": 8,
+      "model_seed": 24001,
+      "data_seed": 2026111008,
+      "test_seed": 2026111058,
+      "subset_seed": 2026111108,
+      "source_sampling_seed": 2026111208,
+      "source_dropout_seed": 2026111308,
+      "adapt_sampling_seed": 2026111408,
+      "adapt_dropout_seed": 2026111508
+    }
+  ],
+  "counts": {
+    "source_train": 8192,
+    "source_dev": 1024,
+    "target_train": 1024,
+    "target_dev": 1024,
+    "test": 2048
+  },
+  "split_order": [
+    "source_train",
+    "source_dev",
+    "target_train",
+    "target_dev"
+  ],
+  "target_sizes": [
+    256,
+    512,
+    1024
+  ],
+  "generation_order": "all pretest pools in repeat then role order; tests last in repeat order",
+  "proposal": "uniform permutations; reject all previously occupied inverse/reverse/complement orbits",
+  "rng": "numpy.PCG64(SeedSequence([data_seed, role_index, n])); test uses test_seed and role_index=4",
+  "target_order": "accepted maximum pool reordered by PCG64(SeedSequence([subset_seed,n])).permutation(1024); nested prefixes",
+  "history": "all archived DMLR permutation NPZs outside this experiment, including pilots, platform examples, task-count v1/v2, historical smoke pools and relation_readout_v1",
+  "capacity": "floor(n!/8) minus all historically occupied n=10 orbits must cover every new pool including future tests",
+  "test_gate": "120 distinct frozen selections covering 8 units x 5 routes x 3 sizes; training_complete=true",
+  "pairing": "all conditions share role-specific inputs within a unit; only task definitions/labels differ",
+  "sampling_limitations": "finite permutation space; uniform permutation proposals followed by orbit rejection are not iid uniform surviving orbits; global exclusion conditions later pools on earlier acceptance",
+  "max_proposals_per_pool": 2000000
+}

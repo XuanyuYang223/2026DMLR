@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "created_at_utc": "2026-11-10T19:30:20.811328+00:00",
+  "n": 10,
+  "permutations": 3628800,
+  "maximum_orbit_size": 8,
+  "orbit_count_lower_bound": 453600,
+  "historical_occupied_orbits": 161553,
+  "available_orbit_lower_bound": 292047,
+  "requested_new_orbits_all_roles_and_units": 106496,
+  "reserved_future_test_orbits": 16384,
+  "conservative_capacity_sufficient": true
+}

@@ -1,0 +1,19 @@
+{
+  "status": "pass",
+  "created_at_utc": "2026-11-10T19:31:16.264954+00:00",
+  "checks": [
+    {
+      "check": "unfrozen",
+      "status": "pass",
+      "error": "test generation requires status=frozen and training_complete=true"
+    },
+    {
+      "check": "missing_selections",
+      "status": "pass",
+      "error": "all 120 development selections must freeze before any test generation"
+    }
+  ],
+  "nested_prefix_loader_units": 8,
+  "test_objects_generated": false,
+  "command": "Inline acceptance: reject unfrozen/incomplete selection manifests before test generation; load all eight target pools and verify nested prefixes."
+}

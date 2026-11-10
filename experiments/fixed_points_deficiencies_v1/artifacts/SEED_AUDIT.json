@@ -1,0 +1,3561 @@
+{
+  "status": "pass",
+  "created_at_utc": "2026-11-10T19:34:37.274555+00:00",
+  "method": "Read explicit integer seed fields (including nested seed lists/maps) from the bound historical configurations, protocols and data manifests; compare every new declared seed against their union. No old outcome metrics or model weights are inspected.",
+  "scope": "Explicit archived seed declarations for pilots v1-v5, platform calibration/examples, task-count v1/v2 including engineering protocols, and relation_readout_v1. This is a recorded-seed novelty check, not a proof of disjoint pseudorandom sequences or probabilistic independence.",
+  "source_bindings": {
+    "experiments/permworld_pilot/runs/pilot_v1/config.json": "adcc344de734ffc8ba94625a604472bd796aefcde76a2dec5bcae0cc6d2d1e47",
+    "experiments/permworld_pilot/runs/pilot_v1/FROZEN_PROTOCOL.json": "dbbc6562fd7866e2ce782f631bf79509514e0e44749d036e765b5098e5dff871",
+    "experiments/pilot_v2_diagnostics/artifacts/FROZEN_PROTOCOL.json": "a9b8839738362034f8123454167f33c7e9e53da836193e523060359880b395ca",
+    "experiments/pilot_v3_multitarget/artifacts/config_plan.json": "4dd0ffd33dc7b52e317e0d258efc7937eaf9b93cda16a5dcebfb9aff490dceb0",
+    "experiments/pilot_v3_multitarget/artifacts/FROZEN_PROTOCOL.json": "69eb53c0f16dc9ae76aba018394f8d0db448f3b3611c3e3a78e7b007cea591e2",
+    "experiments/pilot_v3_multitarget/artifacts/DESIGN_FROZEN.json": "db39647803b4fc4499bd5dfaec5f623e35c1a1265f89d0ba5daccd1308cdb832",
+    "experiments/pilot_v4_backgrounds/artifacts/config.json": "8719bf47bf02a101aab61c887c80e0eb58c5f38822f6ce072c36319e0e805429",
+    "experiments/pilot_v4_backgrounds/artifacts/FROZEN_PROTOCOL.json": "14403b1f92b18d1798c10d7768448e8223dea043e9f5c0a1d07abbf4283244bf",
+    "experiments/pilot_v5_confirmation/artifacts/config.json": "70f5ce3dfd4911528700adb5d0e9dc23401878fe3fbbf6021e3cd2915be55203",
+    "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json": "3d272a554d3a25b9157c084530100828549d92d410a126f7bb5c85ed4d128354",
+    "experiments/platform_v01/calibration/FROZEN_CALIBRATION.json": "7f3de88f42a15fd80db4e6ddc2c8036df7a52d605bcb4aeb9cbe893455baddfd",
+    "experiments/platform_v01/dataset/manifest.json": "8b7fcfc6b355117d1c66916053c80aa6a8ff7dc7abcac2bf645e4d192c819f06",
+    "experiments/platform_v01/examples/small_config.json": "d4514f0e63c45d3dff708be9284bad7053e341b624f0e8cd7a31074f7ada903c",
+    "experiments/platform_v01/examples/small_dataset/manifest.json": "5bd50136b09220b70365bb09d725a2c70c1b6c96b77848798fd416d782fc9255",
+    "experiments/task_count_v1/design/configuration.json": "1e71f166a15799cede93f0d26315b90953bc3aa898d45ae7dc012a723f072871",
+    "experiments/task_count_v1/FROZEN_PROTOCOL.json": "8df8d320f08847d098a768b0fa95f49bcacc297ce616b105668d7c27ef74244f",
+    "experiments/task_count_v1/data/DATA_CONFIG.json": "c443749b315963a14d32bb77e7565cdc2d4f3c9e74ccb867fe9ed8ee4597d133",
+    "experiments/task_count_v1/data/manifest.json": "3d5bcb9b852d001ee9e9a74c3ebdb678a00e36be237345b7286066dac387b00d",
+    "experiments/task_count_v1/data/test_manifest.json": "0d7e898134ea8f09e7124627702175d04656a43af391d4b7ab8333804a7bcde0",
+    "experiments/task_count_v2/design/configuration.json": "d3dc00fef4bfaedef916f40affedfebb85f6aa0792b279a3f9c226a96f068d47",
+    "experiments/task_count_v2/FROZEN_PROTOCOL.json": "375e4dd34bd20208b4736c8c9a5cb20b89ef9923043a3c2a4219ecf218abaf16",
+    "experiments/task_count_v2/data/DATA_CONFIG.json": "68bdc6fb78f262d17d05fb59b6798789b3d636dc00e283bb9c42a40e09e64bec",
+    "experiments/task_count_v2/data/manifest.json": "263230752e4618809b59a014718d2e25f57b9f5f81f011c049e9c22e605bc131",
+    "experiments/task_count_v2/data/test_manifest.json": "687398fb9cb60ef199ecf98cc104492a3d0636744c4b0475d99eaddf4a574f35",
+    "experiments/task_count_v2/smoke/end_to_end/FROZEN_PROTOCOL.json": "2e042bce5866fb9092d4483593d1a338364c6a5cd75496d3b8019dbb6dce8784",
+    "experiments/task_count_v2/smoke/failed_manifest_setup/FROZEN_PROTOCOL.json": "2e042bce5866fb9092d4483593d1a338364c6a5cd75496d3b8019dbb6dce8784",
+    "experiments/relation_readout_v1/FROZEN_PROTOCOL.json": "be9dc1437efb6f8a9d3da0b6d86966c54db04206be13cc7b95738b83521cb6b3",
+    "experiments/relation_readout_v1/data_manifest.json": "345ad1590f033d77e76050c18e06f4ac85bb99a4974070ff20ff549b9c53f905"
+  },
+  "historical_unique_declared_seeds": [
+    17,
+    42,
+    73,
+    101,
+    211,
+    307,
+    401,
+    503,
+    617,
+    829,
+    1017,
+    1042,
+    1073,
+    1101,
+    1103,
+    1211,
+    1307,
+    1401,
+    1503,
+    1617,
+    1829,
+    2017,
+    2042,
+    2073,
+    2101,
+    2207,
+    2211,
+    2307,
+    2401,
+    2503,
+    3301,
+    4103,
+    5207,
+    6301,
+    9001,
+    9002,
+    20261018,
+    2026101802,
+    2026101803,
+    2026101804,
+    2026101805,
+    2026101901,
+    2026101902,
+    2026101903,
+    2026101904,
+    2026101905,
+    2026101951,
+    2026101952,
+    2026101953,
+    2026101954,
+    2026101955,
+    2026102001,
+    2026102002,
+    2026102003,
+    2026102101,
+    2026102102,
+    2026102103,
+    2026102151,
+    2026102152,
+    2026102153,
+    2026102181,
+    2026102182,
+    2026102183,
+    2026102191,
+    2026102192,
+    2026102193,
+    2026102281,
+    2026102282,
+    2026102283,
+    2026102291,
+    2026102292,
+    2026102293,
+    2026102701,
+    2026110101,
+    2026110102,
+    2026110103,
+    2026110151,
+    2026110152,
+    2026110153,
+    2026110181,
+    2026110182,
+    2026110183,
+    2026110191,
+    2026110192,
+    2026110193,
+    2026110281,
+    2026110282,
+    2026110283,
+    2026110291,
+    2026110292,
+    2026110293
+  ],
+  "historical_seed_occurrences": [
+    {
+      "file": "experiments/permworld_pilot/runs/pilot_v1/config.json",
+      "key": "seeds/0",
+      "seed": 17
+    },
+    {
+      "file": "experiments/permworld_pilot/runs/pilot_v1/config.json",
+      "key": "seeds/1",
+      "seed": 42
+    },
+    {
+      "file": "experiments/permworld_pilot/runs/pilot_v1/FROZEN_PROTOCOL.json",
+      "key": "config/seeds/0",
+      "seed": 17
+    },
+    {
+      "file": "experiments/permworld_pilot/runs/pilot_v1/FROZEN_PROTOCOL.json",
+      "key": "config/seeds/1",
+      "seed": 42
+    },
+    {
+      "file": "experiments/pilot_v2_diagnostics/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/seeds/0",
+      "seed": 17
+    },
+    {
+      "file": "experiments/pilot_v2_diagnostics/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/seeds/1",
+      "seed": 42
+    },
+    {
+      "file": "experiments/pilot_v2_diagnostics/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/new_test_seed",
+      "seed": 2026101802
+    },
+    {
+      "file": "experiments/pilot_v3_multitarget/artifacts/config_plan.json",
+      "key": "seeds/0",
+      "seed": 17
+    },
+    {
+      "file": "experiments/pilot_v3_multitarget/artifacts/config_plan.json",
+      "key": "seeds/1",
+      "seed": 42
+    },
+    {
+      "file": "experiments/pilot_v3_multitarget/artifacts/config_plan.json",
+      "key": "seeds/2",
+      "seed": 73
+    },
+    {
+      "file": "experiments/pilot_v3_multitarget/artifacts/config_plan.json",
+      "key": "matching_design_seed",
+      "seed": 17
+    },
+    {
+      "file": "experiments/pilot_v3_multitarget/artifacts/config_plan.json",
+      "key": "new_data_seed",
+      "seed": 2026101803
+    },
+    {
+      "file": "experiments/pilot_v3_multitarget/artifacts/config_plan.json",
+      "key": "new_test_seed",
+      "seed": 2026101804
+    },
+    {
+      "file": "experiments/pilot_v3_multitarget/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/seeds/0",
+      "seed": 17
+    },
+    {
+      "file": "experiments/pilot_v3_multitarget/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/seeds/1",
+      "seed": 42
+    },
+    {
+      "file": "experiments/pilot_v3_multitarget/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/seeds/2",
+      "seed": 73
+    },
+    {
+      "file": "experiments/pilot_v3_multitarget/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/matching_design_seed",
+      "seed": 17
+    },
+    {
+      "file": "experiments/pilot_v3_multitarget/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/new_data_seed",
+      "seed": 2026101803
+    },
+    {
+      "file": "experiments/pilot_v3_multitarget/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/new_test_seed",
+      "seed": 2026101804
+    },
+    {
+      "file": "experiments/pilot_v3_multitarget/artifacts/DESIGN_FROZEN.json",
+      "key": "config/seeds/0",
+      "seed": 17
+    },
+    {
+      "file": "experiments/pilot_v3_multitarget/artifacts/DESIGN_FROZEN.json",
+      "key": "config/seeds/1",
+      "seed": 42
+    },
+    {
+      "file": "experiments/pilot_v3_multitarget/artifacts/DESIGN_FROZEN.json",
+      "key": "config/seeds/2",
+      "seed": 73
+    },
+    {
+      "file": "experiments/pilot_v3_multitarget/artifacts/DESIGN_FROZEN.json",
+      "key": "config/matching_design_seed",
+      "seed": 17
+    },
+    {
+      "file": "experiments/pilot_v3_multitarget/artifacts/DESIGN_FROZEN.json",
+      "key": "config/new_data_seed",
+      "seed": 2026101803
+    },
+    {
+      "file": "experiments/pilot_v3_multitarget/artifacts/DESIGN_FROZEN.json",
+      "key": "config/new_test_seed",
+      "seed": 2026101804
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/config.json",
+      "key": "seeds/0",
+      "seed": 17
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/config.json",
+      "key": "seeds/1",
+      "seed": 42
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/config.json",
+      "key": "seeds/2",
+      "seed": 73
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/config.json",
+      "key": "data_generation_seeds/17",
+      "seed": 20261018
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/config.json",
+      "key": "data_generation_seeds/42",
+      "seed": 20261018
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/config.json",
+      "key": "data_generation_seeds/73",
+      "seed": 2026101803
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/config.json",
+      "key": "model_initialization_seeds/17",
+      "seed": 17
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/config.json",
+      "key": "model_initialization_seeds/42",
+      "seed": 42
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/config.json",
+      "key": "model_initialization_seeds/73",
+      "seed": 73
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/config.json",
+      "key": "pretrain_sampler_and_dropout_seeds/17",
+      "seed": 1017
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/config.json",
+      "key": "pretrain_sampler_and_dropout_seeds/42",
+      "seed": 1042
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/config.json",
+      "key": "pretrain_sampler_and_dropout_seeds/73",
+      "seed": 1073
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/config.json",
+      "key": "adapt_sampler_and_dropout_seeds/17",
+      "seed": 2017
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/config.json",
+      "key": "adapt_sampler_and_dropout_seeds/42",
+      "seed": 2042
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/config.json",
+      "key": "adapt_sampler_and_dropout_seeds/73",
+      "seed": 2073
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/config.json",
+      "key": "new_test_seed",
+      "seed": 2026101805
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/seeds/0",
+      "seed": 17
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/seeds/1",
+      "seed": 42
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/seeds/2",
+      "seed": 73
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/data_generation_seeds/17",
+      "seed": 20261018
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/data_generation_seeds/42",
+      "seed": 20261018
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/data_generation_seeds/73",
+      "seed": 2026101803
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/model_initialization_seeds/17",
+      "seed": 17
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/model_initialization_seeds/42",
+      "seed": 42
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/model_initialization_seeds/73",
+      "seed": 73
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/pretrain_sampler_and_dropout_seeds/17",
+      "seed": 1017
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/pretrain_sampler_and_dropout_seeds/42",
+      "seed": 1042
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/pretrain_sampler_and_dropout_seeds/73",
+      "seed": 1073
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/adapt_sampler_and_dropout_seeds/17",
+      "seed": 2017
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/adapt_sampler_and_dropout_seeds/42",
+      "seed": 2042
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/adapt_sampler_and_dropout_seeds/73",
+      "seed": 2073
+    },
+    {
+      "file": "experiments/pilot_v4_backgrounds/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/new_test_seed",
+      "seed": 2026101805
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "seeds/0",
+      "seed": 101
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "seeds/1",
+      "seed": 211
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "seeds/2",
+      "seed": 307
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "seeds/3",
+      "seed": 401
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "seeds/4",
+      "seed": 503
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/0/seed",
+      "seed": 101
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/0/model_initialization_seed",
+      "seed": 101
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/0/data_generation_seed",
+      "seed": 2026101901
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/0/test_generation_seed",
+      "seed": 2026101951
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/0/source_sampling_seed",
+      "seed": 1101
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/0/source_dropout_seed",
+      "seed": 1101
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/0/adapt_sampling_seed",
+      "seed": 2101
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/0/adapt_dropout_seed",
+      "seed": 2101
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/1/seed",
+      "seed": 211
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/1/model_initialization_seed",
+      "seed": 211
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/1/data_generation_seed",
+      "seed": 2026101902
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/1/test_generation_seed",
+      "seed": 2026101952
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/1/source_sampling_seed",
+      "seed": 1211
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/1/source_dropout_seed",
+      "seed": 1211
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/1/adapt_sampling_seed",
+      "seed": 2211
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/1/adapt_dropout_seed",
+      "seed": 2211
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/2/seed",
+      "seed": 307
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/2/model_initialization_seed",
+      "seed": 307
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/2/data_generation_seed",
+      "seed": 2026101903
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/2/test_generation_seed",
+      "seed": 2026101953
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/2/source_sampling_seed",
+      "seed": 1307
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/2/source_dropout_seed",
+      "seed": 1307
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/2/adapt_sampling_seed",
+      "seed": 2307
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/2/adapt_dropout_seed",
+      "seed": 2307
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/3/seed",
+      "seed": 401
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/3/model_initialization_seed",
+      "seed": 401
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/3/data_generation_seed",
+      "seed": 2026101904
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/3/test_generation_seed",
+      "seed": 2026101954
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/3/source_sampling_seed",
+      "seed": 1401
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/3/source_dropout_seed",
+      "seed": 1401
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/3/adapt_sampling_seed",
+      "seed": 2401
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/3/adapt_dropout_seed",
+      "seed": 2401
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/4/seed",
+      "seed": 503
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/4/model_initialization_seed",
+      "seed": 503
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/4/data_generation_seed",
+      "seed": 2026101905
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/4/test_generation_seed",
+      "seed": 2026101955
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/4/source_sampling_seed",
+      "seed": 1503
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/4/source_dropout_seed",
+      "seed": 1503
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/4/adapt_sampling_seed",
+      "seed": 2503
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "repeats/4/adapt_dropout_seed",
+      "seed": 2503
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "data_generation_seeds/101",
+      "seed": 2026101901
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "data_generation_seeds/211",
+      "seed": 2026101902
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "data_generation_seeds/307",
+      "seed": 2026101903
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "data_generation_seeds/401",
+      "seed": 2026101904
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "data_generation_seeds/503",
+      "seed": 2026101905
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "model_initialization_seeds/101",
+      "seed": 101
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "model_initialization_seeds/211",
+      "seed": 211
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "model_initialization_seeds/307",
+      "seed": 307
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "model_initialization_seeds/401",
+      "seed": 401
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "model_initialization_seeds/503",
+      "seed": 503
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "test_generation_seeds/101",
+      "seed": 2026101951
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "test_generation_seeds/211",
+      "seed": 2026101952
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "test_generation_seeds/307",
+      "seed": 2026101953
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "test_generation_seeds/401",
+      "seed": 2026101954
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "test_generation_seeds/503",
+      "seed": 2026101955
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "pretrain_sampler_and_dropout_seeds/101",
+      "seed": 1101
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "pretrain_sampler_and_dropout_seeds/211",
+      "seed": 1211
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "pretrain_sampler_and_dropout_seeds/307",
+      "seed": 1307
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "pretrain_sampler_and_dropout_seeds/401",
+      "seed": 1401
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "pretrain_sampler_and_dropout_seeds/503",
+      "seed": 1503
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "adapt_sampler_and_dropout_seeds/101",
+      "seed": 2101
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "adapt_sampler_and_dropout_seeds/211",
+      "seed": 2211
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "adapt_sampler_and_dropout_seeds/307",
+      "seed": 2307
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "adapt_sampler_and_dropout_seeds/401",
+      "seed": 2401
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/config.json",
+      "key": "adapt_sampler_and_dropout_seeds/503",
+      "seed": 2503
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/seeds/0",
+      "seed": 101
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/seeds/1",
+      "seed": 211
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/seeds/2",
+      "seed": 307
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/seeds/3",
+      "seed": 401
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/seeds/4",
+      "seed": 503
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/0/seed",
+      "seed": 101
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/0/model_initialization_seed",
+      "seed": 101
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/0/data_generation_seed",
+      "seed": 2026101901
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/0/test_generation_seed",
+      "seed": 2026101951
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/0/source_sampling_seed",
+      "seed": 1101
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/0/source_dropout_seed",
+      "seed": 1101
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/0/adapt_sampling_seed",
+      "seed": 2101
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/0/adapt_dropout_seed",
+      "seed": 2101
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/1/seed",
+      "seed": 211
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/1/model_initialization_seed",
+      "seed": 211
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/1/data_generation_seed",
+      "seed": 2026101902
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/1/test_generation_seed",
+      "seed": 2026101952
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/1/source_sampling_seed",
+      "seed": 1211
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/1/source_dropout_seed",
+      "seed": 1211
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/1/adapt_sampling_seed",
+      "seed": 2211
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/1/adapt_dropout_seed",
+      "seed": 2211
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/2/seed",
+      "seed": 307
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/2/model_initialization_seed",
+      "seed": 307
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/2/data_generation_seed",
+      "seed": 2026101903
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/2/test_generation_seed",
+      "seed": 2026101953
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/2/source_sampling_seed",
+      "seed": 1307
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/2/source_dropout_seed",
+      "seed": 1307
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/2/adapt_sampling_seed",
+      "seed": 2307
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/2/adapt_dropout_seed",
+      "seed": 2307
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/3/seed",
+      "seed": 401
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/3/model_initialization_seed",
+      "seed": 401
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/3/data_generation_seed",
+      "seed": 2026101904
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/3/test_generation_seed",
+      "seed": 2026101954
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/3/source_sampling_seed",
+      "seed": 1401
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/3/source_dropout_seed",
+      "seed": 1401
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/3/adapt_sampling_seed",
+      "seed": 2401
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/3/adapt_dropout_seed",
+      "seed": 2401
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/4/seed",
+      "seed": 503
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/4/model_initialization_seed",
+      "seed": 503
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/4/data_generation_seed",
+      "seed": 2026101905
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/4/test_generation_seed",
+      "seed": 2026101955
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/4/source_sampling_seed",
+      "seed": 1503
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/4/source_dropout_seed",
+      "seed": 1503
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/4/adapt_sampling_seed",
+      "seed": 2503
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/4/adapt_dropout_seed",
+      "seed": 2503
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/data_generation_seeds/101",
+      "seed": 2026101901
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/data_generation_seeds/211",
+      "seed": 2026101902
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/data_generation_seeds/307",
+      "seed": 2026101903
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/data_generation_seeds/401",
+      "seed": 2026101904
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/data_generation_seeds/503",
+      "seed": 2026101905
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/model_initialization_seeds/101",
+      "seed": 101
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/model_initialization_seeds/211",
+      "seed": 211
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/model_initialization_seeds/307",
+      "seed": 307
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/model_initialization_seeds/401",
+      "seed": 401
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/model_initialization_seeds/503",
+      "seed": 503
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/test_generation_seeds/101",
+      "seed": 2026101951
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/test_generation_seeds/211",
+      "seed": 2026101952
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/test_generation_seeds/307",
+      "seed": 2026101953
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/test_generation_seeds/401",
+      "seed": 2026101954
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/test_generation_seeds/503",
+      "seed": 2026101955
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/pretrain_sampler_and_dropout_seeds/101",
+      "seed": 1101
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/pretrain_sampler_and_dropout_seeds/211",
+      "seed": 1211
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/pretrain_sampler_and_dropout_seeds/307",
+      "seed": 1307
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/pretrain_sampler_and_dropout_seeds/401",
+      "seed": 1401
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/pretrain_sampler_and_dropout_seeds/503",
+      "seed": 1503
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/adapt_sampler_and_dropout_seeds/101",
+      "seed": 2101
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/adapt_sampler_and_dropout_seeds/211",
+      "seed": 2211
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/adapt_sampler_and_dropout_seeds/307",
+      "seed": 2307
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/adapt_sampler_and_dropout_seeds/401",
+      "seed": 2401
+    },
+    {
+      "file": "experiments/pilot_v5_confirmation/artifacts/FROZEN_PROTOCOL.json",
+      "key": "config/adapt_sampler_and_dropout_seeds/503",
+      "seed": 2503
+    },
+    {
+      "file": "experiments/platform_v01/calibration/FROZEN_CALIBRATION.json",
+      "key": "config/repeats/0/initialization_seed",
+      "seed": 617
+    },
+    {
+      "file": "experiments/platform_v01/calibration/FROZEN_CALIBRATION.json",
+      "key": "config/repeats/0/data_seed",
+      "seed": 2026102001
+    },
+    {
+      "file": "experiments/platform_v01/calibration/FROZEN_CALIBRATION.json",
+      "key": "config/repeats/0/sampling_and_dropout_seed",
+      "seed": 1617
+    },
+    {
+      "file": "experiments/platform_v01/calibration/FROZEN_CALIBRATION.json",
+      "key": "config/repeats/1/initialization_seed",
+      "seed": 829
+    },
+    {
+      "file": "experiments/platform_v01/calibration/FROZEN_CALIBRATION.json",
+      "key": "config/repeats/1/data_seed",
+      "seed": 2026102002
+    },
+    {
+      "file": "experiments/platform_v01/calibration/FROZEN_CALIBRATION.json",
+      "key": "config/repeats/1/sampling_and_dropout_seed",
+      "seed": 1829
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "config/replicates/0/model_seed",
+      "seed": 617
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "config/replicates/0/data_seed",
+      "seed": 2026102001
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "config/replicates/1/model_seed",
+      "seed": 829
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "config/replicates/1/data_seed",
+      "seed": 2026102002
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/0/seed",
+      "seed": 617
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/0/data_seed",
+      "seed": 2026102001
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/1/seed",
+      "seed": 617
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/1/data_seed",
+      "seed": 2026102001
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/2/seed",
+      "seed": 617
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/2/data_seed",
+      "seed": 2026102001
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/3/seed",
+      "seed": 617
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/3/data_seed",
+      "seed": 2026102001
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/4/seed",
+      "seed": 617
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/4/data_seed",
+      "seed": 2026102001
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/5/seed",
+      "seed": 617
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/5/data_seed",
+      "seed": 2026102001
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/6/seed",
+      "seed": 617
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/6/data_seed",
+      "seed": 2026102001
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/7/seed",
+      "seed": 617
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/7/data_seed",
+      "seed": 2026102001
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/8/seed",
+      "seed": 617
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/8/data_seed",
+      "seed": 2026102001
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/9/seed",
+      "seed": 829
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/9/data_seed",
+      "seed": 2026102002
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/10/seed",
+      "seed": 829
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/10/data_seed",
+      "seed": 2026102002
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/11/seed",
+      "seed": 829
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/11/data_seed",
+      "seed": 2026102002
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/12/seed",
+      "seed": 829
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/12/data_seed",
+      "seed": 2026102002
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/13/seed",
+      "seed": 829
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/13/data_seed",
+      "seed": 2026102002
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/14/seed",
+      "seed": 829
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/14/data_seed",
+      "seed": 2026102002
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/15/seed",
+      "seed": 829
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/15/data_seed",
+      "seed": 2026102002
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/16/seed",
+      "seed": 829
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/16/data_seed",
+      "seed": 2026102002
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/17/seed",
+      "seed": 829
+    },
+    {
+      "file": "experiments/platform_v01/dataset/manifest.json",
+      "key": "pools/17/data_seed",
+      "seed": 2026102002
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_config.json",
+      "key": "replicates/0/model_seed",
+      "seed": 9001
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_config.json",
+      "key": "replicates/0/data_seed",
+      "seed": 9002
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_dataset/manifest.json",
+      "key": "config/replicates/0/model_seed",
+      "seed": 9001
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_dataset/manifest.json",
+      "key": "config/replicates/0/data_seed",
+      "seed": 9002
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_dataset/manifest.json",
+      "key": "pools/0/seed",
+      "seed": 9001
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_dataset/manifest.json",
+      "key": "pools/0/data_seed",
+      "seed": 9002
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_dataset/manifest.json",
+      "key": "pools/1/seed",
+      "seed": 9001
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_dataset/manifest.json",
+      "key": "pools/1/data_seed",
+      "seed": 9002
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_dataset/manifest.json",
+      "key": "pools/2/seed",
+      "seed": 9001
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_dataset/manifest.json",
+      "key": "pools/2/data_seed",
+      "seed": 9002
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_dataset/manifest.json",
+      "key": "pools/3/seed",
+      "seed": 9001
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_dataset/manifest.json",
+      "key": "pools/3/data_seed",
+      "seed": 9002
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_dataset/manifest.json",
+      "key": "pools/4/seed",
+      "seed": 9001
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_dataset/manifest.json",
+      "key": "pools/4/data_seed",
+      "seed": 9002
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_dataset/manifest.json",
+      "key": "pools/5/seed",
+      "seed": 9001
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_dataset/manifest.json",
+      "key": "pools/5/data_seed",
+      "seed": 9002
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_dataset/manifest.json",
+      "key": "pools/6/seed",
+      "seed": 9001
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_dataset/manifest.json",
+      "key": "pools/6/data_seed",
+      "seed": 9002
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_dataset/manifest.json",
+      "key": "pools/7/seed",
+      "seed": 9001
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_dataset/manifest.json",
+      "key": "pools/7/data_seed",
+      "seed": 9002
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_dataset/manifest.json",
+      "key": "pools/8/seed",
+      "seed": 9001
+    },
+    {
+      "file": "experiments/platform_v01/examples/small_dataset/manifest.json",
+      "key": "pools/8/data_seed",
+      "seed": 9002
+    },
+    {
+      "file": "experiments/task_count_v1/design/configuration.json",
+      "key": "witness_policy/seed",
+      "seed": 2026102701
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/0/initialization_seed",
+      "seed": 1103
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/0/data_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/0/pretrain_sampling_seed",
+      "seed": 2026102181
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/0/adaptation_sampling_seed",
+      "seed": 2026102191
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/0/pretrain_dropout_seed",
+      "seed": 2026102281
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/0/adaptation_dropout_seed",
+      "seed": 2026102291
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/1/initialization_seed",
+      "seed": 2207
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/1/data_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/1/pretrain_sampling_seed",
+      "seed": 2026102182
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/1/adaptation_sampling_seed",
+      "seed": 2026102192
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/1/pretrain_dropout_seed",
+      "seed": 2026102282
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/1/adaptation_dropout_seed",
+      "seed": 2026102292
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/2/initialization_seed",
+      "seed": 3301
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/2/data_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/2/pretrain_sampling_seed",
+      "seed": 2026102183
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/2/adaptation_sampling_seed",
+      "seed": 2026102193
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/2/pretrain_dropout_seed",
+      "seed": 2026102283
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/2/adaptation_dropout_seed",
+      "seed": 2026102293
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "data_config/replicates/0/model_seed",
+      "seed": 1103
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "data_config/replicates/0/data_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "data_config/replicates/0/test_seed",
+      "seed": 2026102151
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "data_config/replicates/1/model_seed",
+      "seed": 2207
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "data_config/replicates/1/data_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "data_config/replicates/1/test_seed",
+      "seed": 2026102152
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "data_config/replicates/2/model_seed",
+      "seed": 3301
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "data_config/replicates/2/data_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/FROZEN_PROTOCOL.json",
+      "key": "data_config/replicates/2/test_seed",
+      "seed": 2026102153
+    },
+    {
+      "file": "experiments/task_count_v1/data/DATA_CONFIG.json",
+      "key": "replicates/0/model_seed",
+      "seed": 1103
+    },
+    {
+      "file": "experiments/task_count_v1/data/DATA_CONFIG.json",
+      "key": "replicates/0/data_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/data/DATA_CONFIG.json",
+      "key": "replicates/0/test_seed",
+      "seed": 2026102151
+    },
+    {
+      "file": "experiments/task_count_v1/data/DATA_CONFIG.json",
+      "key": "replicates/1/model_seed",
+      "seed": 2207
+    },
+    {
+      "file": "experiments/task_count_v1/data/DATA_CONFIG.json",
+      "key": "replicates/1/data_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/data/DATA_CONFIG.json",
+      "key": "replicates/1/test_seed",
+      "seed": 2026102152
+    },
+    {
+      "file": "experiments/task_count_v1/data/DATA_CONFIG.json",
+      "key": "replicates/2/model_seed",
+      "seed": 3301
+    },
+    {
+      "file": "experiments/task_count_v1/data/DATA_CONFIG.json",
+      "key": "replicates/2/data_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/data/DATA_CONFIG.json",
+      "key": "replicates/2/test_seed",
+      "seed": 2026102153
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "config/replicates/0/model_seed",
+      "seed": 1103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "config/replicates/0/data_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "config/replicates/0/test_seed",
+      "seed": 2026102151
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "config/replicates/1/model_seed",
+      "seed": 2207
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "config/replicates/1/data_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "config/replicates/1/test_seed",
+      "seed": 2026102152
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "config/replicates/2/model_seed",
+      "seed": 3301
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "config/replicates/2/data_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "config/replicates/2/test_seed",
+      "seed": 2026102153
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/0/model_seed",
+      "seed": 1103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/0/data_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/0/rng_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/0/test_seed",
+      "seed": 2026102151
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/1/model_seed",
+      "seed": 1103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/1/data_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/1/rng_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/1/test_seed",
+      "seed": 2026102151
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/2/model_seed",
+      "seed": 1103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/2/data_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/2/rng_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/2/test_seed",
+      "seed": 2026102151
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/3/model_seed",
+      "seed": 1103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/3/data_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/3/rng_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/3/test_seed",
+      "seed": 2026102151
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/4/model_seed",
+      "seed": 1103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/4/data_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/4/rng_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/4/test_seed",
+      "seed": 2026102151
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/5/model_seed",
+      "seed": 1103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/5/data_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/5/rng_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/5/test_seed",
+      "seed": 2026102151
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/6/model_seed",
+      "seed": 1103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/6/data_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/6/rng_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/6/test_seed",
+      "seed": 2026102151
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/7/model_seed",
+      "seed": 1103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/7/data_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/7/rng_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/7/test_seed",
+      "seed": 2026102151
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/8/model_seed",
+      "seed": 2207
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/8/data_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/8/rng_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/8/test_seed",
+      "seed": 2026102152
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/9/model_seed",
+      "seed": 2207
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/9/data_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/9/rng_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/9/test_seed",
+      "seed": 2026102152
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/10/model_seed",
+      "seed": 2207
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/10/data_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/10/rng_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/10/test_seed",
+      "seed": 2026102152
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/11/model_seed",
+      "seed": 2207
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/11/data_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/11/rng_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/11/test_seed",
+      "seed": 2026102152
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/12/model_seed",
+      "seed": 2207
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/12/data_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/12/rng_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/12/test_seed",
+      "seed": 2026102152
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/13/model_seed",
+      "seed": 2207
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/13/data_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/13/rng_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/13/test_seed",
+      "seed": 2026102152
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/14/model_seed",
+      "seed": 2207
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/14/data_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/14/rng_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/14/test_seed",
+      "seed": 2026102152
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/15/model_seed",
+      "seed": 2207
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/15/data_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/15/rng_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/15/test_seed",
+      "seed": 2026102152
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/16/model_seed",
+      "seed": 3301
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/16/data_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/16/rng_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/16/test_seed",
+      "seed": 2026102153
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/17/model_seed",
+      "seed": 3301
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/17/data_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/17/rng_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/17/test_seed",
+      "seed": 2026102153
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/18/model_seed",
+      "seed": 3301
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/18/data_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/18/rng_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/18/test_seed",
+      "seed": 2026102153
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/19/model_seed",
+      "seed": 3301
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/19/data_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/19/rng_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/19/test_seed",
+      "seed": 2026102153
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/20/model_seed",
+      "seed": 3301
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/20/data_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/20/rng_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/20/test_seed",
+      "seed": 2026102153
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/21/model_seed",
+      "seed": 3301
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/21/data_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/21/rng_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/21/test_seed",
+      "seed": 2026102153
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/22/model_seed",
+      "seed": 3301
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/22/data_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/22/rng_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/22/test_seed",
+      "seed": 2026102153
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/23/model_seed",
+      "seed": 3301
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/23/data_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/23/rng_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/data/manifest.json",
+      "key": "pools/23/test_seed",
+      "seed": 2026102153
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/0/model_seed",
+      "seed": 1103
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/0/data_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/0/rng_seed",
+      "seed": 2026102151
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/0/test_seed",
+      "seed": 2026102151
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/1/model_seed",
+      "seed": 1103
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/1/data_seed",
+      "seed": 2026102101
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/1/rng_seed",
+      "seed": 2026102151
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/1/test_seed",
+      "seed": 2026102151
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/2/model_seed",
+      "seed": 2207
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/2/data_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/2/rng_seed",
+      "seed": 2026102152
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/2/test_seed",
+      "seed": 2026102152
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/3/model_seed",
+      "seed": 2207
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/3/data_seed",
+      "seed": 2026102102
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/3/rng_seed",
+      "seed": 2026102152
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/3/test_seed",
+      "seed": 2026102152
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/4/model_seed",
+      "seed": 3301
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/4/data_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/4/rng_seed",
+      "seed": 2026102153
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/4/test_seed",
+      "seed": 2026102153
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/5/model_seed",
+      "seed": 3301
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/5/data_seed",
+      "seed": 2026102103
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/5/rng_seed",
+      "seed": 2026102153
+    },
+    {
+      "file": "experiments/task_count_v1/data/test_manifest.json",
+      "key": "pools/5/test_seed",
+      "seed": 2026102153
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/0/initialization_seed",
+      "seed": 4103
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/0/data_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/0/test_seed",
+      "seed": 2026110151
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/0/pretrain_sampling_seed",
+      "seed": 2026110181
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/0/adaptation_sampling_seed",
+      "seed": 2026110191
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/0/pretrain_dropout_seed",
+      "seed": 2026110281
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/0/adaptation_dropout_seed",
+      "seed": 2026110291
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/1/initialization_seed",
+      "seed": 5207
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/1/data_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/1/test_seed",
+      "seed": 2026110152
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/1/pretrain_sampling_seed",
+      "seed": 2026110182
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/1/adaptation_sampling_seed",
+      "seed": 2026110192
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/1/pretrain_dropout_seed",
+      "seed": 2026110282
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/1/adaptation_dropout_seed",
+      "seed": 2026110292
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/2/initialization_seed",
+      "seed": 6301
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/2/data_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/2/test_seed",
+      "seed": 2026110153
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/2/pretrain_sampling_seed",
+      "seed": 2026110183
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/2/adaptation_sampling_seed",
+      "seed": 2026110193
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/2/pretrain_dropout_seed",
+      "seed": 2026110283
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "config/repeats/2/adaptation_dropout_seed",
+      "seed": 2026110293
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "data_config/replicates/0/model_seed",
+      "seed": 4103
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "data_config/replicates/0/data_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "data_config/replicates/0/test_seed",
+      "seed": 2026110151
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "data_config/replicates/1/model_seed",
+      "seed": 5207
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "data_config/replicates/1/data_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "data_config/replicates/1/test_seed",
+      "seed": 2026110152
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "data_config/replicates/2/model_seed",
+      "seed": 6301
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "data_config/replicates/2/data_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/FROZEN_PROTOCOL.json",
+      "key": "data_config/replicates/2/test_seed",
+      "seed": 2026110153
+    },
+    {
+      "file": "experiments/task_count_v2/data/DATA_CONFIG.json",
+      "key": "replicates/0/model_seed",
+      "seed": 4103
+    },
+    {
+      "file": "experiments/task_count_v2/data/DATA_CONFIG.json",
+      "key": "replicates/0/data_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/data/DATA_CONFIG.json",
+      "key": "replicates/0/test_seed",
+      "seed": 2026110151
+    },
+    {
+      "file": "experiments/task_count_v2/data/DATA_CONFIG.json",
+      "key": "replicates/1/model_seed",
+      "seed": 5207
+    },
+    {
+      "file": "experiments/task_count_v2/data/DATA_CONFIG.json",
+      "key": "replicates/1/data_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/data/DATA_CONFIG.json",
+      "key": "replicates/1/test_seed",
+      "seed": 2026110152
+    },
+    {
+      "file": "experiments/task_count_v2/data/DATA_CONFIG.json",
+      "key": "replicates/2/model_seed",
+      "seed": 6301
+    },
+    {
+      "file": "experiments/task_count_v2/data/DATA_CONFIG.json",
+      "key": "replicates/2/data_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/data/DATA_CONFIG.json",
+      "key": "replicates/2/test_seed",
+      "seed": 2026110153
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "config/replicates/0/model_seed",
+      "seed": 4103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "config/replicates/0/data_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "config/replicates/0/test_seed",
+      "seed": 2026110151
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "config/replicates/1/model_seed",
+      "seed": 5207
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "config/replicates/1/data_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "config/replicates/1/test_seed",
+      "seed": 2026110152
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "config/replicates/2/model_seed",
+      "seed": 6301
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "config/replicates/2/data_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "config/replicates/2/test_seed",
+      "seed": 2026110153
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/0/model_seed",
+      "seed": 4103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/0/data_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/0/rng_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/0/test_seed",
+      "seed": 2026110151
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/1/model_seed",
+      "seed": 4103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/1/data_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/1/rng_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/1/test_seed",
+      "seed": 2026110151
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/2/model_seed",
+      "seed": 4103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/2/data_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/2/rng_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/2/test_seed",
+      "seed": 2026110151
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/3/model_seed",
+      "seed": 4103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/3/data_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/3/rng_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/3/test_seed",
+      "seed": 2026110151
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/4/model_seed",
+      "seed": 4103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/4/data_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/4/rng_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/4/test_seed",
+      "seed": 2026110151
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/5/model_seed",
+      "seed": 4103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/5/data_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/5/rng_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/5/test_seed",
+      "seed": 2026110151
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/6/model_seed",
+      "seed": 4103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/6/data_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/6/rng_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/6/test_seed",
+      "seed": 2026110151
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/7/model_seed",
+      "seed": 4103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/7/data_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/7/rng_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/7/test_seed",
+      "seed": 2026110151
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/8/model_seed",
+      "seed": 5207
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/8/data_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/8/rng_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/8/test_seed",
+      "seed": 2026110152
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/9/model_seed",
+      "seed": 5207
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/9/data_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/9/rng_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/9/test_seed",
+      "seed": 2026110152
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/10/model_seed",
+      "seed": 5207
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/10/data_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/10/rng_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/10/test_seed",
+      "seed": 2026110152
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/11/model_seed",
+      "seed": 5207
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/11/data_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/11/rng_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/11/test_seed",
+      "seed": 2026110152
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/12/model_seed",
+      "seed": 5207
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/12/data_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/12/rng_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/12/test_seed",
+      "seed": 2026110152
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/13/model_seed",
+      "seed": 5207
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/13/data_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/13/rng_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/13/test_seed",
+      "seed": 2026110152
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/14/model_seed",
+      "seed": 5207
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/14/data_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/14/rng_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/14/test_seed",
+      "seed": 2026110152
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/15/model_seed",
+      "seed": 5207
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/15/data_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/15/rng_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/15/test_seed",
+      "seed": 2026110152
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/16/model_seed",
+      "seed": 6301
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/16/data_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/16/rng_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/16/test_seed",
+      "seed": 2026110153
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/17/model_seed",
+      "seed": 6301
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/17/data_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/17/rng_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/17/test_seed",
+      "seed": 2026110153
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/18/model_seed",
+      "seed": 6301
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/18/data_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/18/rng_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/18/test_seed",
+      "seed": 2026110153
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/19/model_seed",
+      "seed": 6301
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/19/data_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/19/rng_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/19/test_seed",
+      "seed": 2026110153
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/20/model_seed",
+      "seed": 6301
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/20/data_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/20/rng_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/20/test_seed",
+      "seed": 2026110153
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/21/model_seed",
+      "seed": 6301
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/21/data_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/21/rng_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/21/test_seed",
+      "seed": 2026110153
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/22/model_seed",
+      "seed": 6301
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/22/data_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/22/rng_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/22/test_seed",
+      "seed": 2026110153
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/23/model_seed",
+      "seed": 6301
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/23/data_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/23/rng_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/data/manifest.json",
+      "key": "pools/23/test_seed",
+      "seed": 2026110153
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/0/model_seed",
+      "seed": 4103
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/0/data_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/0/rng_seed",
+      "seed": 2026110151
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/0/test_seed",
+      "seed": 2026110151
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/1/model_seed",
+      "seed": 4103
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/1/data_seed",
+      "seed": 2026110101
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/1/rng_seed",
+      "seed": 2026110151
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/1/test_seed",
+      "seed": 2026110151
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/2/model_seed",
+      "seed": 5207
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/2/data_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/2/rng_seed",
+      "seed": 2026110152
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/2/test_seed",
+      "seed": 2026110152
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/3/model_seed",
+      "seed": 5207
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/3/data_seed",
+      "seed": 2026110102
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/3/rng_seed",
+      "seed": 2026110152
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/3/test_seed",
+      "seed": 2026110152
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/4/model_seed",
+      "seed": 6301
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/4/data_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/4/rng_seed",
+      "seed": 2026110153
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/4/test_seed",
+      "seed": 2026110153
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/5/model_seed",
+      "seed": 6301
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/5/data_seed",
+      "seed": 2026110103
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/5/rng_seed",
+      "seed": 2026110153
+    },
+    {
+      "file": "experiments/task_count_v2/data/test_manifest.json",
+      "key": "pools/5/test_seed",
+      "seed": 2026110153
+    },
+    {
+      "file": "experiments/relation_readout_v1/FROZEN_PROTOCOL.json",
+      "key": "seeds/0",
+      "seed": 2026102001
+    },
+    {
+      "file": "experiments/relation_readout_v1/FROZEN_PROTOCOL.json",
+      "key": "seeds/1",
+      "seed": 2026102002
+    },
+    {
+      "file": "experiments/relation_readout_v1/FROZEN_PROTOCOL.json",
+      "key": "seeds/2",
+      "seed": 2026102003
+    },
+    {
+      "file": "experiments/relation_readout_v1/data_manifest.json",
+      "key": "pools/0/seed",
+      "seed": 4103
+    },
+    {
+      "file": "experiments/relation_readout_v1/data_manifest.json",
+      "key": "pools/1/seed",
+      "seed": 4103
+    },
+    {
+      "file": "experiments/relation_readout_v1/data_manifest.json",
+      "key": "pools/2/seed",
+      "seed": 5207
+    },
+    {
+      "file": "experiments/relation_readout_v1/data_manifest.json",
+      "key": "pools/3/seed",
+      "seed": 5207
+    },
+    {
+      "file": "experiments/relation_readout_v1/data_manifest.json",
+      "key": "pools/4/seed",
+      "seed": 6301
+    },
+    {
+      "file": "experiments/relation_readout_v1/data_manifest.json",
+      "key": "pools/5/seed",
+      "seed": 6301
+    }
+  ],
+  "new_seed_records": [
+    {
+      "repeat_id": "R1",
+      "kind": "model_seed",
+      "seed": 17011,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R1",
+      "kind": "data_seed",
+      "seed": 2026111001,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R1",
+      "kind": "test_seed",
+      "seed": 2026111051,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R1",
+      "kind": "subset_seed",
+      "seed": 2026111101,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R1",
+      "kind": "source_sampling_seed",
+      "seed": 2026111201,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R1",
+      "kind": "source_dropout_seed",
+      "seed": 2026111301,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R1",
+      "kind": "adapt_sampling_seed",
+      "seed": 2026111401,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R1",
+      "kind": "adapt_dropout_seed",
+      "seed": 2026111501,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R2",
+      "kind": "model_seed",
+      "seed": 18013,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R2",
+      "kind": "data_seed",
+      "seed": 2026111002,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R2",
+      "kind": "test_seed",
+      "seed": 2026111052,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R2",
+      "kind": "subset_seed",
+      "seed": 2026111102,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R2",
+      "kind": "source_sampling_seed",
+      "seed": 2026111202,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R2",
+      "kind": "source_dropout_seed",
+      "seed": 2026111302,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R2",
+      "kind": "adapt_sampling_seed",
+      "seed": 2026111402,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R2",
+      "kind": "adapt_dropout_seed",
+      "seed": 2026111502,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R3",
+      "kind": "model_seed",
+      "seed": 19001,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R3",
+      "kind": "data_seed",
+      "seed": 2026111003,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R3",
+      "kind": "test_seed",
+      "seed": 2026111053,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R3",
+      "kind": "subset_seed",
+      "seed": 2026111103,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R3",
+      "kind": "source_sampling_seed",
+      "seed": 2026111203,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R3",
+      "kind": "source_dropout_seed",
+      "seed": 2026111303,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R3",
+      "kind": "adapt_sampling_seed",
+      "seed": 2026111403,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R3",
+      "kind": "adapt_dropout_seed",
+      "seed": 2026111503,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R4",
+      "kind": "model_seed",
+      "seed": 20011,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R4",
+      "kind": "data_seed",
+      "seed": 2026111004,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R4",
+      "kind": "test_seed",
+      "seed": 2026111054,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R4",
+      "kind": "subset_seed",
+      "seed": 2026111104,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R4",
+      "kind": "source_sampling_seed",
+      "seed": 2026111204,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R4",
+      "kind": "source_dropout_seed",
+      "seed": 2026111304,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R4",
+      "kind": "adapt_sampling_seed",
+      "seed": 2026111404,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R4",
+      "kind": "adapt_dropout_seed",
+      "seed": 2026111504,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R5",
+      "kind": "model_seed",
+      "seed": 21001,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R5",
+      "kind": "data_seed",
+      "seed": 2026111005,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R5",
+      "kind": "test_seed",
+      "seed": 2026111055,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R5",
+      "kind": "subset_seed",
+      "seed": 2026111105,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R5",
+      "kind": "source_sampling_seed",
+      "seed": 2026111205,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R5",
+      "kind": "source_dropout_seed",
+      "seed": 2026111305,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R5",
+      "kind": "adapt_sampling_seed",
+      "seed": 2026111405,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R5",
+      "kind": "adapt_dropout_seed",
+      "seed": 2026111505,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R6",
+      "kind": "model_seed",
+      "seed": 22003,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R6",
+      "kind": "data_seed",
+      "seed": 2026111006,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R6",
+      "kind": "test_seed",
+      "seed": 2026111056,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R6",
+      "kind": "subset_seed",
+      "seed": 2026111106,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R6",
+      "kind": "source_sampling_seed",
+      "seed": 2026111206,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R6",
+      "kind": "source_dropout_seed",
+      "seed": 2026111306,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R6",
+      "kind": "adapt_sampling_seed",
+      "seed": 2026111406,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R6",
+      "kind": "adapt_dropout_seed",
+      "seed": 2026111506,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R7",
+      "kind": "model_seed",
+      "seed": 23003,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R7",
+      "kind": "data_seed",
+      "seed": 2026111007,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R7",
+      "kind": "test_seed",
+      "seed": 2026111057,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R7",
+      "kind": "subset_seed",
+      "seed": 2026111107,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R7",
+      "kind": "source_sampling_seed",
+      "seed": 2026111207,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R7",
+      "kind": "source_dropout_seed",
+      "seed": 2026111307,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R7",
+      "kind": "adapt_sampling_seed",
+      "seed": 2026111407,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R7",
+      "kind": "adapt_dropout_seed",
+      "seed": 2026111507,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R8",
+      "kind": "model_seed",
+      "seed": 24001,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R8",
+      "kind": "data_seed",
+      "seed": 2026111008,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R8",
+      "kind": "test_seed",
+      "seed": 2026111058,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R8",
+      "kind": "subset_seed",
+      "seed": 2026111108,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R8",
+      "kind": "source_sampling_seed",
+      "seed": 2026111208,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R8",
+      "kind": "source_dropout_seed",
+      "seed": 2026111308,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R8",
+      "kind": "adapt_sampling_seed",
+      "seed": 2026111408,
+      "historical_exact_overlap": false
+    },
+    {
+      "repeat_id": "R8",
+      "kind": "adapt_dropout_seed",
+      "seed": 2026111508,
+      "historical_exact_overlap": false
+    }
+  ],
+  "new_seed_count": 64,
+  "new_seeds_globally_distinct": true,
+  "historical_exact_overlaps": [],
+  "design_sha256": "25c2d65699fa933807c3e2c66e6e4f3d4fccf2520878373e474d7ce96b9b7f65"
+}

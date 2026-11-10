@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "engineering_smoke_only": true,
+  "source_updates": 8,
+  "adaptation_updates_per_route": 8,
+  "routes": [
+    "D",
+    "A"
+  ],
+  "paired_streams": true,
+  "identical_target_rows": true,
+  "distinct_parent_source_models": true,
+  "formal_outputs_untouched": true
+}

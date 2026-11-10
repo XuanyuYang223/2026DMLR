@@ -1,0 +1,209 @@
+{
+  "n": 10,
+  "model": {
+    "d_model": 256,
+    "layers": 4,
+    "n_heads": 8,
+    "mlp_ratio": 4,
+    "dropout": 0.1,
+    "tie_embeddings": true,
+    "max_seq_len": 128
+  },
+  "vocab_size": 188,
+  "encoding": "one_line",
+  "batch": 64,
+  "pretrain_updates": 4800,
+  "source_lr": "3e-4; warmup100 and cosine to3e-5 at2400, then constant3e-5 through4800",
+  "adaptation_updates": 800,
+  "learning_rates": [
+    0.0003,
+    0.0001,
+    3e-05
+  ],
+  "adapt_eval_every": 100,
+  "source_eval_steps": [
+    0,
+    600,
+    1200,
+    2400,
+    3600,
+    4800
+  ],
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "epsilon": 1e-08,
+  "clip": 1.0,
+  "precision": "FP32 weights/evaluation; BF16 training; TF32 disabled",
+  "version": "fixed_points_deficiencies_confirmation_v1",
+  "target": "fixed_points",
+  "conditions": [
+    "P",
+    "D",
+    "T",
+    "U"
+  ],
+  "routes": [
+    "P",
+    "D",
+    "T",
+    "U",
+    "A"
+  ],
+  "sources": {
+    "P": [
+      "descents",
+      "successions",
+      "left_to_right_maxima",
+      "peaks"
+    ],
+    "D": [
+      "descents",
+      "successions",
+      "left_to_right_maxima",
+      "deficiencies"
+    ],
+    "T": [
+      "descents",
+      "successions",
+      "left_to_right_maxima",
+      "anti_fixed_points"
+    ],
+    "U": [
+      "descents",
+      "successions",
+      "left_to_right_maxima",
+      "right_to_left_maxima"
+    ]
+  },
+  "target_sizes": [
+    256,
+    512,
+    1024
+  ],
+  "repeats": [
+    {
+      "repeat_id": "R1",
+      "repeat": 1,
+      "model_seed": 17011,
+      "data_seed": 2026111001,
+      "test_seed": 2026111051,
+      "subset_seed": 2026111101,
+      "source_sampling_seed": 2026111201,
+      "source_dropout_seed": 2026111301,
+      "adapt_sampling_seed": 2026111401,
+      "adapt_dropout_seed": 2026111501
+    },
+    {
+      "repeat_id": "R2",
+      "repeat": 2,
+      "model_seed": 18013,
+      "data_seed": 2026111002,
+      "test_seed": 2026111052,
+      "subset_seed": 2026111102,
+      "source_sampling_seed": 2026111202,
+      "source_dropout_seed": 2026111302,
+      "adapt_sampling_seed": 2026111402,
+      "adapt_dropout_seed": 2026111502
+    },
+    {
+      "repeat_id": "R3",
+      "repeat": 3,
+      "model_seed": 19001,
+      "data_seed": 2026111003,
+      "test_seed": 2026111053,
+      "subset_seed": 2026111103,
+      "source_sampling_seed": 2026111203,
+      "source_dropout_seed": 2026111303,
+      "adapt_sampling_seed": 2026111403,
+      "adapt_dropout_seed": 2026111503
+    },
+    {
+      "repeat_id": "R4",
+      "repeat": 4,
+      "model_seed": 20011,
+      "data_seed": 2026111004,
+      "test_seed": 2026111054,
+      "subset_seed": 2026111104,
+      "source_sampling_seed": 2026111204,
+      "source_dropout_seed": 2026111304,
+      "adapt_sampling_seed": 2026111404,
+      "adapt_dropout_seed": 2026111504
+    },
+    {
+      "repeat_id": "R5",
+      "repeat": 5,
+      "model_seed": 21001,
+      "data_seed": 2026111005,
+      "test_seed": 2026111055,
+      "subset_seed": 2026111105,
+      "source_sampling_seed": 2026111205,
+      "source_dropout_seed": 2026111305,
+      "adapt_sampling_seed": 2026111405,
+      "adapt_dropout_seed": 2026111505
+    },
+    {
+      "repeat_id": "R6",
+      "repeat": 6,
+      "model_seed": 22003,
+      "data_seed": 2026111006,
+      "test_seed": 2026111056,
+      "subset_seed": 2026111106,
+      "source_sampling_seed": 2026111206,
+      "source_dropout_seed": 2026111306,
+      "adapt_sampling_seed": 2026111406,
+      "adapt_dropout_seed": 2026111506
+    },
+    {
+      "repeat_id": "R7",
+      "repeat": 7,
+      "model_seed": 23003,
+      "data_seed": 2026111007,
+      "test_seed": 2026111057,
+      "subset_seed": 2026111107,
+      "source_sampling_seed": 2026111207,
+      "source_dropout_seed": 2026111307,
+      "adapt_sampling_seed": 2026111407,
+      "adapt_dropout_seed": 2026111507
+    },
+    {
+      "repeat_id": "R8",
+      "repeat": 8,
+      "model_seed": 24001,
+      "data_seed": 2026111008,
+      "test_seed": 2026111058,
+      "subset_seed": 2026111108,
+      "source_sampling_seed": 2026111208,
+      "source_dropout_seed": 2026111308,
+      "adapt_sampling_seed": 2026111408,
+      "adapt_dropout_seed": 2026111508
+    }
+  ],
+  "source_pool": 8192,
+  "source_dev": 1024,
+  "target_pool": 1024,
+  "target_dev": 1024,
+  "test_count": 2048,
+  "counts": {
+    "source_train": 8192,
+    "source_dev": 1024,
+    "target_train": 1024,
+    "target_dev": 1024,
+    "test": 2048
+  },
+  "source_checkpoint": "Fixed 4800-update endpoint; no target-based selection",
+  "adaptation": "Full-parameter independent runs at every size and learning rate; no continuation across sizes",
+  "target_reset": "Only fixed_points tied embedding/output row restored to this unit's step-0 row",
+  "selection": "Max complete-answer-plus-EOS dev accuracy; min answer CE; earliest positive step; declared LR order",
+  "primary_accuracy": "Unconstrained greedy answer followed by EOS; both tokens must exactly match",
+  "legacy_bridge": "First-answer-token accuracy plus teacher-forced EOS accuracy, reported separately",
+  "loss": "Inherited v5: 0.5*(answer-token mean CE + teacher-forced EOS mean CE)",
+  "supervision": "256/512/1024 target training labels plus 1024 separately disclosed target development labels",
+  "primary": "Within-unit S_D-S_U; S=.25*A256+.5*A512+.25*A1024",
+  "test_policy": "Generate all new tests only after all 120 development selections freeze; no test-driven choice",
+  "input_policy": "No explicit paired-transform queries, formula supervision or local-position labels",
+  "stopping": "Exactly 8 units, 32 source models, 360 LR candidates, 120 selected target results; no extensions",
+  "output_policy": "Local delivery only; no automatic upload or publication"
+}

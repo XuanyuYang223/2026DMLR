@@ -1,0 +1,99 @@
+{
+  "status": "pass_with_documented_low_level_gate_boundary",
+  "created_at_utc": "2026-11-10T19:35:24.006721+00:00",
+  "reviewer": "Independent data-pipeline agent; train.py reviewed read-only, no training or evaluation executed for this review.",
+  "scope": "Source-code inspection against the frozen numeric design and written protocol, including legacy primitives; not a substitute for the engineering smoke and final outcome audit.",
+  "source_bindings": {
+    "experiments/fixed_points_deficiencies_v1/train.py": "71bd7c5e910f50aded4c3c2fd8cd5ab02e8fbaed81b5331444f7e5e87183c28b",
+    "experiments/fixed_points_deficiencies_v1/design.py": "25c2d65699fa933807c3e2c66e6e4f3d4fccf2520878373e474d7ce96b9b7f65",
+    "experiments/fixed_points_deficiencies_v1/PROTOCOL.md": "071f74b403e6d4a5af81e5107157bfb2b30f61323580220c4446b533a5977f10",
+    "experiments/fixed_points_deficiencies_v1/RELATION_TABLE.csv": "9b9f08edbd121e396073db23c56f0c553cb9cf7a473454695dc9a2b591850f88",
+    "experiments/fixed_points_deficiencies_v1/data_pipeline.py": "84d2cdf28c91c6d10f282ce6153f2c2bcdec0b8157096dfca1017cba102212a9",
+    "experiments/pilot_v3_multitarget/pilot_v3.py": "34aec3e95fea2240e08b884ec36e2b1e6dd13c1feecc18d35db0f8307d7ad42e",
+    "experiments/permworld_pilot/pilot.py": "ac1a270c3157a0e4720c1646ef90237374b29af869b028defb1d60a1810df4c8",
+    "experiments/pilot_v5_confirmation/artifacts/config.json": "70f5ce3dfd4911528700adb5d0e9dc23401878fe3fbbf6021e3cd2915be55203"
+  },
+  "checks": [
+    {
+      "item": "Frozen v5 training configuration",
+      "status": "pass",
+      "evidence": "design.INHERITED_KEYS and assertions; legacy source_lr, adapt_lr, optmake and step",
+      "finding": "n=10, four layers/width256/eight heads/vocab188; source4800 and adaptation800; source warmup100/cosine to2400 then flat; adaptation warmup100/cosine through800; AdamW(.9,.999),epsilon1e-8,decay.01,clip1; inherited answer-plus-teacher-EOS loss."
+    },
+    {
+      "item": "Strict paired inputs and task slots",
+      "status": "pass",
+      "evidence": "train.pretrain_one/adapt_one/stream_digest and pilot_v3.step",
+      "finding": "Identical unit-specific sampling RNG reset in every condition. Each step samples64 distinct pool indices and shuffles16 copies of each of4 slots. Common tasks occupy fixed slots0..2. Actual observed index/slot hashes are compared against independent deterministic schedule reconstruction. Separate shared dropout seeds are reset across conditions."
+    },
+    {
+      "item": "Complete source load and target-only reset",
+      "status": "pass",
+      "evidence": "train.initial_net/adapted_initial",
+      "finding": "Strict state_dict loading is checked with full state hashes. Only the fixed_points tied embedding/output row is overwritten from the same unit initial checkpoint; tensor equality checks every other value and shared data_ptr checks the tie. All parameters remain trainable."
+    },
+    {
+      "item": "Fresh adaptation optimizer and independent starts",
+      "status": "pass",
+      "evidence": "train.adapt_one",
+      "finding": "Every route/size/LR starts anew from its own source endpoint or A initial checkpoint. AdamW is newly constructed and has zero state entries. Resumption restores only the same identified run, never another sample size or LR."
+    },
+    {
+      "item": "Resume state",
+      "status": "pass",
+      "evidence": "train.save_last/restore_last; legacy.rngstates/restore/save",
+      "finding": "Atomic checkpoint replacement stores model, optimizer, NumPy generator, CPU/CUDA RNG, step, curves, exposure counts and adaptation best selection. Resume checks identity and frozen protocol hash, restores all state, and reconstructs the already-consumed sampler digest. Dropout train mode is restored by each legacy step."
+    },
+    {
+      "item": "Unconstrained exact answer and EOS",
+      "status": "pass",
+      "evidence": "train.evaluate",
+      "finding": "Two-token greedy horizon; exact match requires the correct first answer and greedy EOS next. For a correct first token, the teacher-forced second pass equals the greedy pass; incorrect first-token rows receive a separate greedy pass. Premature/missing EOS fails. First-answer accuracy and teacher-forced EOS remain separate bridge metrics; answer CE uses gold answer at the causal prompt position."
+    },
+    {
+      "item": "Development selection",
+      "status": "pass",
+      "evidence": "train.adapt_one/select and PROTOCOL.md",
+      "finding": "Step0 is diagnostic only. Candidate best key is negative full-answer accuracy, answer CE, earliest positive step. Cross-LR choice appends declared LR index. All360 completed candidates and best/endpoint file hashes are checked before freezing exactly120 selections. The selected LR endpoint is retained separately."
+    },
+    {
+      "item": "Test gate and partial-record limitation",
+      "status": "pass_with_explicit_boundary",
+      "evidence": "train.select/test and data_pipeline._selection_gate/verify",
+      "finding": "Official select requires all360 candidate records and bound best/endpoint checkpoint files; non-A candidates require source completion. Test input creation requires exact120 distinct unit/route/size records, unique run IDs, status=frozen, training_complete=true and a valid freeze timestamp. Unified evaluation validates data/selection bindings and checkpoint hashes.",
+      "boundary": "The low-level data gate checks selection manifest structure and declared training_complete, not each checkpoint directly. It is not a cryptographic proof of training completion if called with a manually forged or manually assembled manifest. Use the official train.py select output; a partial/incomplete genuine manifest is rejected. Original and test manifests are immutable; partial data generation refuses overwrite."
+    },
+    {
+      "item": "No hidden test-based choice",
+      "status": "pass",
+      "evidence": "train.select/test and data_pipeline.generate_test",
+      "finding": "Training and selection access only source/target train/dev pools; tests are generated separately after selection freeze. No source endpoint selection, task replacement, LR extension, or test-dependent choice is present."
+    }
+  ],
+  "mathematical_proofs": [
+    {
+      "relation": "U(p)=U(inverse(p))",
+      "status": "proved",
+      "proof": "For v=p_i, i is a right-to-left maximum iff every w>v occurs before i. Equivalently p_inverse(w)<p_inverse(v)=i for every w>v, which says position v is a right-to-left maximum in the inverse. The bijection i to p_i preserves the count.",
+      "verification": "No historical exhaustive check was repeated; the existing certificate is reused."
+    },
+    {
+      "relation": "L(p)<=n-descents(p)",
+      "status": "proved",
+      "proof": "Every left-to-right maximum except the first position is preceded by an ascent. Thus L-1 is at most n-1-descents."
+    },
+    {
+      "relation": "U(p)<=descents(p)+1",
+      "status": "proved",
+      "proof": "Every right-to-left maximum except the last position is followed by a descent. Thus U-1 is at most descents."
+    },
+    {
+      "relation": "L(p)+U(p)<=n+1",
+      "status": "proved",
+      "proof": "A position is both a left and right record iff it contains the global maximum. The two position sets intersect in exactly one position and their union has at most n positions."
+    }
+  ],
+  "issues_requiring_scientific_protocol_change": [],
+  "formal_training_run_by_reviewer": false,
+  "new_test_inputs_generated_by_reviewer": false
+}
