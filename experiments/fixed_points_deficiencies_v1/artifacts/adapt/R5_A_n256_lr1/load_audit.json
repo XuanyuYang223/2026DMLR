@@ -1,0 +1,16 @@
+{
+  "source_checkpoint": "initial/R5.pt",
+  "source_checkpoint_sha256": "834e0d78796c0386124200534abaea739090b73fbaa58ed50787a9600fc29a2f",
+  "source_model_sha256": "747aff7af7f2a4410cf9f7e16d3337781dd2388674776c9c702c0dc106a36fe4",
+  "loaded_model_sha256": "747aff7af7f2a4410cf9f7e16d3337781dd2388674776c9c702c0dc106a36fe4",
+  "strict_complete_load": true,
+  "target_row": 119,
+  "target_row_sha256": "fe3c05981f63509de7ba1add1b2b80693485fe17d6e8963bf9ed45fddeab8414",
+  "target_row_matches_step0": true,
+  "only_target_tied_row_reset": true,
+  "tied_weights": true,
+  "adaptation_initial_model_sha256": "747aff7af7f2a4410cf9f7e16d3337781dd2388674776c9c702c0dc106a36fe4",
+  "initial_sha256": "834e0d78796c0386124200534abaea739090b73fbaa58ed50787a9600fc29a2f",
+  "full_parameter_training": true,
+  "fresh_optimizer_state_entries": 0
+}

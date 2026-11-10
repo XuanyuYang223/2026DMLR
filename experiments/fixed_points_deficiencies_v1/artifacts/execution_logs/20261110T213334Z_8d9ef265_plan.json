@@ -1,0 +1,156 @@
+{
+  "attempt_id": "20261110T213334Z_8d9ef265",
+  "started_at_utc": "2026-11-10T21:33:34.485551+00:00",
+  "controller_sha256": "dcb426bae69596d72184f7a997efdda55d6a2c248e22b47accca4e7de8ca07ff",
+  "python": "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+  "cwd": "F:\\2026DMLR",
+  "training_runs": 0,
+  "model_evaluation_scope": "Only the planned 240 selected/endpoint evaluations; completed entries are reused",
+  "command_records": "experiments/fixed_points_deficiencies_v1/artifacts/execution_logs/20261110T213334Z_8d9ef265_post_training_commands.jsonl",
+  "gate": {
+    "status": "passed",
+    "source_models": 32,
+    "source_updates": 4800,
+    "adaptation_candidates": 360,
+    "adaptation_updates": 800,
+    "workers": 2,
+    "disjoint_units": [
+      "R1",
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R6",
+      "R7",
+      "R8"
+    ],
+    "protocol_sha256": "f998a5e37cf324f0884d13b2e537b7b8801a7cb434cf4683107cada6b1566083",
+    "worker_records": {
+      "ADAPT_WORKER_R1_R3_R5_R7.json": "fb69a41ef2cfaa10688242ea7a34cbc38e10656900e57a6cc8cb068baaeae181",
+      "ADAPT_WORKER_R2_R4_R6_R8.json": "53c24ccd8d1c6c3c00601a531ce0c01b5bd4fbd385f39d7844e9f3d57c78bb12"
+    },
+    "launch_requirement": "Parent orchestrator observes both worker process exit codes equal zero"
+  },
+  "stages": [
+    {
+      "stage": "aggregate",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-u",
+        "experiments/fixed_points_deficiencies_v1/train.py",
+        "aggregate"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -u experiments/fixed_points_deficiencies_v1/train.py aggregate"
+    },
+    {
+      "stage": "verify_training",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-u",
+        "experiments/fixed_points_deficiencies_v1/train.py",
+        "verify"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -u experiments/fixed_points_deficiencies_v1/train.py verify"
+    },
+    {
+      "stage": "freeze_selection",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-u",
+        "experiments/fixed_points_deficiencies_v1/train.py",
+        "select"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -u experiments/fixed_points_deficiencies_v1/train.py select"
+    },
+    {
+      "stage": "independent_training_audit",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-u",
+        "experiments/fixed_points_deficiencies_v1/final_check.py"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -u experiments/fixed_points_deficiencies_v1/final_check.py"
+    },
+    {
+      "stage": "plot_losses",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-u",
+        "experiments/fixed_points_deficiencies_v1/plot_losses.py"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -u experiments/fixed_points_deficiencies_v1/plot_losses.py"
+    },
+    {
+      "stage": "generate_test",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-u",
+        "experiments/fixed_points_deficiencies_v1/data_pipeline.py",
+        "generate-test",
+        "--selection-manifest",
+        "experiments/fixed_points_deficiencies_v1/artifacts/SELECTIONS_FROZEN.json"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -u experiments/fixed_points_deficiencies_v1/data_pipeline.py generate-test --selection-manifest experiments/fixed_points_deficiencies_v1/artifacts/SELECTIONS_FROZEN.json"
+    },
+    {
+      "stage": "verify_test_full_replay",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-u",
+        "experiments/fixed_points_deficiencies_v1/data_pipeline.py",
+        "verify",
+        "--include-test"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -u experiments/fixed_points_deficiencies_v1/data_pipeline.py verify --include-test"
+    },
+    {
+      "stage": "preserve_test_replay_proof",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-u",
+        "experiments/fixed_points_deficiencies_v1/post_training.py",
+        "--preserve-replay-proof",
+        "--attempt-id",
+        "20261110T213334Z_8d9ef265"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -u experiments/fixed_points_deficiencies_v1/post_training.py --preserve-replay-proof --attempt-id 20261110T213334Z_8d9ef265"
+    },
+    {
+      "stage": "evaluate_frozen_test_inventory",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-u",
+        "experiments/fixed_points_deficiencies_v1/train.py",
+        "test"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -u experiments/fixed_points_deficiencies_v1/train.py test"
+    },
+    {
+      "stage": "analyze",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-u",
+        "experiments/fixed_points_deficiencies_v1/analysis.py"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -u experiments/fixed_points_deficiencies_v1/analysis.py"
+    },
+    {
+      "stage": "independent_prediction_statistics_audit",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-u",
+        "experiments/fixed_points_deficiencies_v1/independent_recompute.py"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -u experiments/fixed_points_deficiencies_v1/independent_recompute.py"
+    },
+    {
+      "stage": "canonical_report",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-u",
+        "experiments/fixed_points_deficiencies_v1/final_report.py"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -u experiments/fixed_points_deficiencies_v1/final_report.py"
+    }
+  ]
+}

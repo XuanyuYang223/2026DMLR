@@ -1,0 +1,33 @@
+{
+  "metric": "complete",
+  "checkpoint_kind": "selected",
+  "scope": "area",
+  "contrast": "D_minus_U",
+  "analysis_role": "primary",
+  "n": 8,
+  "mean_pp": 8.76007080078125,
+  "sample_sd_pp": 4.87758656542407,
+  "min_pp": 3.662109375,
+  "max_pp": 17.15087890625,
+  "positive_units": 8,
+  "zero_units": 0,
+  "negative_units": 0,
+  "t_critical": 2.364624251592783,
+  "df": 7,
+  "ci95_low_pp": 4.682306385026723,
+  "ci95_high_pp": 12.837835216535776,
+  "differences_by_repeat_pp": {
+    "R1": 17.15087890625,
+    "R2": 4.5166015625,
+    "R3": 10.205078125,
+    "R4": 8.02001953125,
+    "R5": 6.92138671875,
+    "R6": 3.662109375,
+    "R7": 5.11474609375,
+    "R8": 14.48974609375
+  },
+  "status": "complete",
+  "hypothesis_origin": "Historical v5 and task-count v1/v2; new data and initialization units",
+  "result_table_sha256": "6994446fc6f744f3dbcbb2e5534009e8df3b84f5d6784589e3df3e8eaeeecdf3",
+  "statistics_plan_sha256": "7c5f80203b5bd0c76c39c49ced64044aecd554803da9c25241589b7abf6bc52d"
+}

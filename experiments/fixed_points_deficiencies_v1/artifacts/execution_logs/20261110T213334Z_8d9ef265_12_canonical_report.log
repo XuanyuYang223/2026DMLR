@@ -1,0 +1,9 @@
+{
+  "status": "complete",
+  "outputs": {
+    "RESULT_REPORT.md": "95e11e2de3d1f3767e8352a66adafd6bd56dc0a17e7916bed3c225e7b2bc3662",
+    "README.md": "b4f19fa0ca17b868d7f6732b20df067d878f2c7810e16b29f6aa7f8dacf136a0"
+  },
+  "training_runs": 0,
+  "model_forwards": 0
+}

@@ -1,0 +1,178 @@
+{
+  "status": "pass",
+  "created_at_utc": "2026-11-10T21:42:39.222555+00:00",
+  "review_type": "Read-only delivery audit; only this new JSON record was written. No model loading, forwards, data generation or existing verification writer was run.",
+  "head_at_audit": "519133c512f1400ac2a9c67bc719ec5e27638818",
+  "branch": "experiments/fixed-points-deficiencies-v1",
+  "preservation_scope": {
+    "baseline_commit": "1ea08df6b867e719bdbc4110d971fa0161304a39",
+    "tracked_changed_paths": 82,
+    "untracked_paths_at_audit": 2156,
+    "all_changes_confined_to": "experiments/fixed_points_deficiencies_v1",
+    "uncommitted_delivery_outputs_expected": true
+  },
+  "preflight_preservation": {
+    "commit": "1cd90d54d2737c98660216cd75ebe25d1740860f",
+    "file_count": 8,
+    "byte_identical_files": [
+      {
+        "path": "experiments/fixed_points_deficiencies_v1/PREFLIGHT_REPORT.md",
+        "sha256": "823338b8cc6d44b25f5de08153679e66b3e333951fc34768e727e1f8a1914563"
+      },
+      {
+        "path": "experiments/fixed_points_deficiencies_v1/REQUEST_SCOPE.json",
+        "sha256": "f33379271fd5ecece32b8a52d7f7cbfada0e419d19722cb3ecf113a2b059638d"
+      },
+      {
+        "path": "experiments/fixed_points_deficiencies_v1/START_STATE.json",
+        "sha256": "f82ea6545cd74a52aeb02bf1fc60e9da02a516e32106c59c3320bf8aa73c3c56"
+      },
+      {
+        "path": "experiments/fixed_points_deficiencies_v1/preflight.py",
+        "sha256": "c5cbdc4a9ed69d3c6a6b8adf43ae813ccc4638967f9fb504f04c7746a264add5"
+      },
+      {
+        "path": "experiments/fixed_points_deficiencies_v1/preflight_audit/AUDIT.json",
+        "sha256": "80a53100f337b6f26b8f83b0517cb31f536653ffc3593668b9ca11b67e6caaa5"
+      },
+      {
+        "path": "experiments/fixed_points_deficiencies_v1/preflight_audit/COMPOSITIONS.csv",
+        "sha256": "c2cf470856d0c356f61ce1e7e3ec12caeee87a359144cb3614e76262bef4d81e"
+      },
+      {
+        "path": "experiments/fixed_points_deficiencies_v1/preflight_audit/COUNTEREXAMPLES.csv",
+        "sha256": "1c80255d28d38842b1f6136161620fcaf2af2c09dc924a1c1adc4d4e0e7ce2ed"
+      },
+      {
+        "path": "experiments/fixed_points_deficiencies_v1/preflight_audit/JOINT_DERIVABILITY.csv",
+        "sha256": "828c630a24f7ced3bea1b733d21c4aa04581bc95efd5276f042b525791dc7b48"
+      }
+    ]
+  },
+  "frozen_scientific_bindings": {
+    "hashes_checked": 29,
+    "all_match": true,
+    "protocol_sha256": "f998a5e37cf324f0884d13b2e537b7b8801a7cb434cf4683107cada6b1566083",
+    "data_initial_and_smoke_manifest_bindings_match": true
+  },
+  "historical_preservation": {
+    "bindings_checked": 188,
+    "all_match": true,
+    "old_npz_inventory_count": 179
+  },
+  "test_gate": {
+    "selections": 120,
+    "unique_expected_tuples": 120,
+    "selection_frozen_at_utc": "2026-11-10T21:33:45.200629+00:00",
+    "test_generated_at_utc": "2026-11-10T21:34:21.405166+00:00",
+    "delay_seconds": 36.204537,
+    "test_after_selection": true,
+    "selection_sha256": "128518fbcaf4f6c9f6d2b55349c8a7031cf91f8204dd92d19840422ba08a8911"
+  },
+  "data_quality": {
+    "pool_hashes_checked": 40,
+    "objects": 106496,
+    "all_pools_bound": true,
+    "full_rng_replay_record_sha256": "d8241a97d5c88613c3da00c52ab6f2f6b4824239cd3b640a0019a2d3103072b1",
+    "full_rng_replay_pass": true,
+    "replay_before_test_evaluation": true,
+    "duplicate_or_overlap_orbits": 0,
+    "replay_rerun_by_this_audit": false
+  },
+  "prediction_bindings": {
+    "independent_recount_status": "pass",
+    "checkpoint_evaluations": 240,
+    "prediction_rows": 491520,
+    "prediction_file_hashes_checked": 240,
+    "independent_audit_sha256": "48db7a2ce0bbadf044fad1b91a8ef0f2ac3d892fb21015f47bde9c26b491c0bb"
+  },
+  "language_scan": {
+    "extensions": [
+      ".cfg",
+      ".csv",
+      ".ini",
+      ".json",
+      ".jsonl",
+      ".log",
+      ".md",
+      ".ps1",
+      ".py",
+      ".sh",
+      ".svg",
+      ".toml",
+      ".txt",
+      ".yaml",
+      ".yml"
+    ],
+    "text_files_scanned": 1787,
+    "cjk_matches": [],
+    "utf16_files": [
+      "experiments\\fixed_points_deficiencies_v1\\artifacts\\adapt_even_console.log",
+      "experiments\\fixed_points_deficiencies_v1\\artifacts\\adapt_odd_console.log",
+      "experiments\\fixed_points_deficiencies_v1\\artifacts\\pretrain_console.log"
+    ],
+    "scope_note": "Text/source/SVG scan; raster figures and PDF glyphs are not OCR-scanned."
+  },
+  "file_hygiene": {
+    "orphan_tmp_files": [],
+    "tracked_checkpoint_paths": [],
+    "local_checkpoint_count": 767,
+    "all_local_checkpoints_git_ignored": true,
+    "git_bulk_path_transport": "NUL-delimited binary stdin avoids Windows text-pipe CRLF conversion."
+  },
+  "source_only_snapshot": {
+    "status": "preserved_hash_match",
+    "manifest_sha256": "08bd1987b252ff13e5e97608ccabc00e3724f9c285615f5733507c408aa92122",
+    "accounting_sha256": "671ef050952c7fcf009bcdbe3a3592bd2dd01c8aebde97a1054b79d819b60167"
+  },
+  "documentation_provenance": {
+    "current_report_amendment_sha256": "4fd22e7ebef24f8bf392f5e8bae2a41bd2b8b47384b8e7a6702e2c9f164b000b",
+    "current_generator_sha256": "0da548ed12f40e81b32d73c6b5600e33bb9c67e04c0a7e6fcb944449b9423299",
+    "current_output_hashes": {
+      "RESULT_REPORT.md": "53e4c10b17af89aae6c8f345afad119ba6b264cecfe82fbcf5c6ed950f87847c",
+      "README.md": "e64db5f0acc615a88751086fa9ee5296c34072078dc319a816d6ca000827010b",
+      "PAPER_RESULT_DRAFT.md": "6f6dd609c39dfdfc24b89fb447517acca6d9ffee28491e7e6aae1d70b1b3d7ae"
+    },
+    "all_amendment_inputs_outputs_and_archives_match": true,
+    "frozen_analysis_files_unchanged": 25,
+    "post_training_stage_snapshot_bindings": [
+      {
+        "original_path": "experiments\\fixed_points_deficiencies_v1\\artifacts\\TEST_COMPLETE.json",
+        "matches_current": true,
+        "sha256": "6865214d3bdc33c3047972bd350cf055577be82fd75600b21d00708a35799ba7"
+      },
+      {
+        "original_path": "experiments\\fixed_points_deficiencies_v1\\artifacts\\FINAL_TRAINING_AUDIT.json",
+        "matches_current": true,
+        "sha256": "0665084f0ffe9e54c224fcd528e94ad271577b4a4f4daf2cee8134ec6be83387"
+      },
+      {
+        "original_path": "experiments\\fixed_points_deficiencies_v1\\artifacts\\analysis\\INDEPENDENT_RECOMPUTE.json",
+        "matches_current": true,
+        "sha256": "48db7a2ce0bbadf044fad1b91a8ef0f2ac3d892fb21015f47bde9c26b491c0bb"
+      },
+      {
+        "original_path": "experiments\\fixed_points_deficiencies_v1\\REPORT_AMENDMENT.json",
+        "matches_current": false,
+        "preserved_archive": "experiments/fixed_points_deficiencies_v1/artifacts/report_revisions/REPORT_AMENDMENT_40eef69316f8e72048d68bfd298c6df283c1f68b87208e89d69816754a0407e9.json",
+        "sha256": "40eef69316f8e72048d68bfd298c6df283c1f68b87208e89d69816754a0407e9"
+      },
+      {
+        "original_path": "experiments\\fixed_points_deficiencies_v1\\README.md",
+        "matches_current": false,
+        "preserved_archive": "experiments/fixed_points_deficiencies_v1/artifacts/report_revisions/README_b4f19fa0ca17b868d7f6732b20df067d878f2c7810e16b29f6aa7f8dacf136a0.md",
+        "sha256": "b4f19fa0ca17b868d7f6732b20df067d878f2c7810e16b29f6aa7f8dacf136a0"
+      },
+      {
+        "original_path": "experiments\\fixed_points_deficiencies_v1\\RESULT_REPORT.md",
+        "matches_current": false,
+        "preserved_archive": "experiments/fixed_points_deficiencies_v1/artifacts/report_revisions/RESULT_REPORT_95e11e2de3d1f3767e8352a66adafd6bd56dc0a17e7916bed3c225e7b2bc3662.md",
+        "sha256": "95e11e2de3d1f3767e8352a66adafd6bd56dc0a17e7916bed3c225e7b2bc3662"
+      }
+    ],
+    "relation_table_review_snapshot": "Early review table and pre-freeze evidence clarification are preserved; they do not alter the final frozen manifest.",
+    "relation_clarification_sha256": "24e0a38490161201f1b1b8ce60e866688aa7948e1bfa2c871967dfe25d8abff7"
+  },
+  "gaps": [],
+  "seconds": 2.9571732000331394
+}

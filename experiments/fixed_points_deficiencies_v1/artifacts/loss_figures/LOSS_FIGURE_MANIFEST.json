@@ -1,0 +1,42 @@
+{
+  "status": "complete",
+  "generator": "plot_losses.py",
+  "generator_sha256": "028be5dd6609fc61be064f25b4334d0feb45af4ca1375e5582e8120048754f72",
+  "inputs": {
+    "SELECTIONS_FROZEN.json": "128518fbcaf4f6c9f6d2b55349c8a7031cf91f8204dd92d19840422ba08a8911",
+    "source_curves.csv": "f17edcaaf194753e04b1c6937437d0f61cd6ec911e07cd018c64d09b93b964b4",
+    "adaptation_curves.csv": "5839b7808488369d3ac3bf6f2b01fd50d8241a57797740dc6248f9d24f9c5a39"
+  },
+  "outputs": {
+    "source_answer_ce.png": "e5d3c21e04783ec86f082a86ae7099266022bda260e6f34cd22dafdcd96fcf6c",
+    "source_answer_ce.svg": "3edf6b93a86e4004f8223536a3d5a644edfc8d697f88de9fd9d2d2e5ffb4f45c",
+    "source_answer_ce.pdf": "d1e02dc85ea96045ed974e9c26f6bdabeb65cb58ecfde069ac2ee76dcd7203d3",
+    "adaptation_answer_ce.png": "be0089d6db9e293b6dbcb1c9d330a18b00661d7ed4acbd8cf68d5f1969040831",
+    "adaptation_answer_ce.svg": "c65a323e2686253d7e69ced1f762537d6e110cc402cb334ddf655208819ce17c",
+    "adaptation_answer_ce.pdf": "fe7885e70b08b45513f557f4712ee32fd9a27ba15258c5e426d07d3d25e399a3",
+    "source_two_token_ce.png": "5a7b157d9c74ccc3aa03f8e8ce22a00dc25501cf7477d1713d42435bf27aa35c",
+    "source_two_token_ce.svg": "e87b9cc9b7c5471880927a6f4875d1c473dac2562d4ee0639e490207bd5349a6",
+    "source_two_token_ce.pdf": "34c053044ba687f1d7d33dfa1617cddc2d34289cd708577b8d2d2c523bf43221",
+    "adaptation_two_token_ce.png": "45484e6f8245e9b5ae40f7e357c317dd3ddced607669ba67f649a43565b5c60a",
+    "adaptation_two_token_ce.svg": "12fb1aa683ba99d03bdc40b312b438875e9f18c725864750abf0715a7485d2a6",
+    "adaptation_two_token_ce.pdf": "9ef9684d6ef55a8b2c2c444816c5b9bd263b0ae5184e4d4760277d29dd0fcc64",
+    "README.md": "59b9f59dff76e8d30ce60c5e000052d829a17c2a397756e5cc0cec12ac795b5c"
+  },
+  "independent_units": 8,
+  "length": 10,
+  "source_curve_rows": 1536,
+  "adaptation_curve_rows": 6480,
+  "raw_adaptation_candidates": 360,
+  "displayed_selected_lr_candidates": 120,
+  "selection_scope": "Frozen selected-LR candidates; no reselection; all candidate curves retained",
+  "metrics": [
+    "answer_ce",
+    "two_token_ce"
+  ],
+  "y_scale": "symlog",
+  "linear_threshold": 0.01,
+  "loss_values_modified_or_clipped": false,
+  "training_runs": 0,
+  "model_forwards": 0,
+  "frozen_analysis_outputs_modified": false
+}

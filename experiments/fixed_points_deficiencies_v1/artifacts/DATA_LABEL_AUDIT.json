@@ -1,0 +1,42 @@
+{
+  "status": "pass",
+  "created_at_utc": "2026-11-10T19:36:54.675296+00:00",
+  "distinct_input_count": 90112,
+  "independent_label_comparisons": 720896,
+  "task_count": 8,
+  "tasks": [
+    "anti_fixed_points",
+    "deficiencies",
+    "descents",
+    "fixed_points",
+    "left_to_right_maxima",
+    "peaks",
+    "right_to_left_maxima",
+    "successions"
+  ],
+  "distribution_rows": 5632,
+  "summary_rows": 512,
+  "matching_rows": 64,
+  "constant_task_pools": 0,
+  "majority_rule": "Smallest answer among maximum-frequency training labels; source roles use source_train, target roles use the corresponding target_train prefix",
+  "target_dev_repetition": "Target development frequencies repeat for each target subset size to expose the size-specific training-majority baseline; these are the same 1024 inputs, not additional data",
+  "labels_not_supervision": "Labels of tasks not trained on a role are descriptive audits only; they are never supplied to a model or used to change the task selection",
+  "population_relation": "U(p)=L(reverse(p)) and reversal is a bijection, hence U and L have identical answer distributions under uniform permutations on S_n. A finite realized pool need not have identical histograms. The orbit-excluded sampling design and realized history can also alter the unrestricted population distribution.",
+  "unmatched_comparison": "D and U do not have matched answer distributions; these tables quantify the difference. Distribution matching does not establish equal learning difficulty, redundancy or transfer value.",
+  "tests_opened": false,
+  "models_loaded": false,
+  "model_forwards": 0,
+  "primary_data_manifest_sha256": "ddd1e408551f10183191b480f6090a955bcd0c79b3ef2c310e8b5cd6424cc5ef",
+  "source_bindings": {
+    "experiments/fixed_points_deficiencies_v1/data_diagnostics.py": "9a9c00294ac1300aa5044c146a18a89eef3555857a1a23046178424e944dd4fe",
+    "experiments/pilot_v5_confirmation/mathematics/audit_relations.py": "e9d47784c04f8eb71a40a1db7e8753bcd089f920bcd3f37ef3d71f5fbdc949fc",
+    "permworld_platform/tasks.py": "61cb4d1cd45144079a91106772432ed47bf196dbd9d920727f55d95f8a26f5b5",
+    "experiments/permworld_pilot/vendor/neurips_permutations/math_ops.py": "3f6832b4798a20cc6b813a0b64ec01cf10360fbf3d6256cb59d1d793d4ad345f"
+  },
+  "output_sha256": {
+    "DATA_LABEL_DISTRIBUTIONS.csv": "f93e624c964d689e57de6b82862608e9ffe6996a25bd07a64b7e286ef06204f4",
+    "DATA_LABEL_SUMMARY.csv": "c2a2017de4445b2d0717505cd7f4f8a32f15da350f619341e4366e8921c2be05",
+    "DATA_TASK_MATCHING.csv": "2d93cc87a67fe36dbc3b01e1f9cf538ae567b7fda070275f695655ccae16b659"
+  },
+  "seconds": 6.647512299998198
+}

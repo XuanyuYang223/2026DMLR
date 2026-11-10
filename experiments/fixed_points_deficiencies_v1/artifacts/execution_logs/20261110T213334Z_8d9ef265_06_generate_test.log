@@ -1,0 +1,21 @@
+[data] R1 test: 2048 accepted, 2429 rejected
+[data] R2 test: 2048 accepted, 2605 rejected
+[data] R3 test: 2048 accepted, 2729 rejected
+[data] R4 test: 2048 accepted, 2654 rejected
+[data] R5 test: 2048 accepted, 2784 rejected
+[data] R6 test: 2048 accepted, 2684 rejected
+[data] R7 test: 2048 accepted, 2865 rejected
+[data] R8 test: 2048 accepted, 2954 rejected
+{
+  "status": "complete",
+  "created_at_utc": "2026-11-10T21:34:21.405166+00:00",
+  "primary_manifest_sha256": "ddd1e408551f10183191b480f6090a955bcd0c79b3ef2c310e8b5cd6424cc5ef",
+  "selection_freeze": {
+    "path": "experiments/fixed_points_deficiencies_v1/artifacts/SELECTIONS_FROZEN.json",
+    "sha256": "128518fbcaf4f6c9f6d2b55349c8a7031cf91f8204dd92d19840422ba08a8911",
+    "frozen_at_utc": "2026-11-10T21:33:45.200629+00:00",
+    "selection_count": 120
+  },
+  "seconds": 12.262764000042807,
+  "test_use": "one unified final evaluation after all development choices; never used for selection"
+}

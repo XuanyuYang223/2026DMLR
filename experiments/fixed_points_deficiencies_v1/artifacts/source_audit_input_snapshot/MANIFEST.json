@@ -1,0 +1,17 @@
+{
+  "purpose": "Preserve source-only aggregate inputs before the post-training aggregate adds adaptation accounting",
+  "files": {
+    "accounting.csv": {
+      "path": "experiments/fixed_points_deficiencies_v1/artifacts/source_audit_input_snapshot/accounting.csv",
+      "sha256": "671ef050952c7fcf009bcdbe3a3592bd2dd01c8aebde97a1054b79d819b60167"
+    },
+    "source_curves.csv": {
+      "path": "experiments/fixed_points_deficiencies_v1/artifacts/source_audit_input_snapshot/source_curves.csv",
+      "sha256": "f17edcaaf194753e04b1c6937437d0f61cd6ec911e07cd018c64d09b93b964b4"
+    },
+    "exposures.csv": {
+      "path": "experiments/fixed_points_deficiencies_v1/artifacts/source_audit_input_snapshot/exposures.csv",
+      "sha256": "37c6bf73fdcdf515e790d3dad681d1f4124f865d43d92368f9302b70f647f520"
+    }
+  }
+}

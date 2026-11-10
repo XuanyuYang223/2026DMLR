@@ -1,0 +1,7 @@
+{
+  "status": "preserved",
+  "canonical_path": "experiments/fixed_points_deficiencies_v1/artifacts/data/quality_with_test_full_replay_before_evaluation.json",
+  "canonical_sha256": "d8241a97d5c88613c3da00c52ab6f2f6b4824239cd3b640a0019a2d3103072b1",
+  "attempt_snapshot": "experiments/fixed_points_deficiencies_v1/artifacts/execution_logs/20261110T213334Z_8d9ef265_quality_with_test_full_replay.json",
+  "attempt_snapshot_sha256": "d8241a97d5c88613c3da00c52ab6f2f6b4824239cd3b640a0019a2d3103072b1"
+}

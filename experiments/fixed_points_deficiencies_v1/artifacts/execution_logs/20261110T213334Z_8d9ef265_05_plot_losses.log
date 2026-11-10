@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "figures": 12,
+  "source_curve_rows": 1536,
+  "adaptation_curve_rows": 6480,
+  "training_runs": 0,
+  "model_forwards": 0
+}

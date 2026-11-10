@@ -1,0 +1,77 @@
+{
+  "status": "complete",
+  "amendment": "Documentation-only canonical completion report and README",
+  "created_at_utc": "2026-11-10T21:37:33.339283+00:00",
+  "generator": "final_report.py",
+  "generator_sha256": "e51014fdfac50ad47c7036f2a774c31dff82febc7a5082cb77a5089b9672dc26",
+  "sources": {
+    "artifacts/FINAL_TRAINING_AUDIT.json": "0665084f0ffe9e54c224fcd528e94ad271577b4a4f4daf2cee8134ec6be83387",
+    "artifacts/TEST_COMPLETE.json": "6865214d3bdc33c3047972bd350cf055577be82fd75600b21d00708a35799ba7",
+    "artifacts/FROZEN_PROTOCOL.json": "f998a5e37cf324f0884d13b2e537b7b8801a7cb434cf4683107cada6b1566083",
+    "artifacts/SELECTIONS_FROZEN.json": "128518fbcaf4f6c9f6d2b55349c8a7031cf91f8204dd92d19840422ba08a8911",
+    "artifacts/results_test.csv": "6994446fc6f744f3dbcbb2e5534009e8df3b84f5d6784589e3df3e8eaeeecdf3",
+    "artifacts/source_curves.csv": "f17edcaaf194753e04b1c6937437d0f61cd6ec911e07cd018c64d09b93b964b4",
+    "artifacts/accounting.csv": "c400f16378c4ccb045589d0d24953b3933464603a1f605c4b32f747f373e0115",
+    "artifacts/exposures.csv": "37c6bf73fdcdf515e790d3dad681d1f4124f865d43d92368f9302b70f647f520",
+    "artifacts/DATA_TASK_MATCHING.csv": "2d93cc87a67fe36dbc3b01e1f9cf538ae567b7fda070275f695655ccae16b659",
+    "artifacts/SOURCE_LEARNING_NOTE.md": "e2938a79c538ede66884fbdf396adfc0cb9b18788b33eaa0b6e41f4b21b9af30",
+    "artifacts/analysis/ANALYSIS_MANIFEST.json": "5685aaacb1058431d8b25327aa8eecd688a53a5376e4449345873aa3058eda32",
+    "artifacts/analysis/INDEPENDENT_RECOMPUTE.json": "48db7a2ce0bbadf044fad1b91a8ef0f2ac3d892fb21015f47bde9c26b491c0bb",
+    "artifacts/analysis/primary_summary.json": "df7d0039ac79092233e52f0a3958920d110b841e4280a9c3f4f40f7d6f48deba",
+    "artifacts/analysis/paired_summary.csv": "ee64367163c0597f60578878d98c1015dc9d43b69565aab886fa4066e8f091cf",
+    "artifacts/analysis/scores_per_repeat.csv": "02472c24868185a1ef624b03136a0c4b5d02c7d78270e83da66e65e1e564769d",
+    "artifacts/loss_figures/LOSS_FIGURE_MANIFEST.json": "c5cd5ca2c3aacb8375ff46c0bf92910c8a9e94dd76e07c2675d9908a8b832617",
+    "artifacts/ADAPT_WORKER_R1_R3_R5_R7.json": "fb69a41ef2cfaa10688242ea7a34cbc38e10656900e57a6cc8cb068baaeae181",
+    "artifacts/ADAPT_WORKER_R2_R4_R6_R8.json": "53c24ccd8d1c6c3c00601a531ce0c01b5bd4fbd385f39d7844e9f3d57c78bb12",
+    "HYPOTHESIS_ORIGIN.md": "e7dfed7c89d1fc369f86b4a3b68e4b15d93bfb9c8c6f8e619cc4f0dca2a668d4",
+    "ENGINEERING_LOG.md": "a401396492299f9cb847a96749c64d3bc1f81db1244e8476406118f5d8743645",
+    "EXECUTION_LOG.md": "d3c47597f509986953d6eb747fe0df663abef90b5954bcd4958655bfa788caf1"
+  },
+  "previous_documents": {
+    "README.md": {
+      "sha256": "63122e8665e3e1e238195f8a25e66aaedca91071af515653e679e9bec428a2e4",
+      "retained_at": "artifacts/report_revisions/README_63122e8665e3e1e238195f8a25e66aaedca91071af515653e679e9bec428a2e4.md"
+    }
+  },
+  "outputs": {
+    "RESULT_REPORT.md": "95e11e2de3d1f3767e8352a66adafd6bd56dc0a17e7916bed3c225e7b2bc3662",
+    "README.md": "b4f19fa0ca17b868d7f6732b20df067d878f2c7810e16b29f6aa7f8dacf136a0"
+  },
+  "frozen_analysis_outputs_unchanged": true,
+  "frozen_analysis_file_sha256": {
+    "artifacts/analysis/adaptation_learning_curves.pdf": "ecf87d9d205528bf08bfab94cddc5d7cdf1580235174c71dec9f5d9f4d178c47",
+    "artifacts/analysis/adaptation_learning_curves.png": "9a1ac1874b7b59014930f093416b040b64410b26304214e47170cc2cf047fb98",
+    "artifacts/analysis/adaptation_learning_curves.svg": "fa325adc39fb53a8144cadbad264a7eefda080ce8ded1cc207c45d0aef3e4249",
+    "artifacts/analysis/ANALYSIS_MANIFEST.json": "5685aaacb1058431d8b25327aa8eecd688a53a5376e4449345873aa3058eda32",
+    "artifacts/analysis/CLAIM_EVIDENCE_LIMITS.csv": "ef79ebb3d4420c4c6bc27aeb3d5e335f1043966ca16c9aac9b5b971c8f5e2a17",
+    "artifacts/analysis/compute_summary.csv": "4ab4f8fb17aadeef675db364a6c4531e282f19685d6818aef61be5277377c82b",
+    "artifacts/analysis/condition_summary.csv": "87ad99d99f332e455251fca0f2fed72f6c34b644053d7bb0f49d6648534d6c07",
+    "artifacts/analysis/INDEPENDENT_RECOMPUTE.json": "48db7a2ce0bbadf044fad1b91a8ef0f2ac3d892fb21015f47bde9c26b491c0bb",
+    "artifacts/analysis/paired_differences.csv": "cecaad805e1ef7c1edb81a4882938c0975162eb942e048f5f9d0e35342b91bf0",
+    "artifacts/analysis/paired_summary.csv": "ee64367163c0597f60578878d98c1015dc9d43b69565aab886fa4066e8f091cf",
+    "artifacts/analysis/PAPER_RESULT_DRAFT.md": "60b62a86beb61133c8c36f0745a6d6fad2437aef2ebf444b8c74f0ae8e106bfb",
+    "artifacts/analysis/primary_paired_difference.pdf": "1b51eac40bae2e0033827e89e497dc49d9757f661d1a05bcfed046716450bbbe",
+    "artifacts/analysis/primary_paired_difference.png": "1842f37109404024c3386325f920b91078c2be5bc418372e1bd8e5d0e0384529",
+    "artifacts/analysis/primary_paired_difference.svg": "930687e945aa6ea8867d0c0332725025607ad3240f24337554c6006bdd89ee99",
+    "artifacts/analysis/primary_summary.json": "df7d0039ac79092233e52f0a3958920d110b841e4280a9c3f4f40f7d6f48deba",
+    "artifacts/analysis/README.md": "111f7307d2fe98d03416e960a9b926bae359463c6292982a9e7c2c14155004b5",
+    "artifacts/analysis/REPORT.md": "f4fb2c6cb5bddd6214c49809a2ad66d715e0f387acde350f92a00ab9a3eaa723",
+    "artifacts/analysis/scores_per_repeat.csv": "02472c24868185a1ef624b03136a0c4b5d02c7d78270e83da66e65e1e564769d",
+    "artifacts/analysis/source_endpoint_summary.csv": "60dccaecb6720f395109b49425169b68757f57da7a3cadfecb499fbcd4d32e87",
+    "artifacts/analysis/source_learning_curves.pdf": "47595f6971edeb9883d9a81e04b45e88f19d0c11c99bcc115149b3b704d7126b",
+    "artifacts/analysis/source_learning_curves.png": "e592d2fd0c4a15b7beec4eb48214920e95c3f7c9406ec2648e91516f724c3587",
+    "artifacts/analysis/source_learning_curves.svg": "d10bbfd3a824db5b2b0f0140dd8f41b9ac6f6631488e6f0f9361ebd827d488fa",
+    "artifacts/analysis/target_learning_curves.pdf": "3c45477c51723db2a95008b828e9c8bed42e669920f7aed04d2c237f0dc26eec",
+    "artifacts/analysis/target_learning_curves.png": "13cdeb7bc1378df3b4fa81249d45773fa872f135225bf50d2d6b7834929b7daf",
+    "artifacts/analysis/target_learning_curves.svg": "1849abaae5e60f1330347b01ea53aa618e03eaf038a25ab9b01929084ebe1045"
+  },
+  "training_runs": 0,
+  "model_forwards": 0,
+  "changes": [
+    "Explicit overlapping timer interpretation",
+    "Actual worker-envelope wall time",
+    "Separate engineering budget and partial timing",
+    "Source mastery and comparator mismatch context",
+    "Canonical completed-state entry point; historical conclusions preserved"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "pretraining_complete": 32,
+  "adaptation_complete": 360,
+  "source_exposure_rows": 128,
+  "pairing_checks": "passed",
+  "verified_at_utc": "2026-11-10T21:33:37.345423+00:00"
+}

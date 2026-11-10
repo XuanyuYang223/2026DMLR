@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "units": [
+    "R1",
+    "R3",
+    "R5",
+    "R7"
+  ],
+  "candidate_runs": 180,
+  "started_at_utc": "2026-11-10T20:13:18.997013+00:00",
+  "finished_at_utc": "2026-11-10T21:33:27.680474+00:00",
+  "elapsed_seconds": 4808.683461900044,
+  "wrapper_sha256": "31b6a0fc2e40263e0fc7671747265dcda867187bfe52a7e75f3a7c5ca5e3f12c",
+  "protocol_sha256": "f998a5e37cf324f0884d13b2e537b7b8801a7cb434cf4683107cada6b1566083",
+  "scheduling": "Separate process per disjoint unit group; no concurrent aggregate writes"
+}
