@@ -1,0 +1,5 @@
+condition,sources,old_C_background,old_slot_order,new_slots_as_old_slot_indices,exact_old_training_replay,target_present
+P,"[""descents"", ""successions"", ""left_to_right_maxima"", ""peaks""]",g0_v3,"[""successions"", ""descents"", ""peaks"", ""left_to_right_maxima""]","[1, 0, 3, 2]",False,False
+D,"[""descents"", ""successions"", ""left_to_right_maxima"", ""deficiencies""]",g2_deficiencies,"[""successions"", ""descents"", ""deficiencies"", ""left_to_right_maxima""]","[1, 0, 3, 2]",False,False
+T,"[""descents"", ""successions"", ""left_to_right_maxima"", ""anti_fixed_points""]",not_an_old_C_set,null,null,False,False
+U,"[""descents"", ""successions"", ""left_to_right_maxima"", ""right_to_left_maxima""]",not_an_old_C_set,null,null,False,False

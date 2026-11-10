@@ -1,0 +1,12 @@
+{
+  "initial_branch": "experiments/relation-readout-v1",
+  "initial_head": "1ea08df6b867e719bdbc4110d971fa0161304a39",
+  "initial_worktree_status": "clean",
+  "working_branch": "experiments/fixed-points-deficiencies-v1",
+  "applicable_instructions": [
+    "AGENTS.md"
+  ],
+  "scope": "Fixed-composition confirmation requested; only instruction-independent preflight until truncated request is completed",
+  "training_started": false,
+  "model_evaluation_started": false
+}

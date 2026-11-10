@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "scope": "Instruction-independent mathematical/protocol preflight only",
+  "historical_certificates": {
+    "status": "reused_hash_verified",
+    "root": "experiments/pilot_v5_confirmation/mathematics",
+    "sha256": {
+      "audit/RELATION_INVENTORY.csv": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+      "audit/MATHEMATICS_AUDIT.json": "abe146533bd3d6d74895ff54b1437a847e63c09e59d12be5dac11f04007b6d4d",
+      "audit/OBSERVED_ASSOCIATIONS.csv": "ea27535661a5342cc8ed28425c3987f14ee2a871a83d15deda85b645361cf65f",
+      "audit/UNCHECKED_CLAIMS.csv": "b069354ce02da361c7cca4abe0cc52fdaf213356c49aaef0726c2f2355200291"
+    },
+    "historical_rechecks_run": 0,
+    "implementation_sha256": {
+      "experiments/permworld_pilot/vendor/neurips_permutations/math_ops.py": "3f6832b4798a20cc6b813a0b64ec01cf10360fbf3d6256cb59d1d793d4ad345f"
+    },
+    "previous_status": "passed",
+    "previous_exhaustive_n": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "previous_random_n": 10,
+    "previous_random_inputs": 4096,
+    "previous_independent_label_comparisons": 1601440
+  },
+  "historical_full_enumerations_rerun": 0,
+  "new_U_oracle_and_combination_bound_fixtures": 873,
+  "new_U_exhaustive_lengths": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "witness_label_cross_checks": 160,
+  "counterexamples": 6,
+  "input_length_scope": "Counterexamples establish insufficiency on S_10; no training lengths have been selected",
+  "source_sha256": {
+    "experiments/pilot_v5_confirmation/mathematics/audit_relations.py": "e9d47784c04f8eb71a40a1db7e8753bcd089f920bcd3f37ef3d71f5fbdc949fc",
+    "experiments/pilot_v5_confirmation/artifacts/config.json": "70f5ce3dfd4911528700adb5d0e9dc23401878fe3fbbf6021e3cd2915be55203",
+    "experiments/pilot_v5_confirmation/mathematics/audit/COUNTEREXAMPLES.csv": "5a33c43f1ce65f1479b5bcf636f1aba5723c39f869e5222f574e9b88a762003c",
+    "permworld_platform/tasks.py": "61cb4d1cd45144079a91106772432ed47bf196dbd9d920727f55d95f8a26f5b5",
+    "permworld_platform/objects.py": "c0a90de4f2860c935ac28899a709ae5c1bed09c8336560d1a3cdaea215e5be7a",
+    "experiments/task_count_v2/data_pipeline.py": "597ca9e11a4d1cc4437c94dc447c225ba7779d2789d283c64e7ae97c1934428c",
+    "experiments/relation_readout_v1/data_manifest.json": "345ad1590f033d77e76050c18e06f4ac85bb99a4974070ff20ff549b9c53f905",
+    "experiments/pilot_v4_backgrounds/catalog/DIRECT_RELATION_DEFINITIONS.csv": "04740c5e7adfbb2409f5053979afa7ebcd718791805acad0b320f453f659d996",
+    "experiments/pilot_v4_backgrounds/catalog/RELATION_GRAPH.csv": "959440e000a9b382cc7d14792f61f4cb7c8f99461cbfdcdedf2e498dfdae8da4",
+    "experiments/pilot_v4_backgrounds/catalog/RELATION_AUDIT.csv": "dcd3004d712092b649d761c9575780e0a55fc58c8e8da0deac898bc56b62be35",
+    "experiments/pilot_v4_backgrounds/catalog/RELATION_AUDIT.json": "68a0415f3be34c054bb8fc952526a4a59ef158fed71d92caa6815c8e0bd128ae"
+  },
+  "elapsed_seconds": 0.08381449995795265,
+  "formal_protocol_frozen": false,
+  "research_inputs_generated": 0,
+  "training_runs": 0,
+  "model_forwards": 0,
+  "checkpoints_opened": 0
+}

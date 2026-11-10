@@ -1,0 +1,28 @@
+{
+  "status": "task_sets_specified_by_user; full_training_protocol_not_frozen",
+  "target": "fixed_points",
+  "common_source_slots": [
+    "descents",
+    "successions",
+    "left_to_right_maxima"
+  ],
+  "candidate_slot_zero_based": 3,
+  "candidates": {
+    "P": "peaks",
+    "D": "deficiencies",
+    "T": "anti_fixed_points",
+    "U": "right_to_left_maxima"
+  },
+  "baseline": "A: target training from paired random initialization",
+  "history": "v5 and task-count v1/v2 motivate this new hypothesis; their failures and boundaries remain unchanged",
+  "new_data_required": true,
+  "new_initializations_required": true,
+  "missing_request_continuation": true,
+  "training_budget": null,
+  "repeat_count": null,
+  "training_lengths": null,
+  "pool_sizes": null,
+  "adaptation_protocol": null,
+  "statistical_plan": null,
+  "note": "The received message ends midway through the full-composition mathematical audit requirement. No missing scientific choices are inferred."
+}

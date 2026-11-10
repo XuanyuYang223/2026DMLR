@@ -1,0 +1,5 @@
+condition,same_input,eight_transform_queries,learned_mechanism,new_training_run
+P,disproved by saved n=10 counterexample,disproved by saved n=10 counterexample,untested,False
+D,disproved by saved n=10 counterexample,recoverable: FP(p)=n-D(p)-D(inverse(p)),untested,False
+T,disproved by saved n=10 counterexample,recoverable: FP(p)=AF(complement(p))=AF(reverse(p)),untested,False
+U,disproved by saved n=10 counterexample,disproved by saved n=10 counterexample,untested,False
