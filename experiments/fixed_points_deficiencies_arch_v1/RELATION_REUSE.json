@@ -1,0 +1,28 @@
+{
+  "status": "reused_unchanged",
+  "recorded_at_utc": "2026-11-16T21:20:36.956375+00:00",
+  "original_audit_path": "experiments/fixed_points_deficiencies_v1/preflight_audit/AUDIT.json",
+  "mathematical_rechecks_run": 0,
+  "task_definitions_changed": false,
+  "sources": {
+    "experiments/fixed_points_deficiencies_v1/preflight_audit/AUDIT.json": "80a53100f337b6f26b8f83b0517cb31f536653ffc3593668b9ca11b67e6caaa5",
+    "experiments/fixed_points_deficiencies_v1/preflight_audit/COMPOSITIONS.csv": "c2cf470856d0c356f61ce1e7e3ec12caeee87a359144cb3614e76262bef4d81e",
+    "experiments/fixed_points_deficiencies_v1/preflight_audit/COUNTEREXAMPLES.csv": "1c80255d28d38842b1f6136161620fcaf2af2c09dc924a1c1adc4d4e0e7ce2ed",
+    "experiments/fixed_points_deficiencies_v1/preflight_audit/JOINT_DERIVABILITY.csv": "828c630a24f7ced3bea1b733d21c4aa04581bc95efd5276f042b525791dc7b48",
+    "experiments/fixed_points_deficiencies_v1/PREFLIGHT_REPORT.md": "823338b8cc6d44b25f5de08153679e66b3e333951fc34768e727e1f8a1914563",
+    "experiments/fixed_points_deficiencies_v1/PROTOCOL.md": "071f74b403e6d4a5af81e5107157bfb2b30f61323580220c4446b533a5977f10",
+    "experiments/fixed_points_deficiencies_v1/RELATION_TABLE.csv": "2a99fd5e78bb1616751d83426d4368bfa3ba24b3a5c3fa2f810ba70307114c67",
+    "experiments/permworld_pilot/vendor/neurips_permutations/math_ops.py": "3f6832b4798a20cc6b813a0b64ec01cf10360fbf3d6256cb59d1d793d4ad345f",
+    "experiments/pilot_v5_confirmation/mathematics/audit/MATHEMATICS_AUDIT.json": "abe146533bd3d6d74895ff54b1437a847e63c09e59d12be5dac11f04007b6d4d",
+    "experiments/pilot_v5_confirmation/mathematics/audit/OBSERVED_ASSOCIATIONS.csv": "ea27535661a5342cc8ed28425c3987f14ee2a871a83d15deda85b645361cf65f",
+    "experiments/pilot_v5_confirmation/mathematics/audit/RELATION_INVENTORY.csv": "394b4b034b639450044fdefb32aa63a977306b8b2ef1d60d2c3ddf1ec02cf67e",
+    "experiments/pilot_v5_confirmation/mathematics/audit/UNCHECKED_CLAIMS.csv": "b069354ce02da361c7cca4abe0cc52fdaf213356c49aaef0726c2f2355200291"
+  },
+  "scope": "Existing proofs, independent-oracle checks, same-input and transformed-query witnesses are reused by hash; changing architecture does not change the mathematical functions",
+  "distinctions": [
+    "Proven answer relations",
+    "Possible shared subcomputations",
+    "Unverified trained-model mechanisms"
+  ],
+  "caveat": "D(p) alone is insufficient; no absence of a registry entry proves unrelatedness"
+}

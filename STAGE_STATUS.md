@@ -47,3 +47,9 @@ The complete CPU encoding scan retains all fifty requested instances. `to_reduce
 - Outputs: `experiments/platform_calibration_v02/reuse_authorized_v1/README.md` and `artifacts/final/RESULT_REPORT.md`, CSVs, curves, accounting, checkpoint diagnostics and `SOURCE_ONLY_AUDIT.json`. The new index retains the original six calibrations and all nonmaterialized exclusions.
 - These are shared-input, directly comparable extensions of v0.1, not independent new data units. Generation ceilings, the uncapped-majority caveat, constants, equivalent functions and weak fits remain explicit. Recorded worker-envelope wall time is 5591.73 seconds; no additional calibration or decoding-budget search is performed.
 - The earlier `CAPACITY_AUDIT.json` and all stopped-preflight records are unchanged. No further author decision is required for this stage. Stage 3 may now proceed with its separate gate, new n=10 units and preflight capacity reservation; Stage 4 must retain the n=8 capacity limitation.
+
+## Stage 3 - Capacity passed; gate registered before optimization
+
+New work is confined to `experiments/fixed_points_deficiencies_arch_v1/`. The n=10 capacity check includes the original confirmation's input pools and explicitly distinguishes accounting archives from permutation inputs. Its conservative available bound is 185551 orbits, exceeding the 115712 required for the separate gate and eight formal units including future tests. No isolation rule changed.
+
+The separate gate has only 8192 training and 1024 development inputs. Full historical/role orbit checks and exact generation replay passed. `GATE_FROZEN.json` records the endpoint-only GRU threshold, the prespecified Transformer fallback, all seed/config choices and bound code/data before any optimizer update. The gate registration will be committed before smoke or training. No formal pool or new test pool has been generated at this point; no model choice or replication result is claimed yet.

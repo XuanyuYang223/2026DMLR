@@ -1,0 +1,28 @@
+{
+  "version": "fixed_points_deficiencies_confirmation_statistics_v1",
+  "unit": "One of eight new paired data/initialization units; all within-unit conditions share pools, adaptation subsets and random streams. Shared models, sample sizes, learning rates and baselines are not independent repeats.",
+  "repeat_ids": ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8"],
+  "conditions": ["P", "D", "T", "U", "A"],
+  "target_samples": [256, 512, 1024],
+  "score": "S = 0.25*A_256 + 0.5*A_512 + 0.25*A_1024; normalized trapezoid area on log2 sample size, using selected-checkpoint complete generated answer plus EOS exact-match accuracy.",
+  "weights": {"256": 0.25, "512": 0.5, "1024": 0.25},
+  "primary": {"id": "D_minus_U", "left": "D", "right": "U", "scope": "area", "expected_direction": "positive", "metric": "complete_answer_exact_match", "checkpoint_kind": "selected"},
+  "secondary_area_contrasts": [["D", "P"], ["U", "P"], ["D", "T"], ["P", "A"], ["D", "A"], ["T", "A"], ["U", "A"]],
+  "pointwise_contrasts": [["D", "U"], ["D", "P"], ["U", "P"], ["D", "T"], ["P", "A"], ["D", "A"], ["T", "A"], ["U", "A"], ["T", "P"], ["T", "U"]],
+  "pointwise_scope": "List every pair of the five conditions at each of the three fixed sample sizes; all are secondary descriptive results.",
+  "aggregation": "Compute each difference within unit first. Report all eight values, arithmetic mean, sample SD with n-1 denominator, minimum and maximum. Accuracy differences are percentage points.",
+  "primary_interval": "Two-sided 95% paired t interval: mean +/- t_(0.975,7)*sample_SD/sqrt(8), using exactly eight primary differences. No secondary result replaces this primary contrast.",
+  "interval_assumptions": "The t calculation treats unit differences as approximately independent normal draws. Eight units provide weak distributional diagnostics. Global orbit rejection samples without replacement from a finite permutation universe and creates dependence; independent seeds do not establish exact IID units or guaranteed interval coverage. Eight units are a fixed compute budget, not a power guarantee.",
+  "secondary_inference": "Secondary results receive mean, sample SD, range and per-unit values, without claims based on selecting favorable or nominally significant contrasts.",
+  "diagnostics": "The fixed 800-update endpoint of the selected learning-rate candidate is reported separately. The old first-answer-token metric is a bridge, never pooled with full-answer/EOS accuracy. Source learning and exposure are descriptive, not mediational causal evidence.",
+  "selection": "All 120 route/sample-size choices freeze before new tests are generated. Highest complete-answer development accuracy, lowest answer CE, earliest positive update, then fixed learning-rate order. No test reselection.",
+  "target_supervision_disclosure": "Each unit additionally supplies 1024 labeled target development examples; do not describe a 256-example adaptation as only 256 target labels in total.",
+  "failure_and_stop": "Exactly 32 pretraining models, 360 adaptation candidates and 120 selected results across eight units. Retain weak, negative and failed results. Engineering reruns keep original seeds and are separately recorded. If any planned unit is incomplete, mark confirmation incomplete and do not silently apply eight-unit inference to fewer units. No outcome-driven extensions.",
+  "interpretation": {
+    "positive_primary": "A positive mean whose 95% interval excludes zero supports additional value of deficiencies versus the specified U source in this background, budget and procedure; report all signs and magnitude.",
+    "uncertain_primary": "An interval containing zero leaves the evidence uncertain; it does not prove no benefit.",
+    "both_D_and_U_exceed_P": "Without D exceeding U, an improvement over P cannot be attributed specifically to deficiencies.",
+    "D_exceeds_T": "Only a ranking of these two particular sources; not a general ranking of shared computation versus transformed-input relations.",
+    "mechanism": "No accuracy result proves FP=n-E-D use or a separately transplantable lemma module. U does not completely separate adding a source from removing peaks."
+  }
+}

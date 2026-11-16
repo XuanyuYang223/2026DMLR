@@ -1,0 +1,17 @@
+id,classification,statement,query_requirement,evidence,interpretation_limit
+position_partition,proven_answer_relation,FP(p)+E(p)+D(p)=n,same_input,Reused v5 certificate position_partition,Does not supply E when only D is a source
+inverse_exceedance_deficiency,proven_answer_relation,E(p)=D(inverse(p)),different_input_inverse,Reused v5 certificate inverse_exceedance_deficiency,No paired inverse query supervision in this experiment
+two_deficiency_queries,proven_joint_answer_relation,FP(p)=n-D(p)-D(inverse(p)),two_inputs_original_and_inverse,Reused v5 certificate fixed_from_two_deficiency_queries,D(p) alone does not recover FP
+fixed_anti_complement,proven_answer_relation,FP(p)=AF(complement(p)),different_input_complement,Reused v5 certificate fixed_complement,Does not prove a trained model uses this formula
+fixed_anti_reverse,proven_answer_relation,FP(p)=AF(reverse(p)),different_input_reverse,Reused v5 certificate fixed_reverse,AF may also share positional comparison operations with FP
+right_left_record_reverse,proven_answer_relation,U(p)=L(reverse(p)),different_input_reverse,Reused v4 relation definitions and new independent oracle checks n1..6,U is not mathematically unrelated to the common background
+right_record_inverse,proven_answer_relation,U(p)=U(inverse(p)),different_input_inverse,Reused v4 definition and direct position-value bijection proof in IMPLEMENTATION_REVIEW.json,No model invariance is inferred
+record_descent_bounds,proven_answer_bounds,L(p)<=n-descents(p) and U(p)<=descents(p)+1 and L(p)+U(p)<=n+1,same_input,Adjacent ascent/descent injection proof and exhaustive n1..6 preflight,Bounds do not determine FP
+same_input_four_source_answers,finite_counterexample,All P D T U same-input four-answer vectors fail to determine FP,same_input,Explicit n10 witnesses with independent labels in preflight_audit,Answer-only insufficiency is not raw-input insufficiency
+transformed_D_and_T,proven_joint_answer_relation,D and T source answers over the full transform orbit determine FP,multiple_inputs_full_inverse_reverse_complement_orbit,Two-deficiency and anti-fixed formulas above,This information is not explicitly furnished during training
+transformed_P_and_U,finite_counterexample,Full-orbit source answer vectors in P and U fail to determine FP,multiple_inputs_full_inverse_reverse_complement_orbit,Explicit n10 witness in preflight_audit,Does not establish all-length or statistical independence
+positional_comparison,possible_shared_subcomputation,FP D and AF admit positionwise comparisons followed by counting,raw_input,Independent algorithms and task definitions,Not a claim about learned representations
+adjacent_comparison,possible_shared_subcomputation,Descents and peaks admit shared adjacent comparison bits,raw_input,Task definitions,Not a causal explanation of transfer
+directional_running_maximum,possible_shared_subcomputation,L and U admit directional running maxima followed by counting,raw_input,Task definitions,Direction and input transformation differ
+learned_formula,unverified_model_hypothesis,The model uses FP=n-E-D or inverse-deficiency queries,unobserved_internal_computation,No mechanistic test in this protocol,Accuracy and source learning cannot establish this claim
+unlisted_relations,not_checked,Additional relations may exist,unspecified,Registry is incomplete by design,No registered relation does not mean no relation

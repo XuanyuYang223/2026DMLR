@@ -1,0 +1,17 @@
+{
+  "version": "fixed_points_architecture_gate_objects_v1",
+  "n": 10,
+  "data_seed": 2026112601,
+  "counts": {
+    "train": 8192,
+    "dev": 1024
+  },
+  "roles": [
+    "train",
+    "dev"
+  ],
+  "no_test_pool": true,
+  "rng": "numpy.PCG64(SeedSequence([data_seed, role_index, 10]))",
+  "isolation": "Complete historical and between-role inverse/reverse/complement exclusion; gate inputs also excluded from every formal role/unit",
+  "capacity_reservation": "Gate train/dev and every formal pool including deferred tests reserved before gate generation"
+}

@@ -1,0 +1,23 @@
+{
+  "status": "pass",
+  "capacity": {
+    "n": 10,
+    "permutations": 3628800,
+    "maximum_orbit_size": 8,
+    "orbit_count_lower_bound": 453600,
+    "historical_occupied_orbits": 268049,
+    "available_orbit_lower_bound": 185551,
+    "requested_new_orbits_all_roles_and_units": 106496,
+    "requested_gate_orbits": 9216,
+    "requested_new_orbits_including_gate": 115712,
+    "reserved_future_test_orbits": 16384,
+    "conservative_capacity_sufficient": true
+  },
+  "history_binding_count": 627,
+  "historical_npz_count": 614,
+  "original_console_path": "experiments/fixed_points_deficiencies_arch_v1/artifacts/preflight/CAPACITY_PREFLIGHT.json",
+  "original_console_sha256": "986cb8a658829eac21d1abe66fb9d78d305b89953d0ffa63c6f5f6302a6dd6fd",
+  "original_console_encoding": "UTF-16",
+  "capacity_source_sha256_at_execution": "84a5c6827f13c48c40cad164ba985014d70ba273ea22e1c9bc1835a341c3bf42",
+  "note": "Numeric capacity result copied without recomputation. A subsequent prefreeze edit strengthens only the deferred-test protocol gate, not history or capacity calculations."
+}
