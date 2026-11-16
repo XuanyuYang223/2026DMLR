@@ -1,0 +1,78 @@
+{
+  "created_at_utc": "2026-11-16T23:22:46.220066+00:00",
+  "purpose": "Presentation-only figure; no new analysis, data generation, training or evaluation",
+  "command": ".venv/Scripts/python.exe -B publication/case_integration_v2/build_worked_case_final.py",
+  "python": "3.13.14 (main, Jun 23 2026, 15:19:27) [MSC v.1944 64 bit (AMD64)]",
+  "system": "Windows-11-10.0.26200-SP0",
+  "matplotlib": "3.11.2",
+  "builder_sha256": "90471b61708574426fb45b239cf74ef82f75b5d89c7a92aba3dfad0b0e37c96b",
+  "source_sha256": {
+    "experiments/fixed_points_deficiencies_v1/artifacts/analysis/paired_differences.csv": "cecaad805e1ef7c1edb81a4882938c0975162eb942e048f5f9d0e35342b91bf0",
+    "experiments/fixed_points_deficiencies_v1/artifacts/analysis/paired_summary.csv": "ee64367163c0597f60578878d98c1015dc9d43b69565aab886fa4066e8f091cf",
+    "experiments/fixed_points_deficiencies_v1/artifacts/FROZEN_PROTOCOL.json": "f998a5e37cf324f0884d13b2e537b7b8801a7cb434cf4683107cada6b1566083",
+    "experiments/fixed_points_deficiencies_v1/RESULT_REPORT.md": "53e4c10b17af89aae6c8f345afad119ba6b264cecfe82fbcf5c6ed950f87847c",
+    "experiments/fixed_points_deficiencies_arch_v1/artifacts/analysis/paired_differences.csv": "daf08640596b7aeee73328122967a69f51dcf31933aa3a919f006334da1827b6",
+    "experiments/fixed_points_deficiencies_arch_v1/artifacts/analysis/paired_summary.csv": "9b0565310e521642d5e2a97172cbf7ac5ed4672187b6aea9c9bc5206309c746c",
+    "experiments/fixed_points_deficiencies_arch_v1/artifacts/FROZEN_PROTOCOL.json": "c2ef7262ec63cc32d9b1895982ca3acbde1fed0f796fc1e0415aa78d3e3fa9ab",
+    "experiments/fixed_points_deficiencies_arch_v1/RESULT_REPORT.md": "486b48eb8b4f2fed06fd591bddfbf74d0637e453cf2f7b84b4b5ae1967fd02d5"
+  },
+  "outputs": {
+    "publication/figures/case_integration_v2/final/PLOT_DATA.csv": "91d55b5b67367e2c74323acafaba18311b228ea12b62d7ed4d18df59bbdb459b",
+    "publication/figures/case_integration_v2/final/PLOT_SUMMARIES.csv": "5821ff48777286c212d73745a1f609cb4e12943169a359a18c33c01f8947946a",
+    "publication/figures/case_integration_v2/final/README.md": "634362248ec4bdf0e3063f75a6d17934a13ea3857d81200ff52f5532dbca4706",
+    "publication/figures/case_integration_v2/final/SOURCE_MAP.csv": "794e189cb4403ef869156513e95395579630b2e366308ba332008579d8eff119",
+    "publication/figures/case_integration_v2/final/worked_case.png": "b44b0c8f418a75004c3ef4ca41f097ae43b53297f2f3cd18785a22543b6ea403",
+    "publication/figures/case_integration_v2/final/worked_case.svg": "b179f5d214a78b5149dcc34aa0dddc35b03be44d020e584cb5bbe61b199c7ee3"
+  },
+  "filters": {
+    "metric": "complete",
+    "checkpoint_kind": "selected",
+    "scope": "area"
+  },
+  "contrasts": [
+    "P_minus_A",
+    "D_minus_A",
+    "T_minus_A",
+    "U_minus_A",
+    "D_minus_U"
+  ],
+  "unit_ids_within_each_study": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8"
+  ],
+  "independent_repeat_count": "Eight paired units in each separate study; no pooled or across-study paired estimate",
+  "point_rows": 80,
+  "summary_rows": 10,
+  "mapped_ordinates": 94,
+  "statistics_recomputed": false,
+  "model_forward_calls": 0,
+  "checkpoint_files_opened": 0,
+  "data_pool_files_opened": 0,
+  "scientific_ordinates": "Copied from saved CSV fields; exact source strings retained",
+  "interval_policy": "Only primary D_minus_U: saved paired-mean 95% t interval, df 7; no SD bars or secondary intervals",
+  "display_only": {
+    "horizontal_offsets_by_repeat": {
+      "R1": -0.245,
+      "R2": -0.175,
+      "R3": -0.105,
+      "R4": -0.035,
+      "R5": 0.035,
+      "R6": 0.105,
+      "R7": 0.175,
+      "R8": 0.245
+    },
+    "shared_y_limits_pp": [
+      -18,
+      20
+    ]
+  },
+  "sources_unchanged_after_render": true,
+  "presentation_status": "Final paper figure; parent-directory bundle retained unchanged as layout preview",
+  "layout_check": "Passed renderer bounding-box checks: legend does not overlap panel titles or figure text"
+}
