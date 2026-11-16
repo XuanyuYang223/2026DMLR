@@ -1,0 +1,161 @@
+{
+  "status": "blocked",
+  "recorded_at_utc": "2026-11-16T18:59:51.112227+00:00",
+  "stage": "Stage 2 pre-training capacity gate",
+  "experiment_directory": "experiments/platform_calibration_v02",
+  "reason": "The required new paired n=8 train/development pools do not fit after historical full inverse/reverse/complement orbit exclusion. No fallback was specified.",
+  "inspection_scope": "A sufficient n=8 impossibility proof from historical platform pools. The initial read-only scan covered experiments/**/*.npz arrays named p; ignored reference datasets and other historical formats were not exhaustively audited. Additional exclusions cannot increase capacity.",
+  "n": 8,
+  "mathematical_domain_permutations": 40320,
+  "total_orbits": 5282,
+  "group_definition": "Eight actions: identity, reverse, complement, reverse-complement, and inverse applied to each of those four. Canonical key is the lexicographically smallest tuple.",
+  "transform_order": [
+    "identity",
+    "reverse",
+    "complement",
+    "reverse_complement",
+    "inverse",
+    "inverse_reverse",
+    "inverse_complement",
+    "inverse_reverse_complement"
+  ],
+  "burnside_fixed_counts": [
+    40320,
+    0,
+    0,
+    384,
+    764,
+    12,
+    12,
+    764
+  ],
+  "burnside_orbits": 5282,
+  "orbit_size_distribution": {
+    "2": 44,
+    "4": 418,
+    "8": 4820
+  },
+  "permutation_count_from_orbit_sizes": 40320,
+  "canonical_platform_occupied_orbits": 3072,
+  "canonical_only_available_orbits": 2210,
+  "experiments_p_array_observed_occupied_orbits": 3086,
+  "available_before_other_history_upper_bound": 2196,
+  "required": {
+    "new_paired_units": 2,
+    "train_objects_per_unit_per_length": 1024,
+    "dev_objects_per_unit_per_length": 256,
+    "new_test_objects_in_bound": 0,
+    "minimum_fresh_n8_orbits": 2560
+  },
+  "canonical_only_shortfall": 350,
+  "observed_pools_shortfall": 364,
+  "historical_inputs": [
+    {
+      "path": "experiments/platform_v01/dataset/data/s617_dev_n8.npz",
+      "sha256": "f464857e67e04fcb3ea146c7cfbf749edfcbe43c6c9f3eccbca4cd71c318830b",
+      "rows": 256,
+      "distinct_orbits": 256
+    },
+    {
+      "path": "experiments/platform_v01/dataset/data/s617_test_n8.npz",
+      "sha256": "50a5dac1096a991a52927e8ee132817392ef0190b7eaa1285f4a90329919b09b",
+      "rows": 256,
+      "distinct_orbits": 256
+    },
+    {
+      "path": "experiments/platform_v01/dataset/data/s617_train_n8.npz",
+      "sha256": "6267653fe6dd63b2f8ddbdcd40d8d35ff59a8c1c8a4cff59093e36262c79bc65",
+      "rows": 1024,
+      "distinct_orbits": 1024
+    },
+    {
+      "path": "experiments/platform_v01/dataset/data/s829_dev_n8.npz",
+      "sha256": "ae15377b7a0708132500d05bfdf871ceb4b0d3fa04a1b4c2fed834fbbe994152",
+      "rows": 256,
+      "distinct_orbits": 256
+    },
+    {
+      "path": "experiments/platform_v01/dataset/data/s829_test_n8.npz",
+      "sha256": "0b34b41cc91ab4efdaa1fafe8f97494c216bd9584c05bfa2968b13f5acf2c94f",
+      "rows": 256,
+      "distinct_orbits": 256
+    },
+    {
+      "path": "experiments/platform_v01/dataset/data/s829_train_n8.npz",
+      "sha256": "867610580eedc4ed17a445cd93cd3be2388a40559d4ca59c3090b363018a2669",
+      "rows": 1024,
+      "distinct_orbits": 1024
+    },
+    {
+      "path": "experiments/platform_v01/examples/small_dataset/data/s9001_dev_n8.npz",
+      "sha256": "a561c87e66a583b83e26ef5fe3d38de9a90f4b7346b0e54867f2aac31bc145c2",
+      "rows": 4,
+      "distinct_orbits": 4
+    },
+    {
+      "path": "experiments/platform_v01/examples/small_dataset/data/s9001_test_n8.npz",
+      "sha256": "d840e34fb94663c9f5d877b7de319e39756761741ba6ecd49d9ad92b32cf4ba1",
+      "rows": 4,
+      "distinct_orbits": 4
+    },
+    {
+      "path": "experiments/platform_v01/examples/small_dataset/data/s9001_train_n8.npz",
+      "sha256": "07dafdb32800015cd9bf8b42ec08632d78e69c64401480c9570374f53cfd9a2f",
+      "rows": 16,
+      "distinct_orbits": 16
+    }
+  ],
+  "inherited_source_bindings": [
+    {
+      "path": "experiments/platform_v01/calibration/FROZEN_CALIBRATION.json",
+      "sha256": "7f3de88f42a15fd80db4e6ddc2c8036df7a52d605bcb4aeb9cbe893455baddfd"
+    },
+    {
+      "path": "experiments/platform_v01/dataset/manifest.json",
+      "sha256": "8b7fcfc6b355117d1c66916053c80aa6a8ff7dc7abcac2bf645e4d192c819f06"
+    },
+    {
+      "path": "experiments/platform_v01/examples/small_dataset/manifest.json",
+      "sha256": "5bd50136b09220b70365bb09d725a2c70c1b6c96b77848798fd416d782fc9255"
+    },
+    {
+      "path": "experiments/platform_v01/LEARNABILITY_INDEX.csv",
+      "sha256": "49d69ee09a46bbbd7502099c46d193693847d7c50fecd489cad36fe97cab7ad6"
+    },
+    {
+      "path": "permworld_platform/data.py",
+      "sha256": "0f011f6deea4667ea976ecc8e49df9c9b1e289a173c9afd645cc74302980e177"
+    },
+    {
+      "path": "permworld_platform/objects.py",
+      "sha256": "c0a90de4f2860c935ac28899a709ae5c1bed09c8336560d1a3cdaea215e5be7a"
+    }
+  ],
+  "independent_check_execution": {
+    "command_form": "PowerShell here-string piped to .venv/Scripts/python.exe -B -",
+    "first_check": "Standalone itertools.permutations enumeration of all n=8 canonical orbit keys, followed by a read-only experiments NPZ p-array scan; stdout recorded total5282, occupied3086, available2196, required2560.",
+    "second_check": "A separate standalone full permutation enumeration counted fixed points of each of the eight actions and orbit-size frequencies; stdout recorded the Burnside and distribution values above.",
+    "project_modules_imported": false,
+    "files_written_by_those_checks": false,
+    "full_enumeration_rerun_for_this_record": false,
+    "recording_check": "The nine prior input archives were reread only to bind file hashes and independently verify canonical-only and combined occupied-orbit counts.",
+    "exact_execution_timestamp_of_original_stdout_checks": "not recorded"
+  },
+  "reproduction": {
+    "script": "experiments/platform_calibration_v02/capacity_preflight.py",
+    "script_sha256": "9ab93297b4981bc5de0999011c844551a78cc6ab0ce9e969ae9b7acea3219e86",
+    "command": ".venv/Scripts/python.exe -B experiments/platform_calibration_v02/capacity_preflight.py",
+    "working_directory": "repository root",
+    "output": "JSON to stdout only; no files created or modified",
+    "script_is_new_reproduction_artifact_not_original_frozen_experiment_code": true,
+    "written_script_executed_in_this_recording_step": false
+  },
+  "prohibited_work_not_started": {
+    "training": true,
+    "model_evaluation": true,
+    "new_experiment_data_generation": true,
+    "new_test_pool_generation": true,
+    "formal_protocol_freeze": true
+  },
+  "interpretation": "This is a failed feasibility check, not a learnability result, training failure, rejected-reader instance, model test, or partial scientific replication. Reusing old pools, reducing sizes or repeat count, changing lengths, or weakening isolation would change the requested protocol."
+}
