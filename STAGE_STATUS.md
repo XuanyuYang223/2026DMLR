@@ -53,3 +53,9 @@ The complete CPU encoding scan retains all fifty requested instances. `to_reduce
 New work is confined to `experiments/fixed_points_deficiencies_arch_v1/`. The n=10 capacity check includes the original confirmation's input pools and explicitly distinguishes accounting archives from permutation inputs. Its conservative available bound is 185551 orbits, exceeding the 115712 required for the separate gate and eight formal units including future tests. No isolation rule changed.
 
 The separate gate has only 8192 training and 1024 development inputs. Full historical/role orbit checks and exact generation replay passed. `GATE_FROZEN.json` records the endpoint-only GRU threshold, the prespecified Transformer fallback, all seed/config choices and bound code/data before any optimizer update. The gate registration will be committed before smoke or training. No formal pool or new test pool has been generated at this point; no model choice or replication result is claimed yet.
+
+## Stage 3 - GRU gate passed; formal experiment registered
+
+The gate registration commit `27f88ad4fb413f788519006aa590aacb2bfc18ee` preceded smoke and training. Both single-task fixed-4800 endpoints achieved 1024/1024 complete-answer development accuracy, selecting the four-layer width-256 GRU under the prespecified rule. Gate verification passed; its weights and data are separate from the formal units.
+
+Formal preparation and exact replay passed for all eight new units: 32 train/development pools, 90112 objects, zero within-pool, between-pool or historical orbit overlap. Eight fresh initialization states were bound to the registered protocol. The formal registration hash is `c2ef7262ec63cc32d9b1895982ca3acbde1fed0f796fc1e0415aa78d3e3fa9ab`. It will be committed before formal smoke or optimizer updates. Tests remain ungenerated. No formal transfer result is asserted at this stage.

@@ -1,0 +1,212 @@
+{
+  "n": 10,
+  "model": {
+    "d_model": 256,
+    "layers": 4,
+    "dropout": 0.1,
+    "tie_embeddings": true,
+    "max_seq_len": 128
+  },
+  "vocab_size": 188,
+  "encoding": "one_line",
+  "batch": 64,
+  "pretrain_updates": 4800,
+  "source_lr": "3e-4; warmup100 and cosine to3e-5 at2400, then constant3e-5 through4800",
+  "adaptation_updates": 800,
+  "learning_rates": [
+    0.0003,
+    0.0001,
+    3e-05
+  ],
+  "adapt_eval_every": 100,
+  "source_eval_steps": [
+    0,
+    600,
+    1200,
+    2400,
+    3600,
+    4800
+  ],
+  "weight_decay": 0.01,
+  "betas": [
+    0.9,
+    0.999
+  ],
+  "epsilon": 1e-08,
+  "clip": 1.0,
+  "precision": "FP32 weights/evaluation; BF16 training; TF32 disabled",
+  "version": "fixed_points_deficiencies_architecture_replication_v1",
+  "target": "fixed_points",
+  "conditions": [
+    "P",
+    "D",
+    "T",
+    "U"
+  ],
+  "routes": [
+    "P",
+    "D",
+    "T",
+    "U",
+    "A"
+  ],
+  "sources": {
+    "P": [
+      "descents",
+      "successions",
+      "left_to_right_maxima",
+      "peaks"
+    ],
+    "D": [
+      "descents",
+      "successions",
+      "left_to_right_maxima",
+      "deficiencies"
+    ],
+    "T": [
+      "descents",
+      "successions",
+      "left_to_right_maxima",
+      "anti_fixed_points"
+    ],
+    "U": [
+      "descents",
+      "successions",
+      "left_to_right_maxima",
+      "right_to_left_maxima"
+    ]
+  },
+  "target_sizes": [
+    256,
+    512,
+    1024
+  ],
+  "repeats": [
+    {
+      "repeat_id": "R1",
+      "repeat": 1,
+      "model_seed": 31001,
+      "data_seed": 2026111701,
+      "test_seed": 2026111751,
+      "subset_seed": 2026111801,
+      "source_sampling_seed": 2026111901,
+      "source_dropout_seed": 2026112001,
+      "adapt_sampling_seed": 2026112101,
+      "adapt_dropout_seed": 2026112201
+    },
+    {
+      "repeat_id": "R2",
+      "repeat": 2,
+      "model_seed": 32003,
+      "data_seed": 2026111702,
+      "test_seed": 2026111752,
+      "subset_seed": 2026111802,
+      "source_sampling_seed": 2026111902,
+      "source_dropout_seed": 2026112002,
+      "adapt_sampling_seed": 2026112102,
+      "adapt_dropout_seed": 2026112202
+    },
+    {
+      "repeat_id": "R3",
+      "repeat": 3,
+      "model_seed": 33013,
+      "data_seed": 2026111703,
+      "test_seed": 2026111753,
+      "subset_seed": 2026111803,
+      "source_sampling_seed": 2026111903,
+      "source_dropout_seed": 2026112003,
+      "adapt_sampling_seed": 2026112103,
+      "adapt_dropout_seed": 2026112203
+    },
+    {
+      "repeat_id": "R4",
+      "repeat": 4,
+      "model_seed": 34019,
+      "data_seed": 2026111704,
+      "test_seed": 2026111754,
+      "subset_seed": 2026111804,
+      "source_sampling_seed": 2026111904,
+      "source_dropout_seed": 2026112004,
+      "adapt_sampling_seed": 2026112104,
+      "adapt_dropout_seed": 2026112204
+    },
+    {
+      "repeat_id": "R5",
+      "repeat": 5,
+      "model_seed": 35023,
+      "data_seed": 2026111705,
+      "test_seed": 2026111755,
+      "subset_seed": 2026111805,
+      "source_sampling_seed": 2026111905,
+      "source_dropout_seed": 2026112005,
+      "adapt_sampling_seed": 2026112105,
+      "adapt_dropout_seed": 2026112205
+    },
+    {
+      "repeat_id": "R6",
+      "repeat": 6,
+      "model_seed": 36007,
+      "data_seed": 2026111706,
+      "test_seed": 2026111756,
+      "subset_seed": 2026111806,
+      "source_sampling_seed": 2026111906,
+      "source_dropout_seed": 2026112006,
+      "adapt_sampling_seed": 2026112106,
+      "adapt_dropout_seed": 2026112206
+    },
+    {
+      "repeat_id": "R7",
+      "repeat": 7,
+      "model_seed": 37003,
+      "data_seed": 2026111707,
+      "test_seed": 2026111757,
+      "subset_seed": 2026111807,
+      "source_sampling_seed": 2026111907,
+      "source_dropout_seed": 2026112007,
+      "adapt_sampling_seed": 2026112107,
+      "adapt_dropout_seed": 2026112207
+    },
+    {
+      "repeat_id": "R8",
+      "repeat": 8,
+      "model_seed": 38011,
+      "data_seed": 2026111708,
+      "test_seed": 2026111758,
+      "subset_seed": 2026111808,
+      "source_sampling_seed": 2026111908,
+      "source_dropout_seed": 2026112008,
+      "adapt_sampling_seed": 2026112108,
+      "adapt_dropout_seed": 2026112208
+    }
+  ],
+  "source_pool": 8192,
+  "source_dev": 1024,
+  "target_pool": 1024,
+  "target_dev": 1024,
+  "test_count": 2048,
+  "counts": {
+    "source_train": 8192,
+    "source_dev": 1024,
+    "target_train": 1024,
+    "target_dev": 1024,
+    "test": 2048
+  },
+  "source_checkpoint": "Fixed 4800-update endpoint; no target-based selection",
+  "adaptation": "Full-parameter independent runs at every size and learning rate; no continuation across sizes",
+  "target_reset": "Only fixed_points tied embedding/output row restored to this unit's step-0 row",
+  "selection": "Max complete-answer-plus-EOS dev accuracy; min answer CE; earliest positive step; declared LR order",
+  "primary_accuracy": "Unconstrained greedy answer followed by EOS; both tokens must exactly match",
+  "legacy_bridge": "First-answer-token accuracy plus teacher-forced EOS accuracy, reported separately",
+  "loss": "Inherited v5: 0.5*(answer-token mean CE + teacher-forced EOS mean CE)",
+  "supervision": "256/512/1024 target training labels plus 1024 separately disclosed target development labels",
+  "primary": "Within-unit S_D-S_U; S=.25*A256+.5*A512+.25*A1024",
+  "test_policy": "Generate all new tests only after all 120 development selections freeze; no test-driven choice",
+  "input_policy": "No explicit paired-transform queries, formula supervision or local-position labels",
+  "stopping": "Exactly 8 units, 32 source models, 360 LR candidates, 120 selected target results; no extensions",
+  "output_policy": "New experiment directory only; commit/push new artifacts on the case-integration branch; checkpoints remain local",
+  "unit_policy": "Eight new paired units; report separately and never pool with the original eight-unit confirmation",
+  "architecture_selection": "Separate GRU development gate with a prespecified eight-layer Transformer fallback",
+  "architecture": "gru",
+  "model_gate_passed": true,
+  "model_gate_result": "artifacts/GATE_RESULT.json"
+}

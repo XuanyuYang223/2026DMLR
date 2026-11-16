@@ -65,3 +65,11 @@ After that commit, run formal smoke and then two workers with disjoint unit owne
 ```
 
 The final controller freezes every development selection before test generation, checks full test replay, performs the unified evaluation, independently reconstructs statistics and writes the result report. Completion and actual cost will be appended from execution records; this planned command list does not assert those outcomes.
+
+## Gate completed and formal registration prepared
+
+Gate smoke and both gate tasks ran after commit `27f88ad4fb413f788519006aa590aacb2bfc18ee`. The gate worker exited zero, and `gate_runner.py verify` exited zero. Both prescribed endpoint development accuracies were 1024/1024, so the deterministic rule selects the four-layer GRU. No fallback was used. The gate is separate from the eight formal units and its weights are not reused. Console records, smoke checks, curves, exposure vectors and checkpoint hashes are under `artifacts/gate/` and `artifacts/GATE_RESULT.json`.
+
+The formal `prepare`, `verify`, `prepare-initials` and `freeze` commands above each exited zero. Full generation replay and isolation passed for 32 training/development pools and 90112 objects, with no within-pool, between-pool or historical orbit overlap. Eight distinct fresh step-zero model states were prepared. No formal optimizer update or test generation occurred before registration. The formal protocol hash is `c2ef7262ec63cc32d9b1895982ca3acbde1fed0f796fc1e0415aa78d3e3fa9ab`; it will be committed before formal smoke.
+
+Before formal registration, one report-generator link was corrected from `PROTOCOL.md` to this execution log. No gate-bound source or scientific setting changed. A PowerShell read-only inspection initially failed because brace expansion is unsupported; the corrected inspection succeeded and changed no file.

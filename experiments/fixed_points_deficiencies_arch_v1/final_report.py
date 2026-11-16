@@ -298,7 +298,7 @@ target-row restoration and development choices. `analysis/INDEPENDENT_RECOMPUTE.
 recounts all prediction records, labels, paired scores and the primary interval
 without model execution. No original experiment or publication record is changed.
 
-The runner commands are documented in `PROTOCOL.md`; after formal workers finish:
+The runner commands are documented in `EXECUTION_LOG.md`; after formal workers finish:
 
 ```powershell
 .venv/Scripts/python.exe -B experiments/fixed_points_deficiencies_arch_v1/post_training.py
