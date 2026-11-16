@@ -1,0 +1,5 @@
+repeat_id,condition,run_id,model_seed,data_seed,sampling_seed,dropout_seed,task,task_slot,sample_exposures,unique_inputs,pool_size,prompt_tokens,training_sequence_tokens,supervised_tokens,updates,min_input_exposures,max_input_exposures
+R4,P,R4_P,34019,2026111704,2026111904,2026112004,descents,0,76800,8192,8192,1996800,2150400,153600,4800,1,23
+R4,P,R4_P,34019,2026111704,2026111904,2026112004,successions,1,76800,8192,8192,1996800,2150400,153600,4800,1,21
+R4,P,R4_P,34019,2026111704,2026111904,2026112004,left_to_right_maxima,2,76800,8190,8192,1996800,2150400,153600,4800,0,24
+R4,P,R4_P,34019,2026111704,2026111904,2026112004,peaks,3,76800,8192,8192,1996800,2150400,153600,4800,1,22

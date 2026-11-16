@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "source_models": 32,
+  "adaptation_candidates": 360,
+  "selected_results": 120,
+  "elapsed_seconds": 13.095337499999005
+}

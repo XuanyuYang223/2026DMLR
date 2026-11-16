@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "stage": "adapt",
+  "units": [
+    "R1",
+    "R3",
+    "R5",
+    "R7"
+  ],
+  "started_at_utc": "2026-11-16T22:04:34.257484+00:00",
+  "finished_at_utc": "2026-11-16T23:10:14.280180+00:00",
+  "elapsed_seconds": 3940.0226952000003,
+  "wrapper_sha256": "4bf09c06b3c79cdceca5ae917e419a592f70de1fe2cc6e2774783a3f74eb3958",
+  "protocol_sha256": "c2ef7262ec63cc32d9b1895982ca3acbde1fed0f796fc1e0415aa78d3e3fa9ab",
+  "scheduling": "Disjoint unit ownership; aggregate only after both workers finish",
+  "timing_scope": "Worker elapsed envelope; concurrent timers overlap and are not dedicated GPU-hours",
+  "candidate_runs": 180
+}

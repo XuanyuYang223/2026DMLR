@@ -1,0 +1,33 @@
+{
+  "metric": "complete",
+  "checkpoint_kind": "selected",
+  "scope": "area",
+  "contrast": "D_minus_U",
+  "analysis_role": "primary",
+  "n": 8,
+  "mean_pp": 3.12347412109375,
+  "sample_sd_pp": 5.260416890359719,
+  "min_pp": -5.84716796875,
+  "max_pp": 11.31591796875,
+  "positive_units": 6,
+  "zero_units": 0,
+  "negative_units": 2,
+  "t_critical": 2.364624251592783,
+  "df": 7,
+  "ci95_low_pp": -1.2743444557412795,
+  "ci95_high_pp": 7.5212926979287795,
+  "differences_by_repeat_pp": {
+    "R1": 3.72314453125,
+    "R2": -5.84716796875,
+    "R3": 6.21337890625,
+    "R4": 5.2978515625,
+    "R5": 5.224609375,
+    "R6": 11.31591796875,
+    "R7": 0.3173828125,
+    "R8": -1.25732421875
+  },
+  "status": "complete",
+  "hypothesis_origin": "Prespecified model-change replication of fixed_points_deficiencies_v1; eight new units never pooled with the original eight",
+  "result_table_sha256": "de29f52d3792f51727e52c98c88f9a6ad861dccc360b1ee8d72d2778c3eecb09",
+  "statistics_plan_sha256": "7c5f80203b5bd0c76c39c49ced64044aecd554803da9c25241589b7abf6bc52d"
+}

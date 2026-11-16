@@ -1,0 +1,36 @@
+{
+  "status": "complete",
+  "units": 8,
+  "evaluated_rows": 240,
+  "inputs": {
+    "results_test.csv": "de29f52d3792f51727e52c98c88f9a6ad861dccc360b1ee8d72d2778c3eecb09",
+    "stats_plan.json": "7c5f80203b5bd0c76c39c49ced64044aecd554803da9c25241589b7abf6bc52d"
+  },
+  "outputs": {
+    "adaptation_learning_curves.pdf": "d75c15a923a77e14387a6c8d871d4bd577200e9c0ac43402fb9abe41f85bf7ec",
+    "adaptation_learning_curves.png": "53beb0313ea33da76f476de048b5f9e287c2fe3433b06938b6717c4f6e73bf89",
+    "adaptation_learning_curves.svg": "90f87a0dd36884e577f0c4c6da5f7f935c1261a490c852d68873d944602fd4a0",
+    "CLAIM_EVIDENCE_LIMITS.csv": "565c654bc8c0a2fafde2721224e8422dba0d0a8398e1d324bf57421af6b25d4f",
+    "compute_summary.csv": "0907d2775134c389ea402f2035969a14b917de7cad82791026a143a17d8dccd7",
+    "condition_summary.csv": "1846a03ab3f36d4431d48a2cce8d10f880bd0f2489e2f9dadbb58c97f0396ae1",
+    "paired_differences.csv": "daf08640596b7aeee73328122967a69f51dcf31933aa3a919f006334da1827b6",
+    "paired_summary.csv": "9b0565310e521642d5e2a97172cbf7ac5ed4672187b6aea9c9bc5206309c746c",
+    "PAPER_RESULT_DRAFT.md": "e7c14120558c9a9c4676cc53cc9b523a7c2efadd07406f0ffa92c278160d3295",
+    "primary_paired_difference.pdf": "c9c78de4998599371709c1518e1ae72e3776efa37a92912346ddc345c4ccf44d",
+    "primary_paired_difference.png": "9058a04745b31204681c9359fe1c2485f132c8e35a9d366705915c6f233074ec",
+    "primary_paired_difference.svg": "cc4d61834bacd167fae4a110df91307d5d3b411eb21c83f397eaa9111d3e4fbb",
+    "primary_summary.json": "a790a42cb2af2159f576945829407a3c88bd0032fe54ec34852961e6a02b1cec",
+    "README.md": "732964a6ce31abfc9f1babee55b50e21dbddef9c90841bf8325cc20636ac7760",
+    "REPORT.md": "90217c276eaacc016b09c8e8b686e67b5681cf289b3bcd33c4590f032c477a26",
+    "scores_per_repeat.csv": "75f6c6da456caa2a06c507f77cdae9d8328dbbcd410af180de7ec91bb14685c2",
+    "source_endpoint_summary.csv": "621b61384821de5b65e0f3e2ec7308d9e8373fa31cb0c8db49ef00571ecaeb61",
+    "source_learning_curves.pdf": "05888d40c17c12d1e42f6458fe5cece175f4b9bcf0b8cf43cbf30e5cc8c9f3bb",
+    "source_learning_curves.png": "2e72f9e1a6db2be9b8ec6aff496d21e0dc2b9f3efcea933220370066d3be2034",
+    "source_learning_curves.svg": "925e1f0a7ffdb733756da79a56faf35a7f66c75de64f72e4a82a4473d82a319b",
+    "target_learning_curves.pdf": "ca3b32486dedcbe6952375bc6dfadfd7056de7355be32b21ab43af5524c445af",
+    "target_learning_curves.png": "da6d8b727bb524e895866e69cc1a9aa39ba4c333749a05c036c3a23f66a8d600",
+    "target_learning_curves.svg": "9dffb5801bbf3d0b7775d737a17157618119e60eddc22fe711501ecedcb445f8"
+  },
+  "training_runs": 0,
+  "model_forwards": 0
+}

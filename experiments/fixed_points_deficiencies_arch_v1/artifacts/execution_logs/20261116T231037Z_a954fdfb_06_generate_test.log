@@ -1,0 +1,26 @@
+[data] R1 test: 2048 accepted, 8599 rejected
+[data] R2 test: 2048 accepted, 8954 rejected
+[data] R3 test: 2048 accepted, 9171 rejected
+[data] R4 test: 2048 accepted, 9497 rejected
+[data] R5 test: 2048 accepted, 9590 rejected
+[data] R6 test: 2048 accepted, 9889 rejected
+[data] R7 test: 2048 accepted, 10413 rejected
+[data] R8 test: 2048 accepted, 10934 rejected
+{
+  "status": "complete",
+  "created_at_utc": "2026-11-16T23:12:59.516337+00:00",
+  "primary_manifest_sha256": "aa4f4315324de35adcebcc4ec57f0f52758db8a8f08b2d037a9b4154ba5d3da3",
+  "selection_freeze": {
+    "path": "experiments/fixed_points_deficiencies_arch_v1/artifacts/SELECTIONS_FROZEN.json",
+    "sha256": "4478ecd90775601d68d8015f4da55775bc965c32db7da9ccd1a6021dc4a6f894",
+    "frozen_at_utc": "2026-11-16T23:11:58.148370+00:00",
+    "selection_count": 120,
+    "protocol_sha256": "c2ef7262ec63cc32d9b1895982ca3acbde1fed0f796fc1e0415aa78d3e3fa9ab",
+    "source_completions": 32,
+    "adaptation_completions": 360,
+    "completion_bindings_sha256": "d5199116babfd0419e04ecc592d691528d66b3dc9a77d93fa8f93e89dde8cf57",
+    "checkpoint_files_hash_checked": 760
+  },
+  "seconds": 23.525624699999753,
+  "test_use": "one unified final evaluation after all development choices; never used for selection"
+}

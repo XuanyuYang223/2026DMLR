@@ -1,0 +1,288 @@
+{
+  "attempt_id": "20261116T231037Z_a954fdfb",
+  "started_at_utc": "2026-11-16T23:10:37.122202+00:00",
+  "controller_sha256": "008a6f22b056a15ab63f1d16d0102c60a9ae3001d88db7890e5db646cb21041c",
+  "python": "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+  "cwd": "F:\\2026DMLR",
+  "training_runs": 0,
+  "model_evaluation_scope": "Only the planned 240 selected/endpoint evaluations; completed entries are reused",
+  "command_records": "experiments/fixed_points_deficiencies_arch_v1/artifacts/execution_logs/20261116T231037Z_a954fdfb_post_training_commands.jsonl",
+  "status": "complete",
+  "finished_at_utc": "2026-11-16T23:16:11.473164+00:00",
+  "elapsed_seconds": 334.35096350000003,
+  "gate": {
+    "status": "passed",
+    "source_models": 32,
+    "source_updates": 4800,
+    "adaptation_candidates": 360,
+    "adaptation_updates": 800,
+    "workers": 2,
+    "disjoint_units": [
+      "R1",
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "R6",
+      "R7",
+      "R8"
+    ],
+    "protocol_sha256": "c2ef7262ec63cc32d9b1895982ca3acbde1fed0f796fc1e0415aa78d3e3fa9ab",
+    "worker_records": {
+      "ADAPT_WORKER_R1_R3_R5_R7.json": "67c8c80ad47856c9faac0da26b990ad31b18005a915d5061a6af37042d884287",
+      "ADAPT_WORKER_R2_R4_R6_R8.json": "b194b90cf24f211af3047ba46b8c9701a617d296a2f69b77623d05c847361f40"
+    },
+    "launch_requirement": "Parent orchestrator observes both worker process exit codes equal zero"
+  },
+  "completed_stage_count": 12,
+  "completed_stages": [
+    {
+      "attempt_id": "20261116T231037Z_a954fdfb",
+      "stage_index": 1,
+      "stage": "aggregate",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-u",
+        "experiments/fixed_points_deficiencies_arch_v1/train.py",
+        "aggregate"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -B -u experiments/fixed_points_deficiencies_arch_v1/train.py aggregate",
+      "cwd": "F:\\2026DMLR",
+      "started_at_utc": "2026-11-16T23:10:40.612606+00:00",
+      "output_log": "experiments/fixed_points_deficiencies_arch_v1/artifacts/execution_logs/20261116T231037Z_a954fdfb_01_aggregate.log",
+      "finished_at_utc": "2026-11-16T23:10:48.066602+00:00",
+      "elapsed_seconds": 7.454006700000718,
+      "exit_code": 0,
+      "output_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "attempt_id": "20261116T231037Z_a954fdfb",
+      "stage_index": 2,
+      "stage": "verify_training",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-u",
+        "experiments/fixed_points_deficiencies_arch_v1/train.py",
+        "verify"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -B -u experiments/fixed_points_deficiencies_arch_v1/train.py verify",
+      "cwd": "F:\\2026DMLR",
+      "started_at_utc": "2026-11-16T23:10:48.067014+00:00",
+      "output_log": "experiments/fixed_points_deficiencies_arch_v1/artifacts/execution_logs/20261116T231037Z_a954fdfb_02_verify_training.log",
+      "finished_at_utc": "2026-11-16T23:10:56.695680+00:00",
+      "elapsed_seconds": 8.628675800000565,
+      "exit_code": 0,
+      "output_log_sha256": "0dfb7f79118c7777d7ebdf6373ef0f369cfe70ad174f2a3a6ac1ac8835e10b4f"
+    },
+    {
+      "attempt_id": "20261116T231037Z_a954fdfb",
+      "stage_index": 3,
+      "stage": "freeze_selection",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-u",
+        "experiments/fixed_points_deficiencies_arch_v1/train.py",
+        "select"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -B -u experiments/fixed_points_deficiencies_arch_v1/train.py select",
+      "cwd": "F:\\2026DMLR",
+      "started_at_utc": "2026-11-16T23:10:56.696341+00:00",
+      "output_log": "experiments/fixed_points_deficiencies_arch_v1/artifacts/execution_logs/20261116T231037Z_a954fdfb_03_freeze_selection.log",
+      "finished_at_utc": "2026-11-16T23:11:58.448063+00:00",
+      "elapsed_seconds": 61.7517325000008,
+      "exit_code": 0,
+      "output_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "attempt_id": "20261116T231037Z_a954fdfb",
+      "stage_index": 4,
+      "stage": "independent_training_audit",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-u",
+        "experiments/fixed_points_deficiencies_arch_v1/final_check.py"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -B -u experiments/fixed_points_deficiencies_arch_v1/final_check.py",
+      "cwd": "F:\\2026DMLR",
+      "started_at_utc": "2026-11-16T23:11:58.448512+00:00",
+      "output_log": "experiments/fixed_points_deficiencies_arch_v1/artifacts/execution_logs/20261116T231037Z_a954fdfb_04_independent_training_audit.log",
+      "finished_at_utc": "2026-11-16T23:12:13.691763+00:00",
+      "elapsed_seconds": 15.24326419999852,
+      "exit_code": 0,
+      "output_log_sha256": "fb4bf02b73dbe34001fcff76159077dab40a745e9fdc5365dfe8fc5778fcab0c"
+    },
+    {
+      "attempt_id": "20261116T231037Z_a954fdfb",
+      "stage_index": 5,
+      "stage": "plot_losses",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-u",
+        "experiments/fixed_points_deficiencies_arch_v1/plot_losses.py"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -B -u experiments/fixed_points_deficiencies_arch_v1/plot_losses.py",
+      "cwd": "F:\\2026DMLR",
+      "started_at_utc": "2026-11-16T23:12:13.692502+00:00",
+      "output_log": "experiments/fixed_points_deficiencies_arch_v1/artifacts/execution_logs/20261116T231037Z_a954fdfb_05_plot_losses.log",
+      "finished_at_utc": "2026-11-16T23:12:25.613784+00:00",
+      "elapsed_seconds": 11.921292700000777,
+      "exit_code": 0,
+      "output_log_sha256": "daaee19bd6af326ff7d22b826ffe3283627ae28a45f4cdb63502eebc80fc091a"
+    },
+    {
+      "attempt_id": "20261116T231037Z_a954fdfb",
+      "stage_index": 6,
+      "stage": "generate_test",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-u",
+        "experiments/fixed_points_deficiencies_arch_v1/data_pipeline.py",
+        "generate-test",
+        "--selection-manifest",
+        "experiments/fixed_points_deficiencies_arch_v1/artifacts/SELECTIONS_FROZEN.json"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -B -u experiments/fixed_points_deficiencies_arch_v1/data_pipeline.py generate-test --selection-manifest experiments/fixed_points_deficiencies_arch_v1/artifacts/SELECTIONS_FROZEN.json",
+      "cwd": "F:\\2026DMLR",
+      "started_at_utc": "2026-11-16T23:12:25.614456+00:00",
+      "output_log": "experiments/fixed_points_deficiencies_arch_v1/artifacts/execution_logs/20261116T231037Z_a954fdfb_06_generate_test.log",
+      "finished_at_utc": "2026-11-16T23:12:59.600073+00:00",
+      "elapsed_seconds": 33.985627699999895,
+      "exit_code": 0,
+      "output_log_sha256": "76ad8764902956392d39760e8a54cd293edfc013cbc69700ca8d2ae7be4de4ef"
+    },
+    {
+      "attempt_id": "20261116T231037Z_a954fdfb",
+      "stage_index": 7,
+      "stage": "verify_test_full_replay",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-u",
+        "experiments/fixed_points_deficiencies_arch_v1/data_pipeline.py",
+        "verify",
+        "--include-test"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -B -u experiments/fixed_points_deficiencies_arch_v1/data_pipeline.py verify --include-test",
+      "cwd": "F:\\2026DMLR",
+      "started_at_utc": "2026-11-16T23:12:59.600808+00:00",
+      "output_log": "experiments/fixed_points_deficiencies_arch_v1/artifacts/execution_logs/20261116T231037Z_a954fdfb_07_verify_test_full_replay.log",
+      "finished_at_utc": "2026-11-16T23:13:30.814722+00:00",
+      "elapsed_seconds": 31.213924899999256,
+      "exit_code": 0,
+      "output_log_sha256": "a8870fb327ea4d898c3240aa1466f8e6e4676a2501963090ed159894ec2dbdb9"
+    },
+    {
+      "attempt_id": "20261116T231037Z_a954fdfb",
+      "stage_index": 8,
+      "stage": "preserve_test_replay_proof",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-u",
+        "experiments/fixed_points_deficiencies_arch_v1/post_training.py",
+        "--preserve-replay-proof",
+        "--attempt-id",
+        "20261116T231037Z_a954fdfb"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -B -u experiments/fixed_points_deficiencies_arch_v1/post_training.py --preserve-replay-proof --attempt-id 20261116T231037Z_a954fdfb",
+      "cwd": "F:\\2026DMLR",
+      "started_at_utc": "2026-11-16T23:13:30.815409+00:00",
+      "output_log": "experiments/fixed_points_deficiencies_arch_v1/artifacts/execution_logs/20261116T231037Z_a954fdfb_08_preserve_test_replay_proof.log",
+      "finished_at_utc": "2026-11-16T23:13:30.891406+00:00",
+      "elapsed_seconds": 0.07600619999902847,
+      "exit_code": 0,
+      "output_log_sha256": "610a8662b3f21f3108f713f24aea3e6bd625fba3ca0c5d4cda3ef2d4076f3c9d"
+    },
+    {
+      "attempt_id": "20261116T231037Z_a954fdfb",
+      "stage_index": 9,
+      "stage": "evaluate_frozen_test_inventory",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-u",
+        "experiments/fixed_points_deficiencies_arch_v1/train.py",
+        "test"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -B -u experiments/fixed_points_deficiencies_arch_v1/train.py test",
+      "cwd": "F:\\2026DMLR",
+      "started_at_utc": "2026-11-16T23:13:30.892052+00:00",
+      "output_log": "experiments/fixed_points_deficiencies_arch_v1/artifacts/execution_logs/20261116T231037Z_a954fdfb_09_evaluate_frozen_test_inventory.log",
+      "finished_at_utc": "2026-11-16T23:16:02.376010+00:00",
+      "elapsed_seconds": 151.48399470000004,
+      "exit_code": 0,
+      "output_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "attempt_id": "20261116T231037Z_a954fdfb",
+      "stage_index": 10,
+      "stage": "analyze",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-u",
+        "experiments/fixed_points_deficiencies_arch_v1/analysis.py"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -B -u experiments/fixed_points_deficiencies_arch_v1/analysis.py",
+      "cwd": "F:\\2026DMLR",
+      "started_at_utc": "2026-11-16T23:16:02.376506+00:00",
+      "output_log": "experiments/fixed_points_deficiencies_arch_v1/artifacts/execution_logs/20261116T231037Z_a954fdfb_10_analyze.log",
+      "finished_at_utc": "2026-11-16T23:16:06.186853+00:00",
+      "elapsed_seconds": 3.8103621999998722,
+      "exit_code": 0,
+      "output_log_sha256": "a790a42cb2af2159f576945829407a3c88bd0032fe54ec34852961e6a02b1cec"
+    },
+    {
+      "attempt_id": "20261116T231037Z_a954fdfb",
+      "stage_index": 11,
+      "stage": "independent_prediction_statistics_audit",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-u",
+        "experiments/fixed_points_deficiencies_arch_v1/independent_recompute.py"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -B -u experiments/fixed_points_deficiencies_arch_v1/independent_recompute.py",
+      "cwd": "F:\\2026DMLR",
+      "started_at_utc": "2026-11-16T23:16:06.187624+00:00",
+      "output_log": "experiments/fixed_points_deficiencies_arch_v1/artifacts/execution_logs/20261116T231037Z_a954fdfb_11_independent_prediction_statistics_audit.log",
+      "finished_at_utc": "2026-11-16T23:16:11.364165+00:00",
+      "elapsed_seconds": 5.1765519000000495,
+      "exit_code": 0,
+      "output_log_sha256": "983c645e55be82b3217765c4cb7814345961d2f34817955d67eaa2eadab0755a"
+    },
+    {
+      "attempt_id": "20261116T231037Z_a954fdfb",
+      "stage_index": 12,
+      "stage": "canonical_report",
+      "argv": [
+        "F:\\2026DMLR\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-u",
+        "experiments/fixed_points_deficiencies_arch_v1/final_report.py"
+      ],
+      "command_display": "F:\\2026DMLR\\.venv\\Scripts\\python.exe -B -u experiments/fixed_points_deficiencies_arch_v1/final_report.py",
+      "cwd": "F:\\2026DMLR",
+      "started_at_utc": "2026-11-16T23:16:11.364881+00:00",
+      "output_log": "experiments/fixed_points_deficiencies_arch_v1/artifacts/execution_logs/20261116T231037Z_a954fdfb_12_canonical_report.log",
+      "finished_at_utc": "2026-11-16T23:16:11.470570+00:00",
+      "elapsed_seconds": 0.10569680000116932,
+      "exit_code": 0,
+      "output_log_sha256": "e0290a4a80d5100dcc52934695c0a23e1742be083007471957123040ec20da20"
+    }
+  ],
+  "final_artifacts": {
+    "experiments\\fixed_points_deficiencies_arch_v1\\artifacts\\TEST_COMPLETE.json": "bdf3bce82b80a4dbf6d0f521d85ab68dc6c66ca7dd9c1c2a04995bfc00f573ec",
+    "experiments\\fixed_points_deficiencies_arch_v1\\artifacts\\FINAL_TRAINING_AUDIT.json": "87d4eb62d4fa49968b52a305cf95d4c553fb758767e86ff8097c55039d36d7de",
+    "experiments\\fixed_points_deficiencies_arch_v1\\artifacts\\analysis\\INDEPENDENT_RECOMPUTE.json": "839e019b5d23dd38a35567b61699e4d5e43e194d5815113a7a1bf060c0382c6d",
+    "experiments\\fixed_points_deficiencies_arch_v1\\REPORT_MANIFEST.json": "fece0a1c23461e7908d82794769ea510c584c14e136a8cdea2e1c8efe13f9bea",
+    "experiments\\fixed_points_deficiencies_arch_v1\\README.md": "a16b4cb6dc7d91dfda6fb98476ac06f1829ee726ea828a9394eaa8b917df3bcb",
+    "experiments\\fixed_points_deficiencies_arch_v1\\RESULT_REPORT.md": "486b48eb8b4f2fed06fd591bddfbf74d0637e453cf2f7b84b4b5ae1967fd02d5"
+  }
+}

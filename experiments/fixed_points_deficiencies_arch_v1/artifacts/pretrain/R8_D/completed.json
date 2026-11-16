@@ -1,0 +1,33 @@
+{
+  "repeat_id": "R8",
+  "condition": "D",
+  "run_id": "R8_D",
+  "model_seed": 38011,
+  "data_seed": 2026111708,
+  "sampling_seed": 2026111908,
+  "dropout_seed": 2026112008,
+  "status": "complete",
+  "finished_at_utc": "2026-11-16T21:59:54.990266+00:00",
+  "tasks": [
+    "descents",
+    "successions",
+    "left_to_right_maxima",
+    "deficiencies"
+  ],
+  "updates": 4800,
+  "elapsed_seconds": 119.15803610000012,
+  "protocol_sha256": "c2ef7262ec63cc32d9b1895982ca3acbde1fed0f796fc1e0415aa78d3e3fa9ab",
+  "initial_sha256": "db927e02b75fb0c935018379f601153add47d9e2fa23f9e203f62593e9e99fa3",
+  "initial_model_sha256": "4afec9782a9fcb555afc99d70c38c8e7732a7be6f24be6e66128a40693aa28c8",
+  "endpoint_sha256": "38c3e98be5505e19c78cf8a2b29b39682d372729085d708f6acf2e80f0d76b8c",
+  "endpoint_model_sha256": "1b7a80fa3ef8ec6ef46f73a9c7a3c6a97174b5cd452f1cb03ca30c5cf3549d02",
+  "source_input_sha256": "7b6c6dcb503b00f62b5e4b1d740cdbff96d27176d36f24c11f45fe9aa05c844a",
+  "source_dev_input_sha256": "4ab581f50784c3fa5e7f81aaf148105f18edb553659be5dfcf5884adfc355ee4",
+  "stream_sha256": "6bb001ae4aa88ab055398a3c27f89bcfe7fa6ec959a1c7457818f028fd3a616e",
+  "sample_exposures": 307200,
+  "prompt_tokens": 7987200,
+  "training_sequence_tokens": 8601600,
+  "supervised_tokens": 614400,
+  "independent_inputs": 8192,
+  "resumes": []
+}

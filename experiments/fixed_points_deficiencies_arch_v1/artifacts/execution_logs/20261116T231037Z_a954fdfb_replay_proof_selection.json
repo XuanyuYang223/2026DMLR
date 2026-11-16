@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "selected_source": "experiments/fixed_points_deficiencies_arch_v1/artifacts/data/quality_with_test.json",
+  "selected_source_sha256": "59086edf243bd7a80592abe65163dee4624d63f9d16ffc13d400970515908c7d",
+  "primary_manifest_sha256": "aa4f4315324de35adcebcc4ec57f0f52758db8a8f08b2d037a9b4154ba5d3da3",
+  "test_manifest_sha256": "f91be8f359b8f4eafc673dbe91eb7bc4a2c877890eca70003bac59f3bada19e1",
+  "selection_rule": "Latest matching full replay; all matching records must agree except timestamp/elapsed time",
+  "matching_records": [
+    {
+      "path": "experiments/fixed_points_deficiencies_arch_v1/artifacts/data/quality_with_test.json",
+      "sha256": "59086edf243bd7a80592abe65163dee4624d63f9d16ffc13d400970515908c7d"
+    }
+  ],
+  "skipped_records": [],
+  "attempt_snapshot": "experiments/fixed_points_deficiencies_arch_v1/artifacts/execution_logs/20261116T231037Z_a954fdfb_quality_with_test_full_replay.json",
+  "attempt_snapshot_sha256": "59086edf243bd7a80592abe65163dee4624d63f9d16ffc13d400970515908c7d",
+  "canonical_path": "experiments/fixed_points_deficiencies_arch_v1/artifacts/data/quality_with_test_full_replay_before_evaluation.json",
+  "canonical_sha256": "59086edf243bd7a80592abe65163dee4624d63f9d16ffc13d400970515908c7d"
+}

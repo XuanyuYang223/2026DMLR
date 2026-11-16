@@ -1,0 +1,47 @@
+{
+  "status": "pass",
+  "independent_units": 8,
+  "evaluated_rows": 240,
+  "raw_prediction_rows": 491520,
+  "metric": "Complete generated answer plus EOS exact match",
+  "primary_differences_by_repeat_pp": {
+    "R1": 3.72314453125,
+    "R2": -5.84716796875,
+    "R3": 6.21337890625,
+    "R4": 5.2978515625,
+    "R5": 5.224609375,
+    "R6": 11.31591796875,
+    "R7": 0.3173828125,
+    "R8": -1.25732421875
+  },
+  "mean_pp": 3.12347412109375,
+  "sample_sd_pp": 5.260416890359719,
+  "min_pp": -5.84716796875,
+  "max_pp": 11.31591796875,
+  "ci95_low_pp": -1.2743444557413062,
+  "ci95_high_pp": 7.521292697928806,
+  "df": 7,
+  "t_critical_numerical_quadrature": 2.3646242515927973,
+  "checks": [
+    "Independent fixed-point labels",
+    "Published test-input order",
+    "Frozen selection/checkpoint metadata",
+    "Full generation and legacy answer-token integer counts",
+    "Training-prefix majority classes",
+    "Mean per-example answer NLL",
+    "All per-unit scores and paired differences",
+    "All paired summary moments",
+    "Primary 95% t interval from independent numerical quadrature"
+  ],
+  "answer_nll_absolute_tolerance": 5e-06,
+  "sources": {
+    "results_test.csv": "de29f52d3792f51727e52c98c88f9a6ad861dccc360b1ee8d72d2778c3eecb09",
+    "SELECTIONS_FROZEN.json": "4478ecd90775601d68d8015f4da55775bc965c32db7da9ccd1a6021dc4a6f894",
+    "tokenizer": "6c103494507358b8b4d2ee6a5c69a31fc391ae4cd35d7f1126bdac891fe07e09",
+    "data/manifest.json": "aa4f4315324de35adcebcc4ec57f0f52758db8a8f08b2d037a9b4154ba5d3da3",
+    "data/test_manifest.json": "f91be8f359b8f4eafc673dbe91eb7bc4a2c877890eca70003bac59f3bada19e1"
+  },
+  "model_forwards": 0,
+  "training_runs": 0,
+  "scope": "Recomputes tabular statistics from stored predictions, not GPU training or model inference."
+}

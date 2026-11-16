@@ -73,3 +73,25 @@ Gate smoke and both gate tasks ran after commit `27f88ad4fb413f788519006aa590aac
 The formal `prepare`, `verify`, `prepare-initials` and `freeze` commands above each exited zero. Full generation replay and isolation passed for 32 training/development pools and 90112 objects, with no within-pool, between-pool or historical orbit overlap. Eight distinct fresh step-zero model states were prepared. No formal optimizer update or test generation occurred before registration. The formal protocol hash is `c2ef7262ec63cc32d9b1895982ca3acbde1fed0f796fc1e0415aa78d3e3fa9ab`; it will be committed before formal smoke.
 
 Before formal registration, one report-generator link was corrected from `PROTOCOL.md` to this execution log. No gate-bound source or scientific setting changed. A PowerShell read-only inspection initially failed because brace expansion is unsupported; the corrected inspection succeeded and changed no file.
+
+## Formal smoke and source training completed
+
+Formal registration commit `5fde30e` preceded the formal smoke. `protocol.py verify` and `train.py smoke` each exited zero. The smoke checked strict save/load, bitwise resumed updates, target-only tied-row restoration, fresh optimizer, causal evaluation, complete-answer prediction consistency, RNG preservation, balanced task slots and selection priorities. Its discarded engineering work is recorded separately in `artifacts/SMOKE.json`.
+
+Both prescribed source workers completed and returned OS exit code zero. The odd-unit worker started at `2026-11-16T21:31:45.446856+00:00` and finished at `2026-11-16T22:04:06.205763+00:00`; the even-unit worker started at `2026-11-16T21:31:45.446917+00:00` and finished at `2026-11-16T22:04:06.205802+00:00`. All 32 source endpoints are present. Their overlapping worker timers and per-run timers are not additive GPU-hours. The source worker records and UTF-16 console transcripts are retained under `artifacts/`.
+
+Both prescribed adaptation workers then started at `2026-11-16T22:04:34.257484+00:00` (odd units) and `2026-11-16T22:04:34.257437+00:00` (even units). No target test inputs exist at this point. Completion and test processing remain pending.
+
+## Adaptation completed; unified post-training processing started
+
+All 360 prescribed candidates completed. Both adaptation workers returned OS exit code zero. The odd-unit worker finished at `2026-11-16T23:10:14.280180+00:00` with recorded elapsed time `3940.0226952000003` seconds; the even-unit worker finished at `2026-11-16T23:10:01.944756+00:00` with `3927.6873115` seconds. All sampling seeds, budgets and candidate lists were unchanged, with no failure reruns.
+
+Near the end, progress temporarily slowed while total GPU memory use was observed at 11764 MiB (73% utilization at the `2026-11-16T23:06:13.4288282Z` inspection). Intermediate checkpoints continued updating. A later inspection showed 1106 MiB and 21% utilization, and candidate completion resumed at the earlier pace. The cause was not established; no unrelated process was stopped and no scientific configuration was changed. These observations are context for the measured runtime, not a portable performance benchmark or causal diagnosis.
+
+The prescribed `post_training.py` command started after both workers completed. It will record every stage and exit code under `artifacts/execution_logs/`; the top-level console transcript is `artifacts/post_training_console.log`. At this entry, unified evaluation and independent statistical verification remain pending.
+
+## Unified testing and independent verification completed
+
+The post-training controller returned OS exit code zero. Attempt `20261116T231037Z_a954fdfb` completed all twelve prescribed stages; every child command exited zero. All 120 development choices were fixed before test generation. Full historical/between-role/between-unit test isolation and exact generation replay passed. The unified evaluation produced 240 selected/endpoint records and 491520 per-example prediction rows. Independent reconstruction verified labels, complete-answer counts, majority classes, scores, paired differences and the primary t interval without model calls.
+
+The canonical `RESULT_REPORT.md` reports primary D-U `+3.1235` pp with paired 95% t interval `[-1.2743, +7.5213]` pp: uncertainty remains. This is not pooled with the original eight units, and it triggers no further training. The canonical report, README, paper paragraph, raw records, figures and manifests are complete. Gate and smoke costs remain separate. No checkpoint is staged for publication.

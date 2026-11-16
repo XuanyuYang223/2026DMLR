@@ -1,0 +1,5 @@
+repeat_id,condition,run_id,model_seed,data_seed,sampling_seed,dropout_seed,task,task_slot,sample_exposures,unique_inputs,pool_size,prompt_tokens,training_sequence_tokens,supervised_tokens,updates,min_input_exposures,max_input_exposures
+R8,U,R8_U,38011,2026111708,2026111908,2026112008,descents,0,76800,8192,8192,1996800,2150400,153600,4800,1,22
+R8,U,R8_U,38011,2026111708,2026111908,2026112008,successions,1,76800,8191,8192,1996800,2150400,153600,4800,0,24
+R8,U,R8_U,38011,2026111708,2026111908,2026112008,left_to_right_maxima,2,76800,8192,8192,1996800,2150400,153600,4800,1,25
+R8,U,R8_U,38011,2026111708,2026111908,2026112008,right_to_left_maxima,3,76800,8191,8192,1996800,2150400,153600,4800,0,24

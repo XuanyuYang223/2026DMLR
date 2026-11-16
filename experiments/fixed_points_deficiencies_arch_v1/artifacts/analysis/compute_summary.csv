@@ -1,0 +1,3 @@
+stage,runs,updates,sample_exposures,prompt_tokens,training_sequence_tokens,supervised_tokens,elapsed_seconds,independent_inputs_per_run_min,independent_inputs_per_run_max
+pretrain,32,153600,9830400,255590400,275251200,19660800,3762.9192410000014,8192,8192
+adapt,360,288000,18432000,479232000,516096000,36864000,6170.064016900001,256,1024

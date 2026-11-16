@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "evaluations": 240,
+  "selected_results": 120,
+  "selection_manifest_sha256": "4478ecd90775601d68d8015f4da55775bc965c32db7da9ccd1a6021dc4a6f894",
+  "results_sha256": "de29f52d3792f51727e52c98c88f9a6ad861dccc360b1ee8d72d2778c3eecb09",
+  "finished_at_utc": "2026-11-16T23:16:01.966833+00:00"
+}

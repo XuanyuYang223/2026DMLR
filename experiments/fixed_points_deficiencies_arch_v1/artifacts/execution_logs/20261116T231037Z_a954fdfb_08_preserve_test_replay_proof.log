@@ -1,0 +1,10 @@
+{
+  "status": "preserved",
+  "canonical_path": "experiments/fixed_points_deficiencies_arch_v1/artifacts/data/quality_with_test_full_replay_before_evaluation.json",
+  "canonical_sha256": "59086edf243bd7a80592abe65163dee4624d63f9d16ffc13d400970515908c7d",
+  "attempt_snapshot": "experiments/fixed_points_deficiencies_arch_v1/artifacts/execution_logs/20261116T231037Z_a954fdfb_quality_with_test_full_replay.json",
+  "attempt_snapshot_sha256": "59086edf243bd7a80592abe65163dee4624d63f9d16ffc13d400970515908c7d",
+  "selected_source": "experiments/fixed_points_deficiencies_arch_v1/artifacts/data/quality_with_test.json",
+  "selected_source_sha256": "59086edf243bd7a80592abe65163dee4624d63f9d16ffc13d400970515908c7d",
+  "selection_record": "experiments/fixed_points_deficiencies_arch_v1/artifacts/execution_logs/20261116T231037Z_a954fdfb_replay_proof_selection.json"
+}

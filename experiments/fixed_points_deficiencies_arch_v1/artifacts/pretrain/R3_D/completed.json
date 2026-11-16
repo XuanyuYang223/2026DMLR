@@ -1,0 +1,33 @@
+{
+  "repeat_id": "R3",
+  "condition": "D",
+  "run_id": "R3_D",
+  "model_seed": 33013,
+  "data_seed": 2026111703,
+  "sampling_seed": 2026111903,
+  "dropout_seed": 2026112003,
+  "status": "complete",
+  "finished_at_utc": "2026-11-16T21:43:46.985775+00:00",
+  "tasks": [
+    "descents",
+    "successions",
+    "left_to_right_maxima",
+    "deficiencies"
+  ],
+  "updates": 4800,
+  "elapsed_seconds": 115.66082129999995,
+  "protocol_sha256": "c2ef7262ec63cc32d9b1895982ca3acbde1fed0f796fc1e0415aa78d3e3fa9ab",
+  "initial_sha256": "34e527e10945545b292440498cdc76e0937b1b1d15f6eee3e03fd252a0a8fc09",
+  "initial_model_sha256": "4d7831531fc8bbc6888e753a8e9fcbb7323d2955bb912151a47bba5e81ed1030",
+  "endpoint_sha256": "7f9cc9213da678d5b2845860ed6454b6b5434d3f064770f413e8bbabeb01f41c",
+  "endpoint_model_sha256": "d36b7cda96cd5bb66e7e4ad255fc997dcdafec85794bfb8b92ee06eaa026213d",
+  "source_input_sha256": "9c94aac5c6ba5fb2ad31fa2ba971e81ec3c6fa261c5c299a4cfef03e174d3e69",
+  "source_dev_input_sha256": "743056aeb7393cb136342c4eaa0ffb708725db0cee47d8729e4bd6a0cd035142",
+  "stream_sha256": "e4837e2b57c6249f6054e945ca6ab024193ffee12c316df87bfd675fe2608d52",
+  "sample_exposures": 307200,
+  "prompt_tokens": 7987200,
+  "training_sequence_tokens": 8601600,
+  "supervised_tokens": 614400,
+  "independent_inputs": 8192,
+  "resumes": []
+}

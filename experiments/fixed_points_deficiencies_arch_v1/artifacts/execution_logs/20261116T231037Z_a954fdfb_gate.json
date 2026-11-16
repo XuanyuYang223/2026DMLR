@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "source_models": 32,
+  "source_updates": 4800,
+  "adaptation_candidates": 360,
+  "adaptation_updates": 800,
+  "workers": 2,
+  "disjoint_units": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8"
+  ],
+  "protocol_sha256": "c2ef7262ec63cc32d9b1895982ca3acbde1fed0f796fc1e0415aa78d3e3fa9ab",
+  "worker_records": {
+    "ADAPT_WORKER_R1_R3_R5_R7.json": "67c8c80ad47856c9faac0da26b990ad31b18005a915d5061a6af37042d884287",
+    "ADAPT_WORKER_R2_R4_R6_R8.json": "b194b90cf24f211af3047ba46b8c9701a617d296a2f69b77623d05c847361f40"
+  },
+  "launch_requirement": "Parent orchestrator observes both worker process exit codes equal zero"
+}

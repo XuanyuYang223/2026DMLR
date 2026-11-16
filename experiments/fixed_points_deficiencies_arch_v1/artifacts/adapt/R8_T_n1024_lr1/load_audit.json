@@ -1,0 +1,16 @@
+{
+  "source_checkpoint": "pretrain/R8_T/endpoint.pt",
+  "source_checkpoint_sha256": "3d1745b73bd8c4e0f081f455c33398f11fe54b8870e3540b84bf6de02a08db4d",
+  "source_model_sha256": "1ee608693732fe5f1b25788d25012f4f8243a13b23c84a107580570f61c70ffb",
+  "loaded_model_sha256": "1ee608693732fe5f1b25788d25012f4f8243a13b23c84a107580570f61c70ffb",
+  "strict_complete_load": true,
+  "target_row": 119,
+  "target_row_sha256": "51964c38dfb16472666aa93386e765e5f1df8cf2e77bc7aab435884d98a5a0ba",
+  "target_row_matches_step0": true,
+  "only_target_tied_row_reset": true,
+  "tied_weights": true,
+  "adaptation_initial_model_sha256": "f14e111d97846383845bf022cbe526566c1098e0c1ab1a043b9ad6c1e8079e53",
+  "initial_sha256": "db927e02b75fb0c935018379f601153add47d9e2fa23f9e203f62593e9e99fa3",
+  "full_parameter_training": true,
+  "fresh_optimizer_state_entries": 0
+}
