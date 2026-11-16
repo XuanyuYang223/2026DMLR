@@ -1,0 +1,28 @@
+{
+  "created_at_utc": "2026-11-16T21:00:15.682452+00:00",
+  "frozen_protocol_sha256": "70b46531be73c7dec3b3c817552a910ffc24b49f7d248f8f6b24197350dcdffd",
+  "analysis_source_sha256": "1477d8c42be042d478d5911c078b8cbac5c7f1be50bfc1b3415caaaf99cd2037",
+  "outputs": {
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/accounting.csv": "11f0e269fad19093fd4b30fcdb56afe640a22095f91aaf7af483635ecc55ca57",
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/checkpoint_diagnostics.csv": "8c984699977f5c9f766da960ade7d7f1d4b33ec3dc58727ac2f199d6a3ece56a",
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/endpoint_by_unit.csv": "1e17755d8c35589c08ae7041f79aaa27ada388c47a4350c2e43e0e6199f895b1",
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/endpoint_summary.csv": "1f6f604ca4a6d67b2bf40b8c8b5e641dd42225c033a62cef14b336b14d129558",
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/exposure_summary.csv": "93004a844cb67391bf7d09d8d2aec82a548af1ac215298e7149b0867e344d450",
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/figures/learning_curves_01.png": "109d768fb2d32c65654e4ebbaf4c7bfbba27fe9eb582e323575d2c91ae3bca3a",
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/figures/learning_curves_01.svg": "5460aedf6d3dd87649fb3ee69881065af04fe7677796c070e6be75bf86c5b345",
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/figures/learning_curves_02.png": "9e6987cdce00c38b8e027e6f53a4c181ee81fb72a8a5aa36475000b8cb4a5d07",
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/figures/learning_curves_02.svg": "96f6e1923191a4ee2a8cbbdfd6562f651a70d08cf17c319d8ede32f5781a8f1f",
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/figures/learning_curves_03.png": "527255c55528167fe1fddb2c96bbd1aaa92108426e17263de1bfb005f377ec62",
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/figures/learning_curves_03.svg": "826e6fae3d926f96b45104c32d6df9023a74649a7bd6dabbb1a0cd1b7048c1d9",
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/figures/learning_curves_04.png": "020f99f0d171841c128fb054216de64634ea9f978b357c989822757461b045c9",
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/figures/learning_curves_04.svg": "3d844bb46b6f30d9fa5addc14a706706bb5e9183364e92ae50b2366dcc2e43f4",
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/figures/learning_curves_05.png": "04caab2175f9123524fe03505b8914e0a0a88bc110dfda821a72c4a2a8e67db7",
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/figures/learning_curves_05.svg": "815086c508096b0ab98329dcee1730979512aa89cdc20e8d33002ce72f1f2047",
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/LEARNABILITY_INDEX_v02.csv": "4519f96b7e27475fef1e677d40225a9646342fe7db8a7ceff04a7669a4f8ce55",
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/learning_curves.csv": "5452be1d48e39bdead70c0815fbfb184b08e55066e0634e8d2e91cfe7c2cdbcb",
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/README.md": "bfadc39e063c883f69bb118135188bb7669307fa1e47a33f410086db2ad4be6c",
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/RESULT_REPORT.md": "453f202ad70a89449f1db8c12fd6a91de74aae6ccfefe00cff8af7d3ba41cc92",
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/SOURCE_ONLY_AUDIT.json": "a02d796f1d0f27a6edfa982b2949cc52db7372d654cd3722861cf495f302de71"
+  },
+  "scientific_unit": "Two original canonical data/initialization pairs shared with v0.1"
+}

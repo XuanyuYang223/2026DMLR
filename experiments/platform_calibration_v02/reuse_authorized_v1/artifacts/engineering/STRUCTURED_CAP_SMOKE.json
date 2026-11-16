@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "created_at_utc": "2026-11-16T19:17:51.293302+00:00",
+  "full_gold_supervision": true,
+  "generation_limit_unchanged": 8,
+  "cap_limited_exact_match_demonstrated": true,
+  "formal_model_evaluated": false,
+  "test_pool_opened": false,
+  "frozen_protocol_sha256": "70b46531be73c7dec3b3c817552a910ffc24b49f7d248f8f6b24197350dcdffd",
+  "new_optimizer_updates_for_this_extension": 0
+}

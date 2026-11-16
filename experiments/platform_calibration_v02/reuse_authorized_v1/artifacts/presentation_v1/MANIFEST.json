@@ -1,0 +1,132 @@
+{
+  "created_at_utc": "2026-11-16T21:03:09.876073+00:00",
+  "purpose": "Presentation-only layout correction; existing scientific outputs remain unchanged",
+  "source_sha256": {
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/learning_curves.csv": "5452be1d48e39bdead70c0815fbfb184b08e55066e0634e8d2e91cfe7c2cdbcb",
+    "experiments/platform_calibration_v02/reuse_authorized_v1/artifacts/final/endpoint_summary.csv": "1f6f604ca4a6d67b2bf40b8c8b5e641dd42225c033a62cef14b336b14d129558"
+  },
+  "final_manifest_sha256": "c71fe761ca19c552865b16173af182f0d422d8a63ee36380b9de017fca154fd7",
+  "script_path": "experiments/platform_calibration_v02/reuse_authorized_v1/plot_readable_curves.py",
+  "script_sha256": "29dc08855a7183c74f442c3f8ab7844e2953275669a41aac354d4648a6cbf830",
+  "matplotlib_version": "3.11.2",
+  "completed_instances": 49,
+  "pooled_curve_rows": 2548,
+  "data_recomputed": false,
+  "model_forward_calls": 0,
+  "training_updates": 0,
+  "test_inputs_opened": false,
+  "pages": [
+    {
+      "page": 1,
+      "instances": [
+        "to_cycle",
+        "to_lehmer",
+        "to_inversion_vector",
+        "length",
+        "descents",
+        "fixed_points",
+        "parity",
+        "cycle_type",
+        "rsk_shape",
+        "lds_length"
+      ],
+      "files": [
+        "learning_curves_01.png",
+        "learning_curves_01.svg"
+      ],
+      "header_nonoverlap_checked": true
+    },
+    {
+      "page": 2,
+      "instances": [
+        "pattern_avoidance[pattern=1,2,3]",
+        "inverse",
+        "power[exponent=2]",
+        "right_multiply_simple[index=1]",
+        "peaks",
+        "exceedances",
+        "recoils",
+        "valleys",
+        "double_ascents",
+        "double_descents"
+      ],
+      "files": [
+        "learning_curves_02.png",
+        "learning_curves_02.svg"
+      ],
+      "header_nonoverlap_checked": true
+    },
+    {
+      "page": 3,
+      "instances": [
+        "successions",
+        "adjacencies",
+        "anti_fixed_points",
+        "deficiencies",
+        "left_to_right_maxima",
+        "left_to_right_minima",
+        "right_to_left_maxima",
+        "right_to_left_minima",
+        "even_cycle_count",
+        "odd_cycle_count"
+      ],
+      "files": [
+        "learning_curves_03.png",
+        "learning_curves_03.svg"
+      ],
+      "header_nonoverlap_checked": true
+    },
+    {
+      "page": 4,
+      "instances": [
+        "shortest_cycle",
+        "nontrivial_cycle_count",
+        "longest_increasing_run",
+        "longest_decreasing_run",
+        "global_descents",
+        "max_displacement",
+        "displacement_one_count",
+        "cycle_length_count[k=1]",
+        "cycle_length_count[k=2]",
+        "cycle_length_count[k=3]"
+      ],
+      "files": [
+        "learning_curves_04.png",
+        "learning_curves_04.svg"
+      ],
+      "header_nonoverlap_checked": true
+    },
+    {
+      "page": 5,
+      "instances": [
+        "increasing_subsequence_count[k=1]",
+        "increasing_subsequence_count[k=2]",
+        "decreasing_subsequence_count[k=1]",
+        "decreasing_subsequence_count[k=2]",
+        "decreasing_subsequence_count[k=3]",
+        "smallest_component",
+        "component_length_count[k=1]",
+        "component_length_count[k=2]",
+        "component_length_count[k=3]"
+      ],
+      "files": [
+        "learning_curves_05.png",
+        "learning_curves_05.svg"
+      ],
+      "header_nonoverlap_checked": true
+    }
+  ],
+  "outputs": {
+    "learning_curves_01.png": "a0acab9160d6a9377f7bd8db2feaf45036d5bb1cb16ee4ba56e647848c9c6857",
+    "learning_curves_01.svg": "1456affb738d746783e2af23e395018817eb3609d5eee7dda1c9f15f7b6d7e4b",
+    "learning_curves_02.png": "0177a0e5cb61c71a122781bd2b7528109cf61f5b177bcdf68e68491763ca6dca",
+    "learning_curves_02.svg": "803bfd14154a9393fff1a371bd3f90708945245266357d6615171eb1cd1889a0",
+    "learning_curves_03.png": "4f423c71f7256b1ae71546575624fec172ad1d059d5f832016c5934dd4d90f81",
+    "learning_curves_03.svg": "375a7c368ce1426cbf4beb730e3a855ca067e938d643825ca07aa6201dd210e2",
+    "learning_curves_04.png": "b74509d04f7fb64e3670e0fd3e269aa2990a5e8868457716eb821f6f513d7de0",
+    "learning_curves_04.svg": "de0259eea3ac0ff771eb3458578f59be442a6b066fc5e39b0d22e3a5c79ced34",
+    "learning_curves_05.png": "dcc2aa200ce0db812d07d7f59a4a1accee4693b74a54784d87b437ce76763624",
+    "learning_curves_05.svg": "00d5c3021104fcaf0f1347eabb76db589ff229abf7699eaf44ed6fdb4545d018",
+    "README.md": "abbcbb86d4fea43381fd8a2fd9589b4f2b993741ede93d467b5c6b067e92b493"
+  }
+}

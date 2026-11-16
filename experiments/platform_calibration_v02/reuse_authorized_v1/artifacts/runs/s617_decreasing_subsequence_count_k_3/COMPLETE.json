@@ -1,0 +1,89 @@
+{
+  "run_id": "s617_decreasing_subsequence_count_k_3",
+  "initialization_seed": 617,
+  "data_seed": 2026102001,
+  "sampling_and_dropout_seed": 1617,
+  "instance_id": "decreasing_subsequence_count[k=3]",
+  "task_id": "decreasing_subsequence_count",
+  "params": "{\"k\": 3}",
+  "input_arity": 1,
+  "family": "global_subsequence",
+  "focus_template": true,
+  "identity_kind": "parameterized_template",
+  "output_type": "integer",
+  "output_encoding": "permworld_sequence_v1",
+  "completed_unix": 1794861914.0916016,
+  "seconds": 89.92139459999453,
+  "updates": 2400,
+  "sample_exposures": 153600,
+  "input_tokens": 4916034,
+  "padded_input_tokens": 4962048,
+  "supervised_tokens": 308034,
+  "answer_tokens": 154434,
+  "length_updates": {
+    "8": 800,
+    "10": 800,
+    "12": 800
+  },
+  "tokens_by_length": {
+    "8": {
+      "input_tokens": 1433600,
+      "padded_input_tokens": 1433600,
+      "supervised_tokens": 102400,
+      "answer_tokens": 51200
+    },
+    "10": {
+      "input_tokens": 1638400,
+      "padded_input_tokens": 1638400,
+      "supervised_tokens": 102400,
+      "answer_tokens": 51200
+    },
+    "12": {
+      "input_tokens": 1844034,
+      "padded_input_tokens": 1890048,
+      "supervised_tokens": 103234,
+      "answer_tokens": 52034
+    }
+  },
+  "best_step": 2400,
+  "best_dev": {
+    "length": "all",
+    "count": 768,
+    "correct": 243,
+    "eos_generated": 768,
+    "majority_correct": 26,
+    "accuracy": 0.31640625,
+    "answer_ce": 2.0365554292996726,
+    "eos_ce": 0.0005367070552892983,
+    "sequence_ce": 1.0192484458287556,
+    "eos_accuracy": 1.0,
+    "majority_accuracy": 0.033854166666666664,
+    "majority_answer": "training-derived per-length values"
+  },
+  "endpoint_dev": {
+    "length": "all",
+    "count": 768,
+    "correct": 243,
+    "eos_generated": 768,
+    "majority_correct": 26,
+    "accuracy": 0.31640625,
+    "answer_ce": 2.0365554292996726,
+    "eos_ce": 0.0005367070552892983,
+    "sequence_ce": 1.0192484458287556,
+    "eos_accuracy": 1.0,
+    "majority_accuracy": 0.033854166666666664,
+    "majority_answer": "training-derived per-length values"
+  },
+  "initial_state_sha256": "3f7dbf6a8214dc4966d0ceddae8c26cb540614f6984a3ca487fc0cff00fea4e0",
+  "parameter_count": 3244288,
+  "length_and_index_schedule_sha256": "1682d4c0487fafb8cc39d3c5bf405dcdc09d7bc3c27485afe5ed3966f76a14af",
+  "peak_memory_bytes": 194308096,
+  "frozen_protocol_sha256": "70b46531be73c7dec3b3c817552a910ffc24b49f7d248f8f6b24197350dcdffd",
+  "checkpoint_sha256": {
+    "best.pt": "f3a5917aacefe9e41d3f2247648419e046ff46d7ae241712aea731deb54a02eb",
+    "endpoint.pt": "98ea460b51d160dddbb1ffba881f098f2fe8c78d3f3b7b20743fefa561899515"
+  },
+  "test_evaluated": false,
+  "optimizer_started_empty": true,
+  "training_timer_scope": "Training, all full train/dev evaluations, and checkpoints; excludes data encoding, summary and final audits"
+}
