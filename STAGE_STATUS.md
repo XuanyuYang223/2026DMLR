@@ -30,3 +30,11 @@ The second-architecture gate/replication and paper integration were not started.
 ## Delivery
 
 Only the new stage-status and failed-preflight evidence are to be committed and pushed on `publication/permworld-dmlr-case-integration`, by a normal push. No merge, force-push, history rewrite, checkpoint upload, or existing-file revision is part of this delivery. `LOCAL_STATE_SUMMARY.md` remains an untracked pre-existing file.
+
+## Stage 2 - Author-approved canonical-pool reuse
+
+The author resolved the calibration data conflict by permitting read-only reuse of the original platform_v01 train/development pools and seed pairing. New-unit historical exclusion continues to apply to Stage 3 transfer. The old capacity audit and all prior stopped-preflight files are unchanged.
+
+New continuation outputs are in `experiments/platform_calibration_v02/reuse_authorized_v1/`. `POOL_REUSE_AUDIT.json` passed: the twelve canonical train/development hashes match both the original calibration freeze and dataset manifest; archived completions, initializations, checkpoint metadata and exact exposure streams support their actual historical use. No reserved test NPZ was opened and no model forward was run by that audit.
+
+The complete CPU encoding scan retains all fifty requested instances. `to_reduced_word` is explicitly reader-rejected because required samples exceed context 128; no samples are filtered or replaced. The remaining forty-nine instances keep the original eight-token generation budget and full-answer training loss. Generation-impossible answers are flagged with their structural accuracy ceiling, not interpreted as failure to learn the mathematical function. The protocol and analysis plan are recorded before any new optimizer update and will be committed before smoke or formal training.

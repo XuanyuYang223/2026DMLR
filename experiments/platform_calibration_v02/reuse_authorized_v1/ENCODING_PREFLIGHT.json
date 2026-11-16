@@ -1,0 +1,975 @@
+{
+  "status": "passed_with_explicit_reader_rejection_and_generation_limits",
+  "created_at_utc": "2026-11-16T19:08:33.490332+00:00",
+  "seconds": 7.49842780000472,
+  "command": ".venv/Scripts/python.exe -B experiments/platform_calibration_v02/reuse_authorized_v1/encoding_preflight.py",
+  "scoped_instance_count": 50,
+  "accepted_instance_count": 49,
+  "rejected_instance_count": 1,
+  "accepted_instances": [
+    {
+      "instance_id": "to_cycle",
+      "task_id": "to_cycle",
+      "params": {},
+      "input_arity": 1,
+      "family": "permutation_identity",
+      "focus_template": false,
+      "identity_kind": "representation_endpoint",
+      "output_type": "cycle_decomposition",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "to_lehmer",
+      "task_id": "to_lehmer",
+      "params": {},
+      "input_arity": 1,
+      "family": "permutation_identity",
+      "focus_template": false,
+      "identity_kind": "representation_endpoint",
+      "output_type": "integer_vector",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "to_inversion_vector",
+      "task_id": "to_inversion_vector",
+      "params": {},
+      "input_arity": 1,
+      "family": "permutation_identity",
+      "focus_template": false,
+      "identity_kind": "representation_endpoint",
+      "output_type": "integer_vector",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "length",
+      "task_id": "length",
+      "params": {},
+      "input_arity": 1,
+      "family": "length",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "descents",
+      "task_id": "descents",
+      "params": {},
+      "input_arity": 1,
+      "family": "descents",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "fixed_points",
+      "task_id": "fixed_points",
+      "params": {},
+      "input_arity": 1,
+      "family": "fixed_points",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "parity",
+      "task_id": "parity",
+      "params": {},
+      "input_arity": 1,
+      "family": "parity",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "cycle_type",
+      "task_id": "cycle_type",
+      "params": {},
+      "input_arity": 1,
+      "family": "cycle_decomposition",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer_partition",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "rsk_shape",
+      "task_id": "rsk_shape",
+      "params": {},
+      "input_arity": 1,
+      "family": "global_subsequence",
+      "focus_template": true,
+      "identity_kind": "task_template",
+      "output_type": "integer_partition",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "lds_length",
+      "task_id": "lds_length",
+      "params": {},
+      "input_arity": 1,
+      "family": "global_subsequence",
+      "focus_template": true,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "pattern_avoidance[pattern=1,2,3]",
+      "task_id": "pattern_avoidance",
+      "params": {
+        "pattern": [
+          1,
+          2,
+          3
+        ]
+      },
+      "input_arity": 1,
+      "family": "pattern_avoidance",
+      "focus_template": false,
+      "identity_kind": "parameterized_template",
+      "output_type": "boolean",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "inverse",
+      "task_id": "inverse",
+      "params": {},
+      "input_arity": 1,
+      "family": "inverse",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "permutation",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "power[exponent=2]",
+      "task_id": "power",
+      "params": {
+        "exponent": 2
+      },
+      "input_arity": 1,
+      "family": "power",
+      "focus_template": false,
+      "identity_kind": "parameterized_template",
+      "output_type": "permutation",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "right_multiply_simple[index=1]",
+      "task_id": "right_multiply_simple",
+      "params": {
+        "index": 1
+      },
+      "input_arity": 1,
+      "family": "right_multiply_simple",
+      "focus_template": false,
+      "identity_kind": "parameterized_template",
+      "output_type": "permutation",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "peaks",
+      "task_id": "peaks",
+      "params": {},
+      "input_arity": 1,
+      "family": "peaks",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "exceedances",
+      "task_id": "exceedances",
+      "params": {},
+      "input_arity": 1,
+      "family": "exceedances",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "recoils",
+      "task_id": "recoils",
+      "params": {},
+      "input_arity": 1,
+      "family": "recoils",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "valleys",
+      "task_id": "valleys",
+      "params": {},
+      "input_arity": 1,
+      "family": "valleys",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "double_ascents",
+      "task_id": "double_ascents",
+      "params": {},
+      "input_arity": 1,
+      "family": "double_ascents",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "double_descents",
+      "task_id": "double_descents",
+      "params": {},
+      "input_arity": 1,
+      "family": "double_descents",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "successions",
+      "task_id": "successions",
+      "params": {},
+      "input_arity": 1,
+      "family": "successions",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "adjacencies",
+      "task_id": "adjacencies",
+      "params": {},
+      "input_arity": 1,
+      "family": "adjacencies",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "anti_fixed_points",
+      "task_id": "anti_fixed_points",
+      "params": {},
+      "input_arity": 1,
+      "family": "anti_fixed_points",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "deficiencies",
+      "task_id": "deficiencies",
+      "params": {},
+      "input_arity": 1,
+      "family": "deficiencies",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "left_to_right_maxima",
+      "task_id": "left_to_right_maxima",
+      "params": {},
+      "input_arity": 1,
+      "family": "left_to_right_maxima",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "left_to_right_minima",
+      "task_id": "left_to_right_minima",
+      "params": {},
+      "input_arity": 1,
+      "family": "left_to_right_minima",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "right_to_left_maxima",
+      "task_id": "right_to_left_maxima",
+      "params": {},
+      "input_arity": 1,
+      "family": "right_to_left_maxima",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "right_to_left_minima",
+      "task_id": "right_to_left_minima",
+      "params": {},
+      "input_arity": 1,
+      "family": "right_to_left_minima",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "even_cycle_count",
+      "task_id": "even_cycle_count",
+      "params": {},
+      "input_arity": 1,
+      "family": "cycle_decomposition",
+      "focus_template": true,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "odd_cycle_count",
+      "task_id": "odd_cycle_count",
+      "params": {},
+      "input_arity": 1,
+      "family": "cycle_decomposition",
+      "focus_template": true,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "shortest_cycle",
+      "task_id": "shortest_cycle",
+      "params": {},
+      "input_arity": 1,
+      "family": "cycle_decomposition",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "nontrivial_cycle_count",
+      "task_id": "nontrivial_cycle_count",
+      "params": {},
+      "input_arity": 1,
+      "family": "cycle_decomposition",
+      "focus_template": true,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "longest_increasing_run",
+      "task_id": "longest_increasing_run",
+      "params": {},
+      "input_arity": 1,
+      "family": "longest_increasing_run",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "longest_decreasing_run",
+      "task_id": "longest_decreasing_run",
+      "params": {},
+      "input_arity": 1,
+      "family": "longest_decreasing_run",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "global_descents",
+      "task_id": "global_descents",
+      "params": {},
+      "input_arity": 1,
+      "family": "permutation_blocks",
+      "focus_template": true,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "max_displacement",
+      "task_id": "max_displacement",
+      "params": {},
+      "input_arity": 1,
+      "family": "max_displacement",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "displacement_one_count",
+      "task_id": "displacement_one_count",
+      "params": {},
+      "input_arity": 1,
+      "family": "displacement_one_count",
+      "focus_template": false,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "cycle_length_count[k=1]",
+      "task_id": "cycle_length_count",
+      "params": {
+        "k": 1
+      },
+      "input_arity": 1,
+      "family": "cycle_decomposition",
+      "focus_template": true,
+      "identity_kind": "parameterized_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "cycle_length_count[k=2]",
+      "task_id": "cycle_length_count",
+      "params": {
+        "k": 2
+      },
+      "input_arity": 1,
+      "family": "cycle_decomposition",
+      "focus_template": true,
+      "identity_kind": "parameterized_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "cycle_length_count[k=3]",
+      "task_id": "cycle_length_count",
+      "params": {
+        "k": 3
+      },
+      "input_arity": 1,
+      "family": "cycle_decomposition",
+      "focus_template": true,
+      "identity_kind": "parameterized_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "increasing_subsequence_count[k=1]",
+      "task_id": "increasing_subsequence_count",
+      "params": {
+        "k": 1
+      },
+      "input_arity": 1,
+      "family": "global_subsequence",
+      "focus_template": true,
+      "identity_kind": "parameterized_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "increasing_subsequence_count[k=2]",
+      "task_id": "increasing_subsequence_count",
+      "params": {
+        "k": 2
+      },
+      "input_arity": 1,
+      "family": "global_subsequence",
+      "focus_template": true,
+      "identity_kind": "parameterized_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "decreasing_subsequence_count[k=1]",
+      "task_id": "decreasing_subsequence_count",
+      "params": {
+        "k": 1
+      },
+      "input_arity": 1,
+      "family": "global_subsequence",
+      "focus_template": true,
+      "identity_kind": "parameterized_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "decreasing_subsequence_count[k=2]",
+      "task_id": "decreasing_subsequence_count",
+      "params": {
+        "k": 2
+      },
+      "input_arity": 1,
+      "family": "global_subsequence",
+      "focus_template": true,
+      "identity_kind": "parameterized_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "decreasing_subsequence_count[k=3]",
+      "task_id": "decreasing_subsequence_count",
+      "params": {
+        "k": 3
+      },
+      "input_arity": 1,
+      "family": "global_subsequence",
+      "focus_template": true,
+      "identity_kind": "parameterized_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "smallest_component",
+      "task_id": "smallest_component",
+      "params": {},
+      "input_arity": 1,
+      "family": "permutation_blocks",
+      "focus_template": true,
+      "identity_kind": "task_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "component_length_count[k=1]",
+      "task_id": "component_length_count",
+      "params": {
+        "k": 1
+      },
+      "input_arity": 1,
+      "family": "permutation_blocks",
+      "focus_template": true,
+      "identity_kind": "parameterized_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "component_length_count[k=2]",
+      "task_id": "component_length_count",
+      "params": {
+        "k": 2
+      },
+      "input_arity": 1,
+      "family": "permutation_blocks",
+      "focus_template": true,
+      "identity_kind": "parameterized_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    },
+    {
+      "instance_id": "component_length_count[k=3]",
+      "task_id": "component_length_count",
+      "params": {
+        "k": 3
+      },
+      "input_arity": 1,
+      "family": "permutation_blocks",
+      "focus_template": true,
+      "identity_kind": "parameterized_template",
+      "output_type": "integer",
+      "output_encoding": "permworld_sequence_v1"
+    }
+  ],
+  "rejected_instances": [
+    {
+      "instance_id": "to_reduced_word",
+      "task_id": "to_reduced_word",
+      "params": {},
+      "input_arity": 1,
+      "family": "permutation_identity",
+      "focus_template": false,
+      "identity_kind": "representation_endpoint",
+      "output_type": "integer_sequence",
+      "output_encoding": "permworld_sequence_v1"
+    }
+  ],
+  "context_failures": [
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 617,
+      "split": "train",
+      "length": 12,
+      "input_index": 156,
+      "required_sequence_tokens": 136,
+      "reader_error": "sample requires 136 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 617,
+      "split": "train",
+      "length": 12,
+      "input_index": 246,
+      "required_sequence_tokens": 130,
+      "reader_error": "sample requires 130 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 617,
+      "split": "train",
+      "length": 12,
+      "input_index": 298,
+      "required_sequence_tokens": 130,
+      "reader_error": "sample requires 130 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 617,
+      "split": "train",
+      "length": 12,
+      "input_index": 318,
+      "required_sequence_tokens": 146,
+      "reader_error": "sample requires 146 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 617,
+      "split": "train",
+      "length": 12,
+      "input_index": 396,
+      "required_sequence_tokens": 136,
+      "reader_error": "sample requires 136 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 617,
+      "split": "train",
+      "length": 12,
+      "input_index": 411,
+      "required_sequence_tokens": 134,
+      "reader_error": "sample requires 134 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 617,
+      "split": "train",
+      "length": 12,
+      "input_index": 455,
+      "required_sequence_tokens": 132,
+      "reader_error": "sample requires 132 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 617,
+      "split": "train",
+      "length": 12,
+      "input_index": 501,
+      "required_sequence_tokens": 136,
+      "reader_error": "sample requires 136 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 617,
+      "split": "train",
+      "length": 12,
+      "input_index": 571,
+      "required_sequence_tokens": 136,
+      "reader_error": "sample requires 136 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 617,
+      "split": "train",
+      "length": 12,
+      "input_index": 603,
+      "required_sequence_tokens": 132,
+      "reader_error": "sample requires 132 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 617,
+      "split": "train",
+      "length": 12,
+      "input_index": 673,
+      "required_sequence_tokens": 130,
+      "reader_error": "sample requires 130 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 617,
+      "split": "train",
+      "length": 12,
+      "input_index": 767,
+      "required_sequence_tokens": 130,
+      "reader_error": "sample requires 130 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 617,
+      "split": "train",
+      "length": 12,
+      "input_index": 780,
+      "required_sequence_tokens": 132,
+      "reader_error": "sample requires 132 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 617,
+      "split": "train",
+      "length": 12,
+      "input_index": 906,
+      "required_sequence_tokens": 130,
+      "reader_error": "sample requires 130 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 617,
+      "split": "train",
+      "length": 12,
+      "input_index": 912,
+      "required_sequence_tokens": 130,
+      "reader_error": "sample requires 130 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 617,
+      "split": "dev",
+      "length": 12,
+      "input_index": 37,
+      "required_sequence_tokens": 130,
+      "reader_error": "sample requires 130 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 617,
+      "split": "dev",
+      "length": 12,
+      "input_index": 139,
+      "required_sequence_tokens": 130,
+      "reader_error": "sample requires 130 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 617,
+      "split": "dev",
+      "length": 12,
+      "input_index": 140,
+      "required_sequence_tokens": 132,
+      "reader_error": "sample requires 132 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 617,
+      "split": "dev",
+      "length": 12,
+      "input_index": 211,
+      "required_sequence_tokens": 136,
+      "reader_error": "sample requires 136 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 617,
+      "split": "dev",
+      "length": 12,
+      "input_index": 215,
+      "required_sequence_tokens": 134,
+      "reader_error": "sample requires 134 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 829,
+      "split": "train",
+      "length": 12,
+      "input_index": 120,
+      "required_sequence_tokens": 142,
+      "reader_error": "sample requires 142 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 829,
+      "split": "train",
+      "length": 12,
+      "input_index": 267,
+      "required_sequence_tokens": 130,
+      "reader_error": "sample requires 130 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 829,
+      "split": "train",
+      "length": 12,
+      "input_index": 306,
+      "required_sequence_tokens": 130,
+      "reader_error": "sample requires 130 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 829,
+      "split": "train",
+      "length": 12,
+      "input_index": 363,
+      "required_sequence_tokens": 130,
+      "reader_error": "sample requires 130 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 829,
+      "split": "train",
+      "length": 12,
+      "input_index": 403,
+      "required_sequence_tokens": 132,
+      "reader_error": "sample requires 132 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 829,
+      "split": "train",
+      "length": 12,
+      "input_index": 538,
+      "required_sequence_tokens": 132,
+      "reader_error": "sample requires 132 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 829,
+      "split": "train",
+      "length": 12,
+      "input_index": 616,
+      "required_sequence_tokens": 138,
+      "reader_error": "sample requires 138 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 829,
+      "split": "train",
+      "length": 12,
+      "input_index": 700,
+      "required_sequence_tokens": 130,
+      "reader_error": "sample requires 130 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 829,
+      "split": "train",
+      "length": 12,
+      "input_index": 765,
+      "required_sequence_tokens": 130,
+      "reader_error": "sample requires 130 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 829,
+      "split": "train",
+      "length": 12,
+      "input_index": 804,
+      "required_sequence_tokens": 130,
+      "reader_error": "sample requires 130 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 829,
+      "split": "train",
+      "length": 12,
+      "input_index": 951,
+      "required_sequence_tokens": 136,
+      "reader_error": "sample requires 136 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 829,
+      "split": "dev",
+      "length": 12,
+      "input_index": 22,
+      "required_sequence_tokens": 138,
+      "reader_error": "sample requires 138 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 829,
+      "split": "dev",
+      "length": 12,
+      "input_index": 71,
+      "required_sequence_tokens": 134,
+      "reader_error": "sample requires 134 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 829,
+      "split": "dev",
+      "length": 12,
+      "input_index": 96,
+      "required_sequence_tokens": 132,
+      "reader_error": "sample requires 132 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 829,
+      "split": "dev",
+      "length": 12,
+      "input_index": 110,
+      "required_sequence_tokens": 134,
+      "reader_error": "sample requires 134 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 829,
+      "split": "dev",
+      "length": 12,
+      "input_index": 127,
+      "required_sequence_tokens": 132,
+      "reader_error": "sample requires 132 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 829,
+      "split": "dev",
+      "length": 12,
+      "input_index": 156,
+      "required_sequence_tokens": 130,
+      "reader_error": "sample requires 130 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 829,
+      "split": "dev",
+      "length": 12,
+      "input_index": 195,
+      "required_sequence_tokens": 130,
+      "reader_error": "sample requires 130 tokens, context=128; no truncation permitted"
+    },
+    {
+      "instance_id": "to_reduced_word",
+      "seed": 829,
+      "split": "dev",
+      "length": 12,
+      "input_index": 224,
+      "required_sequence_tokens": 130,
+      "reader_error": "sample requires 130 tokens, context=128; no truncation permitted"
+    }
+  ],
+  "input_and_source_sha256": {
+    "experiments/platform_v01/dataset/manifest.json": "8b7fcfc6b355117d1c66916053c80aa6a8ff7dc7abcac2bf645e4d192c819f06",
+    "experiments/platform_v01/LEARNABILITY_INDEX.csv": "49d69ee09a46bbbd7502099c46d193693847d7c50fecd489cad36fe97cab7ad6",
+    "experiments/platform_calibration_v02/reuse_authorized_v1/encoding_preflight.py": "bbc556d340d090a5acc0fc3ff537be7b70beb5feef0c3cbc7b2777f805accbaf",
+    "permworld_platform/encoding.py": "143c46d75da71b90ee05101e9c9742721c695156c2356fcf5f9b0bb791fe104b",
+    "permworld_platform/tasks.py": "61cb4d1cd45144079a91106772432ed47bf196dbd9d920727f55d95f8a26f5b5",
+    "experiments/platform_v01/dataset/data/s617_train_n8.npz": "6267653fe6dd63b2f8ddbdcd40d8d35ff59a8c1c8a4cff59093e36262c79bc65",
+    "experiments/platform_v01/dataset/data/s617_train_n10.npz": "27b61a8b98fd1ff74346bcaecaf5053180303f097e5bc8500d9be246a36b0dff",
+    "experiments/platform_v01/dataset/data/s617_train_n12.npz": "3268206fa8f1e3720f3186c15e981d34b59c04c6a8cc6331367c71cb64421a50",
+    "experiments/platform_v01/dataset/data/s617_dev_n8.npz": "f464857e67e04fcb3ea146c7cfbf749edfcbe43c6c9f3eccbca4cd71c318830b",
+    "experiments/platform_v01/dataset/data/s617_dev_n10.npz": "8b9c80ecf46f983a38683c016ee43ae78c49fcf6fae610cfec91733d5cd2a8ee",
+    "experiments/platform_v01/dataset/data/s617_dev_n12.npz": "a6a3ea3b9876ffccf161ece47e9a8344c96260b363bd03148833a3f1f0fd99a0",
+    "experiments/platform_v01/dataset/data/s829_train_n8.npz": "867610580eedc4ed17a445cd93cd3be2388a40559d4ca59c3090b363018a2669",
+    "experiments/platform_v01/dataset/data/s829_train_n10.npz": "c524d9d93657c301e7f7eec986d21feac58bb70267d8cfd89e6737f54326c939",
+    "experiments/platform_v01/dataset/data/s829_train_n12.npz": "01caedef471a7243d9b6e4758ab2c61abcbd324168d810123d2438d6c1750930",
+    "experiments/platform_v01/dataset/data/s829_dev_n8.npz": "ae15377b7a0708132500d05bfdf871ceb4b0d3fa04a1b4c2fed834fbbe994152",
+    "experiments/platform_v01/dataset/data/s829_dev_n10.npz": "b1e5b4c8a792bd2340f8222b6b83dc54e24348417c862a60706c56927faee4c6",
+    "experiments/platform_v01/dataset/data/s829_dev_n12.npz": "896aa571aa37657bb9a9264af76fdbc7b9d80dd7c0e62be0bd5fa86a284763bb"
+  },
+  "test_pool_opened": false,
+  "model_constructed": false,
+  "new_inputs_generated": false,
+  "labels_truncated": false,
+  "context_policy": "Any required train/dev sample exceeding128 rejects the entire instance across both seeds and all lengths. No samples are filtered or replaced.",
+  "generation_policy": "Keep eight generation tokens including EOS. Full gold answers are retained for training/loss and exact matching; longer gold answers cannot be exactly generated under this cap.",
+  "interpretation": "Generation-capped exact accuracy is protocol-limited, not evidence of intrinsic task unlearnability.",
+  "table_sha256": "41e0750d94388761039d6a3f5265ef21830dac253b39e0259072be5fc7e8879e"
+}
